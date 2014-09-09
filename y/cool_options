@@ -1,0 +1,30 @@
+---
+cool_options: ! "From http://cooloptions.rubyforge.org/:\nDeclaration:\n\n  options
+  = CoolOptions.parse!(\"[options] PROJECTNAME\") do |o|\n    o.desc 'Sets up a new
+  Rails project.'\n    o.on \"repository URL\",         \"Remote subversion repository.\"\n
+  \   o.on \"svk\",                    \"Use svk.\",                              true\n
+  \   o.on \"project-path PATH\",      \"Root of project workspaces.\",           File.expand_path(\"~/svk\")\n
+  \   o.on \"l)repository-path PATH\", \"Remote repository path.\",               \"/\"\n
+  \   o.on \"mirror-path SVKPATH\",    \"SVK mirror path.\",                      \"//\"\n
+  \   o.on \"local-pa(t)h SVKPATH\",   \"SVK local path.\",                       \"//local\"\n
+  \   o.on \"create-structure\",       \"Create trunk/tags/branches structure.\",
+  true\n    o.on \"finish\",                 \"Prep and commit the new project.\",
+  \     true\n\n    o.after do |r|\n      r.project_path = File.expand_path(r.project_path)\n
+  \     o.error(\"Invalid path.\") unless File.exist?(r.project_path)\n      r.project_name
+  = ARGV.shift\n      o.error(\"Project name is required.\") unless r.project_name\n
+  \     o.error(\"Project name is too funky.\") unless /^\\w+$/ =~ r.project_name\n
+  \   end\n  end\n\nUsage:\n\n  $ ./new_rails_project --no-svk -r http://terralien.com/svn/terralien/
+  myproject\n\nResult:\n\n  p options.svk                 # => false\n  p options.project_path
+  \       # => '/Users/ntalbott/svk'\n  p options.repository          # => 'http://terralien.com/svn/terralien/'\n
+  \ p options.create_structure    # => true\n  p options.project_name        # =>
+  'myproject'\n\nAlso:\n\n  $ ./new_rails_project --help\n  Usage: t.rb [options]
+  PROJECTNAME\n      -s, --[no-]svk                   Use svk.\n                                       Default
+  is: true\n      -p, --project-path PATH          Root of project workspaces.\n                                       Default
+  is: /Users/ntalbott/svk\n      -r, --repository URL             Remote subversion
+  repository.\n      -l, --repository-path PATH       Remote repository path.\n                                       Default
+  is: /\n      -m, --mirror-path SVKPATH        SVK mirror path.\n                                       Default
+  is: //\n      -t, --local-path SVKPATH         SVK local path.\n                                       Default
+  is: //local\n      -c, --[no-]create-structure      Create trunk/tags/branches structure.\n
+  \                                      Default is: true\n      -f, --[no-]finish
+  \               Prep and commit the new project.\n                                       Default
+  is: true\n      -h, --help                       This help info."

@@ -1,0 +1,10 @@
+---
+windows_remote_desktop_clients: ! 'On ubuntu:
+
+  =========
+
+
+  $ apt-get install remmina
+
+
+  $ alias mstsc=remmina'

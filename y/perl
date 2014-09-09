@@ -1,0 +1,40 @@
+---
+perl: ! "CONTEXTS  SIGILS             ARRAYS        HASHES\n void      $scalar   whole:
+  \  @array        %hash\n scalar    @array    slice:   @array[0, 2]  @hash{'a', 'b'}\n
+  list      %hash     element: $array[0]     $hash{'a'}\n           &sub\n           *glob
+  \   SCALAR VALUES\n                    number, string, reference, glob, undef\n
+  REFERENCES\n \\     references      $$foo[1]       aka $foo->[1]\n $@%&* dereference
+  \    $$foo{bar}     aka $foo->{bar}\n []    anon. arrayref  ${$$foo[1]}[2] aka $foo->[1]->[2]\n
+  {}    anon. hashref   ${$$foo[1]}[2] aka $foo->[1][2]\n \\()   list of refs\n                         NUMBERS
+  vs STRINGS  LINKS\n OPERATOR PRECEDENCE     =          =        perl.plover.com\n
+  ->                      +          .        search.cpan.org\n ++ --                   ==
+  !=      eq ne         cpan.org\n **                      < > <= >=  lt gt le ge
+  \  pm.org\n ! ~ \\ u+ u-             <=>        cmp           tpj.com\n =~ !~                                            perldoc.com\n
+  * / % x                 SYNTAX\n + - .                   for    (LIST) { }, for
+  (a;b;c) { }\n << >>                   while  ( ) { }, until ( ) { }\n named uops
+  \             if     ( ) { } elsif ( ) { } else { }\n < > <= >= lt gt le ge   unless
+  ( ) { } elsif ( ) { } else { }\n == != <=> eq ne cmp     for equals foreach (ALWAYS)\n
+  &\n | ^              REGEX METACHARS            REGEX MODIFIERS\n &&               ^
+  \    string begin         /i case insens.\n ||               $     str. end (before
+  \\n) /m line based ^$\n .. ...           +     one or more          /s . includes
+  \\n\n ?:               *     zero or more         /x ign. wh.space\n = += -= *=
+  etc.  ?     zero or one          /g global\n , =>             {3,7} repeat in range\n
+  list ops         ()    capture          REGEX CHARCLASSES\n not              (?:)
+  \ no capture       .  == [^\\n]\n and              []    character class  \\s ==
+  [\\x20\\f\\t\\r\\n]\n or xor           |     alternation      \\w == [A-Za-z0-9_]\n
+  \                 \\b    word boundary    \\d == [0-9] \n                  \\z    string
+  end       \\S, \\W and \\D negate\n DO\n use strict;        DON'T            LINKS\n
+  use warnings;      \"$foo\"           perl.com       \n my $var;           $$variable_name
+  \ perlmonks.org  \n open() or die $!;  `$userinput`     use.perl.org   \n use Modules;
+  \      /$userinput/     perl.apache.org\n                                     parrotcode.org
+  \n FUNCTION RETURN LISTS\n stat      localtime    caller         SPECIAL VARIABLES\n
+  \ 0 dev    0 second     0 package      $_    default variable\n  1 ino    1 minute
+  \    1 filename     $0    program name\n  2 mode   2 hour       2 line         $/
+  \   input separator\n  3 nlink  3 day        3 subroutine   $\\    output separator\n
+  \ 4 uid    4 month-1    4 hasargs      $|    autoflush\n  5 gid    5 year-1900  5
+  wantarray    $!    sys/libcall error\n  6 rdev   6 weekday    6 evaltext     $@
+  \   eval error\n  7 size   7 yearday    7 is_require   $$    process ID\n  8 atime
+  \ 8 is_dst     8 hints        $.    line number\n  9 mtime               9 bitmask
+  \     @ARGV command line args\n 10 ctime  just use                    @INC  include
+  paths\n 11 blksz  POSIX::      3..9 only      @_    subroutine args\n 12 blcks  strftime!
+  \   with EXPR      %ENV  environment"

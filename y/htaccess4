@@ -1,0 +1,45 @@
+---
+htaccess4: ! "Enable Directory Browsing\r\n\r\nOptions +Indexes\r\n## block a few
+  types of files from showing\r\nIndexIgnore *.wmv *.mp4 *.avi\r\nDisable Directory
+  Browsing\r\n\r\nOptions All -Indexes\r\nCustomize Error Messages\r\n\r\nErrorDocument
+  403 /forbidden.html\r\nErrorDocument 404 /notfound.html\r\nErrorDocument 500 /servererror.html\r\nGet
+  SSI working with HTML/SHTML\r\n\r\nAddType text/html .html\r\nAddType text/html
+  .shtml\r\nAddHandler server-parsed .html\r\nAddHandler server-parsed .shtml\r\n#
+  AddHandler server-parsed .htm\r\nChange Default Page (order is followed!)\r\n\r\nDirectoryIndex
+  myhome.htm index.htm index.php\r\nBlock Users from accessing the site\r\n\r\n<limit
+  GET POST PUT>\r\norder deny,allow\r\ndeny from 202.54.122.33\r\ndeny from 8.70.44.53\r\ndeny
+  from .spammers.com\r\nallow from all\r\n</limit>\r\nAllow only LAN users\r\n\r\norder
+  deny,allow\r\ndeny from all\r\nallow from 192.168.0.0/24\r\nRedirect Visitors to
+  New Page/Directory\r\n\r\nRedirect oldpage.html http://www.domainname.com/newpage.html\r\nRedirect
+  /olddir http://www.domainname.com/newdir/\r\nBlock site from specific referrers\r\n\r\nRewriteEngine
+  on\r\nRewriteCond %{HTTP_REFERER} site-to-block\\.com [NC]\r\nRewriteCond %{HTTP_REFERER}
+  site-to-block-2\\.com [NC]\r\nRewriteRule .* - [F]\r\nBlock Hot Linking/Bandwidth
+  hogging\r\n\r\nRewriteEngine on\r\nRewriteCond %{HTTP_REFERER} !^$\r\nRewriteCond
+  %{HTTP_REFERER} !^http://(www\\.)?mydomain.com/.*$ [NC]\r\nRewriteRule \\.(gif|jpg)$
+  - [F]\r\nWant to show a “Stealing is Bad” message too?\r\n\r\nAdd this below the
+  Hot Link Blocking code:\r\n\r\nRewriteRule \\.(gif|jpg)$ http://www.mydomain.com/dontsteal.gif
+  [R,L]\r\nStop .htaccess (or any other file) from being viewed\r\n\r\n<files file-name>\r\norder
+  allow,deny\r\ndeny from all\r\n</files>\r\nAvoid the 500 Error\r\n\r\n# Avoid 500
+  error by passing charset\r\nAddDefaultCharset utf-8\r\nGrant CGI Access in a directory\r\n\r\nOptions
+  +ExecCGI\r\nAddHandler cgi-script cgi pl\r\n# To enable all scripts in a directory
+  use the following\r\n# SetHandler cgi-script\r\nPassword Protecting Directories\r\n\r\nUse
+  the .htaccess Password Generator and follow the brief instructions!\r\n\r\nChange
+  Script Extensions\r\n\r\nAddType application/x-httpd-php .gne\r\ngne will now be
+  treated as PHP files! Similarly, x-httpd-cgi for CGI files, etc.\r\n\r\nUse MD5
+  Digests\r\n\r\nPerformance may take a hit but if thats not a problem, this is a
+  nice option to turn on.\r\n\r\nContentDigest On\r\nThe CheckSpelling Directive\r\n\r\nFrom
+  Jens Meiert: CheckSpelling corrects simple spelling errors (for example, if someone
+  forgets a letter or if any character is just wrong). Just add CheckSpelling On to
+  your htaccess file.\r\n\r\nThe ContentDigest Directive\r\n\r\nAs the Apache core
+  features documentation says: “This directive enables the generation of Content-MD5
+  headers as defined in RFC1864 respectively RFC2068. The Content-MD5 header provides
+  an end-to-end message integrity check (MIC) of the entity-body. A proxy or client
+  may check this header for detecting accidental modification of the entity-body in
+  transit.\r\n\r\nNote that this can cause performance problems on your server since
+  the message digest is computed on every request (the values are not cached). Content-MD5
+  is only sent for documents served by the core, and not by any module. For example,
+  SSI documents, output from CGI scripts, and byte range responses do not have this
+  header.”\r\n\r\nTo turn this on, just add ContentDigest On.\r\n\r\nSave Bandwidth\r\n\r\n#
+  Only if you use PHP\r\n<ifmodule mod_php4.c>\r\nphp_value zlib.output_compression
+  16386\r\n</ifmodule>\r\nTurn off magic_quotes_gpc\r\n\r\n# Only if you use PHP\r\n<ifmodule
+  mod_php4.c>\r\nphp_flag magic_quotes_gpc off\r\n</ifmodule>"

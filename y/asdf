@@ -1,0 +1,4 @@
+---
+asdf: ! "Loading ASDF:\n\n  (require 'asdf)\n\nInstalling a system (ex. hunchentoot):\n\n
+  \ (require 'asdf-install) ; ones ofcourse\n  (asdf-install:install 'hunchentoot)\n\nLoading
+  a system (ex. hunchentoot):\n\n  (asdf:operate 'asdf:load-op 'hunchentoot)"

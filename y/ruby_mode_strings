@@ -1,0 +1,14 @@
+---
+ruby_mode_strings: ! "Mode |  Meaning\n-----+--------------------------------------------------------\n\"r\"
+  \ |  Read-only, starts at beginning of file  (default mode).\n-----+--------------------------------------------------------\n\"r+\"
+  |  Read-write, starts at beginning of file.\n-----+--------------------------------------------------------\n\"w\"
+  \ |  Write-only, truncates existing file\n     |  to zero length or creates a new
+  file for writing.\n-----+--------------------------------------------------------\n\"w+\"
+  |  Read-write, truncates existing file to zero length\n     |  or creates a new
+  file for reading and writing.\n-----+--------------------------------------------------------\n\"a\"
+  \ |  Write-only, starts at end of file if file exists,\n     |  otherwise creates
+  a new file for writing.\n-----+--------------------------------------------------------\n\"a+\"
+  |  Read-write, starts at end of file if file exists,\n     |  otherwise creates
+  a new file for reading and\n     |  writing.\n-----+--------------------------------------------------------\n
+  \"b\" |  (DOS/Windows only) Binary file mode (may appear with\n     |  any of the
+  key letters listed above)."

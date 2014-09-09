@@ -1,0 +1,576 @@
+---
+vs2010: ! "Visual Studio 2010 Cheat Sheet\r\n\r\n\r\nFile.NewWebSite                                   Global::Shift+Alt+N\r\nFile.OpenWebSite
+  \                                 Global::Shift+Alt+O\r\nEdit.RemoveRow                                    Managed
+  Resources Editor::Ctrl+Del\r\nEdit.RemoveRow                                    Settings
+  Designer::Ctrl+Del\r\nEdit.ShowSolutionNavigatorPopupForSelection       Global::Ctrl+1\r\nEdit.ShowSolutionNavigatorPopupForFile
+  \           Global::Ctrl+2\r\nEdit.EditCell                                     Managed
+  Resources Editor::F2\r\nEdit.EditCell                                     Settings
+  Designer::F2\r\nView.EntityDataModelMappingDetails                ADO.NET Entity
+  Data Model Designer::Ctrl+2\r\nView.EntityDataModelBrowser                       ADO.NET
+  Entity Data Model Designer::Ctrl+1\r\nView.F#Interactive                                Global::Ctrl+Alt+F\r\nEditorContextMenus.CodeWindow.SendToInteractive
+  \  Text Editor::Alt+Enter\r\nEditorContextMenus.CodeWindow.SendLineToInteractiveText
+  Editor::Alt+'\r\nView.SolutionNavigator                            Global::Ctrl+W,
+  F\r\nView.SolutionNavigator                            Global::Ctrl+W, Ctrl+F\r\nView.TeamExplorer
+  \                                Global::Ctrl+\\, Ctrl+M\r\nFile.ShowPendingChanges
+  \                          Global::Ctrl+K, C\r\nView.RepositoryExplorer                           Global::Ctrl+K,
+  R\r\nView.WorkingCopyExplorer                          Global::Ctrl+K, W\r\nEdit.DeleteBackwards
+  \                             Text Editor::Bkspce\r\nEdit.DeleteBackwards                              Text
+  Editor::Shift+Bkspce\r\nEdit.BreakLine                                    Text Editor::Enter\r\nEdit.BreakLine
+  \                                   Windows Forms Designer::Enter\r\nEdit.BreakLine
+  \                                   Report Designer::Enter\r\nEdit.InsertTab                                    Text
+  Editor::Tab\r\nEdit.InsertTab                                    Windows Forms Designer::Tab\r\nEdit.InsertTab
+  \                                   Report Designer::Tab\r\nEdit.InsertTab                                    Log
+  Windows (AnkhSVN)::Tab\r\nEdit.TabLeft                                      Text
+  Editor::Shift+Tab\r\nEdit.TabLeft                                      Windows Forms
+  Designer::Shift+Tab\r\nEdit.TabLeft                                      Report
+  Designer::Shift+Tab\r\nEdit.CharLeft                                     Text Editor::Left
+  Arrow\r\nEdit.CharLeft                                     Windows Forms Designer::Left
+  Arrow\r\nEdit.CharLeft                                     Report Designer::Left
+  Arrow\r\nEdit.CharLeft                                     Log Windows (AnkhSVN)::Left
+  Arrow\r\nEdit.CharLeftExtend                               Text Editor::Shift+Left
+  Arrow\r\nEdit.CharLeftExtend                               Windows Forms Designer::Shift+Left
+  Arrow\r\nEdit.CharLeftExtend                               Report Designer::Shift+Left
+  Arrow\r\nEdit.CharLeftExtend                               Log Windows (AnkhSVN)::Shift+Left
+  Arrow\r\nEdit.CharRight                                    Text Editor::Right Arrow\r\nEdit.CharRight
+  \                                   Windows Forms Designer::Right Arrow\r\nEdit.CharRight
+  \                                   Report Designer::Right Arrow\r\nEdit.CharRight
+  \                                   Log Windows (AnkhSVN)::Right Arrow\r\nEdit.CharRightExtend
+  \                             Text Editor::Shift+Right Arrow\r\nEdit.CharRightExtend
+  \                             Windows Forms Designer::Shift+Right Arrow\r\nEdit.CharRightExtend
+  \                             Report Designer::Shift+Right Arrow\r\nEdit.CharRightExtend
+  \                             Log Windows (AnkhSVN)::Shift+Right Arrow\r\nEdit.LineUp
+  \                                      Text Editor::Up Arrow\r\nEdit.LineUp                                       Windows
+  Forms Designer::Up Arrow\r\nEdit.LineUp                                       Report
+  Designer::Up Arrow\r\nEdit.LineUp                                       Log Windows
+  (AnkhSVN)::Up Arrow\r\nEdit.LineUpExtend                                 Text Editor::Shift+Up
+  Arrow\r\nEdit.LineUpExtend                                 Windows Forms Designer::Shift+Down
+  Arrow\r\nEdit.LineUpExtend                                 Report Designer::Shift+Up
+  Arrow\r\nEdit.LineUpExtend                                 Log Windows (AnkhSVN)::Shift+Up
+  Arrow\r\nEdit.LineDown                                     Text Editor::Down Arrow\r\nEdit.LineDown
+  \                                    Windows Forms Designer::Down Arrow\r\nEdit.LineDown
+  \                                    Report Designer::Down Arrow\r\nEdit.LineDown
+  \                                    Log Windows (AnkhSVN)::Down Arrow\r\nEdit.LineDownExtend
+  \                              Text Editor::Shift+Down Arrow\r\nEdit.LineDownExtend
+  \                              Windows Forms Designer::Shift+Up Arrow\r\nEdit.LineDownExtend
+  \                              Report Designer::Shift+Down Arrow\r\nEdit.LineDownExtend
+  \                              Log Windows (AnkhSVN)::Shift+Down Arrow\r\nEdit.DocumentStart
+  \                               Text Editor::Ctrl+Home\r\nEdit.DocumentStart                                Windows
+  Forms Designer::Home\r\nEdit.DocumentStart                                Log Windows
+  (AnkhSVN)::Ctrl+Home\r\nEdit.DocumentStartExtend                          Text Editor::Ctrl+Shift+Home\r\nEdit.DocumentStartExtend
+  \                         Windows Forms Designer::Shift+Home\r\nEdit.DocumentStartExtend
+  \                         Log Windows (AnkhSVN)::Ctrl+Shift+Home\r\nEdit.DocumentEnd
+  \                                 Text Editor::Ctrl+End\r\nEdit.DocumentEnd                                  Windows
+  Forms Designer::End\r\nEdit.DocumentEnd                                  Log Windows
+  (AnkhSVN)::Ctrl+End\r\nEdit.DocumentEndExtend                            Text Editor::Ctrl+Shift+End\r\nEdit.DocumentEndExtend
+  \                           Windows Forms Designer::Shift+End\r\nEdit.DocumentEndExtend
+  \                           Log Windows (AnkhSVN)::Ctrl+Shift+End\r\nEdit.LineStart
+  \                                   Text Editor::Home\r\nEdit.LineStart                                    Log
+  Windows (AnkhSVN)::Home\r\nEdit.LineStartExtend                              Text
+  Editor::Shift+Home\r\nEdit.LineStartExtend                              Log Windows
+  (AnkhSVN)::Shift+Home\r\nEdit.LineEnd                                      Text
+  Editor::End\r\nEdit.LineEnd                                      Log Windows (AnkhSVN)::End\r\nEdit.LineEndExtend
+  \                               Text Editor::Shift+End\r\nEdit.LineEndExtend                                Log
+  Windows (AnkhSVN)::Shift+End\r\nEdit.PageUp                                       Text
+  Editor::PgUp\r\nEdit.PageUp                                       Log Windows (AnkhSVN)::PgUp\r\nEdit.PageUpExtend
+  \                                Text Editor::Shift+PgUp\r\nEdit.PageUpExtend                                 Log
+  Windows (AnkhSVN)::Shift+PgUp\r\nEdit.PageDown                                     Text
+  Editor::PgDn\r\nEdit.PageDown                                     Log Windows (AnkhSVN)::PgDn\r\nEdit.PageDownExtend
+  \                              Text Editor::Shift+PgDn\r\nEdit.PageDownExtend                               Log
+  Windows (AnkhSVN)::Shift+PgDn\r\nEdit.ViewTop                                      Text
+  Editor::Ctrl+PgUp\r\nEdit.ViewTop                                      Log Windows
+  (AnkhSVN)::Ctrl+PgUp\r\nEdit.ViewTopExtend                                Text Editor::Ctrl+Shift+PgUp\r\nEdit.ViewTopExtend
+  \                               Log Windows (AnkhSVN)::Ctrl+Shift+PgUp\r\nEdit.ViewBottom
+  \                                  Text Editor::Ctrl+PgDn\r\nEdit.ViewBottom                                   Log
+  Windows (AnkhSVN)::Ctrl+PgDn\r\nEdit.ViewBottomExtend                             Text
+  Editor::Ctrl+Shift+PgDn\r\nEdit.ViewBottomExtend                             Log
+  Windows (AnkhSVN)::Ctrl+Shift+PgDn\r\nEdit.ScrollLineUp                                 Text
+  Editor::Ctrl+Up Arrow\r\nEdit.ScrollLineUp                                 VC Dialog
+  Editor::Ctrl+Up Arrow\r\nEdit.ScrollLineUp                                 Log Windows
+  (AnkhSVN)::Ctrl+Up Arrow\r\nEdit.ScrollLineDown                               Text
+  Editor::Ctrl+Down Arrow\r\nEdit.ScrollLineDown                               VC
+  Dialog Editor::Ctrl+Down Arrow\r\nEdit.ScrollLineDown                               Log
+  Windows (AnkhSVN)::Ctrl+Down Arrow\r\nEdit.ScrollColumnLeft                             VC
+  Dialog Editor::Ctrl+Left Arrow\r\nEdit.ScrollColumnRight                            VC
+  Dialog Editor::Ctrl+Right Arrow\r\nEdit.MakeLowercase                                Text
+  Editor::Ctrl+U\r\nEdit.MakeUppercase                                Text Editor::Ctrl+Shift+U\r\nEdit.SwapAnchor
+  \                                  Text Editor::Ctrl+K, Ctrl+A\r\nEdit.GotoBrace
+  \                                   Text Editor::Ctrl+]\r\nEdit.GotoBraceExtend
+  \                             Text Editor::Ctrl+Shift+]\r\nEdit.OvertypeMode                                 Text
+  Editor::Ins\r\nEdit.LineCut                                      Text Editor::Ctrl+L\r\nEdit.LineDelete
+  \                                  Text Editor::Ctrl+Shift+L\r\nEdit.DeleteHorizontalWhiteSpace
+  \                  Text Editor::Ctrl+K, Ctrl+\\\r\nEdit.LineOpenAbove                                Text
+  Editor::Ctrl+Enter\r\nEdit.LineOpenBelow                                Text Editor::Ctrl+Shift+Enter\r\nEdit.ClearBookmarks
+  \                              Text Editor::Ctrl+K, Ctrl+L\r\nEdit.ToggleBookmark
+  \                              Text Editor::Ctrl+K, Ctrl+K\r\nEdit.NextBookmark
+  \                                Global::Ctrl+K, Ctrl+N\r\nEdit.PreviousBookmark
+  \                            Global::Ctrl+K, Ctrl+P\r\nEdit.CharTranspose                                Text
+  Editor::Ctrl+T\r\nEdit.WordTranspose                                Text Editor::Ctrl+Shift+T\r\nEdit.LineTranspose
+  \                               Text Editor::Shift+Alt+T\r\nEdit.SelectCurrentWord
+  \                           Text Editor::Ctrl+W\r\nEdit.WordDeleteToEnd                              Text
+  Editor::Ctrl+Del\r\nEdit.WordDeleteToStart                            Text Editor::Ctrl+Bkspce\r\nEdit.WordPrevious
+  \                                Text Editor::Ctrl+Left Arrow\r\nEdit.WordPreviousExtend
+  \                          Text Editor::Ctrl+Shift+Left Arrow\r\nEdit.WordNext                                     Text
+  Editor::Ctrl+Right Arrow\r\nEdit.WordNextExtend                               Text
+  Editor::Ctrl+Shift+Right Arrow\r\nEdit.SelectionCancel                              Text
+  Editor::Esc\r\nEdit.SelectionCancel                              Windows Forms Designer::Esc\r\nEdit.SelectionCancel
+  \                             Report Designer::Esc\r\nEdit.SelectionCancel                              Managed
+  Resources Editor::Esc\r\nEdit.SelectionCancel                              Settings
+  Designer::Esc\r\nEdit.ParameterInfo                                Workflow Designer::Ctrl+K,
+  Ctrl+P\r\nEdit.ParameterInfo                                Workflow Designer::Ctrl+K,
+  P\r\nEdit.ParameterInfo                                Workflow Designer::Ctrl+Shift+Space\r\nEdit.ParameterInfo
+  \                               Text Editor::Ctrl+Shift+Space\r\nEdit.ViewWhiteSpace
+  \                              Text Editor::Ctrl+R, Ctrl+W\r\nEdit.CompleteWord
+  \                                Workflow Designer::Ctrl+K, Ctrl+W\r\nEdit.CompleteWord
+  \                                Workflow Designer::Ctrl+K, W\r\nEdit.CompleteWord
+  \                                Workflow Designer::Ctrl+Space\r\nEdit.CompleteWord
+  \                                Workflow Designer::Alt+Right Arrow\r\nEdit.CompleteWord
+  \                                Text Editor::Ctrl+Space\r\nEdit.CompleteWord                                 Text
+  Editor::Alt+Right Arrow\r\nEdit.ListMembers                                  Workflow
+  Designer::Ctrl+K, L\r\nEdit.ListMembers                                  Workflow
+  Designer::Ctrl+K, Ctrl+L\r\nEdit.ListMembers                                  Workflow
+  Designer::Ctrl+J\r\nEdit.ListMembers                                  Text Editor::Ctrl+J\r\nEdit.FormatSelection
+  \                             Text Editor::Ctrl+K, Ctrl+F\r\nEdit.ToggleTaskListShortcut
+  \                      Text Editor::Ctrl+K, Ctrl+H\r\nEdit.QuickInfo                                    Workflow
+  Designer::Ctrl+K, I\r\nEdit.QuickInfo                                    Workflow
+  Designer::Ctrl+K, Ctrl+I\r\nEdit.QuickInfo                                    Text
+  Editor::Ctrl+K, Ctrl+I\r\nEdit.CharLeftExtendColumn                         Text
+  Editor::Shift+Alt+Left Arrow\r\nEdit.CharLeftExtendColumn                         Log
+  Windows (AnkhSVN)::Shift+Alt+Left Arrow\r\nEdit.CharRightExtendColumn                        Text
+  Editor::Shift+Alt+Right Arrow\r\nEdit.CharRightExtendColumn                        Log
+  Windows (AnkhSVN)::Shift+Alt+Right Arrow\r\nEdit.LineUpExtendColumn                           Text
+  Editor::Shift+Alt+Up Arrow\r\nEdit.LineUpExtendColumn                           Log
+  Windows (AnkhSVN)::Shift+Alt+Up Arrow\r\nEdit.LineDownExtendColumn                         Text
+  Editor::Shift+Alt+Down Arrow\r\nEdit.LineDownExtendColumn                         Log
+  Windows (AnkhSVN)::Shift+Alt+Down Arrow\r\nEdit.ToggleWordWrap                               Text
+  Editor::Ctrl+E, Ctrl+W\r\nEdit.IncrementalSearch                            Text
+  Editor::Ctrl+I\r\nEdit.ReverseIncrementalSearch                     Text Editor::Ctrl+Shift+I\r\nEdit.LineStartExtendColumn
+  \                       Text Editor::Shift+Alt+Home\r\nEdit.LineStartExtendColumn
+  \                       Log Windows (AnkhSVN)::Shift+Alt+Home\r\nEdit.LineEndExtendColumn
+  \                         Text Editor::Shift+Alt+End\r\nEdit.LineEndExtendColumn
+  \                         Log Windows (AnkhSVN)::Shift+Alt+End\r\nEdit.WordPreviousExtendColumn
+  \                    Text Editor::Ctrl+Shift+Alt+Left Arrow\r\nEdit.WordNextExtendColumn
+  \                        Text Editor::Ctrl+Shift+Alt+Right Arrow\r\nEdit.HideSelection
+  \                               Text Editor::Ctrl+M, Ctrl+H\r\nEdit.ToggleOutliningExpansion
+  \                    Text Editor::Ctrl+M, Ctrl+M\r\nEdit.ToggleAllOutlining                           Text
+  Editor::Ctrl+M, Ctrl+L\r\nEdit.StopOutlining                                Text
+  Editor::Ctrl+M, Ctrl+P\r\nEdit.StopHidingCurrent                            Text
+  Editor::Ctrl+M, Ctrl+U\r\nEdit.CollapsetoDefinitions                        Text
+  Editor::Ctrl+M, Ctrl+O\r\nEdit.CommentSelection                             Text
+  Editor::Ctrl+K, Ctrl+C\r\nEdit.UncommentSelection                           Text
+  Editor::Ctrl+K, Ctrl+U\r\nEdit.OpenFile                                     Global::Ctrl+Shift+G\r\nEdit.SelectToLastGoBack
+  \                          Text Editor::Ctrl+=\r\nEdit.FormatDocument                               Text
+  Editor::Ctrl+K, Ctrl+D\r\nEdit.IncreaseFilterLevel                          Workflow
+  Designer::Alt+.\r\nEdit.IncreaseFilterLevel                          Text Editor::Alt+.\r\nEdit.DecreaseFilterLevel
+  \                         Workflow Designer::Alt+,\r\nEdit.DecreaseFilterLevel                          Text
+  Editor::Alt+,\r\nView.ShowSmartTag                                 Global::Shift+Alt+F10\r\nView.ShowSmartTag
+  \                                HTML Editor Design View::Shift+Alt+F10\r\nView.ShowSmartTag
+  \                                Global::Ctrl+.\r\nEdit.CopyParameterTip                             Text
+  Editor::Ctrl+Shift+Alt+C\r\nEdit.PasteParameterTip                            Text
+  Editor::Ctrl+Shift+Alt+P\r\nFormat.InsertBookmark                             HTML
+  Editor Design View::Ctrl+Shift+L\r\nFormat.ConverttoHyperlink                         HTML
+  Editor Design View::Ctrl+L\r\nView.AutoCloseTagOverride                         HTML
+  Editor Source View::Ctrl+Alt+.\r\nView.EditMaster                                   HTML
+  Editor Design View::Ctrl+M, Ctrl+M\r\nEdit.InsertSnippet                                Global::Ctrl+K,
+  Ctrl+X\r\nEdit.CollapseTag                                  Text Editor::Ctrl+M,
+  Ctrl+T\r\nBuild.Compile                                     Global::Ctrl+F7\r\nProject.AddContentPage
+  \                           HTML Editor Design View::Ctrl+M, Ctrl+C\r\nView.ViewMarkup
+  \                                  HTML Editor Design View::Shift+F7\r\nEdit.NextBookmarkInFolder
+  \                        Global::Ctrl+Shift+K, Ctrl+Shift+N\r\nEdit.PreviousBookmarkInFolder
+  \                    Global::Ctrl+Shift+K, Ctrl+Shift+P\r\nFormat.TestDialog                                 VC
+  Dialog Editor::Ctrl+T\r\nFormat.SpaceAcross                                VC Dialog
+  Editor::Alt+Right Arrow\r\nFormat.SpaceAcross                                VC
+  Dialog Editor::Alt+Left Arrow\r\nFormat.SpaceDown                                  VC
+  Dialog Editor::Alt+Up Arrow\r\nFormat.SpaceDown                                  VC
+  Dialog Editor::Alt+Down Arrow\r\nFormat.ToggleGuides                               VC
+  Dialog Editor::Ctrl+G\r\nFormat.SizetoContent                              VC Dialog
+  Editor::Shift+F7\r\nFormat.CenterVertical                             VC Dialog
+  Editor::Ctrl+F9\r\nFormat.CenterHorizontal                           VC Dialog Editor::Ctrl+Shift+F9\r\nFormat.TabOrder
+  \                                  VC Dialog Editor::Ctrl+D\r\nFormat.ButtonRight
+  \                               VC Dialog Editor::Ctrl+R\r\nFormat.ButtonBottom
+  \                              VC Dialog Editor::Ctrl+B\r\nEdit.MoveControlLeft
+  \                             Global::Ctrl+Left Arrow\r\nEdit.MoveControlLeft                              Windows
+  Forms Designer::Ctrl+Left Arrow\r\nEdit.MoveControlLeft                              Report
+  Designer::Ctrl+Left Arrow\r\nEdit.MoveControlLeft                              VC
+  Dialog Editor::Left Arrow\r\nEdit.MoveControlDown                              Global::Ctrl+Down
+  Arrow\r\nEdit.MoveControlDown                              HTML Editor Design View::Ctrl+Down
+  Arrow\r\nEdit.MoveControlDown                              Windows Forms Designer::Ctrl+Down
+  Arrow\r\nEdit.MoveControlDown                              Report Designer::Ctrl+Down
+  Arrow\r\nEdit.MoveControlDown                              VC Dialog Editor::Down
+  Arrow\r\nEdit.MoveControlRight                             Global::Ctrl+Right Arrow\r\nEdit.MoveControlRight
+  \                            Windows Forms Designer::Ctrl+Right Arrow\r\nEdit.MoveControlRight
+  \                            Report Designer::Ctrl+Right Arrow\r\nEdit.MoveControlRight
+  \                            VC Dialog Editor::Right Arrow\r\nEdit.MoveControlUp
+  \                               Global::Ctrl+Up Arrow\r\nEdit.MoveControlUp                                HTML
+  Editor Design View::Ctrl+Up Arrow\r\nEdit.MoveControlUp                                Windows
+  Forms Designer::Ctrl+Up Arrow\r\nEdit.MoveControlUp                                Report
+  Designer::Ctrl+Up Arrow\r\nEdit.MoveControlUp                                VC
+  Dialog Editor::Up Arrow\r\nEdit.SizeControlDown                              Global::Ctrl+Shift+Down
+  Arrow\r\nEdit.SizeControlDown                              Windows Forms Designer::Ctrl+Shift+Down
+  Arrow\r\nEdit.SizeControlDown                              Report Designer::Ctrl+Shift+Down
+  Arrow\r\nEdit.SizeControlDown                              VC Dialog Editor::Shift+Down
+  Arrow\r\nEdit.SizeControlUp                                Global::Ctrl+Shift+Up
+  Arrow\r\nEdit.SizeControlUp                                Windows Forms Designer::Ctrl+Shift+Up
+  Arrow\r\nEdit.SizeControlUp                                Report Designer::Ctrl+Shift+Up
+  Arrow\r\nEdit.SizeControlUp                                VC Dialog Editor::Shift+Up
+  Arrow\r\nEdit.SizeControlLeft                              Global::Ctrl+Shift+Left
+  Arrow\r\nEdit.SizeControlLeft                              Windows Forms Designer::Ctrl+Shift+Left
+  Arrow\r\nEdit.SizeControlLeft                              Report Designer::Ctrl+Shift+Left
+  Arrow\r\nEdit.SizeControlLeft                              VC Dialog Editor::Shift+Left
+  Arrow\r\nEdit.SizeControlRight                             Global::Ctrl+Shift+Right
+  Arrow\r\nEdit.SizeControlRight                             Windows Forms Designer::Ctrl+Shift+Right
+  Arrow\r\nEdit.SizeControlRight                             Report Designer::Ctrl+Shift+Right
+  Arrow\r\nEdit.SizeControlRight                             VC Dialog Editor::Shift+Right
+  Arrow\r\nEdit.NewAccelerator                               VC Accelerator Editor::Ins\r\nEdit.NextKeyTyped
+  \                                VC Accelerator Editor::Ctrl+W\r\nImage.FlipHorizontal
+  \                             VC Image Editor::Ctrl+H\r\nImage.FlipVertical                                VC
+  Image Editor::Shift+Alt+H\r\nImage.Rotate90Degrees                             VC
+  Image Editor::Ctrl+Shift+H\r\nEdit.NewString                                    VC
+  String Editor::Ins\r\nFormat.CheckMnemonics                             VC Dialog
+  Editor::Ctrl+M\r\nImage.DrawOpaque                                  VC Image Editor::Ctrl+J\r\nImage.NewImageType
+  \                               VC Image Editor::Ins\r\nImage.ShowGrid                                    VC
+  Image Editor::Ctrl+Alt+S\r\nImage.ShowTileGrid                                VC
+  Image Editor::Ctrl+Shift+Alt+S\r\nImage.Magnify                                     VC
+  Image Editor::Ctrl+Shift+M\r\nImage.RectangleSelectionTool                      VC
+  Image Editor::Shift+Alt+S\r\nImage.EraseTool                                   VC
+  Image Editor::Ctrl+Shift+I\r\nImage.FillTool                                    VC
+  Image Editor::Ctrl+F\r\nImage.PencilTool                                  VC Image
+  Editor::Ctrl+I\r\nImage.BrushTool                                   VC Image Editor::Ctrl+B\r\nImage.AirbrushTool
+  \                               VC Image Editor::Ctrl+A\r\nImage.LineTool                                    VC
+  Image Editor::Ctrl+L\r\nImage.TextTool                                    VC Image
+  Editor::Ctrl+T\r\nImage.RectangleTool                               VC Image Editor::Alt+R\r\nImage.OutlinedRectangleTool
+  \                      VC Image Editor::Shift+Alt+R\r\nImage.FilledRectangleTool
+  \                        VC Image Editor::Ctrl+Shift+Alt+R\r\nImage.RoundedRectangleTool
+  \                       VC Image Editor::Alt+W\r\nImage.OutlinedRoundedRectangleTool
+  \               VC Image Editor::Shift+Alt+W\r\nImage.FilledRoundedRectangleTool
+  \                 VC Image Editor::Ctrl+Shift+Alt+W\r\nImage.EllipseTool                                 VC
+  Image Editor::Alt+P\r\nImage.OutlinedEllipseTool                         VC Image
+  Editor::Shift+Alt+P\r\nImage.FilledEllipseTool                           VC Image
+  Editor::Ctrl+Shift+Alt+P\r\nImage.MagnificationTool                           VC
+  Image Editor::Ctrl+M\r\nImage.LargerBrush                                 VC Image
+  Editor::Ctrl+=\r\nImage.SmallBrush                                  VC Image Editor::Ctrl+.\r\nImage.SmallerBrush
+  \                               VC Image Editor::Ctrl+-\r\nImage.ZoomIn                                      VC
+  Image Editor::Ctrl+Shift+.\r\nImage.ZoomIn                                      VC
+  Image Editor::Ctrl+Up Arrow\r\nImage.ZoomOut                                     VC
+  Image Editor::Ctrl+Shift+,\r\nImage.ZoomOut                                     VC
+  Image Editor::Ctrl+Down Arrow\r\nImage.PreviousColor                               VC
+  Image Editor::Ctrl+[\r\nImage.PreviousColor                               VC Image
+  Editor::Ctrl+Left Arrow\r\nImage.PreviousRightColor                          VC
+  Image Editor::Ctrl+Shift+[\r\nImage.PreviousRightColor                          VC
+  Image Editor::Ctrl+Shift+Left Arrow\r\nImage.NextColor                                   VC
+  Image Editor::Ctrl+]\r\nImage.NextColor                                   VC Image
+  Editor::Ctrl+Right Arrow\r\nImage.NextRightColor                              VC
+  Image Editor::Ctrl+Shift+]\r\nImage.NextRightColor                              VC
+  Image Editor::Ctrl+Shift+Right Arrow\r\nEdit.ShowTileGrid                                 Global::Enter\r\nEdit.MoveControlUpGrid
+  \                           Global::Up Arrow\r\nEdit.MoveControlDownGrid                          Global::Down
+  Arrow\r\nEdit.MoveControlLeftGrid                          Global::Left Arrow\r\nEdit.MoveControlRightGrid
+  \                        Global::Right Arrow\r\nEdit.SizeControlRightGrid                         Global::Shift+Right
+  Arrow\r\nEdit.SizeControlUpGrid                            Global::Shift+Up Arrow\r\nEdit.SizeControlLeftGrid
+  \                         Global::Shift+Left Arrow\r\nEdit.SizeControlDownGrid                          Global::Shift+Down
+  Arrow\r\nEdit.SelectNextControl                            Global::Tab\r\nEdit.SelectPreviousControl
+  \                       Global::Shift+Tab\r\nRefactor.Rename                                   Global::Ctrl+R,
+  Ctrl+R\r\nRefactor.ExtractMethod                            Global::Ctrl+R, Ctrl+M\r\nRefactor.EncapsulateField
+  \                        Global::Ctrl+R, Ctrl+E\r\nRefactor.ExtractInterface                         Global::Ctrl+R,
+  Ctrl+I\r\nRefactor.RemoveParameters                         Global::Ctrl+R, Ctrl+V\r\nRefactor.ReorderParameters
+  \                       Global::Ctrl+R, Ctrl+O\r\nEdit.GenerateMethod                               Global::Ctrl+K,
+  Ctrl+M\r\nEdit.SurroundWith                                 Global::Ctrl+K, Ctrl+S\r\nWindow.ShowEzMDIFileList
+  \                         Global::Ctrl+Alt+Down Arrow\r\nWindow.NextToolWindowNav
+  \                         Global::Alt+F7\r\nWindow.PreviousToolWindowNav                      Global::Shift+Alt+F7\r\nView.ClassViewGoToSearchCombo
+  \                    Global::Ctrl+K, Ctrl+V\r\nView.ObjectBrowserGoToSearchCombo
+  \                Global::Ctrl+K, Ctrl+R\r\nView.Backward                                     Global::Alt+Left
+  Arrow\r\nView.Forward                                      Global::Alt+Right Arrow\r\nView.CodeDefinitionWindow
+  \                        Global::Ctrl+\\, D\r\nView.CodeDefinitionWindow                         Global::Ctrl+\\,
+  Ctrl+D\r\nView.ServerExplorer                               Global::Ctrl+Alt+S\r\nEditorContextMenus.CodeWindow.ViewCallHierarchy
+  \  Global::Ctrl+K, Ctrl+T\r\nEditorContextMenus.CodeWindow.ViewCallHierarchy   Global::Ctrl+K,
+  T\r\nEdit.ToggleCompletionMode                         Text Editor::Ctrl+Alt+Space\r\nEdit.NextHighlightedReference
+  \                    Text Editor::Ctrl+Shift+Down Arrow\r\nEdit.PreviousHighlightedReference
+  \                Text Editor::Ctrl+Shift+Up Arrow\r\nFormat.AlignBottoms                               VC
+  Dialog Editor::Ctrl+Shift+Down Arrow\r\nFormat.AlignMiddles                               VC
+  Dialog Editor::F9\r\nFormat.AlignLefts                                 VC Dialog
+  Editor::Ctrl+Shift+Left Arrow\r\nFormat.AlignRights                                VC
+  Dialog Editor::Ctrl+Shift+Right Arrow\r\nFormat.AlignTops                                  VC
+  Dialog Editor::Ctrl+Shift+Up Arrow\r\nFormat.AlignCenters                               VC
+  Dialog Editor::Shift+F9\r\nEdit.Copy                                         Global::Ctrl+C\r\nEdit.Copy
+  \                                        Global::Ctrl+Ins\r\nEdit.Cut                                          Global::Ctrl+X\r\nEdit.Cut
+  \                                         Global::Shift+Del\r\nEdit.Delete                                       Global::Del\r\nEdit.Delete
+  \                                      Class Diagram::Ctrl+Del\r\nEdit.Paste                                        Global::Ctrl+V\r\nEdit.Paste
+  \                                       Global::Shift+Ins\r\nFile.Print                                        Global::Ctrl+P\r\nEdit.Redo
+  \                                        Global::Ctrl+Y\r\nEdit.Redo                                         Global::Ctrl+Shift+Z\r\nEdit.Redo
+  \                                        Global::Shift+Alt+Bkspce\r\nEdit.SelectAll
+  \                                   Global::Ctrl+A\r\nView.Toolbox                                      Global::Ctrl+Alt+X\r\nEdit.Undo
+  \                                        Global::Ctrl+Z\r\nEdit.Undo                                         Global::Alt+Bkspce\r\nFormat.Bold
+  \                                      HTML Editor Design View::Ctrl+B\r\nFormat.Italic
+  \                                    HTML Editor Design View::Ctrl+I\r\nFormat.Underline
+  \                                 HTML Editor Design View::Ctrl+U\r\nEdit.Find                                         Global::Ctrl+F\r\nQueryDesigner.SQL
+  \                                Query Designer::Ctrl+3\r\nQueryDesigner.SQL                                 View
+  Designer::Ctrl+3\r\nQueryDesigner.Diagram                             Query Designer::Ctrl+1\r\nQueryDesigner.Diagram
+  \                            View Designer::Ctrl+1\r\nQueryDesigner.Results                             Query
+  Designer::Ctrl+4\r\nQueryDesigner.Results                             View Designer::Ctrl+4\r\nQueryDesigner.Criteria
+  \                           Query Designer::Ctrl+2\r\nQueryDesigner.Criteria                            View
+  Designer::Ctrl+2\r\nEdit.Remove                                       Managed Resources
+  Editor::Del\r\nDebug.StopDebugging                               Global::Shift+F5\r\nDebug.BreakAll
+  \                                   Global::Ctrl+Alt+Break\r\nView.Refresh                                      Team
+  Foundation Build Detail Editor::F5\r\nQueryDesigner.ExecuteSQL                          Query
+  Designer::Ctrl+R\r\nQueryDesigner.ExecuteSQL                          View Designer::Ctrl+R\r\nQueryDesigner.GotoRow
+  \                            Query Designer::Ctrl+G\r\nQueryDesigner.GotoRow                             View
+  Designer::Ctrl+G\r\nDebug.Threads                                     Global::Ctrl+Alt+H\r\nFile.NewProject
+  \                                  Global::Ctrl+Shift+N\r\nFile.OpenProject                                  Global::Ctrl+Shift+O\r\nProject.AddNewItem
+  \                               Global::Ctrl+Shift+A\r\nFile.NewFile                                      Global::Ctrl+N\r\nFile.OpenFile
+  \                                    Global::Ctrl+O\r\nFile.SaveAll                                      Global::Ctrl+Shift+S\r\nFile.Exit
+  \                                        Global::Alt+F4\r\nEdit.Replace                                      Global::Ctrl+H\r\nEdit.GoTo
+  \                                        Global::Ctrl+G\r\nView.PropertyPages                                Global::Shift+F4\r\nView.FullScreen
+  \                                  Global::Shift+Alt+Enter\r\nView.SolutionExplorer
+  \                            Global::Ctrl+Alt+L\r\nView.PropertiesWindow                             Global::F4\r\nView.TaskList
+  \                                    Global::Ctrl+\\, T\r\nView.TaskList                                     Global::Ctrl+\\,
+  Ctrl+T\r\nView.Output                                       Global::Ctrl+Alt+O\r\nView.ObjectBrowser
+  \                               Global::Ctrl+Alt+J\r\nView.DocumentOutline                              Global::Ctrl+Alt+T\r\nDebug.Immediate
+  \                                  Global::Ctrl+Alt+I\r\nDebug.Locals                                      Global::Ctrl+Alt+V,
+  L\r\nDebug.CallStack                                   Global::Ctrl+Alt+C\r\nProject.AddExistingItem
+  \                          Global::Shift+Alt+A\r\nDebug.StepInto                                    Global::F11\r\nDebug.StepOver
+  \                                   Global::F10\r\nDebug.StepOut                                     Global::Shift+F11\r\nDebug.RunToCursor
+  \                                Global::Ctrl+F10\r\nDebug.QuickWatch                                  Global::Shift+F9\r\nDebug.QuickWatch
+  \                                 Global::Ctrl+Alt+Q\r\nDebug.ToggleBreakpoint                            Global::F9\r\nDebug.DeleteAllBreakpoints
+  \                       Global::Ctrl+Shift+F9\r\nDebug.SetNextStatement                            Global::Ctrl+Shift+F10\r\nDebug.ShowNextStatement
+  \                          Global::Alt+Num *\r\nEdit.FindinFiles                                  Global::Ctrl+Shift+F\r\nEdit.ReplaceinFiles
+  \                              Global::Ctrl+Shift+H\r\nEdit.GoToNextLocation                             Global::F8\r\nEdit.GoToPrevLocation
+  \                            Global::Shift+F8\r\nWindow.NextTab                                    Global::Ctrl+PgDn\r\nWindow.PreviousTab
+  \                               Global::Ctrl+PgUp\r\nWindow.PreviousTab                                HTML
+  Editor Design View::Ctrl+PgUp\r\nWindow.PreviousTab                                HTML
+  Editor Source View::Ctrl+PgUp\r\nWindow.CloseToolWindow                            Global::Shift+Esc\r\nWindow.ActivateDocumentWindow
+  \                    Global::Esc\r\nWindow.MovetoNavigationBar                        Global::Ctrl+F2\r\nDebug.Start
+  \                                      Global::F5\r\nDebug.Restart                                     Global::Ctrl+Shift+F5\r\nWindow.NextPane
+  \                                  Global::Alt+F6\r\nWindow.PreviousPane                               Global::Shift+Alt+F6\r\nView.ErrorList
+  \                                   Global::Ctrl+\\, E\r\nView.ErrorList                                    Global::Ctrl+\\,
+  Ctrl+E\r\nFile.SaveSelectedItems                            Global::Ctrl+S\r\nView.ViewDesigner
+  \                                HTML Editor Source View::Shift+F7\r\nView.ViewCode
+  \                                    Settings Designer::F7\r\nView.ViewCode                                     Class
+  Diagram::Enter\r\nFile.ViewinBrowser                                Global::Ctrl+Shift+W\r\nView.EditLabel
+  \                                   Global::F2\r\nDebug.Exceptions                                  Global::Ctrl+Alt+E\r\nView.ToggleDesigner
+  \                              Global::F7\r\nEdit.StopSearch                                   Global::Alt+F3,
+  S\r\nDebug.StartWithoutDebugging                       Global::Ctrl+F5\r\nEdit.FindNext
+  \                                    Global::F3\r\nEdit.FindPrevious                                 Global::Shift+F3\r\nEdit.FindNextSelected
+  \                            Global::Ctrl+F3\r\nEdit.FindPreviousSelected                         Global::Ctrl+Shift+F3\r\nDebug.EnableBreakpoint
+  \                           Global::Ctrl+F9\r\nHelp.F1Help                                       Global::F1\r\nClassViewContextMenus.ClassViewMultiselectProjectreferencesItems.PropertiesGlobal::Alt+Enter\r\nTools.GoToCommandLine
+  \                            Global::Ctrl+/\r\nView.ClassView                                    Global::Ctrl+Shift+C\r\nWindow.NextSplitPane
+  \                             Global::F6\r\nWindow.PreviousSplitPane                          Global::Shift+F6\r\nWindow.NextDocumentWindow
+  \                        Global::Ctrl+F6\r\nWindow.PreviousDocumentWindow                     Global::Ctrl+Shift+F6\r\nEdit.CycleClipboardRing
+  \                          Global::Ctrl+Shift+V\r\nEdit.CycleClipboardRing                           Global::Ctrl+Shift+Ins\r\nWindow.CloseDocumentWindow
+  \                       Global::Ctrl+F4\r\nWindow.CloseDocumentWindow                        Work
+  Item Editor::Esc\r\nView.CommandWindow                                Global::Ctrl+Alt+A\r\nDebug.Autos
+  \                                      Global::Ctrl+Alt+V, A\r\nView.NavigateBackward
+  \                            Global::Ctrl+-\r\nView.NavigateForward                              Global::Ctrl+Shift+-\r\nBuild.BuildSolution
+  \                              Global::Ctrl+Shift+B\r\nBuild.Cancel                                      Global::Ctrl+Break\r\nEdit.GoToDefinition
+  \                              Global::F12\r\nEdit.GoToDeclaration                              Global::Ctrl+F12\r\nProject.Override
+  \                                 Global::Ctrl+Alt+Ins\r\nEdit.FindSymbol                                   Global::Alt+F12\r\nView.FindSymbolResults
+  \                           Global::Ctrl+Alt+F12\r\nView.ResourceView                                 Global::Ctrl+Shift+E\r\nHelp.WindowHelp
+  \                                  Global::Shift+F1\r\nView.NextView                                     HTML
+  Editor Design View::Ctrl+PgDn\r\nView.NextView                                     HTML
+  Editor Source View::Ctrl+PgDn\r\nTools.AttachtoProcess                             Global::Ctrl+Alt+P\r\nView.PopBrowseContext
+  \                            Global::Ctrl+Shift+8\r\nView.BrowseNext                                   Global::Ctrl+Shift+1\r\nView.BrowsePrevious
+  \                              Global::Ctrl+Shift+2\r\nEdit.QuickFindSymbol                              Global::Shift+Alt+F12\r\nView.BookmarkWindow
+  \                              Global::Ctrl+K, Ctrl+W\r\nTools.CodeSnippetsManager
+  \                        Global::Ctrl+K, Ctrl+B\r\nWindow.NextDocumentWindowNav
+  \                     Global::Ctrl+Tab\r\nWindow.PreviousDocumentWindowNav                  Global::Ctrl+Shift+Tab\r\nView.ForwardBrowseContext
+  \                        Global::Ctrl+Shift+7\r\nEdit.FindAllReferences                            Global::Shift+F12\r\nWindow.ShowDockMenu
+  \                              Global::Alt+-\r\nTools.ForceGC                                     Global::Ctrl+Shift+Alt+F12,
+  Ctrl+Shift+Alt+F12\r\nView.ZoomIn                                       Global::Ctrl+Shift+.\r\nView.ZoomOut
+  \                                     Global::Ctrl+Shift+,\r\nEdit.ExpandAllOutlining
+  \                          Text Editor::Ctrl+M, Ctrl+X\r\nEdit.CollapseAllOutlining
+  \                        Text Editor::Ctrl+M, Ctrl+A\r\nEdit.ExpandCurrentRegion
+  \                         Text Editor::Ctrl+M, Ctrl+E\r\nEdit.CollapseCurrentRegion
+  \                       Text Editor::Ctrl+M, Ctrl+S\r\nView.NextError                                    Global::Ctrl+Shift+F12\r\nView.WebBrowser
+  \                                  Global::Ctrl+Alt+R\r\nHelp.ViewHelp                                     Global::Ctrl+F1\r\nHelp.ManageHelpSettings
+  \                          Global::Ctrl+Alt+F1\r\nData.StepInto                                     Global::Alt+F5\r\nData.Execute
+  \                                     Global::Ctrl+Alt+F5\r\nEditorContextMenus.CodeWindow.RunSelection
+  \       Global::Ctrl+Q\r\nDebug.Breakpoints                                 Global::Ctrl+Alt+B\r\nDebug.Disassembly
+  \                                Global::Ctrl+Alt+D\r\nDebug.Registers                                   Global::Ctrl+Alt+G\r\nDebug.Modules
+  \                                    Global::Ctrl+Alt+U\r\nDebug.ApplyCodeChanges
+  \                           Global::Alt+F10\r\nDebug.Processes                                   Global::Ctrl+Alt+Z\r\nDebug.LocationToolbar.ToggleFlaggedThreads
+  \       Global::Ctrl+9\r\nDebug.BreakatFunction                             Global::Ctrl+B\r\nDebug.StepIntoCurrentProcess
+  \                     Global::Ctrl+Alt+F11\r\nDebug.StepOverCurrentProcess                      Global::Ctrl+Alt+F10\r\nDebug.StepOutCurrentProcess
+  \                      Global::Ctrl+Shift+Alt+F11\r\nDebug.LocationToolbar.ToggleCurrentThreadFlaggedStateGlobal::Ctrl+8\r\nDebug.StepIntoSpecific
+  \                           Global::Shift+Alt+F11\r\nEditorContextMenus.CodeWindow.Breakpoint.BreakpointEditlabelsGlobal::Alt+F9,
+  L\r\nDebuggerContextMenus.BreakpointsWindow.Delete     Global::Alt+F9, D\r\nDebuggerContextMenus.BreakpointsWindow.GoToSourceCodeGlobal::Alt+F9,
+  S\r\nDebuggerContextMenus.BreakpointsWindow.GoToDisassemblyGlobal::Alt+F9, A\r\nDebug.ToggleDisassembly
+  \                          Global::Ctrl+F11\r\nDebug.Memory1                                     Global::Ctrl+Alt+M,
+  1\r\nDebug.Watch1                                      Global::Ctrl+Alt+W, 1\r\nDebug.Memory2
+  \                                    Global::Ctrl+Alt+M, 2\r\nDebug.Watch2                                      Global::Ctrl+Alt+W,
+  2\r\nDebug.Memory3                                     Global::Ctrl+Alt+M, 3\r\nDebug.Watch3
+  \                                     Global::Ctrl+Alt+W, 3\r\nDebug.Memory4                                     Global::Ctrl+Alt+M,
+  4\r\nDebug.Watch4                                      Global::Ctrl+Alt+W, 4\r\nImage.CopyandOutlineSelection
+  \                    VC Image Editor::Ctrl+Shift+U\r\nImage.UseSelectionasBrush
+  \                        VC Image Editor::Ctrl+U\r\nEditorContextMenus.CodeWindow.AddView
+  \            Global::Ctrl+M, Ctrl+V\r\nProjectandSolutionContextMenus.Project.Add.ControllerGlobal::Ctrl+M,
+  Ctrl+C\r\nEditorContextMenus.CodeWindow.GoToView            Global::Ctrl+M, Ctrl+G\r\nOtherContextMenus.ASPXContext.GoToController
+  \     HTML Editor Source View::Ctrl+M, Ctrl+G\r\nView.CallHierarchy                                Global::Ctrl+Alt+K\r\nProject.ClassWizard
+  \                              Global::Ctrl+Shift+X\r\nEdit.NavigateTo                                   Global::Ctrl+,\r\nData.Column
+  \                                      DataSet Editor::Ctrl+L\r\nData.InsertColumn
+  \                                DataSet Editor::Ins\r\nXsdDesigner.ShowStartView
+  \                        XML Schema Designer::Ctrl+1\r\nXsdDesigner.ShowContentModelView
+  \                 XML Schema Designer::Ctrl+2\r\nXsdDesigner.ShowGraphView                         XML
+  Schema Designer::Ctrl+3\r\nGraphView.LefttoRight                             XML
+  Schema Designer::Alt+Right Arrow\r\nGraphView.RighttoLeft                             XML
+  Schema Designer::Alt+Left Arrow\r\nGraphView.ToptoBottom                             XML
+  Schema Designer::Alt+Down Arrow\r\nGraphView.BottomtoTop                             XML
+  Schema Designer::Alt+Up Arrow\r\nOtherContextMenus.GraphView.RemovefromWorkspace
+  \  XML Schema Designer::Del\r\nTest.TestResults.RunCheckedTests                  Global::Ctrl+R,
+  F\r\nTestResults.RunAllTestsInTestResults              Global::Ctrl+R, D\r\nTest.RunTestsInClass
+  \                             Global::Ctrl+R, C\r\nTest.DebugTestsInClass                            Global::Ctrl+R,
+  Ctrl+C\r\nTest.RunTestsInNamespace                          Global::Ctrl+R, N\r\nTest.DebugTestsInNamespace
+  \                       Global::Ctrl+R, Ctrl+N\r\nTest.RunTestsInCurrentContext
+  \                    Global::Ctrl+R, T\r\nTest.RunAllTestsInSolution                        Global::Ctrl+R,
+  A\r\nTest.DebugTestsInCurrentContext                   Global::Ctrl+R, Ctrl+T\r\nTest.DebugAllTestsInSolution
+  \                     Global::Ctrl+R, Ctrl+A\r\nTestResults.DebugCheckedTests                     Global::Ctrl+R,
+  Ctrl+F\r\nTestResults.DebugAllTestsInTestResults            Global::Ctrl+R, Ctrl+D\r\nWorkflowDesigner.GoToParent
+  \                      Workflow Designer::Ctrl+E, Ctrl+P\r\nWorkflowDesigner.GoToParent
+  \                      Workflow Designer::Ctrl+E, P\r\nWorkflowDesigner.ExpandInPlace
+  \                   Workflow Designer::Ctrl+E, Ctrl+E\r\nWorkflowDesigner.ExpandInPlace
+  \                   Workflow Designer::Ctrl+E, E\r\nWorkflowDesigner.Collapse                         Workflow
+  Designer::Ctrl+E, Ctrl+C\r\nWorkflowDesigner.Collapse                         Workflow
+  Designer::Ctrl+E, C\r\nWorkflowDesigner.ExpandAll                        Workflow
+  Designer::Ctrl+E, Ctrl+X\r\nWorkflowDesigner.ExpandAll                        Workflow
+  Designer::Ctrl+E, X\r\nWorkflowDesigner.NavigateThroughDesigner          Workflow
+  Designer::Ctrl+Alt+F6\r\nWorkflowDesigner.ShowHideArgumentDesigner         Workflow
+  Designer::Ctrl+E, Ctrl+A\r\nWorkflowDesigner.ShowHideArgumentDesigner         Workflow
+  Designer::Ctrl+E, A\r\nWorkflowDesigner.ShowHideVariableDesigner         Workflow
+  Designer::Ctrl+E, Ctrl+V\r\nWorkflowDesigner.ShowHideVariableDesigner         Workflow
+  Designer::Ctrl+E, V\r\nWorkflowDesigner.ShowHideImportsDesigner          Workflow
+  Designer::Ctrl+E, Ctrl+I\r\nWorkflowDesigner.ShowHideImportsDesigner          Workflow
+  Designer::Ctrl+E, I\r\nWorkflowDesigner.ShowHideOverviewMap              Workflow
+  Designer::Ctrl+E, Ctrl+O\r\nWorkflowDesigner.ShowHideOverviewMap              Workflow
+  Designer::Ctrl+E, O\r\nWorkflowDesigner.CreateVariable                   Workflow
+  Designer::Ctrl+E, Ctrl+N\r\nWorkflowDesigner.CreateVariable                   Workflow
+  Designer::Ctrl+E, N\r\nWorkflowDesigner.ConnectNodes                     Workflow
+  Designer::Ctrl+E, Ctrl+F\r\nWorkflowDesigner.ConnectNodes                     Workflow
+  Designer::Ctrl+E, F\r\nWorkflowDesigner.ZoomIn                           Workflow
+  Designer::Ctrl+Num +\r\nWorkflowDesigner.ZoomOut                          Workflow
+  Designer::Ctrl+Num -\r\nWorkflowDesigner.MoveFocus                        Workflow
+  Designer::Ctrl+E, Ctrl+M\r\nWorkflowDesigner.MoveFocus                        Workflow
+  Designer::Ctrl+E, M\r\nWorkflowDesigner.ToggleSelection                  Workflow
+  Designer::Ctrl+E, Ctrl+S\r\nWorkflowDesigner.ToggleSelection                  Workflow
+  Designer::Ctrl+E, S\r\nOtherContextMenus.FSIConsoleContext.CancelEvaluationF# Interactive::Ctrl+.\r\nProjectandSolutionContextMenus.Item.MoveUp
+  \       Global::Alt+Up Arrow\r\nProjectandSolutionContextMenus.Item.MoveDown      Global::Alt+Down
+  Arrow\r\nEdit.UpdateJScriptIntellisense                    HTML Editor Source View::Ctrl+Shift+J\r\nTable.ColumntotheLeft
+  \                            HTML Editor Design View::Ctrl+Alt+Left Arrow\r\nTable.ColumntotheRight
+  \                           HTML Editor Design View::Ctrl+Alt+Right Arrow\r\nTable.RowAbove
+  \                                   HTML Editor Design View::Ctrl+Alt+Up Arrow\r\nTable.RowBelow
+  \                                   HTML Editor Design View::Ctrl+Alt+Down Arrow\r\nView.ASP.NETNonvisualControls
+  \                    HTML Editor Design View::Ctrl+Shift+N\r\nView.SynchronizeViews
+  \                            HTML Editor Source View::Ctrl+Shift+Y\r\nXML.StartXSLTDebugging
+  \                           XML (Text) Editor::Alt+F5\r\nXML.StartXSLTWithoutDebugging
+  \                    XML (Text) Editor::Ctrl+Alt+F5\r\nData.ShowDataSources                              Global::Shift+Alt+D\r\nQueryDesigner.JoinMode
+  \                           Query Designer::Ctrl+Shift+J\r\nQueryDesigner.JoinMode
+  \                           View Designer::Ctrl+Shift+J\r\nQueryDesigner.CancelRetrievingData
+  \               Query Designer::Ctrl+T\r\nQueryDesigner.CancelRetrievingData                View
+  Designer::Ctrl+T\r\nDebug.ParallelTasks                               Global::Ctrl+Shift+D,
+  K\r\nDebug.ParallelStacks                              Global::Ctrl+Shift+D, S\r\nView.ReportData
+  \                                  Report Designer::Ctrl+Alt+D\r\nOtherContextMenus.ORDesignerContextMenu.HideMethodsPaneVisualStudio::Ctrl+1\r\nTeamFoundationContextMenus.Annotate.TfsAnnotateMovePreviousRegionText
+  Editor::Alt+PgUp\r\nTeamFoundationContextMenus.Annotate.TfsAnnotateMoveNextRegionText
+  Editor::Alt+PgDn\r\nEdit.RefreshWorkItem                              Work Item
+  Editor::F5\r\nTeam.GotoPreviousWorkItem                         Work Item Results
+  View::Shift+Alt+P\r\nTeam.GotoNextWorkItem                             Work Item
+  Results View::Shift+Alt+N\r\nTeam.Refresh                                      Work
+  Item Query View::F5\r\nTeam.Refresh                                      Work Item
+  Results View::F5\r\nEdit.CreateCopyofWorkItem                         Work Item
+  Query View::Shift+Alt+C\r\nEdit.CreateCopyofWorkItem                         Work
+  Item Results View::Shift+Alt+C\r\nEdit.CreateCopyofWorkItem                         Work
+  Item Editor::Shift+Alt+C\r\nTeam.NewLinkedWorkItem                            Work
+  Item Query View::Shift+Alt+L\r\nTeam.NewLinkedWorkItem                            Work
+  Item Results View::Shift+Alt+L\r\nTeam.NewLinkedWorkItem                            Work
+  Item Editor::Shift+Alt+L\r\nEdit.Outdent                                      Work
+  Item Query View::Shift+Alt+Left Arrow\r\nEdit.Outdent                                      Work
+  Item Results View::Shift+Alt+Left Arrow\r\nEdit.Indent                                       Work
+  Item Query View::Shift+Alt+Right Arrow\r\nEdit.Indent                                       Work
+  Item Results View::Shift+Alt+Right Arrow\r\nWindow.Toggle                                     Work
+  Item Query View::Shift+Alt+V\r\nWindow.Toggle                                     Work
+  Item Results View::Shift+Alt+V\r\nTools.RunTemporaryMacro                           Global::Ctrl+Shift+P\r\nTools.RecordTemporaryMacro
+  \                       Global::Ctrl+Shift+R\r\nView.MacroExplorer                                Global::Alt+F8\r\nTools.MacrosIDE
+  \                                  Global::Alt+F11\r\nResources.Strings                                 Managed
+  Resources Editor::Ctrl+1\r\nResources.Images                                  Managed
+  Resources Editor::Ctrl+2\r\nResources.Icons                                   Managed
+  Resources Editor::Ctrl+3\r\nResources.Audio                                   Managed
+  Resources Editor::Ctrl+4\r\nResources.Files                                   Managed
+  Resources Editor::Ctrl+5\r\nResources.Other                                   Managed
+  Resources Editor::Ctrl+6\r\nEdit.ExpandCollapseBaseTypeList                   Class
+  Diagram::Shift+Alt+B\r\nEdit.NavigateToLollipop                           Class
+  Diagram::Shift+Alt+L\r\nClassDiagram.Collapse                             Class
+  Diagram::Num -\r\nClassDiagram.Expand                               Class Diagram::Num
+  +\r\nEdit.RemovefromDiagram                            Class Diagram::Del\r\nExplorerUp
+  \                                       Source Control Explorers (AnkhSVN)::Alt+Up
+  Arrow\r\nExplorerUp                                        Source Control Explorers
+  (AnkhSVN)::Bkspce\r\nView.DatabaseExplorer                             Entity Developer
+  Model Editor::Ctrl+Alt+D\r\nView.DatabaseExplorer                             Entity
+  Developer Model Editor::Ctrl+Alt+S\r\nView.DatabaseExplorer                             Entity
+  Developer Model Editor::Ctrl+Alt+D\r\nView.DatabaseExplorer                             Entity
+  Developer Model Editor::Ctrl+Alt+D\r\nView.DatabaseExplorer                             Entity
+  Developer Model Editor::Ctrl+Alt+D\r\nView.ModelExplorer                                Entity
+  Developer Model Editor::Ctrl+Alt+M\r\nView.ModelExplorer                                Entity
+  Developer Model Editor::Shift+Alt+P\r\nView.ModelExplorer                                Entity
+  Developer Model Editor::Ctrl+Alt+M\r\nView.ModelExplorer                                Entity
+  Developer Model Editor::Ctrl+Alt+M\r\nView.ModelExplorer                                Entity
+  Developer Model Editor::Ctrl+Alt+M\r\nView.DiagramOverview                              Entity
+  Developer Model Editor::Ctrl+Alt+O\r\nView.DiagramOverview                              Entity
+  Developer Model Editor::Ctrl+Alt+O\r\nView.DiagramOverview                              Entity
+  Developer Model Editor::Ctrl+Alt+O\r\nView.DiagramOverview                              Entity
+  Developer Model Editor::Ctrl+Alt+O\r\nView.DiagramOverview                              Entity
+  Developer Model Editor::Ctrl+Alt+O\r\nView.FindinModel                                  Entity
+  Developer Model Editor::Ctrl+F\r\nView.FindinModel                                  Entity
+  Developer Model Editor::Ctrl+F\r\nView.FindinModel                                  Entity
+  Developer Model Editor::Ctrl+F\r\nView.FindinModel                                  Entity
+  Developer Model Editor::Ctrl+F\r\nTools.UpdateModelFromDatabase                     Entity
+  Developer Model Editor::Ctrl+Alt+U\r\nTools.UpdateModelFromDatabase                     Entity
+  Developer Model Editor::Ctrl+Alt+U\r\nTools.UpdateModelFromDatabase                     Entity
+  Developer Model Editor::Ctrl+Alt+U\r\nTools.UpdateModelFromDatabase                     Entity
+  Developer Model Editor::Ctrl+Alt+U\r\nTools.UpdateDatabaseFromModel                     Entity
+  Developer Model Editor::Ctrl+Alt+F\r\nTools.UpdateDatabaseFromModel                     Entity
+  Developer Model Editor::Ctrl+Alt+F\r\nTools.UpdateDatabaseFromModel                     Entity
+  Developer Model Editor::Ctrl+Alt+F\r\nTools.UpdateDatabaseFromModel                     Entity
+  Developer Model Editor::Ctrl+Alt+F\r\nTools.GenerateDatabaseFromModel                   Entity
+  Developer Model Editor::Ctrl+Alt+G\r\nTools.GenerateDatabaseFromModel                   Entity
+  Developer Model Editor::Ctrl+Alt+G\r\nTools.GenerateDatabaseFromModel                   Entity
+  Developer Model Editor::Ctrl+Alt+G\r\nTools.GenerateDatabaseFromModel                   Entity
+  Developer Model Editor::Ctrl+Alt+G\r\nTools.NewQuery                                    Entity
+  Developer Model Editor::Ctrl+Q\r\nTools.NewQuery                                    Entity
+  Developer Model Editor::Ctrl+Q\r\nTools.NewQuery                                    Entity
+  Developer Model Editor::Ctrl+Q\r\nTools.NewQuery                                    Entity
+  Developer Model Editor::Ctrl+Q\r\nTools.NewQuery                                    Entity
+  Developer Model Editor::Ctrl+Q\r\nTools.Templates                                   Entity
+  Developer Model Editor::Ctrl+Alt+T\r\nTools.Templates                                   Entity
+  Developer Model Editor::Ctrl+Alt+T\r\nTools.Templates                                   Entity
+  Developer Model Editor::Ctrl+Alt+T\r\nTools.Templates                                   Entity
+  Developer Model Editor::Ctrl+Alt+T\r\nTools.Templates                                   Entity
+  Developer Model Editor::Ctrl+Alt+T\r\nData.DataGeneratorPopulate                        Data
+  Generator::F5\r\nData.SqlEditorExecuteSql                          Transact-SQL
+  Editor::Ctrl+Shift+E\r\nData.SqlEditorValidateSqlSyntax                   Transact-SQL
+  Editor::Ctrl+F5\r\nData.SqlEditorCancelQueryExecution                Transact-SQL
+  Editor::Alt+Break\r\nData.SqlEditorResultsAsGrid                       Transact-SQL
+  Editor::Ctrl+Shift+D\r\nData.SqlEditorResultsAsText                       Transact-SQL
+  Editor::Ctrl+T\r\nData.SqlEditorResultsAsFile                       Transact-SQL
+  Editor::Ctrl+Shift+T\r\nSqlEditorNextPane                                 Transact-SQL
+  Editor::Ctrl+F6\r\nSqlEditorPreviousPane                             Transact-SQL
+  Editor::Ctrl+Shift+F6\r\nData.SqlEditorToggleResultsPane                   Transact-SQL
+  Editor::Ctrl+Shift+Alt+R\r\nSqlEditorNewQuery                                 Transact-SQL
+  Editor::Ctrl+N\r\nEdit.RefreshLocalCache                            Transact-SQL
+  Editor::Ctrl+K, Ctrl+R\r\nEdit.RefreshLocalCache                            Transact-SQL
+  Editor::Ctrl+K, R\r\nEdit.AlignAssignments                             Global::Ctrl+Alt+]\r\nWindow.NextDocumentWellTab
+  \                       Global::Ctrl+Alt+PgDn\r\nWindow.PreviousDocumentWellTab
+  \                   Global::Ctrl+Alt+PgUp\r\nWindow.GoToPinnedTab1                             Global::Ctrl+Num
+  1\r\nWindow.GoToPinnedTab2                             Global::Ctrl+Num 2\r\nWindow.GoToPinnedTab3
+  \                            Global::Ctrl+Num 3\r\nWindow.GoToPinnedTab4                             Global::Ctrl+Num
+  4\r\nWindow.GoToPinnedTab5                             Global::Ctrl+Num 5\r\nWindow.GoToPinnedTab6
+  \                            Global::Ctrl+Num 6\r\nWindow.GoToPinnedTab7                             Global::Ctrl+Num
+  7\r\nWindow.GoToPinnedTab8                             Global::Ctrl+Num 8\r\nWindow.GoToPinnedTab9
+  \                            Global::Ctrl+Num 9\r\nWindow.GoToPinnedTab10                            Global::Ctrl+Num
+  0\r\nWindow.GoToUnpinnedTab1                           Global::Ctrl+Alt+Num 1\r\nWindow.GoToUnpinnedTab2
+  \                          Global::Ctrl+Alt+Num 2\r\nWindow.GoToUnpinnedTab3                           Global::Ctrl+Alt+Num
+  3\r\nWindow.GoToUnpinnedTab4                           Global::Ctrl+Alt+Num 4\r\nWindow.GoToUnpinnedTab5
+  \                          Global::Ctrl+Alt+Num 5\r\nWindow.GoToUnpinnedTab6                           Global::Ctrl+Alt+Num
+  6\r\nWindow.GoToUnpinnedTab7                           Global::Ctrl+Alt+Num 7\r\nWindow.GoToUnpinnedTab8
+  \                          Global::Ctrl+Alt+Num 8\r\nWindow.GoToUnpinnedTab9                           Global::Ctrl+Alt+Num
+  9\r\nWindow.GoToUnpinnedTab10                          Global::Ctrl+Alt+Num 0\r\nTools.AddEndTokenAtTheEnd
+  \                        Text Editor::Shift+Enter\r\nEdit.MoveLineUp                                   Text
+  Editor::Alt+Up Arrow\r\nEdit.MoveLineDown                                 Text Editor::Alt+Down
+  Arrow\r\nView.QuickAccess                                  Global::Ctrl+3\r\nView.QuickAccessBack
+  \                             Global::Ctrl+Shift+3\r\nEdit.GoToFindCombo                                Global::Ctrl+D\r\nDebug.LocationToolbar.ProcessCombo
+  \               Global::Ctrl+5\r\nDebug.LocationToolbar.ThreadCombo                 Global::Ctrl+6\r\nDebug.LocationToolbar.StackFrameCombo
+  \            Global::Ctrl+7\r\n\r\n\r\n\r\nrich trifles and serious bagatelles provided
+  by chris blazek\r\n"

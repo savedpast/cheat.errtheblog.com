@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>http://i3wm.org/docs/userguide.html
+
+KEYBINDINGS
+       Here is a short overview of the default keybindings:
+
+       j/k/l/;
+           Direction keys (left, down, up, right). They are on your homerow
+           (see the mark on your &quot;j&quot; key). Alternatively, you can use the
+           cursor keys.
+
+       Mod1+&lt;direction&gt;
+           Focus window in &lt;direction&gt;.
+
+       Mod3+&lt;direction&gt;
+           Focus container in &lt;direction&gt;.
+
+       Mod1+Shift+&lt;direction&gt;
+           Move window to &lt;direction&gt;.
+
+       Mod3+Shift+&lt;direction&gt;
+           Move container to &lt;direction&gt;.
+
+       Mod1+Control+&lt;direction&gt;
+           Snap container to &lt;direction&gt;.
+
+       Mod1+&lt;number&gt;
+           Switch to workspace &lt;number&gt;.
+
+       Mod1+Shift+&lt;number&gt;
+           Move window to workspace &lt;number&gt;.
+
+       Mod1+f
+           Toggle fullscreen mode.
+
+       Mod1+h
+           Enable stacking layout for the current container.
+
+       Mod1+e
+           Enable default layout for the current container.
+
+       Mod1+Shift+Space
+           Toggle tiling/floating for the current window.
+
+       Mod1+t
+           Select the first tiling window if the current window is floating
+           and vice-versa.
+
+       Mod1+Shift+q
+           Kills the current window. This is equivalent to &quot;clicking on the
+           close button&quot;, meaning a polite request to the application to close
+           this window. For example, Firefox will save its session upon such a
+           request. If the application does not support that, the window will
+           be killed and it depends on the application what happens.
+
+       Mod1+Shift+r
+           Restarts i3 in place (without losing any windows, but the layout).
+
+       Mod1+Shift+e
+           Exits i3.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

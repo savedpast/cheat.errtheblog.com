@@ -1,0 +1,36 @@
+---
+nerd_tree: ! 'The NERD tree : A tree explorer plugin for navigating the filesystem
+
+  http://www.vim.org/scripts/script.php?script_id=1658
+
+
+  Commands
+
+  --------
+
+  :NERDTree Open the NERD tree
+
+  o         Open selected file, or expand selected dir
+
+  go        Open selected file, but leave cursor in the NERDTree
+
+  t         Open selected node in a new tab
+
+  T         Same as ''t'' but keep the focus on the current tab
+
+  <tab>     Open selected file in a split window
+
+  g<tab>    Same as <tab>, but leave the cursor on the NERDTree
+
+  !         Execute the current file
+
+  O         Recursively open the selected directory
+
+  x         Close the current nodes parent
+
+  X         Recursively close all children of the current node
+
+  e         Open a netrw for the current dir
+
+
+  Source: http://my.opera.com/subjam/blog/vim-tips'

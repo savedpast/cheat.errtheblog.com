@@ -1,0 +1,2 @@
+---
+network_interface_mac_address: /etc/udev/rules.d/70-persistent-net.rules

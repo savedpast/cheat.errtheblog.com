@@ -1,0 +1,9 @@
+---
+monit: ! 'Debugging
+
+  ---------
+
+  Sometimes is hard to debug monit. If you want to simulate the PATH that monit uses,
+  you can do "env -i PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/sh" in your bash console
+  and then call the command that you want to debug, maybe some start program value
+  from your monitrc.'

@@ -1,0 +1,10 @@
+---
+flickrurl: ! "FLICKR URL\n==========\n\nFORMAT:\n-------\nhttp://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}.jpg\nhttp://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}_[mstb].jpg\nhttp://farm{farm-id}.static.flickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)\n\n=
+  Sizes:\ns\tsmall square 75x75\nt\tthumbnail, 100 on longest side\nm\tsmall, 240
+  on longest side\n-\tmedium, 500 on longest side\nb\tlarge, 1024 on longest side
+  (only exists for very large original images)\no\toriginal image, either a jpg, gif
+  or png, depending on source format\n\n= Example:\nhttp://farm1.static.flickr.com/2/1418878_1e92283336_m.jpg\n\nfarm-id:
+  1\nserver-id: 2\nphoto-id: 1418878\nsecret: 1e92283336\nsize: m\n\nWEBPAGE URL:\n------------\nhttp://www.flickr.com/people/{user-id}/
+  - profile\nhttp://www.flickr.com/photos/{user-id}/ - photostream\nhttp://www.flickr.com/photos/{user-id}/{photo-id}
+  - individual photo\nhttp://www.flickr.com/photos/{user-id}/sets/ - all photosets\nhttp://www.flickr.com/photos/{user-id}/sets/{photoset-id}
+  - single photoset\n\n= Example:\nhttp://www.flickr.com/photos/12037949754@N01/\nhttp://www.flickr.com/photos/12037949754@N01/155761353/\nhttp://www.flickr.com/photos/12037949754@N01/sets/\nhttp://www.flickr.com/photos/12037949754@N01/sets/72157594162136485/"

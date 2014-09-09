@@ -1,0 +1,32 @@
+---
+textadept: ! "File\n  New           CTRL+n\n  Open          CTRL+o\n  Open Recent
+  \  ALT+o\n  Save          CTRL+s\n  Save As       CTRL+S\n  Close         CTRL+w\n
+  \ Close All     CTRL+W\n  Quit          ALT+q\n\nEdit\n  Undo              CTRL+z\n
+  \ Redo              CTRL+y\n  Cut               CTRL+x\n  Copy              CTRL+c\n
+  \ Paste             CTRL+v\n  Delete            DEL\n  Select All        CTRL+a\n
+  \ Grow Selection    ALT+s g\n  Match Brace       CTRL+e\n  Select to Brace   CTRL+E\n
+  \ Autocomplete      CTRL+ENTER\n  Block Comment     CTRL+q\n\nEnclose In\n  Tags
+  <>           ALT+c t\n  Single Tag < />   ALT+c s t\n  Single Quotes ''  ALT+c '\n
+  \ Double Quotes \"\"  ALT+c \"\n  Parentheses ()    ALT+c (\n  Brackes []        ALT+c
+  [\n  Braces {}         ALT+c {\n  Spaces            ALT+c c\n\nSelect In\n  Tags
+  <>             ALT+s t\n  Single Quotes ''    ALT+s '\n  Double Quotes \"\"    ALT+s
+  \"\n  Parentheses ()      ALT+s (\n  Brackets []         ALT+s [\n  Braces {}           ALT+s
+  {\n  Current Word        ALT+s w\n  Current Line        ALT+s l\n  Current Paragraph
+  \  ALT+s p\n  Current Block       ALT+s b\n  Current Scope       ALT+s s\n\nSearch\n
+  \ Find/Replace    CTRL+f\n  Find Next       ALT+n\n  Find Previous   ALT+p\n  Replace
+  \        ALT+r\n  Find in Files   ALT+i\n  Go To Line      CTRL+g\n\nTools\n  Command
+  Entry   F2\n  Run             CTRL+r\n  Compile         CTRL+R\n\nSnippets\n  Insert
+  \         TAB\n  Previous        SHIFT+TAB\n  Cancel Current  CTRL+ALT+i\n  List
+  \           CTRL+ALT+I\n  Show Style      ALT+I\n\nMultiple Line Editing\n  Add
+  \              CTRL+m a\n  Add Multiple      CTRL+m A\n  Remove            CTRL+m
+  r\n  Remove Multiple   CTRL+m R\n  Update            CTRL+m u\n  Clear             CTRL+m
+  c\n\nBuffers\n  Next                        CTRL+TAB\n  Previous                    CTRL+ALT+TAB\n
+  \ Toggle View EOL             CTRL+t v e\n  Toggle Wrap Mode            CTRL+t v
+  w\n  Toggle Indentation Guides   CTRL+t v i\n  Toggle Use Tabs             CTRL+t
+  v TAB\n  Toggle View Whitespace      CTRL+t v SPACE\n  Refresh Highlighting        F5\n\nViews\n
+  \ Next              CTRL+ALT+v n\n  Previous          CTRL+ALT+v p\n  Split Horizontal
+  \ CTRL+ALT+v s\n  Split Vertical    CTRL+ALT+v S\n  Unsplit           CTRL+ALT+v
+  w\n  Unsplit All       CTRL+ALT+v W\n\nProject Manager\n  Hide                    CTRL+P\n
+  \ Show                    CTRL+p\n  Activate ctags          CTRL+ALT+p c\n  Activate
+  buffers        CTRL+ALT+p b\n  Activate file browser   CTRL+ALT+p f\n  Activate
+  modules        CTRL+ALT+p m"

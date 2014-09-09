@@ -1,0 +1,29 @@
+---
+mongoid: ! "EXAMPLE\r\n=======\r\n  class User\r\n    include Mongoid::Document\r\n
+  \   include Mongoid::Timestamps # adds automagic fields created_at, updated_at\r\n
+  \   references_many :posts\r\n    embeds_one :profile, :dependent => :destroy\r\n
+  \   field :fieldname, :type => Array / BigDecimal / Boolean / Date / DateTime\r\n
+  \                            / Float / Hash / Integer / String / Symbol / Time\r\n
+  \   index :fieldname\r\n  end\r\n\r\nRELATIONS\r\n=========\r\n  EMBEDDING DATA
+  IN THE SAME TABLE:\r\n\r\n  embeds_one :profile\r\n  embeds_many :settings\r\n  embedded_in
+  :user, :inverse_of => :settings\r\n\r\n  REFERENCING DATA IN AN OTHER TABLE:\r\n\r\n
+  \ belongs_to :user\r\n  has_one :profile, :inverse_of => user\r\n  has_many :photos,
+  :inverse_of => user\r\n\r\n\r\nPERSISTENCE\r\n===========\r\n\r\n  In order to make
+  sure data is actually to be written to disk, you need to tell\r\n  mongoid\r\n\r\n
+  \ .safely.save\r\n\r\n  (!Mongoid only fires the callback of the document that the
+  persistence action was executed on)\r\n\r\nQUERIES\r\n=======\r\n\r\n  .where(:amount.gt
+  => 100, :active => true)\r\n  .any_in(:category => array)\r\n  .all_in(:category
+  => array)\r\n  .any_of({ :shape => \"round\" }, { :color => \"red\" })\r\n  .and(:amount.gt
+  => 100, :account_status => \"active\")\r\n  .excludes(:status => \"blocked\")\r\n
+  \ .not_in(:status => [\"blocked\", \"unverified\"])\r\n  .only(:first_name, :last_name)
+  # only retrieve these fields\r\n  .limit(20)\r\n  .skip(100)\r\n\r\nORDER\r\n=====\r\n\r\n
+  \ .desc(:last_name).asc(:first_name)\r\n  .order_by(:last_name.desc, :first_name.asc,
+  :city.desc)\r\n\r\nCRITERIAS\r\n=========\r\n\r\n  .where(:title.all => [\"Sir\"])\r\n
+  \ .where(:age.exists => true)\r\n  .where(:age.gt => 18)\r\n  .where(:age.gte =>
+  18)\r\n  .where(:title.in => [\"Sir\", \"Madam\"])\r\n  .where(:age.lt => 55)\r\n
+  \ .where(:age.lte => 55)\r\n  .where(:title.ne => \"Mr\")\r\n  .where(:title.nin
+  => [\"Esquire\"])\r\n  .where(:aliases.size => 2)\r\n  .where(:location.near =>
+  [ 22.5, -21.33 ])\r\n  .where(:location.within => { \"$center\" => [ [ 50, -40 ],
+  1 ] })\r\n\r\nCALCULATIONS\r\n============\r\n\r\n  .max(:age)\r\n  .min(:quantity)\r\n
+  \ .sum(:total)\r\n\r\nRAKE TASKS\r\n\r\n  db:create\r\n  db:create_indexes\r\n  db:drop\r\n
+  \ db:migrate\r\n  db:schema:load\r\n  db:seed\r\n  db:setup\r\n  db:test:prepare"

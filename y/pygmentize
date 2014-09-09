@@ -1,0 +1,10 @@
+---
+pygmentize: ! "# Pygmentize\n\n  ## If you want HTML output\n\n  pygmentize -f html
+  -l python -o test.html test.py\n  \n  ## To create a full HTML document, including
+  line numbers and stylesheet\n\n  pygmentize -O full,style=emacs -o test.html test.py\n\n
+  \ ## Lexer and formatter options can be given using the -O option:\n\n  pygmentize
+  -f html -O style=colorful,linenos=1 -l python test.py\n\n  ## List lexers, formatters,
+  styles or filters\n\n  pygmentize -L\n  pygmentize -L \"styles\"\n\n  # In general\n
+  \ \n  pygmentize -f latex -O full -l c code.c > code.tex \n  pygmentize -f html
+  -O full -l css reset.css > reset.html\n  pygmentize -O full,style=emacs -o setup.html
+  setup.py\n  pygmentize -f html -O full,style=murphy -l css reset.css > reset.html"

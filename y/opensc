@@ -1,0 +1,20 @@
+---
+opensc: ! "OpenSC summary cheat sheet\n\nThese hints are from: http://www.mayrhofer.eu.org/Default.aspx?pageindex=6&pageid=78\nI
+  take no credit for Rene's work!\n\nTo get reader numbers for other commands:\n\topensc-tool
+  -l \n\n\"Formatting\" a card with PKCS#15 structures:\n\tpkcs15-init -r 1 --erase-card
+  --create-pkcs15 --no-so-pin --label 'rmayrhofer' \n\nDefining a new PIN:\n\tpkcs15-init
+  -r 1 --store-pin --label 'rmayrhofer PIN' --auth-id 01\n\nGenerating a new keypair
+  on the card:\n\tpkcs15-init -r 1 --generate-key 'rsa/1024' --auth-id 01 --label
+  'test key 1' --public-key-label 'public test key 1' --split-key\n\nImporting an
+  existing keypair and corresponding X.509 certificate:\n\tpkcs15-init -r 1 --store-private-key
+  gibraltar/CA/private/styx.key --id 45 --auth-id 01 --label 'test key 2 for IPSec'
+  --split-key\n\tpkcs15-init -r 1 --store-certificate gibraltar/CA/styx.pem --id 45
+  --auth-id 01 --label 'public test certificate 2 for IPSec'\n\nImporting a PKCS#12
+  file containing the certificate and private key:\n\tpkcs15-init -r 1 --store-private-key
+  gibraltar/CA/private/styx.p12 --format PKCS12 --id 45 --auth-id 01 --label 'test
+  key 2 for IPSec' --split-key\n\nListing PINs that can be used (or are already used)
+  for protecting keys:\n\tpkcs15-tool --reader 1 --list-keys\n\nListing private and
+  corresponding public keys:\n\tpkcs15-tool --reader 1 --list-keys\n\tpkcs15-tool
+  --reader 1 --list-public-keys\n\nListing X.509 certificates stored on the card:\n\tpkcs15-tool
+  --reader 1 --list-certificates\n\nQuerying a key and output in ssh format:\n pkcs15-tool
+  --reader 1 --read-ssh-key 45\n ssh-keygen -D 1"

@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>VeeWee GEM for building Vagrant virtual machines
+https://github.com/jedi4ever/veewee
+----------
+
+vagrant basebox templates
+  - List all the VM templates
+
+vagrant basebox define [new_name] [template_name]
+  - Copies the template into a new definition to modify
+
+vagrant basebox build [new_name]
+  - Builds out your definition file into a virtual machine
+
+vagrant basebox validate [new_name]
+  - Runs rspec tests against the new image
+
+vagrant basebox export [new_name]
+  - Exports the new image into a .box file for import
+
+vagrant basebox list
+  - Lists all the installed boxes
+
+vagrant basebox destroy [box_name]
+
+vagrant box add [new_name] [new_name].box
+  - Imports the box file
+
+vagrant box list
+  - Lists all the boxes installed by Vagrant
+
+vagrant box remove [box_name]
+  - Removed the box from VirtualBox
+
+vagrant init [new_name]
+  - Initializes the new VM and creates the Vagrantfile to modify
+  - DOC: http://vagrantup.com/docs/vagrantfile.html
+
+vagrant up
+  - Starts your VM's based on the Vagrantfile
+
+vagrant ssh
+  - SSH into the machine
+
+vagrant destroy
+  - Removes the VM structure based on the Vagrantfile</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

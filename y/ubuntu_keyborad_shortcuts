@@ -1,0 +1,58 @@
+---
+ubuntu_keyborad_shortcuts: ! "Desktop shortcuts\r\n-----------------\r\n\r\nAlt +
+  F1\r\nOpen the Applications menu\r\n\r\nAlt + F2\r\nRun an application by typing
+  its name in the box which appears\r\n\r\nPrt Sc\r\n(Print Screen) Take a screenshot
+  of the whole screen\r\n\r\nAlt + Prt Sc\r\nTake a screenshot of the current window\r\n\r\nWindow
+  shortcuts\r\n----------------\r\n\r\nAlt + Tab\r\nSwitch between currently-open
+  windows.\r\n\r\nCtrl + Alt + Left/Right Cursor\r\nLets you quickly switch between
+  your Workspaces.\r\n\r\nThese might not work on every machine, but are reasonably
+  common:\r\n\r\nAlt+F7\r\nMoves the current window (can be moved with mouse or keyboard).\r\n\r\nAlt+F8\r\nResizes
+  current window (again, can be moved with mouse or keyboard).\r\n\r\nAlt+F9\r\nMinimises
+  current window.\r\n\r\nAlt+F10\r\nMaximises current window.\r\n\r\nAlt+Space\r\nBrings
+  up window menu with with 'Always on Top' and 'Minimise' and 'Maximise' and above
+  commands.\r\n\r\nThese might change depending on the application you're using, but
+  work for most common applications:\r\n\r\nAlt+F5\r\nReturns window to 'normal' or
+  previous size.\r\n\r\nAlt+F4\r\nCloses window.\r\n\r\nDesktop Effects enabled shortcuts\r\n---------------------------------\r\n\r\nCtrl
+  + Alt + Left/Right Cursor\r\nSpins the 'cube' that your workspaces reside on, allowing
+  you to select the workspace you wish to use.\r\n\r\nCtrl + Alt + Up Cursor\r\nEnables
+  an 'expose' like feature that presents you with all the windows you currently have
+  open, allowing you to select the one you wish to give focus to.\r\n\r\nCtrl + Alt
+  + Down Cursor\r\nUnfolds your workspace cube allowing you to see more than one of
+  your workspaces at once, using the left and right cursor keys with this active will
+  allow you to select the workspace you wish to use.\r\n\r\nCtrl + Alt + Tab\r\nSwitch
+  between currently-open windows across all workspaces.\r\n\r\nSuper + W\r\nEnables
+  the 'scale' effect, it shows all windows from the current workspace.\r\n\r\nSuper
+  + A\r\nEnables the 'scale' effect, it shows all windows from all workspaces.\r\n\r\nSuper
+  + N\r\nInvert colours of the focused window.\r\n\r\nSuper + M\r\nInvert colours
+  for the whole screen.\r\n\r\nSuper + Mouse Scroll Wheel\r\nZooms in on the screen.\r\n\r\nSuper
+  + Middle Mouse Button\r\nSelect a region to zoom into, using a rectangle.\r\n\r\nCtrl
+  + Alt + D\r\nToggles 'Show Desktop'.\r\n\r\nAlt + Middle Mouse Button\r\nResize
+  focused window.\r\n\r\nAlt + Left Mouse Button\r\nMove focused window.\r\n\r\nAlt
+  + Right Mouse Button\r\nShow window menu.\r\n\r\nCommon application shortcuts\r\n----------------------------\r\n\r\nCtrl
+  + C\r\nCopy the selected text/object\r\n\r\nCtrl + X\r\nCut the selected text/object\r\n\r\nCtrl
+  + V\r\nPaste/insert the selected text/object\r\n\r\nCtrl + A\r\nSelect all text\r\n\r\nCtrl
+  + B\r\nMake the selected text bold\r\n\r\nCtrl + I\r\nMake the selected text italic\r\n\r\nCtrl
+  + U\r\nUnderline the selected text\r\n\r\nCtrl + N\r\nOpen a new document or window\r\n\r\nCtrl
+  + S\r\nSave the current document\r\n\r\nCtrl + O\r\nOpen another document\r\n\r\nCtrl
+  + P\r\nPrint the current document\r\n\r\nCtrl + Z\r\nUndo the last change you made\r\n\r\nCtrl
+  + Shift + Z\r\nRedo a change that you just undid\r\n\r\nSystem shortcuts\r\n----------------\r\n\r\nCtrl
+  + Alt + Delete\r\nRestart the computer immediately, without saving open files\r\n\r\nCtrl
+  + Alt + Plus (numeric keypad)\r\nRotate through supported screen resolutions\r\n\r\nCtrl
+  + Alt + Minus (numeric keypad)\r\nRotate backwards through supported screen resolutions\r\n\r\nFirefox
+  Web Browser\r\n-------------------\r\n\r\nCtrl + T\r\nOpen a new tab\r\n\r\nCtrl
+  + Tab\r\nRotate through each tab\r\n\r\nCtrl + Shift + Tab\r\nRotate backwards through
+  each tab\r\n\r\nCtrl + W\r\nClose the current tab (or browser if on last tab)\r\n\r\nCtrl
+  + L\r\nEnter a new web address\r\n\r\nCtrl + B\r\nShow a list of your bookmarks\r\n\r\nCtrl
+  + H\r\nShow your browsing history\r\n\r\nCtrl + K\r\nEnter a new web search in the
+  search bar\r\n\r\nCtrl + Y\r\nShow a list of downloaded files\r\n\r\nF11\r\nDisplay
+  the current page full-screen\r\n\r\nEsc\r\nStop loading the current page\r\n\r\nCtrl
+  + R\r\nReload the current page\r\n\r\nThese might not work for everyone, but can
+  help with accessibility issues:\r\n\r\nAlt Gr+Space\r\nScrolls current tab/window
+  down.\r\n\r\nAlt Gr+Backspace\r\nScrolls current tab/window up. You may find Alt
+  Gr+Shift+Space works if Alt Gr+Backspace does not.\r\n\r\nOpenOffice.org Writer\r\n---------------------\r\n\r\nF7\r\nCheck
+  the spelling of the current document\r\n\r\nCtrl + F\r\nFind and replace words\r\n\r\nCtrl
+  + Z\r\nUndo the last change\r\n\r\nCtrl + Y\r\nRedo a change which you just undid\r\n\r\nCtrl
+  + L\r\nAlign the current paragraph/selection to the left\r\n\r\nCtrl + E\r\nAlign
+  the current paragraph/selection to the center of the document\r\n\r\nCtrl + R\r\nAlign
+  the current paragraph/selection to the right\r\n\r\nCtrl + Shift + J\r\nShow the
+  current document full-screen"

@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>How do I control my Twitter through tweet.IM?
+Just type your Twitter message to twitter.tweet.im or your-username.tweet.im and it will appear in your timeline. Type a single keyword help to see more commands. Current commands include:
+
+@username message — public reply/send a message to this person
+
+d username message — sends a direct message to this person
+
+
+f username — follow this person
+
+u username — unfollow this person
+
+
+p username — information on user profile
+
+ing — list people you follow (following)
+
+ers &amp;mdashl list people that follow you (followers)
+
+
+ss — show saved searches
+
+sd searchname — delete saved search
+
+sa query — save a search query
+
+
+ts — show your current tweet mode: on, off or auto
+
+tm mode — set tweet mode where mode is:
+
+    on - always receive tweets
+
+    off - never receive tweets
+
+    auto - receive tweets depending on your current status</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

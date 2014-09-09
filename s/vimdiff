@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Commands:
+]c :        - next difference
+[c :        - previous difference
+Ctrl+w +w   - switch windows
+do          - diff obtain
+dp          - diff put
+zo          - open folded text
+zc          - close folded text
+:diffupdate - re-scan the files for differences
+
+MOVING BETWEEN WINDOWS 
+        CTRL-W h        move to the window on the left 
+        CTRL-W j        move to the window below 
+        CTRL-W k        move to the window above 
+        CTRL-W l        move to the window on the right 
+        CTRL-W t        move to the TOP window 
+        CTRL-W b        move to the BOTTOM window 
+  Moving windows 
+
+        CTRL-W K        move window to the upper 
+        CTRL-W H        move window to the far left 
+        CTRL-W J        move window to the bottom 
+        CTRL-W L        move window to the far right</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

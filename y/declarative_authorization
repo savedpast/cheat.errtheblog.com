@@ -1,0 +1,39 @@
+---
+declarative_authorization: ! "Controllers\n\n    class EmployeesController < ApplicationController\n
+  \     filter_resource_access\n      ...\n    end\n    \n    \n\n    class EmployeesController
+  < ApplicationController\n      filter_access_to :all\n      def index\n        ...\n
+  \     end\n      ...\n    end\n\n\n\n    class EmployeesController < ApplicationController\n
+  \     filter_access_to :all\n      # this one would be included in :all, but :read
+  seems to be\n      # a more suitable privilege than :auto_complete_for_user_name\n
+  \     filter_access_to :auto_complete_for_employee_name, :require => :read\n      def
+  auto_complete_for_employee_name\n        ...\n      end\n      ...\n    end\n\n\n\n
+  \   class EmployeesController < ApplicationController\n      filter_access_to :update,
+  :attribute_check => true\n      def update\n        # @employee is already loaded
+  from param[:id] because of :attribute_check\n      end\n    end\n\n\n\n    class
+  EmployeesController < ApplicationController\n      before_filter :new_employee_from_params,
+  :only => :create\n      before_filter :new_employee, :only => [:index, :new]\n      filter_access_to
+  :all, :attribute_check => true\n\n      def create\n        @employee.save!\n      end\n\n
+  \     protected\n      def new_employee_from_params\n        @employee = Employee.new(params[:employee])\n
+  \     end\n    end\n\n\n\nViews\n\n    <% permitted_to? :create, :employees do %>\n
+  \   <%= link_to 'New', new_employee_path %>\n    <% end %>\n\n\n\n    <% permitted_to?
+  :create, Branch.new(:company => @company) do\n            # or @company.branches.new\n
+  \           # or even @company.branches %>\n    <%= link_to 'New', new_company_branch_path(@company)
+  %>\n    <% end %>\n\n\n\n    <% for employee in @employees %>\n    <%= link_to 'Edit',
+  edit_employee_path(employee) if permitted_to? :update, employee %>\n    <% end %>\n\nModels\n\n
+  \   class Employee < ActiveRecord::Base\n      using_access_control\n      ...\n
+  \   end\n    \n    \n    Employee.with_permissions_to(:read)\n\n    Employee.with_permissions_to(:read).find(:all,
+  :conditions => ...)\n\nAuthorization Rules\n\n    authorization do\n      role :admin
+  do\n        has_permission_on :employees, :to => [:create, :read, :update, :delete]\n
+  \     end\n    end\n\n\n    authorization do\n      role :admin do\n        has_permission_on
+  :employees, :to => :manage\n      end\n    end\n\n    privileges do\n      privilege
+  :manage do\n        includes :create, :read, :update, :delete\n      end\n    end\n\n\n
+  \   privileges do\n      privilege :manage, :employees, :includes => :increase_salary\n
+  \   end\n\n    authorization do\n      role :branch_admin do\n        has_permission_on
+  :employees do\n          to :manage\n          # user refers to the current_user
+  when evaluating\n          if_attribute :branch => is {user.branch}\n        end\n
+  \     end\n    end\n\n\n    authorization do\n      role :branch_admin do\n        has_permission_on
+  :branches, :to => :manage do\n          if_attribute :managers => contains {user}\n
+  \       end\n\n        has_permission_on :employees, :to => :manage do\n          if_permitted_to
+  :manage, :branch\n          # instead of\n          #if_attribute :branch => {:managers
+  => contains {user}}\n        end\n      end\n    end\n\n      role :project_manager
+  do\n        includes :employee\n      end"

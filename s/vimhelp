@@ -1,0 +1,112 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Basics
+   ======
+
+   :e filename			    Open filename for edition
+   :w				    Save file
+   :q				    Exit Vim
+   :w!				    Exit Vim without saving
+
+   Search
+   ======
+
+   /word			    Search word from top to bottom
+   ?word			    Search word from bottom to top
+   /jo[ha]n			    Search john or joan
+   /\&lt; the			    Search the, theatre or then
+   /the\&gt;			    Search the or breathe
+   /\&lt; the\&gt;			    Search the
+   /\&lt; ¦.\&gt;			    Search all words of 4 letters
+   /\/				    Search fred but not alfred or frederick
+   /fred\|joe			    Search fred or joe
+   /\&lt;\d\d\d\d\&gt;		    Search exactly 4 digits
+   /^\n\{3}			    Find 3 empty lines
+   :bufdo /searchstr/		    Search in all open files
+
+   Replace
+   =======
+
+   :%s/old/new/g		    Replace all occurences of old by new in file
+   :%s/old/new/gw		    Replace all occurences with confirmation
+   :2,35s/old/new/g		    Replace all occurences between lines 2 and 35
+   :5,$s/old/new/g		    Replace all occurences from line 5 to EOF
+   :%s/^/hello/g		    Replace the begining of each line by hello
+   :%s/$/Harry/g		    Replace the end of each line by Harry
+   :%s/onward/forward/gi	    Replace onward by forward, case unsensitive
+   :%s/ *$//g			    Delete all white spaces
+   :g/string/d			    Delete all lines containing string
+   :v/string/d			    Delete all lines containing which didn’t contain string
+   :s/Bill/Steve/		    Replace the first occurence of Bill by Steve in current line
+   :s/Bill/Steve/g		    Replace Bill by Steve in current line
+   :%s/Bill/Steve/g		    Replace Bill by Steve in all the file
+   :%s/\r//g			    Delete DOS carriage returns (^M)
+   :%s/\r/\r/g			    Transform DOS carriage returns in returns
+   :%s#&lt;[^&gt;]\+&gt;##g		    Delete HTML tags but keeps text
+   :%s/^\(.*\)\n\1$/\1/		    Delete lines which appears twice
+   Ctrl+a			    Increment number under the cursor
+   Ctrl+x			    Decrement number under cursor
+   ggVGg?			    Change text to Rot13
+
+   Case
+   =======
+
+   Vu				    Lowercase line
+   VU				    Uppercase line
+   g~~				    Invert case
+   vEU				    Switch word to uppercase
+   vE~				    Modify word case
+   ggguG			    Set all text to lowercase
+   :set ignorecase		    Ignore case in searches
+   :set smartcase		    Ignore case in searches excepted if an uppercase letter is used
+   :%s/\&lt;./\u&amp;/g		    Sets first letter of each word to uppercase
+   :%s/\&lt;./\l&amp;/g		    Sets first letter of each word to lowercase
+   :%s/.*/\u&amp;			    Sets first letter of each line to uppercase
+   :%s/.*/\l&amp;			    Sets first letter of each line to lowercase
+
+   Read/Write files
+   ================
+
+   :1,10 w outfile		    Saves lines 1 to 10 in outfile
+   :1,10 w &gt;&gt; outfile		    Appends lines 1 to 10 to outfile
+   :r infile			    Insert the content of infile
+   :23r infile			    Insert the content of infile under line 23
+
+   File explorer
+   =============
+
+   :e .				    Open integrated file explorer
+   :Sex				    Split window and open integrated file explorer
+   :browse e			    Graphical file explorer
+   :ls				    List buffers
+   :cd ..			    Move to parent directory
+   :args			    List files
+   :args *.php			    Open file list
+   :grep expression *.php	    Returns a list of .php files contening expression
+   gf				    Open file name under cursor
+
+   Interact with Unix
+   ==================
+
+   :!pwd			    Execute the pwd unix command, then returns to Vi
+   !!pwd			    Execute the pwd unix command and insert output in file
+   :sh				    Temporary returns to Unix
+   $exit			    Retourns to Vi
+
+   Alignment
+   =========
+
+   :%!fmt			    Align all lines
+   !}fmt			    Align all lines at the current position
+   5!!fmt			    Align the next 5 lines
+
+   Tabs
+   ====
+
+   :tabnew			    Creates a new tab
+   gt				    Show next tab
+   :tabfirst			    Show first tab
+   :tablast			    Show last tab
+   :tabm n(position)		    Rearrange tabs
+   :tabdo %s/foo/bar/g		    Execute a command in all tabs
+   :tab ball			    Puts all open files in tabs</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

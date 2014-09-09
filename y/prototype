@@ -1,0 +1,152 @@
+---
+prototype: ! "Utility Methods:\r\n\r\n$(id | element) -> HTMLElement\r\n$((id | element)...)
+  -> [HTMLElement...]\r\nIf provided with a string, returns the element in the document
+  with matching ID; otherwise returns the passed element. Takes in an arbitrary number
+  of arguments. All elements returned by the function are extended with Prototype
+  DOM extensions.\r\n\r\n$$(cssRule...) -> [HTMLElement...]\r\nTakes an arbitrary
+  number of CSS selectors (strings) and returns a document-order array of extended
+  DOM elements that match any of them.\r\n\r\n$A(iterable) -> actualArray\r\nAccepts
+  an array-like collection (anything with numeric indices) and returns its equivalent
+  as an actual Array object. This method is a convenience alias of Array.from, but
+  is the preferred way of casting to an Array.\r\n\r\n$F(element) -> value\r\nReturns
+  the value of a form control. This is a convenience alias of Form.Element.getValue.
+  Refer to it for full details.\r\n\r\n$H([obj]) -> Hash\r\nCreates a Hash (which
+  is synonymous to “map” or “associative array” for our purposes). A convenience wrapper
+  around the Hash constructor, with a safeguard that lets you pass an existing Hash
+  object and get it back untouched (instead of uselessly cloning it).\r\n\r\n$R(start,
+  end[, exclusive = false]) -> ObjectRange\r\nCreates a new ObjectRange object. This
+  method is a convenience wrapper around the ObjectRange constructor, but $R is the
+  preferred alias.\r\n\r\n$w(String) -> Array\r\nSplits a string into an Array, treating
+  all whitespace as delimiters. Equivalent to Ruby's %w{foo bar} or Perl's qw(foo
+  bar).\r\n\r\n\r\n\r\nElement\r\n\r\nnew Element(tagName[, attributes])\r\nvar a
+  = new Element('a', { 'class': 'foo', href: '/foo.html' }).update(\"Next page\");\r\nConstructor
+  creates new element.\r\n\r\nabsolutize(element) -> HTMLElement\r\nTurns element
+  into an absolutely-positioned element without changing its position in the page
+  layout.\r\n\r\naddClassName(element, className) -> HTMLElement \r\nAdds a CSS class
+  to element.\r\n\r\naddMethods([methods])\r\naddMethods(tagName, methods)\r\nTakes
+  a hash of methods and makes them available as methods of extended elements and of
+  the Element object. The second usage form is for targeting a specific HTML element.\r\n\r\nElement.adjacent(element[,
+  selectors...]) -> [HTMLElement...]\r\nsomeElement.adjacent([selectors...]) -> [HTMLElement...]\r\nFinds
+  all siblings of the current element that match the given selector(s).\r\n\r\nancestors(element)
+  -> [HTMLElement...]\r\nCollects all of element’s ancestors and returns them as an
+  array of extended elements.\r\n\r\nchildElements(element) -> [HTMLElement...]\r\nCollects
+  all of the element's children and returns them as an array of extended elements.\r\n\r\ncleanWhitespace(element)
+  -> HTMLElement\r\nRemoves all of element's text nodes which contain only whitespace.
+  Returns element.\r\n\r\nclonePosition(element, source[, options]) -> HTMLElement\r\nClones
+  the position and/or dimensions of source onto element as defined by the optional
+  argument options.\r\n\r\ncumulativeOffset(element) -> [Number, Number] also accessible
+  as { left: Number, top: Number }\r\nReturns the offsets of element from the top
+  left corner of the document.\r\n\r\ncumulativeScrollOffset(element) -> [Number,
+  Number] also accessible as { left: Number, top: Number }\r\nCalculates the cumulative
+  scroll offset of an element in nested scrolling containers.\r\n\r\ndescendantOf(element,
+  ancestor) -> Boolean \r\nChecks if element is a descendant of ancestor.\r\n\r\ndescendants(element)
+  -> [HTMLElement...]\r\nCollects all of element’s descendants and returns them as
+  an array of extended elements.\r\n\r\ndown(element[, cssRule][, index = 0]) -> HTMLElement
+  | undefined\r\nReturns element’s first descendant (or the n-th descendant if index
+  is specified) that matches cssRule. If no cssRule is provided, all descendants are
+  considered. If no descendant matches these criteria, undefined is returned.\r\n\r\nempty(element)
+  -> Boolean\r\nTests whether element is empty (i.e. contains only whitespace).\r\n\r\nextend(element)\r\nExtends
+  element with all of the methods contained in Element.Methods and Element.Methods.Simulated.
+  If element is an input, textarea or select tag, it will also be extended with the
+  methods from Form.Element.Methods. If it is a form tag, it will also be extended
+  with Form.Methods.\r\n\r\nfire(eventName[, memo]) -> Event\r\nFires a custom event
+  with the current element as its target.\r\n\r\nfirstDescendant(element) -> HTMLElement\r\nReturns
+  the first child that is an element. This is opposed to firstChild DOM property which
+  will return any node (whitespace in most usual cases).\r\n\r\ngetDimensions(element)
+  -> {height: Number, width: Number}\r\nFinds the computed width and height of element
+  and returns them as key/value pairs of an object.\r\n\r\ngetHeight(element) -> Number\r\nFinds
+  and returns the computed height of element.\r\n\r\ngetOffsetParent(element) -> HTMLElement\r\nReturns
+  element’s closest positioned ancestor. If none is found, the body element is returned.\r\n\r\ngetStyle(element,
+  property) -> String | null\r\nReturns the given CSS property value of element. property
+  can be specified in either of its CSS or camelized form.\r\n\r\ngetWidth(element)
+  -> Number\r\nFinds and returns the computed width of element.\r\n\r\nhasClassName(element,
+  className) -> Boolean\r\nChecks whether element has the given CSS className.\r\n\r\nhide(element)
+  -> HTMLElement\r\nHides and returns element.\r\n\r\nidentify(element) -> id\r\nreturns
+  element’s id attribute if it exists, or sets and returns a unique, auto-generated
+  id.\r\n\r\ninsert(element, { position: content }) -> HTMLElement\r\ninsert(element,
+  content) -> HTMLElement\r\nInserts content before, after, at the top of, or at the
+  bottom of element, as specified by the position property of the second argument.
+  If the second argument is the content itself, insert will append it to element.\r\ninspect\r\n\r\ninspect(element)
+  -> String\r\nReturns the debug-oriented string representation of element.\r\n\r\nmakeClipping(element)
+  -> HTMLElement\r\nSimulates the poorly supported CSS clip property by setting element's
+  overflow value to 'hidden'. Returns element.\r\n\r\nmakePositioned(element) -> HTMLElement\r\nAllows
+  for the easy creation of CSS containing block by setting element's CSS position
+  to 'relative' if its initial position is either 'static' or undefined. Returns element.\r\n\r\nmatch(element,
+  selector) -> Boolean\r\nChecks if element matches the given CSS selector.\r\n\r\nnext(element[,
+  cssRule][, index = 0]) -> HTMLElement | undefined\r\nReturns element’s following
+  sibling (or the index’th one, if index is specified) that matches cssRule. If no
+  cssRule is provided, all following siblings are considered. If no following sibling
+  matches these criteria, undefined is returned.\r\n\r\nnextSiblings(element) -> [HTMLElement...]\r\nCollects
+  all of element’s next siblings and returns them as an array of extended elements.\r\n\r\nElement.observe(element,
+  eventName, handler) -> HTMLElement\r\nsomeElement.observe(eventName, handler) ->
+  HTMLElement\r\nRegisters an event handler on element and returns element.\r\n\r\npositionedOffset(element)
+  -> [Number, Number] also accessible as { left: Number, top: Number }\r\nReturns
+  element’s offset relative to its closest positioned ancestor (the element that would
+  be returned by Element#getOffsetParent).\r\n\r\nprevious(element[, cssRule][, index
+  = 0]) -> HTMLElement | undefined\r\nReturns element's previous sibling (or the index'th
+  one, if index is specified) that matches cssRule. If no cssRule is provided, all
+  previous siblings are considered. If no previous sibling matches these criteria,
+  undefined is returned.\r\n\r\npreviousSiblings(element) -> [HTMLElement...]\r\nCollects
+  all of element’s previous siblings and returns them as an array of extended elements.\r\n\r\nreadAttribute(element,
+  attribute) -> String | null\r\nReturns the value of element's attribute or null
+  if attribute has not been specified.\r\n\r\nrecursivelyCollect(element, property)
+  -> [HTMLElement...]\r\nRecursively collects elements whose relationship is specified
+  by property. property has to be a property (a method won’t do!) of element that
+  points to a single DOM node. Returns an array of extended elements.\r\n\r\nrelativize(element)
+  -> HTMLElement\r\nTurns element into an relatively-positioned element without changing
+  its position in the page layout.\r\n\r\nremove(element) -> HTMLElement\r\nCompletely
+  removes element from the document and returns it.\r\n\r\nremoveClassName(element,
+  className) -> HTMLElement\r\nRemoves element’s CSS className and returns element.\r\n\r\nreplace(element[,
+  html]) -> HTMLElement\r\nReplaces element by the content of the html argument and
+  returns the removed element.\r\n\r\nscrollTo(element) -> HTMLElement\r\nScrolls
+  the window so that element appears at the top of the viewport. Returns element.\r\n\r\nselect(element,
+  selector...) -> [HTMLElement...]\r\nTakes an arbitrary number of CSS selectors (strings)
+  and returns an array of extended descendants of element that match any of them.\r\n\r\nElement.setOpacity(element,
+  opacity) -> [HTMLElement...]\r\nsomeElement.setOpacity(opacity) -> [HTMLElement...]\r\nSets
+  the visual opacity of an element while working around inconsistencies in various
+  browsers. The opacity argument should be a floating point number, where the value
+  of 0 is fully transparent and 1 is fully opaque.\r\n\r\nsetStyle(element, styles)
+  -> HTMLElement\r\nModifies element’s CSS style properties. Styles are passed as
+  a hash of property-value pairs in which the properties are specified in their camelized
+  form.\r\n\r\nshow(element) -> HTMLElement\r\nDisplays and returns element.\r\n\r\nsiblings(element)
+  -> [HTMLElement...]\r\nCollects all of element’s siblings and returns them as an
+  array of extended elements.\r\n\r\nstopObserving(element, eventName, handler) ->
+  HTMLElement\r\nUnregisters handler and returns element.\r\n\r\ntoggle(element) ->
+  HTMLElement\r\nToggles the visibility of element.\r\n\r\ntoggleClassName(element,
+  className) -> HTMLElement\r\nToggles element’s CSS className and returns element.\r\n\r\nundoClipping(element)
+  -> HTMLElement\r\nSets element’s CSS overflow property back to the value it had
+  before Element.makeClipping() was applied. Returns element.\r\n\r\nundoPositioned(element)
+  -> HTMLElement\r\nSets element back to the state it was before Element.makePositioned
+  was applied to it. Returns element.\r\n\r\nup(element, [cssRule][, index = 0]) ->
+  HTMLElement | undefined\r\nReturns element’s first ancestor (or the index’th ancestor,
+  if index is specified) that matches cssRule. If no cssRule is provided, all ancestors
+  are considered. If no ancestor matches these criteria, undefined is returned.\r\n\r\nupdate(element[,
+  newContent]) -> HTMLElement\r\nReplaces the content of element with the provided
+  newContent argument and returns element.\r\n\r\nviewportOffset(element) -> [Number,
+  Number] also accessible as { left: Number, top: Number }\r\nReturns the X/Y coordinates
+  of element relative to the viewport.\r\n\r\nvisible(element) -> Boolean\r\nReturns
+  a Boolean indicating whether or not element is visible (i.e. whether its inline
+  style property is set to \"display: none;\").\r\n\r\nElement.wrap(element, wrapper[,
+  attributes]) -> HTMLElement\r\nsomeElement.wrap(wrapper[, attributes]) -> HTMLElement\r\nWraps
+  an element inside another, then returns the wrapper.\r\n\r\nwriteAttribute(element,
+  attribute[, value = true]) -> HTMLElement\r\nwriteAttribute(element, attributes)
+  -> HTMLElement\r\nAdds, specifies or removes attributes passed as either a hash
+  or a name/value pair.\r\n\r\n\r\n \t \r\nForm Functions\t \r\n\r\n$F(fieldname);\r\n
+  \ Return the value of the form element, whether it is a text input, textarea, select
+  box or checkbox. If it is a checkbox, it will return undefined if unchecked. Radio
+  groups dont work.\r\nForm.getElements(formID);\r\n  Returns an array of all the
+  form elements for form formID\r\nForm.serialize(formID);\r\n  Returns a formatted
+  URL containing all the elements in the form, similar to &field=value&field2=othervalue\r\nForm.focusFirstElement(formID);\t\r\n
+  \ Will set focus on the first form element.\r\n\r\n \t \r\nException Handling\t
+  \r\n\r\nTry.these(\r\n       function(){  \r\n            // errors \r\n       },
+  \r\n       function(){\r\n            // other stuff\r\n       }\r\n);\r\n  Allows
+  you to execute the second function if the first one fails. \r\n  Kinda like try/catch,
+  except it doesn't make any sense.\r\n\r\n                       \t \r\nAjax\r\n\r\nfunction
+  ajaxMe( theUrl, data ){\r\n   var ajaxRequest = new Ajax.Request(\r\n     theUrl,{method:
+  post, parameters: data, onComplete: theResponse});\r\n}\r\n\r\nfunction theResponse(origRequest){\r\n
+  \   alert(origRequest.responseText);\r\n}\r\n\r\nClasses\r\n\r\nvar Butter = Class.create({\r\n
+  \ initialize: function(brand) {\r\n    this.brand = brand;\r\n    this.melted =
+  false;\r\n  },\r\n  melt: function() {\r\n    this.melted = true;\r\n  }\r\n})\r\nvar
+  parkay = new Butter('Parkay');\r\n\r\n  Prototype gives you a way to create classes.
+  If you want, you\r\n  can define an initialize function that will be called when\r\n
+  \ instances of the class are created."

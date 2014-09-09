@@ -1,0 +1,11 @@
+---
+history: ! "Your history:\n\n    % which firefox\n    % make\n    % ./foo -f foo.conf\n
+  \   % vi foo.c bar.c\n\nGetting stuff from the last command:\n\n    Full line:     %
+  !!            becomes:   % vi foo.c bar.c\n    Last arg :     % svn ci !$     becomes:
+  \  % svn ci bar.c\n    All args :     % svn ci !*     becomes:   % svn ci foo.c
+  bar.c\n    First arg:     % svn ci !!:1   becomes:   % svn ci foo.c\n\nAccessing
+  commandlines by pattern:\n\n    Full line:     % !./f          becomes:   % ./foo
+  -f foo.conf\n    Full line:     % vi `!whi`     becomes:   % vi `which firefox`\n
+  \   Last arg :     % vi !./f:$     becomes:   % vi foo.conf\n    All args :     %
+  ./bar !./f:*  becomes:   % ./bar -f foo.conf\n    First arg:     % svn ci !vi:1
+  \ becomes:   % svn ci foo.c"

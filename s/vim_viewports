@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>VIM VIEWPORT REFERENCE
+======================
+:sp         split window horizontally (:split)
+:vsp        split window vertically   (:vsplit)
+
+Ctrl-w      move between viewports
+
+Ctrl-w j    move one viewport down
+Ctrl-w k    move one viewport up
+Ctrl-w h    move one viewport left
+Ctrl-w l    move one viewport right
+
+Ctrl-w =    resize viewports to be equal size
+
+Ctrl-w -    reduce viewport by 1 line
+Ctrl-w 20-  reduce viewport by 20 line
+
+Ctrl-w +    increase viewport by 1 line
+Ctrl-w 20+  increase viewport by 20 line
+
+Ctrl-w &lt;    narrows viewport by 1 line
+Ctrl-w 20&lt;  narrows viewport by 20 line
+
+Ctrl-w &gt;    widens viewport by 1 line
+Ctrl-w 20&gt;  widens viewport by 20 line
+
+Ctrl-w q    close the active window
+
+Ctrl-w r    rotate windows to the right
+Ctrl-w R    rotate windows to the left
+
+Ctrl-w o    the current window zooms into a full screen, or
+            previous set of windows is restored.
+            requires: ZoomWin plugin</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

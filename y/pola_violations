@@ -1,0 +1,12 @@
+---
+pola_violations: ! "POLA/PLA\n--------\nPOLA or PLA, the priniciple of least astonishment
+  is documented at\nhttp://en.wikipedia.org/wiki/Principle_of_least_astonishment\n\nRuby
+  definitely scores on this front. It surprises the programmer the least. But still,
+  there are some quirks. This cheat sheet is an attempt to list Ruby's violations
+  of POLA. Of course, the list  may be personal.\n\n1. String#to_i -- as of Ruby 1.9.2
+  returns 0 when the receiver does not start with numerics!  (Naturally, it returns
+  0 also when receiver is \"0\").\n\n   I'd have preferred nil to be returned in this
+  case. Of course, there are cases where a return value of 0 is useful (cases where
+  non-numeric string should contribute nothing to an aggregate function), but still,
+  this is a candidate for POLA violation.\n\n   See http://www.ruby-forum.com/topic/78767
+  for some interesting discussions and workarounds."

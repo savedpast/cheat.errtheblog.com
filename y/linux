@@ -1,0 +1,8 @@
+---
+linux: ! "File in Use?\n  lsof | grep <file>  (case-sensitive)\n\nCheck the dependecy
+  of a binary file:\n  objdump -p a.exe | grep 'DLL Name'\n\nTo run a process in the
+  background, regardless of whether the terminal window is closed:\n  nohup <some
+  command> &\n\n  eg. nohup ruby /u/app/qbglc/current/script/runner -e development
+  'load \"/u/app/qbglc/current/script/app/some_script.rb\"' &\n\nDisk Usage:\n$ du
+  -sh *\n$ df -h\n\nVersion:\n$ uname -a\nor\n$ cat /etc/*-release\n\nFind (suppress
+  err):\n$ find <dir> -name <pattern> 2>/dev/null"

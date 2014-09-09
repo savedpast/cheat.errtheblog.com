@@ -1,0 +1,16 @@
+---
+css3_selectors: ! "For element E:\n  E[attr^=\"val\"]         Attribute value which
+  begins with \"val\"\n  E[attr$=\"val\"]         ... which ends with \"val\"\n  E[attr*=\"val\"]
+  \        ... with the substring \"val\"\n  E:root                 Only if root of
+  document\n  E:nth-child(n)         Only if also the nth child of its parent\n  E:nth-last-child(n)
+  \   ... counting from the end\n  E:nth-of-type(n)       The n-th E element sibling\n
+  \ E:nth-last-of-type(n)  ... counting from the end\n  E:last-child           Only
+  if last child (first-child is in CSS2)\n  E:first-of-type        First E element
+  sibling\n  E:last-of-type         Last E element sibling\n  E:only-child           If
+  only child of parent\n  E:only-of-type         If only child of type E of parent\n
+  \ E:empty                With no text or element children\n  E:target               Identified
+  by browser via fragment identifier\n  E:enabled              User interface element
+  which is enabled\n  E:disabled             ... which is disabled\n  E:checked              ...
+  which is checked (checkbox / radio button)\n  E::selection           ... portion
+  selected/highlighted by user.\n  E:not(S1)              Not matching additional
+  selector S1\n  E ~ F                  With sibling F following (not immediately)"

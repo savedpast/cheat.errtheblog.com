@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>`erl` runs .beam files. To create these you must first compile your
+erlang source file (.erl) with the `erlc` program.
+
+Usage:
+  erl [arguments]
+
+Arguments:
+  -pa Directory
+   Specifies a load path directory
+  -man Command
+   load the man entry for a command
+  -config File
+   Load a configuration file
+  -setcookie CookieName
+   Give this node a cookie name 
+  -detached
+   Run this program in the background
+  -eval &quot;some:code().&quot;
+   Evaluate erlang code
+  -heart
+   Monitor this program and auto-restart it
+  -s Module [Function [Argument1, ... ArgumentN]]
+   Execute Module:Function(Argument1, ... ArgumentN)
+
+Full Details: http://erlang.org/doc/man/erl.html</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

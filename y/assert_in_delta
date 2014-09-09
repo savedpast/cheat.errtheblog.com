@@ -1,0 +1,5 @@
+---
+assert_in_delta: ! "# 'cheat assertions' for the rest\n\nassert_in_delta(expected_float,
+  actual_float, delta, message=\"\")\n\nPasses if expected_float and actual_float
+  are equal within delta tolerance.\n\nExample:\n\n  assert_in_delta 0.05, (50000.0
+  / 10**6), 0.00001"

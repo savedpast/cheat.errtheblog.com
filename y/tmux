@@ -1,0 +1,19 @@
+---
+tmux: ! "tmux -- terminal multiplexer\r\n\r\nManaging tmux sessions:\r\n$ tmux      #
+  start tmux server\r\n$ tmux at   # attach running sessions to a terminal\r\n$ tmux
+  ls   # list running tmux sessions\r\n$ exit      # close tmux session\r\n\r\nSharing
+  sessions between terminals:\r\n$ tmux new -s session_name # make new named session\r\n$
+  tmux at -t session_name  # attach to exist session (allowing shared sessions)\r\n$
+  tmux kill-session -t session_name  # kill named session\r\n\r\nCommands (used within
+  a running tmux session):\r\n\r\nNOTE: All commands need to be prefixed with the
+  action key.\r\n      By default, this is CTRL-b\r\n\r\n c  - create new window\r\nn/p
+  - move to next/previous window\r\n0-9 - move to window number 0-9\r\n f  - find
+  window by name\r\n w  - menu with all windows\r\n &  - kill current window\r\n ,
+  \ - rename window\r\n\r\n %  - split window, adding a vertical pane to the right\r\n
+  \"  - split window, adding an horizontal pane below\r\n←/→ - move focus to left/right
+  pane\r\n↑/↓ - move focus to upper/lower pane\r\n\r\n !  - Break current pane into
+  new window\r\n x  - Kill the current pane.\r\n d  - detach the current client\r\n\r\n
+  [  - enter copy mode (then use emacs select/yank keys)\r\n      * press CTRL-SPACE
+  or CTRL-@ to start selecting text\r\n      * move cursor to end of desired text\r\n
+  \     * press ALT-w to copy selected text\r\n\r\n ]  - paste copied text\r\n\r\n
+  ?  - show tmux key bindings"

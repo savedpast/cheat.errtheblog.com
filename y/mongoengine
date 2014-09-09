@@ -1,0 +1,16 @@
+---
+mongoengine: ! 'MongoEngine (https://github.com/hmarr/mongoengine)
+
+  ==================================================
+
+
+
+  Document meta (meta = {''key'': value}) keys :
+
+  - collection // collection name
+
+  - allow_inheritance // False => new collection for inherited docs
+
+  - max_documents, max_size // capped collection, size in MB
+
+  - indexes // list of indexes'

@@ -1,0 +1,10 @@
+---
+terminator: ! "Ctrl+Shift+X -  Toggle between  showing  all  terminals  and  only
+  \ showing  the current one.\r\n\r\nCtrl+Shift+O - Split terminals Horizontally.\r\n\r\nCtrl+Shift+E
+  - Split terminals Vertically.\r\n\r\nCtrl+Shift+Right - Move parent dragbar Right.\r\n\r\nCtrl+Shift+Left
+  - Move parent dragbar Left.\r\n\r\nCtrl+Shift+Up - Move parent dragbar Up.\r\n\r\nCtrl+Shift+Down
+  - Move parent dragbar Down.\r\n\r\nCtrl+Shift+W - Close the current terminal.\r\n\r\nCtrl+Shift+T
+  -   Open new tab\r\n\r\nCtrl+Plus (+) -  Increase  font  size. Note: this may require
+  you to press shift, depending on your keyboard\r\n\r\nCtrl+Minus (-) - Decrease
+  font size. Note: this may require you to  press  shift, \r\n depending   on your
+  \ keyboard\r\n  \r\nCtrl+Zero (0) - Restore font size to original setting."

@@ -1,0 +1,16 @@
+---
+notify: ! "Some quick & dirty notifications (for OS X):\r\n\r\nFor more info: http://www.elctech.com/2007/12/21/notify-me-when-done\r\n\r\n$
+  cmd; say \"Don't care how it finished, but it did\"\r\n$ cmd && say \"Success!\"\r\n$
+  (cmd && say \"Success\") || say \"Failed\"\r\n\r\nExample:\r\n$ mysql app_dev <
+  dump.sql && say \"Finished importing\"\r\n\r\n\r\nQuicksilver:\r\n$ cmd; osascript
+  -e 'tell application \"Quicksilver\" to show large type \"Finished!\"'\r\n\r\nGrowl:\r\n$
+  cmd; growlnotify -s -m \"Done\"\r\n\r\nNote: If you are using Leopard, there's a
+  bug with growlnotify as of version 1.1.2 (*fixed in 1.1.3) that prevents growlnotify
+  from working consistently. However, there's an easy workaround.\r\n\r\n    * Open
+  up the Growl preference pane and select the Network tab.\r\n    * Click to enable
+  \"Listen for incoming notifications\".\r\n    * Now when you run growlnotify, add
+  the \"-H localhost\" option.\r\n\r\n$ cmd && growlnotify -s -H localhost -m \"Success\"\r\n\r\nIf
+  you are using wmii, you can have it change your tag when it is done\r\n\r\n$ cmd
+  && wmiir xwrite /lbar/tagname \"*tagname\"\r\n\r\nGTK+:\r\n$ cmd; zenity --info
+  --text=\"Done\"\r\n\r\nIf you like bash then\r\n\r\n$ alias mysay=\"xargs -I {}
+  bash -c 'zenity --info --text=\\\"{}\\\"' <<<\"\r\n$ cmd; mysay \"done and dusted\""

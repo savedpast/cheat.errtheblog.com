@@ -1,0 +1,12 @@
+---
+asunit: ! "//// AsUnit Assertions ////\n\n// Asserts that a condition is true\nassertTrue(
+  message:String, condition:Boolean )\n\n// Asserts that a condition is false\nassertFalse(
+  message:String, condition:Boolean )\n\n// Asserts that two objects are equal\nassertEquals(
+  message:String, value1:*, value2:* )\n\n// Asserts that two numerical values are
+  equal within a tolerance range\nassertEqualsFloat( message:String, value1:*, value2:*,
+  tolerance:* )\n\n// Asserts that an object is null\nassertNull( message:String,
+  object:* )\n\n// Asserts that an object isn't null\nassertNotNull( message:String,
+  object:* )\n\n// Asserts that two objects refer to the same object\nassertSame(
+  message:String, object1:*, object2:* )\n\n// Asserts that two objects do not refer
+  to the same object\n  assertNotSame( message:String, object1:*, object2:* )\n\n//
+  Fails a test with the given message\nfail( message:String )"

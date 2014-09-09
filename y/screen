@@ -1,0 +1,50 @@
+---
+screen: ! "=TO START SCREEN=\r\n$ screen\r\n$ screen -ls: to list running sessions\r\n\r\nFrom:
+  http://www.amitu.com/blog/2004/12/screen-howto.html\r\nTo connect to an already
+  open session running in background, use \"screen\" with following options:\r\n   *
+  -D -R  Attach here and now. In detail this means: If a session is running, then
+  reattach. If necessary detach and logout remotely first. If it was not running create
+  it and notify the user. This is the author's favorite.\r\n   * -r     Reattach to
+  existing\r\n   * -d -r  Reattach a session and if necessary detach it first.\r\n
+  \  * -d -R  Reattach a session and if necessary detach or even create it first.\r\n
+  \  * -d -RR Reattach a session and if necessary detach or create it. Use the first
+  session if more than one session is available.\r\n   * -D -r  Reattach a session.
+  If necessary detach and logout remotely first.\r\n   * -D -RR Attach here and now.
+  Whatever that means, just do it.\r\n\r\n   * -r <PID> Reattach to the session with
+  process ID of <PID>\r\n\r\n----\r\n=SCREEN COMMANDS (run within screen):=\r\nAll
+  commands called from the \"meta key\": C-a (ctrl+a).  Note: Case-sensitive.\r\nNote:
+  For 'old' ctrl-a, use C-a-a\r\n\r\nC-a ?: Help (shows a list of commands)\r\n    (On
+  some systems C-a h reportedly also works.)\r\nC-a c: Create new window/terminal\r\nC-a
+  k: Kill window session\r\nC-a d: Detaches from the window\r\nC-a DD: Detaches from
+  the window AND the ssh shell if you are in one.\r\nC-a x: Lock the current screen
+  session with the current user's password.\r\n\r\nTo select a window:\r\nC-a \" (quote):
+  List windows: (select one and press enter)\r\nC-a <digit> (the number of the screen)\r\nC-a
+  n,  C-a p: Next/Previous screen\r\n\r\nSplit screens:\r\nC-a S: Split (then use
+  C-tab, C-<num>)\r\nC-a tab: Move between splits\r\nC-a Q: Un-Split\r\nC-a :resize
+  +N  : increase current region height by N\r\nC-a :resize -N  : decrease current
+  region height by N\r\nC-a :resize N   : set current region height to N\r\nC-a :resize
+  =   : make all windows equally high\r\nC-a :resize max : maximize current region
+  height\r\nC-a :resize min : minimize current region height\r\n\r\nAfter creating
+  a new window it is useful to name it:\r\n  C-a A and enter a name.\r\n\r\nTo create
+  a named window directly:\r\n  C-a :, and type screen <command>.\r\n\r\nCopy mode
+  so you can scroll up and down.:\r\n  C-a ESC\r\n\r\nCopy and Paste:\r\nC-a [:\t
+  Enables copy mode\r\nC-a ]:\t Pastes buffer ('clipboard')\r\nC-a <:\t Copy from
+  a file\r\nC-a >:\t Paste to a file\r\n\r\nMonitoring:\r\nC-a M: Toggles alert on
+  activity\r\nC-a _ (underscore): Toggles monitor for silence\r\nC-a \" (quote): Jump
+  to alerting window\r\n\r\n----\r\n==Sample ~/.screenrc==\r\nhardstatus alwayslastline\r\n##what
+  is displayed\r\nhardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%=
+  %{g}]'\r\n## Default screens\r\n## screen -t NameOfScreen ScreenNumber ShellCommand\r\n#screen
+  -t shell1\t0\r\n#screen -t shell2\t1\r\n#screen -t server\t2\tssh me@myserver\r\n\r\n##
+  change meta-key (ctrl-a)\r\n# escape ^gg\r\n----\r\n=MULTI USER=\r\nSee also: kibitz
+  (http://www.redhatmagazine.com/2007/09/27/a-guide-to-gnu-screen/#comment-25029)\r\n\r\nFrom:
+  http://www.linux.com/article.pl?sid=06/08/14/1945249\r\n\r\nTeacher: setuid root
+  on /usr/bin/screen  (NOTE! security risk, running as root?)\r\n$ chmod u+s /usr/bin/screen\r\n\r\nTeacher:
+  To reset screen permissions after session: setuid owner\r\n$ chmod u-s /usr/bin/screen\r\n\r\nTeacher:
+  $ screen -S SessionName.\r\n\r\nTeacher: Ctrl-a :multiuser on\r\n\r\nTeacher: Ctrl-a
+  :acladd student_login_id\r\n\r\nStudent: $ ssh student@teacherComputer\r\n\r\nStudent:
+  screen -x username/session.\r\n\r\n----\r\n=Serial Console Access:=\r\nOS X:\r\n\r\nscreen
+  /dev/tty.usb* <connection speed>\r\n\r\nLinux:\r\n\r\nscreen /dev/ttyS[0-9] <connection
+  speed>\r\n\r\nTypical values for connection speed are 9600 or 115200\r\n\r\n----\r\n=Helpful
+  sites:=\r\n\r\nGeneral: http://www.rackaid.com/resources/linux-tutorials/general-tutorials/using-screen/\r\n\r\nTutorial:
+  \r\n\r\nhttp://www.rackaid.com/resources/linux-tutorials/general-tutorials/linux-screen.cfm\r\nMulti-user:
+  http://www.linux.com/article.pl?sid=06/08/14/1945249\r\n\r\n----"

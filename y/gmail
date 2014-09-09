@@ -1,0 +1,26 @@
+---
+gmail: ! "Keyboard navigation for Gmail\r\n\r\nc: Compose\r\n/: Search\r\nk: Move
+  to newer conversation\r\nj: Move to older conversation\r\nn: Next message\r\np:
+  Previous message\r\no / <Enter>: Open/Return to conversation list\r\n\r\ny: Archive*\r\nFrom
+  'Inbox,' 'y' means Archive\r\nFrom 'Starred,' 'y' means Unstar\r\nFrom any label,
+  'y' means Remove the label\r\n* 'y' has no effect if you're in 'Spam,' 'Sent,' or
+  'All Mail.'\r\n\r\nx: Select conversation\r\ns: Star a message or conversation\r\n!:
+  Report spam\r\nr: Reply\r\n<Shift>+r:  Reply new window.\r\na: Reply all\r\n<Shift>+a:
+  Reply to all in a new window.\r\nf: Forward \r\n<Shift>+f: Forward new window.\r\n<Esc>:
+  Escape from input field\r\n<Ctrl>+s: Save\r\n<Cmd>+s for Macs\r\n#: Delete/Discard
+  Moves the conversation to Trash.\r\n<Shift>+i: Mark as read\r\n<Shift>+u: Mark as
+  unread\r\n\r\nCombo-keys\r\n<tab> then <Enter>: Send message\r\ny then o: Archive
+  and next\r\ng then a: Go to 'All Mail'\r\ng then s: Go to 'Starred'\r\ng then c:
+  Go to 'Contacts'\r\ng then d: Go to 'Drafts'\r\ng then i: Go to 'Inbox'\r\n\r\nSearch
+  Operators\r\nfrom:  \t\tUsed to specify the sender\r\nto: \t\tUsed to specify a
+  recipient\r\nsubject: \tSearch for words in the subject line\r\nOR \t\tSearch for
+  messages matching term A or term B*\r\n-(hyphen) \tUsed to exclude messages from
+  your search\r\nlabel: \t\tSearch for messages by label*\r\n\t\t*There isn't a search
+  operator for unlabeled messages\r\nhas:attachment\tSearch for messages with an attachment\r\nlist:
+  \t\tSearch for messages on mailing lists\r\nfilename: \tSearch for an attachment
+  by name or type\r\n\" \"(quotes)\tUsed to search for an exact phrase*\r\n( )\t\tUsed
+  to group words\r\nin:anywhere \tSearch for messages anywhere in Gmail*\r\nin:inbox\r\nin:trash\r\nin:spam
+  \tSearch for messages in Inbox, Trash, or Spam\r\nis:starred\r\nis:unread\r\nis:read\r\ncc:
+  bcc: \tUsed to specify recipients in the cc: or bcc: fields*\r\nafter: before: \tSearch
+  for messages sent during a certain period of time*\r\n\t\t*Dates must be in yyyy/mm/dd
+  format.\r\nis:chat \tSearch for chat messages"

@@ -1,0 +1,19 @@
+---
+hwh_yelp_find_businesses: ! "This is how to use the Yelp API to find businesses given
+  a name and an approximate location.\r\n\r\nBusiness API\r\n\r\nREQUEST\r\n\r\nNAME
+  \              | METHOD | DESCRIPTION\r\n/v2/business/{id}    GET      Lookup business
+  information by id\r\n\r\nSample Request\r\nhttp://api.yelp.com/v2/business/yelp-san-francisco\r\n\r\nResponse
+  Value( Only displaying values we currently need ):\r\n\r\nName     |               Type
+  \ | Definition\r\nid                       string  Yelp ID for this business\r\nname
+  \                    string  Name of this business\r\nimage_url                string
+  \ URL of photo for this business\r\nurl                      string  URL for business
+  page on Yelp\r\ndisplay_phone            string  Phone number formatted for display\r\nlocation.display_address
+  list    Address for this business formatted for \r\n                                 display.
+  Includes all address fields, cross \r\n                                 streets
+  and city, state_code, etc.\r\n\r\n\r\nSample Response based on info above:\r\n{\r\n
+  \"id\": \"urban-curry-san-francisco\",\r\n \"name\": \"Urban Curry\",\r\n \"image_url\":
+  \"http://s3-media4.ak.yelpcdn.com/bphoto/Hv5vsWpqeaUKepr9nffJnw/ms.jpg\",\r\n \"url\":
+  \"http://www.yelp.com/biz/urban-curry-san-francisco\"\r\n \"display_phone\": \"+1-415-677-9744\",\r\n
+  \"location\" : {\r\n     display_address\": [\r\n      \"523 Broadway\",\r\n      \"(b/t
+  Kearny St & Romolo Pl)\",\r\n      \"North Beach/Telegraph Hill\",\r\n      \"San
+  Francisco, CA 94133\"\r\n    ]\r\n }\r\n}\r\n\r\n\r\n"

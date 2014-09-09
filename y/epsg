@@ -1,0 +1,9 @@
+---
+epsg: ! "European Petroleum Survey Group projection codes cheat sheet for Dayne\n\nhttp://spatialreference.org/\n\nEPSG:4326
+  \  - WGS84 (Geographic) # that default one that haunts you\nEPSG:3338   - Alaskan
+  Albers NAD83\nEPSG:900913 - Google's web mercator\nEPSG:3857   - *USE THIS* Official
+  EPSG for Spherical Mercator \n            |- Google/Bing equivalent\nEPSG:3785   -
+  *DEPRECATED* Spherical Mercator\nEPSG:102100 - ESRI's web mercator (WGS 1984 Web
+  Mercator - Auxillary Sphere) \n            |- Google/Bing equivalent\n            |-
+  ArcGIS 9.4+ will switch to EPSG:3857 (http://forums.esri.com/Thread.asp?c=93&f=984&t=288607)\nEPSG:102113
+  - *DEPRECATED* ESRI web mercator projection"

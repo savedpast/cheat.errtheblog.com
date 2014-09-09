@@ -1,0 +1,9 @@
+---
+jeff_dean_numbers: ! "L1 cache reference                     0.5 ns\r\nBranch mispredict
+  \                     5 ns\r\nL2 cache reference                     7 ns\r\nMutex
+  lock/unlock                      25 ns\r\nMain memory reference                  100
+  ns\r\nCompress 1K bytes w/ cheap algorithm   3,000 ns\r\nSend 2K bytes over 1 Gbps
+  network      20,000 ns\r\nRead 1 MB sequentially from memory     250,000 ns\r\nRound
+  trip within same datacenter      500,000 ns\r\nDisk seek                              10,000,000
+  ns\r\nRead 1 MB sequentially from disk       20,000,000 ns\r\nSend packet CA->Netherlands->CA
+  \       150,000,000 ns"

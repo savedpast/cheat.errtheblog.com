@@ -1,0 +1,122 @@
+---
+network: ! "Netmask              Netmask (binary)                 CIDR     Notes    \r\n_____________________________________________________________________________\r\n255.255.255.255
+  \ 11111111.11111111.11111111.11111111  /32  Host (single addr)\r\n255.255.255.254
+  \ 11111111.11111111.11111111.11111110  /31  Unuseable\r\n255.255.255.252  11111111.11111111.11111111.11111100
+  \ /30    2  useable\r\n255.255.255.248  11111111.11111111.11111111.11111000  /29
+  \   6  useable\r\n255.255.255.240  11111111.11111111.11111111.11110000  /28   14
+  \ useable\r\n255.255.255.224  11111111.11111111.11111111.11100000  /27   30  useable\r\n255.255.255.192
+  \ 11111111.11111111.11111111.11000000  /26   62  useable\r\n255.255.255.128  11111111.11111111.11111111.10000000
+  \ /25  126  useable\r\n255.255.255.0    11111111.11111111.11111111.00000000  /24
+  \"Class C\" 254 useable\r\n\r\n255.255.254.0    11111111.11111111.11111110.00000000
+  \ /23    2  Class C's\r\n255.255.252.0    11111111.11111111.11111100.00000000  /22
+  \   4  Class C's\r\n255.255.248.0    11111111.11111111.11111000.00000000  /21    8
+  \ Class C's\r\n255.255.240.0    11111111.11111111.11110000.00000000  /20   16  Class
+  C's\r\n255.255.224.0    11111111.11111111.11100000.00000000  /19   32  Class C's\r\n255.255.192.0
+  \   11111111.11111111.11000000.00000000  /18   64  Class C's\r\n255.255.128.0    11111111.11111111.10000000.00000000
+  \ /17  128  Class C's\r\n255.255.0.0      11111111.11111111.00000000.00000000  /16
+  \ \"Class B\"\r\n     \r\n255.254.0.0      11111111.11111110.00000000.00000000  /15
+  \   2  Class B's\r\n255.252.0.0      11111111.11111100.00000000.00000000  /14    4
+  \ Class B's\r\n255.248.0.0      11111111.11111000.00000000.00000000  /13    8  Class
+  B's\r\n255.240.0.0      11111111.11110000.00000000.00000000  /12   16  Class B's\r\n255.224.0.0
+  \     11111111.11100000.00000000.00000000  /11   32  Class B's\r\n255.192.0.0      11111111.11000000.00000000.00000000
+  \ /10   64  Class B's\r\n255.128.0.0      11111111.10000000.00000000.00000000  /9
+  \  128  Class B's\r\n255.0.0.0        11111111.00000000.00000000.00000000  /8   \"Class
+  A\"\r\n  \r\n254.0.0.0        11111110.00000000.00000000.00000000  /7\r\n252.0.0.0
+  \       11111100.00000000.00000000.00000000  /6\r\n248.0.0.0        11111000.00000000.00000000.00000000
+  \ /5\r\n240.0.0.0        11110000.00000000.00000000.00000000  /4\r\n224.0.0.0        11100000.00000000.00000000.00000000
+  \ /3\r\n192.0.0.0        11000000.00000000.00000000.00000000  /2\r\n128.0.0.0        10000000.00000000.00000000.00000000
+  \ /1\r\n0.0.0.0          00000000.00000000.00000000.00000000  /0   IP space\r\n\r\n
+  \                                  Net     Host    Total\r\nNet      Addr                      Addr
+  \   Addr    Number\r\nClass   Range      NetMask         Bits    Bits   of hosts\r\n----------------------------------------------------------\r\nA
+  \       0-127    255.0.0.0         8      24     16777216   (i.e. 114.0.0.0)\r\nB
+  \     128-191    255.255.0.0      16      16        65536   (i.e. 150.0.0.0)\r\nC
+  \     192-254    255.255.255.0    24       8          256   (i.e. 199.0.0.0)\r\nD
+  \     224-239    (multicast)\r\nE      240-255    (reserved)\r\nF      208-215    255.255.255.240
+  \ 28       4           16\r\nG      216/8      ARIN - North America\r\nG      217/8
+  \     RIPE NCC - Europe\r\nG      218-219/8  APNIC\r\nH      220-221    255.255.255.248
+  \ 29       3            8   (reserved)\r\nK      222-223    255.255.255.254  31
+  \      1            2   (reserved)\r\n(ref: RFC1375 & http://www.iana.org/assignments/ipv4-address-space
+  )\r\n(               http://www.iana.org/numbers.htm                    )\r\n----------------------------------------------------------\r\n\r\nThe
+  current list of special use prefixes:\r\n\t0.0.0.0/8\t\r\n\t127.0.0.0/8\r\n\t192.0.2.0/24\r\n\t10.0.0.0/8\r\n\t172.16.0.0/12\r\n\t192.168.0.0/16\r\n\t169.254.0.0/16\r\n\tall
+  D/E space\r\n(ref: RFC1918 http://www.rfc-editor.org/rfc/rfc1918.txt   )\r\n(       or
+  \    ftp://ftp.isi.edu/in-notes/rfc1918.txt     )\r\n(rfc search:   http://www.rfc-editor.org/rfcsearch.html
+  \  )\r\n(              http://www.ietf.org/ietf/1id-abstracts.txt )\r\n(              http://www.ietf.org/shadow.html
+  \           )\r\n\r\n\r\nMartians: (updates at: www.iana.org/assignments/ipv4-address-space
+  )\r\n no ip source-route\r\n access-list 100 deny   ip host 0.0.0.0 any\r\n  deny
+  ip 0.0.0.0         0.255.255.255  any log  ! antispoof\r\n  deny ip 0.0.0.0 0.255.255.255
+  \ 0.0.0.0 255.255.255.255 ! antispoof\r\n  deny ip any             255.255.255.128
+  0.0.0.127 ! antispoof\r\n  deny ip host            0.0.0.0        any log  ! antispoof\r\n
+  \ deny ip host            [router intf]  [router intf] ! antispoof\r\n  deny ip
+  xxx.xxx.xxx.0   0.0.0.255      any log  ! lan area\r\n  deny ip 0/8             0.255.255.255
+  \ any log  ! IANA - Reserved\r\n  deny ip 1/8             0.255.255.255  any log
+  \ ! IANA - Reserved\r\n  deny ip 2/8             0.255.255.255  any log  ! IANA
+  - Reserved\r\n  deny ip 5/8             0.255.255.255  any log  ! IANA - Reserved\r\n
+  \ deny ip 7/8             0.255.255.255  any log  ! IANA - Reserved\r\n  deny ip
+  10.0.0.0        0.255.255.255  any log  ! IANA - Private Use\r\n  deny ip 23/8            0.255.255.255
+  \ any log  ! IANA - Reserved\r\n  deny ip 27/8            0.255.255.255  any log
+  \ ! IANA - Reserved\r\n  deny ip 31/8            0.255.255.255  any log  ! IANA
+  - Reserved\r\n  deny ip 36-37/8         0.255.255.255  any log  ! IANA - Reserved\r\n
+  \ deny ip 39/8            0.255.255.255  any log  ! IANA - Reserved\r\n  deny ip
+  41-42/8         0.255.255.255  any log  ! IANA - Reserved\r\n  deny ip 50/8            0.255.255.255
+  \ any log  ! IANA - Reserved\r\n  deny ip 58-60/8         0.255.255.255  any log
+  \ ! IANA - Reserved\r\n  deny ip 69-79/8         0.255.255.255  any log  ! IANA
+  - Reserved\r\n  deny ip 82-95/8         0.255.255.255  any log  ! IANA - Reserved\r\n
+  \ deny ip 96-126/8        0.255.255.255  any log  ! IANA - Reserved\r\n  deny ip
+  127/8           0.255.255.255  any log  ! IANA - Reserved\r\n  deny ip 169.254.0.0
+  \    0.0.255.255    any log  ! link-local network\r\n  deny ip 172.16.0.0      0.15.255.255
+  \  any log  ! reserved\r\n  deny ip 192.168.0.0     0.0.255.255    any log  ! reserved\r\n
+  \ deny ip 192.0.2.0       0.0.0.255      any log  ! test network\r\n  deny ip 197/8
+  \          0.255.255.255  any log  ! IANA - Reserved\r\n  deny ip 220/8           0.255.255.255
+  \ any log  ! IANA - Reserved\r\n  deny ip 222-223/8       0.255.255.255  any log
+  \ ! IANA - Reserved\r\n  deny ip 224.0.0.0       31.255.255.255 any log  ! multicast\r\n
+  \ deny ip 224.0.0.0       15.255.255.255 any log  ! unless MBGP-learned routes\r\n
+  \ deny ip 224-239/8       0.255.255.255  any log  ! IANA - Multicast\r\n  deny ip
+  240-255/8       0.255.255.255  any log  ! IANA - Reserved\r\n\r\nfiltered source
+  addresses\r\n  0/8                 ! broadcast\r\n  10/8                ! RFC 1918
+  private\r\n  127/8               ! loopback\r\n  169.254.0/16        ! link local\r\n
+  \ 172.16.0.0/12       ! RFC 1918 private\r\n  192.0.2.0/24        ! TEST-NET\r\n
+  \ 192.168.0/16        ! RFC 1918 private\r\n  224.0.0.0/4         ! class D multicast\r\n
+  \ 240.0.0.0/5         ! class E reserved\r\n  248.0.0.0/5         ! reserved\r\n
+  \ 255.255.255.255/32  ! broadcast\r\n\r\nARIN administrated blocks: (http://www.arin.net/regserv/IPStats.html)\r\n
+  \  24.0.0.0/8 (portions of)\r\n   63.0.0.0/8\r\n   64.0.0.0/8\r\n   65.0.0.0/8\r\n
+  \  66.0.0.0/8\r\n  196.0.0.0/8\r\n  198.0.0.0/8\r\n  199.0.0.0/8\r\n  200.0.0.0/8\r\n
+  \ 204.0.0.0/8\r\n  205.0.0.0/8\r\n  206.0.0.0/8\r\n  207.0.0.0/8\r\n  208.0.0.0/8\r\n
+  \ 209.0.0.0/8\r\n  216.0.0.0/8\r\n----------------------------------------------------------\r\n\r\nwell
+  known ports: (rfc1700.txt)\r\n www.iana.org/assignments/port-numbers\r\n\r\nprotocol
+  numbers:\r\n www.iana.org/assignments/protocol-numbers\r\n www.iana.org/numbers.htm\r\n\r\nICMP(Types/Codes)\r\n
+  Testing Destination Reachability & Status\r\n  (0/0)  Echo-Reply\r\n  (8/0)  Echo\r\n
+  Unreachable Destinations\r\n  (3/0)  Network Unreachable\r\n  (3/1)  Host Unreachable\r\n
+  \ (3/2)  Protocol Unreachable\r\n  (3/3)  Port Unreachable\r\n  (3/4)  Fragmentaion
+  Needed and DF set (Pkt too big)\r\n  (3/5)  Source Route Failed\r\n  (3/6)  Network
+  Unknown\r\n  (3/7)  Host Unknown\r\n  (3/9)  DOD Net Prohibited\r\n  (3/10) DOD
+  Host Prohibited\r\n  (3/11) Net TOS Unreachable\r\n  (3/12) Host TOS Unreachable\r\n
+  \ (3/13) Administratively Prohibited\r\n  (3/14) Host Precedence Unreachable\r\n
+  \ (3/15) Precedence Unreachable\r\n Flow Control\r\n  (4/0)  Source-Quench [RFC
+  1016]\r\n Route Change Requests from Gateways\r\n  (5/0)  Redirect Datagrams for
+  the Net\r\n  (5/1)  Redirect Datagrams for the Host\r\n  (5/2)  Redirect Datagrams
+  for the TOS and Net\r\n  (5/3)  Redirect Datagrams for the TOS and Host\r\n Router\r\n
+  \ (6/-)  Alternate-Address\r\n  (9/0)  Router-Advertisement\r\n  (10/0) Router-Solicitation\r\n
+  Detecting Circular or Excessively Long Routes\r\n  (11/0) Time to Live Count Exceeded\r\n
+  \ (11/1) Fragment Reassembly Time Exceeded\r\n Reporting Incorrect Datagram Headers\r\n
+  \ (12/0) Parameter-Problem\r\n  (12/1) Option Missing\r\n  (12/2) No Room for Option\r\n
+  Clock Synchronization and Transit Time Estimation\r\n  (13/0) Timestamp-Request\r\n
+  \ (14/0) Timestamp-Reply\r\n Obtaining a Network Address (RARP Alternative)\r\n
+  \ (15/0) Information-Request\r\n  (16/0) Information-Reply\r\n Obtaining a Subnet
+  Mask [RFC 950]\r\n  (17/0) Address Mask-Request\r\n  (18/0) Address Mask-Reply\r\n
+  Other\r\n  (30/0) Traceroute\r\n  (31/0) Conversion-Error\r\n  (32/0) Mobile-Redirect\r\n\r\nRef:
+  [RFC 792] [RFC 896] [RFC 950] [RFC 1016]\r\n  www.cisco.com/univercd/cc/td/doc/product/lan/cat6000/sw_5_3/cofigide/qos.htm#19774\r\n\r\n\r\n\r\nDecimal
+  system Prefix's\r\n              Factor               Exponent  Prefix\r\n---------------------------------------------------\r\n
+  1 000 000 000 000 000 000 000 000...10^24....yotta\r\n     1 000 000 000 000 000
+  000 000...10^21....zetta\r\n         1 000 000 000 000 000 000...10^18....exa\r\n
+  \            1 000 000 000 000 000...10^15....peta\r\n                 1 000 000
+  000 000...10^12....tera\r\n                     1 000 000 000...10^9.....giga\r\n
+  \                        1 000 000...10^6.....mega\r\n                             1
+  000...10^3.....kilo\r\n                               100...10^2.....hecto\r\n                                10...10^1.....deka\r\n
+  \                              0.1...10^-1....deci\r\n                              0.01...10^-2....centi\r\n
+  \                            0.001...10^-3....milli\r\n                         0.000
+  001...10^-6....micro\r\n                     0.000 000 001...10^-9....nano\r\n                 0.000
+  000 000 001...10^-12...pico\r\n             0.000 000 000 000 001...10^-15...femto\r\n
+  \        0.000 000 000 000 000 001...10^-18...atto\r\n     0.000 000 000 000 000
+  000 001...10^-21...zepto\r\n 0.000 000 000 000 000 000 000 001...10^-24...yocto\r\n---------------------------------------------------\r\n\r\nConvert
+  Fahrenheit <> Celsius:\r\n Celsius = (Fahrenheit - 32) / 1.8\r\n Fahrenheit = (Celsius
+  * 1.8) + 32\r\n\r\nlast updated: 4jul02\r\nSource: http://oav.net/mirrors/cidr.html"

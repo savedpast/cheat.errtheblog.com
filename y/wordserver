@@ -1,0 +1,30 @@
+---
+wordserver: ! "All commands must be sent to the wordserver address\n      wsmith@wordsmith.org.
+  Commands must be in the subject line of email.\n\t\t\t    Message body is ignored.\n\n+--------------------------------------------------------------------+\n|
+  \    Service      |To do this |Send this Command |     Example      |\n|------------------+-----------+------------------+------------------|\n|
+  \                 |join       |subscribe your    |subscribe joe     |\n|                  |
+  \          |name              |smith             |\n|                  |-----------+------------------+------------------|\n|
+  \                 |sign off   |unsubscribe       |unsubscribe       |\n|                  |-----------+------------------+------------------|\n|A.Word.A.Day
+  \     |get        |archive mmyy      |archive 0898      |\n|                  |archives
+  \  |                  |                  |\n|                  |-----------+------------------+------------------|\n|
+  \                 |get FAQ    |info A.Word.A.Day |info A.Word.A.Day |\n|                  |-----------+------------------+------------------|\n|
+  \                 |get        |awadmail nn       |awadmail 11       |\n|                  |AWADmail
+  \  |                  |                  |\n|------------------+-----------+------------------+------------------|\n|
+  \                 |get        |define myword     |define computer   |\n|                  |definition
+  |                  |                  |\n|Dictionary/by/Mail|-----------+------------------+------------------|\n|
+  \                 |get FAQ    |info              |info              |\n|                  |
+  \          |Dictionary/by/Mail|Dictionary/by/Mail|\n|------------------+-----------+------------------+------------------|\n|
+  \                 |get        |synonym myword    |synonym love      |\n|                  |synonyms
+  \  |                  |                  |\n|Thesaurus/by/Mail |-----------+------------------+------------------|\n|
+  \                 |get FAQ    |info              |info              |\n|                  |
+  \          |Thesaurus/by/Mail |Thesaurus/by/Mail |\n|------------------+-----------+------------------+------------------|\n|
+  \                 |get acronym|acronym myacronym |acronym IBM       |\n|                  |expansion
+  \ |                  |                  |\n|                  |-----------+------------------+------------------|\n|Acronym/by/Mail
+  \  |get FAQ    |info              |info              |\n|                  |           |Acronym/by/Mail
+  \  |Acronym/by/Mail   |\n|                  |-----------+------------------+------------------|\n|
+  \                 |add acronym|addacronym ACRONYM|addacronym IOU I  |\n|                  |
+  \          |expansion         |Owe You           |\n|------------------+-----------+------------------+------------------|\n|
+  \                 |get        |anagram myword    |anagram santa     |\n|                  |anagrams
+  \  |                  |claus             |\n|Anagram/by/Mail   |-----------+------------------+------------------|\n|
+  \                 |get FAQ    |info              |info              |\n|                  |
+  \          |Anagram/by/Mail   |Anagram/by/Mail   |\n+--------------------------------------------------------------------+"

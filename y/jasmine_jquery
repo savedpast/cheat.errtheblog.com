@@ -1,0 +1,90 @@
+---
+jasmine_jquery: ! "Jasmine jQuery matchers\r\n\r\njasmine-jquery provides following
+  custom matchers (in alphabetical order):\r\n\r\ntoBe(jQuerySelector)\r\ne.g. expect($('<div
+  id=\"some-id\"></div>')).toBe('div')\r\ne.g. expect($('<div id=\"some-id\"></div>')).toBe('div#some-id')\r\n\r\ntoBeChecked()\r\nonly
+  for tags that have checked attribute\r\ne.g. expect($('<input type=\"checkbox\"
+  checked=\"checked\"/>')).toBeChecked()\r\n\r\ntoBeEmpty()\r\nChecks for child DOM
+  elements or text.\r\n\r\ntoBeHidden()\r\nElements can be considered hidden for several
+  reasons:\r\n  They have a CSS display value of none.\r\n  They are form elements
+  with type equal to hidden.\r\n  Their width and height are explicitly set to 0.\r\n
+  \ An ancestor element is hidden, so the element is not shown on the page.\r\n\r\ntoBeSelected()\r\nonly
+  for tags that have selected attribute\r\ne.g. expect($('<option selected=\"selected\"></option>')).toBeSelected()\r\n\r\ntoBeVisible()\r\nElements
+  are considered visible if they consume space in the document. Visible elements have
+  a width or height that is greater than zero.\r\n\r\ntoContain(jQuerySelector)\r\ne.g.
+  expect($('<div><span class=\"some-class\"></span></div>')).toContain('span.some-class')\r\n\r\ntoExist()\r\n\r\ntoHaveAttr(attributeName,
+  attributeValue)\r\nattribute value is optional, if omitted it will check only if
+  attribute exists\r\n\r\ntoHaveProp(propertyName, propertyValue)\r\nproperty value
+  is optional, if omitted it will check only if property exists\r\n\r\ntoHaveBeenTriggeredOn(selector)\r\nif
+  event has been triggered on selector (see \"Event Spies\", below)\r\n\r\ntoHaveBeenPreventedOn(selector)\r\nif
+  event has been prevented on selector (see \"Event Spies\", below)\r\n\r\ntoHaveClass(className)\r\ne.g.
+  expect($('<div class=\"some-class\"></div>')).toHaveClass(\"some-class\")\r\n\r\ntoHaveData(key,
+  value)\r\nvalue is optional, if omitted it will check only if an entry for that
+  key exists\r\n\r\ntoHaveHtml(string)\r\ne.g. expect($('<div><span></span></div>')).toHaveHtml('<span></span>')\r\n\r\ntoHaveId(id)\r\ne.g.
+  expect($('<div id=\"some-id\"></div>')).toHaveId(\"some-id\")\r\n\r\ntoHaveText(string)\r\naccepts
+  a String or regular expression\r\ne.g. expect($('<div>some text</div>')).toHaveText('some
+  text')\r\n\r\ntoHaveValue(value)\r\nonly for tags that have value attribute\r\ne.g.
+  expect($('<input type=\"text\" value=\"some text\"/>')).toHaveValue('some text')\r\n\r\ntoBeDisabled()\r\ne.g.
+  expect('<input type='submit' disabled='disabled'/>').toBeDisabled()\r\n\r\ntoBeFocused()\r\ne.g.
+  expect($('<input type='text' />').focus()).toBeFocused()\r\n\r\ntoHandle(eventName)\r\ne.g.
+  expect($form).toHandle(\"submit\")\r\n\r\ntoHandleWith(eventName, eventHandler)\r\ne.g.
+  expect($form).toHandleWith(\"submit\", yourSubmitCallback)\r\n\r\nThe same as with
+  standard Jasmine matchers, all of above custom matchers may be inverted by using
+  .not prefix, e.g.:\r\nexpect($('<div>some text</div>')).not.toHaveText(/other/)\r\n\r\nFixtures\r\nFixture
+  module of jasmine-jquery allows you to load HTML content to be used by your tests.
+  The overall workflow is like follows:\r\n\r\nIn myfixture.html file:\r\n<div id=\"my-fixture\">some
+  complex content here</div>\r\nInside your test:\r\n\r\nloadFixtures('myfixture.html');\r\n\r\n$('#my-fixture').myTestedPlugin();\r\n\r\nexpect($('#my-fixture')).to...;\r\n\r\nBy
+  default, fixtures are loaded from spec/javascripts/fixtures. You can configure this
+  path: jasmine.getFixtures().fixturesPath = 'my/new/path';.\r\n\r\nYour fixture is
+  being loaded into <div id=\"jasmine-fixtures\"></div> container that is automatically
+  added to the DOM by the Fixture module (If you REALLY must change id of this container,
+  try: jasmine.getFixtures().containerId = 'my-new-id'; in your test runner). To make
+  tests fully independent, fixtures container is automatically cleaned-up between
+  tests, so you don't have to worry about left-overs from fixtures loaded in preceeding
+  test. Also, fixtures are internally cached by the Fixture module, so you can load
+  the same fixture file in several tests without penalty to your test suite's speed.\r\n\r\nTo
+  invoke fixture related methods, obtain Fixtures singleton through a factory and
+  invoke a method on it:\r\n\r\njasmine.getFixtures().load(...);\r\n\r\nThere are
+  also global short cut functions available for the most used methods, so the above
+  example can be rewritten to just:\r\n\r\nloadFixtures(...);\r\n\r\nSeveral methods
+  for loading fixtures are provided:\r\n\r\nload(fixtureUrl[, fixtureUrl, ...])\r\nLoads
+  fixture(s) from one or more files and automatically appends them to the DOM (to
+  the fixtures container).\r\n\r\nread(fixtureUrl[, fixtureUrl, ...])\r\nLoads fixture(s)
+  from one or more files but instead of appending them to the DOM returns them as
+  a string (useful if you want to process fixture's content directly in your test).\r\n\r\nset(html)\r\nDoesn't
+  load fixture from file, but instead gets it directly as a parameter (html parameter
+  may be a string or a jQuery element, so both set('<div></div>') and set($('<div/>'))
+  will work). Automatically appends fixture to the DOM (to the fixtures container).
+  It is useful if your fixture is too simple to keep it in an external file or is
+  constructed procedurally, but you still want Fixture module to automatically handle
+  DOM insertion and clean-up between tests for you.\r\n\r\npreload(fixtureUrl[, fixtureUrl,
+  ...])\r\nPre-loads fixture(s) from one or more files and stores them into cache,
+  without returning them or appending them to the DOM. All subsequent calls to load
+  or read methods will then get fixtures content from cache, without making any AJAX
+  calls (unless cache is manually purged by using clearCache method). Pre-loading
+  all fixtures before a test suite is run may be useful when working with libraries
+  like jasmine-ajax that block or otherwise modify the inner workings of JS or jQuery
+  AJAX calls.\r\nAll of above methods have matching global short cuts:\r\n\r\nloadFixtures(fixtureUrl[,
+  fixtureUrl, ...])\r\n\r\nreadFixtures(fixtureUrl[, fixtureUrl, ...])\r\n\r\nsetFixtures(html)\r\nAlso,
+  a helper method for creating HTML elements for your tests is provided:\r\n\r\nsandbox([{attributeName:
+  value[, attributeName: value, ...]}])\r\nIt creates an empty DIV element with a
+  default id=\"sandbox\". If a hash of attributes is provided, they will be set for
+  this DIV tag. If a hash of attributes contains id attribute it will override the
+  default value. Custom attributes can also be set. So e.g.:\r\n\r\nsandbox();\r\nWill
+  return:\r\n<div id=\"sandbox\"></div>    \r\n\r\nAnd:\r\nsandbox({\r\n  id: 'my-id',\r\n
+  \ class: 'my-class',\r\n  myattr: 'my-attr'\r\n});\r\nWill return:\r\n<div id=\"my-id\"
+  class=\"my-class\" myattr=\"my-attr\"></div>\r\n\r\nSandbox method is useful if
+  you want to quickly create simple fixtures in your tests without polluting them
+  with HTML strings:\r\n\r\nsetFixtures(sandbox({class: 'my-class'}));\r\n\r\n$('#sandbox').myTestedClassRemoverPlugin();\r\n\r\nexpect($('#sandbox')).not.toHaveClass('my-class');\r\n\r\nThis
+  method also has a global short cut available:\r\nsandbox([{attributeName: value[,
+  attributeName: value, ...]}])\r\n\r\nAdditionally, two clean up methods are provided:\r\n\r\nclearCache()\r\npurges
+  Fixture module internal cache (you should need it only in very special cases; typically,
+  if you need to use it, it may indicate a smell in your test code)\r\n\r\ncleanUp()\r\ncleans-up
+  fixtures container (this is done automatically between tests by Fixtures module,
+  so there is no need to ever invoke this manually, unless you're testing a really
+  fancy special case and need to clean-up fixtures in the middle of your test)\r\nThese
+  two methods do not have global short cut functions.\r\n\r\nEvent Spies\r\nSpying
+  on jQuery events can be done with spyOnEvent and expect(eventName).toHaveBeenTriggeredOn(selector).
+  First, spy on the event:\r\n\r\nspyOnEvent($('#some_element'), 'click');\r\n$('#some_element').click();\r\nexpect('click').toHaveBeenTriggeredOn($('#some_element'));\r\n\r\nYou
+  can similarly check if triggered event was prevented:\r\nspyOnEvent($('#some_element'),
+  'click');\r\n$('#some_element').click();\r\nexpect('click').toHaveBeenPreventedOn($('#some_element'));\r\n\r\nMuch
+  thanks to Luiz Fernando Ribeiro for his article on Jasmine event spies."

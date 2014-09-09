@@ -1,0 +1,11 @@
+---
+netbeans: ! "Since Netbeans V6.0 there is Rails-Support built in - compared to Radrails
+  Rails-Support in Netbeans is awesome!\r\n\r\nDownload: \r\n[stable]  http://netbeans.org/downloads/\r\n[nightly]
+  http://bits.netbeans.org/download/trunk/nightly/latest/ (normally quite usable)\r\n=>
+  just download the ruby/rails-prepackaged Netbeans - if you need more functionality\r\nyou
+  can add it via the plugin-manager\r\n\r\nInstallation:\r\nYou need an up-to-date
+  Java-SDK (JRE is not enough)\r\n\r\nYou get:\r\n* Nice & Fast Inline-Code-Documentation
+  of Rails/Ruby\r\n* Nice & Fast Code-Completation\r\n* Nice & Fast Code-Templates\r\n*
+  Rails 2.0.2 Support\r\n* Out-Of-The-Box-Working Debugger\r\n* Built-In SVN\r\n*
+  Built-In \"Goto-File\"\r\n* etc.pp.\r\n\r\nTry Netbeans and forget about Radrails!
+  ;)"

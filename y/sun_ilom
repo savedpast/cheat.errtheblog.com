@@ -1,0 +1,7 @@
+---
+sun_ilom: ! "=== Sun x2200 === \n\nstart /SP/AgentInfo/console\nstop /SP/AgentInfo/console\nreset
+  /SP \nshow /SP/AgentInfo/SEL\nset /SP/AgentInfo/SEL clear=action\nset /SP/SystemInfo/CtrlInfo
+  IdLedCtrl=blink\nset /SP/SystemInfo/CtrlInfo PowerCtrl=reset\nset /SP/SystemInfo/CtrlInfo
+  PowerCtrl=forceoff\nset /SP/SystemInfo/CtrlInfo BootCtrl=BIOSSetup\n\n=== Sun X4540
+  ===\nStart console:\nstart /SP/console\n\nStart system:\nstart /SYS\n\nStop system:\nstop
+  /SYS\n\nhard reset system:\nreset /SYS"

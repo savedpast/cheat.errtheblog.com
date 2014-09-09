@@ -1,0 +1,15 @@
+---
+cron: ! "To edit the crontab of the current user:\n$ crontab -e\n\nTo display the
+  crontab of the current user:\n$ crontab -l \n\nTo remove the crontab of the current
+  user:\n$ crontab -r\n\nBasic file format:\n\n*     *   *   *    *  command to be
+  executed\n-     -    -    -    -\n|     |     |     |     |\n|     |     |     |
+  \    +----- day of week (0 - 6) (Sunday=0)\n|     |     |     +------- month (1
+  - 12)\n|     |     +--------- day of month (1 - 31)\n|     +----------- hour (0
+  - 23)\n+------------- min (0 - 59)\n\nExpressions\n\n1,2,3   list of several values
+  (comma-separated)\n1-3     list of consecutive values (dash)\n*/2     step value
+  (every N)\n\nExamples\n\n* 12 10-16/2 * * backup.sh\n* 12 10,12,14,16 * * backup.sh\n\nRuns
+  backup.sh at noon on the 10th, 12th, 14th, and 16th of each month\n\n*/15 9-17 *
+  * * connection.test\n\nRuns connection.test every 15 mins between the hours or 9am
+  and 5pm\n\nNotes:\n * Doesn't load your bash.rc.  \n * Different Path.\n * Use full,
+  absolute paths.\n * Sends email with output from each run (only way to debug).  sSMTP
+  is simple emailer.\n * Logs to syslog (only indicates that entry was run, no output)."

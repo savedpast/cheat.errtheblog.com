@@ -1,0 +1,4 @@
+---
+permissions: ! "File Permissions Key:\n\n1 --x execute \n2 -w- write \n3 -wx write
+  and execute\n4 r-- read\n5 r-x read and execute\n6 rw- read and write\n7 rwx read,
+  write and execute"

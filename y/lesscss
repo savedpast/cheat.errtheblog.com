@@ -1,0 +1,19 @@
+---
+lesscss: ! "LessCSS\nhttp://lesscss.org\n\n# Variables\n# Variables allow you to specify
+  widely used values in a single place, and then re-use them throughout the style
+  sheet, making global changes as easy as changing one line of code.\n\n@brand_color:
+  #4D926F;\n\n#header {\n  color: @brand_color;\n}\n\nh2 {\n  color: @brand_color;\n}\n\t\t\t\t\n#
+  Mixins\n# Mixins allow you to embed all the properties of a class into another class
+  by simply including the class name as one of its properties. It's just like variables,
+  but for whole classes.\n\n.rounded_corners {\n  -moz-border-radius: 8px;\n  -webkit-border-radius:
+  8px;\n  border-radius: 8px;\n}\n\n#header {\n  .rounded_corners;\n}\n\n#footer {\n
+  \ .rounded_corners;\n}\n\t\t\t\t\n# Nested Rules\n# Rather than constructing long
+  selector names to specify inheritance, in Less you can simply nest selectors inside
+  other selectors. This makes inheritance clear and style sheets shorter.\n\n#header
+  {\n  color: red;\n  a {\n    font-weight: bold;\n    text-decoration: none;\n  }\n}\n\t\t\t\t\n#
+  Operations\n# Are some elements in your style sheet proportional to other elements?
+  Operations let you add, subtract, divide and multiply property values and colors,
+  giving you the power to do create complex relationships between properties.\n\n@the-border:
+  1px;\n@base-color: #111;\n\n#header {\n  color: @base-color * 3;\n  border-left:
+  @the-border;\n  border-right: @the-border * 2;\n}\n\n#footer { \n  color: (@base-color
+  + #111) * 1.5; \n}"

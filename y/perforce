@@ -1,0 +1,69 @@
+---
+perforce: ! "# perforce helpers\n\n# find unadded files\nalias p5_unadded=\"find .
+  -type f | grep -v '.*EXCLUDE_PATTERN' | p4 -x - have > /dev/null\"\n\n# deletes
+  empty dirs b/c perforce will sync and leave empty dirs\nalias p5_delete_empty_dirs=\"find
+  . -depth -empty -type d -exec rmdir {} \\;\"\n\n# get and then check for conflicts\nalias
+  p5_get=\"p4 sync ...; p4 resolve ...;\"\n\n# check for unadded, revert unmodified,
+  submit\nalias p5_put=\"p5_unadded; p4 revert -a ...; p4 submit ...;\"\n\n# opens
+  diff for a tree in textmate, ignoring whitespace changes\nalias p5_diff=\"p4 diff
+  -db ... | mate;\"\n\n# add a directory tree (recursively)\n# http://kb.perforce.com/article/12/adding-a-directory-tree\nalias
+  p5_add=\"find . -type f -print | p4 -x - add;\"\n\n# opens for edit recursively\nalias
+  p5_edit=\"p4 edit ...;\"\n\n# reverts unmodified files\nalias p5_revert=\"p4 revert
+  -a ...;\"\n\n\np4 add              # Open a new file to add it to the depot \np4
+  admin            # Perform administrative operations on the server \np4 annotate
+  \        # Print file lines along with their revisions \np4 branch           # Create
+  or edit a branch specification \np4 branches         # Display list of branches
+  \np4 change           # Create or edit a changelist description \np4 changes          #
+  Display list of pending and submitted changelists \np4 changelist       # Create
+  or edit a changelist description \np4 changelists      # Display list of pending
+  and submitted changelists \np4 client           # Create or edit a client specification
+  and its view \np4 clients          # Display list of known clients \np4 counter
+  \         # Display, set, or delete a counter \np4 counters         # Display list
+  of known counters \np4 delete           # Open an existing file to delete it from
+  the depot \np4 depot            # Create or edit a depot specification \np4 depots
+  \          # Display list of depots \np4 describe         # Display a changelist
+  description \np4 diff             # Display diff of client file with depot file
+  \np4 diff2            # Display diff of two depot files \np4 dirs             #
+  List subdirectories of a given depot directory \np4 edit             # Open an existing
+  file for edit \np4 filelog          # List revision history of files \np4 files
+  \           # List files in the depot \np4 fix              # Mark jobs as being
+  fixed by named changelists \np4 fixes            # List what changelists fix what
+  job \np4 flush            # Fake a ‘p4 sync’ by not moving files \np4 fstat            #
+  Dump file info \np4 group            # Change members of a user group \np4 groups
+  \          # List groups (of users) \np4 have             # List revisions last
+  synced \np4 help             # Print this help message \np4 info             # Print
+  out client/server information \np4 integrate        # Schedule integration from
+  one file to another \np4 integrated       # Show integrations that have been submitted
+  \np4 job              # Create or edit a job (defect) specification \np4 jobs             #
+  Display list of jobs \np4 jobspec          # Edit the job template \np4 label            #
+  Create or edit a label specification and its view \np4 labels           # Display
+  list of labels \np4 labelsync        # Synchronize label with the current client
+  contents \np4 license          # Update or display the license file \np4 lock             #
+  Lock an opened file against changelist submission \np4 logger           # Report
+  what jobs and changelists have changed \np4 login            # Login to Perforce
+  by obtaining a session ticket \np4 logout           # Logout of Perforce by removing
+  or invalidating a ticket. \np4 monitor          # Display current running Perforce
+  process information \np4 move             # Move file(s) from one location to another
+  \np4 obliterate       # Remove files and their history from the depot \np4 opened
+  \          # Display list of files opened for pending changelist \np4 passwd           #
+  Set user password on server (and Windows client) \np4 print            # Retrieve
+  a depot file to the standard output \np4 protect          # Modify protections in
+  the server namespace \np4 protects         # Display protections in place for a
+  given user/path \np4 rename           # Explains how to rename files \np4 reopen
+  \          # Change the type or changelist number of an opened file \np4 resolve
+  \         # Merge open files with other revisions or files \np4 resolved         #
+  Show files that have been merged but not submitted \np4 revert           # Discard
+  changes from an opened file \np4 review           # List and track changelists (for
+  the review daemon) \np4 reviews          # Show what users are subscribed to review
+  files \np4 set              # Set variables in the registry (Windows only) \np4
+  sizes            # Display size information for files in the depot \np4 submit           #
+  Submit open files to the depot \np4 sync             # Synchronize the client with
+  its view of the depot \np4 tag              # Tag files with a label \np4 tickets
+  \         # Display list of session tickets for this user \np4 triggers         #
+  Modify list of pre-submit and form-validating triggers \np4 typemap          # Modify
+  the file name-to-type mapping table \np4 unlock           # Release a locked file
+  but leave it open \np4 user             # Create or edit a user specification \np4
+  users            # Display list of known users \np4 verify           # Verify that
+  the server archives are intact \np4 workspace        # Create or edit a client specification
+  and its view \np4 workspaces       # Display list of known clients \np4 where            #
+  Show how file names map through the client view"

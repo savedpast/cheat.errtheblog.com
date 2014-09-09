@@ -1,0 +1,2 @@
+---
+cuke4duke: ! "Run a single feature:\r\n$ mvn cuke4duke:features -Dcucumber.features=features/foo.feature"

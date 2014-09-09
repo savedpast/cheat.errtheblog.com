@@ -1,0 +1,24 @@
+---
+cheat: ! "Hi, welcome to cheat (http://cheat.errtheblog.com).\r\nThanks for trying
+  it out.\r\n\r\nBe aware that the ENTIRE world will see your cheat sheets!  \r\n\r\nHere
+  are a few commands to get you started.\r\n===========================================\r\n\r\nInstallation:\r\n$
+  gem install cheat\r\n\r\nRecently added cheat sheets:\r\n$ cheat recent\r\n\r\nAll
+  cheat sheets:\r\n$ cheat sheets\r\n\r\nThe `strftime' cheat sheet:\r\n$ cheat strftime\r\n\r\nView
+  a cheat sheet in TextMate:\r\n$ cheat strftime | mate\r\n\r\nLess or more, for scrolly
+  terminal:\r\n$ cheat strftime | less\r\n$ cheat strftime | more\r\n\r\nPrint a cheat
+  sheet\r\n$ cheat strftime | lpr\r\n\r\nTo edit a cheat sheet, use the --edit switch.\r\n$
+  cheat markaby --edit\r\n\r\nTo add a cheat sheet, use the --add switch.\r\n$ cheat
+  readme --add\r\nDo you not use CAPITAL letters in the name, or it will be lost in
+  the void, due\r\nto cheat bugs.\r\n\r\nTo use a different editor (such as TextMate)
+  for --edit and --add, set the\r\nVISUAL (or EDITOR) environment variable:\r\n$ export
+  VISUAL='mate -w'\r\n\r\nTo see versions of a sheet, use the --versions switch.\r\n$
+  cheat rspec --versions\r\n\r\nTo see a diff to the current version, use the --diff
+  switch.\r\n$ cheat rspec --diff 5\r\n\r\nTo see a diff between two versions, use
+  the start:end format.\r\n$ cheat rspec --diff 5:7\r\n\r\nSheets are cached locally
+  in ~/.cheat.  To clear your cache, pass --new to\r\ncheat.  You won't get updates
+  unless you do this.\r\n$ cheat --new\r\n$ cheat strftime --new\r\n\r\nAnd to get
+  all cached locally, you could do\r\n$ cheat sheets | grep '^  ' | xargs -n 1 -I
+  {} bash -c 'cheat {} | :'\r\n\r\n** There's no need to run this in a screen or to
+  sit and watch it while it runs.\r\nThe -I argument to xargs allows you to specify
+  where in the command the\r\ncurrent arg should go. The `| :` is a Bash construct
+  to automatically discard\r\noutput (and it is faster than `> /dev/null`."

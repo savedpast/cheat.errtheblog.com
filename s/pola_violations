@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>POLA/PLA
+--------
+POLA or PLA, the priniciple of least astonishment is documented at
+http://en.wikipedia.org/wiki/Principle_of_least_astonishment
+
+Ruby definitely scores on this front. It surprises the programmer the least. But still, there are some quirks. This cheat sheet is an attempt to list Ruby's violations of POLA. Of course, the list  may be personal.
+
+1. String#to_i -- as of Ruby 1.9.2 returns 0 when the receiver does not start with numerics!  (Naturally, it returns 0 also when receiver is &quot;0&quot;).
+
+   I'd have preferred nil to be returned in this case. Of course, there are cases where a return value of 0 is useful (cases where non-numeric string should contribute nothing to an aggregate function), but still, this is a candidate for POLA violation.
+
+   See http://www.ruby-forum.com/topic/78767 for some interesting discussions and workarounds.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

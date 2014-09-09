@@ -1,0 +1,54 @@
+---
+gcc: ! "** Taken From Give Me Fish Cheat Sheets\r\n** http://www.givemefish.com/ArticlesAndBook/CheatSheets/GiveMeFish_CheatSheet_gcc.php\r\n\r\nOft
+  used gcc commands\r\n=======================\r\n\r\n$g++ --version           Returns
+  the version of gcc\r\n$g++ -c sourceFile.cpp   Compiles a single source file into
+  an object file\r\n$g++ -o Program.exe source1.o source2.o source3.o    Links a series
+  of object files into \r\n                                                     a
+  single executable.\r\n                                                     -o means
+  \"output\" and is followed by a filename\r\nTo include debug symbols, use -g during
+  compiling:\r\n$g++ -c -g sourceFile.cpp    compiles a single soruce file with debug
+  info into an object file\r\n\r\nFor the following examples, assume this directory
+  structure:\r\n\r\n/Dir\r\n/Dir/source   [Contains:  File1.cpp   File2.cpp]\r\n/Dir/include
+  \ [Contains:  File1.h     File1.h]\r\n/Dir/lib      [will contain output libraries]\r\n/Dir/obj
+  \     [temporarily used to contain .o object files\r\n\r\nCreate a static (.a) library
+  from two source files:\r\n-----\r\ng++ -c -I./include ./source/File1.cpp -o ./obj/File1.o\r\ng++
+  -c -I./include ./source/File2.cpp -o ./obj/File2.o\r\nar rc ./lib/libLib1.a ./obj/File1.o
+  ./obj/File2.o\r\n\r\nCreate a shared (.so) library from two source files:\r\n-----\r\ng++
+  -c -fPIC -o ./obj/File1.o -I./include ./source/File1.cpp\r\ng++ -c -fPIC -o ./obj/File2.o
+  -I./include ./source/File2.cpp\r\ng++ -shared -Wl,-soname,./lib/libLib1.so.1 -o
+  ./lib/libLib1.so.1.0 ./obj/File1.o ./obj/File2.o\r\n\r\nNote: the linker will prefer
+  (use first) shared libraries (.so) if found\r\n      over static (.a) libraries,
+  unless explicitly directed to use static libs.\r\n\r\nCreate an executable binary
+  from a source file + **static** library, use the\r\n -static switch.  Will increase
+  size, but allow exe to run on systems w/out\r\n a shared library.\r\nFirst compile
+  the file, then create the exe by linking in Lib1,\r\n placing the binary in ./bin/main.exe\r\n-----\r\ng++
+  -c -I./include -I../Lib1/include ./source/main.cpp -o ./obj/main.o\r\ng++ -static
+  ./obj/main.o -L../Lib1/lib -lLib1 -o ./bin/main.exe\r\n\r\nCreate an executable
+  binary from a source file + **dynamic** library:\r\nNote: the .so library must be
+  present during compile and run time, unless\r\n a shared .a version is found.  If
+  a shared .a version is found (after searching\r\n and failing to find a .so library),
+  it will be linked in statically.\r\n This means that this particular .so library
+  need not be present at run\r\n time, as it is part of the exe. This increases the
+  size (often times considerably)\r\n of the resultant exe.\r\n\r\nFirst compile the
+  file, then create the exe by linking in Lib1,\r\n placing the binary in ./bin/main.exe\r\n-----\r\ng++
+  -c -I./include -I../Lib1/include ./source/main.cpp -o ./obj/main.o\r\ng++ ./obj/main.o
+  -L../Lib1/lib -lLib1 -o ./bin/main.exe\r\n\r\n-------------------------\r\n\r\nNotes
+  on building, order, undefined reference, etc...\r\n\r\nAssume you have two libraries
+  and an exe project: Lib1, Lib2, and exe.\r\n  Lib2 depends on Lib1 (ie, uses functions
+  / classes from Lib1), and the \r\n  exe project depends on both Libs.\r\n\r\nYou
+  can build Lib1 error free even if you don't define all the functions\r\n  that have
+  been declared within it.\r\n\r\nYou can build Lib2 error free even if Lib1 hasn't
+  defined all symbols. This\r\n  is true whether or not Lib2 expicitly makes calls
+  to the missing functions.\r\n\r\nOnce you try to link the Libs into the exe, however,
+  you will get the\r\n  error \"undefined reference\".\r\n\r\nIf the function is undefined
+  in Lib1, and then used in Lib2 in a function, and\r\n  then that function from Lib2
+  is used in exe, it will reference Lib2. \r\n\r\nIf it is undefined in Lib1 and used
+  directly from exe (without being used in\r\n  Lib2), it will reference only the
+  missing reference without mentioning Lib2.\r\n\r\nIf the function is undefined and
+  never used, you will not receive any errors.\r\n\r\nIf an undefined function from
+  Lib1 is used in Lib2, and that function from\r\n  Lib2 is *not* used in the exe,
+  then you will not receive any errors.\r\n\r\nYou can build either Lib1 or Lib2 first,
+  no matter which library depends on\r\n  which.  But both must be built before building
+  the exe.\r\n\r\n---------------------\r\n\r\n$ldd   - a CL utility to determine
+  and print shared library dependencies\r\n\r\n$ld.so - the dynamic linker / loader\r\n\r\ngcc
+  -E - Stop after the preprocessing stage;"

@@ -1,0 +1,24 @@
+---
+yui: ! "YUI\n===\n\nYUI Component                   Module Name\n=============                   ===========\nAnimation
+  Utility               animation\nAutoComplete Control            autocomplete\nBase
+  CSS Style Foundation       base\nButton Control                  button\nCalendar
+  Control                calendar\nCarousel Control                carousel\nCharts
+  Control                  charts\nColor Picker Control            colorpicker\nConnection
+  Manager              connection\nCookie Utility                  cookie\nContainer
+  Family Core (Module, \n  Overlay)                      containercore\nContainer
+  Family (Module, \n  Overlay Panel, Tooltip, \n  Dialog, SimpleDialog)         container\nDataSource
+  Utility              datasource\nDataStore Utility               datastore\nDataTable
+  Control               datatable\nDom Collection                  dom\nDrag & Drop
+  Utility             dragdrop\nRich Text Editor                editor\nElement Utility
+  \                element\nEvent Utility                   event\nFonts CSS                       fonts\nGet
+  Utility                     get\nGrids CSS Kit                   grids\nBrowser
+  History Manager         history\nImageLoader Utility             imageloader\nImageCropper
+  Control            imagecropper\nJSON Utility                    json\nLayout Manager
+  \                 layout\nLogger Control                  logger\nMenu Control                    menu\nPaginator
+  \                      paginator\nProfiler                        profiler\nProfilerViewer
+  Control          profilerviewer\nResize Utility                  resize\nReset CSS
+  \                      reset\nSelector Utility                selector\nSimple Editor
+  \                  simpleeditor\nSlider Control                  slider\nTabView
+  Control                 tabview\nTreeView Control                treeview\nUploader
+  Control                uploader\nYAHOO Global Object             yahoo\nYUI Loader
+  Utility              yuiloader\nYUI Test                        yuitest"

@@ -1,0 +1,32 @@
+---
+thor: ! "An example\n----------\n\nclass Ls < Thor\n  # thor ls:default\n  desc \"default\",
+  \"List files\"\n  def default\n    system \"ls\"\n  end\n\n  # thor ls:with_args
+  '*.sql'\n  desc \"with_args GLOB\", \"List files, filter with arg\"\n  def with_args(glob)\n
+  \   system \"ls #{glob}\"\n  end\n\n  # thor ls:with_opts --glob='*.sql'\n  # thor
+  ls:with_opts -g '*.sql'\n  desc \"with_opts [--glob GLOB]\", \"List files, filter
+  with option\"\n  method_options %w(glob -g) => :string\n  def with_opts\n    system
+  \"ls #{options[:glob]}\"\n  end\nend\n\nTypes for method_options\n------------------------\n\n
+  \ :boolean  is parsed as —option or —option=true\n  :string   is parsed as —option=VALUE\n
+  \ :numeric  is parsed as —option=N\n  :array    is parsed as —option=one two three\n
+  \ :hash     is parsed as —option=name:string age:integer\n\nBesides, method_option
+  allows a default value to be given, examples:\n\n  method_options :force => false\n
+  \ #=> Creates a boolean option with default value false\n\n  method_options :alias
+  => \"bar\"\n  #=> Creates a string option with default value \"bar\"\n\n  method_options
+  :threshold => 3.0\n  #=> Creates a numeric option with default value 3.0\n\nActions\n-------\n\nSome
+  actions like copy file requires that a class method called source_root\nis defined
+  in your class.\n\n    class App < Thor\n      include Thor::Actions\n      # tasks\n
+  \   end\n\nInput/output actions\n--------------------\n\n    say \"hello\"\n    ask
+  \"Do you want to continue?\"\n    yes?\n    no?\n\n    create_file \"filename.txt\",
+  data\n    create_file \"filename.txt\" do\n      data\n    end\n\n    remove_file
+  \"filename.txt\"\n    copy_file \"from.rb\", \"to.rb\"\n    template \"source.erb\",
+  \"dest.html\"      # Parses an ERB file\n\n    directory \"from/\", \"to/\"                #
+  Copies a directory\n    empty_directory \"dir/\"                  # Creates a directory\n\n
+  \   get \"http://x.com/103208\", \"out.rb\"     # Download a file\n    get \"http://x.com/103208\",
+  \"out.rb\" do\n      content.split(\"\\n\").first\n    end\n\n    run \"rake test\"
+  \                        # Run a command\n    run_ruby_script \"foo.rb\"                #
+  Takes into account Win32\n\n    thor :install                           # Invoke
+  a Thor task\n\n    gsub_file \"foo.rb\", /user=.*/, \"user=foo\"\n    prepend_file
+  \"foo.sh\", \"#!/usr/bin/env sh\"\n    inject_into_file \"Gemfile\", \"gem 'rails'\",
+  after: \"gem 'mysql'\"\n    inject_into_class \"controller.rb\", Controller do\n
+  \     \"  attr_reader :foo\"\n    end\n\n    inside \"dir/\" do                        #
+  Do stuff inside a path\n      # ...\n    end"

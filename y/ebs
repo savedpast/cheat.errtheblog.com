@@ -1,0 +1,4 @@
+---
+ebs: ! "Create an auto-mounted EBS Volume on CentOS\r\n---\r\nyum install -y xfsprogs\r\nmodprobe
+  xfs\r\nmkfs.xfs /dev/sdh\r\necho \"/dev/sdh /vol xfs noatime 0 0\" | sudo tee -a
+  /etc/fstab\r\nmkdir -m 000 /vol\r\nmount -t xfs /vol\r\n"

@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>30 seconds:
+  Programmer Thinks: There’s just a small change to the code to be done. I know exactly what to type and where. It takes 30 seconds to type.
+  Programmer Forgot: Time for starting the computer, the development environment and getting the right source. The time to build, test, check in and document the fix
+  Actual Time: 1 hour
+
+5 minutes:
+  Programmer Thinks: It’s a minor thing, I just have to look up the exact syntax on google and fix it.
+  Programmer Forgot: It’s quite rare to find exactly the right information on the first try. Even if it is found, it probably needs some adjustments before it works. Add time for building, testing etc.
+  Actual Time: 2 hours
+
+1 hour:
+  Programmer Thinks: I know how to do it, but it’s some code to write so it will take some time.
+  Programmer Forgot: 1 hour is too tight to have any margin for unforeseen problems. Something always fails.
+  Actual Time: 2 hours
+
+4 hours:
+  Programmer Thinks: It’s some code to write, but I roughly know the step. I know the Wizzabanga module of our standard framework can do it, but I have to check the documentation on exactly how to call it.
+  Programmer Forgot: This is probably the only realistic estimation. It is large enough to have some margin for unexpected problems, while the task is still small enough to grasp.
+  Actual Time: 4 hours
+
+8 hours:
+  Programmer Thinks: I first have to refactor the Balunga class into two, then I’ll add a call to the Wizzabanga code and finally add the new fields to the GUI.
+  Programmer Forgot: There’s a lot of dependencies on the Balunga class from different parts of the system. About 40 different files have to be adjusted. The newly added field in the GUI has to be added in the database as well. 8 hours is too large to grasp completely. There will be more steps than the programmer thought of when estimating.
+  Actual Time: 12-16 hours
+
+2 days:
+  Programmer Thinks: It’s really quite a lot to code. I have to add some new tables to the database, a GUI for those and then the logic to read and write data to the tables.
+  Programmer Forgot: 2 days of work is too large to overview for most developers. There will surely be things that are missed. Not just small things, but entire major pieces of functionality required will be forgotten during the estimation.
+  Actual Time: 5 days
+
+1 week:
+  Programmer Thinks: Ouch… that’s a HUGE task. I don’t have a clue on how to do it, but I can’t say I don’t know. One week should be enough, I hope, I really hope, but I can’t ask for more or they’ll think I’m not competent enough.
+  Programmer Forgot: The task is way too large to get an understanding of for most programmers. It has to be sent back to an architect that can help splitting it in smaller parts and provide some direction how it should be solved. The architect might find a simple way to do it – or find that there’s a lot more work than expected.
+  Actual Time: 2-20 days
+
+Source: http://java.dzone.com/programmers-are-bad-estimating</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

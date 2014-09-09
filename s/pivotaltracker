@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Pivotal Tracker web-based shortcuts
+
+search                        /
+help (this)                   ?
+add story                     a
+save currently open story     &lt;Ctrl&gt; + s
+save comment being edited     &lt;Shift&gt; + enter
+toggle backlog                &lt;Shift&gt; + b
+toggle charts (graphs)        &lt;Shift&gt; + g
+toggle done                   &lt;Shift&gt; + d
+toggle history                &lt;Shift&gt; + h
+toggle icebox                 &lt;Shift&gt; + i
+toggle my work                &lt;Shift&gt; + w
+toggle labels &amp; searches      &lt;Shift&gt; + l
+toggle current                &lt;Shift&gt; + c
+add epic                      e
+toggle epics panel            &lt;Shift&gt; + e</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>#alba/nbil/home
+$ ssh il@thinlinc.imm.dtu.dk
+
+#Start screen session. -S gives it a name
+$ screen -S thinlinc
+
+#start pine
+$ pine
+
+#Next you wnt to do somthing else, wget etc...  You need to create another screen window by pressing special key combination. 
+Press CTRL + a followed by c key (first hit CTRL+a, releases both keys and press c). 
+As soon as you hit 'c' you will get new shell prompt at console. 
+$ wget...
+
+
+#switch between these two tasks
+* Switching between windows is the specialty of screen utility.  To switch between pine and wget window (or session) 
+
+        CTRL+a followed by n key (first hit CTRL+a, releases both keys and press n).
+
+* To list all windows use the command 
+       CTRL+a followed by &quot; key (first hit CTRL+a, releases both keys and press &quot; ).
+
+* To switch to window by number use the command 
+       CTRL+a followed by ' (first hit CTRL+a, releases both keys and press ' it will prompt for window number).</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

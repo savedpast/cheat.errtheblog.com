@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>INTRODUCTION
+
+  ERB provides an easy to use but powerful templating system for Ruby.
+  Rails/RoR, the web application framework, uses ERB to create views.
+
+EDITORIAL NOTE:
+
+  Shamelessly compiled and copied from:
+  
+  http://ruby-doc.org/stdlib/libdoc/erb/rdoc/classes/ERB.html
+
+RECOGNIZED TAGS
+
+  ERB recognizes certain tags in the provided template and converts 
+  them based on the rules below:
+
+    &lt;% Ruby code -- inline with output %&gt;
+    
+    &lt;%= Ruby expression -- replace with result %&gt;
+    
+    &lt;%# comment -- ignored -- useful in testing %&gt;
+    
+    % a line of Ruby code -- treated as &lt;% line %&gt; (optional -- see ERB.new)
+    
+    %% replaced with % if first thing on a line and % processing is used
+    
+    &lt;%% or %%&gt; -- replace with &lt;% or %&gt; respectively
+
+    &lt;%- and -%&gt; suppress leading and trailing whitespace, including the trailing newline, and can be used interchangeably with &lt;% and %&gt;.
+
+  All other text is passed through ERB filtering unchanged. 
+
+ALTERNATIVES
+
+  There are a variety of templating solutions available in various Ruby projects:
+
+    * ERB‘s big brother, eRuby, works the same but is written in C for speed;
+    * Erubis is a fast, secure, and very extensible implementation of eRuby
+    * Amrita (smart at producing HTML/XML);
+    * cs/Template (written in C for speed);
+    * RDoc uses its own template engine, which can be reused elsewhere;
+    * and others; search the RAA.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

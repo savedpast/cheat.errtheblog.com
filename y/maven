@@ -1,0 +1,59 @@
+---
+maven: ! "To build and thus create the project's artifact (war, jar, etc):\r\nmvn
+  package\r\n\r\nTo clean all previous build files:\r\nmvn clean\r\n\r\nTo clean all
+  previous build files and then build:\r\nmvn clean package\r\n\r\nIf you want to
+  do the above but in a \"off-line\" mode\r\nmvn -o clean package\r\n\r\nTo clean
+  all previous build files, then build, then install in the local repository:\r\nmvn
+  clean package install\r\n\r\n---------------------------------\r\n\r\nInstalling
+  Artifact in Local Repository\r\nmvn clean install\r\n\r\nTo build the package file
+  (jar, war, etc) allowing test failure:\r\nmvn -Dmaven.test.failure.ignore=true package\r\n\r\nTo
+  generate Eclipse project descriptor after configuring the dependencies in pom.xml:\r\nmvn
+  eclipse:eclipse\r\n\r\nTo clean previous generated Eclipse support files and then
+  generate Eclipse project descriptor after configuring the dependencies in pom.xml:\r\nmvn
+  eclipse:clean eclipse:eclipse\r\n\r\nTo generate the project's development support
+  site\r\nmvn site\r\n\r\nTo generate site documentation without running the tests
+  (handy while updating the APTs):\r\nmvn -Dmaven.test.skip=true clean site\r\n\r\nTo
+  generate javadoc\r\nmvn javadoc:javadoc\r\n\r\nTo generate javadoc stuffed into
+  a jar file\r\nmvn javadoc:jar\r\n\r\nTo create a new non web app Java project (artifact
+  is jar):\r\nmvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app\r\n\r\nTo
+  create a new web app Java project (artifact is war):\r\nmvn archetype:create -DgroupId=com.mycompany.app
+  -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp\r\n\r\nTo check
+  the version of Maven:\r\nmvn --version\r\n\r\nTo run unit tests:\r\nmvn test\r\n\r\nTo
+  distribute the source code:\r\nmvn assembly:assembly -DdescriptorId=src\r\n\r\nTo
+  install a jar file on local repo:\r\nmvn install:install-file -Dfile=foo.jar -DgroupId=bar
+  -Dversion=x.y -Dpackaging=jar -DartifactId=blah\r\n\r\nTo install the oracle ojdbc14_g.jar
+  file on local repo:\r\nOptionally Download the Oracle JDBC driver from http://www.oracle.com/technology/software/tech/java/sqlj_jdbc/index.html\r\nQ:\r\ncd
+  C:\\some\\path\\to\\file\\oracle\r\nmvn install:install-file -DgroupId=com.oracle
+  -DartifactId=ojdbc14_g -Dversion=10.2.0.1.0 -Dpackaging=jar -Dfile=ojdbc14_g.jar\r\nThen
+  add a dependency in the pom.xml file similar to the following\r\n <project>\r\n
+  <dependencies>\r\n        <dependency>\r\n                <groupId>com.oracle</groupId>\r\n
+  \               <artifactId>ojdbc14_g</artifactId>\r\n                <version>10.2.0.1.0</version>\r\n
+  \       </dependency>\r\n </dependencies>\r\n </project>\r\n\r\nInstalling 3rdParty
+  jar in local repository:\r\nmvn install:install-file -Dfile=foo.jar -DgroupId=org.foosoft
+  -DartifactId=foo -Dversion=1.2.3 -Dpackaging=jar\r\n\r\nSetting Compiler Version\r\n
+  <project>\r\n   <build>\r\n      <plugins>\r\n         <plugin>\r\n         <artifactId>maven-compiler-plugin</artifactId>\r\n
+  \           <configuration>\r\n               <source>1.6</source>\r\n               <target>1.6</target>\r\n
+  \           </configuration>\r\n         </plugin>\r\n      </plugins>\r\n   </build>\r\n
+  </project>\r\n\r\nStandard Project Structure\r\n/new-app/pom.xml\t\tmaven2 project
+  file\r\n/new-app/src/\t\t\tSources\r\n/new-app/src/main/java/\t\tJava source tree\r\n/new-app/src/test/java/\t\tJava
+  unit tests\r\n/new-app/src/main/resources/\tJava classpath resources\r\n/new-app/src/test/resources/\tResources
+  for unit-tests\r\n/new-app/target/classes/\tcompiles classes\r\n/new-app/target/test-classes/\tcompiles
+  test classes\r\n/new-app/target/dots\t\tother plugins' output\r\n/newwebapp/src/main/webapp\troot
+  of webapp\r\n\r\n\r\nGeneric Create Commands using Archetypes\r\nCreate a jar artifact
+  project\r\nmvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app\r\n\r\nCreate
+  a web app, war artifact project\r\nmvn archetype:create -DgroupId=com.mycompany.app
+  -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp\r\n\r\nAdd documentation
+  source\r\nmvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-site
+  -DgroupId=com.mycompany.app -DartifactId=my-app-site\r\n\r\nCreate a Groovy based
+  project, groovy-jar artifact project\r\nmvn archetype:create \\\r\n    -DarchetypeGroupId=org.codehaus.mojo.groovy
+  \\\r\n    -DarchetypeArtifactId=groovy-maven-archetype \\\r\n    -DgroupId=com.mycompany.app
+  \\\r\n    -DpackageName=com.mycompany.app.mygroovymodule \\\r\n    -DartifactId=my-groovy-module\r\n\r\nFake
+  Specific Create Commands\r\n\r\ncreate a jar artifact project\r\nmvn archetype:create
+  -DgroupId=com.mycompany.app -DartifactId=my-app\r\n\r\nCreate a web app, war artifact
+  project\r\nmvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app
+  -DarchetypeArtifactId=maven-archetype-webapp\r\n\r\nAdd documentation source\r\nmvn
+  archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-site
+  -DgroupId=com.mycompany.app -DartifactId=my-app\r\nor cd into project dir\r\nmvn
+  archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-site\r\n\r\nCreating
+  a war project\r\nhttp://maven.apache.org/guides/mini/guide-webapp.html\r\n\r\n\r\n(based
+  on http://nbtconsulting.com/cheat-sheets/maven-cheat-sheet.html)"

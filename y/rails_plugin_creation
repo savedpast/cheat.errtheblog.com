@@ -1,0 +1,16 @@
+---
+rails_plugin_creation: ! "require 'active_record'\n\nmodule Foo\n  module Acts #:nodoc:\n
+  \   module Fox #:nodoc:\n\n      def self.included(mod)\n        mod.extend(ClassMethods)\n
+  \     end\n\n      # declare the class level helper methods which\n      # will
+  load the relevant instance methods\n      # defined below when invoked\n      module
+  ClassMethods\n        def acts_as_fox\n          class_eval do\n            extend
+  Foo::Acts::Fox::SingletonMethods\n          end\n          include Foo::Acts::Fox::InstanceMethods\n
+  \       end\n      end\n\n      # Adds a catch_chickens class method which finds\n
+  \     # all records which have a 'chickens' field set\n      # to true.\n      module
+  SingletonMethods\n        def catch_chickens\n          find(:all, :conditions =>
+  ['chickens = ?', true])\n        end\n        # etc...\n      end\n\n      # Adds
+  instance methods.\n      module InstanceMethods\n        def eat_chicken\n          puts
+  \"Fox with ID #{self.id} just ate a chicken\" \n        end\n      end\n\n    end\n
+  \ end\nend\n\n# reopen ActiveRecord and include all the above to make\n# them available
+  to all our models if they want it\n\nActiveRecord::Base.class_eval do\n  include
+  Foo::Acts::Fox\nend"

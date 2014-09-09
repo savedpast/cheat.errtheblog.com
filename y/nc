@@ -1,0 +1,5 @@
+---
+nc: ! "netcat\n\nconnect to tcp port 80:\n\n $ nc -v localhost 80\n Connection to
+  localhost 80 port [tcp/http] succeeded!\n GET /\n ..\n\nconnect to udp port 9000:\n\n
+  $ nc -v -u localhost 9000\n Connection to localhost 9000 port [udp/cslistener] succeeded!\n\n\nlisten
+  on port 4000:\n\n  $ nc -l 4000"

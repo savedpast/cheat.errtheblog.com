@@ -1,0 +1,79 @@
+---
+rst: ! "=====================================================\r\n The reStructuredText_
+  Cheat Sheet: Syntax Reminders\r\n=====================================================\r\n:Info:
+  See <http://docutils.sf.net/rst.html> for introductory docs.\r\n:Author: David Goodger
+  <goodger@python.org>\r\n:Date: $Date: 2006-01-22 20:13:55 -0500 (Sun, 22 Jan 2006)
+  $\r\n:Revision: $Revision: 4321 $\r\n:Description: This is a \"docinfo block\",
+  or bibliographic field list\r\n\r\nSection Structure\r\n=================\r\nSection
+  titles are underlined or overlined & underlined.\r\n\r\nBody Elements\r\n=============\r\nGrid
+  table:\r\n\r\n+--------------------------------+-----------------------------------+\r\n|
+  Paragraphs are flush-left,     | Literal block, preceded by \"::\":: |\r\n| separated
+  by blank lines.      |                                   |\r\n|                                |
+  \    Indented                      |\r\n|     Block quotes are indented. |                                   |\r\n+--------------------------------+
+  or::                              |\r\n| >>> print 'Doctest block'      |                                   |\r\n|
+  Doctest block                  | > Quoted                          |\r\n+--------------------------------+-----------------------------------+\r\n|
+  | Line blocks preserve line breaks & indents. [new in 0.3.6]       |\r\n| |     Useful
+  for addresses, verse, and adornment-free lists; long  |\r\n|       lines can be
+  wrapped with continuation lines.                |\r\n+--------------------------------------------------------------------+\r\n\r\nSimple
+  tables:\r\n\r\n================  ============================================================\r\nList
+  Type         Examples\r\n================  ============================================================\r\nBullet
+  list       * items begin with \"-\", \"+\", or \"*\"\r\nEnumerated list   1. items
+  use any variation of \"1.\", \"A)\", and \"(i)\"\r\n                  #. also auto-enumerated\r\nDefinition
+  list   Term is flush-left : optional classifier\r\n                      Definition
+  is indented, no blank line between\r\nField list        :field name: field body\r\nOption
+  list       -o  at least 2 spaces between option & description\r\n================
+  \ ============================================================\r\n\r\n================
+  \ ============================================================\r\nExplicit Markup
+  \  Examples (visible in the `text source <cheatsheet.txt>`_)\r\n================
+  \ ============================================================\r\nFootnote          ..
+  [1] Manually numbered or [#] auto-numbered\r\n                     (even [#labelled])
+  or [*] auto-symbol\r\nCitation          .. [CIT2002] A citation.\r\nHyperlink Target
+  \ .. _reStructuredText: http://docutils.sf.net/rst.html\r\n                  ..
+  _indirect target: reStructuredText_\r\n                  .. _internal target:\r\nAnonymous
+  Target  __ http://docutils.sf.net/docs/ref/rst/restructuredtext.html\r\nDirective
+  (\"::\")  .. image:: images/biohazard.png\r\nSubstitution Def  .. |substitution|
+  replace:: like an inline directive\r\nComment           .. is anything else\r\nEmpty
+  Comment     (\"..\" on a line by itself, with blank lines before & after,\r\n                  used
+  to separate indentation contexts)\r\n================  ============================================================\r\n\r\nInline
+  Markup\r\n=============\r\n*emphasis*; **strong emphasis**; `interpreted text`;
+  `interpreted text\r\nwith role`:emphasis:; ``inline literal text``; standalone hyperlink,\r\nhttp://docutils.sourceforge.net;
+  named reference, reStructuredText_;\r\n`anonymous reference`__; footnote reference,
+  [1]_; citation reference,\r\n[CIT2002]_; |substitution|; _`inline internal target`.\r\n*\r\nDirective
+  Quick Reference\r\n=========================\r\nSee <http://docutils.sf.net/docs/ref/rst/directives.html>
+  for full info.\r\n\r\n================  ============================================================\r\nDirective
+  Name    Description (Docutils version added to, in [brackets])\r\n================
+  \ ============================================================\r\nattention         Specific
+  admonition; also \"caution\", \"danger\",\r\n                  \"error\", \"hint\",
+  \"important\", \"note\", \"tip\", \"warning\"\r\nadmonition        Generic titled
+  admonition: ``.. admonition:: By The Way``\r\nimage             ``.. image:: picture.png``;
+  many options possible\r\nfigure            Like \"image\", but with optional caption
+  and legend\r\ntopic             ``.. topic:: Title``; like a mini section\r\nsidebar
+  \          ``.. sidebar:: Title``; like a mini parallel document\r\nparsed-literal
+  \   A literal block with parsed inline markup\r\nrubric            ``.. rubric::
+  Informal Heading``\r\nepigraph          Block quote with class=\"epigraph\"\r\nhighlights
+  \       Block quote with class=\"highlights\"\r\npull-quote        Block quote with
+  class=\"pull-quote\"\r\ncompound          Compound paragraphs [0.3.6]\r\ncontainer
+  \        Generic block-level container element [0.3.10]\r\ntable             Create
+  a titled table [0.3.1]\r\nlist-table        Create a table from a uniform two-level
+  bullet list [0.3.8]\r\ncsv-table         Create a table from CSV data (requires
+  Python 2.3+) [0.3.4]\r\ncontents          Generate a table of contents\r\nsectnum
+  \          Automatically number sections, subsections, etc.\r\nheader, footer    Create
+  document decorations [0.3.8]\r\ntarget-notes      Create an explicit footnote for
+  each external target\r\nmeta              HTML-specific metadata\r\ninclude           Read
+  an external reST file as if it were inline\r\nraw               Non-reST data passed
+  untouched to the Writer\r\nreplace           Replacement text for substitution definitions\r\nunicode
+  \          Unicode character code conversion for substitution defs\r\ndate              Generates
+  today's date; for substitution defs\r\nclass             Set a \"class\" attribute
+  on the next element\r\nrole              Create a custom interpreted text role [0.3.2]\r\ndefault-role
+  \     Set the default interpreted text role [0.3.10]\r\ntitle             Set the
+  metadata document title [0.3.10]\r\n================  ============================================================\r\n\r\nInterpreted
+  Text Role Quick Reference\r\n=====================================\r\nSee <http://docutils.sf.net/docs/ref/rst/roles.html>
+  for full info.\r\n\r\n================  ============================================================\r\nRole
+  Name         Description\r\n================  ============================================================\r\nemphasis
+  \         Equivalent to *emphasis*\r\nliteral           Equivalent to ``literal``
+  but processes backslash escapes\r\nPEP               Reference to a numbered Python
+  Enhancement Proposal\r\nRFC               Reference to a numbered Internet Request
+  For Comments\r\nraw               For non-reST data; cannot be used directly (see
+  docs) [0.3.6]\r\nstrong            Equivalent to **strong**\r\nsub               Subscript\r\nsup
+  \              Superscript\r\ntitle             Title reference (book, etc.); standard
+  default role\r\n================  ============================================================\r\n"

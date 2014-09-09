@@ -1,0 +1,26 @@
+---
+argparse: ! 'import argparse
+
+  parser = argparse.ArgumentParser()
+
+  parser.add_argument(''filename'')                  # Positional
+
+  parser.add_argument(''-k'', default=50, type=int)  # Optional
+
+  args = parser.parse_args()
+
+
+
+  parser.add_argument(''-m'', ''--mode'')
+
+  parser.add_argument(''--mymode'')
+
+
+  parser.add_argument(''-s'', action=''store_true'')
+
+  parser.add_argument(''-t'', action=''store_false'')
+
+
+  parser.add_argument(''--extra-file'', type=file)
+
+  args = parser.parse_args()'

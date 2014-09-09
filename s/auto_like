@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>// ==UserScript==
+// @name           AutoLikeBomb w/o Auto Wall Post
+// @description    This is a script to Like Bomb one of your friends. That is, to &quot;Like&quot; everything on their profile page and flood them with notifications. A link will be displayed under their profile picture; if it does not, just click on any white space and it will appear. Now updated for the new Facebook page layout. This edited release disables the automatic wall post.
+// @author         Mark ReCupido; edited by Vermiculus
+// @namespace      AutoLikeBomb5000
+// @version        3.0
+// @include        http://www.facebook.com/*
+// ==/UserScript==
+
+if (document.title != &quot;Facebook&quot;)
+{
+	window.addEventListener(&quot;load&quot;, CheckForLikeBombLink, false);
+	window.addEventListener(&quot;click&quot;, CheckForLikeBombLink, false);
+}	
+
+function CheckForLikeBombLink()
+{
+
+	var likeCount = 0;
+	ProfileActions = document.getElementsByClassName(&quot;uiSideNav&quot;);
+
+	if (ProfileActions[0].lastChild.id != &quot;navItem_likebomb&quot;)
+	{
+		ProfileActions[0].innerHTML += &quot;&lt;li class=\&quot;key-like\&quot; id=\&quot;navItem_likebomb\&quot;&gt;&lt;a class=\&quot;item\&quot;&gt;&lt;span class=\&quot;imgWrap\&quot;&gt;&lt;img src=\&quot;http://sphotos.ak.fbcdn.net/hphotos-ak-ash1/hs756.ash1/164753_173691732654170_112795498743794_436922_8098719_n.jpg\&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class=\&quot;linkWrap\&quot;&gt;Like Bomb&lt;/span&gt; &lt;span class=\&quot;count hidden_elem\&quot;&gt;(&lt;span class=\&quot;countValue fsm\&quot;&gt;0&lt;/span&gt;&lt;span class=\&quot;maxCountIndicator\&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/a&gt;&lt;span class=\&quot;loadingIndicator\&quot;&gt;&lt;/span&gt;&lt;/li&gt;&quot;;
+		ProfileActions[0].lastChild.addEventListener('click', 
+		function()
+         	{
+			if (ProfileActions[0].ownerDocument.title == &quot;Mark ReCupido&quot;)
+			{
+				alert('I don\'t think so.');
+			}
+			if (ProfileActions[0].ownerDocument.title == &quot;Sean Allred&quot;)
+			{
+				alert('Nope.');
+			}
+			else
+			{
+				likestoclick = document.evaluate('//*[@name=&quot;like&quot;]', document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null); 
+            			
+				for (var i = 0; i &lt; likestoclick.snapshotLength; i++)
+              			{				
+                    			likeCount++;
+                    			likestoclick.snapshotItem(i).click();
+                    		}
+
+				alert('Like Bomb Magnitude: ' + likeCount);
+				likeCount = 0;
+			}
+				
+           	}, false);
+	}
+}
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>New: All event_on_click and event_on_change now spawn a new event &quot;local.[element_name].[action]&quot;. They can be listened to via Broadcast.listen. The entire element is passed in the event object as the key, 'element'. 
+
+event_button( link_text, event_name, event_options = {}, html_options = {} )
+
+event_link( link_text, event_name, event_options = {}, html_options = {} )
+
+Example: =event_link( &quot;HP learns Rails&quot;, 'programmer.learnify.request', { :programmer_id =&gt; 1 }, { :class =&gt; &quot;test&quot;, :color =&gt; 'red' } )
+
+event_check_box( check_box_options, name, event_name, event_options = {}, html_options = {} )
+
+Example: =event_check_box( { :label=&gt; &quot;Add me to mailing list&quot;, :checked =&gt; true, :value =&gt;'yes' }, 'mailing_list', 'person.add.request', { :subscriber_id =&gt; 3 }, { :checked =&gt; true } )
+
+event_check_boxes( name, event_name, check_box_options_array, event_options = {}, html_options = {} )
+
+Example: =event_check_boxes('mailing_list', 'person.add.request', [ { :label=&gt; &quot;Add me to mailing list&quot;, :checked =&gt; true, :value =&gt;'yes' }, { :label=&gt; &quot;Add me to phone list&quot;, :value =&gt;'yes' } ], { :subscriber_id =&gt; 3 } )
+
+event_text_field(label, name, event_name, event_options = {}, html_options = {} )
+
+Example: =event_text_field(&quot;Your Name&quot;, &quot;name_text_field&quot;, &quot;person.hello.request&quot;, { :person_id =&gt; 5}, { :class =&gt; &quot;test&quot; } )
+
+event_text_area(label, name, event_name, event_options = {}, html_options = {} )
+
+Example: =event_text_area(&quot;Your thoughts&quot;, &quot;thoughts&quot;, &quot;person.thoughts.aadsdsa&quot;, { }, { :value =&gt; &quot;nothing at the present time&quot;})
+
+event_radio_buttons(name, event_name, radio_button_options_array, event_options = {}, html_options = {} )
+
+Example: =event_radio_buttons(&quot;poison&quot;, &quot;person.poison.request&quot;, [ { :label =&gt; &quot;Strychnine&quot;, :value =&gt; &quot;s&quot;}, { :label =&gt; &quot;Matavan&quot;, :value =&gt; &quot;m&quot;, :checked =&gt; true}, { :label =&gt; &quot;chloromethane&quot;, :value =&gt; &quot;c&quot;} ], {}, { :class =&gt; &quot;what&quot; })
+
+event_select_box(label, name, event_name, select_options_array, event_options = {}, html_options = {} )
+
+Example: =event_select_box(&quot;Your Friends&quot;,
+									&quot;friends_list&quot;,
+									&quot;person.friend.add&quot;,
+									[ { :label =&gt; &quot;Tom Soderstrom&quot;, :value =&gt; &quot;ts&quot;, :selected =&gt; true }, { :label =&gt; &quot;John the Q&quot;, :value =&gt; &quot;q&quot; }, { :label =&gt; &quot;Clark Valberg&quot;, :value =&gt; &quot;clarkster&quot;, :disabled =&gt; true} ],
+									{},
+									{ :size =&gt; 2, :class =&gt; &quot;cool_class&quot; } )
+
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

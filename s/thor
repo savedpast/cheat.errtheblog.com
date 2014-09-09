@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>An example
+----------
+
+class Ls &lt; Thor
+  # thor ls:default
+  desc &quot;default&quot;, &quot;List files&quot;
+  def default
+    system &quot;ls&quot;
+  end
+
+  # thor ls:with_args '*.sql'
+  desc &quot;with_args GLOB&quot;, &quot;List files, filter with arg&quot;
+  def with_args(glob)
+    system &quot;ls #{glob}&quot;
+  end
+
+  # thor ls:with_opts --glob='*.sql'
+  # thor ls:with_opts -g '*.sql'
+  desc &quot;with_opts [--glob GLOB]&quot;, &quot;List files, filter with option&quot;
+  method_options %w(glob -g) =&gt; :string
+  def with_opts
+    system &quot;ls #{options[:glob]}&quot;
+  end
+end
+
+Types for method_options
+------------------------
+
+  :boolean  is parsed as —option or —option=true
+  :string   is parsed as —option=VALUE
+  :numeric  is parsed as —option=N
+  :array    is parsed as —option=one two three
+  :hash     is parsed as —option=name:string age:integer
+
+Besides, method_option allows a default value to be given, examples:
+
+  method_options :force =&gt; false
+  #=&gt; Creates a boolean option with default value false
+
+  method_options :alias =&gt; &quot;bar&quot;
+  #=&gt; Creates a string option with default value &quot;bar&quot;
+
+  method_options :threshold =&gt; 3.0
+  #=&gt; Creates a numeric option with default value 3.0
+
+Actions
+-------
+
+Some actions like copy file requires that a class method called source_root
+is defined in your class.
+
+    class App &lt; Thor
+      include Thor::Actions
+      # tasks
+    end
+
+Input/output actions
+--------------------
+
+    say &quot;hello&quot;
+    ask &quot;Do you want to continue?&quot;
+    yes?
+    no?
+
+    create_file &quot;filename.txt&quot;, data
+    create_file &quot;filename.txt&quot; do
+      data
+    end
+
+    remove_file &quot;filename.txt&quot;
+    copy_file &quot;from.rb&quot;, &quot;to.rb&quot;
+    template &quot;source.erb&quot;, &quot;dest.html&quot;      # Parses an ERB file
+
+    directory &quot;from/&quot;, &quot;to/&quot;                # Copies a directory
+    empty_directory &quot;dir/&quot;                  # Creates a directory
+
+    get &quot;http://x.com/103208&quot;, &quot;out.rb&quot;     # Download a file
+    get &quot;http://x.com/103208&quot;, &quot;out.rb&quot; do
+      content.split(&quot;\n&quot;).first
+    end
+
+    run &quot;rake test&quot;                         # Run a command
+    run_ruby_script &quot;foo.rb&quot;                # Takes into account Win32
+
+    thor :install                           # Invoke a Thor task
+
+    gsub_file &quot;foo.rb&quot;, /user=.*/, &quot;user=foo&quot;
+    prepend_file &quot;foo.sh&quot;, &quot;#!/usr/bin/env sh&quot;
+    inject_into_file &quot;Gemfile&quot;, &quot;gem 'rails'&quot;, after: &quot;gem 'mysql'&quot;
+    inject_into_class &quot;controller.rb&quot;, Controller do
+      &quot;  attr_reader :foo&quot;
+    end
+
+    inside &quot;dir/&quot; do                        # Do stuff inside a path
+      # ...
+    end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

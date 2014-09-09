@@ -1,0 +1,7 @@
+---
+lilutils: ! "This is a cheat sheet for my little utils.\n\nIn general, I think cheat
+  is a brilliant system for collaborative\nlearning. If you are good natured, you
+  can contribute to this \"flowing\nriver\" in a way that benefits all.\n\nI have
+  fallen in love with cheat <cheat-sheet-name> --add and --edit.\nIt publishes your
+  changes instantly. It is more useful than Wiki, IMO.\n\nBack to lilutils.\n\n1-
+  Modules:\n   LilUtils::AlgoTestUtils::DataSets\n   LilUtils::Misc\n   LilUtils::CLI"

@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>================================================================================
+Exporting and Publishing
+================================================================================
+
+Exporting creates files with extensions .txt and .html in the current
+directory.  Publishing puts the resulting file into some other place.
+
+export/publish dispatcher                         C-c C-e
+export visible part only                          C-c C-e v
+insert template of export options                 C-c C-e t
+toggle fixed width for entry or region            C-c :
+
+--------------------------------------------------------------------------------
+Comments: Text not being exported
+--------------------------------------------------------------------------------
+
+Text before the first headline is not considered part of the document and is
+therefore never exported.  Lines starting with # are comments and are not
+exported.  Subtrees whose header starts with COMMENT are never exported.
+
+toggle COMMENT keyword on entry                   C-c ;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

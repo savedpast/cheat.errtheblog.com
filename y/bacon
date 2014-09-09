@@ -1,0 +1,16 @@
+---
+bacon: ! "== Implemented assertions\n\n* should.<predicate> and should.be.<predicate>\n*
+  should.equal\n* should.match\n* should.be.identical_to / should.be.same_as\n* should.raise(*exceptions)
+  { }\n* should.change { }\n* should.throw(symbol) { }\n* should.satisfy { |object|
+  }\n\n\n== Added core predicates\n\n* Object#true?\n* Object#false?\n* Proc#change?\n*
+  Proc#raise?\n* Proc#throw?\n* Numeric#close?\n\n== before/after\n\nbefore and after
+  need to be defined before the first specification in\na context and are run before
+  and after each specification.\n\n  describe 'A new array' do\n    before do\n      @ary
+  = Array.new\n    end\n    # ...\n  end\n\n== Shared contexts\n\n  shared \"an empty
+  container\" do\n    it \"should have size zero\" do\n    end\n\n    it \"should
+  be empty\" do\n    end\n  end\n\n  context \"A new array\" do\n    behaves_like
+  \"an empty container\"\n  end\n\nThese contexts are not executed on their own, but
+  can be included with\nbehaves_like in other contexts.  You can use shared contexts
+  to\nstructure suites with many recurring specifications.\n\n== Matchers\n\n  def
+  shorter_than(max_size)\n    lambda { |obj| obj.size < max_size }\n  end\n\n  [1,2,3].should.be
+  shorter_than(5)\n\nYou can use modules and extend to group matchers for use in multiple\ncontexts."

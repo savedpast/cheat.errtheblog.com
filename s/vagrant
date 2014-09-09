@@ -1,0 +1,68 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Setup
+-----
+# Assuming you have Ruby+Gems
+
+gem install vagrant
+vagrant box add precise64 http://files.vagrantup.com/precise64.box
+mkdir precise64
+cd precise64
+vagrant init precise64
+vagrant up
+vagrant ssh
+
+# precise64 folder will be mapped to /vagrant folder on machine
+
+
+
+Commands
+--------
+
+$ vagrant --help
+
+     box
+     destroy
+     gem
+     halt
+     init
+     package
+     provision
+     reload
+     resume
+     ssh
+     ssh-config
+     status
+     suspend
+     up
+
+# For help on any individual command run `vagrant COMMAND -h`
+
+
+
+General Info
+------------
+
+# Vagrant files are stored on your user dir
+ls ~/.vagrant.d/
+
+# Vagrant boxes dir (for distributing/sharing)
+ls ~/.vagrant.d/boxes/
+
+
+
+Boxes addresses
+---------------
+http://www.vagrantbox.es/
+
+
+
+Update VirtBox Guest Additions:
+-------------------------------
+from: https://github.com/mitchellh/vagrant/issues/355
+
+  On Virtual box:    
+    $ /etc/init.d/vboxadd setup
+
+  In working dir:    
+    $ vagrant reload</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

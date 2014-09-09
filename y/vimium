@@ -1,0 +1,43 @@
+---
+vimium: ! "Keyboard Bindings\r\nModifier keys are specified as <c-x> <m-x>, <a-x>
+  for ctrl+x, meta+x, and alt+x respectively. See the next section for instructions
+  on modifying these bindings.\r\n\r\nNavigating the current page:\r\n\r\n?       show
+  the help dialog for a list of all available keys\r\nh       scroll left\r\nj       scroll
+  down\r\nk       scroll up\r\nl       scroll right\r\ngg      scroll to top of the
+  page\r\nG       scroll to bottom of the page\r\nd       scroll down half a page\r\nu
+  \      scroll up half a page\r\nf       open a link in the current tab\r\nF       open
+  a link in a new tab\r\nr       reload\r\ngs      view source\r\ni       enter insert
+  mode -- all commands will be ignored until you hit esc to exit\r\nyy      copy the
+  current url to the clipboard\r\nyf      copy a link url to the clipboard\r\ngf      cycle
+  forward to the next frame\r\n\r\n\r\nUsing find:\r\n\r\n/       enter find mode
+  -- type your search query and hit enter to search or esc to cancel\r\nn       cycle
+  forward to the next find match\r\nN       cycle backward to the previous find match\r\n\r\n\r\nNavigating
+  your history:\r\n\r\nH       go back in history\r\nL       go forward in history\r\n\r\n\r\nManipulating
+  tabs:\r\n\r\nJ, gT      go one tab left\r\nK, gt      go one tab right\r\ng0         go
+  to the first tab\r\ng$         go to the last tab\r\nt          create tab\r\nx
+  \         close current tab\r\nX          restore closed tab (i.e. unwind the 'x'
+  command)\r\n\r\n\r\nAdditional advanced browsing commands:\r\n\r\n]]      Follow
+  the link labeled 'next' or '>'. Helpful for browsing paginated sites.\r\n[[      Follow
+  the link labeled 'previous' or '<'. Helpful for browsing paginated sites.\r\n<a-f>
+  \  open multiple links in a new tab\r\ngi      focus the first (or n-th) text input
+  box on the page\r\ngu      go up one level in the URL hierarchy\r\nzH      scroll
+  all the way left\r\nzL      scroll all the way right\r\n\r\nCustom Key Mappings\r\n\r\nYou
+  may remap or unmap any of the default key bindings in the \"Key mappings\" section
+  under \"Advanced Options\" on the options page.\r\n\r\nEnter one of the following
+  key mapping commands per line:\r\n\r\nmap key command: Maps a key to a Vimium command.
+  Overrides Chrome's default behavior (if any).\r\nunmap key: Unmaps a key and restores
+  Chrome's default behavior (if any).\r\nunmapAll: Unmaps all bindings. This is useful
+  if you want to completely wipe Vimium's defaults and start from scratch with your
+  own setup.\r\nExamples:\r\n\r\nmap <c-d> scrollPageDown maps ctrl+d to scrolling
+  the page down. Chrome's default behavior of bringing up a bookmark dialog is suppressed.\r\nmap
+  r reload maps the r key to reloading the page.\r\nunmap <c-d> removes any mapping
+  for ctrl+d and restores Chrome's default behavior.\r\nunmap r removes any mapping
+  for the r key.\r\nAvailable Vimium commands can be found via the \"Show Available
+  Commands\" link near the key mapping box. The command name appears to the right
+  of the description in parenthesis.\r\n\r\nYou can add comments to your key mappings
+  by starting a line with \" or #.\r\n\r\nThe following special keys are available
+  for mapping:\r\n\r\n<c-*>, <a-*>, <m-*> for ctrl, alt, and meta (command on Mac)
+  respectively with any key. Replace * with the key of choice.\r\n<left>, <right>,
+  <up>, <down> for the arrow keys\r\n<f1> through <f12> for the function keys\r\nShifts
+  are automatically detected so, for example, <c-&> corresponds to ctrl+shift+7 on
+  an English keyboard.\r\n\r\nhttps://github.com/philc/vimium/blob/master/README.markdown"

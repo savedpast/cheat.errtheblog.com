@@ -1,0 +1,14 @@
+---
+xmonad: ! "mod-shift-return      launch a term\r\nmod-p \t              launch dmenu\r\nmod-space
+  \t      cycle through available layout algorithms\r\nmod-shift-c \t      kill a
+  client window\r\nmod-j \t              move focus to the next window on the screen
+  (also mod-tab)\r\nmod-k \t              move focus to the previous window\r\nmod-return
+  \t      swap current window, with window in master pane\r\nmod-shift-j \t      swap
+  current window with its next neighbour\r\nmod-shift-k \t      swap current window
+  with its previous neighbour\r\nmod-h \t              shrink the size of the master
+  pane\r\nmod-l \t              grow the size of the master pane\r\nmod-comma \t      decrease
+  number of master windows\r\nmod-period \t      increase number of master windows\r\nmod-q
+  \t              dynamically reload xmonad, with a new configuration\r\nmod-shift-q
+  \t      quit xmonad\r\nmod-1 .. 9 \t      move to workspace (\"virtual desktop\"/\"window
+  group\") number 'n'\r\nmod-shift- 1 .. 9     move current client to workspace number
+  'n'\r\nmod- w,e,r            move to Xinerama screens 1, 2 or 3."

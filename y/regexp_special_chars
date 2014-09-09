@@ -1,0 +1,7 @@
+---
+regexp_special_chars: ! 'Special characters (that need to be escaped to be matched)
+  are:
+
+  . | ( ) [ ] { } + \ ^ $ * ?
+
+  (also escape slashes, ''/'', if that is the regexp delimiter)'

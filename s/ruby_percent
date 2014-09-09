@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Any delimiter is allowed, so for instance %w(...), %w[...], %w{...} and %w!...! are all equal.
+
+% &quot;double-quoted string (without qualifier)&quot;
+  &gt;&gt; %(some #{foo} string)
+  =&gt; &quot;some bar string&quot;
+
+%Q &quot;double-quoted string&quot;
+  &gt;&gt; %Q(some #{foo} string)
+  =&gt; &quot;some bar string&quot;
+
+%q 'single-quoted string'
+  &gt;&gt; %q(some #{foo} string)
+  =&gt; 'some \#{foo} string'
+
+%W &quot;double-quoted words&quot;
+  &gt;&gt; %W(some #{foo} bar)
+  =&gt; [&quot;some&quot;, &quot;bar&quot;, &quot;bar&quot;]
+
+%w 'single-quoted words'
+  &gt;&gt; %w(some #{foo} bar)
+  =&gt; ['some', '\#{foo}', 'bar']
+
+%x backtick execute
+  &gt;&gt; %x(ls)
+  == `ls`
+
+%r regular expression
+  &gt;&gt; %r(/usr/bin/)
+  == /\/usr\/bin\//
+
+%s symbol
+  &gt;&gt; %s(some symbol)
+  =&gt; :&quot;some symbol&quot;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

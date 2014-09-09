@@ -1,0 +1,23 @@
+---
+typhoeus: ! "require 'typhoeus'\n\n###\n# Making Quick Requests\nresponse  = Typhoeus::Request.get(\"http://www.google.com/search?q=paul%20dix\")\nresponse
+  \ = Typhoeus::Request.head(\"http://www.google.com/\")\nresponse  = Typhoeus::Request.put(\"http://localhost:3000/posts/1\",
+  \ \n\t\t\t\t\t\t\t:body   => \"whoo, a body\")\nresponse  = Typhoeus::Request.post(\"http://localhost:3000/posts\",
+  \  \n\t\t\t\t\t\t\t:params =>  { \n\t\t\t\t\t\t\t\t:title => \"test post\",  :content
+  => \"this is my test\" \n\t\t\t\t\t\t\t} )\nresponse  = Typhoeus::Request.delete(\"http://localhost:3000/posts/1\")\n\n###\n#
+  More Request Options\nresponse  = Typhoeus::Request.get(\"http://localhost:3000/\",\n\t\t\t\t\t\t\t:headers
+  => {\n\t\t\t\t\t\t\t\t'User-Agent' => \"Some User Agent\",\t# UA\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t:connect_timeout
+  \ =>  1000,       \t\t# milliseconds \n\t\t\t\t\t\t\t:timeout  =>  1000,               \t\t#
+  milliseconds\n\t\t\t\t\t\t\t:interface  =>  \"en0\",            \t\t# Ethernet interface
+  on my MBP            \n\t\t\t\t\t\t\t:follow_location  =>  true,       \t\t# Following
+  redirects                     \n\t\t\t\t\t\t\t:max_redirects  =>  5,            \t\t#
+  If prev, # of redirects                 \n\t\t\t\t\t\t\t:proxy  => \"127.0.0.1:8080\",
+  \     \t\t# Proxy IP:Port                           \n\t\t\t\t\t\t\t:proxy_username
+  => \"user\",        \t\t# Proxy Username                          \n\t\t\t\t\t\t\t:proxy_password
+  => \"password\" )   \t\t# Proxy Password                          \n\n###\n# Handling
+  Responses\nresponse  = Typhoeus::Request.get(\"http://httpstat.us/200\")\nputs \"This
+  was a total success!\"  if response.success? && response.code == 200\n\nresponse
+  \ = Typhoeus::Request.get(\"http://httpstat.us/404\")\nputs \"This was not a success!\"
+  \   unless response.success? && response.status_message == \"Not Found\"\n\nresponse
+  \ = Typhoeus::Request.get(\"http://httpstat.us/408\", :timeout => -1)\nputs \"This
+  request timed out!\"    if response.timed_out? && response.curl_return_code == 28\n\nresponse
+  \ = Typhoeus::Request.get(\"http://www.google.com/\")\nputs response.body if response.success?"

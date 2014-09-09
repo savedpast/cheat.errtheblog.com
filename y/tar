@@ -1,0 +1,18 @@
+---
+tar: ! "CREATING\n\nTo tar and gzip a directory and save the newly created file in
+  the same directory:\n$ tar czf dirnamee.tgz dirname\n\nAnother example which\n  a)
+  starts from inside the directory being tarred and saves the new file one level up\n
+  \ b) pipes through gzip instead of using tar's own gzip facility\n     (which is
+  handy if you want to use special gzip flags, or use zip instead of gzip)\n$ tar
+  cf - . | gzip > ../dirname.tgz\n\nHere we use the -j flag to use bzip instead of
+  gzip:\n$ tar -cjf home.tar.bz2 home\n\nHere we use long tags:\n$ tar --create --verbose
+  --preserve \\\n      --ignore-failed-read --file=<file to write to> <files to tar>\n\n\nEXTRACTING\n\nExtract
+  an archive (with decompression)\n$ tar -xvzf myfile.tar.gz\n\nTo extract, first
+  change to the location you want the files (ie. create the outermost\ndirectory of
+  the archive and then cd to it) and then:\n\n$ tar zxvf /some/path/filename.tgz\n(use
+  j instead of z for bzip files)\n\n\nFILE EXTENSIONS\n\n.tgz is equivalent to .tar.gz\n.tbz
+  and .tb2 are equivalent to .tar.bz2\n.taz is equivalent to .tar.Z\n.tlz is equivalent
+  to .tar.lz\n.txz is equivalent to .tar.xz\n\n\nCOMMON ARGUMENTS\n\n$ tar -j (--bzip)\n$
+  tar -v (--verbose)\n$ tar -z (--gzip)\n$ tar -x (--extract)\n$ tar -c (--create)\n$
+  tar -t (--list)\n$ tar -f (--file)\n$ tar -p (--preserve)\n$ tar --ignore-failed-read\n$
+  tar --totals (prints total bytes written with --create."

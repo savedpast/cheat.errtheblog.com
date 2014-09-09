@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Initialize project
+
+    hg init            # creates a new repository in the current folder
+    hg init PROJECT    # creates an empty repository in a new folder called 
+                       # PROJECT
+
+    hg clone http://url.of/remote/repository
+
+Add files and track them
+    
+    cd project
+    (add files)
+    
+    hg add             # add all untracked files
+    hg add [FILES]     # add the specified files on the next commit
+    hg addremove       # add all new files, delete all missing files
+
+    hg status          # show changed files in the working directory
+
+    hg commit          # commit all outstanding changes
+    hg commit -m &quot;commit message&quot;
+
+Forget a change or file
+
+    hg revert FILE  # existing changes are saved to FILE.orig
+    hg forget FILE  # remove FILE from hg, not from working dir (WD)
+                    # FILE is removed on next commit
+
+Update project from remote
+
+    hg pull     # pull changes from default remote repository
+
+    hg update   # update WD to tip of history (default)
+                # only works if there are no local changes
+
+    hg merge    # attempt auto-merge; call 3-way merge for conflicts
+
+    hg resolve [FILE] 
+                # cleanly re-attempt 3-way merge from scratch
+                # can also --(un)mark as resolved, or --list status
+
+Create a patch for upstream
+
+    hg export tip &gt; patch.diff    # export last commit as diff
+    hg export -g tip &gt; patch.diff # git extended diff format
+    hg export 2 4 &gt; patch.diff    # export multiple commits</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,4 @@
+---
+assert_throws: ! "# 'cheat assertions' for the rest\n\nassert_throws(expected_symbol,
+  message=\"\", &proc)\n\nPasses if the block throws expected_symbol\n\nExample:\n\n
+  \ assert_throws :done do\n    throw :done\n  end"

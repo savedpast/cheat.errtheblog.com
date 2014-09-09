@@ -1,0 +1,17 @@
+---
+octave: ! 'Tips for Octave (http://www.gnu.org/software/octave)
+
+  ====================================================
+
+
+  How to debug
+
+  ------------
+
+
+  You can use the dbstop command to set a breakpoint.
+
+
+  For example, you can write dbstop(31) in a octave file, to set a breakpoint
+
+  in the 31 line of your program''s file.'

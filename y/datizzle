@@ -1,0 +1,25 @@
+---
+datizzle: ! "%weekday.abbr%      - %a - The abbreviated weekday name (``Sun'')\n%weekday%
+  \          - %A - The  full  weekday  name (``Sunday'')\n%month.abbr%        - %b
+  - The abbreviated month name (``Jan'')\n%month%             - %B - The  full  month
+  \ name (``January'')\n%datetime%          - %c - The preferred local date and time
+  representation\n%month.day%         - %d - Day of the month (01..31)\n%hour.24%
+  \          - %H - Hour of the day, 24-hour clock (00..23)\n%hour.12%           -
+  %I - Hour of the day, 12-hour clock (01..12)\n%hour%              - %I - Hour of
+  the day, 12-hour clock (01..12)\n%year.day%          - %j - Day of the year (001..366)\n%year.month%
+  \       - %m - Month of the year (01..12)\n%minute%            - %M - Minute of
+  the hour (00..59)\n%ampm%              - %p - Meridian indicator (``am''  or  ``pm'')\n%AMPM%
+  \             - %P - Meridian indicator (\"AM\" or \"PM\")\n%second%            -
+  %S - Second of the minute (00..60)\n%year.week%         - %U - Week  number  of
+  the current year,\n                            starting with the first Sunday as
+  the first\n                            day of the first week (00..53)\n%year.week.sunday%
+  \ - %U - Week number of the current year,\n                            starting
+  with the first Sunday as the first\n                            day of the first
+  week (00..53)\n%year.week.monday%  - %W - Week  number  of the current year,\n                            starting
+  with the first Monday as the first\n                            day of the first
+  week (00..53)\n%weekday.number%    - %w - Day of the week (Sunday is 0, 0..6)\n%date%
+  \             - %x - Preferred representation for the date alone, no time\n%time%
+  \             - %X - Preferred representation for the time alone, no date\n%year.abbr%
+  \        - %y - Year without a century (00..99)\n%year%              - %Y - Year
+  with century\n%timezone%          - %Z - Time zone name\n%percent%           - %%
+  - Literal ``%'' character"

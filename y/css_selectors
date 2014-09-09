@@ -1,0 +1,20 @@
+---
+css_selectors: ! "CSS 1:\n  E               An element of type E\n  S1 S2           Any
+  selector S1 with descendant match S2 (not just children)\n  E F             ...
+  such as element E with descendant element F\n  E.myclass       Element E marked
+  with class \"myclass\"\n  E#myid          ... with a document ID of \"myid\"\n  E:link
+  \         ... which is an unvisited link\n  E:visited       ... which is a visited
+  link\n  E:active        ... which is activated (such as between mouse down and up)\n
+  \ E:hover         ... with a pointing device within its boundaries\n  E:focus         ...
+  which has input device focus\n  E::first-line   The first formatted line of E element\n
+  \ E::first-letter The first formatted letter of E element\n  S1, S2          Matching
+  S1 or S2\n\nCSS 2.x:\n  *               Special name matching any element\n  S1
+  > S2         Selector S1 with child matching S2\n  S1 + S2         Selector S1 with
+  immediately following sibling matching S2\n  E[attr]         An E element with a
+  \"attr\" attribute\n  E[attr=\"val\"]   ... whose value is exactly equal to \"val\"\n
+  \ E[attr~=\"val\"]  ... with \"val\" as a whitespace-separated element\n  E[attr|=\"en\"]
+  \  ... whose value is \"en\" or begins with \"en-\" (hreflang)\n  E:first-child
+  \  E element, first child of its parent\n  E:lang(fr)      E element in language
+  \"fr\" (lang or xml:lang)\n  E::before       Generated content before E element
+  (see style 'content')\n  E::after        Generated content after E element (see
+  style 'content')"

@@ -1,0 +1,4 @@
+---
+assert_not_same: ! "# 'cheat assertions' for the rest\n\nassert_not_same(expected,
+  actual, message=\"\")\n\nPasses if ! actual .equal? expected\n\nExample:\n\n  assert_not_same
+  Object.new, Object.new"

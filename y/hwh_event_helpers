@@ -1,0 +1,30 @@
+---
+hwh_event_helpers: ! "New: All event_on_click and event_on_change now spawn a new
+  event \"local.[element_name].[action]\". They can be listened to via Broadcast.listen.
+  The entire element is passed in the event object as the key, 'element'. \r\n\r\nevent_button(
+  link_text, event_name, event_options = {}, html_options = {} )\r\n\r\nevent_link(
+  link_text, event_name, event_options = {}, html_options = {} )\r\n\r\nExample: =event_link(
+  \"HP learns Rails\", 'programmer.learnify.request', { :programmer_id => 1 }, { :class
+  => \"test\", :color => 'red' } )\r\n\r\nevent_check_box( check_box_options, name,
+  event_name, event_options = {}, html_options = {} )\r\n\r\nExample: =event_check_box(
+  { :label=> \"Add me to mailing list\", :checked => true, :value =>'yes' }, 'mailing_list',
+  'person.add.request', { :subscriber_id => 3 }, { :checked => true } )\r\n\r\nevent_check_boxes(
+  name, event_name, check_box_options_array, event_options = {}, html_options = {}
+  )\r\n\r\nExample: =event_check_boxes('mailing_list', 'person.add.request', [ { :label=>
+  \"Add me to mailing list\", :checked => true, :value =>'yes' }, { :label=> \"Add
+  me to phone list\", :value =>'yes' } ], { :subscriber_id => 3 } )\r\n\r\nevent_text_field(label,
+  name, event_name, event_options = {}, html_options = {} )\r\n\r\nExample: =event_text_field(\"Your
+  Name\", \"name_text_field\", \"person.hello.request\", { :person_id => 5}, { :class
+  => \"test\" } )\r\n\r\nevent_text_area(label, name, event_name, event_options =
+  {}, html_options = {} )\r\n\r\nExample: =event_text_area(\"Your thoughts\", \"thoughts\",
+  \"person.thoughts.aadsdsa\", { }, { :value => \"nothing at the present time\"})\r\n\r\nevent_radio_buttons(name,
+  event_name, radio_button_options_array, event_options = {}, html_options = {} )\r\n\r\nExample:
+  =event_radio_buttons(\"poison\", \"person.poison.request\", [ { :label => \"Strychnine\",
+  :value => \"s\"}, { :label => \"Matavan\", :value => \"m\", :checked => true}, {
+  :label => \"chloromethane\", :value => \"c\"} ], {}, { :class => \"what\" })\r\n\r\nevent_select_box(label,
+  name, event_name, select_options_array, event_options = {}, html_options = {} )\r\n\r\nExample:
+  =event_select_box(\"Your Friends\",\r\n\t\t\t\t\t\t\t\t\t\"friends_list\",\r\n\t\t\t\t\t\t\t\t\t\"person.friend.add\",\r\n\t\t\t\t\t\t\t\t\t[
+  { :label => \"Tom Soderstrom\", :value => \"ts\", :selected => true }, { :label
+  => \"John the Q\", :value => \"q\" }, { :label => \"Clark Valberg\", :value => \"clarkster\",
+  :disabled => true} ],\r\n\t\t\t\t\t\t\t\t\t{},\r\n\t\t\t\t\t\t\t\t\t{ :size => 2,
+  :class => \"cool_class\" } )\r\n\r\n"

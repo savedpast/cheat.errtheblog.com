@@ -1,0 +1,4 @@
+---
+zsh_loop: ! "ZSH ITERATION\n\n\tfor i (/home/**/q*) rm $i\n\n\tfor i in /**/b*(u:miklophone:);
+  do rm $i ; done\n\n\tfor f in http://zsh.sunsite.dk/Guide/zshguide{,{01..08}}.html;
+  do...\n\n\tzargs -- /**/b*(u:miklophone:) -- rm"

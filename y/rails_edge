@@ -1,0 +1,12 @@
+---
+rails_edge: ! "Riding the Edge with EdgeRails\r\n\r\nEdgeRails is a term which means
+  you are running a local copy of a developmental version of Rails (i.e., you’re on
+  the bleeding edge).\r\n\r\nsource:  http://wiki.rubyonrails.org/rails/pages/EdgeRails/\r\n\r\nThe
+  easy way:\r\n $ rake rails:freeze:edge\r\n $ rake rails:unfreeze\r\n\r\nAs svn:externals
+  (better?):\r\n $ svn propedit svn:externals vendor\r\n   rails http://svn.rubyonrails.org/rails/trunk\r\n\r\nAs
+  svn:externals, using a specific revision, which gives you more control - you should
+  figure out what revision is best for your app, of course.\r\n $ svn propset svn:externals
+  vendor\r\n   rails -r6881 http://svn.rubyonrails.org/rails/trunk\r\n\r\nUsing Piston
+  (better, still):\r\n $ piston import http://svn.rubyonrails.org/rails/trunk vendor/rails\r\nor\r\n
+  $ piston import --revision=# http://svn.rubyonrails.org/rails/trunk vendor/rails\r\n\r\nBy
+  GEM:\r\n $ gem install -s http://gems.rubyonrails.com rails -y"

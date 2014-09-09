@@ -1,0 +1,47 @@
+---
+cascading: ! "CASCADING COOKBOOK\n\nCopy a Tuple\n\n  Tuple orig = new Tuple();\n
+  \ orig.add( \"some value\" );\n  // copy constructor\n  Tuple copy = new Tuple(
+  orig );\n\nNest a Tuple in a Tuple\n\n  Tuple parent = new Tuple();\n  Tuple child
+  = new Tuple( \"value1\", \"value2\" );\n  parent.add( child );\n\nSplit a stream
+  and name the branches\n\n  pipe = new Each( pipe, new SomeFunction() )\n  Pipe lhs
+  = new Pipe( \"lhs\", pipe );\n  Pipe rhs = new Pipe( \"rhs\", pipe );\n\nCopy a
+  value\n\n  pipe = new Each( pipe, new Fields( \"field\" ), new Identity( new Fields(
+  \"copy\" ) ), Fields.ALL );\n\nRename a field\n\n  // two incoming fields: \"other\"
+  and \"field\"\n  pipe = new Each( pipe, new Fields( \"field\" ),\n                   new
+  Identity( new Fields( \"renamed\" ) ),\n                   new Fields( \"other\",
+  \"renamed\" ) );\n\nConvert strings to primitive types\n\n  Class[] types = new
+  Class[] {Long.class, Float.class, Boolean.class};\n  pipe = new Each( pipe,\n                   new
+  Fields( \"longField\", \"floatField\", \"booleanField\" ),\n                   new
+  Identity( types ) );\n\nReorder fields\n\n  // two incoming fields: \"field1\" and
+  \"field2\"\n  pipe = new Each( pipe, new Fields( \"field2\", \"field1\" ), new Identity()
+  );\n\nDiscard unused fields\n\n  // two incoming fields: \"field1\" and \"field2\"\n
+  \ pipe = new Each( pipe, new Fields( \"field2\" ), new Identity() );\n\nSort values
+  passed to Aggregator\n\n  pipe = new GroupBy( pipe, new Fields( \"group1\", \"group2\"
+  ), new Fields( \"value\" ) );\n\nInsert constant values into a value stream\n\n
+  \ pipe = new Each( pipe, new Insert( new Fields( \"field1\", \"field2\" ), \"value1\",
+  \"value2\" ), Fields.ALL );\n\nCreate 'timestamp' from date/time fields\n\n  //
+  build 'datetime' string.\n  FieldFormatter formatter = new FieldFormatter( new Fields(
+  \"datetime\" ), \"%s:%s:%s:%s:%s:%s.%s\" );\n  Fields timeFields = new Fields( \"year\",
+  \"month\", \"day\", \"hour\", \"minute\", \"second\", \"millisecond\" );\n  pipe
+  = new Each( pipe, timeFields, formatter, Fields.ALL );\n  pipe = new Each( pipe,
+  new Fields( \"datetime\" ), new DateParser( new Fields( \"ts\" ), \"yyyy:MM:dd:HH:mm:ss.SSS\"
+  ), Fields.ALL );\n\nCreate date/time string from 'timestamp' field\n\n  DateFormatter
+  timeFormatter = new DateFormatter(new Fields( \"datetime\" ), \"HH:mm:ss.SSS\" );\n
+  \ pass field \"ts\" into the timeFormatter function, which returns a \"datetime\"
+  field\n  pipe = new Each( pipe, new Fields( \"ts\" ), timeFormatter, Fields.ALL
+  );\n\nGet 'DISTINCT' (unique) values from a Tuple stream\n\n  // group on all values\n
+  \ pipe = new GroupBy( pipe, Fields.ALL );\n  only take the first tuple in the grouping,
+  ignore the rest\n  pipe = new Every( pipe, Fields.ALL, new First(), Fields.RESULTS
+  );\n\nMerge two streams with the same column names\n\n  // merge streams, group
+  on 'last' field name\n  lhs = 'first', 'last', 'middle'\n  rhs = 'first', 'last',
+  'middle'\n  pipe = new GroupBy( lhs, rhs, new Fields(\"last\") );\n\nPassing properties
+  to an Operation\n\n  // set propery on Flow\n  Properties props = new Properties();\n
+  \ props.set( \"key\", \"value\");\n  FlowConnector conn = new FlowConnector( props
+  );\n  ...\n  // get property from within an Operation (Function,Filter,etc)\n  String
+  value = flowProcess.getProperty( \"key\" );\n\nPassing a JobConf to a Flow and Operation\n\n
+  \ // set JobConf on Flow\n  JobConf jobConf = new JobConf();\n  jobConf.set( \"key\",
+  \"value\" );\n  Properties props = new Properties();\n  MultiMapReducePlanner.setJobConf(
+  properties, jobConf );\n  FlowConnector conn = new FlowConnector( props );\n  ...
+  \                       ....\n  // get property from within an Operation (Function,Filter,etc)\n
+  \ String value = flowProcess.getProperty( \"key\" );\n  // or\n  JobConf jobConf
+  = ((HadoopFlowProcess) flowProcess).getJobConf();"

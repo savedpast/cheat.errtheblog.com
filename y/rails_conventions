@@ -1,0 +1,11 @@
+---
+rails_conventions: ! "Naming Convention Summary\r\n\r\nModel Naming Convention\r\nTable:
+  orders\L\r\nClass: Order\L\r\nFile: /app/models/order.rb\L\r\nPrimary Key: id\L\r\nForeign
+  Key: customer_id\L\r\nLink Tables: items_orders <-- note that these are in _alphabetic_
+  order, if not you will have to specify your association with :through => :orders_items\r\n\r\nController
+  Naming Convention\r\nClass: OrdersController\L\r\nFile: /app/controllers/orders_controller.rb\r\nLayout:
+  /app/layouts/orders.html.erb\r\n\r\nView Naming Convention\r\nHelper: /app/helpers/orders_helper.rb\L\r\nHelper
+  Module: OrdersHelper\L\r\nViews: /app/views/orders/… (list.html.erb for example)\r\n\r\nTests
+  Naming Convention\r\nUnit: /test/unit/order_test.rb\L\r\nFunctional: /test/functional/orders_controller_test.rb\L\r\nFixtures:
+  /test/fixtures/orders.yml\r\n\r\nShamelessly stolen from: itsignals.cascadia.com.au/?p=7
+  (more info there)"

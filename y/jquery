@@ -1,0 +1,45 @@
+---
+jquery: ! "(from jQuery in Action)\n\nBasic CSS selectors\n\n*    - any element\nE
+  \   - elements with tag E\nE F  - elements with tag F that are descendants of E\nE>F
+  \ - elements with tag F that are direct children of E\nE+F  - elements F immediately
+  preceded by sibling E\nE~F  - elements F preceded by any sibling E\nE:has(F) - elements
+  E that have at least one decedent with tag F\nE.C  - elements with class name C.
+  omitting E is the same as *.C\nE#I  - elements E with id I. omitting E is the same
+  as *#I\nE[A] - elements with attribute A of any value\nE[A=V]  - elements with attribute
+  A whose value is exactly V\nE[A^=V] - elements with attribute A whose value begins
+  with V\nE[A$=V] - elements with attribute A whose value ends with V\nE[A*=V] - elements
+  with attribute A whose value contains V\n\nAdvanced positional selectors\n\n:first
+  - first match of the page\n:last  - last match of the page\n:first-child - first
+  child element\n:last-child - last child element\n:only-child - elements that have
+  no siblings\n:nth-child(n) - nth child element\n:nth-child(even|odd) - even or odd
+  children\n:nth-child(Xn+Y) - nth child element computed by formula\n:even and :odd
+  - even and odd elements page wide\n:eq(n) - the nth matching element\n:gt(n) - elements
+  after (and excluding) nth matching element\n:lt(n) - elements before (and excluding)
+  nth matching element\n\nCustom selectors\n\n:animated - elements that are under
+  animated control\n:button - any button\n:checkbox - only check box elements\n:checked
+  - check boxes or radio buttons that are checked\n:contains(foo) - elements containing
+  text foo\n:disabled - form elements that are disabled\n:enabled - form elements
+  that are enabled\n:file - selects all file elements\n:header - all elements h1..h6\n:hidden
+  - elements that are hidden\n:image - form images\n:input - form elements\n:not(filter)
+  - negates the specified filter\n:parent - elements that have children\n:password
+  - password elements\n:radio - radio elements\n:reset - reset buttons\n:selected
+  - option elements that are selected\n:submit - submit buttons\n:text - text elements
+  (input[type=text])\n:visible - elements that are visible\n\nHide all Paragraph elements
+  that contain a class attribute:\n\n $(\"p[class]\").hide();\n\nShow the first paragraph
+  on the page:\n\n $(\"p:eq(0)\").show();\n\nHide all divs that are currently showing:\n\n
+  $(\"div:visible\").hide();\n\nGet all list items that are children of an unordered
+  list:\n\n $(\"ul/li\")\n /* valid too: $(\"ul > li\") */\n\nGet all Paragraphs,
+  with a class of 'foo', that have a link in them:\n\n $(\"p.foo[a]\");\n\nGet list
+  item that contains link with \"Register\" text inside:\n\n $(\"li[a:contains('Register')]\");\n\nGet
+  the input field's value with the name of 'bar':\n\n $(\"input[@name=bar]\").val();\n\nAll
+  checked radio buttons:\n\n $(\"input[@type=radio][@checked]\")\n\nDisable then re-enable
+  an element:\n\n $(\"#my\").attr('disabled',true);\n $(\"#my\").removeAttr('disabled');\n\nAdd/Remove
+  CSS style:\n\n $(\"#my\").addClass(\"highlight\").removeClass(\"arrr\");\n\nHighlight
+  in yellow a newly updated element for 3 seconds:\n\n $(\"#my\").effect('highlight',
+  {color: 'Yellow'}, 3000);\n\nMake an Ajax call:\n\n $.ajax({\n   type : 'POST',\n
+  \  url  : '/app/action',\n   data : { attribute1: 'value1', \n            attribute2:
+  'value2' },\n   dataType: 'json',\n   async : false,\n   success: function(result)
+  {\n      /* use json result.attribute3, ...  */\n   }\n });\n\n $.get('/app/action',
+  function(data) { ... });\n\nGenerate new HTML DOM nodes:\n\n  $(\"<div>This is new</div>\");\n
+  \ $(\"<div></div>\");\n  $(\"<div>\");\n\nSetting Element Content\n\n  $(\"<li>This
+  is new</li>\").appendTo(\"#list\");"

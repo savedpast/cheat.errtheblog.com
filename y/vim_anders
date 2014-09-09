@@ -1,0 +1,38 @@
+---
+vim_anders: ! "SEARCH\n======\n*           Search forward, word under cursor\n#           Search
+  backward, word under cursor\n/           Search forward\n?           Search backward\nfc
+  \         Search line forward for 'c'\nFc          Search line backward for 'c'\ntc
+  \         Search line forward before 'c'\nTc          Search line backward before
+  'c'\n\nMOVE\n====\nw           Word forward\nb           Word backward\ne           To
+  end of word forward\nge          To end of word backward\n^           Beginning
+  of line\n$           End of line\nh,j,k,l     Left, down, up, right\n\nSCROLLING\nzz
+  \         Scroll current line to zenter\nzt          Scroll current line to top\nzb
+  \         Scroll current line to bottom\n\nMACROS\n======\nqa          Start recording
+  macro 'a'\nq           End recording macro\n@a          Replay macro 'a'\n@:          Replay
+  last command\n\nMARKS\n=====\nma          Mark current position in 'a'\n`a          Goto
+  position with mark 'a'\n'a          Goto line with mark 'a'\n\nREGISTERS\n=========\n:reg
+  \       List all registers\n\"c          Register 'c'\n\".          Last edit\n\"/
+  \         Last search\n\":          Last command\n\"%          Filepath\n\nSURROUND\n========\ncs'\"
+  \       Change surrounding quotes to double-quotes\ncs(}        Change surrounding
+  parens to braces \ncs({        Change surrounding parens to braces with space\nds'
+  \        Delete surrounding quotes\ndst         Delete surrounding tags\nysiw[       Surround
+  inner word with brackets\nvees'       Surround 2 words (ee) with quote\n\nRUBY REFACTORING\n================\n,relv
+  \      Refactor Extract Local Variable\n,rem        Refactor Extract Method\n,rec
+  \       Refactor Extract Constant\n,rriv       Refactor Rename Instance Variable\n,rrlv
+  \      Refactor Rename Local Variable\n,rit        Refactor Inline temp\n,rap        Refactor
+  Add Parameter\n,rcpc       Refactor Convert Post Conditonal\n,rel        Refactor
+  Extract Let (RSPEC)\n\nSPELLING\n========\n]s          Next misspelled word\n[s
+  \         Previous misspelled word\nzg          Add word to wordlist\nzug         Undo
+  last add word\nz=          Suggest word\n\nCOMMAND MODE\n============\nC-p         Previous
+  command\nC-n         Next command\nC-f         Enter command window mode\nC-h         Left\nC-l
+  \        Right\nC-b         Back word\nC-w         Word forward\nC-a         Beginning
+  of line\nC-e         End of line\n\nCOMMAND WINDOW\n==============\nq/          Command
+  window for searches\nq:          Command window for commands\n\n\nWINDOWS\n=======\nC-h
+  \    Left window\nC-j     Down window\nC-k     Up window\nC-l     Right window\n:sp
+  f   Split open f\n:vsp f  VSplit open f\nC-w +   Larger window\nC-w -   Smaller
+  window\nC-w =   Equal window\n:only   Close other windows\nC-w r   Rotate clockwise\n\n\nUNIMPAIRED\n==========\n[space
+  \ New line above\n]space  New line below\n[e      Exchange line above\n]e      Exchange
+  line below\n\nRAGTAG\n======\nC-x +       Insert <%= %>\nC-x space   Make tag p
+  -> <p></p>\n\nVIMDIFF\n=======\ndo          Get changes from other window\ndp          Put
+  the changes from current window\n]c          Jump to the next change.\n[c -        Jump
+  to the previous change."

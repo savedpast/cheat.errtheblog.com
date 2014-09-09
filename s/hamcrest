@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Hamcrest comes with a library of useful matchers. Here are some of the most important ones.
+
+Core
+* anything - always matches, useful if you don't care what the object under test is
+* describedAs - decorator to adding custom failure description
+* is - decorator to improve readability - see &quot;Sugar&quot;, below
+
+Logical
+* allOf - matches if all matchers match, short circuits (like Java &amp;&amp;)
+* anyOf - matches if any matchers match, short circuits (like Java ||)
+* not - matches if the wrapped matcher doesn't match and vice versa
+
+Object
+* equalTo - test object equality using Object.equals
+* hasToString - test Object.toString
+* instanceOf, isCompatibleType - test type
+* notNullValue, nullValue - test for null
+* sameInstance - test object identity
+
+Beans
+* hasProperty - test JavaBeans properties
+
+Collections
+* array - test an array's elements against an array of matchers
+* hasEntry, hasKey, hasValue - test a map contains an entry, key or value
+* hasItem, hasItems - test a collection contains elements
+* hasItemInArray - test an array contains an element
+
+Number
+* closeTo - test floating point values are close to a given value
+* greaterThan, greaterThanOrEqualTo, lessThan, lessThanOrEqualTo - test ordering
+
+Text
+* equalToIgnoringCase - test string equality ignoring case
+* equalToIgnoringWhiteSpace - test string equality ignoring differences in runs of whitespace
+* containsString, endsWith, startsWith - test string matching
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

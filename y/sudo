@@ -1,0 +1,3 @@
+---
+sudo: ! "/etc/sudoers\n  Let user foo run command /sbin/bar as root, no password prompt:\n\n
+  \ foo ALL=NOPASSWD: /sbin/bar"

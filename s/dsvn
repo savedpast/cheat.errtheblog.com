@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>DSVN provides subversion integration with emacs.
+
+To get you started, add this line to your startup file: 
+ (autoload 'svn-status &quot;dsvn&quot; &quot;Run `svn status'.&quot; t) 
+ (autoload 'svn-update &quot;dsvn&quot; &quot;Run `svn update'.&quot; t) 
+
+This file integrates well with vc-svn, so you might want to do this 
+as well: 
+  (require 'vc-svn) 
+
+To get the status view, type 
+  M-x svn-status 
+
+Navigate through the file list using &quot;n&quot; and &quot;p&quot;, for next and 
+previous file, respectively. 
+
+You can get a summary of available commands by typing &quot;?&quot;. 
+
+Some commands operate on files, and can either operate on the file 
+under point, or on a group of files that have been marked. 
+
+The commands used for marking a file are the following: 
+  m mark and go down 
+  DEL unmark and go up 
+  u unmark and go down 
+  SPC toggle mark 
+  M-DEL unmark all 
+
+The commands that operate on files are: 
+  f Visit the file under point (does not use marks) 
+  o Visit the file under point in another window (does not use marks) 
+  = Show diff of uncommitted changes. This does not use marks 
+           unless you give a prefix argument (C-u) 
+  c Commit files 
+  a Add files 
+  r Remove files 
+  R Resolve conflicts 
+  M Rename/move files 
+  U Revert files 
+  P View or edit properties of the file or directory under point 
+           (does not use marks) 
+
+These commands update what is shown in the status buffer: 
+  g Rerun &quot;svn status&quot; to update the list. Use a prefix 
+           argument (C-u) to clear the list first to make sure that 
+           it is correct. 
+  s Update status of selected files 
+  S Show status of specific file or directory 
+  x Expunge unchanged files from the list 
+
+To update the working copy: 
+  M-u Run &quot;svn update&quot;. If a prefix argument is given (C-u), 
+           you will be prompted for a revision to update to. 
+  M-s Switch working copy to another branch. 
+  M-m Merge in changes using &quot;svn merge&quot;. 
+
+To view the Subversion log type &quot;M-x svn-log&quot;. </pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

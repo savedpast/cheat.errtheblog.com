@@ -1,0 +1,23 @@
+---
+open_solaris: ! "For people coming to OpenSolaris from Linux.\r\n\r\nUsers:\r\n------\r\n\r\npfexec
+  - sudo\r\n\r\nProcesses:\r\n----------\r\n\r\nprstat - like top\r\npgrep - find
+  PID of process\r\npstack - call stack of a process\r\npfiles - find open files for
+  process (like lsof)\r\npcred - display process credentials (effective/real UID &
+  GID etc.)\r\npldd - show linked libraries\r\npsig - list signal actions and handlers\r\nman
+  1 proc - get more information on process related tools\r\n\r\nExample: pfiles `pgrep
+  cron`\r\n\r\nNFS exports:\r\n------------ \r\n\r\n/etc/dfs/dfstab - like /etc/exports\r\n\r\nExporting
+  the file systems:\r\n\r\n$ exportfs -a \r\nor \r\n$ svcadm restart svc:/network/nfs/server
+  \r\n\r\nAlternatively export directory with\r\n\r\n$ share /path/to/export \r\n\r\nand
+  stop sharing it with\r\n\r\n$ unshare /path/to/export\r\n\r\nMonitoring:\r\n-----------\r\n\r\ndtrace
+  - dynamic tracing compiler and tracing utility\r\nvmstat - virtual memory statistics\r\nmpstat
+  - like vmstat but per processor\r\niostat \r\nnetstat\r\npsrinfo -v - cat /proc/cpuinfo\r\nprtconf
+  - cat /proc/meminfo)\r\n\r\nKernel modules:\r\n---------------\r\n\r\nmodinfo -
+  like lsmod\r\nmodload - like modprobe\r\nmodunload - like rmmod\r\nscanpci - scan
+  for PCI devices\r\n\r\nSoftware management:\r\n-------------------\r\n\r\nbeadm
+  - manage boot environments\r\npkg - install/remove packages\r\npkg image-update
+  [-nv] - upgrade whole boot environment\r\n\r\nServices:\r\n---------\r\n\r\nsvcs
+  - view services\r\nsvcadm - administer services\r\nsvccfg - add or change services\r\n\r\nDisks
+  and storage media:\r\n------------------------\r\n\r\nformat - like fdisk\r\nrmformat
+  - format for removable media\r\nvold / volcheck\r\ncdrw - like cdrecord\r\n\r\nNetworking:\r\n-----------\r\n\r\nifconfig\r\nndd
+  - get/set driver configuration parameters (like miitool)\r\ndhcpagent\r\nipfilter
+  - \r\ndladm - vlans, bonding\r\n\r\nDevice management:\r\n------------------\r\n\r\ndevfsadm\r\n"

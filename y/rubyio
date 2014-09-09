@@ -1,0 +1,15 @@
+---
+rubyio: ! "ruby: send('method', arg)\n  io: perform(\"slot\", arg)\n\nruby: respond_to?
+  'method'\n  io: hasSlot(\"slot\")\n\nruby: object.something if object.respond_to?
+  :something\n  io: object ?something\n\nruby: methods\n  io: slotNames\n\nruby: method_missing\n
+  \ io: forward\n\nruby: inspect\n  io: slotSummary\n\nruby: puts method(:blah).to_ruby\n
+  \ io: getSlot(\"blah\") code print\n\nruby: extend Module\n  io: appendProto(Module
+  clone)\n\nruby: require 'file'\n  io: doFile('file.io')\n\nruby: dudes.map { |dude|
+  dude.name }\n  io: dudes map(dude, dude name)\n\nruby: dudes.map(&:name)\n  io:
+  dudes map(name)\n\nruby: longest = tasks.map { |task| task.name.size }.max \n  io:
+  longest := tasks map(name size) max\n\nruby: dudes.each { |dude| puts \" #{dude.name}\"
+  }\n  io: dudes foreach(dude, writeln(\" \", dude name))\n\nruby: dudes.each_with_index
+  { |dude,i| puts \" #{dude.name}\" }\n  io: dudes foreach(i, dude, writeln(\" \",
+  dude name))\n\nruby: dudes.select { |dude| dude.age < 32 }\n  io: dudes select(dude,
+  dude age < 32)        \n\nruby: dudes.select { |dude| dude.age < 32 }\n  io: dudes
+  select(age < 32)"

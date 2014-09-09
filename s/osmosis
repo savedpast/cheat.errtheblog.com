@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Import a planet file into a local PostgreSQL rails port database.
+   osmosis --read-xml file=&quot;planet.osm&quot; --write-apidb host=&quot;x&quot; database=&quot;x&quot; user=&quot;x&quot; password=&quot;x&quot;
+
+Export a planet file from a local PostgreSQL rails port database.
+   osmosis --read-apidb host=&quot;x&quot; database=&quot;x&quot; user=&quot;x&quot; password=&quot;x&quot; --write-xml file=&quot;planet.osm&quot;
+
+Merging multiple OSM dumps into one:
+   osmosis --rb 1.osm.pbf --rb 2.osm.pbf --merge --wb merged.osm.pbf
+   osmosis --rx 1.osm --rx 2.osm --rx 3.osm --merge --merge --wx merged.osm
+
+More:
+http://wiki.openstreetmap.org/wiki/Osmosis</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

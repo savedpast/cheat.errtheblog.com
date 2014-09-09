@@ -1,0 +1,129 @@
+---
+csup: ! "Csupport cheat sheet\n\n  -- QuickHelp ---------------------------------------------------------------\n
+  \  \n    {  }\t\tspringt zum nächsten Absatz   ( vor und zurück )\n\t[  ]\t\tspringt
+  zur nächsten Funktion ( vor und zurück )\n    %\t\t\tfindet die passende Klammer\n\n
+  \ -- cscope + ctags --------------------------------------------------------------\n
+  \n  leader b  \terzeugt rekursiv vom aktuellen Verzeichnis de cscope database\n
+  \ \n  strg  - ]\t\tspringt zur definition des Elements unter dem Cursor\n  strg
+  \ - T\t\tspringt zum Aufrufer zurück\n\n  strg  - _     suche tag in cscope oder
+  ctag\n  gd\t\t\tspringt zur vorherigen Deklaration der variablen (im File)\n  gD\t\t\tspringt
+  zur globalen Deklaration der variablen   (im File)\n\t\n  s = symbol | g = global
+  | c = calls | d = called | e = erep | f = file | i = include\n\n  strg + space s\tfinde
+  alle referenzen des symbols unter dem cursor\n  strg + space g   \tfinde die globalen
+  definitionen unter dem cursor\n  strg + space c   \tfinde alle Aufrufe\n  strg +
+  space t\tfinde alle instanzen des Textes\n  strg + space f\töffne das file unter
+  dem cursor\n  strg + space i\tfinde alle files die diesen Namen enthalten\n  strg
+  + space d \tfinde den funktions Aufrufer\n  <c - \\> symbol oder <c-space><c-space>
+  symbole öffnet im normalen oder vertikalen Fenster \n\n  -- switch to header ---------------------------------------------------\n\n
+  \ :A \tswitches to the header file corresponding to the current file being edited
+  (or vise versa)\n  :AS \tsplits and switches\n  :AV \tvertical splits and switches\n
+  \ :AT \tnew tab and switches\n  :AN \tcycles through matches\n  :IH \tswitches to
+  file under cursor\n  :IHS \tsplits and switches\n  :IHV \tvertical splits and switches\n
+  \ :IHT \tnew tab and switches\n  :IHN \tcycles through matches\n\n  <Leader>ih \tswitches
+  to file under cursor\n  <Leader>is \tswitches to the alternate file of file under
+  cursor (e.g. on  <foo.h> switches to foo.cpp)\n  <Leader>ihn \tcycles through matches
+  \n\t\n  -- Comments -----------------------------------------------------------\n\n
+  \ [n]\\cl       end-of-line comment                 (n,v,i)\n  [n]\\cj       adjust
+  end-of-line comment(s)       (n,v,i)\n     \\cs       set end-of-line comment column
+  \     (n)\n  [n]\\c*       code -> comment /* */               (n,v)\n  [n]\\cc
+  \      code -> comment //                  (n,v)\n  [n]\\co       comment -> code
+  \                    (n,v)\n     \\cfr      frame comment                       (n,i)\n
+  \    \\cfu      function comment                    (n,i)\n     \\cme      method
+  description                  (n,i)\n     \\ccl      class description                   (n,i)\n
+  \    \\cfdi     file description (implementation)   (n,i)\n     \\cfdh     file
+  description (header)           (n,i)\n     \\ccs      C/C++-file section  (tab.
+  compl.)   (n,i)\n     \\chs      H-file section      (tab. compl.)   (n,i)\n     \\ckc
+  \     keyword comment     (tab. compl.)   (n,i)\n     \\csc      special comment
+  \    (tab. compl.)   (n,i)\n     \\cd       date                                (n,v,i)\n
+  \    \\ct       date \\& time                        (n,v,i)\n  [n]\\cx       toggle
+  comments: C <--> C++         (n,v,i)\n\n  -- Statements ---------------------------------------------------------\n\n
+  \    \\sd       do { } while                        (n,v,i)\n     \\sf       for
+  \                                (n,i)\n     \\sfo      for { }                             (n,v,i)\n
+  \    \\si       if                                  (n,i)\n     \\sif      if {
+  }                              (n,v,i)\n     \\sie      if else                             (n,v,i)\n
+  \    \\sife     if { } else { }                     (n,v,i)\n     \\se       else
+  { }                            (n,v,i)\n     \\sw       while                               (n,i)\n
+  \    \\swh      while { }                           (n,v,i)\n     \\ss       switch
+  \                             (n,v,i)\n     \\sc       case                                (n,i)\n
+  \    \\s{ \\sb   { }                                 (n,v,i)\n\n  -- Preprocessor
+  -------------------------------------------------------\n\n     \\ps       choose
+  a standard library include   (n,i)\n     \\pc       choose a C99 include                (n,i)\n
+  \    \\p<       #include <>                         (n,i)\n     \\p\"       #include
+  \"\"                         (n,i)\n     \\pd       #define                             (n,i)\n
+  \    \\pu       #undef                              (n,i)\n     \\pif      #if  #endif
+  \                        (n,v,i)\n     \\pie      #if  #else #endif                   (n,v,i)\n
+  \    \\pid      #ifdef #else #endif                 (n,v,i)\n     \\pin      #ifndef
+  #else #endif                (n,v,i)\n     \\pind     #ifndef #def #endif                 (n,v,i)\n
+  \    \\pi0      #if 0 #endif                        (n,v,i)\n     \\pr0      remove
+  #if 0 #endif                 (n,i)\n     \\pe       #error                              (n,i)\n
+  \    \\pl       #line                               (n,i)\n     \\pp       #pragma
+  \                            (n,i)\n\n  -- Idioms -------------------------------------------------------------\n\n
+  \    \\if       function                            (n,v,i)\n     \\isf      static
+  function                     (n,v,i)\n     \\im       main()                              (n,v,i)\n
+  \ [n]\\i0       for( x=0; x<n; x+=1 )               (n,v,i)\n  [n]\\in       for(
+  x=n-1; x>=0; x-=1 )            (n,v,i)\n     \\ie       enum   + typedef                    (n,i)\n
+  \    \\is       struct + typedef                    (n,i)\n     \\iu       union
+  \ + typedef                    (n,i)\n     \\ip       printf()                            (n,i)\n
+  \    \\isc      scanf()                             (n,i)\n     \\ica      p=calloc()
+  \                         (n,i)\n     \\ima      p=malloc()                          (n,i)\n
+  \    \\ire      p=realloc()                         (n,i)\n     \\isi      sizeof()
+  \                           (n,v,i)\n     \\ias      assert()                            (n,v)\n
+  \    \\ii       open input file                     (n,i)\n     \\io       open
+  output file                    (n,i)\n     \\ifs      fscanf                              (n,i)\n
+  \    \\ifp      fprintf                             (n,i)\n\n  -- Snippets -----------------------------------------------------------\n\n
+  \    \\nr       read code snippet                   (n,i)\n     \\nw       write
+  code snippet                  (n,v,i)\n     \\ne       edit code snippet                   (n,i)\n
+  \ [n]\\nf       pick up function prototype          (n,v,i)\n  [n]\\np       pick
+  up function prototype          (n,v,i)\n  [n]\\nm       pick up method prototype
+  \           (n,v,i)\n     \\ni       insert prototype(s)                 (n,i)\n
+  \    \\nc       clear  prototype(s)                 (n,i)\n     \\ns       show
+  \  prototype(s)                 (n,i)\n     \\ntl      edit local templates                (n,i)\n
+  \    \\ntg      edit global templates               (n,i)\n     \\ntr      rebuild
+  templates                   (n,i)\n\n  -- C++ ----------------------------------------------------------------\n\n
+  \    \\+co      cout  <<  << endl;                  (n,i)\n     \\+\"       << \"\"
+  \                              (n,i)\n     \\+c       class                               (n,i)\n
+  \    \\+ps      #include <...> STL                  (n,i)\n     \\+pc      #include
+  <c..> C                    (n,i)\n     \\+cn      class (using new)                   (n,i)\n
+  \    \\+ci      class implementation                (n,i)\n     \\+cni     class
+  (using new) implementation    (n,i)\n     \\+mi      method implementation               (n,i)\n
+  \    \\+ai      accessor implementation             (n,i)\n\n     \\+tc      template
+  class                      (n,i)\n     \\+tcn     template class (using new)          (n,i)\n
+  \    \\+tci     template class implementation       (n,i)\n     \\+tcni    template
+  class (using new) impl.    (n,i)\n     \\+tmi     template method implementation
+  \     (n,i)\n     \\+tai     template accessor implementation    (n,i)\n\n     \\+tf
+  \     template function                   (n,i)\n     \\+ec      error class                         (n,i)\n
+  \    \\+tr      try ... catch                       (n,v,i)\n     \\+ca      catch
+  \                              (n,v,i)\n     \\+c.      catch(...)                          (n,v,i)\n\n
+  \ -- Run ----------------------------------------------------------------\n\n    \\rc
+  \      save and compile                    (n,i)\n    \\rl       link                                (n,i)\n
+  \   \\rr       run                                 (n,i)\n    \\ra       set comand
+  line arguments           (n,i)\n    \\rm       run make                            (n,i)\n
+  \   \\rmc      run 'make clean'                    (n,i)\n    \\rcm      choose
+  makefile                     (n,i)\n    \\rme      executable to run                   (n,i)\n
+  \   \\rma      cmd. line arg. for make             (n,i)\n    \\rp       run splint
+  \                         (n,i)\n    \\rpa      cmd. line arg. for splint           (n,i)\n
+  \   \\rk       run CodeCheck (TM)                  (n,i)\n    \\rka      cmd. line
+  arg. for CodeCheck (TM)   (n,i)\n    \\rd       run indent                          (n,v,i)\n
+  [n]\\rh       hardcopy buffer                     (n,v,i)\n    \\rs       show plugin
+  settings                (n,i)\n    \\rx       set xterm size                      (n,
+  only Linux/UNIX & GUI)\n    \\ro       change output destination           (n,i)\n\n==============================================================================\n3.
+  \ HOTKEYS                                                 *csupport-hotkeys*\n==============================================================================\n\nThe
+  following hotkeys are defined in normal, visual and insert mode:\n\n       F9   compile
+  and link\n   Alt-F9   write buffer and compile\n  Ctrl-F9   run executable\n Shift-F9
+  \  set command line arguments\n\n Shift-F2   switch between source files and header
+  files\n\n\n\n  -- other keys ----------------------------------------------------------\n\n\tSTRG
+  + X STRG + O \tCodecompletion from tagfile\n\n\tSTRG + X STRG + K\tCodecompletion
+  from dictionary\n\n\tSTRG + X STRG + P\tSchlüsselwortergänzung\n\n\tSTRG + X STRG
+  + U\tUserfunktion (wenn vorhanden)\n\n\tSTRG + X STRG + ]\tTag ergänzung\n\n\tSTRG
+  + X STRG + D  \tMakro - Definitionsergänzung\n\n\tSTRG + P\t\t\tVorheriger\n\n\tSTRG
+  + N\t\t\tNächster\n\n  -- \n\n <Leader> cr normal mode:  get help for word under
+  cursor         \t\tMemory aid cr: (c)-(r)eference\n <Leader> cr visual mode:  get
+  help for visually selected text  \t\tMemory aid cr: (c)-(r)eference\n <Leader> cw:
+  \             prompt for word CRefVim should search for \tMemory aid cw: (c)-reference
+  (w)hat\n <Leader> cc:              jump to table of contents c-manual           Memory
+  aid cc: (c)-reference (c)ontents\n\n  --\n \n [ + i \t\t\t    zeigt den Funktionsprototypen
+  des Begriffes unter dem Cursor\n \n shift + k\t\t\tzeige Manfile des Begriffes unter
+  dem Cursor  \n\n\tF2  \t\t\twrite file without confirmation\n\tF3   \t\t\tcall file
+  explorer Ex\n\tF4     \t\t\tshow tag under curser in the preview window (tagfile
+  must exist!)\n\tF5   \t\t\topen quickfix error window\n\tF6   \t  \t\taktives Fenster
+  schliessen\n\tF7   \t  \t\tdisplay previous error\n\tF8   \t  \t\tdisplay next error"

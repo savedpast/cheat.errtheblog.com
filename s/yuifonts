@@ -1,0 +1,34 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>YUI Fonts
+=========
+
+Example
+-------
+&lt;style&gt; 
+  #demo1 {font-size:85%;}  /*renders 11px */ 
+  #demo2 {font-size:100%;} /*renders 13px */  
+  #demo3 {font-size:108%;} /*renders 14px */ 
+  #demo4 {font-size:123.1%;} /*renders 16px */ 
+  #demo5 {font-size:138.5%;} /*renders 18px */ 
+&lt;/style&gt;
+
+Pixels (px) - Percent (%)
+-------------------------
+10  77
+11 	85
+12 	93 (was 93)
+13 	100
+14 	108 (was 107)
+15 	116 (was 114)
+16 	123.1 (was 122)
+17 	131 (was 129)
+18 	138.5 (was 136)
+19 	146.5 (was 144)
+20 	153.9 (was 152)
+21 	161.6 (was 159)
+22 	167
+23 	174
+24 	182
+25 	189
+26 	197</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

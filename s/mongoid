@@ -1,0 +1,92 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>EXAMPLE
+=======
+  class User
+    include Mongoid::Document
+    include Mongoid::Timestamps # adds automagic fields created_at, updated_at
+    references_many :posts
+    embeds_one :profile, :dependent =&gt; :destroy
+    field :fieldname, :type =&gt; Array / BigDecimal / Boolean / Date / DateTime
+                             / Float / Hash / Integer / String / Symbol / Time
+    index :fieldname
+  end
+
+RELATIONS
+=========
+  EMBEDDING DATA IN THE SAME TABLE:
+
+  embeds_one :profile
+  embeds_many :settings
+  embedded_in :user, :inverse_of =&gt; :settings
+
+  REFERENCING DATA IN AN OTHER TABLE:
+
+  belongs_to :user
+  has_one :profile, :inverse_of =&gt; user
+  has_many :photos, :inverse_of =&gt; user
+
+
+PERSISTENCE
+===========
+
+  In order to make sure data is actually to be written to disk, you need to tell
+  mongoid
+
+  .safely.save
+
+  (!Mongoid only fires the callback of the document that the persistence action was executed on)
+
+QUERIES
+=======
+
+  .where(:amount.gt =&gt; 100, :active =&gt; true)
+  .any_in(:category =&gt; array)
+  .all_in(:category =&gt; array)
+  .any_of({ :shape =&gt; &quot;round&quot; }, { :color =&gt; &quot;red&quot; })
+  .and(:amount.gt =&gt; 100, :account_status =&gt; &quot;active&quot;)
+  .excludes(:status =&gt; &quot;blocked&quot;)
+  .not_in(:status =&gt; [&quot;blocked&quot;, &quot;unverified&quot;])
+  .only(:first_name, :last_name) # only retrieve these fields
+  .limit(20)
+  .skip(100)
+
+ORDER
+=====
+
+  .desc(:last_name).asc(:first_name)
+  .order_by(:last_name.desc, :first_name.asc, :city.desc)
+
+CRITERIAS
+=========
+
+  .where(:title.all =&gt; [&quot;Sir&quot;])
+  .where(:age.exists =&gt; true)
+  .where(:age.gt =&gt; 18)
+  .where(:age.gte =&gt; 18)
+  .where(:title.in =&gt; [&quot;Sir&quot;, &quot;Madam&quot;])
+  .where(:age.lt =&gt; 55)
+  .where(:age.lte =&gt; 55)
+  .where(:title.ne =&gt; &quot;Mr&quot;)
+  .where(:title.nin =&gt; [&quot;Esquire&quot;])
+  .where(:aliases.size =&gt; 2)
+  .where(:location.near =&gt; [ 22.5, -21.33 ])
+  .where(:location.within =&gt; { &quot;$center&quot; =&gt; [ [ 50, -40 ], 1 ] })
+
+CALCULATIONS
+============
+
+  .max(:age)
+  .min(:quantity)
+  .sum(:total)
+
+RAKE TASKS
+
+  db:create
+  db:create_indexes
+  db:drop
+  db:migrate
+  db:schema:load
+  db:seed
+  db:setup
+  db:test:prepare</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

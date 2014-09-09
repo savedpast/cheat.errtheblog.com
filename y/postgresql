@@ -1,0 +1,75 @@
+---
+postgresql: ! "PostgreSQL\n----------\n\nCreate the filesystem\n----\n\n  $ export
+  PGROOT=\"/var/lib/postgres\"\n  $ mkdir -p $PGROOT/data && chown postgres.postgres
+  $PGROOT/data\n  $ su - postgres -c \"/usr/bin/initdb -D $PGROOT/data\"\n\n  Make
+  it UTF8 by default:\n\n  $ su - postgres -c \"/usr/bin/initdb -E utf8 --locale=en_US.UTF-8
+  \\\n                      $PGROOT/data\"\n\n\nCreate Databases\n----\n\n  $ createdb
+  -O owner -T some_template database_name\n\n\n\nBy default, PostgreSQL listens on
+  TCP port 5432.\n\nDump all databases\n----\n\npg_dumpall --clean > databases.sql\nDump
+  a database with compression (-Fc)\n\npg_dump -Fc --file=database.sql --clean database\nDump
+  a table\n\npg_dump [-d database] [--schema schema] -t table\nDump a table definition
+  (no data)\n\npg_dump -s [-d database] [--schema schema] -t table\nRestore a database
+  from a dump file\n\npg_dump -Ft [-h host] [-p port] [-U username[  [--schema=schema]
+  -F c -b -v -f <path_to_dump_file> <db_name>\n\n-p, â\x80\x93port=PORT database server
+  port number\n-i, â\x80\x93ignore-version proceed even when server version mismatches\n-h,
+  â\x80\x93host=HOSTNAME database server host or socket directory\n-U, â\x80\x93username=NAME
+  connect as specified database user\n-W, â\x80\x93password force password prompt
+  (should happen automatically)\n-d, â\x80\x93dbname=NAME connect to database name\n-v,
+  â\x80\x93verbose verbose mode\n-F, â\x80\x93format=c|t|p output file format (custom,
+  tar, plain text)\n-c, â\x80\x93clean clean (drop) schema prior to create\n-b, â\x80\x93blobs
+  include large objects in dump\n-v, â\x80\x93verbose verbose mode\n-f, â\x80\x93file=FILENAME
+  output file name\n\n\nRestore a database\n-------\n\npg_restore -Fc database.sql\n\npg_restore
+  [-h host] [-p port] [-U user] [--schema=schema] -d database -v -c <path_to_dump_file>\n\n-p,
+  --port=PORT database server port number\n-i, --ignore-version proceed even when
+  server version mismatches\n-h, --host=HOSTNAME database server host or socket directory\n-U,
+  --username=NAME connect as specified database user\n-W, --password force password
+  prompt (should happen automatically)\n-d, --dbname=NAME connect to database name\n-v,
+  --verbose verbose mode\n-c, --clean Clean (drop) database objects before recreating
+  them\n\n\n\nReset password of postgres user\n----\n# su postgres\n# psql -d template1\ntemplate1=#
+  ALTER USER postgres WITH PASSWORD '${POSTGRESQL_POSTGRES_PASSWORD}';\n\n\npsql\n----\n\nPsql
+  - show a list of databases\n=> \\l\nLowercase L, not the number 1\n----\nPsql -
+  show all users\n=> select * from pg_user;\n----\nPsql - show all tables (including
+  system tables)\n=> select * from pg_tables;\n----\nPsql - show tables in the current
+  context (database/schema)\n=> \\d\n----\nPsql - change current database\n=> \\c
+  database;\n----\nPsql - show all schemas in the current database\n=> \\dn\n----\nPsql
+  - Grant permissions on a schema to a user\n=> GRANT ALL ON myschema TO user;\n----\nPsql
+  - quit psql\n=> \\q\n----\nPsql - show help\n=> \\?\n----\nPsql - copy a table to
+  a tab delimeted file\n=> COPY table TO 'table.txt';\n----\nPsql - load a table from
+  a tab delimeted file\n=> COPY table FROM 'table.txt';\n----\nPsql - show permissions
+  on database objects\n=> \\z [object]\nr -- SELECT (\"read\")\nw -- UPDATE (\"write\")\na
+  -- INSERT (\"append\")\nd -- DELETE\nR -- RULE\nx -- REFERENCES (foreign keys)\nt
+  -- TRIGGER\nX -- EXECUTE\nU -- USAGE\nC -- CREATE\nT -- TEMPORARY\narwdRxt -- ALL
+  PRIVILEGES (for tables)\n* -- grant option for preceding privilege\n/yyyy -- user
+  who granted this privilege\n----\nRun the vacuum utility\n=> vacuumdb --verbose
+  --analyze --all\nNote: vacuum reclaims space from deleted records and updates indexes.
+  It should be set up in cron. Newer versions of postgresql may run vacuum automatically.\nIncrease
+  perfomance with shared memory\n----\nOne effective performance tuning tip for Postgresql
+  is to increase the shared memory buffers. This might require adding RAM to the server.
+  Many Linux distros default to 32MB of shared memory, controlled by two kernel parameters:\n/proc/sys/kernel/shmmax\n/proc/sys/kernel/shmall\n\nThese
+  values can be changed at run time, but it is better to set them at boot using the
+  /etc/sysctl.conf file. This increases shared memory to 1GB:\n# increase shared buffers
+  for postgres at boot\nkernel.shmmax=1073741824\nkernel.shmall=1073741824\nThen,
+  tell PostgreSQL to use 768MB of the 1GB available in the /var/lib/pgsql/data/postgresql.conf
+  file:\nshared_buffers = 98304 # min 16, at least max_connections*2, 8KB each\n\nRestart
+  PostgreSQL for the change to take effect.\n\nmacports\n--------\nsudo port install
+  postgresql84\n# to create db and start daemon, follow instructions printed\n# at
+  end of installation\n\n# to set 84 as the default version (so you don't have to
+  type psql84, etc)\nsudo port select --set postgresql postgresql84\n\n\nhomebrew\n--------\nbrew
+  install postgresql\n\nTo build plpython against a specific Python, set PYTHON prior
+  to brewing:\n  PYTHON=/usr/local/bin/python  brew install postgresql\nSee:\n  http://www.postgresql.org/docs/8.4/static/install-procedure.html\n\n\nIf
+  this is your first install, create a database with:\n    initdb /usr/local/var/postgres\n\nAutomatically
+  load on login with:\n    launchctl load -w /usr/local/Cellar/postgresql/8.4.3/org.postgresql.postgres.plist\n\nand
+  if that fails try the homebrew mysql launchd approach:\n    cp /usr/local/Cellar/postgresql/8.4.4/org.postgresql.postgres.plist
+  ~/Library/LaunchAgents/\n    launchctl load ~/Library/LaunchAgents/org.postgresql.postgres.plist\n\nOr
+  start manually with:\n    pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log
+  start\n\nAnd stop with:\n    pg_ctl -D /usr/local/var/postgres stop -s -m fast\n\nIf
+  you want to install the postgres gem, including ARCHFLAGS is recommended:\n    env
+  ARCHFLAGS=\"-arch x86_64\" gem install pg\n\nPostgreSQL Examples\n-------------------\n\nAdding
+  new user called BRIAN:\n$ sudo su - postgres\n$ createuser --createdb --username
+  postgres --no-createrole \\\n --pwprompt BRIAN\nEnter password for new role: \nEnter
+  it again: \nShall the new role be a superuser? (y/n) n\n$ exit\n\nALTER TABLE\n-----------\n\n--Add
+  a unique constraint to the email column in the customer table\nALTER TABLE customer
+  ADD CONSTRAINT customer_email_key UNIQUE (email);\n\nMake current user SUPERUSER\n----------------------------\nWhen
+  PostgreSQL was installed it was configured with one superuser, namely ‘postgres’.
+  Hence adding new users with superuser privileges should be done as user ‘postgres’.\n\n
+  \  $ sudo su postgres -c 'createuser -P --superuser gkoller'"

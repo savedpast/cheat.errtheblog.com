@@ -1,0 +1,34 @@
+---
+handlebars: ! "## Syntax\r\n\r\n {{! ignored...}}   # comment\r\n {{propertyName}}
+  \  # output is HTML-escaped\r\n{{{propertyName}}}  # output is NOT HTML-escaped\r\n\r\n{{#propertyName}}
+  some stuff {{/propertyName}}\r\n  # if false/empty list:   contents skipped\r\n
+  \ # if true scalar value:  contents rendered\r\n  # if hash value:         context
+  set to hash before rendering contents\r\n  # if list value:         loops through
+  list, sets context to each element\r\n  #                        before rendering
+  contents\r\n  # if function:           passes contents to it (see docs)\r\n\r\n{{^propertyName}}
+  some stuff {{/propertyName}}  # behaves like 'unless'\r\n                                                #
+  (opposite of #propertyName)\r\n\r\n## Contexts\r\n\r\n{{my_tag this}}      # 'this'
+  refers to current context\r\n{{person.name}}      # use '.' paths to access nested
+  contexts\r\n{{../company.name}}  # use '../' paths to access ancestor contexts\r\n{{articles.[5]}}
+  \    # use '[]' to access a list element\r\n{{App.someVal}}      # use absolute
+  paths, too\r\n\r\n## Built-In Helpers\r\n\r\n{{#if}}  {{else}}  {{/if}}\r\n{{#unless}}
+  \   {{/unless}}\r\n{{#with}}        {{/with}}\r\n{{#each}}        {{/each}}\r\n\r\n##
+  Custom Helpers\r\n#\r\n#  Single-Tag:  {{myHelper [args]}} -> function ([args])\r\n#
+  \ Block:  {{#myHelper [arg]}} blah {{/myHelper}} -> function (arg|context, fn)\r\n#\r\n#
+  \ Allowed args:  strings, context paths, hash args (foo=\"bar\")\r\n#  'this' is
+  always set to the current context within the helper\r\n\r\n# to prevent your helper's
+  output from being HTML-escaped\r\nHandlebars.SafeString(string)\r\n# to escape something
+  inside your helper\r\nHandlebars.Utils.escapeExpression(string)\r\n\r\n{{#posts}}
+  <li>{{{link_to this}}}</li> {{/posts}}\r\nHandlebars.registerHelper('link_to', function
+  (context) {\r\n  return '<a href=\"' + context.url + '\">' + context.body + '</a>';\r\n});\r\n\r\n{{#posts}}
+  <li>{{{headline title class=\"foo\"}}}</li> {{/posts}}\r\nHandlebars.registerHelper('headline',
+  function (title, options) {\r\n  var attrs = [];\r\n  for(var prop in options.hash)
+  {\r\n    attrs.push(prop + '=\"' + options.hash[prop] + '\"');\r\n  }\r\n  return
+  new Handlebars.SafeString(\r\n    \"<h2 \" + attrs.join(\" \") + \">\" + title +
+  \"</h2>\"\r\n  );\r\n});\r\n\r\n{{#people}} <li>{{{#link}}}{{name}}{{/link}}</li>
+  {{/people}}\r\nHandlebars.registerHelper('link', function(context, fn) {\r\n  return
+  '<a href=\"/people/' + this.__get__(\"id\") + '\">' + fn(this) + '</a>';\r\n});\r\n\r\n##
+  Partials\r\n\r\n{{> templateName}}  # inline another template's contents (inherits
+  context)\r\n\r\n{{#people}} <li>{{> link}}</li> {{/people}}\r\nHandlebars.registerPartial('link',
+  '<a href=\"/people/{{id}}\">{{name}}</a>')\r\n\r\n## Inlining Templates\r\n\r\n<script
+  type=\"text/x-handlebars\" [data-template-name=\"intro\"]>\r\n  My name is {{name}}.\r\n</script>\r\n"

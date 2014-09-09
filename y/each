@@ -1,0 +1,4 @@
+---
+each: ! "collection.each iteration syntax\n\niterating over a list\n [1, 2, 3].each
+  { |n| puts n }\n\niterating over a hash\n {'one' => 1, 'two' => 2, 'three' => 3}.each
+  { |k,v| puts \"#{k} is #{v}\" }"

@@ -1,0 +1,13 @@
+---
+il_screen: ! "#alba/nbil/home\n$ ssh il@thinlinc.imm.dtu.dk\n\n#Start screen session.
+  -S gives it a name\n$ screen -S thinlinc\n\n#start pine\n$ pine\n\n#Next you wnt
+  to do somthing else, wget etc...  You need to create another screen window by pressing
+  special key combination. \nPress CTRL + a followed by c key (first hit CTRL+a, releases
+  both keys and press c). \nAs soon as you hit 'c' you will get new shell prompt at
+  console. \n$ wget...\n\n\n#switch between these two tasks\n* Switching between windows
+  is the specialty of screen utility.  To switch between pine and wget window (or
+  session) \n\n        CTRL+a followed by n key (first hit CTRL+a, releases both keys
+  and press n).\n\n* To list all windows use the command \n       CTRL+a followed
+  by \" key (first hit CTRL+a, releases both keys and press \" ).\n\n* To switch to
+  window by number use the command \n       CTRL+a followed by ' (first hit CTRL+a,
+  releases both keys and press ' it will prompt for window number)."

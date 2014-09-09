@@ -1,0 +1,9 @@
+---
+yuifonts: ! "YUI Fonts\n=========\n\nExample\n-------\n<style> \n  #demo1 {font-size:85%;}
+  \ /*renders 11px */ \n  #demo2 {font-size:100%;} /*renders 13px */  \n  #demo3 {font-size:108%;}
+  /*renders 14px */ \n  #demo4 {font-size:123.1%;} /*renders 16px */ \n  #demo5 {font-size:138.5%;}
+  /*renders 18px */ \n</style>\n\nPixels (px) - Percent (%)\n-------------------------\n10
+  \ 77\n11 \t85\n12 \t93 (was 93)\n13 \t100\n14 \t108 (was 107)\n15 \t116 (was 114)\n16
+  \t123.1 (was 122)\n17 \t131 (was 129)\n18 \t138.5 (was 136)\n19 \t146.5 (was 144)\n20
+  \t153.9 (was 152)\n21 \t161.6 (was 159)\n22 \t167\n23 \t174\n24 \t182\n25 \t189\n26
+  \t197"

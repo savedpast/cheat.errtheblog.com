@@ -1,0 +1,10 @@
+---
+assert_no_tag: ! "# 'cheat assertions' for the rest\n\nassert_no_tag(*opts)\n\nIdentical
+  to assert_tag, but asserts that a matching tag does not exist. (See assert_tag for
+  a full discussion of the syntax.)\n\nExamples\n\n  # Assert that there is not a
+  \"div\" containing a \"p\"\n  assert_no_tag :tag => \"div\", :descendant => { :tag
+  => \"p\" }\n\n  # Assert that an unordered list is empty\n  assert_no_tag :tag =>
+  \"ul\", :descendant => { :tag => \"li\" }\n\n  # Assert that there is not a \"p\"
+  tag with between 1 to 3 \"img\" tags\n  # as immediate children\n  assert_no_tag
+  :tag => \"p\",\n             :children => { :count => 1..3, :only => { :tag => \"img\"
+  } }\n"

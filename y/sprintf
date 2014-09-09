@@ -1,0 +1,10 @@
+---
+sprintf: ! "%b    => Binary integer\r\n%c    => Single character\r\n%d    => Decimal
+  integer\r\n%e    => Decimal integer displayed in exponential form (3e+07)\r\n%E
+  \   => Decimal integer displayed in exponential form (3E+07)\r\n%f    => Floating
+  point number\r\n%g    => Same as %e if exponent is less than -4, %f otherwise\r\n%G
+  \   => Same as %E if exponent is less than -4, %f otherwise\r\n%o    => Octal integer\r\n%s
+  \   => String\r\n%u    => Unsigned decimal integer\r\n%x    => Hexadecimal integer
+  (2a)\r\n%X    => Hexadecimal integer uppercase (2A)\r\n%02d  => 0 padded two digits\r\n%.02f
+  => round to the hundredths\r\n%+    => +/- sign\r\n\r\nwidth & alignment\r\n\"%10s\"
+  % \"hello\" => \"     hello\"    \r\n\"%-10s\" % \"hello\" => \"hello     \""

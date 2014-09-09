@@ -1,0 +1,37 @@
+---
+xpath: ! "XPath examples\r\n==============\r\n//hr[@class='edge' and position()=1]\r\n
+  \   every first hr of 'edge' class\r\n\r\n//table[count(tr)=1 and count(tr/td)=2]\r\n
+  \   all tables with 1 row and 2 cols\r\n\r\n//div/form/parent::*\r\n    all divs
+  that have form\r\n\r\n./div/b\r\n    a relative path\r\n\r\n//table[parent::div[@class=\"pad\"]
+  and not(@id)]//a\r\n    any anchor in a table without id, contained in a div of
+  \"pad\" class\r\n\r\n/html/body/div/*[preceding-sibling::h4]\r\n    give me whatever
+  after h4\r\n\r\n//tr/td[font[@class=\"head\" and text()=\"TRACK\"]]\r\n    all td
+  that has font of a \"head\" class and text \"TRACK\"\r\n\r\n./table/tr[last()]\r\n
+  \   the last row of a table\r\n\r\n//rdf:Seq/rdf:li/em:id\r\n    using namespaces\r\n\r\n//a/@href\r\n
+  \   hrefs of all anchors\r\n\r\n//*[count(*)=3]\r\n    all nodes with 3 children\r\n\r\n//var|//acronym\r\n
+  \   all vars and acronyms\r\n\r\nXPath functions\r\n===============\r\nConversion:\r\n
+  \   boolean([object])\r\n    string([object])\r\n    number([object])\r\n\r\nMath:\r\n
+  \   ceiling(number)\r\n    floor(number)\r\n    round(decimal)\r\n    sum(node-set)\r\n\r\nLogic:\r\n
+  \   true()\r\n    false()\r\n    not(expr)\r\n\r\nNode:\r\n    lang(string)\r\n
+  \   name([node-set])\r\n    namespace-uri([node-set])\r\n    text()\r\n\r\nContext:\r\n
+  \   count(node-set)\r\n    function-available(name)\r\n    last()\r\n    position()\r\n\r\nString:\r\n
+  \   contains(haystack-string needle-string)\r\n    concat(tring1 string2[stringn]*)\r\n
+  \   normalize-space(string)\r\n    starts-with(haystack needle)\r\n    string-length([string])\r\n
+  \   substring(string start[length])\r\n    substring-after(haystack needle)\r\n
+  \   substring-before(haystack needle)\r\n    translate(string abc XYZ)\r\n\r\nXPath
+  Axes\r\n==========\r\nAxes are relations to nodes. Some axes also have shortcuts
+  (in parentheses).\r\n\r\nElement axes:\r\n    * ancestor\r\n    * ancestor-or-self\r\n
+  \   * attribute (@)\r\n    * child (/)\r\n    * descendant (//)\r\n    * descendant-or-self\r\n
+  \   * following\r\n    * following-sibling\r\n    * parent(..)\r\n    * preceding\r\n
+  \   * preceding-sibling\r\n    * self (.)\r\n\r\nAttribute axis:\r\n    * attribute
+  (@)\r\n\r\nNamespace axis:\r\n    * namespace\r\n\r\nXPath Syntax Details\r\n====================\r\nAbsolute
+  path: /step/step/step/...\r\n\r\nRelative path: step/step/step/...\r\n\r\nStep:
+  axis::node-test[predicate]\r\n  * axis is optional (default is child)\r\n  * predicate
+  is optional (default is true())\r\n\r\nNode-test:\r\n  * a type function (text(),
+  comment(), processing-instruction())\r\n  * node() (always true)\r\n  * the name
+  of an attribute, namespace, or element (depending on axis)\r\n\r\nPredicate: nested
+  XPath expression relative to current node (no match == false)\r\n\r\nOperators:
+  or, and, =, !=, <=, <, >=, >, +, -, *, div, mod, -(unary), |(union)\r\n\r\nShortcut
+  nitty-gritty:\r\n  * @name means \"attribute::name\"\r\n  * // means \"/descendant-or-self::node()/\"\r\n
+  \ * . means \"self::node()\"\r\n  * .. means \"parent::node()\"\r\n  * [4] (as predicate)
+  means \"[position() = 4]\"\r\n"

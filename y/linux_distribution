@@ -1,0 +1,3 @@
+---
+linux_distribution: ! "In order to see your linux distro, you can do:\n  $ cat /etc/issue\n
+  \ $ cat /proc/version\n  $ dmesg | head -1"

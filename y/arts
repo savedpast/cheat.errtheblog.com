@@ -1,0 +1,16 @@
+---
+arts: ! "ARTS is Another RJS Test System\n\nFor a complete tutorial, see http://glu.ttono.us/articles/2006/05/29/guide-test-driven-rjs-with-arts.\n\nUsage:\n
+  \ assert_rjs :alert, 'Hi!'\n  assert_rjs :assign, 'a', '2'\n  assert_rjs :call,
+  'foo', 'bar', 'baz'\n  assert_rjs :draggable, 'draggable_item'\n  assert_rjs :drop_receiving,
+  'receiving_item'\n  assert_rjs :hide, \"post_1\", \"post_2\", \"post_3\"\n  assert_rjs
+  :insert_html, :bottom, 'posts'\n  assert_rjs :redirect_to, :action => 'list'\n  assert_rjs
+  :remove, \"post_1\", \"post_2\", \"post_3\"\n  assert_rjs :replace, 'completely_replaced_div'\n
+  \ assert_rjs :replace, 'completely_replaced_div', '<p>This replaced the div</p>'\n
+  \ assert_rjs :replace, 'completely_replaced_div', /replaced the div/\n  assert_rjs
+  :replace_html, 'replaceable_div', \"This goes inside the div\"\n  assert_rjs :show,
+  \"post_1\", \"post_2\", \"post_3\"\n  assert_rjs :sortable, 'sortable_item'\n  assert_rjs
+  :toggle, \"post_1\", \"post_2\", \"post_3\"\n  assert_rjs :visual_effect, :highlight,
+  \"posts\", :duration => '1.0'\n\nFor the square bracket syntax (page['some_id'].toggle)
+  use :page followed by the id and then subsequent method calls. Assignment requires
+  a '=' at the end of the method name followed by the value.\n\n  assert_rjs :page,
+  'some_id', :toggle\n  assert_rjs :page, 'some_id', :style, :color=, 'red'"

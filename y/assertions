@@ -1,0 +1,19 @@
+---
+assertions: ! "# Credit: http://nubyonrails.com/articles/ruby-rails-test-rails-cheat-sheet\r\n#
+  Use 'cheat assert_raise' for more details\r\n\r\n# Standard Ruby Assertions\r\n\r\nassert
+  \                 boolean \r\nassert_equal            expected, actual \r\nassert_raise
+  \           *args \r\nassert_raises           *args, &block \r\nassert_instance_of
+  \     klass, object \r\nassert_nil              object \r\nassert_kind_of          klass,
+  object \r\nassert_respond_to       object, method \r\nassert_match            pattern,
+  string \r\nassert_same             expected, actual \r\nassert_operator         object1,
+  operator, object2 \r\nassert_nothing_raised   *args \r\nassert_not_same         expected,
+  actual \r\nassert_not_equal        expected, actual \r\nassert_not_nil          object
+  \r\nassert_no_match         regexp, string \r\nassert_throws           expected_symbol,
+  &proc \r\nassert_nothing_thrown   &proc \r\nassert_in_delta         expected_float,
+  actual_float, delta \r\nassert_send             send_array\r\n\r\n# Rails Assertions\r\n\r\nassert_response
+  \        type \r\nassert_redirected_to    options = {} \r\nassert_template         expected
+  \r\nassert_recognizes       expected_options, path, extras={} \r\nassert_generates
+  \       expected_path, options, defaults={}, extras = {} \r\nassert_routing          path,
+  options, defaults={}, extras={} \r\nassert_tag              *opts \r\nassert_no_tag
+  \          *opts \r\nassert_dom_equal        expected, actual \r\nassert_dom_not_equal
+  \   expected, actual \r\nassert_valid            record "

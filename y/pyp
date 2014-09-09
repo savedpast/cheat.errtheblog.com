@@ -1,0 +1,298 @@
+---
+pyp: ! "http://code.google.com/p/pyp/\nhttp://code.google.com/p/pyp/wiki/basic_examples\n\nDetails\nDisplaying
+  Strings Using pyp\nThere are three ways that you can bring in strings\n\nExample
+  1 - Using Echo\n\n$ echo 'hello world' | pyp\n   hello world\nExample 2 - Using
+  Files\n\n$ cat /location/to/file/exercise_1.txt | pyp #file can be found on downloads
+  page\n   hello world\n   world hello\n$ pyp --rerun \"p\"\n   hello world\n   world
+  hello\nPYP NOTE: \"p\" represents each line of the input as a python string. Every
+  time pyp runs, it buffers it's input to disk, so if we want to run it again with
+  the same input, just use the --rerun flag. This is handy when the commands fed into
+  pyp take a while to run, or if we are cutting and pasting input as shown below.\n\nExample
+  3 - Using pyp manually by cutting/pasting text\n\n$ pyp\n   hello world #'hello
+  world' was copied/pasted and executed by using CTRL-D\n$ pyp --rerun \n   hello
+  world\nNOTE: All three examples will accomplish the exact same thing.\n\nSplitting
+  with pyp\nPyed Piper has built-in functions that are designed to easily split on
+  specific characters (ie - slashes, dashes, spaces) or can manually be given strings
+  to split on.\n\nExample 1 - Splitting on slashes\n\n<\"tcsh shell\" - text file
+  can be found on downloads page >\n\n$ cat /location/to/file/exercise_2.txt | pyp
+  \  \n   /MyDocuments/examples/movie_directory/movie/2011_05_20/mymovie_frames.180.mov\n
+  \  /MyDocuments/examples/movie_directry/frames/swin_is_the_man/tiff/swin@work.tiff\n
+  \  /MyDocuments/examples/movie_directory/movie/2011_05_20/Cool Movie:swin-flight.mov\n\n$
+  pyp --rerun \"s\"\n   [[0][1]MyDocuments[2]examples[3]movie_directory[4]movie[5]2011_05_20[6]mymovie_frames.180.mov]\n
+  \  [[0][1]MyDocuments[2]examples[3]movie_directry[4]frames[5]swin_is_the_man[6]tiff[7]swin@work.tiff]\n
+  \  [[0][1]MyDocuments[2]examples[3]movie_directory[4]movie[5]2011_05_20[6]Cool Movie:swin-flight.mov]\n\n\n$
+  pyp --rerun \"slash\"\n   [[0][1]MyDocuments[2]examples[3]movie_directory[4]movie[5]2011_05_20[6]mymovie_frames.180.mov]\n
+  \  [[0][1]MyDocuments[2]examples[3]movie_directry[4]frames[5]swin_is_the_man[6]tiff[7]swin@work.tiff]\n
+  \  [[0][1]MyDocuments[2]examples[3]movie_directory[4]movie[5]2011_05_20[6]Cool Movie:swin-flight.mov]\nPYP
+  NOTE: With Pyed Piper we can split just like python's interpreter. For this example
+  the \"s\" variable is splitting on all slashes and putting them into a python list.
+  For more information feel free to go to python's documentation: python-docs_string-methods\n\nIMPORTANT:
+  When using pyp's bulit-in functions, we have the ability to use abbreviated version
+  (slash vs s). In the second demonstration we used s and in the third we used slash;
+  however both accomplished the same thing.\n\n<\"tcsh shell\" - text file can be
+  found on downloads page >\n\n$ pyp --rerun \"slash[1]\"\n   MyDocuments\n   MyDocuments
+  \  \n   MyDocuments\n\n$ pyp --rerun \"s[-1]\"\n   mymovie_frames.180.mov\n   swin@work.tiff\n
+  \  Cool Movie:swin-flight.mov\n\n$ pyp --rerun \"s[2:4]\"\n   [[0]examples[1]movie_directory]\n
+  \  [[0]examples[1]movie_directry]\n   [[0]examples[1]movie_directory]\nPYP NOTE:
+  In these three demonstrations we are taking the list and specifying what we want
+  to print from the list. In the first demonstration, we printed the second list item.
+  For the second demonstration, we printed the last list item, and finally, the last
+  one we specified a range in the list to print.\n\nExample 2 - Splitting on white-spaces\n\n<\"tcsh
+  shell\" - text file can be found on downloads page >\n\n$ cat /location/to/file/exercise_2.txt
+  | pyp \"w\"   \n   [[0]/MyDocuments/examples/movie_directory/movie/2011_05_20/mymovie_frames.1000_1180.mov]\n
+  \  [[0]/MyDocuments/examples/movie_directry/frames/swin_is_the_man/tiff/swin@work.tiff]\n
+  \  [[0]/MyDocuments/examples/movie_directory/movie/2011_05_20/Cool[1]Movie:swin-flight.mov]\n\n$
+  pyp --rerun \"w[1]\"\n   Movie:swin-flight.mov\nPYP NOTE: Because only one path
+  had a whitespace, when we specified [1], the path that had the whitespace was the
+  only one returned.\n\nIn Pyed Piper, there are several built-in functions that we
+  can split with. Here is the list of those other functions:\n\ns OR slash p split
+  on \"/\"\nd OR dot p split on \".\"\nw OR whitespace p splitting on whitespace (on
+  spaces,tabs,etc)\nu OR underscore p split on '_'\nc ORR colon p split on ':'\nmm
+  OR comma p split on ','\nm OR minus p Splitting on '-'\na OR all p split on [' '-_=$...]
+  (on \"All\" metacharacters)\nTableLink\n\nExample 3 - Splitting on EVERY meta-characters
+  (ie - /,.#@%^&)\n\n<\"tcsh shell\" - text file can be found on downloads page >\n\n$
+  cat /location/to/file/exercise_2.txt | pyp --rerun \"a\" \n   [[0]MyDocuments[1]examples[2]movie[3]directory[4]movie[5]2011[6]05[7]20[8]mymovie[9]frames[10]180[11]mov]\n
+  \  [[0]MyDocuments[1]examples[2]movie[3]directry[4]frames[5]swin[6]is[7]the[8]man[9]tiff[10]swin[11]work[12]tiff]\n
+  \  [[0]MyDocuments[1]examples[2]movie[3]directory[4]movie[5]2011[6]05[7]20[8]Cool[9]Movie[10]swin[11]flight[12]mov]\nPYP
+  NOTE: In this example pyp is taking each line and looking for all meta-characters
+  that exist and spliting on it. IMPORTANT: It will takes EVERY meta-character and
+  if we want to use a specific meta-character, we will need to split manually.\n\nExample
+  4 - Splitting manually - p.split()\n\n<\"tcsh shell\" - text file can be found on
+  downloads page >\n\n$ cat /location/to/file/exercise_2.txt | pyp \"p.split('examples')\"
+  \n   [[0]/MyDocuments/[1]/movie_directory/movie/2011_05_20/mymovie_frames.180.mov]\n
+  \  [[0]/MyDocuments/[1]/movie_directry/frames/swin_is_the_man/tiff/swin@work.tiff]\n
+  \  [[0]/MyDocuments/[1]/movie_directory/movie/2011_05_20/Cool Movie:swin-flight.mov]\n\n$
+  pyp --rerun \"p.split('/')\" \n   [[0][1]MyDocuments[2]examples[3]movie_directory[4]movie[5]2011_05_20[6]mymovie_frames.180.mov]\n
+  \  [[0][1]MyDocuments[2]examples[3]movie_directry[4]frames[5]swin_is_the_man[6]tiff[7]swin@work.tiff]\n
+  \  [[0][1]MyDocuments[2]examples[3]movie_directory[4]movie[5]2011_05_20[6]Cool Movie:swin-flight.mov]\nPYP
+  NOTE: Splitting manually will only take a string and, its important that we use
+  single quotes (double quotes will not work in this case). In the second demonstration,
+  \"p\" represents each line of the input as a python string. When we type p.split('$STRING')
+  you are saying for that line split on this string.\n\nSplitting and Joining with
+  pyp\nWith Pyed Piper you have the ability to split and join a number of ways.\n\nExample
+  1 - Splitting and Joining using variables\n\n<\"tcsh shell\" - text file can be
+  found on downloads page >\n\n$ cat /location/to/file/exercise_3.txt | pyp \"s\"\n
+  \  [[0][1]MyDocuments[2]swin[3]pyp[4]examples[5]tutorial_for_pyp.jpg]\n   [[0][1]MyDocuments[2]swin[3]pyp[4]examples[5]pyp_is_awesome.jpg]\n\n$
+  cat /location/to/file/exercise_3.txt | pyp \"s | s\"\n   /MyDocuments/swin/pyp/examples/tutorial_for_pyp.jpg\n
+  \  /MyDocuments/swin/pyp/examples/pyp_is_awesome.jpg\n\n$ cat /location/to/file/exercise_3.txt
+  | pyp \"slash | underscore\"\n   _MyDocuments_swin_pyp_examples_tutorial_for_pyp.jpg\n
+  \  _MyDocuments_swin_pyp_examples_pyp_is_awesome.jpg\nPYP NOTE: In this example
+  we used two variables (slashes and underscores) to signify what we want to split
+  and join together. In the second demonstration, we are spliting on slashes while
+  piping the list back into a new sting joined by slashes. However, in the third demonstration
+  we are joining the list with underscores. By using different variables, we can quickly
+  and explicitly tell pyp what we want to split and join back together.\n\nIt is also
+  important to note that switching all slashes with underscores will not take the
+  place of whats in the buffer. If you were to type pyp --rerun the slashes would
+  return. If we wanted to put the new underscored version in the buffer please check
+  out Pyed Piper and Pipes\n\nExample 2 - Specific Splitting/Joining\n\n<\"tcsh shell\"
+  - text file can be found on downloads page >\n\n$ cat /location/to/file/exercise_3.txt
+  | pyp \"'_'.join(p.split('/'))\" \n   _MyDocuments_swin_pyp_examples_tutorial_for_pyp.jpg\n
+  \  _MyDocuments_swin_pyp_examples_pyp_is_awesome.jpg\n\n$ pyp --rerun \"'HELLO'.join(p.split('examples'))\"\n
+  \  /MyDocuments/swin/pyp/HELLO/tutorial_for_pyp.jpg\n   /MyDocuments/swin/pyp/HELLO/pyp_is_awesome.jpg\nPYP
+  NOTE: In this example, we can manually give Pyed Piper specific string inputs to
+  split/join together. The first demonstration, we just split on '/' and joined on
+  '_' (exactly like the example 1:demonstration 3). In second demonstration, we specified
+  that we wanted to split on the string 'examples' and join the list with the string
+  'HELLO'. For more examples please see the String Replacements section.\n\nAdvanced
+  Splitting and Joining with pyp\n<\"tcsh shell\" - text file can be found on downloads
+  page >\n\n$ cat /location/to/file/exercise_3.txt | pyp\n   /MyDocuments/swin/pyp/examples/tutorial_for_pyp.jpg\n
+  \  /MyDocuments/swin/pyp/examples/pyp_is_awesome.jpg\n\n$ pyp --rerun \"s[2:3] +
+  s[1:5]\"\n   [[0]swin][[0]MyDocuments[1]swin[2]pyp[3]examples]\n   [[0]swin][[0]MyDocuments[1]swin[2]pyp[3]examples]\n\n$
+  pyp --rerun \"(s[2:3] + s[1:5])\"\n   [[0]swin[1]MyDocuments[2]swin[3]pyp[4]examples]\n
+  \  [[0]swin[1]MyDocuments[2]swin[3]pyp[4]examples]\nPYP NOTE: In this example we
+  have two list that we are wanting to become one list. Demonstration 2 shows that
+  when we add \"+\" between the two lists, it returns the two separate lists on the
+  same line. In order to join both list together, we need to add \"()\" around the
+  list. Demonstration 3 shows that by putting \"()\" around the two list we now have
+  one completely new list.\n\n<\"tcsh shell\" - continued from the same text file\n$
+  pyp --rerun \"(s[2:3] + u[1:5])\"\n   [[0]swin[1]for[2]pyp.jpg]\n   [[0]swin[1]is[2]awesome.jpg]\n\n$
+  pyp --rerun \"(s[2:3] + u[1:5])[1]\"\n   for\n   is\n\n$ pyp --rerun \"(s[2:3] +
+  u[1:5])|p\"\n   [[0]swin[1]for[2]pyp.jpg]\n   [[0]swin[1]is[2]awesome.jpg]\n\n$
+  pyp --rerun \"(s[2:3] + u[1:5])|p[1]\"\n   for\n   is\n\n$ pyp --rerun \"(s[2:3]
+  + u[1:5])|u\"\n   swin_for_pyp.jpg\n   swin_is_awesome.jpg\nPYP NOTE: In this example,
+  we split with two different variables (slashes and underscores). Once the list is
+  made we can still continue manipulating each list (as shown in the last four demonstrations).\n\nString
+  Replacements\nString replacements allows you to replace one string that is on the
+  line and replace it with something else:\n\nExample 1 - String Replacement\n\n<\"tcsh
+  shell\" - text file can be found on downloads page >\n\n$ cat /location/to/file/exercise_3.txt
+  | pyp \"p\"\n   /MyDocuments/swin/pyp/examples/tutorial_for_pyp.jpg\n   /MyDocuments/swin/pyp/examples/pyp_is_awesome.jpg\n\n$
+  pyp --rerun \"p.replace('swin','tobyrosen')\"\n   /MyDocuments/tobyrosen/pyp/examples/tutorial_for_pyp.jpg\n
+  \  /MyDocuments/tobyrosen/pyp/examples/pyp_is_awesome.jpg\n\n$ pyp --rerun \"p.replace('tutorial_','')\"\n
+  \  /MyDocuments/swin/pyp/examples/for_pyp.jpg\n   /MyDocuments/swin/pyp/examples/pyp_is_awesome.jpg\nPYP
+  NOTE: String replacements allow for strings from the buffer to be manipulated. In
+  demonstration 2 pyp replaced every string 'swin' with 'tobyrosen'. (Be careful what
+  string you want to replace because it is very specific with its arguments.) When
+  using string replacements, empty strings can also be given. In demonstration 3,
+  pyp replaced the string 'tutorial_' with nothing. See Using Kill as another alternative
+  for this demonstration.\n\nUsing %s\nPyed Piper has the ability to use '%s' as a
+  representation for strings that will be used for string formatting.\n\nExample 1
+  - String Addition\n\n<\"tcsh shell\">\n\n$ echo 'Hello' | pyp \"'%s World'%p\"\n
+  \  Hello World\nPYP NOTE: In this example, we added 'World' to 'p' to get 'Hello
+  World'. The reason why it printed out 'Hello' first and then 'Hello World' is because
+  we setup two commands. The first command was putting 'Hello' in the buffer. We then
+  joined the first and second command with a semi-colon.\n\nUsing '%s' is important
+  when you are needing to specify a string variable in an already established string.
+  Single quotes in pyp are always used to identify a string and so by using '%s',
+  pyp acknowledges that an argument will be used later outside the single-quotes.
+  When you want to specify what the '%s' will become, you will need to use a '%' out
+  side of the single-quoted string.\n\nExample 2 - Multiple String Additions\n\n<\"tcsh
+  shell\">\n\n$ echo 'Computer' | pyp\n   Computer\n\n$ pyp --rerun \"'Mr. %s, Do
+  you want to see my %s '%(p,p)\"\n   Mr. Computer, Do you want to see my Computer\n
+  \  \n$ pyp --rerun \"'Mr. %s, Do you want to see my %s '%('Mac ' + p,p)\"\n   Mr.
+  Mac Computer, Do you want to see my Computer\nPYP NOTE: If you are going to use
+  multiple string variable, the arguments will need to be surrounded by (). The number
+  of arguments used must equal the number of variables used in your string. In our
+  example we had two '%s' variables and two correlating arguments (ie -%(p,p)) to
+  identify what the two variables will represent.\n\n<\"tcsh shell\">\n\n$ echo 'Mac
+  Computer' | pyp\n   Mac Computer\n\n$ pyp --rerun \"'Mr. %s, Do you want to see
+  my %s '%(p,p.replace('Mac ',''))\" \n   Mr. Mac Computer, Do you want to see my
+  Computer\nPYP NOTE: We don't have to always use 'p' everytime. Several methods can
+  be used to create a string argument. You can use variable like s[2] or $string +
+  p or $string or pyp built-in functions (ie - replace, kill, split, join). In our
+  demonstrations, we added a string to 'p' and we did a 'p.replace'.\n\nUsing Kill\nPyed
+  Piper has the ability to take out parts of a string. This is another built-in function
+  called kill. This function is handy when you need to strip out something specific
+  in your buffer.\n\nExample 1 - Killing Within a String\n\n<\"tcsh shell\"> - text
+  file can be found on downloads page\n\n$ cat /location/to/file/exercise_5.txt |
+  pyp\n   In a far far world and very distant land.\n   In a land far far away.\n
+  \  In a world that was distant.   \n\n$ pyp --rerun \"p.kill('far')\"\n   In a   world
+  and very distant land.\n   In a land   away.\n   In a world that was distant. \n\n$
+  pyp --rerun \"p.kill('far ')\"\n   In a world and very distant land.\n   In a land
+  away.\n   In a world that was distant.\nPYP NOTE: Like all string manipulations
+  in pyp, the string that you specify in your function will be string specific. In
+  the second demonstration, we specified only removing 'far' and the output have places
+  where there were two white-spaces. In the third demonstration, we specified 'far
+  ' and we are able to have single white-spacing in each sentence.\n\nUsing Uppercase
+  and Lowercase\nExample 1 - Uppercase\n\n<\"tcsh shell\">\n\n$ echo 'I am all uppercase.'
+  | pyp\n   I am all uppercase.\n\n$ pyp --rerun \"p.upper()\"\n   I AM ALL UPPERCASE.\nExample
+  2 - Lowercase\n\n<\"tcsh shell\">\n\n$ echo 'I am all LOWERcase.' | pyp\n   I am
+  all LOWERcase.\n\n$ pyp --rerun \"p.lower()\"\n   i am all lowercase.\nPYP NOTE:
+  In both examples we specificed that we wanted EVERYTHING in the string to be upper
+  or lowercase. The function is exactly like how python interprets it lower/upper
+  function. For more information see: String_Manipulations\n\nUsing file and path\nBecause
+  pyp is used as a string manipulator, files and their associated paths the main manipulations
+  that will be made. Pyed Piper has the builtin functions to specify a file and a
+  directory.\n\nExample 1 - files\n\n<\"tcsh shell\"\n\n$ echo '/MyDocuments/examples/pyp/source_file.psd'|
+  pyp\n   /MyDocuments/examples/pyp/source_file.psd\n\n$ pyp --rerun \"p.file\"\n
+  \  source_file.psd\nExample 2 - directories\n\n<\"tcsh shell\"\n\n$ echo '/MyDocuments/examples/pyp/source_file.psd'|
+  pyp\n   /MyDocuments/examples/pyp/source_file.psd\n\n$ pyp --rerun \"p.dir\"\n   /MyDocuments/examples/pyp\nString
+  Manipulations (MISC)\nSo far we have looked at using one builtin function at a time;
+  however, pyp has the ability to build upon one another.\n\nExample 1\n\n<\"tcsh
+  shell\" - In this example we are going to copy/paste our strings and then use CTRL-D>\n\n$
+  pyp\n/MyDocuments/examples/pyp/CoolFile: 2011_04_01.jpg\n   /MyDocuments/examples/pyp/CoolFile:
+  2011_04_01.jpg\n\n$ pyp --rerun \"w|u.lower().replace(':','').replace('.jpg','.tif')\"\n
+  \  /mydocuments/examples/pyp/coolfile_2011_04_01.tif\nPYP NOTE: In this example
+  we first typed pyp and then copied/pasted the text that we wanted to do. In this
+  case we only had one line to paste. In the next demonstration we told pyp that we
+  wanted to split on whitespaces and join with underscores. We then said we wanted
+  everything to be lowercase. We then manually replaced : with nothing (ie - '') and
+  we finally did another replace with removing '.jpg' with 'tif'\n\nNOTE: When working
+  with multiple functions, its important to know that each function builds upon the
+  previous function given.\n\nExample 2\n\n<\"tcsh shell\"- In this example we are
+  going to copy/paste our strings and then use CTRL-D >\n\n$ pyp\n/MyDocuments/examples/pyp/CoolFile:
+  2011_04_01.jpg\n/MyDocuments/examples/pyp/CoolFile_version2: 2011_04_03.tif\n   /MyDocuments/examples/pyp/CoolFile:
+  2011_04_01.jpg\n   /MyDocuments/examples/pyp/CoolFile_version2: 2011_04_03.tif\n\n$
+  pyp --rerun \"'/'.join(s[0:4])+'/'+s[-1].lower().replace(': ','_').replace('file_2','file_version1_2')\"\n
+  \  /MyDocuments/examples/pyp/coolfile_version1_2011_04_01.jpg\n   /MyDocuments/examples/pyp/coolfile_version2_2011_04_03.tif\nPYP
+  NOTE: - This example is a bit more complicated but it still builds upon everything
+  that we've learned so far. In the first demonstration, we gave it two file paths
+  that are very similar. What we want to do is change the file names to be slightly
+  similar while still being able to preserve the original file path. To achieve this
+  we split/join on '/' but only up to the directory. We then add (+) '/' a string
+  to the end of the directory names to give us this '/MyDocuments/examples/pyp/'.
+  We then add another another split getting the files. Because we added a new string,
+  when we specify that we want make everything lowercase, it only effects the string
+  we are working on. We then add three different replaces to achieve files that look
+  similar. In the second replace we had to be creative to only affect the first file
+  and not the second file.\n\nUsing History\nPyed Piper has the ability to house all
+  the history of what every output will give between each pipe.\n\n<\"tcsh shell\"
+  \n\n$ echo '/MyDocuments/examples/pyp/CoolFile: 2011_04_01.jpg'| pyp\n   /MyDocuments/examples/pyp/CoolFile:
+  2011_04_01.jpg\n\n$ pyp --rerun \"s[0:4]|s+'/'+p|history\"\n   [[0]/MyDocuments/examples/pyp/CoolFile:
+  2011_04_01.jpg[1][['', 'MyDocuments', 'examples', 'pyp']][2]['/MyDocuments/examples/pyp',
+  '/', ['', 'MyDocuments', 'examples', 'pyp']]]\n\n$ pyp --rerun \"s[0:-1]|s+'/'+p|history[0]\"\n
+  \  /MyDocuments/examples/pyp/CoolFile: 2011_04_01.jpg\nPYP NOTE: In this example,
+  we are using the history between each pipe. The first list \"history[0]\" represents
+  the input that originally was used, while the last one \"history[2]\" represents
+  the final output. Everything in between represents the history that was used to
+  get there (between pipes).\n\nUsing Text Files with pyp\nPyed Piper has the ability
+  to take in text files as an additional add-on to a buffer.\n\nExample 1 - Using
+  a text file as a list\n\n<\"tcsh shell\" - text files can be found on downloads
+  page \n\n$ cat /location/to/file/exercise_6.txt | pyp\n   hello\n   hello\n   wide
+  world\n\n$ pyp --rerun -t ./exercise_6b.txt \"p + ' ' + f\"\n   hello [[0]world[1]world[2]wide
+  world]\n   hello [[0]world[1]world[2]wide world]\n   wide [[0]world[1]world[2]wide
+  world]\n\n$ pyp --rerun -t ./exercise_6b.txt \"p+' '+f[1]\"\n   hello world\n   hello
+  world\n   wide world\nPYP NOTE: Using the \"f\" or \"--file, pyp will take the text
+  file that was designated from the \"-t\" flag and will make a list for you. It is
+  important to note that the \"-t\" flag needs a path to a text file in order for
+  pyp to use the \"f\" symbol. In this example we took the second string from the
+  list and added it to \"p\".\n\nExample 2 - Using a text file line by line\n\n<\"tcsh
+  shell\" - text files can be found on downloads page \n\n$ cat /location/to/file/exercise_6.txt
+  | pyp\n   hello\n   hello\n   wide world\n\n$ pyp --rerun -t ./exercise_6b.txt \"p
+  + ' ' + fp \"\n   hello world\n   hello world\n   wide wide world\nPYP NOTE: In
+  this example instead of picking from a list in the assigned text, we are telling
+  pyp that we want to add each line with the corresponding line in the buffer.\n\nUsing
+  Digits\nPyed Piper has the ability to test each line in the buffer for digits. It
+  can look through each string to get a list of digits or can test where the string
+  is/isn't digits.\n\nExample 1 - Getting Digits in a list\n\n<\"tcsh shell\" - text
+  files can be found on downloads page \n\n$ cat /location/to/file/exercise_7.txt
+  | pyp\n   I am 28 with a 6 year old car\n   123456\n   I wonder what it would be
+  like to be eighteen\n   27flavors\n\n$ pyp --rerun \"p.digits()\"\n   [[0]28[1]6]\n
+  \  [[0]123456]\n   [[0]27]\nPYP NOTE: In this example, we tell pyp that we want
+  a list of all digits found in the buffer. Even if the numbers are up next to a string
+  (like \"27flavors\"), it will still pull out the digits.\n\nExample 2 - Testing
+  for digits\n\n<\"tcsh shell\" - Continuation from the last example\n\n$ pyp --rerun
+  \"p.isdigit()\"\n   123456\n\n$ pyp --rerun \"not p.isdigit()\"\n   I am 28 with
+  a 6 year old car\n   I wonder what it would be like to be eighteen\n   27flavors\nPYP
+  NOTE: In this example, we are asking pyp to test to see if each line is only digits.
+  In the first demonstration, we are wanting to know which lines are only digits and
+  in the second demonstration, we want to know which ones are not digits. Notice that
+  the word \"not\" is used in the last demonstration to specify the type of test.
+  A clear way to explain this principle is \"if p is a digit; then print p\" or \"if
+  p is not a digit; then print p\".\n\nPyed Piper and Grep\nPyed piper has the ability
+  to search throughout a string or list much like grep with its function keep and
+  lose.\n\nExample 1 - Keep\n\n<\"tcsh shell\" - text files can be found on downloads
+  page \n\n$ cat /location/to/file/exercise_2.txt | pyp\n   /MyDocuments/examples/movie_directory/movie/2011_05_20/mymovie_frames.180.mov\n
+  \  /MyDocuments/examples/movie_directry/frames/swin_is_the_man/tiff/swin@work.tiff\n
+  \  /MyDocuments/examples/movie_directory/movie/2011_05_20/Cool Movie:swin-flight.mov\n\n$
+  pyp --rerun \"keep('.mov')\"\n   /MyDocuments/examples/movie_directory/movie/2011_05_20/mymovie_frames.180.mov\n
+  \  /MyDocuments/examples/movie_directory/movie/2011_05_20/Cool Movie:swin-flight.mov\n\n$
+  pyp --rerun \"k('tiff','mymovie')\"\n   /MyDocuments/examples/movie_directory/movie/2011_05_20/mymovie_frames.180.mov\n
+  \  /MyDocuments/examples/movie_directry/frames/swin_is_the_man/tiff/swin@work.tiff\nPYP
+  NOTE: Pyp has the ability to work like grep using a built-in function called \"keep\"
+  (or its short form \"k\"). In this example, we are telling pyp that we want to go
+  through the buffer and return any lines that have the given string/s. In the second
+  demonstration we only asked pyp to look for one string while in the third demonstration
+  we asked pyp to search with two strings.\n\nExample 2 - Loose\n\n<\"tcsh shell\"
+  - continuation of example 2\n\n$ pyp --rerun \"l('mymovie')\"\n   /MyDocuments/examples/movie_directry/frames/swin_is_the_man/tiff/swin@work.tiff\n
+  \  /MyDocuments/examples/movie_directory/movie/2011_05_20/Cool Movie:swin-flight.mov\n\n$
+  pyp --rerun \"loose('tiff','mymovie')\"\n   /MyDocuments/examples/movie_directory/movie/2011_05_20/Cool
+  Movie:swin-flight.mov\nPYP NOTE: pyp has the ability to return everything that is
+  NOT in the search parameters using its other built-in function called \"loose\"
+  (or its short form \"l\"). In demonstration one, we are asking pyp to return everything
+  that doesn't have \"mymovie\" in the string. The second demonstration shows that
+  we are looking for two strings (\"tiff\" and \"mymovie\") and to return whatever
+  doesn't have it in the string.\n\nPyed Piper and Trim\nThe built-in fuction trim
+  is used to trim off the tail of a string (based upon slashes).\n\n<\"tcsh shell\"
+  - text files can be found on downloads page \n\n$ cat /location/to/file/exercise_3.txt
+  | pyp \n   /MyDocuments/swin/pyp/examples/tutorial_for_pyp.jpg\n   /MyDocuments/swin/pyp/examples/pyp_is_awesome.jpg\n\n$
+  pyp --rerun \"p.trim()\"\n   /MyDocuments/swin/pyp/examples\n   /MyDocuments/swin/pyp/examples\n\n$
+  pyp --rerun \"p.trim().trim()\"\n   /MyDocuments/swin/pyp\n   /MyDocuments/swin/pyp\nPYP
+  NOTE: In the second demonstration, we told pyp that we wanted to trim off the file
+  (giving us directories); however, in the third demonstration we wanted to trim the
+  file and then trim the last directory.\n\nPyed Piper and Pipes\n<\"tcsh shell\"
+  - text files can be found on downloads page \n\n$ cat /location/to/file/exercise_5.txt
+  | pyp \n   In a far far world and very distant land.\n   In a land far far away.\n
+  \  In a world that was distant.\n\n$ pyp --rerun \"p\" | wc\n        3      21      95\n\n$
+  pyp --rerun \"p\" | sort -r\n   In a world that was distant.\n   In a land far far
+  away.\n   In a far far world and very distant land.\nPYP NOTE: In these demonstrations
+  pyp has the ability to use pipes outside of the double quotes much like any other
+  form of unix command. In this example we were able to get a word count and a reverse
+  sort by piping out side of double quotes.\n\nPyed Piper and Xargs\nIn this example
+  we are going to copy/paste our strings and then use CTRL-D >\n\n<\"tcsh shell\"
+  - In this example we are going to copy/paste our strings and then use CTRL-D >\n\n$
+  pyp\n1\n2\n3\n4\n   1\n   2\n   3\n   4\n\n$ pyp --rerun \"pp.oneline()\"\n   1
+  2 3 4\nPYP NOTE: Pyed Piper has the ability to do something similar to xargs with
+  its built-in function called \"pp.oneline()\". In this example we took every line
+  and put it on one line. NOTE: you can also use pipes and xargs to accomplish the
+  same thing. For more information see Pyed Piper and Pipes."

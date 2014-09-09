@@ -1,0 +1,11 @@
+---
+zsh_bang: ! "1   % ls /user/dir/file.c\n2   % which firefox\n3   % make\n4   % ./foo
+  -f foo.conf\n5   % vi foo.c bar.c\n\nGetting stuff from the previous commands:\n1\tPrevious
+  command:        % !!  -->% vi foo.c bar.c\n2\tPrevious command:        % !-1 -->%
+  vi foo.c bar.c\n3\tSecond previous command: % !-2 -->% ./foo -f foo.conf\n\nGetting
+  individual arguments:\n1\tLast arg : % svn ci !$\t       -->% svn ci bar.c\n2\tAll
+  args : % svn ci !*\t       -->% svn ci foo.c bar.c\n3\tFirst arg: % svn ci !!:1
+  \      -->% svn ci foo.c\n\nModifying commandlines\n1   Head:       % !ls:$:h            -->%
+  /user/dir\n2   Tail:       % !ls:$:t            -->% file.c\n3   Rm Suffix:  % !ls:$:r
+  \           -->% /user/dir/file\n4   Substitute: % !ls:$:s/user/dude/ -->% /dude/dir/file.c\n\nNote:
+  a bang expression can be expanded with the tab key"

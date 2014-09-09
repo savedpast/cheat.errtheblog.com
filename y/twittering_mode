@@ -1,0 +1,27 @@
+---
+twittering_mode: ! "twittering-mode emacs mode:\r\nMajor mode for Twitter\r\nkey             binding\r\n---
+  \            -------\r\n\r\nC-c             Prefix Command\r\nTAB             twittering-goto-next-thing\r\nRET
+  \            twittering-enter\r\nC-v             twittering-scroll-up\r\nESC             Prefix
+  Command\r\nSPC             twittering-scroll-up\r\n$               end-of-line\r\n0
+  \              beginning-of-line\r\nG               end-of-buffer\r\nH               twittering-goto-first-status\r\nL
+  \              twittering-other-user-list-interactive\r\nU               twittering-push-uri-onto-kill-ring\r\nV
+  \              twittering-visit-timeline\r\n^               beginning-of-line-text\r\na
+  \              twittering-toggle-activate-buffer\r\nb               twittering-switch-to-previous-timeline\r\nd
+  \              twittering-direct-message\r\nf               twittering-switch-to-next-timeline\r\ng
+  \              twittering-current-timeline\r\nh               backward-char\r\ni
+  \              twittering-icon-mode\r\nj               twittering-goto-next-status\r\nk
+  \              twittering-goto-previous-status\r\nl               forward-char\r\nn
+  \              twittering-goto-next-status-of-user\r\np               twittering-goto-previous-status-of-user\r\nq
+  \              twittering-kill-buffer\r\nr               twittering-toggle-show-replied-statuses\r\ns
+  \              twittering-scroll-mode\r\nt               twittering-toggle-proxy\r\nu
+  \              twittering-update-status-interactive\r\nv               twittering-other-user-timeline\r\n<C-mouse-3>
+  \    twittering-push-tweet-onto-kill-ring\r\n  (that binding is currently shadowed
+  by another mode)\r\n<backspace>     twittering-scroll-down\r\n<backtab>       twittering-goto-previous-thing\r\n<mouse-1>
+  \      twittering-click\r\n\r\nM-TAB           twittering-goto-previous-thing\r\nM-v
+  \            twittering-scroll-down\r\n\r\nC-c C-d         twittering-direct-messages-timeline\r\nC-c
+  C-e         twittering-erase-old-statuses\r\nC-c C-f         twittering-friends-timeline\r\nC-c
+  C-l         twittering-update-lambda\r\nC-c RET         twittering-retweet\r\nC-c
+  C-p         twittering-toggle-proxy\r\nC-c C-q         twittering-search\r\nC-c
+  C-r         twittering-replies-timeline\r\nC-c C-s         twittering-update-status-interactive\r\nC-c
+  C-t         twittering-set-current-hashtag\r\nC-c C-u         twittering-user-timeline\r\nC-c
+  C-v         twittering-view-user-page\r\nC-c D           twittering-delete-status"

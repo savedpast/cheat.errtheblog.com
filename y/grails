@@ -1,0 +1,6 @@
+---
+grails: ! "Grails Commands:\r\ngrails create-app [AppName]\r\ngrails create-domain-class
+  [lower-case-classname]\r\ngrails create-controller [controller-name]\r\ngrails generate-all
+  [domain]\r\n\r\ngrails help [action]\r\n\r\ngrails run-app\r\ngrails shell\r\ngrails
+  console\r\n\r\nTesting Commands:\r\nant test\r\ngrails test-app\r\ngrails test-app
+  unit:\r\ngrails test-app integration:\r\ngrails run-webtest (with plugin)"

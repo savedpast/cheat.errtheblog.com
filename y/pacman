@@ -1,0 +1,4 @@
+---
+pacman: ! "Find 10 biggest packages:\r\n\r\npacman -Qi | \\ \r\n  awk '/Name/ { name=$3
+  } /Size/ { printf \"%.3fMB\\t%s\\n\", $4/1024, name }' | \\ \r\n  sort -rh | head
+  -n 10\r\n"

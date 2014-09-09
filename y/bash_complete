@@ -1,0 +1,6 @@
+---
+bash_complete: ! "A bash snippet to have auto-complete for\r\nthe 'cheat' gem.\r\n\r\nUse
+  by typing :\r\n  $ cheat str<tab>\r\nand get:\r\n  strftime       string         string_unpack\r\n\r\n--------
+  bash script --------\r\nfunction complete_cheat {\r\n  COMPREPLY=()\r\n  if [ $COMP_CWORD
+  = 1 ]; then\r\n    local sheets=`cheat sheets | grep '^  '`\r\n    COMPREPLY=(`compgen
+  -W \"$sheets\" -- $2`)\r\n  fi\r\n}\r\ncomplete -F complete_cheat cheat\r\n\r\n"

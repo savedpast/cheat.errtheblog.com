@@ -1,0 +1,5 @@
+---
+tabs_to_whitespaces: ! '# This oneliner changes all your tabs to 2 whitespaces
+
+
+  find . -name ''*.rb'' -type f | xargs perl -pi -e ''s/\t/  /g'''

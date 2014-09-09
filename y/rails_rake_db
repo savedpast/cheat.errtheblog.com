@@ -1,0 +1,6 @@
+---
+rails_rake_db: ! "Quick Reference for Db related tasks in Rails 3.0.0rc (as of 2010-08-25)\n\nFor
+  textual description:\n  `cheat rails_rake_tasks`\n  `rake -T` (even better - not
+  obsolete) \n\ntask db:migrate:reset => [\"db:drop\", \"db:create\", \"db:migrate\"]\ntask
+  db:reset => [ 'db:drop', 'db:setup' ]\ntask db:setup => [ 'db:create', 'db:schema:load',
+  'db:seed' ]"

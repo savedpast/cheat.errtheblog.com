@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># Lighttpd
+
+fastcgi.debug = 0|1
+
+fastcgi.server = (
+  &lt;extension&gt; =&gt;  (
+    [&lt;name&gt;] =&gt; (
+      &quot;host&quot; = &lt;string&gt;,
+      &quot;port&quot; = &lt;int&gt;,
+      &quot;socket&quot; = &lt;path&gt;,
+      [&quot;bin-path&quot; = &lt;path&gt;,]
+      [&quot;bin-environment = &lt;array&gt;,]
+      [&quot;mode&quot; = &lt;string&gt;,]
+      [&quot;docroot&quot; = &lt;path&gt;,]
+      [&quot;check-local&quot; = &lt;string&gt;,]
+      [&quot;max-procs&quot; = &lt;int&gt;,]
+    )
+  )
+)
+
+[] denotes optional directive.
+
+* __extension__ is the file-extension or prefix (if started with &quot;/&quot;)
+* __host__ is ip of the FastCGI process (no support for hostnames right now)
+* __port__ is tcp-port on the &quot;host&quot; used by the FastCGI process
+* __socket__ path to the unix-domain socket
+
+&gt; Either __host__ and __port__ or __socket__ must be provided.
+
+* __bin-path__ path to the local FastCGI binary which should be started if
+  no local FastCGI is running
+* __mode__ is the FastCGI protocol mode. Default is &quot;responder&quot;, also
+  &quot;authorizer&quot; mode is implemented.
+* __docroot__ is the docroot on the remote host for default &quot;responder&quot; mode.
+  For &quot;authorizer&quot; mode it is _mandatory_ and it points to docroot for
+  authorized requests. For security reasons it is recommended to keep this
+  docroot outside of server.document-root tree.
+* __check-local__ is optional and may be &quot;enable&quot; (default) or &quot;disable&quot;.
+  If enabled the server first checks for a file in local 'server.document-root'
+  tree and returns 404 (Not Found) if no such file, and does not fall back to
+  FastCGI. If disabled, the server forwards a request to the FastCGI interface
+  without this check.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

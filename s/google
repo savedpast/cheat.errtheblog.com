@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>GOOGLE CHEAT SHEET - FINDS PAGES CONTAINING...
+===========================================
+
+  The words vacation and Hawaii:
+  vacation hawaii
+
+  Either the word Maui or the word Hawaii:
+  Maui OR Hawaii
+
+  The exact phrase to each his own:
+  &quot;To each his own&quot;
+
+  The word virus but NOT the word computer:
+  virus -computer
+
+  Only the word sock, and not the plural or any tenses or synonyms:
+  +sock
+
+  Loan info for both the word auto and its synonyms: truck, car, etc.:
+  ~auto loan
+
+  Definitions of the word computer from around the Web.:
+  define:computer
+
+  The words red and blue separated by one or more words.:
+  red * blue
+
+  Takes you directly to first web page returned for your query.:
+  I'm Feeling Lucky
+
+  Only return pages from the website example.com:
+  site:example.com
+
+  Only return documents of a specific type (file extension)
+  filetype:pdf (or filetype:doc or filetype:txt, etc)</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

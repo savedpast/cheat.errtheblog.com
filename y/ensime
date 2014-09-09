@@ -1,0 +1,48 @@
+---
+ensime: ! "\"ENSIME is the ENhanced Scala Interaction Mode for Emacs.\"\n\nIt provides
+  many features that are commonly found only in IDEs, such as live error-checking,
+  symbol inspection, package/type browsing, and basic refactorings. ENSIME's architecture
+  is client/server: a thin Emacs client communicates with an analysis server written
+  in Scala. The client component is based heavily on the SLIME environment for Common
+  Lisp - using the same Swank RPC protocol. The server component services these calls
+  using an instance of the official Scala compiler, so the results should always be
+  consistent with the commandline compiler.\n\nMANUAL\n\n    http://aemon.com/file_dump/ensime_manual.html\n\nBUILDING\n\n
+  \       C-c C-b <?>                \n                 b      Build the entire project.\n
+  \                r      Rebuild the project, incrementally.\n\nCOMPLETION\n\n        TAB
+  \            Start completing a method/variable.\n\nDEBUGGING\n\n        C-c C-d
+  <?> \n                 d      Start the debugger.\n                 b      Set a
+  breakpoint.\n                 u      Clear a breakpoint.\n                 r      Run
+  the debugged class.\n                 s      Step.\n                 n      Step
+  over.\n                 c      Continue from a breakpoint.\n                 q      Kill
+  the debug session.\n                 l      List the local variables at current
+  line.\n\nGENERAL NAVIGATION\n\n        M-.             Jump to definition of symbol
+  under cursor.\n                        (or Control+Left-Click)\n\n        M-,             Pop
+  back to previously visited position. \n\n        C-c C-v .       Select the surrounding
+  syntactic context.\n                        Subsequent taps of '.' and ',' will
+  grow and shrink\n                        the selection, respectively.\n\nINSPECTOR\n\n
+  \       C-c C-v v       Search globally for methods or types.\n        C-c C-v i
+  \      Inspect the type of the expression under the cursor.\n                        (or
+  Control+Right-Click)\n\n        C-c C-v p       Inspect the package of the current
+  source file. \n        C-c C-v o       Inspect the project-package specified in
+  .ensime\n        C-c C-v r       List all references to the symbol under the cursor.\n\n
+  \       .               Forward one page in the inspector history.\n        ,               Backward
+  one page in the inspector history. \n\n        C-n or TAB      Forward one link
+  in the inspector. \n        C-p             Backward one link in the inspector.
+  \n\n        Mouse Hover     Echo the type of the expression under the cursor.\n
+  \       \nREFACTORING\n\n        C-c C-r <?>                \n                 r
+  \     Rename the symbol at point.\n                 o      Organize imports.\n                 l
+  \     Extract local.\n                 m      Extract method.\n                 i
+  \     Inline local.\n                 t      Add import for type at point.\n\nSBT\n\n
+  \       C-c C-v s       Switch to the sbt command-line (sbt projects only) \n        C-c
+  C-v z       Switch to the scala interpreter,\n                        with project
+  classes in the classpath. \n\nTYPE CHECKING\n\n        C-c C-v c       Typecheck
+  the current file. \n        C-c C-v a       Typecheck all files in the project.
+  \n        C-c C-v e       Show all errors and warnings in the project. \n\n        M-n
+  \            Go to the next compilation note in the current buffer. \n        M-p
+  \            Go to previous compilation note in the current buffer. \n\n        C-c
+  C-v f       Format the current Scala source file. \n        C-c C-v u       Undo
+  a refactoring or formatting change. \n\n\nENSIME CONFIG\n\n        M-x ensime              start
+  ensime for the project\n\n        M-x ensime-shutdown     stop ensime for the project\n\n
+  \       M-x ensime-reload       Reload the .ensime file, recompile project.\n                                Useful
+  if you hit a server bug.\n\n        M-x ensime-config-gen   Start automatic configuration
+  file generator."

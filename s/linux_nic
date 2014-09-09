@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>for BUSID in $(/sbin/lspci | awk '{ IGNORECASE=1 } /net/ { print $1 }'); do /sbin/lspci -s $BUSID -m; /sbin/lspci -s $BUSID -n; done
+
+#00:19.0 &quot;Ethernet controller&quot; &quot;Intel Corporation&quot; &quot;82566DM-2 Gigabit Network Connection&quot; -r02 &quot;Dell&quot; &quot;OptiPlex 755&quot;
+#00:19.0 0200: 8086:10bd (rev 02)
+#               |    |
+# grep these in command below, beware of case - fedora seems to have upper case letters in modules.alias
+# grep -i as some may contain a letter
+
+grep -i 8086 /lib/modules/*/modules.alias | gawk 'BEGIN{IGNORECASE=1} /10BD/ { print $3 }'</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

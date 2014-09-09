@@ -1,0 +1,20 @@
+---
+rubyprof: ! "Installation\n------------\nsudo gem install ruby-prof\n\n\nUsage\n-----\nWithout
+  changing your code:\n\n  $ ruby-prof your_ruby_app.rb\n\nOr, inside your code:\n\n
+  \ require 'ruby-prof'\n\n  # Profile the code\n  RubyProf.start\n  ...\n  [code
+  to profile]\n  ...\n  result = RubyProf.stop\n\n  # Print a flat profile to text\n
+  \ printer = RubyProf::FlatPrinter.new(result)\n  printer.print(STDOUT, 0)\n\nOr,
+  use a block to tell ruby-prof what to profile:\n\n  require 'ruby-prof'\n\n  # Profile
+  the code\n  result = RubyProf.profile do\n    ...\n    [code to profile]\n    ...\n
+  \ end\n\n  # Print a graph profile to text\n  printer = RubyProf::GraphPrinter.new(result)\n
+  \ printer.print(STDOUT, 0)\n\nOr, the old way:\n\n  require 'unprof'\n\n\nSetting
+  Clock Modes\n-------------------\nIn your code:\n\n  RubyProf.clock_mode = RubyProf::PROCESS_TIME\n
+  \ RubyProf.clock_mode = RubyProf::WALL_TIME\n  RubyProf.clock_mode = RubyProf::CPU_TIME\n\nOr,
+  via environment variable:\n\n  export RUBY_PROF_CLOCK_MODE=(process|wall|cpu)\n\n\nPrinting
+  Graphs\n---------------\nAvailable printer types:\n\n  RubyProf::FlatPrinter - flat
+  report in text format\n  RubyProf::GraphPrinter - call graph report in text format\n
+  \ RubyProf::GraphHtmlPrinter - call graph report in HTML (one file per thread)\n\nIn
+  your code:\n\n result = RubyProf.end\n printer = RubyProf::GraphPrinter.new(result)\n
+  printer.print(STDOUT, 0)\n\n\nSetting CPU Frequency\n---------------------\nIn your
+  code:\n\n  RubyProf.cpu_frequency = <value>\n\nOr in your environment:\n\n  export
+  RUBY_PROF_CPU_FREQUENCY=<value>"

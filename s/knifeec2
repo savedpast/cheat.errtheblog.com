@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>can never get this damned thing to come up
+
+USAGE: knife ec2 server create (options)                                                                                                                                             [54/313]
+    -Z, --availability-zone ZONE     The Availability Zone
+    -A, --aws-access-key-id KEY      Your AWS Access Key ID
+    -K SECRET,                       Your AWS API Secret Access Key
+        --aws-secret-access-key
+        --user-data USER_DATA_FILE   The EC2 User Data file to provision the instance with
+        --bootstrap-version VERSION  The version of Chef to install
+    -N, --node-name NAME             The Chef node name for your new node
+        --server-url URL             Chef Server URL
+    -k, --key KEY                    API Client Key
+        --color                      Use colored output
+    -c, --config CONFIG              The configuration file to use
+        --defaults                   Accept default values for all questions
+    -d, --distro DISTRO              Bootstrap a distro using a template
+        --ebs-no-delete-on-term      Do not delete EBS volumn on instance termination
+        --ebs-size SIZE              The size of the EBS volume in GB, for EBS-backed instances
+    -e, --editor EDITOR              Set the editor to use for interactive commands
+    -E, --environment ENVIRONMENT    Set the Chef environment
+    -f, --flavor FLAVOR              The flavor of server (m1.small, m1.medium, etc)
+    -F, --format FORMAT              Which format to use for output
+    -i IDENTITY_FILE,                The SSH identity file used for authentication
+        --identity-file
+    -I, --image IMAGE                The AMI for the server
+        --no-color                   Don't use colors in the output
+    -n, --no-editor                  Do not open EDITOR, just accept the data as is
+        --no-host-key-verify         Disable host key verification
+    -u, --user USER                  API Client Username
+        --prerelease                 Install the pre-release chef gems
+        --print-after                Show the data after a destructive operation
+        --region REGION              Your AWS region
+    -r, --run-list RUN_LIST          Comma separated list of roles/recipes to apply
+    -G, --groups X,Y,Z               The security groups for this server
+    -S, --ssh-key KEY                The AWS SSH key id
+    -P, --ssh-password PASSWORD      The ssh password
+    -x, --ssh-user USERNAME          The ssh username
+    -s, --subnet SUBNET-ID           create node in this Virtual Private Cloud Subnet ID (implies VPC mode)
+        --template-file TEMPLATE     Full path to location of template to use
+    -V, --verbose                    More verbose output. Use twice for max verbosity
+    -v, --version                    Show chef version
+    -y, --yes                        Say yes to all prompts for confirmation
+    -h, --help                       Show this message
+
+EXAMPLE:
+
+bundle exec knife ec2 server create -N simulator02 -Z us-east-1c -r &quot;role[chef_client_base],role[users]&quot; -I ami-17f51c7e -f m1.small --region us-east-1 --groups default -k default -i .chef/aws/key.pem --ssh-user root</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

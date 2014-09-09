@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>roo gem - http://roo.rubyforge.org/
+
+roo is a Ruby gem to read the following Excel and OpenOffice formats: 
+  * Open-office spreadsheets (.ods)
+  * Excel spreadsheets (.xls)
+  * Google (online) spreadsheets
+  * Excel’s new file format .xlsx
+
+
+INSTALLATION
+===================
+gem install roo
+
+
+USAGE
+==================
+ require 'rubygems'
+ require 'roo'
+ 
+ oo = Openoffice.new(&quot;simple_spreadsheet.ods&quot;)
+ oo.default_sheet = oo.sheets.first
+
+ # iterate all rows 
+ # cells are named 1,A, 1,B, 2,A, 2,B etc.. 
+ 0.upto(oo.last_row) do |line|
+   name = oo.cell(line,'A')
+   age = oo.cell(line,'B')
+
+   puts &quot;Name: #{name}&quot;
+   puts &quot;Age: #{age}\n&quot;
+ end
+
+ DOCUMENTATION
+ ================
+ http://roo.rubyforge.org/rdoc/index.html</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

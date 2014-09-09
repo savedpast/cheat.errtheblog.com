@@ -1,0 +1,17 @@
+---
+assert_routing: ! "# 'cheat assertions' for the rest\n\nassert_routing(path, options,
+  defaults={}, extras={}, message=nil)\n\nAsserts that path and options match both
+  ways; in other words, it verifies that path generates options and then that options
+  generates path. This essentially combines assert_recognizes and assert_generates
+  into one step.\n\nThe extras hash allows you to specify options that would normally
+  be provided as a query string to the action. The message parameter allows you to
+  specify a custom error message to display upon failure.\n\nExamples\n\n # Assert
+  a basic route: a controller with the default action (index)\n assert_routing('/home',
+  :controller => 'home', :action => 'index')\n\n # Test a route generated with a specific
+  controller, action, and parameter (id)\n assert_routing('/entries/show/23', :controller
+  => 'entries', :action => 'show', id => 23)\n\n # Assert a basic route (controller
+  + default action), with an error message if it fails\n assert_routing('/store',
+  { :controller => 'store', :action => 'index' }, {}, {}, 'Route for store index not
+  generated properly')\n\n # Tests a route, providing a defaults hash\n assert_routing
+  'controller/action/9', {:id => \"9\", :item => \"square\"}, {:controller => \"controller\",
+  :action => \"action\"}, {}, {:item => \"square\"}"

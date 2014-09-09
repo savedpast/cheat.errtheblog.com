@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Engineyard gem
+--------------
+
+
+  Track some process on your nodes
+  --------------------------------
+
+  ey ssh &quot;uname -n&amp;&amp;ps -ef|egrep -i '[r]esque-1.+w' &quot; -e app_name_live --all
+
+
+  Dig log files
+  -------------
+
+  ey ssh 'cat /data/your_app_name/current/log/production.log | egrep &quot;search_pattern&quot;' -e app_name_live --app-servers
+
+  ey ssh 'zcat /data/your_app_name/current/log/production.log-20110630.gz | egrep &quot;search_pattern&quot;' -e app_name_live --app-servers
+
+  ey ssh 'zcat /data/your_app_name/current/log/production.log-2011062*.gz | egrep &quot;search_pattern&quot;' -e app_name_live --app-servers
+
+  ey ssh 'zcat /data/your_app_name/current/log/production.log-2011062{1,2,3}.gz | egrep &quot;search_pattern&quot;' -e app_name_live --app-servers</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,4 @@
+---
+assert_nothing_raised: ! "# 'cheat assertions' for the rest\n\nassert_nothing_raised(*args)
+  {|| ...}\n\nPasses if block does not raise an exception.\n\nExample:\n\n  assert_nothing_raised
+  do\n    [1, 2].uniq\n  end"

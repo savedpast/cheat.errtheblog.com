@@ -1,0 +1,17 @@
+---
+vim_surround: ! "VIM SURROND REFERENCE\n=====================\nbased off of:\n  *
+  http://www.vim.org/scripts/script.php?script_id=1697\nadditional documentation:\n
+  \ * https://github.com/tpope/vim-surround/tree/master/doc\n\n\nStarting Example:\n
+  \ \"Hello World!\"\n\n\nSurround Targets::\n  t    tag-blocks\n  w    word\n  W
+  \   WORD\n  s    sentance\n  p    paragraph\n\n\ncs\"'        Change surrounding
+  double quotes (\") to single quotes (')\ncs'<q>      Change surrounding single quotes
+  (') to tags (<q>)\ncst\"        Change surrounding tag (<q>) to double quotes (\")\n\nds\"
+  \        Delete surrounding double quote (\")\n\nysiw]       Wrap surrounding text
+  object (iw) with brackets ([])\nysiw[       Wrap surrounding text object (iw) with
+  brackets with some space ([ ])\nysiw<em>    Wrap surrounding text object (iw) with
+  tags (<em>)\n\nyssb        Wrap surrounding sentance/line with parentheses (())\nyss)
+  \       Same as above\nyssB        Wrap surrounding sentance/line with parentheses
+  ({})\nyss}        Same as above\n\n\ncapital V (for linewise visual mode) followed
+  by S<p class=\"important\">\n            Surround selected lines with <p class=\"important>
+  and </p>\n\nvllls'      select visual mode, move right 3, surround with single quotes
+  (')"

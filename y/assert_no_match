@@ -1,0 +1,4 @@
+---
+assert_no_match: ! "# 'cheat assertions' for the rest\n\nassert_no_match(regexp, string,
+  message=\"\")\n\nPasses if regexp !~ string\n\nExample:\n\n  assert_no_match(/two/,
+  'one 2 three')"

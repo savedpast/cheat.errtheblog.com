@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Area                          , Standard , DST   , Std Abbrev       , DST Abbrev , Zone Name
+Eastern Time                  , UTC-5    , UTC-4 , EST              , EDT        , America/New_York
+Central Time                  , UTC-6    , UTC-5 , CST              , CDT        , America/Chicago
+Mountain Time                 , UTC-7    , UTC-6 , MST              , MDT        , America/Denver
+Mountain Time (no DST)        , UTC-7    , MST   , America/Phoenix
+Pacific Time                  , UTC-8    , UTC-7 , PST              , PDT        , America/Los_Angeles
+Alaska Time                   , UTC-9    , UTC-8 , AST              , ADT        , America/Anchorage
+Hawaii-Aleutian Time          , UTC-10   , UTC-9 , HST              , HDT        , America/Adak
+Hawaii-Aleutian Time (no DST) , UTC-10   , HST   , Pacific/Honolulu</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

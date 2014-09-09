@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Cheat Sheet for Emacs undo-tree mode
+http://www.dr-qubit.org/undo-tree/undo-tree.el
+
+C-_  C-/  (`undo-tree-undo')
+  Undo changes.
+
+M-_  C-?  (`undo-tree-redo')
+  Redo changes.
+
+`undo-tree-switch-branch'
+  Switch undo-tree branch.
+  (What does this mean? Better press the button and see!)
+
+C-x u  (`undo-tree-visualize')
+  Visualize the undo tree.
+  (Better try pressing this button too!)
+
+
+In the undo visualizer:
+
+&lt;up&gt;  p  C-p  (`undo-tree-visualize-undo')
+  Undo changes.
+
+&lt;down&gt;  n  C-n  (`undo-tree-visualize-undo')
+  Undo changes.
+
+&lt;left&gt;  b  C-b  (`undo-tree-visualize-switch-branch-left')
+  Switch to previous undo-tree branch.
+
+&lt;right&gt;  f  C-f  (`undo-tree-visualize-switch-branch-right')
+  Switch to next undo-tree branch.
+
+t  (`undo-tree-visualizer-toggle-timestamps')
+  Toggle display of time-stamps.
+
+q  C-q  (`undo-tree-visualizer-quit')
+  Quit undo-tree-visualizer.
+
+,  &lt;
+  Scroll left.
+
+.  &gt;
+  Scroll right.
+
+&lt;pgup&gt;
+  Scroll up.
+
+&lt;pgdown&gt;
+  Scroll down.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

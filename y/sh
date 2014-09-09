@@ -1,0 +1,29 @@
+---
+sh: ! "Help - use these commands to get more information about the commands below\r\n
+  \ man <cmd> - get usage information about command <cmd>\r\n  info <cmd> - get usage
+  information about command <cmd>\r\n\r\nDirectories\r\n  ls - list directory contents\r\n
+  \ pwd - report current directory\r\n  cd <dir> - change current directory to <dir>\r\n
+  \ pushd <dir> - change directory and store previous directory on stack\r\n  popd
+  - return to directory on top of stack\r\n  find - list directory contents recursively\r\n
+  \ mkdir <dir> - make new directory\r\n  rmdir <dir> - remove empty directory\r\n\r\nText
+  files\r\n  cat <files> - show file contents\r\n  grep <pattern> <files> - find pattern
+  in files\r\n  vi (or vim) <file> - edit file\r\n  diff <old> <new> - report changes
+  between files\r\n  patch - apply changes to a file\r\n  less or more - page through
+  a text file\r\n\r\nFiles\r\n  cp <src> <dest> - copy file\r\n  mv <src> <dest> -
+  move file\r\n  rm <files> - delete file\r\n  chmod <permissions> <files> - change
+  file permissions\r\n  ln - create link between files (give a file multiple names)\r\n
+  \ gzip/gunzip - compress/decompress files\r\n  bzip/bunzip - compress/decompress
+  files\r\n  tar - package/unpackage multiple files into archive file (usually used
+  in conjunction with gzip or bzip compression). See man pages\r\n  zip/unzip - compress/decompress
+  windows zip archives\r\n\r\nProcesses\r\n  ps - list running processes\r\n  pstree
+  - list running processes as tree\r\n  kill - kill running process\r\n  uptime -
+  get information about running kernel, machine load\r\n  top - keep track of processes
+  using the most resources\r\n\r\nOther\r\n  date - show current date\r\n  uname -
+  show info about OS\r\n  which <executable> - find out where in path <executable>
+  lives\r\n  hostname - get host name of current machine\r\n  ifconfig - get information
+  about network interfaces (including IP addresses)\r\n  ssh - secure shell. Used
+  to login to remote machines\r\n  links or lynx - text-only browser\r\n  wget or
+  curl - download remote file (http, ftp, etc)\r\n\r\nUsers\r\n  useradd - create
+  user\r\n  whoami - report your username\r\n  last - list recent logins\r\n  su -
+  login as another user\r\n  sudo - run a command as another user\r\n  who - report
+  who is currently logged in\r\n  passwd - change password"

@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Overview
+========
+
+Queriac allows you to manage your quicksearches, shortcuts, and bookmarklets by taking them out of your browser profile and onto the web, making them portable, taggable, shareable, and generally easier to manage. Drawing from the concept of Yubnub and extending it in the spirit of del.icio.us, Queriac effectively turns your browser's address bar into a flexible command line.
+
+Sign up at http://queri.ac
+
+
+Some Default Commands
+=====================
+
+Perform a Google search
+&gt;&gt; g marlon brando
+
+Perform a stealth Google search, i.e. it won't be saved to search history. (space after ! is optional)
+&gt;&gt; !g michael bolton
+&gt;&gt; ! g condi rice
+
+Edit your Google command
+&gt;&gt; edit g
+
+Show your Google command
+&gt;&gt; show g</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

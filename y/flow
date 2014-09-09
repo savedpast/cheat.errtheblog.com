@@ -1,0 +1,18 @@
+---
+flow: ! "# a work flow for hacking in the land of git (one of many) inspired from:\n#
+  http://jonrohan.me/guide/git/dead-simple-git-workflow-for-agile-teams/\n###\n$ git
+  clone (URL to repo)          # get that code\n### branching for hacking together
+  a pull request\n$ git pull                         # sync up to latest           |\n$
+  git checkout -b HACKING_TOPIC    # branch to start hacking on  | gcb\n### keep hacking
+  branch in sync with production\n$ git checkout master              # back to master
+  \             |\n$ git pull origin master           # resync your master          |\n$
+  git checkout HACKING_TOPIC       # back to hacking branch      |\n$ git rebase master
+  \               # sync your hacking branch    | \n  # -> hack -> hack -> hack on
+  your banch                        | hack.sh\n### ship it! this is production! merge
+  to master and push  \n$ git checkout master              # back to master              |\n$
+  git merge HACKING_TOPIC          # merge the goodness          | \n$ git push origin
+  master           # shipping to production      | \n$ git checkout HACKING_TOPIC
+  \      # back to hacking branch      | ship.sh\n### done with feature. delete this
+  branch (ship good stuff first)\n$ git checkout master              # back to master
+  \             |\n$ git branch -d HACKING_TOPIC      # delete branch               |
+  dwf.sh"

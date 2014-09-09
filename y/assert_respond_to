@@ -1,0 +1,4 @@
+---
+assert_respond_to: ! "# 'cheat assertions' for the rest\n\nassert_respond_to(object,
+  method, message=\"\")\n\nPasses if object .respond_to? method\n\nExample:\n\n  assert_respond_to
+  'bugbear', :slice"

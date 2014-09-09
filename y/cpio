@@ -1,0 +1,4 @@
+---
+cpio: ! "create an archive:\n\ntouch .timestamp\n\n(edit some files)\n\nfind . -newer
+  .timestamp -print | cpio -oaBcv > ~/new-files.cpio\n\n  - or -\n\nfind . -newer
+  .timestamp -print | cpio -oaBcv | gzip > ~/new-files.cpio.gz"

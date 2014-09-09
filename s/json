@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Sample JSON file from Wikipedia:
+
+{
+    &quot;firstName&quot;: &quot;John&quot;,
+    &quot;lastName&quot;: &quot;Smith&quot;,
+    &quot;age&quot;: 25,
+    &quot;address&quot;:
+    {
+        &quot;streetAddress&quot;: &quot;21 2nd Street&quot;,
+        &quot;city&quot;: &quot;New York&quot;,
+        &quot;state&quot;: &quot;NY&quot;,
+        &quot;postalCode&quot;: &quot;10021&quot;
+    },
+    &quot;phoneNumber&quot;:
+    [
+        {
+          &quot;type&quot;: &quot;home&quot;,
+          &quot;number&quot;: &quot;212 555-1234&quot;
+        },
+        {
+          &quot;type&quot;: &quot;fax&quot;,
+          &quot;number&quot;: &quot;646 555-4567&quot;
+        }
+    ]
+}</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># Virtualenvwrapper
+
+## Create and start a new virtual environment
+
+v.mk myvirtualenv
+
+## Deactivating a virtual environment
+
+deactivate
+
+## Switch to an existing virtual environment
+
+v myvirtualenv
+
+## List packages used by current virtual environment
+
+yolk -l
+
+## Take a snapshot of the current environment's packages
+
+pip freeze &gt; requirements.txt
+
+## Install from a snapshot
+
+pip install -r requirements.txt
+
+## Aliases
+
+v='workon'
+v.deactivate='deactivate'
+v.mk='mkvirtualenv --no-site-packages'
+v.mk_withsitepackages='mkvirtualenv'
+v.rm='rmvirtualenv'
+v.switch='workon'
+v.add2virtualenv='add2virtualenv'
+v.cdsitepackages='cdsitepackages'
+v.cd='cdvirtualenv'
+v.lssitepackages='lssitepackages'</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

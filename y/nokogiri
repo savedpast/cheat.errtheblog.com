@@ -1,0 +1,44 @@
+---
+nokogiri: ! "require 'nokogiri'\r\nrequire 'open-uri'\r\n\r\n# Get a Nokogiri::HTML:Document
+  for the page we're interested in...\r\n\r\ndoc = Nokogiri::HTML(open('http://www.google.com/search?q=tenderlove'))\r\n\r\n#
+  Do funky things with it using Nokogiri::XML::Node methods...\r\n\r\n####\r\n# Search
+  for nodes by css\r\ndoc.css('h3.r a.l').each do |link|\r\n    puts link.content\r\nend\r\n\r\ndoc.at_css('h3').content\r\n\r\n####\r\n#
+  Search for nodes by xpath\r\ndoc.xpath('//h3/a[@class=\"l\"]').each do |link|\r\n
+  \   puts link.content\r\nend\r\n\r\n####\r\n# Or mix and match.\r\ndoc.search('h3.r
+  a.l', '//h3/a[@class=\"l\"]').each do |link|\r\n    puts link.content\r\nend\r\n\r\n####\r\n#
+  Work with attributes\r\nxml = \"<foo wam='bam'>bar</foo>\"\r\n\r\ndoc = Nokogiri::XML(xml)\r\ndoc.at_css(\"foo\").content
+  => \"bar\"\r\ndoc.at_css(\"foo\")[\"wam\"].content => \"bam\"\r\n\r\n####\r\n# Work
+  with elements\r\nel = doc.at_css(\"foo\")\r\nel.children  # => array of elements\r\n\r\n####\r\n\r\nSo
+  for example if we wanted to know all the names of the food items in our\r\ndocument
+  we simply say:\r\n> doc.xpath(\"//name\").collect(&:text)\r\n=> [\"carrot\", \"tomato\",
+  \"corn\", \"grapes\", \"orange\", \"pear\", \"apple\"]\r\n\r\nIf we were interested
+  in the entire node we could leave off the\r\n.collect(&:text). What if we wanted
+  to select all the names of food items that\r\nwere best baked?  This requires us
+  to use what’s called an axis – we will\r\nfirst need to find the element “baked”
+  but then go back up our XML elements to\r\nfind which food the item is inside.\r\n>
+  doc.xpath(\"//tag[text()='baked']/ancestor::node()/name\").collect(&:text)\r\n=>
+  [\"pear\", \"apple\"]\r\n\r\nWhat if we were only interested in vegetables that
+  were good for roasting? \r\nJust add //veggies:\r\n>\r\ndoc.xpath(\"//veggies//tag[text()='roasted']/ancestor::node()/name\").collect(&:t\r\nxt)\r\n=>
+  [\"carrot\", \"tomato\"]\r\n\r\nWhat about if we wanted to know all the tags ‘corn’
+  had?  Again this is very\r\neasy:\r\n> doc.xpath(\"//name[text()='corn']/../tags/tag\").collect(&:text)\r\n=>
+  [\"raw\", \"boiled\", \"grilled\"]\r\n\r\nWe can even do searches matching the first
+  character.  Let’s say we wanted to\r\nknow all the food items that started with
+  the letter ‘c’:\r\n> doc.xpath(\"//name[starts-with(text(),'c')]\").collect(&:text)\r\n=>
+  [\"carrot\", \"corn\"]\r\n\r\nYou could also use [contains(text(),'rot'] and get
+  back just carrot, useful\r\nwhen you want to do a partial match.\r\n\r\n####\r\n#
+  Traversion\r\n\r\nnode.ancestors                        # Ancestors for <node>\r\nnode.at('xpath')
+  \                     # Returns node at given XPATH\r\nnode.at_css('selector')               #
+  Returns node at given CSS selector\r\n\r\nnode.xpath('xpath')                   #
+  Returns nodes at given XPATH\r\nnode.css('selector')                  # Returns
+  nodes at given selector\r\n\r\nnode.child                            # Returns the
+  child node\r\nnode.children                         # Returns child nodes\r\nnode.parent\r\n\r\n####\r\n#
+  Data manipulation\r\n\r\nnode.name                             # Element name\r\nnode.node_type\r\n\r\nnode.content
+  \                         # Returns text as string\r\n                                      #
+  (aka: .inner_text, .text)\r\nnode.content = '...'\r\n\r\nnode.inner_html\r\nnode.inner_html
+  = '...'\r\n\r\nnode.attribute_nodes                  # Returns attributes as nodes\r\nnode.attributes
+  \                      # Returns attributes as hash\r\n\r\n####\r\n# Tree manipulation\r\n\r\nnode.add_next_sibling(other)
+  \         # Place <other> after <node>\r\nnode.add_previous_sibling(other)      #
+  Place <other> before <node>\r\nnode.add_child(other)                 # Put <other>
+  inside <node>\r\n\r\nnode.after(data)                      # Put a new node after
+  <node>\r\nnode.before(data)                     # Put a new node before <node>\r\n\r\nnode.parent
+  = other                   # Reparents <node> inside <other>\r\n"

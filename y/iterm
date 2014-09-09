@@ -1,0 +1,9 @@
+---
+iterm: ! "Function \tShortcut\r\nprevious tab \tCmd + left arrow\r\nnext tab \tCmd
+  + right arrow\r\n\r\ngo to tab \tCmd + number\r\ngo to window \tCmd + Option + Number\r\n\r\ngo
+  to split pane by direction \t        Cmd + Option + arrow\r\ngo to split pane by
+  order of use \tCmd + ] , Cmd + [\r\n\r\nsplit window horizontally (same profile)
+  \       Cmd + D\r\nsplit window vertically (same profile) \t        Cmd + d\r\nsplit
+  window horizontally (new profile) \tOption + Cmd + H\r\nsplit window vertically
+  (new profile) \t        Option + Cmd + V\r\n\r\nSet Mark \tCmd + M\r\nJump to Mark
+  \tCmd + J\r\n\r\nToggle Fullscreen Cmd + enter"

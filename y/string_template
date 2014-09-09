@@ -1,0 +1,162 @@
+---
+string_template: ! "* StringTemplate -- it's a java/python oriented templating engine\n*
+  it's mainly used in ANTLR, which is a nice parser/lexer/blah de blah\n  generator
+  with multiple language targets (though the Ruby target's\n  pretty weak right now)\n*
+  this is a plain text version of the HTML cheat sheet found\n  at http://www.antlr.org/wiki/display/ST/StringTemplate+cheat+sheet\n*
+  things that are italicized on that cheat sheet have been represented\n  with surrounding
+  underscores\n* I did this with a script, and haven't proofread it thoroughly either,
+  so\n  if you see something goofy -- sorry -- feel free to correct it\n\n================================[Expressions]================================\n+-------------------------------------+-------------------------------------+\n|
+  Syntax                              | Description                         |\n+-------------------------------------+-------------------------------------+\n|
+  <__attribute__>                     | Evaluates to the value of           |\n|                                     |
+  __attribute__.ToString() if it      |\n|                                     | exists
+  else empty string.           |\n+-------------------------------------+-------------------------------------+\n|
+  <i>, <i0>                           | The iteration number indexed from   |\n|                                     |
+  one and from zero, respectively,    |\n|                                     | when
+  referenced within a template   |\n|                                     | being
+  applied to an attribute or    |\n|                                     | attributes.
+  \                        |\n+-------------------------------------+-------------------------------------+\n|
+  <__attribute__.__property__>        | Looks for __property__ of           |\n|                                     |
+  __attribute__ as a property (C#),   |\n|                                     | then
+  accessor methods like          |\n|                                     | get__Property__()
+  or                |\n|                                     | is__Property__(). If
+  that fails,    |\n|                                     | StringTemplate looks for
+  a raw      |\n|                                     | field of the __attribute__
+  called   |\n|                                     | __property__. Evaluates to the
+  \     |\n|                                     | empty string if no such property
+  is |\n|                                     | found.                              |\n+-------------------------------------+-------------------------------------+\n|
+  <__attribute__.(__expr__)>          | Indirect property lookup. Same as   |\n|                                     |
+  __attribute__.__property__ except   |\n|                                     | use
+  the value of __expr__ as the    |\n|                                     | property_
+  name. Evaluates to the    |\n|                                     | empty string
+  if no such property is |\n|                                     | found.                              |\n+-------------------------------------+-------------------------------------+\n|
+  <__multi-valued-attribute__>        | Concatenation of ToString() invoked |\n|                                     |
+  on each element. If                 |\n|                                     | __multi-valued-attribute__
+  is       |\n|                                     | missing his evaluates to the
+  empty  |\n|                                     | string.                             |\n+-------------------------------------+-------------------------------------+\n|
+  <__multi-valued-attribute__;        | Concatenation of ToString() invoked |\n|    separator=__expr__>
+  \             | on each element separated by        |\n|                                     |
+  __expr__.                           |\n+-------------------------------------+-------------------------------------+\n|
+  <__template__(__argument-list__)>   | Include __template__. The           |\n|                                     |
+  __argument-list__ is a list of      |\n|                                     | attribute
+  assignments where each    |\n|                                     | assignment
+  is of the form           |\n|                                     | __arg-of-template__=__expr__
+  where  |\n|                                     | __expr__ is evaluated in the        |\n|
+  \                                    | context of the surrounding template |\n|
+  \                                    | not of the invoked template.        |\n+-------------------------------------+-------------------------------------+\n|
+  <__(expr)__(__argument-list__)>     | Include __template__ whose name is  |\n|                                     |
+  computed via __expr__. The          |\n|                                     | __argument-list__
+  is a list of      |\n|                                     | attribute assignments
+  where each    |\n|                                     | assignment is of the form
+  \          |\n|                                     | __attribute__=__expr__. Example
+  \    |\n|                                     | $(whichFormat)()$ looks up          |\n|
+  \                                    | whichFormat's value and uses that   |\n|
+  \                                    | as template name. Can also apply an |\n|
+  \                                    | indirect template to an attribute.  |\n+-------------------------------------+-------------------------------------+\n|
+  <__attribute__:                     | Apply __template__ to               |\n|   __template__(__argument-list__)>
+  \ | __attribute__. The optional         |\n|                                     |
+  __argument-list__ is evaluated      |\n|                                     | before
+  application so that you can  |\n|                                     | set attributes
+  referenced within    |\n|                                     | __template__. The
+  default attribute |\n|                                     | it is set to the value
+  of           |\n|                                     | __attribute__. If __attribute__
+  is  |\n|                                     | multi-valued, then it is set to     |\n|
+  \                                    | each element in turn and            |\n|
+  \                                    | __template__ is invoked __n__ times |\n|
+  \                                    | where __n__ is the number of values |\n|
+  \                                    | in __attribute__. Example:          |\n|
+  \                                    | $name:bold() applies bold() to      |\n|
+  \                                    | name's value.                       |\n+-------------------------------------+-------------------------------------+\n|
+  <__attribute__:                     | Apply a template, whose name is     |\n|   __(expr)__(__argument-list__)>
+  \   | computed from __expr__, to each     |\n|                                     |
+  value of __attribute__. Example     |\n|                                     | $data:(name)()$
+  looks up name's     |\n|                                     | value and uses that
+  as template     |\n|                                     | name to apply to data.
+  \             |\n+-------------------------------------+-------------------------------------+\n|
+  <__attribute__:                     | Apply multiple templates in order   |\n|   __t1__(__argument-list__):
+  \       | from left to right. The result of a |\n|    ... :__tN__(__argument-list__)>
+  \ | template application upon a         |\n|                                     |
+  multi-valued attribute is another   |\n|                                     | multi-valued
+  attribute. The overall |\n|                                     | expression evaluates
+  to the         |\n|                                     | concatenation of all elements
+  of    |\n|                                     | the final multi-valued attribute
+  \   |\n|                                     | resulting from __templateN__'s      |\n|
+  \                                    | application.                        |\n+-------------------------------------+-------------------------------------+\n|
+  <__attribute__:                     | Apply an anonymous template to each |\n|   {__anonymous-template__}>
+  \        | element of __attribute__. The       |\n|                                     |
+  iterated it atribute is set         |\n|                                     | automatically.
+  \                     |\n+-------------------------------------+-------------------------------------+\n|
+  <__attribute__:                     | Apply an anonymous template to each |\n|   {__argument-name_
+  |               | element of __attribute__. Set the   |\n|    _anonymous-template__}>
+  \         | __argument-name__ to the iterated   |\n|                                     |
+  value and also set it.              |\n+-------------------------------------+-------------------------------------+\n|
+  <__a1__,__a2__,...,__aN__:          | Parallel list iteration. March      |\n|   {__argument-list_
+  |               | through the values of the           |\n|    _anonymous-template__}>
+  \         | attributes __a1__..__aN__, setting  |\n|                                     |
+  the values to the arguments in      |\n|                                     | __argument-list__
+  in the same       |\n|                                     | order. Apply the anonymous
+  \         |\n|                                     | template. There is no defined
+  it    |\n|                                     | value unless inherited from an
+  \     |\n|                                     | enclosing scope.                    |\n+-------------------------------------+-------------------------------------+\n|
+  <__attribute__:                     | Apply an alternating list of        |\n|   __t1__(),__t2__(),...,__tN__()>
+  \  | templates to the elements of        |\n|                                     |
+  __attribute__. The template names   |\n|                                     | may
+  include argument lists.         |\n+-------------------------------------+-------------------------------------+\n|
+  <first(attr)>                       | The first or only element of attr.  |\n|                                     |
+  You can combine operations to say   |\n|                                     | things
+  like first(rest(names)) to   |\n|                                     | get second
+  element.                 |\n+-------------------------------------+-------------------------------------+\n|
+  <last(attr)>                        | The last or only element of attr.   |\n+-------------------------------------+-------------------------------------+\n|
+  <rest(attr)>                        | All but the first element of attr.  |\n|                                     |
+  Returns nothing if $attr$ a single  |\n|                                     | valued.
+  \                            |\n+-------------------------------------+-------------------------------------+\n|
+  <trunc(attr)>                       | returns all but last element        |\n+-------------------------------------+-------------------------------------+\n|
+  <strip(attr)>                       | Returns an iterator that skips any  |\n|                                     |
+  null values in $attr$. strip(x) =x  |\n|                                     | when
+  x is a single-valued           |\n|                                     | attribute.
+  \                         |\n+-------------------------------------+-------------------------------------+\n|
+  <length(attr)>                      | Return an integer indicating how    |\n|                                     |
+  many elements in length $attr$ is.  |\n|                                     | Single
+  valued attributes return 1.  |\n|                                     | Strings
+  are not special; i.e.,      |\n|                                     | length(\"foo\")
+  is 1 meaning \"1       |\n|                                     | attribute\". Nulls
+  are counted in    |\n|                                     | lists so a list of
+  300 nulls is     |\n|                                     | length 300. If you don't
+  want to    |\n|                                     | count nulls, use                    |\n|
+  \                                    | length(strip(list)).                |\n+-------------------------------------+-------------------------------------+\n|
+  \\$ or \\<                            | escaped delimiter prevents $ or <   |\n|
+  \                                    | from starting an attribute          |\n|
+  \                                    | expression and results in that      |\n|
+  \                                    | single character.                   |\n+-------------------------------------+-------------------------------------+\n|
+  <\\ >, <\\n>, <\\t>, <\\r>              | special character(s): space,        |\n|
+  \                                    | newline, tab, carriage return.  Can |\n|
+  \                                    | have multiple in single <...>       |\n|
+  \                                    | expression.                         |\n+-------------------------------------+-------------------------------------+\n|
+  <\\uXXXX>                            | Unicode character(s).  Can have     |\n|
+  \                                    | multiple in single <...>            |\n|
+  \                                    | expression.                         |\n+-------------------------------------+-------------------------------------+\n|
+  <! comment !>, $! comment !$        | Comments, ignored by                |\n|                                     |
+  StringTemplate.                     |\n+-------------------------------------+-------------------------------------+\n\n================================[Statements]=================================\n+-------------------------------------+-------------------------------------+\n|
+  Syntax                              | Description                         |\n+-------------------------------------+-------------------------------------+\n|
+  <if(__attribute__)>__subtemplate__  | If __attribute__ has a value or is  |\n| <else>__subtemplate2__
+  \             | a boolean object that evaluates to  |\n| <endif>                             |
+  true, include __subtemplate__ else  |\n|                                     | include
+  __subtemplate2__. These     |\n|                                     | conditionals
+  may be nested.         |\n+-------------------------------------+-------------------------------------+\n|
+  <if(__x__)>__subtemplate__          | First attribute that has a value or |\n| <elseif(__y__)>__subtemplate2__
+  \    | is a boolean object that evaluates  |\n| <elseif(__z__)>__subtemplate3__
+  \    | to true, include that subtemplate.  |\n| <else>__subtemplate4__              |
+  These conditionals may be nested.   |\n| <endif>                             |                                     |\n+-------------------------------------+-------------------------------------+\n|
+  <if(!__attribute__)>                | If __attribute__ has no value or is |\n|   __subtemplate__<endif>
+  \           | a bool object that evaluates to     |\n|                                     |
+  false, include __subtemplate__.     |\n|                                     | These
+  conditionals may be nested.   |\n+-------------------------------------+-------------------------------------+\n\n================================[Group
+  Files]================================\n-- Group .stg Files ----------------------------\ngroup
+  __Name__ \n\n__t1__(__args__) ::= \"__template1__\"\n\n__t2__(__args__) ::= <<\n
+  \ __template2__\n>>\n\n__type_list_name__ ::= [\n  \"src_type1\" : \"dest_type2\",\n
+  \ \"src_type2\" : \"dest_type2\",\n  default : \"default_type\"\n]\n\n-- Also ---------------------------------------\n\ngroup
+  __Name__ implements __InterfaceName__;\n ...\n\n-- where the interface is defined
+  via ---------\n\ninterface __InterfaceName__;\n\n__t1__(__args__);\n\n__t2__(__args__);\n\n==============================[Reserved
+  Words]===============================\n-> don't use these as attribute names or
+  template names\n  * default\n  * first\n  * group\n  * if\n  * implements\n  * interface\n
+  \ * last\n  * length\n  * optional\n  * rest\n  * strip\n  * super\n  * trunc\n
+  \ * else\n  * endif\n  * elseif"

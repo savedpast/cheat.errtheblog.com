@@ -1,0 +1,3 @@
+---
+hwh_dynamic_method_calls: ! "e.g. You wish to call \"validate_n\" (where n is resolved
+  at run time )\r\nobj.send( \"validate_#{ resolve_n }\".to_sym, arguments )"

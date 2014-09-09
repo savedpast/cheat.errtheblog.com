@@ -1,0 +1,63 @@
+---
+webrat: ! "= Webrat - Ruby Acceptance Testing for Web applications\r\n\r\n- http://gitrdoc.com/brynary/webrat\r\n-
+  http://groups.google.com/group/webrat\r\n- http://webrat.lighthouseapp.com/\r\n-
+  http://github.com/brynary/webrat\r\n- #webrat on Freenode\r\n\r\n== Description\r\n\r\nWebrat
+  lets you quickly write expressive and robust acceptance tests for a Ruby\r\nweb
+  application. \r\n\r\n== Features\r\n\r\n* Browser Simulator for expressive, high
+  level acceptance testing without the\r\n  performance hit and browser dependency
+  of Selenium or Watir (See Webrat::Session)\r\n* Use the same API for Browser Simulator
+  and real Selenium tests using\r\n  Webrat::Selenium when necessary (eg. for testing
+  AJAX interactions)\r\n* Supports multiple Ruby web frameworks: Rails, Merb and Sinatra\r\n*
+  Supports popular test frameworks: RSpec, Cucumber, Test::Unit and Shoulda\r\n* Webrat::Matchers
+  API for verifying rendered HTML using CSS, XPath, etc.\r\n\r\n\r\n== Simulating
+  browser events\r\n\r\n  # GET a URL, following any redirects, and making sure final
+  page is successful\r\n  visit \"/some/url\"\r\n\r\n  # In general, elements can
+  be located by their inner text, their 'title' attribute, their 'name' attribute,
+  and their 'id' attribute.\r\n  # They can be selected using a String, which is converted
+  to an escaped Regexp effectively making it a substring match, or using a Regexp.\r\n
+  \ # An exception is that using Strings for ids are compared exactly (using ==) rather
+  than converted to a Regexp\r\n  # If the element you are trying to look up does
+  not exist, an error occurs\r\n\r\n\r\n  # Links can be looked up by text, title,
+  or id\r\n  # To match... <a href=\"/signup\" title=\"Sign up\" id=\"signup_link\">Click
+  here to join!</a>\r\n  click_link \"Click here to join!\" # substring text\r\n  click_link
+  /join/i               # regexp text\r\n  click_link \"Sign up\"             # substring
+  title\r\n  click_link /sign.*up/i           # regexp title\r\n  click_link /signup.*link/i
+  \      # regexp id\r\n  click_link \"signup_link\"         # exact id\r\n\r\n\r\n
+  \ # All fields can be looked up by ID, name, or label inner text\r\n\r\n  # text
+  fields, password fields, and text areas can be filled in\r\n  # <label for=\"user[email]\">Enter
+  your Email</label><input type=\"text\" name=\"user[email]\" id=\"user_email\">\r\n
+  \ fill_in \"user_email\", :with => \"good@example\"      # exact id\r\n  fill_in
+  /user.*email/, :with => \"good@example\"     # regexp id\r\n  fill_in \"user[email]\",
+  :with => \"good@example\"     # substring name\r\n  fill_in /user[.*mail.*]/, :with
+  => \"good@example\"  # substring name\r\n  fill_in \"Email\", :with => \"good@example.com\"
+  \      # substring label text\r\n  fill_in /enter your email/i, :with => \"good@example.com\"
+  # regexp label text\r\n\r\n  # Hidden fields can be set\r\n  set_hidden_field 'user[l337_hax0r]',
+  :to => 'true'\r\n\r\n  # Select options can be 'selected' by inner text (an exact
+  String or a Regexp to match). It can optionally be selected from a particular select
+  field, using the usual id, name, or label text.\r\n  select \"Free account\"\r\n
+  \ select \"Free account\", :from => \"Account Types\"\r\n  select \"Free account\",
+  :from => \"user[account_type]\"\r\n  select \"Free account\", :from => \"user_account_type\"\r\n\r\n\r\n
+  \ # Check boxes can be 'checked' and 'unchecked'\r\n  check 'Remember me'\r\n  uncheck
+  'Remember me'\r\n\r\n  # Radio buttons can be choosen, using the usual label text,
+  name, or id.\r\n  choose \"Yes\"\r\n\r\n  click_button \"Register\"\r\n\r\n== Assertions\r\n\r\n
+  \  # check for text in the body of html tags\r\n   # can be a string or regexp\r\n
+  \ assert_contain(\"BURNINATOR\")\r\n  assert_contain(/trogdor/i)\r\n  assert_not_contain(\"peasants\")\r\n\r\n
+  \ # check for a css3 selector\r\n  assert_have_selector 'div.pagination'\r\n  assert_have_no_selector
+  'form input#name'\r\n\r\n\r\n== Matchers\r\n\r\n  # check for text in the body of
+  html tags\r\n  # can be a string or regexp\r\n  # Matchers are verbs used with auxillary
+  verbs should, should_not, etc.\r\n  response.should contain(\"BURNINATOR\")\r\n
+  \ response.should contain(/trogdor/i)\r\n  response.should_not contain(\"peasants\")\r\n\r\n
+  \ # check for a css3 selector\r\n  response.should have_selector('div.pagination')\r\n
+  \ response.should_not have_selector('form input#name')\r\n\r\n  # check for the
+  current URL (after all redirects, etc.)\r\n  current_url.should == 'http://www.example.com/'
+  \     # RSpec\r\n  assert_equal('http://www.example.com/', current_url) # Test::Unit\r\n
+  \ \r\n\r\n== Targetted actions/matchers\r\n\r\n  # selectors syntax is defined here:
+  http://www.w3.org/TR/css3-selectors/\r\n  within 'div.pagination' do |scope|\r\n
+  \   scope.click_link \"1\"\r\n  end\r\n\r\n  within '.shows' do |scope|\r\n    scope.should
+  contain(\"NFL\")\r\n    # unfortunately, assertions don't support this currently\r\n
+  \ end\r\n\r\n  within 'form[name=\"search\"] select[name=\"type\"]' do |scope|\r\n
+  \   scope.should have_selector 'option[value=\"blah\"]'\r\n    scope.should have_selector
+  'option[value=\"gah\"]'\r\n    scope.should have_selector 'option[value=\"eep\"]'\r\n
+  \   scope.should have_selector 'input:only-of-type'\r\n    scope.should have_selector
+  'input[name=\"query\"]'\r\n    scope.should have_selector 'input[type=\"text\"]'\r\n
+  \ end\r\n"

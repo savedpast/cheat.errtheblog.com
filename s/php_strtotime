@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Parse about any English textual datetime description into a Unix timestamp.
+
+    int strtotime ( string $time [, int $now ] )
+
+The function expects to be given a string containing an English date format and will try to parse that format into a Unix timestamp (the number of seconds since January 1 1970 00:00:00 UTC), relative to the timestamp given in now, or the current time if now is not supplied.
+
+This function will use the TZ environment variable (if available) to calculate the timestamp. Since PHP 5.1.0 there are easier ways to define the timezone that is used across all date/time functions. That process is explained in the date_default_timezone_get() function page. 
+
+Return Values
+
+Returns a timestamp on success, FALSE otherwise. Previous to PHP 5.1.0, this function would return -1 on failure.
+
+Errors/Exceptions
+
+Every call to a date/time function will generate a E_NOTICE if the time zone is not valid, and/or a E_STRICT or E_WARNING message if using the system settings or the TZ environment variable. See also date_default_timezone_set()
+
+Example #1 A strtotime() example
+
+    &lt;?php
+    echo strtotime(&quot;now&quot;), &quot;\n&quot;;
+    echo strtotime(&quot;10 September 2000&quot;), &quot;\n&quot;;
+    echo strtotime(&quot;+1 day&quot;), &quot;\n&quot;;
+    echo strtotime(&quot;+1 week&quot;), &quot;\n&quot;;
+    echo strtotime(&quot;+1 week 2 days 4 hours 2 seconds&quot;), &quot;\n&quot;;
+    echo strtotime(&quot;next Thursday&quot;), &quot;\n&quot;;
+    echo strtotime(&quot;last Monday&quot;), &quot;\n&quot;;
+    ?&gt;
+
+Example #2 Checking for failure
+
+    &lt;?php
+    $str = 'Not Good';
+    
+    // previous to PHP 5.1.0 you would compare with -1, instead of false
+    if (($timestamp = strtotime($str)) === false) {
+        echo &quot;The string ($str) is bogus&quot;;
+    } else {
+        echo &quot;$str == &quot; . date('l dS \o\f F Y h:i:s A', $timestamp);
+    }
+    ?&gt;
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

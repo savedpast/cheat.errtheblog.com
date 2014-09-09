@@ -1,0 +1,19 @@
+---
+darcs: ! "Creating a new repository:\n  $ mkdir ProjectDirectory\n  $ cd ProjectDirectory\n
+  \ $ darcs init\n\nCreating a new repository for an existing project:\n  $ cd ExistingProject\n
+  \ $ darcs init\n  $ darcs add -r *\n  $ darcs record -m \"Initial import of ExistingProject.\"\n\nStatus:\n
+  \ $ darcs whatsnew -l\n\nCommitting changes:\n  $ darcs record\n\nCreating a patch
+  for a darcs repository:\n  $ darcs send http://gnufoo.org/darcs/physics2d; # Sends
+  the maintainer an email\n  $ darcs send -o patch.diff http://gnufoo.org/darcs/physics2d;
+  # Creates a patch file\n\nCreating a patch for a non-darcs repository:\n  $ darcs
+  changes --last 2; # Make sure you're picking up the right patches.\n  $ darcs diff
+  -u --last 2 > patch.diff;\n\nRollback:\n  $ darcs unrecord\n\nMaking a new copy
+  of a repository (you can treat it like a branch):\n  $ darcs get ProjectDirectory
+  RadicalRefactor\n  $ cd RadicalRefactor; # Go nuts!\n\nChecking out from an external
+  repository:\n  $ darcs get http://gnufoo.org/darcs/dynamorph\n\nCreating a tarball:\n
+  \ $ darcs dist\n\nExposing repository to the web (just copy up to your webspace;
+  no server needed):\n  $ tar cfz ProjectDirectory.tgz ProjectDirectory\n  $ scp ProjectDirectory.tgz
+  yourhost.org:your/web/directory\n  Now people can grab your repository with: \n
+  \ $ darcs get http://yourhost.org:your/web/directory/ProjectDirectory\n\nUpdating
+  your repository on the web:\n  $ cd dynamorph-local\n  $ darcs push gnufoo.org:www/darcs/dynamorph;
+  # uses scp to copy (requires darcs on the other machine)"

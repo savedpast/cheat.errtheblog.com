@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Linking apps in Pow
+
+powder [-h|help] - Display usage information 
+powder link - Link the current dir to ~/.pow/&lt;current_directory&gt;
+powder link [bacon] - Link the current dir to ~/.pow/bacon
+powder remove - Unlink current_dir
+powder remove [bacon] - Unlink bacon
+
+Working with Pow
+
+powder app log - tail the log of the current app
+powder config - Get Pow's current configuration information
+powder list - List all the current apps linked in ~/.pow
+powder log - Tails the pow log. Not the application log, but the pow log.
+powder open - Opens the pow link in a browser
+powder open [bacon] - Opens http://bacon.dev in a browser
+powder restart - Restart the current app
+powder status - Get Pow's current status information
+powder version - Returns the current powder version
+
+Install and uninstall Pow
+
+powder install - Installs pow server
+powder uninstall - Uninstalls pow server
+powder update - Updates pow server
+
+Enable and Disable Pow
+
+powder up - Enable Pow
+powder down - Disable Pow</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

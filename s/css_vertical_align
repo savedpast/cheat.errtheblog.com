@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>DESCRIPTION
+
+The `vertical-align` property sets the vertical
+alignement of an element. It is defined in CSS1
+and supported by all browsers.
+
+
+SYNTAX
+
+element {
+  vertical-align: baseline|sub|super|top|
+    text-top|middle|bottom|text-bottom|
+    inherit|&lt;length&gt;|&lt;percent&gt;;
+}
+
+
+VALUES
+
+baseline*
+    Align baseline with the parent's
+
+sub
+    Align as if subscript
+
+super
+    Align as if superscript
+
+top
+    Align top with the tallest element's on
+    the line
+
+text-top
+    Align top with the parent's font's
+
+middle
+    Place in the middle of the parent
+
+bottom
+    Align bottom with the lowest element's
+    on the line
+
+text-bottom
+    Align bottom with the parent's font's
+
+inherit
+    Inherit from parent
+
+&lt;length&gt;
+    Raise (+) or lower (-) element by &lt;length&gt;
+
+&lt;percent&gt;
+    Raise (+) or lower (-) element by &lt;percent&gt;
+    of `line-height`</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

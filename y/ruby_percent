@@ -1,0 +1,10 @@
+---
+ruby_percent: ! "Any delimiter is allowed, so for instance %w(...), %w[...], %w{...}
+  and %w!...! are all equal.\n\n% \"double-quoted string (without qualifier)\"\n  >>
+  %(some #{foo} string)\n  => \"some bar string\"\n\n%Q \"double-quoted string\"\n
+  \ >> %Q(some #{foo} string)\n  => \"some bar string\"\n\n%q 'single-quoted string'\n
+  \ >> %q(some #{foo} string)\n  => 'some \\#{foo} string'\n\n%W \"double-quoted words\"\n
+  \ >> %W(some #{foo} bar)\n  => [\"some\", \"bar\", \"bar\"]\n\n%w 'single-quoted
+  words'\n  >> %w(some #{foo} bar)\n  => ['some', '\\#{foo}', 'bar']\n\n%x backtick
+  execute\n  >> %x(ls)\n  == `ls`\n\n%r regular expression\n  >> %r(/usr/bin/)\n  ==
+  /\\/usr\\/bin\\//\n\n%s symbol\n  >> %s(some symbol)\n  => :\"some symbol\""

@@ -1,0 +1,14 @@
+---
+zsh_glob: ! "**/* \tPicks out all files and directories, recursively.\n***/*\tDitto,
+  following symlinks\n*\tAny string, including the null string.\n?\tAny character.\n[...]\tAny
+  of the enclosed characters. Ranges of characters can be specified by separating
+  two characters by a -.\n[^...]\tInverse\n[!...]\tInverse\n<x-y>\tAny number in the
+  range x to y, inclusive. Either can be omitted.\n^x\tAnything except the pattern
+  x.\nx|y\tEither x or y.\n\nx#\tZero or more occurrences of the pattern x.\nx##\tOne
+  or more occurrences of the pattern x.\n\n(.) \tFiles only\n(/)     Directories only\n(@)
+  \    Symlinks only\n(x)     Executables only\n(r)     Readable files only\n(w)     Writable
+  files only\n(W)     World-writable files\n(U)     Owned by you\n\t\t\n\tdos2unix
+  **/*~*.(gif|png|jpg)(.)     # ~ excludes\n\t\t\n\tdos2unix (#i)**/*~*.(gif|png|jpg)(.)
+  # case-insensitive\n\n\tls =bob\t                    # Lists file anywhere in $PATH\n\n\tls
+  **/some_file             # Lists file under current directory   \n\tzargs -- **/*(.)
+  -- ls -l   # Ditto"

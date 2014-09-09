@@ -1,0 +1,22 @@
+---
+hwh_asset_pipeline: ! "3 goals\r\n  + precompile\r\n  + concatenate\r\n  + minify
+  assets into a central path ( /public/assets folder )\r\n\r\nDefaults to 3 possible
+  asset paths\r\n  + app/assets\r\n  + lib/assets\r\n  + vendor/assets\r\n\r\nManifest
+  file\r\n  By default, Rails creates app/assets/stylesheets/application.css and\r\napp/assets/javascripts/applications.js\r\n\r\n
+  \ Manifests use directives to declare dependencies in asset source files. Some directives
+  that can be used:\r\n\r\n  + require [path] inserts the contents. If the file is
+  required multiple times, it will be included only once\r\n\r\n  + include works
+  like require but WILL include multiple times ( if so requested )\r\n\r\n  + require_directory
+  [path] requires all source files of the same format in the specified directory.
+  Files are required in alphabetical order\r\n\r\n  + required_tree [path] works like
+  require_directory but operates recursively\r\n\r\n  + require_self inserts contents
+  of current file BEFORE any subsequent require or include directives\r\n\r\n  + depend_on
+  [path] declares a dependency on the given path without including it in the bundle.
+  Useful when you need to expire an asset's cache in response to a change in another
+  file\r\n\r\n  + stub [path] allows dependency to be excluded from asset bundle.\r\n\r\nHelper
+  methods used with asset pipeline:\r\n  + audio_path( \"bang.wav\" ) # => /audios/bang.wav\r\n
+  \ + audio_tag( \"sound\" ) # => <audio src=\"/audios/sound\" />\r\n  + font_path(
+  \"font.ttf\" ) => /fonts/font.ttf\r\n  + image_path( \"dog.png\" ) => /images/dog.png\r\n
+  \ + image_tag( \"dog.png\" ) => <img src=\"/images/dog.png\" alt=\"Dob\" />\r\n
+  \ + video_path( \"hd.avi\" ) => /videos/hd.avi\r\n  + video_tag( \"hd.avi\" ) =>
+  <video src=\"/videos/hd.avi\" />"

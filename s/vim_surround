@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>VIM SURROND REFERENCE
+=====================
+based off of:
+  * http://www.vim.org/scripts/script.php?script_id=1697
+additional documentation:
+  * https://github.com/tpope/vim-surround/tree/master/doc
+
+
+Starting Example:
+  &quot;Hello World!&quot;
+
+
+Surround Targets::
+  t    tag-blocks
+  w    word
+  W    WORD
+  s    sentance
+  p    paragraph
+
+
+cs&quot;'        Change surrounding double quotes (&quot;) to single quotes (')
+cs'&lt;q&gt;      Change surrounding single quotes (') to tags (&lt;q&gt;)
+cst&quot;        Change surrounding tag (&lt;q&gt;) to double quotes (&quot;)
+
+ds&quot;         Delete surrounding double quote (&quot;)
+
+ysiw]       Wrap surrounding text object (iw) with brackets ([])
+ysiw[       Wrap surrounding text object (iw) with brackets with some space ([ ])
+ysiw&lt;em&gt;    Wrap surrounding text object (iw) with tags (&lt;em&gt;)
+
+yssb        Wrap surrounding sentance/line with parentheses (())
+yss)        Same as above
+yssB        Wrap surrounding sentance/line with parentheses ({})
+yss}        Same as above
+
+
+capital V (for linewise visual mode) followed by S&lt;p class=&quot;important&quot;&gt;
+            Surround selected lines with &lt;p class=&quot;important&gt; and &lt;/p&gt;
+
+vllls'      select visual mode, move right 3, surround with single quotes (')</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

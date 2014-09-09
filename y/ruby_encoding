@@ -1,0 +1,27 @@
+---
+ruby_encoding: ! "Taken from wycats gist: https://gist.github.com/83c011e40e1970df0ef4\n\nRuby
+  Encoding Cheat Sheet\n\n1.  Only call `force_encoding` on BINARY Strings.\n2.  When
+  receiving a BINARY string from the network or file system, make sure \n    to `force_encode`
+  it to its correct encoding.\n      * In general, the encoding information is provided
+  in an out-of-band \n        channel, such as the Content-Type header in HTTP\n      *
+  If you don't know the encoding, the String is BINARY forever and \n        should
+  not be concatenated with non-BINARY strings\n3.  When calling `force_encoding` on
+  a BINARY String, immediately call encode! \n    afterwards. This will transcode
+  the String to the `default_internal` encoding\n4.  When using a regular expression
+  with /u, make sure that only Unicode \n    Strings are possible\n5.  When using
+  a regular expression with /n, make sure that only BINARY \n    Strings are possible\n6.
+  \ If you get an incompatible encoding between BINARY (ASCII-8BIT) and \n    another
+  encoding, the correct debugging approach is to identify where \n    the BINARY String
+  came from. Usually, this means that a library read \n    in BINARY data from the
+  network and didn't give it an encoding.\n7.  In app code, *never* use `force_encoding`
+  to convert BINARY data into a \n    particular encoding. By the time you've reached
+  app code, you have lost \n    the information about which encoding is being used.
+  Instead, find where \n    the String came into Ruby, and fix *it* to set up the
+  encoding based on \n    the information it knows.\n8.  In library code, *only* use
+  `force_encoding` to convert BINARY data into \n    an encoding if you have information
+  about what encoding is being used. This \n    means that you have a header in network
+  protocols or a magic comment in \n    templates  (like ERB) or source files.\n9.
+  \ Only include the magic comment in source files that actually contain \n    characters
+  from that encoding\n10. To combine two Strings with known, but different encodings,
+  use `encode` \n    to transcode the Strings into the same encoding, then combine
+  them."

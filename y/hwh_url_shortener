@@ -1,0 +1,25 @@
+---
+hwh_url_shortener: ! "Google Url Shortener - https://github.com/wearestac/google_url_shortener\r\n\r\nInstallation\r\n\r\nadd
+  the following gem to Gemfile:\r\ngem 'google_url_shortener'\r\n\r\nIn your controller
+  add the following and replace \"key\" with your real API Key from the google API
+  console at https://code.google.com/apis/console\r\n\r\nGoogle::UrlShortener::Base.api_key
+  = \"KEY\"\r\n\r\nYou can also turn on verbose logging to inspect requests made by
+  the library. Behind the scenes the library uses RestClient to call the API, therefore
+  whatever you set here will be used as the RestClient log (RestClient.log).\r\n\r\nGoogle::UrlShortener::Base.log
+  = $stdout\r\n\r\nShorten/Expand a URL\r\n\r\nTo shorten a URL:\r\nurl = Google::UrlShortener::Url.new(:long_url
+  => \"http://blog.josh-nesbitt.net\")\r\n@shortened_url = url.shorten! # => http://goo.gl/r5akx\r\n\r\nOr
+  you can do short form of URL:\r\nGoogle::UrlShortener.shorten!(\"http://blog.josh-nesbitt.net\")
+  # => http://goo.gl/r5akx\r\n\r\nTo expand a URL:\r\n\r\nurl = Google::UrlShortener::Url.new(:short_url
+  => \"http://goo.gl/r5akx\")\r\nurl.expand! # => http://blog.josh-nesbitt.net\r\n\r\nOr
+  the shorthand form:\r\n\r\nGoogle::UrlShortener.expand!(\"http://goo.gl/r5akx\")
+  # => http://blog.josh-nesbitt.net\r\n\r\n\r\nGetting more data from an expanded
+  URL\r\n\r\nMore data is available from a URL once it’s been expanded:\r\n\r\nurl
+  = Google::UrlShortener::Url.new(:short_url => \"http://goo.gl/r5akx\")\r\nurl.expand!
+  # => http://blog.josh-nesbitt.net\r\nurl.created_at # => 2011-01-11\r\nurl.created_at.year
+  # => 2011\r\nurl.analytics # => Google::UrlShortener::Analytics\r\nurl.analytics.all
+  # => Google::UrlShortener::AnalyticsGroup\r\nurl.analytics.all.browsers # => { \"Chrome\"
+  => 1 }\r\nurl.analytics.all.countries # => { \"GB\" => 1 }\r\nurl.analytics.all.platforms
+  # => { \"Macintosh\" => 1 }\r\nurl.analytics.all.referrers # => { \"Unknown/empty\"
+  => 1 }\r\nurl.analytics.all.long_url_clicks # => 23\r\nurl.analytics.all.short_url_clicks
+  # => 3\r\nAvailable scopes are:\r\n\r\nall\r\nmonth\r\nweek\r\nday\r\ntwo_hours\r\nE.g:
+  url.analytics.month."

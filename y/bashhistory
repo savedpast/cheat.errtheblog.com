@@ -1,0 +1,118 @@
+---
+bashhistory: ! ".---------------------------------------------------------------------------.\n|
+  \                                                                          |\n|
+  \                         Bash History Cheat Sheet                         |\n|
+  \                                                                          |\n'---------------------------------------------------------------------------'\n|
+  Peteris Krumins (peter@catonmat.net), 2008.02.15                          |\n| http://www.catonmat.net
+  \ -  good coders code, great reuse                 |\n|                                                                           |\n|
+  Released under the GNU Free Document License                              |\n'---------------------------------------------------------------------------'\n\n
+  ===================== Emacs Keyboard Shortcut Summary =====================\n\n.--------------.------------------------------------------------------------.\n|
+  \             |                                                            |\n|
+  Shortcut     | Description                                                |\n|              |
+  \                                                           |\n'--------------+------------------------------------------------------------'\n|
+  C-p          | Fetch the previous command from the history list.          |\n'--------------+------------------------------------------------------------'\n|
+  C-n          | Fetch the next command from the history list.              |\n'--------------+------------------------------------------------------------'\n|
+  M-<          | Move to the first line in the history.                     | \n'--------------+------------------------------------------------------------'\n|
+  M->          | Move to the end of the input history.                      |\n'--------------+------------------------------------------------------------'\n|
+  C-r          | Search backward starting at the current line (incremental) |\n'--------------+------------------------------------------------------------'\n|
+  C-s          | Search forward starting at the current line (incremental). |\n'--------------+------------------------------------------------------------'\n|
+  M-p          | Search backward using non-incremental search.              |\n'--------------+------------------------------------------------------------'\n|
+  M-n          | Search forward using non-incremental search                |\n'--------------'------------------------------------------------------------'\n\n
+  ======================= Vi Keyboard Shortcut Summary ======================\n\n.--------------.------------------------------------------------------------.\n|
+  \             |                                                            |\n|
+  Shortcut     | Description                                                |\n|              |
+  \                                                           |\n'--------------+------------------------------------------------------------'\n|
+  k            | Fetch the previous command from the history list.          |\n'--------------+------------------------------------------------------------'\n|
+  j            | Fetch the next command from the history list.              |\n'--------------+------------------------------------------------------------'\n|
+  /string or   | Search history backward for a command matching string.     |\n| CTRL-r
+  \      |                                                            |\n'--------------+------------------------------------------------------------'\n|
+  ?string or   | Search history forward for a command matching string.      |\n| CTRL-s
+  \      | (Note that on most machines Ctrl-s STOPS the terminal      |\n|              |
+  output, change it with `stty' (Ctrl-q to resume)).         |\n'--------------+------------------------------------------------------------'\n|
+  n            | Repeat search in the same direction as previous.           |\n'--------------+------------------------------------------------------------'\n|
+  N            | Repeat search in the opposite direction as previous.       |\n'--------------+------------------------------------------------------------'\n|
+  G            | Move to history line N (for example, 15G).                 |\n'--------------'------------------------------------------------------------'\n\n
+  ======================== History Expansion Summary ========================\n \n
+  Event Designators:\n\n.--------------.------------------------------------------------------------.\n|
+  \             |                                                            |\n|
+  Designator   | Description                                                |\n|              |
+  \                                                           |\n'--------------+------------------------------------------------------------'\n|
+  !            | Start a history substitution.                              |\n'--------------+------------------------------------------------------------'\n|
+  !!           | Refer to the last command.                                 |\n'--------------+------------------------------------------------------------'\n|
+  !n           | Refer to the n-th command line (try `history' command).    |\n'--------------+------------------------------------------------------------'\n|
+  !-n          | Refer to the current command line minus n.                 |\n'--------------+------------------------------------------------------------'\n|
+  !string      | Refer to the most recent command starting with 'string'.   |\n'--------------+------------------------------------------------------------'\n|
+  !?string?    | Refer to the most recent command containing 'string'.      |\n'--------------+------------------------------------------------------------'\n|
+  ^str1^str2^  | Quick substitution. Repeat the last command, replacing     |\n|              |
+  'str1' with 'str2'.                                        |\n'--------------+------------------------------------------------------------'\n|
+  !#           | Refer to the entire command line typed so far.             |\n'--------------'------------------------------------------------------------'\n\n
+  Word Designators:\n (Word designators follow the event designators, separated by
+  a collon ':')\n\n.--------------.------------------------------------------------------------.\n|
+  \             |                                                            |\n|
+  Designator   | Description                                                |\n|              |
+  \                                                           |\n'--------------+------------------------------------------------------------'\n|
+  0            | The zeroth (first) word in a line (usually command name).  |\n'--------------+------------------------------------------------------------'\n|
+  n            | The n-th word in a line.                                   |\n'--------------+------------------------------------------------------------'\n|
+  ^            | The first argument (the second word) in a line.            |\n'--------------+------------------------------------------------------------'\n|
+  $            | The last argument in a line.                               |\n'--------------+------------------------------------------------------------'\n|
+  %            | The word matched by the most recent string search.         |\n'--------------+------------------------------------------------------------'\n|
+  x-y          | A range of words from x to y (-y is synonymous with 0-y).  |\n'--------------+------------------------------------------------------------'\n|
+  *            | All words but the zeroth (synonymous with 1-$).            |\n'--------------+------------------------------------------------------------'\n|
+  x*           | Synonymous with x-$                                        |\n'--------------+------------------------------------------------------------'\n|
+  x-           | The words from x to the second to last word.               |\n'--------------'------------------------------------------------------------'\n\n
+  Modifiers (modifiers follow word designators, separated by a colon):\n\n.--------------.------------------------------------------------------------.\n|
+  \             |                                                            |\n|
+  Modifier     | Description                                                |\n|              |
+  \                                                           |\n'--------------+------------------------------------------------------------'\n|
+  h            | Remove a trailing pathname component, leaving the head.    |\n'--------------+------------------------------------------------------------'\n|
+  t            | Remove all leading pathname component, leaving the tail.   |\n'--------------+------------------------------------------------------------'\n|
+  r            | Remove a trailing suffix of the form .xxx, leaving the     |\n|              |
+  basename.                                                  |\n'--------------+------------------------------------------------------------'\n|
+  e            | Remove all but the trailing suffix.                        |\n'--------------+------------------------------------------------------------'\n|
+  p            | Print the resulting command but do not execute it.         |\n'--------------+------------------------------------------------------------'\n|
+  q            | Quotes the substituted words, escaping further             |\n|              |
+  substitutions.                                             |\n'--------------+------------------------------------------------------------'\n|
+  x            | Quotes the substituted words, breaking them into words at  |\n|              |
+  blanks and newlines.                                       |\n'--------------+------------------------------------------------------------'\n|
+  s/old/new/   | Substitutes 'new' for 'old'.                               |\n'--------------+------------------------------------------------------------'\n|
+  &            | Repeats the previous substitution.                         |\n'--------------+------------------------------------------------------------'\n|
+  g            | Causes s/old/new/ or & to be applied over the entire       |\n|              |
+  event line.                                                |\n'--------------'------------------------------------------------------------'\n\n
+  ============ History Behavior Modification via Shell Variables ============\n\n.----------------.----------------------------------------------------------.\n|
+  \               |                                                          |\n|
+  Shell Variable | Description                                              |\n|                |
+  \                                                         |\n'----------------+----------------------------------------------------------'\n|
+  HISTFILE       | Controls where the history file gets saved.              |\n|                |
+  Set to /dev/null not to save the history.                |\n|                | Default:
+  ~/.bash_history                                 |\n'----------------+----------------------------------------------------------'\n|
+  HISTFILESIZE   | Controls how many history commands to keep in HISTFILE   |\n|                |
+  Default: 500                                             |\n'----------------+----------------------------------------------------------'\n|
+  HISTSIZE       | Controls how many history commands to keep in the        |\n|                |
+  history list of current session.                         |\n|                | Default:
+  500                                             |\n'----------------+----------------------------------------------------------'\n|
+  HISTIGNORE     | Controls which commands to ignore and not save to the    |\n|                |
+  history list. The variable takes a list of               |\n|                | colon
+  separated values. Pattern & matches the previous   |\n|                | history
+  command.                                         |\n'----------------'----------------------------------------------------------'\n\n
+  ============ History Behavior Modification via `shopt' Command ============\n\n.----------------.----------------------------------------------------------.\n|
+  \               |                                                          |\n|
+  shopt Option   | Description                                              |\n|                |
+  \                                                         |\n'----------------+----------------------------------------------------------'\n|
+  histappend     | Setting the variable appends current session history to  |\n|                |
+  HISTFILE. Unsetting overwrites the file each time.       |\n'----------------+----------------------------------------------------------'\n|
+  histreedit     | If set, puts a failed history substitution back on the   |\n|                |
+  command line for re-editing.                             |\n'----------------+----------------------------------------------------------'\n|
+  histverify     | If set, puts the command to be executed after a          |\n|                |
+  substitution on command line as if you had typed it.     |\n'----------------'----------------------------------------------------------'\n\n
+  shopt options can be set by a `shopt -s option' and\n can be unset by             a
+  `shopt -u option'.\n\n =============================== Examples ==================================\n\n
+  $ echo a b c d e    (executes `echo ab c d e`)\n a b c d e\n\n $ echo !!:3-$       (executes
+  `echo c d e`)\n c d e\n\n $ echo !-2:*:q      (executes `echo 'a b c d e'`)\n a
+  b c d e\n\n $ echo !-3:1:2:4:x  (executes `echo 'a' 'b' 'd'`)\n a b d\n\n $ echo
+  !-4:1-3:s/a/foo/:s/b/bar/:s/c/baz/ (executes `echo foo bar baz`)\n foo bar baz\n\n
+  $ tar -xzf package-x.y.z.tgz\n ...\n $ cd !-1:$:r        (executes `cd package-x.y.z`)\n
+  package-x.y.z $\n \n $ ls -a /tmp\n file1  file2  file3 ...\n\n $ ^-a^-l^           (executes
+  `ls -l /tmp`)\n -rw-------  1  user  user  file1\n ...\n\n ===========================================================================\n\n.---------------------------------------------------------------------------.\n|
+  Peteris Krumins (peter@catonmat.net), 2008.02.15                          |\n| http://www.catonmat.net
+  \ -  good coders code, great reuse                 | \n|                                                                           |\n|
+  Released under the GNU Free Document License                              |\n'---------------------------------------------------------------------------'"

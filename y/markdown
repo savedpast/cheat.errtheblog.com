@@ -1,0 +1,24 @@
+---
+markdown: ! "*italic*   **bold**\n_italic_   __bold__\n\nLinks and images include
+  the text or alternate text in preceding brackets:\nAn [Inline URL](http://url.com/
+  \"With a title\")\nA [reference to example link][id]. This would be followed later
+  by:\n[id]: http://example.com/  \"Title\"\n\nInline (titles are optional):\n\n![an
+  inline image](/path/img.jpg \"Title\")\n![a referenced image][id] would be followed
+  later by:\n[id]: /url/to/img.jpg \"Title\"\n\nHeader 1\n========\nHeader 2\n--------\nor\n#
+  Header 1 #\n## Header 2 ##\n(closing #'s are optional)\n\n1.  First ordered list
+  item\n2.  Second item\n\n*   An unordered list item.\n\n    With multiple paragraphs.\n\n*
+  \  Another unordered list item\n    1. With a nested item below it\n\n> Email-style
+  angle brackets\n> are used for blockquotes.\n\n> > And, they can be nested.\n\n>
+  #### Headers in blockquotes\n> \n> * You can quote a list.\n> * Etc.\n\n`<code>`
+  spans are delimited by backticks.  You can include literal\nbackticks like `` `this`
+  ``.\n\n    This is a preformatted code block. It must be indented\n    either by
+  at least four spaces or a tab\n\n\nThis is a normal <p>paragraph</p>.\n\n\nThree
+  or more dashes or asterisks make a horizontal rule:\n---\n* * *\n- - - -\n\nFootnote
+  Links\n\nTo create footnote links reference it like so ` [word][1] ` and then\ncreate
+  a link to it somewhere in the document.\n\n    ` [1]: <url> \"Optional Title\"\n\n\ntable\n\nName
+  \   |   Age\n--------|------\nFred    |   29\nJim     |   47\nHarry   |   32\n\nYou
+  can also add an anchor for an element such as Headers, then you can\nlink to this
+  anchor anywhere. For example:\n\n## [This header is anchored](id:anchor1)\n\nTo
+  jump to the above header just clikc this [link](#anchor1) and a web\nbrowser will
+  autoscroll to it.\n\nFinally, end a line with two or more spaces to do a manual
+  line break"

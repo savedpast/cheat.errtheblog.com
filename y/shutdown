@@ -1,0 +1,4 @@
+---
+shutdown: ! "Power off the machine now:\r\n# shutdown -h now\r\n\r\nPower off the
+  machine at 3 am:\r\n# shutdown -h 03:00\r\n\r\nPower off the machine in 120 minutes:\r\n#
+  shutdown -h +120\r\n\r\nCancel the shutdown:\r\n# shutdown -c\r\n"

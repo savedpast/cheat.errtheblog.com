@@ -1,0 +1,4 @@
+---
+wget: ! "wget <url>\n\tDownload a file.\n\nwget -E -H -k -K -p <url>\n\tGet all files
+  required to display the page locally.\n\nwget -q -0 - <url>\n\tDownload <url> and
+  print content to stdout"

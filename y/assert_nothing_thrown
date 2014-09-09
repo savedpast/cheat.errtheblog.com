@@ -1,0 +1,4 @@
+---
+assert_nothing_thrown: ! "# 'cheat assertions' for the rest\n\nassert_nothing_thrown(message=\"\",
+  &proc)\n\nPasses if block does not throw anything.\n\nExample:\n\n assert_nothing_thrown
+  do\n   [1, 2].uniq\n end"

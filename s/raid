@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>#create raid autodetect disk
+sudo fdisk /dev/sdc
+n p 1
+t 1 fd
+w
+
+#create raid autodetect disk
+sudo fdisk /dev/sdb
+n p 1
+t 1 fd
+w
+
+#create new raid1 array with one device
+mdadm --create /dev/md0 --level=1 --raid-disks=2 missing /dev/sdc1
+
+#make file system in array
+mkfs.ext3 /dev/md0
+
+#mount device to /mnt
+mount /dev/md0 /mnt
+
+#check raid arrays
+cat /proc/mdstat
+
+#check state of a certain array (here its md0)
+mdadm -D /dev/md0
+
+#Add device sdb1 to md0
+mdadm -a /dev/md0 /dev/sdb1
+
+#Write configuration into config file
+cd /etc/mdadm
+mdadm --detail --scan &gt;&gt; mdadm.conf
+
+#mark device as failed
+mdadm -f /dev/md0 /dev/sdb1
+
+#Remove device sdb1 from raid md0
+mdadm -r /dev/md0 /dev/sdb1
+
+#Add device sdd1 to md0 to replace sdb1
+mdadm -a /dev/md0 /dev/sdd1
+
+#desctruct raid array md0
+mdadm --stop /dev/md0
+
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,6 @@
+---
+cpesnottrapping: ! "#Get a list of CPE's that are pingable but not trapping (or are
+  not Cisco's)\nfor ip in $( cat /tmp/devices ); do\n  if [[ ! -s /var/lib/rancid/Unsorted/configs/$ip
+  ]]; then\n    echo $ip not in rancid.\n  else\n    grep -qL 24.73.240.173 /var/lib/rancid/Unsorted/configs/$ip\n
+  \   if [[ $? -eq 1 ]]; then\n      echo $ip in rancid, but missing snmp trap config.\n
+  \   fi\n  fi\ndone"

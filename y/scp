@@ -1,0 +1,7 @@
+---
+scp: ! "Secure Copy (scp)\n\nCopy local file to remote machine:\n   scp /path/to/file
+  user@host:/path/to/file\n\nCopy local directory with mask to remote machine:\n   scp
+  -r /path/to/dir user@domain.ext:/path/to/dir/\n\nCopy remote file to local machine:\n
+  \  scp user@domain.ext:/path/to/file /path/to/file\n\nCopy remote files with mask
+  to local machine:\n   scp user@domain.ext:/path/to/dir/\\* /path/to/dir\n\nCopy
+  remote directory to local machine:\n   scp -r user@domain.ext:/path/to/dir /path/to/dir"

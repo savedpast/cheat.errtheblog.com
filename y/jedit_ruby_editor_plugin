@@ -1,0 +1,26 @@
+---
+jedit_ruby_editor_plugin: ! "Turns jEdit into a neat Ruby editor.\n\njEdit Ruby Editor
+  Plugin features include:\n   - method completion for system types and Rails classes\n
+  \  - integrated Ruby docs explorer\n   - syntax error highlighting\n   - auto indent
+  and insert end\n   - file structure popup\n   - navigation shortcuts \n   - progressive
+  selection\n\nInstall:\n--------\n\n1. If you don't have Java 5.0, install JDK 5.0
+  Update 9 or higher:\n   - http://java.sun.com/javase/downloads/\n\nHey RadRails
+  is implemented in Java too, get over it! ;-)\n\n2. If you don't have jEdit, install
+  the latest version:\n   - http://www.jedit.org/index.php?page=download\n\n3. Start
+  jEdit\n\n4. Hopefully this is now an easy Plugin Manager install:\n   - open menu
+  Plugins -> Plugin Manager\n   - go to the Install tab\n   - check \"RubyPlugin\"
+  in the list\n   - click the Install button\n\nCongratulations, you should now have
+  the Ruby Editor Plugin installed!\n\nConfiguration:\n--------------\n\n1. Configure
+  method completion settings as desired (via SideKick plugin):\n   - open menu Plugins
+  -> Plugin Options\n   - go to Plugins -> SideKick\n   - check \"Show completion
+  popups where possible\"\n   - change other SideKick settings as desired\n\n2. Configure
+  keyboard bindings:\n   - open menu Utilities -> Global Options\n   - go to Shortcuts
+  -> Plugin: RubyPlugin\n   - click on each primary shortcut cell to assign a shortcut
+  key\n\nHere are my suggested key bindings:\n\n    File structure popup    C + F12\n
+  \   Complete code           C + SPACE\n    Progressive selection   C + p\n    Introduce
+  variable      CA + v\n    Copy selection/line     C + c\n    Cut selection/line
+  \     C + x\n    Paste selection/line    C + v\n    Go to previous edit     CS +
+  BACKSPACE\n    Go to previous method   A + UP\n    Go to next method       A + DOWN\n
+  \   Go to previous          S + F2\n    Go to previous error    F2\n    Ruby Docs
+  (Toggle)      C + r  C + v\n    Autoindent, insert end  ENTER\n\njEdit Ruby Editor
+  Plugin - http://rubyjedit.org/"

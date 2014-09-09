@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>require 'rubygems'
+require 'fork_manager'
+
+ puts &quot;PARENT PID #{Process.pid}&quot;
+ fm = ForkManager.new(5)
+
+ # loop 20 times, each time fork a child and print that child's pid
+ # sleep for 3 seconds so that there is time to see how processes are limited.
+ statuses = fm.manage {
+     20.times do
+         child = fm.fork {
+             sleep 3
+         }
+         puts &quot;    CHILD PID #{child}&quot;
+     end
+ }
+
+ # dump the status info from Process.waitall
+ puts &quot;Final process statuses&quot;
+ statuses.each {|x| puts x}
+
+ puts &quot;Finished&quot;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

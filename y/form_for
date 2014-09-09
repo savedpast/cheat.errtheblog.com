@@ -1,0 +1,8 @@
+---
+form_for: ! "form_for :table do |table|\r\n  table.label :table_field\r\n  table.text_field
+  :table_field\r\n  table.text_area :table_field\r\n\r\n  table.hidden_field :table_field\r\n
+  \ table.email_field :table_field\r\n  table.password_field :table_field\r\n  table.phone_field
+  :table_field\r\n  table.search_field :table_field\r\n  table.telephone_field :table_field\r\n
+  \ table.url_field :table_field\r\n\r\n  table.number_field :table_field\r\n  table.range_field
+  :table_field\r\n\r\n  table.check_box :table_field\r\n  table.radio_button :table_field,
+  :table_field2\r\n\r\n  table.submit :table_field\r\nend"

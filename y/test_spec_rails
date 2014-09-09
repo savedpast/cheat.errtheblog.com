@@ -1,0 +1,39 @@
+---
+test_spec_rails: ! "test/spec/rails by Per \"Tuxie\" Wigren <per.wigren@gmail.com>\n\nhttp://svn.techno-weenie.net/projects/plugins/test_spec_on_rails/\n\nThis
+  plugin contain some helpers to test your Rails app using test/spec.\n\nThere's also
+  a rake treat at: http://require.errtheblog.com/plugins/wiki/TestSpecRails\n\nInstallation\n------------\n
+  * Install test/spec: gem install test-spec\n * Install test/spec/rails\n * require
+  'test/spec/rails' in your test_helper.rb\n\n\nModel validation\n----------------\n
+  \ @user.should.validate\n  @user.should.not.validate\n  or:\n  @user.should.be.validated\n
+  \ @user.should.not.be.validated\n\n\nRedirection\n-----------\n  response.should.be.redirected
+  \          # assert_response :redirect\n  response.should.redirect foo_url(@foo)
+  \ # assert_redirected_to foo_url(@foo)\n  should.redirect_to :action => 'show'    #
+  because \"response\" is optional\n\n  It's aliased as redirect, redirect_to, redirected
+  and redirected_to\n\n\nOutput verification\n-------------------\n  Wrapper for assert_select:\n\n
+  \ get :show\n  page.should.select \"form#user_form\"             # require the output
+  to have a <form id=\"user_form\">\n\n  page.should.select \"form#user_form\" do
+  |form|\n    form.should.select \"input[type=submit]\"       # the user_form must
+  include a <input type=\"submit\">\n  end\n\n\nHTTP Status\n-----------\n  Wrapper
+  for assert_response:\n\n  status.should.be :success\n  status.should.be 200\n\n\nWhich
+  template was rendered?\n----------------------------\n  Wrapper for assert_template:\n\n
+  \ template.should.be \"foo/show.rhtml\"\n\n\nURL testing\n-----------\n  get :show,
+  :user_id => 1\n  url.should.be \"/users/1\"\n  url.should.be :controller => \"users\",
+  :action => \"show\", :user_id => 1\n\n\nSetup controller for testing + example usage\n--------------------------------------------\n
+  \ context \"A guest\" do\n    use_controller FooController\n\n    specify \"isn't
+  allowed to foo\" do\n      post :create, :foo => 'bar'\n      flash[:error].should.not.be.blank\n
+  \     response.should.redirect :controller => 'front', :action => 'show'\n      assigns(:foo).errors.on(:bar).should.not.be.blank\n
+  \     assigns(:foo).should.not.validate\n      follow_redirect\n      page.should.select
+  \"#errors\", :text => /#{flash[:error]}/\n    end\n  end\n\n  context \"Tuxie\"
+  do\n    setup do\n      use_controller FooController\n      login_as :tuxie\n    end\n\n
+  \   specify \"may foo\" do\n      post :create, :foo => 'bar'\n      flash[:notice].should.not.be.blank\n
+  \     assigns(:foo).errors.should.be.empty\n      assigns(:foo).should.validate\n
+  \     should.redirect_to :action => 'show'\n      follow_redirect\n      page.should.select
+  \"#notice\", :text => /#{flash[:notice]}/\n    end\n  end\n\n\nMisc\n----\n\n  page,
+  response and request are just aliases for self (the TestCase) so the \n  following
+  are functionally identical:\n\n  page.should.redirect\n  response.should.redirect\n
+  \ request.should.redirect\n\n  output, body, html and xhtml return @response.body
+  so the following lines \n  are identical:\n\n  output.should.match /foo/\n  html.should.match
+  /foo/\n  xhtml.should.match /foo/\n  body.should.match /foo/\n\n  If an object respond
+  to #should_equal, that method will be used instead \n  of assert_equal when using
+  foo.should.equal(bar) or foo.should.be(bar)\n  foo.should.not.equal and foo.should.not.be
+  look for #should_not_equal"

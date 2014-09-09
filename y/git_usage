@@ -1,0 +1,16 @@
+---
+git_usage: ! "Some common git usage\n---------------------\n\nTo ignore certain files:\n$
+  echo \"log/*.log\" >> .gitignore\n$ echo \"tmp/**/*\" >> .gitignore\n$ git add .\n$
+  git commit -m \"Add files\"\n\nTo add .gitignore files to all empty directories
+  recursively from your current directory:\n$find . \\( -type d -empty \\) -and \\(
+  -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;\n\n\nTo create a public
+  repository:\n$ mkdir someapp.git\n$ cd someapp.git\n$ git --bare init\n$ git-update-server-info\n\nAdd
+  public repository as a remote:\n$ git remote add origin ssh://myserver.com/var/git/myapp.git\n$
+  git push\n\nTrack the Remote Branch\n[branch \"master\"]\n\tremote = origin\n\tmerge
+  = refs/heads/master\n\nTo pull from someone else's repository:\n# # Create a local
+  branch\n$ git checkout some_working_branch\n# # Add the person's repository as a
+  remote\n$ git remote add foos_remote git://someurl/\n# # Fetch her branch into yours\n$
+  git checkout -b foos_remote/her_branch\n# # Pull the changes into your local branch\n$
+  git pull foos_remote her_branch\n\nSubmodule support:\n$ git submodule add [git-url]
+  [path to local project dir]\n$ git submodule init\n# thereafter\n$ git submodule
+  update"

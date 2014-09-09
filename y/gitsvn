@@ -1,0 +1,12 @@
+---
+gitsvn: ! "Tracking and contributing to the trunk of a Subversion-managed project:\r\n\r\n#
+  Clone a repo (like git clone):\r\n        git-svn clone http://svn.foo.org/project/trunk\r\n#
+  Enter the newly cloned directory:\r\n        cd trunk\r\n# You should be on master
+  branch, double-check with git-branch\r\n        git branch\r\n# Do some work and
+  commit locally to git:\r\n        git commit ...\r\n# Something is committed to
+  SVN, rebase your local changes against the\r\n# latest changes in SVN:\r\n        git-svn
+  rebase\r\n# Now commit your changes (that were committed previously using git) to
+  SVN,\r\n# as well as automatically updating your working HEAD:\r\n        git-svn
+  dcommit\r\n# Append svn:ignore settings to the default git exclude file:\r\n        git-svn
+  show-ignore >> .git/info/exclude\r\n# Some useful aliases\r\n        spull = svn
+  rebase\r\n        spush = svn dcommit\r\n        sfetch = svn fetch\r\n\r\n\r\nhttp://www.kernel.org/pub/software/scm/git/docs/git-svn.html"

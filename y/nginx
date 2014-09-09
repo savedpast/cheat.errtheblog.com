@@ -1,0 +1,9 @@
+---
+nginx: ! "If you want Nginx to always use the \"Host\" header as you would for virtual
+  hosting, you can use _ as server_name as of 0.6.x. However there is a better way
+  which I recommend. Use the following directives to use host header instead of server_name:\noptimize_server_names
+  off;\nserver_name_in_redirect off;\n\nSignals\n-------\n\nTERM (15), INT (1)  Terminate
+  the server immediately\nQUIT (3)            Stop the server\nHUP (1)             Configuration
+  changes, start new workers, graceful stop of\n                    old workers\nUSR1
+  \               Reopen log files\nUSR2                Upgrade the server executable\nWINCH
+  \              Graceful Stop (parent process advise the children to exit)"

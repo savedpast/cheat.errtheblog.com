@@ -1,0 +1,20 @@
+---
+lsof: ! "lsof -i\n -- Show all connections\n\nlsof -iTCP\n -- Show only TCP connections
+  (works the same for UDP)\n\nlsof -i :22\n -- -i :port shows all networking related
+  to a given port\n\nlsof -i@192.168.1.5\n -- To show connections to a specific host,
+  use @host\n\nlsof -i@192.168.1.5:22\n -- Show connections based on the host and
+  the port using @host:port\n\nlsof -i| grep LISTEN\n -- Grepping for \"LISTEN\" shows
+  what ports your system is waiting for connections on\n\nlsof -i| grep ESTABLISHED\n
+  -- Grepping for \"ESTABLISHED\" shows current active connections\n\nlsof -u ecable\n
+  -- Show what a given user has open using -u\n\nlsof -c syslog-ng\n -- See what files
+  and network connections a command is using with -c\n\nlsof /var/log/messages\n --
+  Pointing to a file shows what's interacting with that file\n\nlsof -p 10075\n --
+  The -p switch lets you see what a given process ID has open, which is good for learning
+  more about unknown processes\n\nlsof -t -c Mail\n -- The -t option returns just
+  a PID\n\nlsof -a -u ecable -i @1.1.1.1\n -- Using-a allows you to combine search
+  terms, so the query below says, \"show me everything running as daniel connected
+  to 1.1.1.1\"\n\nkill -HUP `lsof -t -c sshd`\n -- Using the -t and -c options together
+  you can HUP processes\n\nkill -9 `lsof -t -u daniel`\n -- You can also use the -t
+  with -u to kill everything a user has open\n\nlsof +L1\n -- lsof +L1 shows you all
+  open files that have a link count less than 1, often indicative of a cracker trying
+  to hide something"

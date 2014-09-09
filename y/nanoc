@@ -1,0 +1,7 @@
+---
+nanoc: ! "nanoc - Ruby site compiler for building static web sites.\n\nSee http://nanoc.stoneship.org/\n\nSee
+  help\n  nanoc help\n\nCreate site\n  nanoc create_site <sitename>\n  nanoc cs <sitename>\n\nCompile
+  site\n  nanoc compile\n  nanoc co\n\nAutocompile site (view at http://127.0.0.1:3000/)\n
+  \ nanoc autocompile\n  nanoc aco\n\nCreate page\n  nanoc create_page about\n  nanoc
+  cp about\n\nCreate layout\n  nanoc create_layout header\n  nanoc cl header\n\nCreate
+  template\n  nanoc create_template article\n  nanoc ct article"

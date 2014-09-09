@@ -1,0 +1,11 @@
+---
+method_lister: ! "method_lister:\n  used to query objects and discover which ancestor
+  implements which methods.\n    \n  Methods:\n  \n  .ls([only_public]), .mls\n    lists
+  all methods an object responds to, organized by the module or class which provides
+  the implementation.\n    \n  .grep(pattern, [only_public]), .mgrep\n    takes a
+  regular expression and only returns methods which match the given regex.\n  \n  .which(method_name)\n
+  \    is for finding which classes or modules implement the method you're seeking.
+  You can pass the method name in as a string or symbol.\n\n     >> [].which :to_a\n
+  \    ========== Module Kernel ==========\n     PUBLIC: to_a\n\n     ========== Module
+  Enumerable ==========\n     PUBLIC: to_a\n\n     ========== Class Array ==========\n
+  \    PUBLIC: to_a"

@@ -1,0 +1,42 @@
+---
+w3m: ! "Page/Cursor motion: \n  SPC,C-v     Forward page\n  b,ESC v     Backward page\n
+  \ l,C-f       Cursor right\n  h,C-b       Cursor left\n  j,C-n       Cursor down\n
+  \ k,C-p       Cursor up\n  J           Roll up one line\n  K           Roll down
+  one line\n  ^,C-a       Go to the beginning of line\n  $,C-e       Go to the end
+  of line\n  w           Go to next word\n  W           Go to previous word\n  >           Shift
+  screen right\n  <           Shift screen left\n  .           Shift screen one column
+  right\n  ,           Shift screen one column left\n  g,M-<       Go to the first
+  line\n  G,M->       Go to the last line\n  ESC g       Go to specified line\n  Z
+  \          Move to the center line\n  z           Move to the center column \n  TAB
+  \        Move to next hyperlink\n  C-u,ESC TAB Move to previous hyperlink\n  [           Move
+  to the first hyperlink\n  ]           Move to the last hyperlink\n\nHyperlink operation:
+  \n  RET            Follow hyperlink\n  a, ESC RET     Save link to file\n  u              Peek
+  link URL\n  i              Peek image URL\n  I              View inline image\n
+  \ ESC I          Save inline image to file\n  :              Mark URL-like strings
+  as anchors\n  ESC :          Mark Message-ID-like strings as news anchors\n  c              Peek
+  current URL\n  =              Display information about current document\n  C-g
+  \           Show current line number\n  C-h            View history of URL\n  F
+  \             Render frame\n  M              Browse current document using external
+  browser (use 2M and 3M to invoke second and third browser)\n  ESC M         Browse
+  link using external browser (use 2ESC M and 3ESC M to invoke second and third browser)\n\nFile/Stream
+  operation:\n  U    Open URL\n  V    View new file\n  @    Execute shell command
+  and load\n  #    Execute shell command and browse\n\nBuffer operation:\n  B      Back
+  to the previous buffer\n  v      View HTML source\n  s      Select buffer\n  E      Edit
+  buffer source\n  C-l    Redraw screen\n  R      Reload buffer\n  S      Save buffer\n
+  \ ESC s  Save source\n  ESC e  Edit buffer image\n\nBuffer selection mode:\n  k,
+  C-p    Select previous buffer\n  j, C-n    Select next buffer\n  D         Delect
+  current buffer\n  RET       Go to the selected buffer\n\nBookmark operation:\n  ESC
+  b    Load bookmark\n  ESC a    Add current to bookmark\n\nSearch:\n  /,C-s    Search
+  forward\n  ?,C-r    Search backward\n  n        Search next\n  N        Search previous\n
+  \ C-w      Toggle wrap search mode\n\nMark operation:\n  C-SPC      Set/unset mark\n
+  \ ESC p      Go to previous mark\n  ESC n      Go to next mark\n  \"          Mark
+  by regular expression\n\nMiscellany:\n  !      Execute shell command\n  H      Help
+  (load this file)\n  o      Set option(Config Panel)\n  C-k    Show cookie jar\n
+  \ C-c    Stop\n  C-z    Suspend\n  q      Quit (with confirmation, if you like)\n
+  \ Q      Quit without confirmation\n\nLine-edit mode:\n  C-f        Move cursor
+  forward\n  C-b        Move cursor backward\n  C-h        Delete previous character\n
+  \ C-d        Delete current character\n  C-k        Kill everything after cursor\n
+  \ C-u        Kill everything before cursor\n  C-a        Move to the top of line\n
+  \ C-e        Move to the bottom of line\n  C-p        Fetch the previous string
+  from the history list\n  C-n        Fetch the next string from the history list\n
+  \ TAB,SPC    Complete filename\n  RETURN     Accept\n\nFrom: http://w3m.sourceforge.net/MANUAL"

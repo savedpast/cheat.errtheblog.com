@@ -1,0 +1,3 @@
+---
+rexml: ! "Parsing + XPath query:\n\n  require 'rexml/document'\n  doc = REXML::Document.new(\"<foo>
+  <bar>3</bar> </foo>\")\n  REXML::XPath.first(doc, 'foo/bar').text.to_i"

@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Escapes:
+	\a		alarm (0x07)
+	\cx		&quot;control + x&quot;
+	\e		escape (0x1B)
+	\f		formfeed (0x0C)
+	\n		newline (0x0A)
+	\p{xx}	char with xx property*
+	\P{xx}	char without xx property*
+	\r		carriage return (0x0D)
+	\t		tab (0x09)4
+	\xhh	char with hex code hh*
+	\ddd	char with octal code ddd, or backreference
+	
+	* see http://us2.php.net/manual/en/regexp.reference.unicode.php
+	
+Character classes:
+	\d		decimal digit
+	\D		not decimal digit
+	\h		horizontal whitespace (v5.2.4)
+	\H		not horizontal whitespace (v5.2.4)
+	\s		whitespace
+	\S		not whitespace
+	\v		vertical whitespace (v5.2.4)
+	\V		not vertical whitespace (v5.2.4)
+	\w		word character [a-zA-Z0-9_]
+	\W		not word character
+	
+[:_____:] style character classes:
+	alnum	alphanumeric
+	alpha	letters
+	ascii	char codes 0 - 127
+	blank	space or tab
+	cntrl	control chars
+	digit	decimal digits (eq to \d)
+	graph	any printing chars, except space
+	lower	any lowercase letters
+	print	any printing chars, including space
+	punct	any printing chars, except letters and digits
+	space	whitespace*
+	upper	any uppercase letters
+	word	any word chars (eq to \w)
+	xdigit	hexadecimal digits
+	
+	[:^_____:] is negation of [:_____:]
+	
+	* [:space:] includes HT(9), LF(10), VT(11), FF(12), CR(13), space(32)
+	  \s does not include VT
+
+Assertions:
+	\b		word boundary
+	\B		not word boundary
+	\A		start of subject
+	\Z		end of subject, before newline if there
+	\z		end of subject
+	\G		matching position is at start of match, given offset by preg_match()
+	
+	(?=)	positive look-ahead
+	(?!)	negative look-ahead
+	(?&lt;=)	positive look-behind
+	(?&lt;!)	negative look-behind
+
+Other:
+	\Q		start &quot;quoted&quot; (escaped) section
+	\E		end quoted section
+		/\w+\Q.$.\E$/  matches 1+ word chars then a literal .$. at end of string
+		
+	\K		resets match start
+		preg_match('/foo\Kbar/','foobar',$matches) =&gt; $matches = array(0=&gt;'bar')
+	
+	(?&gt;)	once-only subpat (fails if first evaluation fails, no backtrack)
+	
+	(?R)	recursive subpat
+	
+Conditional subpatterns: (?(condition)yes-pattern[|no-pattern])
+	if condition is digits, then true if that subpattern matched
+	if condition is &quot;R&quot;, then true if recursive call to pat or subpat was made
+	otherwise, must be an assertion, pos/neg look-ahead/behind
+			
+
+Options:
+	i		PCRE_CASELESS
+	m		PCRE_MULTILINE
+	s		PCRE_DOTALL
+	x		PCRE_EXTENDED
+	U		PCRE_UNGREEDY
+	X		PCRE_EXTRA
+	J		PCRE_INFO_JCHANGED
+		/ab(?i)c/ matches abc and abC, but not Abc or aBc
+
+Subpatterns:
+	(?:)		Non-capturing
+	(?x:)		Temporary option-set, x is an option flag
+	(?P&lt;name&gt;)
+	(?&lt;name&gt;)
+	(?'name')	Named subpats
+	(?|)		Alternation non-capturing subpat: each SP in each branch
+				gets the same backreference. in /(?|(Sat)ur|(Sun))day/, \1
+				refers to either Sat or Sun, depending on which branch matched</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,30 @@
+---
+rails_vim: ! "Cheat sheet for the rails.vim plugin\n\nGeneral Commands:\n\n:Rails
+  {directory} - Create a new rails project in {directory}\n:Rake {target} - run a
+  rake task\n:Rdoc - open the Rails API in a browser\n:Redit {file} - edit {file},
+  relative to the application root\n:Rlog [{logfile}] - split window and open {logfile}\n:Rinvert
+  - In a migration, invert the self.up method into a self.down method\n:Rpreview -
+  open page in a new browser at http://localhost:3000/\n:Rtags - Call ctags -R on
+  current rails root\n\nNavigation:\n\n:Rfind [{file}] - Find {file}.  If no file
+  is given, name taken from cursor.\ngf - Edit the file under cursor\n\n:A, :AE -
+  Open alternate file in the same window\n:AS - Open alternate file in a new split
+  window\n:AV - Open alternate file in a vertically split window\n:AT - Open alternate
+  file in a new tab\n\n:R, :RE - Open related file in the same window\n:RS - Open
+  related file in a new split window\n:RV - Open related file in a vertically split
+  window\n:RT - Open related  file in a new tab\n\n<CTRL>-^ - Edit the previous file.\n\nModel
+  Navigation:\n\n:Rmodel [{name}] - Edit specified model\n:Rmigration [{pattern}]
+  - Edit migration matched by {pattern}\n:Robserver [{name}] - Edit observer with
+  name like {name}_observer.\n:Rfixtures [{name}] - Edit fixture for given model\n:Runittest
+  [{name}] - Edit unit test for specified model\n:Rintegrationtest [{name}] - Edit
+  integration test specified\n\nController Navigation:\n\n:Rcontroller [{name}] -
+  Edit specified controller\n:Rhelper [{name}] - Edit helper for specified controller\n:Rview
+  [[{controller}/]{view}] - Edit specified view\n:Rlayout [{name}] - Edit specified
+  layout\n:Rapi [{name}] - Edit API for specified controller\n:RfunctionalTest [{name}]
+  - Edit functional test for specified controller\n:Rstyplesheet [{name}] - Edit specified
+  style sheet\n:Rjavascript [{name}] - Edit specified javascript\n\nScript Wrappers\n\n:Rscript
+  {script} {options} - call ruby script/{script} {options}\n:Rbreakpointer {options}
+  \n:Rconsole {options}\n:Rrunner {code}\n:Rgenerate {options} \n:Rdestroy {options}\n:Rplugin
+  {options}\n:Rserver {options}\n:Rserver! {options} - Same as :Rserver, except attemts
+  to kill other \n                      servers on same port\n\nPartial Extraction\n\n:[range]Rextract
+  [{{controller}/]{name}] - create {name} partial from [range] \n                                           of
+  lines"

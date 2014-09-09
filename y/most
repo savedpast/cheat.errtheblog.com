@@ -1,0 +1,23 @@
+---
+most: ! "Quitting:\n\n  Q                      Quit MOST.\n  :N,:n                  Quit
+  this file and view next.\n                            (Use UP/DOWN arrow keys to
+  select next file.)\n\nMovement:\n\n  SPACE, D              *Scroll down one Screen.\n
+  \ U, DELETE             *Scroll Up one screen.\n  RETURN, DOWN          *Move Down
+  one line.\n  UP                    *Move Up one line.\n  T                      Goto
+  Top of File.\n  B                      Goto Bottom of file.\n  > , TAB                Scroll
+  Window right\n  <                      Scroll Window left\n  RIGHT                  Scroll
+  Window left by 1 column\n  LEFT                   Scroll Window right by 1 column\n
+  \ J, G                   Goto line.\n  %                      Goto percent.\n\nWindow
+  Commands:\n\n  Ctrl-X 2, Ctrl-W 2     Split window.\n  Ctrl-X 1, Ctrl-W 1     Make
+  only one window.\n  O, Ctrl-X O            Move to other window.\n  Ctrl-X 0               Delete
+  Window.\n\nSearching:\n\n  S, f, /               *Search forward\n  ?                     *Search
+  Backward\n  N                     *Find next in current search direction.\n\nMiscellaneous:\n\n
+  \ W                      Toggle width between 80 and 132 char mode.\n  Ctrl-X Ctrl-F
+  \         Read a file from disk\n  R, Ctrl-R              Redraw Screen.\n  F                      Simulate
+  tail -f mode\n  :o                     Toggle options:  b-binary, w-wrap, t-tab\n
+  \ E                      Edit file.  Uses MOST_EDITOR and EDITOR\n                           environment
+  variables.\n\n*Note:  This command may be repeated `n' times By entering a number
+  then\n        the command key, e.g.,  '5 SPACE' moves 5 screens forward.\n\n(Lifted
+  directly from most 5.0.0's own in-program documentation, which is a more succinct
+  and useful subset of its manpage, but also is a bit awkward to look at when using
+  most, because ::wait for it:: IT ISN'T PAGED. In cheat, it is paged. Yay.)"

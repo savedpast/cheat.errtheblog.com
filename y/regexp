@@ -1,0 +1,18 @@
+---
+regexp: ! "A regexp's form is written /pattern/modifiers where \"pattern\" is the
+  regular expression itself, and \"modifiers\" are a series of characters indicating
+  various options.\n\n(see an alternate/more complete cheat-sheet with 'cheat regex')\n\n/i
+  makes match case insensitive.\n/m makes the dot match newlines.\n/o causes any #{...}
+  substitutions in a particular regex literal to be performed just once, the first
+  time it is evaluated. Otherwise, the substitutions will be performed every time
+  the literal generates a Regexp object.\n\n[] \trange specification (e.g., [a-z]
+  means a letter in the range a to z)\n\\w \tletter or digit; same as [0-9A-Za-z]\n\\W
+  \tneither letter or digit\n\\s \tspace character; same as [ \\t\\n\\r\\f]\n\\S \tnon-space
+  character\n\\d \tdigit character; same as [0-9]\n\\D \tnon-digit character\n\\b
+  \tbackspace (0x08) (only if in a range specification)\n\\b \tword boundary (if not
+  in a range specification)\n\\B \tnon-word boundary\n* \tzero or more repetitions
+  of the preceding\n+ \tone or more repetitions of the preceding\n{m,n} \tat least
+  m and at most n repetitions of the preceding\n? \tat most one repetition of the
+  preceding; same as {0,1}\n| \teither preceding or next expression may match\n()
+  \tgrouping\n\nprint \"success\" if subject =~ /regex/\n\nresult = subject.gsub(/before/,
+  \"after\")\n\nmyarray = mystring.scan(/delimiter/)"

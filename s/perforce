@@ -1,0 +1,105 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># perforce helpers
+
+# find unadded files
+alias p5_unadded=&quot;find . -type f | grep -v '.*EXCLUDE_PATTERN' | p4 -x - have &gt; /dev/null&quot;
+
+# deletes empty dirs b/c perforce will sync and leave empty dirs
+alias p5_delete_empty_dirs=&quot;find . -depth -empty -type d -exec rmdir {} \;&quot;
+
+# get and then check for conflicts
+alias p5_get=&quot;p4 sync ...; p4 resolve ...;&quot;
+
+# check for unadded, revert unmodified, submit
+alias p5_put=&quot;p5_unadded; p4 revert -a ...; p4 submit ...;&quot;
+
+# opens diff for a tree in textmate, ignoring whitespace changes
+alias p5_diff=&quot;p4 diff -db ... | mate;&quot;
+
+# add a directory tree (recursively)
+# http://kb.perforce.com/article/12/adding-a-directory-tree
+alias p5_add=&quot;find . -type f -print | p4 -x - add;&quot;
+
+# opens for edit recursively
+alias p5_edit=&quot;p4 edit ...;&quot;
+
+# reverts unmodified files
+alias p5_revert=&quot;p4 revert -a ...;&quot;
+
+
+p4 add              # Open a new file to add it to the depot 
+p4 admin            # Perform administrative operations on the server 
+p4 annotate         # Print file lines along with their revisions 
+p4 branch           # Create or edit a branch specification 
+p4 branches         # Display list of branches 
+p4 change           # Create or edit a changelist description 
+p4 changes          # Display list of pending and submitted changelists 
+p4 changelist       # Create or edit a changelist description 
+p4 changelists      # Display list of pending and submitted changelists 
+p4 client           # Create or edit a client specification and its view 
+p4 clients          # Display list of known clients 
+p4 counter          # Display, set, or delete a counter 
+p4 counters         # Display list of known counters 
+p4 delete           # Open an existing file to delete it from the depot 
+p4 depot            # Create or edit a depot specification 
+p4 depots           # Display list of depots 
+p4 describe         # Display a changelist description 
+p4 diff             # Display diff of client file with depot file 
+p4 diff2            # Display diff of two depot files 
+p4 dirs             # List subdirectories of a given depot directory 
+p4 edit             # Open an existing file for edit 
+p4 filelog          # List revision history of files 
+p4 files            # List files in the depot 
+p4 fix              # Mark jobs as being fixed by named changelists 
+p4 fixes            # List what changelists fix what job 
+p4 flush            # Fake a ‘p4 sync’ by not moving files 
+p4 fstat            # Dump file info 
+p4 group            # Change members of a user group 
+p4 groups           # List groups (of users) 
+p4 have             # List revisions last synced 
+p4 help             # Print this help message 
+p4 info             # Print out client/server information 
+p4 integrate        # Schedule integration from one file to another 
+p4 integrated       # Show integrations that have been submitted 
+p4 job              # Create or edit a job (defect) specification 
+p4 jobs             # Display list of jobs 
+p4 jobspec          # Edit the job template 
+p4 label            # Create or edit a label specification and its view 
+p4 labels           # Display list of labels 
+p4 labelsync        # Synchronize label with the current client contents 
+p4 license          # Update or display the license file 
+p4 lock             # Lock an opened file against changelist submission 
+p4 logger           # Report what jobs and changelists have changed 
+p4 login            # Login to Perforce by obtaining a session ticket 
+p4 logout           # Logout of Perforce by removing or invalidating a ticket. 
+p4 monitor          # Display current running Perforce process information 
+p4 move             # Move file(s) from one location to another 
+p4 obliterate       # Remove files and their history from the depot 
+p4 opened           # Display list of files opened for pending changelist 
+p4 passwd           # Set user password on server (and Windows client) 
+p4 print            # Retrieve a depot file to the standard output 
+p4 protect          # Modify protections in the server namespace 
+p4 protects         # Display protections in place for a given user/path 
+p4 rename           # Explains how to rename files 
+p4 reopen           # Change the type or changelist number of an opened file 
+p4 resolve          # Merge open files with other revisions or files 
+p4 resolved         # Show files that have been merged but not submitted 
+p4 revert           # Discard changes from an opened file 
+p4 review           # List and track changelists (for the review daemon) 
+p4 reviews          # Show what users are subscribed to review files 
+p4 set              # Set variables in the registry (Windows only) 
+p4 sizes            # Display size information for files in the depot 
+p4 submit           # Submit open files to the depot 
+p4 sync             # Synchronize the client with its view of the depot 
+p4 tag              # Tag files with a label 
+p4 tickets          # Display list of session tickets for this user 
+p4 triggers         # Modify list of pre-submit and form-validating triggers 
+p4 typemap          # Modify the file name-to-type mapping table 
+p4 unlock           # Release a locked file but leave it open 
+p4 user             # Create or edit a user specification 
+p4 users            # Display list of known users 
+p4 verify           # Verify that the server archives are intact 
+p4 workspace        # Create or edit a client specification and its view 
+p4 workspaces       # Display list of known clients 
+p4 where            # Show how file names map through the client view</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

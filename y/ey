@@ -1,0 +1,8 @@
+---
+ey: ! "Engineyard gem\n--------------\n\n\n  Track some process on your nodes\n  --------------------------------\n\n
+  \ ey ssh \"uname -n&&ps -ef|egrep -i '[r]esque-1.+w' \" -e app_name_live --all\n\n\n
+  \ Dig log files\n  -------------\n\n  ey ssh 'cat /data/your_app_name/current/log/production.log
+  | egrep \"search_pattern\"' -e app_name_live --app-servers\n\n  ey ssh 'zcat /data/your_app_name/current/log/production.log-20110630.gz
+  | egrep \"search_pattern\"' -e app_name_live --app-servers\n\n  ey ssh 'zcat /data/your_app_name/current/log/production.log-2011062*.gz
+  | egrep \"search_pattern\"' -e app_name_live --app-servers\n\n  ey ssh 'zcat /data/your_app_name/current/log/production.log-2011062{1,2,3}.gz
+  | egrep \"search_pattern\"' -e app_name_live --app-servers"

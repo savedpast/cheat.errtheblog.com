@@ -1,0 +1,26 @@
+---
+tidy: ! "Note: the FireRabbit on github no longer exists, so this information is outdated.\r\n\r\nTidy
+  Ruby Gem\r\n Tidy: http://tidy.sourceforge.net/\r\n Tidy-Ruby: http://rubyforge.org/projects/tidy/\r\n\r\nIf
+  you're experiencing a Segmentation Fault (Rails app could not start)\r\nsee http://github.com/FireRabbit/tidy/tree\r\n\r\n\r\n\r\nList
+  of Tidy-Ruby Options\r\n===========================================\r\n See http://tidy.sourceforge.net/docs/quickref.html\r\n\r\n
+  libtidy is the backend of this gem. \r\n Just replace hyphens with underscores.\r\n\r\n
+  For example, \r\n   show-warnings will be show_warnings\r\n   show-body-only will
+  be show_body_only\r\n   etc\r\n\r\n\r\nInstallation \r\n===========================================\r\n#
+  Do not use gem install tidy. It is outdated and buggy\r\n# if you've done so already,
+  do gem uninstall tidy and \r\n# follow the directions below\r\n\r\n$ git clone git://github.com/FireRabbit/tidy.git\r\n$
+  cd tidy/\r\n$ sudo ruby setup.rb\r\n\r\n\r\nRails app? make Tidy a dependency environment.rb\r\n===========================================\r\n
+  Rails::Initializer.run do |config| \r\n   ...\r\n   config.gem \"tidy\"\r\n end\r\n\r\n
+  To install the gem on another machine, \r\n run rake gems:install\r\n\r\n\r\nUsage
+  & Examples\r\n===========================================\r\n require 'tidy'\r\n\r\n#
+  This might be required if your app is crashing. \r\n# This is only available in
+  the forked tidy. \r\n# see Installation above\r\nTidy.fresh_tidy_version = true
+  \r\n\r\n Tidy.path = '/usr/lib/tidylib.so'\r\n html = '<html><title>title</title>Body</html>'\r\n\r\n
+  Tidy.open(:show_warnings=>true) do |tidy|\r\n    puts tidy.options.show_warnings
+  # returns True\r\n    xml = tidy.clean(html) # See note below\r\n\r\n    puts tidy.errors
+  # array\r\n    puts tidy.diagnostics # array\r\n    puts xml\r\n  end\r\n\r\n\r\n
+  Note: The code above will add a DOCTYPE, html, head, body tags where appropriate,
+  if they do\r\n  not exist.\r\n\r\n If you would like to check and clean an HTML
+  SNIPPET, use these options: \r\n\r\n    opts = {\r\n      :show_warnings => true,\r\n
+  \     :show_body_only => true,\r\n      :doctype => 'omit',\r\n      :indent =>
+  true, # optional \r\n    }\r\n\r\n    Tidy.open(opts) do |tidy|\r\n      puts tidy.clean(html)\r\n
+  \     diagnostics = tidy.diagnostics \r\n      errors = tidy.errors \r\n    end"

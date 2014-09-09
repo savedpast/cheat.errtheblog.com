@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>* ajax:before – right before ajax call
+* ajax:loading – before ajax call, but after XmlHttpRequest object
+  is created)
+* ajax:success – successful ajax call
+* ajax:failure – failed ajax call
+* ajax:complete – completion of ajax call (after ajax:success and
+  ajax:failure)
+* ajax:after – after ajax call is sent (note: not after it returns)
+
+(credit: http://bu.tt/48m)</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

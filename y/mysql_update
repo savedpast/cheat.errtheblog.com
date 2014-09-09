@@ -1,0 +1,23 @@
+---
+mysql_update: ! "Name: 'UPDATE'\nDescription:\nSyntax:\nSingle-table syntax:\n\nUPDATE
+  [LOW_PRIORITY] [IGNORE] tbl_name\n    SET col_name1=expr1 [, col_name2=expr2 ...]\n
+  \   [WHERE where_condition]\n    [ORDER BY ...]\n    [LIMIT row_count]\n\nMultiple-table
+  syntax:\n\nUPDATE [LOW_PRIORITY] [IGNORE] table_references\n    SET col_name1=expr1
+  [, col_name2=expr2 ...]\n    [WHERE where_condition]\n\nFor the single-table syntax,
+  the UPDATE statement updates columns of\nexisting rows in tbl_name with new values.
+  The SET clause indicates\nwhich columns to modify and the values they should be
+  given. The WHERE\nclause, if given, specifies the conditions that identify which
+  rows to\nupdate. With no WHERE clause, all rows are updated. If the ORDER BY\nclause
+  is specified, the rows are updated in the order that is\nspecified. The LIMIT clause
+  places a limit on the number of rows that\ncan be updated.\n\nFor the multiple-table
+  syntax, UPDATE updates rows in each table named\nin table_references that satisfy
+  the conditions. In this case, ORDER BY\nand LIMIT cannot be used.\n\nwhere_condition
+  is an expression that evaluates to true for each row to\nbe updated. It is specified
+  as described in [HELP SELECT].\n\nThe UPDATE statement supports the following modifiers:\n\no
+  If you use the LOW_PRIORITY keyword, execution of the UPDATE is\n  delayed until
+  no other clients are reading from the table. This\n  affects only storage engines
+  that use only table-level locking\n  (MyISAM, MEMORY, MERGE).\n\no If you use the
+  IGNORE keyword, the update statement does not abort\n  even if errors occur during
+  the update. Rows for which duplicate-key\n  conflicts occur are not updated. Rows
+  for which columns are updated\n  to values that would cause data conversion errors
+  are updated to the\n  closest valid values instead.\n\n\nURL: http://dev.mysql.com/doc/refman/5.0/en/update.html"

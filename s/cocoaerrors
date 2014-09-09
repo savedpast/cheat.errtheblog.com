@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Cocoa error codes related to validation.
+
+open -h CoreDataErrors.h
+
+NSManagedObjectValidationError                   = 1550,
+NSValidationMultipleErrorsError                  = 1560,
+NSValidationMissingMandatoryPropertyError        = 1570,
+NSValidationRelationshipLacksMinimumCountError   = 1580,
+NSValidationRelationshipExceedsMaximumCountError = 1590,
+NSValidationRelationshipDeniedDeleteError        = 1600,
+NSValidationNumberTooLargeError                  = 1610,
+NSValidationNumberTooSmallError                  = 1620,
+NSValidationDateTooLateError                     = 1630,
+NSValidationDateTooSoonError                     = 1640,
+NSValidationInvalidDateError                     = 1650,
+NSValidationStringTooLongError                   = 1660,
+NSValidationStringTooShortError                  = 1670,
+NSValidationStringPatternMatchingError           = 1680,</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

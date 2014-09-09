@@ -1,0 +1,20 @@
+---
+yas_ruby_snippet: ! "\"zip\" => \"zip(...) => { |...| ... }\" \r\n  \"y\" => \":yields:
+  arguments (rdoc)\" \r\n  \"w\" => \"attr_writer ...\"\r\n  \"select\" =>  \"select
+  { |...| ... }\" \r\n  \"rw\" =>  \"attr_accessor ...\"\r\n  \"rreq\" => \"require
+  File.join(File.dirname(__FILE__), ...)\"\r\n  \"req\" => \"require \\\"...\\\"\"\r\n
+  \ \"reject\" => \"reject { |...| ... }\"\r\n  \"rb\" => \"/usr/bin/ruby -wKU\"\r\n
+  \ \"r\" => \"attr_reader ...\"\r\n  \"mm\" => \"def method_missing ... end\"\r\n
+  \ \"inject\" => \"inject(...) { |...| ... }\"\r\n  \"ife\" => \"if ... else ...
+  end\"\r\n  \"if\" => \"if ... end\" \r\n  \"forin\" => \"for ... in ...; ... end\"\r\n
+  \ \"eawi\" => \"each_with_index { |e, i| ... }\"\r\n  \"eav\" => \"each_value {
+  |val| ... }\"\r\n  \"eai\" => \"each_index { |i| ... }\"\r\n  \"eac\" => \"each_cons(...)
+  { |...| ... }\"\r\n  \"ea\" => \"each { |...| ... }\"\r\n  \"det\" => \"detect {
+  |...| ... }\"\r\n  \"deli\" => \"delete_if { |...| ... }\"\r\n  \"dee\" => \"deep_copy(...)\"\r\n
+  \ \"collect\" => \"collect { |...| ... }\"\r\n  \"cls\" => \"class ... end\" \r\n
+  \ \"classify\" => \"classify { |...| ... }\"\r\n  \"cla\" => \"class << self ...
+  end\"\r\n  \"case\" => \"case ... end\"\r\n  \"bm\" => \"Benchmark.bmbm(...) do
+  ... end\"\r\n  \"app\" => \"if __FILE__ == $PROGRAM_NAME ... end\" \r\n  \"any\"
+  => \"any? { |...| ... }\"\r\n  \"am\" => \"alias_method new, old\"\r\n  \"all\"
+  => \"all? { |...| ... }\"\r\n  \"Comp\" => \"include Comparable; def <=> ... end\"\r\n
+  \ \"=b\" => \"=b\"\r\n  \"#\"  => \"# =>\""

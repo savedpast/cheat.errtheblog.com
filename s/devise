@@ -1,0 +1,127 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Devise is a flexible authentication.
+
+https://github.com/plataformatec/devise
+
+Installation
+------------
+
+Rails 3: Add the following to your Gemfile
+
+    gem &quot;devise&quot;
+    gem &quot;hpricot&quot;
+    gem &quot;ruby_parser&quot;
+
+Install devise in your project
+
+    $ rails generate devise:install
+
+Generate devise for your model
+
+    $ rails generate devise MODEL
+    $ rake db:migrate
+
+(Optional) Generate devise views
+
+    $ rails generate devise:views
+
+Helpers
+-------
+
+    user_signed_in?
+    current_user
+    user_session
+    destroy_user_session_path (Logout)
+    new_user_session_path (Login)
+    edit_user_registration_path (Edit registration)
+    new_user_registration_path (Register new user)
+
+Controller stuff
+----------------
+
+    before_filter :authenticate_user!
+
+Model
+-----
+
+### Model options
+
+    class User &lt; ActiveRecord::Base
+      devise :database_authenticatable,
+        :registerable,
+        :confirmable,
+        :recoverable,
+        :rememberable,
+        :trackable,
+        :validatable
+    end
+
+### Migration helpers
+
+    create_table :users do |t|
+      t.database_authenticatable
+      t.confirmable
+      t.recoverable
+      t.rememberable
+      t.trackable
+      t.timestamps
+    end
+
+Routing
+-------
+
+### Authenticated and unauthenticated routes
+
+    unauthenticated do
+       root :to =&gt; 'home#index'
+    end
+
+    authenticated do
+      root :to =&gt; 'dashboard#index'
+    end
+
+### As
+    as :user do
+      get 'sign_in', :to =&gt; 'devise/sessions#new'
+    end
+
+### Devise_for magic
+  
+    devise_for :users
+
+        # Session routes for Authenticatable (default)
+             new_user_session GET  /users/sign_in                    {:controller=&gt;&quot;devise/sessions&quot;, :action=&gt;&quot;new&quot;}
+                 user_session POST /users/sign_in                    {:controller=&gt;&quot;devise/sessions&quot;, :action=&gt;&quot;create&quot;}
+         destroy_user_session GET  /users/sign_out                   {:controller=&gt;&quot;devise/sessions&quot;, :action=&gt;&quot;destroy&quot;}
+       
+        # Password routes for Recoverable, if User model has :recoverable configured
+            new_user_password GET  /users/password/new(.:format)     {:controller=&gt;&quot;devise/passwords&quot;, :action=&gt;&quot;new&quot;}
+           edit_user_password GET  /users/password/edit(.:format)    {:controller=&gt;&quot;devise/passwords&quot;, :action=&gt;&quot;edit&quot;}
+                user_password PUT  /users/password(.:format)         {:controller=&gt;&quot;devise/passwords&quot;, :action=&gt;&quot;update&quot;}
+                              POST /users/password(.:format)         {:controller=&gt;&quot;devise/passwords&quot;, :action=&gt;&quot;create&quot;}
+       
+        # Confirmation routes for Confirmable, if User model has :confirmable configured
+        new_user_confirmation GET  /users/confirmation/new(.:format) {:controller=&gt;&quot;devise/confirmations&quot;, :action=&gt;&quot;new&quot;}
+            user_confirmation GET  /users/confirmation(.:format)     {:controller=&gt;&quot;devise/confirmations&quot;, :action=&gt;&quot;show&quot;}
+                              POST /users/confirmation(.:format)     {:controller=&gt;&quot;devise/confirmations&quot;, :action=&gt;&quot;create&quot;}
+
+### Customizing devise_for
+
+    devise_for :users,
+      :path =&gt; &quot;usuarios&quot;,
+      :path_names =&gt; {
+        :sign_in =&gt; 'login',
+        :sign_out =&gt; 'logout',
+        :password =&gt; 'secret',
+        :confirmation =&gt; 'verification',
+        :unlock =&gt; 'unblock',
+        :registration =&gt; 'register',
+        :sign_up =&gt; 'cmon_let_me_in' }
+
+Test helpers
+------------
+
+    sign_in @user
+    sign_out @user
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,11 @@
+---
+textmate: ! "⌘ = command \n⌃ = control\n⌥ = option\n⇧ = shift \n\nFile Navigation\n---------------\ngo
+  to file:            ⌘ T\ngo to symbol:        ⇧ ⌘ T \ngo to line:            ⌘ L\nﬁnd
+  in file:           ⌘ F  \nﬁnd in project:      ⇧ ⌘ F\nreveal in project:   ⌃ ⌘ R\nset
+  bookmark:          ⌘ F2\ncycle bookmarks:         F2\n\nHTML\n----\nwrap block in
+  tag:   ⌃ ⇧ W\ninsert html tag:     ⌃ ⇧ ,\ninsert ruby code:    ⌃ ⇧ .\ninsert closing
+  tag:  ⌥ ⌘ .\n\nEditing\n-------\ncode completion:          esc\nfold / unfold:            F1\ncomment
+  selection:      ⌘ /\nindent selection left:  ⌘ [\nindent selection right: ⌘ ]\ncolumn
+  selection:       ⌥ (drag)\n\nRuby/Rails tab triggers\n-----------------------\nclass:
+  cla (tab)\nmethod: def (tab)\nmodule: mod (tab)\nhas_many: hm (tab)\nbelongs_to:
+  bt (tab)\nlambda: lam (tab)"

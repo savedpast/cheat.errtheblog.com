@@ -1,0 +1,12 @@
+---
+vimdiff: ! "Commands:\n]c :        - next difference\n[c :        - previous difference\nCtrl+w
+  +w   - switch windows\ndo          - diff obtain\ndp          - diff put\nzo          -
+  open folded text\nzc          - close folded text\n:diffupdate - re-scan the files
+  for differences\n\nMOVING BETWEEN WINDOWS \n        CTRL-W h        move to the
+  window on the left \n        CTRL-W j        move to the window below \n        CTRL-W
+  k        move to the window above \n        CTRL-W l        move to the window on
+  the right \n        CTRL-W t        move to the TOP window \n        CTRL-W b        move
+  to the BOTTOM window \n  Moving windows \n\n        CTRL-W K        move window
+  to the upper \n        CTRL-W H        move window to the far left \n        CTRL-W
+  J        move window to the bottom \n        CTRL-W L        move window to the
+  far right"

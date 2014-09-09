@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Post current buffer to gist, using default privacy option.
+:Gist
+
+Post selected text to gist, using default privacy option. This applies to all permutations listed below (except multi).
+:'&lt;,'&gt;Gist
+
+Create a private gist.
+:Gist -p
+
+Create a public gist. (Only relevant if you've set gists to be private by default.)
+:Gist -P
+
+This is only relevant if you've set gists to be private by default; if you get an empty gist list, try &quot;:Gist --abandon&quot;.
+Create a gist anonymously.
+:Gist -a
+
+Create a gist with all open buffers.
+:Gist -m
+
+Edit the gist (you need to have opened the gist buffer first). You can update the gist with the &quot;:w&quot; command within the gist buffer.
+:Gist -e
+
+Edit the gist with name 'foo.js' (you need to have opened the gist buffer first).
+:Gist -e foo.js
+
+Delete the gist (you need to have opened the gist buffer first). Password authentication is needed.
+:Gist -d
+
+Fork the gist (you need to have opened the gist buffer first). Password authentication is needed.
+:Gist -f
+
+Get gist XXXXX.
+:Gist XXXXX
+
+Get gist XXXXX and add to clipboard.
+:Gist -c XXXXX
+
+List your public gists.
+:Gist -l
+
+List gists from user &quot;mattn&quot;.
+:Gist -l mattn
+
+List all (public and private) of your gists.
+:Gist -la</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

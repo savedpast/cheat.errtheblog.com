@@ -1,0 +1,8 @@
+---
+github: ! "Forking a repo and setting it up on your local machine\r\n======================================================\r\n1.
+  Fork the repo on github.com\r\n\r\n2. Create local repo from your fork\r\n   $ git
+  clone git@github.com:<your-username>/<repo-name>.git\r\n\r\n3. Track the original
+  remote repo\r\n   $ cd <repo-name>\r\n   $ git remote add upstream git://github.com/<remote-username>/<repo-name>.git\r\n
+  \  $ git fetch upstream\r\n\r\n4. Push commits to your fork\r\n   $ git push origin
+  master\r\n\r\n5. Fetch any new changes from the original repo\r\n   $ git fetch
+  upstream\r\n   $ git merge upstream/master\r\n\r\nsee http://help.github.com/fork-a-repo/"

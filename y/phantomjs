@@ -1,0 +1,5 @@
+---
+phantomjs: ! "system = require 'system'\r\nsystem.args[0] == 'foo.coffee'\r\n\r\npage
+  = require('webpage').create()\r\n\r\npage.viewportSize = {width:400, height:400}\r\n\r\npage.content
+  = '<html><body></body></html>'\r\n\r\npage.evaluate ->\r\n  document.body.innerHTML
+  = '<div>HAI</div>'\r\n\r\npage.content.match /<div>HAI/\r\n\r\npage.render('screenshot.png')\r\n\r\nphantom.exit()"

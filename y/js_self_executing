@@ -1,0 +1,2 @@
+---
+js_self_executing: ! "(function(){\r\n    var foo = 'Hello world';\r\n})();"

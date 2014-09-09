@@ -1,0 +1,28 @@
+---
+gli: ! "gli - create command-suite apps, a la git, using this awesome Ruby DSL\r\n======================================================================\r\n\r\nSetup
+  and Usage\r\n---------------\r\n\r\nInstallation:\r\n$ gem install gli\r\n\r\nShow
+  list of commands\r\n$ gli help [command]\r\n\r\nShow help for one command\r\n$ gli
+  help init\r\n\r\nCreate a new GLI-based project with the commands foo and bar\r\n$
+  gli init project_name foo bar\r\n\r\nCreate a new GLI-based project with an ext
+  directory\r\n$ gli init -e project_name foo bar\r\n\r\nCreate a new GLI-based project
+  without a test directory (bad!)\r\n$ gli init --notest project_name foo bar\r\n\r\nCreate
+  a new GLI-based project somewhere else than .\r\n$ gli -r /tmp init project_name
+  foo bar\r\n\r\nJust see what GLI would create\r\n$ gli -n init -e project_name foo
+  bar\r\n\r\n\r\nUsing GLI's DSL\r\n---------------\r\n\r\nCreate a switch (option
+  that takes no args)\r\n\r\n  desc 'Dry-run; don't change the disk\r\n  switch [:n,'dry-run']\r\n
+  \ # Both -n and --dry-run will work\r\n  # Access in code via global_options[:n]\r\n\r\nCreate
+  a flag (option that takes an argument)\r\n\r\n  desc 'Location of the config file'\r\n
+  \ arg_name 'path_to_file'\r\n  default_value '~/.glirc'\r\n  flag [:c,:conf]\r\n
+  \ # Both -c and --conf work, if this flag is omitted\r\n  # then the default of
+  ~/.glirc is avaialble to the code\r\n  # Access in code via global_options[:c] (or
+  :conf)\r\n\r\nCreate a command\r\n\r\n  desc 'Get the list of open tickets'\r\n
+  \ command [:tickets] do |c|\r\n    c.desc 'Only assigned to me'\r\n    c.switch
+  [:m,:me]\r\n\r\n    c.desc 'Show only tickets for one project'\r\n    c.flag [:p,:project,'only-project']\r\n\r\n
+  \   c.action do |global_options,options,args|\r\n      # global_options has the
+  global options as a hash\r\n      # options are the command specific ones (e.g.
+  options[:p])\r\n      # args are the command line arguments that weren't parsed\r\n
+  \     # raise an exception or exit_now! if things go wrong\r\n    end\r\n  end\r\n\r\nSet
+  up stuff ahead of time\r\n\r\n  pre do |global_options,command,options,args|\r\n
+  \   return true if things_are_ok\r\n    return false if we_should_abort_the_command\r\n
+  \ end\r\n\r\nUse GLI\r\n\r\n  exit run(ARGV)\r\n  # run returns a suitable exit
+  status\r\n"

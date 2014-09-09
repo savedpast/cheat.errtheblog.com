@@ -1,0 +1,25 @@
+---
+nvalt: ! 'Finding Notes
+
+
+  ⌘ L (Look up) - go to search/title area
+
+  ⌘ J / ⌘K - move highlight up/down in search results
+
+  Enter - select highlighted note / create note with current title
+
+  Esc - clear current search
+
+  ⇧ ⌘ V - paste clipboard as new note
+
+  ⌘ 0 - show bookmarks
+
+
+  Editing
+
+
+  ^ ⌘ P - toggle preview window
+
+  ⌘ [ / ⌘ ] - outdent / indent highlighted text
+
+  ⇧ ⌘ D - bookmark current note'

@@ -1,0 +1,8 @@
+---
+plugins: ! "cache_fu: \n  git://github.com/defunkt/cache_fu.git\nacts_as_archivable\ndom_id\nwill_paginate\nacts_as_taggable_on_steroids:\n
+  \ http://svn.viney.net.nz/things/rails/plugins/acts_as_taggable_on_steroids\nar_fixtures:\n
+  \ http://topfunky.net/svn/plugins/ar_fixtures \nrspec_on_rails:\n  http://rspec.rubyforge.org/svn/tags/CURRENT/rspec_on_rails\npermalink_fu:\nexception_notification:
+  \nattachment_fu:\n  http://svn.techno-weenie.net/projects/plugins/attachment_fu/
+  \nrestful_authentication:\n  http://svn.techno-weenie.net/projects/plugins/restful_authentication/\n\nrails-engines:\n
+  \ http://svn.rails-engines.org/engines/trunk/\next_scaffold:\n  http://rug-b.rubyforge.org/svn/ext_scaffold\n\njrails\n
+  \ http://ennerchi.googlecode.com/svn/trunk/plugins/jrails/\n\nfixture_scenarios"

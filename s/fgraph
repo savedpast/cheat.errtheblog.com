@@ -1,0 +1,215 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>= fgraph
+
+* http://github.com/jugend/fgraph
+
+== Description
+
+Facebook Graph Ruby API implementation with Ruby magic (http://graph.facebook.com).
+
+== Installation
+
+  sudo gem install fgraph
+    
+== Rails Plugin Installation
+
+Gem Plugin installation:
+
+  sudo gem install fgraph
+
+  # Edit [RAILS_ROOT]/config/environment.rb
+  config.gem 'fgraph', :version =&gt; &quot;&gt;=0.2.0&quot;
+  
+  # Edit [RAILS_ROOT]/Rakefile
+  require 'tasks/fgraph'
+  
+  # Create fgraph.yml config in [RAILS_ROOT]/config
+  rake fgraph:setup
+  
+Normal Plugin Installation:
+
+  script/plugin install http://github.com/jugend/fgraph.git
+  
+=== Facebook Graph Cheat Sheet
+
+  sudo gem install cheat
+  cheat fbgraph
+
+=== Single object query
+
+  # Users: https://graph.facebook.com/btaylor  (Bret Taylor)
+  FGraph.object('btaylor')
+
+  # Pages: https://graph.facebook.com/cocacola (Coca-Cola page)
+  FGraph.object('cocacola')
+
+  # Fields selection with metadata
+  FGraph.object('btaylor', :fields =&gt; 'id,name,picture', :metadata =&gt; 1)
+
+  # Page photos
+  FGraph.object('/cocacola/photos')
+  FGraph.object_photos('cocacola')
+  
+  # Passing object hash as id
+  friend = { 'name' =&gt; 'Mark Zuckerberg', 'id' =&gt; '4'}
+  friend_details = FGraph.object(friend)
+
+  # Current user: https://graph.facebook.com/me?access_token=...
+  FGraph.me(:access_token =&gt; '...')
+
+  # Current user's friends: https://graph.facebook.com/me/friends?access_token=...
+  FGraph.me('friends', :access_token =&gt; '...')
+  FGraph.me_friends(:access_token =&gt; '...')
+
+=== Multiple objects query
+
+  # Multiple users select: https://graph.facebook.com?ids=arjun,vernal
+  FGraph.objects('arjun', 'herryanto')
+
+  # Filter fields: https://graph.facebook.com?ids=arjun,vernal&amp;fields=id,name,picture
+  FGraph.objects('arjun', 'herryanto', :fields =&gt; 'id,name,picture')
+  
+  # Passing hash objects
+  FGraph.objects([{:name =&gt; 'Arjun Banker', :id =&gt; 'arjun'}, {:name =&gt; 'Herryanto Siatono', :id =&gt; 'herryanto'}])
+
+=== Collection Response
+  
+  friends = FGraph.me_friends(:limit =&gt; 5, :access_token =&gt; '...')
+  friends.each do |friend|
+    puts friend['name']
+    puts friend['id']
+  end
+  
+  # Other convenient methods
+  friends.next?
+  friends.next_url
+  friends.next_options
+  
+=== OAuth
+
+OAuth authorization URL:
+  # https://graph.facebook.com/oauth/authorize?
+  #   client_id=...&amp;
+  #   redirect_uri=http://www.example.com/oauth_redirect&amp;
+  #   scope=publish_stream
+  FGraph.oauth_authorize_url('[client id]', 'http://www.example.com/oauth_redirect', :scope =&gt; 
+    'publish_stream')
+
+OAuth Access Token:
+  # https://graph.facebook.com/oauth/access_token?
+  #   client_id=...&amp;
+  #   client_secret=...&amp;
+  #   redirect_uri=http://www.example.com/oauth_redirect&amp;
+  #   code=...
+  FGraph.oauth_access_token('[client id]', '[client secret]', 
+     :redirect_uri =&gt; ''http://www.example.com/oauth_redirect', 
+     :code =&gt; '[authorization code]')
+
+OAuth Application Access Token, required to access application anlytics data:
+  # https://graph.facebook.com/oauth/access_token?
+  #   client_id=...&amp;
+  #   client_secret=...&amp;
+  #   type=client_cred
+  FGraph.oauth_access_token('[client id]', '[client secret]', :type =&gt; 'client_cred')
+
+=== Publish to Facebook Graph
+
+  # Post to user's feed.
+  #   curl -F 'access_token=...' \
+  #     -F 'message=Hello, Arjun. I like this new API.' \
+  #     https://graph.facebook.com/arjun/feed
+  FGraph.publish('arjun/feed', :message =&gt; 'Hello, Arjun. I like this n  ew API.', 
+    :access_token =&gt; '...')
+  FGraph.publish_feed('arjun', :message =&gt; '...', :access_token =&gt; '...  ')
+  FGraph.publish_feed('me', :message =&gt; '...', :access_token =&gt; '...')
+
+=== Remove from Facebook Graph
+
+  # DELETE https://graph.facebook.com/ID?access_token=... HTTP/1.1
+  FGraph.remove('[ID]')
+  FGraph.remove('[ID]/likes')
+  FGraph.remove_likes('[ID]')
+
+=== Search
+
+  # https://graph.facebook.com/search?q=watermelon&amp;type=post
+  FGraph.search('watermelon', :type =&gt; 'post')
+  FGraph.search_post('watermelon')
+
+=== Insights
+
+  # https://graph.facebook.com/client_id/insights?access_token=...
+  FGraph.insights('[client_id]', '[app_access_token]')
+
+  # https://graph.facebook.com/client_id/insights/application_api_call/day?access_token=...
+  FGraph.insights('[client_id]', '[app_access_token]', :metric_path =&gt; 'application_api_call/day')
+
+=== FGraph::Client
+  
+  # Initialize with default options
+  fg_client = FGraph::Client.new(:client_id =&gt; '...', :client_secret =&gt; '...')
+  fg_client.oauth_authorize_url('[redirect uri]', :scope =&gt; 'publish_stream')
+  fg_client.oauth_access_token('[redirect uri]', '[authorization code]')
+    
+  # Intialize with access token
+  fg_client = FGraph::Client.new(:access_token =&gt; '...')
+  fg_client.me
+  fg.client.publish_feed('herryanto', :message =&gt; 'Cool!')
+
+=== Pagination Options
+
+* limit - max no of records
+* offset - offset
+* until - since (a unix timestamp or any date accepted by strtotime, e.g. yesterday)
+
+=== Rails Helper
+
+Sample codes:
+
+  &lt;%= fgraph_javascript_init_tag %&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    FB.Event.subscribe('auth.sessionChange', function(response) {
+      if (response.session) {
+        // A user has logged in, and a new cookie has been saved
+      } else {
+        // The user has logged out, and the cookie has been cleared
+      }
+    });
+  &lt;/script&gt;
+  
+  &lt;!-- Facebook Login Button --&gt;
+  &lt;fb:login-button autologoutlink=&quot;true&quot; perms=&quot;email,publish_stream&quot;&gt;&lt;/fb:login-button&gt;
+  
+  &lt;% if fgraph_logged_in? %&gt;
+    &lt;br&gt;Hello &lt;%= fgraph_user['name'] %&gt;,
+    &lt;br&gt;&lt;%= fgraph_image_tag(fgraph_user, 'large') %&gt;
+  &lt;% end %&gt;
+
+For Asynchronous load, use window.afterFbAsyncInit:
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    window.afterFbAsyncInit = function() {
+      FB.Event.subscribe('auth.sessionChange', function(response) {
+        if (response.session) {
+          // A user has logged in, and a new cookie has been saved
+        } else {
+          // The user has logged out, and the cookie has been cleared
+        }
+      });
+    }
+  &lt;/script&gt;
+  &lt;%= fgraph_javascript_init_tag :async =&gt; true %&gt;
+  
+Facebook invalidates session token when you log out from facebook.com, 
+and fgraph_logged_in? does not check if the session is still valid 
+on Facebook server. The trick is you have to catch FGraph::OAuthError 
+in ApplicationController: 
+
+  rescue_from FGraph::OAuthError do
+    # Delete existing invalid cookies
+    cookies.delete &quot;fbs_#{FGraph.config['app_id']}&quot;
+    
+    # Redirect to referrer page
+    redirect_to request.env['REQUEST_PATH']
+  end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

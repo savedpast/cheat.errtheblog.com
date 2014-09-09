@@ -1,0 +1,21 @@
+---
+validations: ! "Basic Validations\r\nhttp://ar.rubyonrails.com/classes/ActiveRecord/Validations/ClassMethods.html\r\n\r\ndef
+  validate\r\n  unless name && name =~ /^\\w+$/\r\n    errors.add(:name, \"is missing
+  or invalid\")\r\n  end\r\nend\r\n\r\ndef validate_on_create\r\n  if User.find_by_name(name)\r\n
+  \   errors.add(:name, \"is already being used\")\r\n  end\r\nend\r\n\r\n\r\nvalidates_acceptance_of\r\n
+  \ Validates that the value of the attribute is the string \"1\" or the value of
+  the :accept parameter. Useful for checkboxes.\r\nvalidates_associated\r\nvalidates_confirmation_of\r\nvalidates_each\r\nvalidates_exclusion_of\r\nvalidates_format_of\r\nvalidates_inclusion_of\r\nvalidates_length_of\r\nvalidates_numericality_of\r\nvalidates_presence_of\r\nvalidates_size_of\r\nvalidates_uniqueness_of\r\n\r\nDEFAULT_VALIDATION_OPTIONS
+  = { :on => :save, :allow_nil => false, :allow_blank => false, :message => nil\r\nALL_RANGE_OPTIONS
+  = [ :is, :within, :in, :minimum, :maximum ].freeze\r\nALL_NUMERICALITY_CHECK = {
+  :greater_than => '>', :greater_than_or_equal_to => '>=', :equal_to => '==', :less_than
+  => '<', :less_than_or_equal_to => '<=', :odd => 'odd?', :even => 'even?' }.freeze\r\n\r\n\r\nvalidates_length_of
+  :first_name, :maximum=>30\r\nvalidates_length_of :last_name, :maximum=>30, :message=>\"less
+  than {{count}} if you don't mind\"\r\nvalidates_length_of :fax, :in => 7..32, :allow_nil
+  => true\r\nvalidates_length_of :phone, :in => 7..32, :allow_blank => true\r\nvalidates_length_of
+  :user_name, :within => 6..20, :too_long => \"pick a shorter name\", :too_short =>
+  \"pick a longer name\"\r\nvalidates_length_of :fav_bra_size, :minimum => 1, :too_short
+  => \"please enter at least {{count}} character\"\r\nvalidates_length_of :smurf_leader,
+  :is => 4, :message => \"papa is spelled with {{count}} characters... don't play
+  me.\"\r\nvalidates_length_of :essay, :minimum => 100, :too_short => \"Your essay
+  must be at least {{count}} words.\"), :tokenizer => lambda {|str| str.scan(/\\w+/)
+  }"

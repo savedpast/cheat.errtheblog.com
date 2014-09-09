@@ -1,0 +1,8 @@
+---
+phonegap: ! "# event types:\r\n\r\n➤ backbutton\r\n➤ deviceready\r\n➤ menubutton\r\n➤
+  pause\r\n➤ resume\r\n➤ searchbutton\r\n➤ online\r\n➤ offline\r\n\r\n# bind events\r\n\r\n<script
+  type=”text/javascript” charset=”utf-8” src=”phonegap.js”></script>\r\n<script type=”text/javascript”
+  charset=”utf-8”>\r\n  document.addEventListener(“deviceready”, onDeviceReady, false);\r\n
+  \ function onDeviceReady() {\r\n    // call the phonegap api\r\n    document.addEventListener(“pause”,
+  onPause, false);\r\n    document.addEventListener(“resume”, onResume, false);\r\n
+  \ }\r\n  function onPause(){ }\r\n  function onResume(){ }\r\n</script>"

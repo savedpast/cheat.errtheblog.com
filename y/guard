@@ -1,0 +1,14 @@
+---
+guard: ! "Guard is a command line tool to easily handle events on file system\nmodifications.\n\nhttps://github.com/guard/guard\n\n\nInteracting
+  with Guard\n----------------------\n\nWhen Guard is idle you can interact with it
+  by entering a command followed by\nreturn/enter:\n\n  - stop: stop|quit|exit|s|q|e
+  + return\n      Calls each guard's #stop method, in the same order they are declared
+  in\n      the Guardfile, and then quits Guard itself.\n\n  - reload: reload|r|z
+  + return\n      Calls each guard's #reload method, in the same order they are declared\n
+  \     in the Guardfile.\n\n  - pause: pause|p + return\n      Toggle files modification
+  listening. Useful when switching git branches.\n\n  - run_all: just return (no commands)\n
+  \     Calls each guard's #run_all method, in the same order they are declared\n
+  \     in the Guardfile.\n\nreload and run_all actions can be scoped to only run
+  on a certain guard or\ngroup:\n\n  - backend reload + return\n      Call only each
+  guard's #reload method on backend group.\n\n  - rspec + return\n      Call only
+  rspec guard's #run_all method."

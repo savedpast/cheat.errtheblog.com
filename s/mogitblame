@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre> a   -- Call 'git blame' for the file for the first ancestor of the
+        revision listed in the current line. Sets the content buffer to
+        contain the file content at the new revision.
+ A   -- Call 'git blame' for the file for the first ancestor of the
+        current revision. Sets the content buffer to contain the file
+        content at the new revision.
+ b   -- Call 'git blame' for the file for the revision listed in the
+        current line. Sets the content buffer to contain the file
+        content at the new revision.
+ B   -- Call 'git blame' for the file for a specific revision read from
+        the minibuffer.
+ c   -- Call 'git cat-file blob ...' for the revision listed in the
+        current line and show the output in the `output' buffer. The
+        output will not have syntax highlighting.
+ i   -- Display the current state information (current revision, git
+        repository path etc) in the right window.
+ l   -- Call 'git log' for the revision listed in the current line and
+        show the output in the `output' buffer.
+ L   -- Call 'git log' for the current revision and show the output in
+        the `output' buffer.
+ p   -- Call 'git blame' for the file for the revision that was shown
+        prior to the current one. Works only if you've used `b'
+        before.
+ o   -- Overwrite the file with the content of the revision listed in
+        the current line. Asks for confirmation before actually
+        overwriting the file.
+ O   -- Overwrite the file with the content of the current
+        revision. Asks for confirmation before actually overwriting the
+        file.
+ q   -- Exit mo-git-blame and kill all its buffers.
+ s   -- Call 'git show' for the revision listed in the current line and
+        show the output in the `output' buffer.
+ S   -- Call 'git show' for the current revision and show the output in
+        the `output' buffer.
+ TAB -- Re-display the `content' buffer in the right window if it has
+        replaced with the `output' buffer.
+ RET -- Same as `s'.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

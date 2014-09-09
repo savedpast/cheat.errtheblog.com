@@ -1,0 +1,16 @@
+---
+octopress: ! "# Define Excerpts\r\n<!--more-->\r\n\r\n# Video Tag\r\n{% video url/to/video
+  [width height] [url/to/poster] %}\r\n\r\n# Code Block\r\n{% codeblock [title(.ext)]
+  [url] [link text] %}\r\nsnippet \r\n{% endcodeblock %} \r\n\r\nSpecifying the language
+  extension as .ext triggers highlighting for that language. \r\n\r\nOr Backtick which
+  works in Markdown, HTML but not Textile:\r\n  ``` ruby\r\n      class Fixnum\r\n
+  \       def prime?\r\n          ('1' * self) !~ /^1?$|^(11+?)\\1+$/\r\n        end\r\n
+  \     end\r\n  ```\r\n\r\n# Include Code\r\n{% include_code [title] url %} Url should
+  be path/to/code  Code snippets default to /source/downloads/code change in _config.yml\r\n\r\n#
+  Gist Tag\r\n{% gist gist_id [filename] %}\r\n\r\n# Image Tag\r\n{% img [class names]
+  /path/to/image [width height] [title text] %}\r\n\r\n# Render Partial Tag\r\n{%
+  render_partial path/to/file %}\r\n\r\n# Block quote Tag\r\n{% blockquote [author[,
+  source]] [link] [source_link_title] %}\r\nQuote string\r\n{% endblockquote %}\r\n\r\n#
+  Pull Quote tag\r\n  {% pullquote %}\r\n  Surround your paragraph with the pull quote
+  tags. Then when you come to\r\n  the text you want to pull, {\" surround it like
+  this \"} and that's all there is       to it. \r\n  {% endpullquote %}"

@@ -1,0 +1,15 @@
+---
+veewee: ! "VeeWee GEM for building Vagrant virtual machines\r\nhttps://github.com/jedi4ever/veewee\r\n----------\r\n\r\nvagrant
+  basebox templates\r\n  - List all the VM templates\r\n\r\nvagrant basebox define
+  [new_name] [template_name]\r\n  - Copies the template into a new definition to modify\r\n\r\nvagrant
+  basebox build [new_name]\r\n  - Builds out your definition file into a virtual machine\r\n\r\nvagrant
+  basebox validate [new_name]\r\n  - Runs rspec tests against the new image\r\n\r\nvagrant
+  basebox export [new_name]\r\n  - Exports the new image into a .box file for import\r\n\r\nvagrant
+  basebox list\r\n  - Lists all the installed boxes\r\n\r\nvagrant basebox destroy
+  [box_name]\r\n\r\nvagrant box add [new_name] [new_name].box\r\n  - Imports the box
+  file\r\n\r\nvagrant box list\r\n  - Lists all the boxes installed by Vagrant\r\n\r\nvagrant
+  box remove [box_name]\r\n  - Removed the box from VirtualBox\r\n\r\nvagrant init
+  [new_name]\r\n  - Initializes the new VM and creates the Vagrantfile to modify\r\n
+  \ - DOC: http://vagrantup.com/docs/vagrantfile.html\r\n\r\nvagrant up\r\n  - Starts
+  your VM's based on the Vagrantfile\r\n\r\nvagrant ssh\r\n  - SSH into the machine\r\n\r\nvagrant
+  destroy\r\n  - Removes the VM structure based on the Vagrantfile"

@@ -1,0 +1,4 @@
+---
+gitsvn_clone_branches: ! "To clone svn repo with branches:\n\n# You can specify custom
+  svn folder hierarchy\n  git svn clone -t releases -b branches -T trunk http://your_svn_repo_root
+  dest_folder"

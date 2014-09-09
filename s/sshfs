@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Mounts a remote directory locally through ssh:
+
+$ sshfs remoteserver:/home/user/my_dir my_local_mountpoint
+
+Include username and port as the following:
+
+$ sshfs user@remoteserver:/path_to_dir my_local_mountpoint -p &lt;port&gt;
+
+Practical switches
+
+  -o follow_symlinks
+  -C
+    equivalent to '-o compression=yes'</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

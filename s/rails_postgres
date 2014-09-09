@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Here's what you wrote, so it isn't lost in the void:
+Rails related postgres gotchas
+==============================
+
+silence CREATE TABLE in tests
+-----------------------------
+  In database.yml:
+     min_messages: warning # silence CREATE TABLE messages in postgres
+
+silence postgres system table access in logs
+--------------------------------------------
+see http://railsonpostgresql.com/2010/10/06/reducing-log-output-from-the-rails-postgresql-connection-adapter
+    gem 'silent-postgres'
+
+postgres holds onto conections:
+--------------------------------
+  see# https://gist.github.com/1157737
+
+
+
+Need structure dump/load (triggers, full-text search)?
+=====================================================
+
+username is required for db_dump
+--------------------------------
+  In database.yml:
+      username: &lt;%= `whoami` %&gt; # needed for sq_dump
+
+update rake tasks for structure dump/load:
+------------------------------------------
+  see# https://gist.github.com/1157737
+
+Need help adding a user?
+    $ sudo su postgres
+    $ createuser `whoami`</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>This is an unofficial cheat sheet for Campaign Monitor.
+(http://campaignmonitor.com)
+
+Complete List of Template Tags
+==============================
+
+Making content editable
+
+    Single Line: &lt;singleline&gt;&lt;/singleline&gt;
+    Multi Line: &lt;multiline&gt;&lt;/multiline&gt;
+    Image: &lt;img editable=&quot;true&quot; alt=&quot;&quot; /&gt;
+    Repeater: &lt;repeater&gt;
+    Layout: &lt;layout&gt;
+    Table of Contents: &lt;tableofcontents&gt;
+    Repeater Title: &lt;repeatertitle&gt;&lt;/repeatertitle&gt;
+    Disabling Link Tracking and Image Importing
+
+Quick Links
+
+    Web Version: &lt;webversion&gt;
+    Forward to a Friend: &lt;forwardtoafriend&gt;
+    Unsubscribe: &lt;unsubscribe&gt;
+    Preference Center: &lt;preferences&gt;
+    Facebook Like: &lt;fblike&gt;
+    Tweet: &lt;tweet&gt;
+
+Dates
+
+    Current day (Number): &lt;currentday&gt;
+    Current day (Name): &lt;currentdayname&gt;
+    Current month (Number): &lt;currentmonth&gt;
+    Current month (Name): &lt;currentmonthname&gt;
+    Current year (Number): &lt;currentyear&gt;
+
+Personalization
+
+    First name: [firstname,fallback=text]
+    Last name: [lastname,fallback=text]
+    Full name: [fullname,fallback=text]
+    Email Address: [email]
+    Custom fields
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,8 @@
+---
+mysql_delete: ! "Name: 'DELETE'\r\nSyntax:\r\n Single-table syntax:\r\n\r\nDELETE
+  [LOW_PRIORITY] [QUICK] [IGNORE] FROM tbl_name\r\n    [WHERE where_condition]\r\n
+  \   [ORDER BY ...]\r\n    [LIMIT row_count]\r\n\r\nMultiple-table syntax:\r\n\r\nDELETE
+  [LOW_PRIORITY] [QUICK] [IGNORE]\r\n    tbl_name[.*] [, tbl_name[.*]] ...\r\n    FROM
+  table_references\r\n    [WHERE where_condition]\r\n\r\nOr:\r\n\r\nDELETE [LOW_PRIORITY]
+  [QUICK] [IGNORE]\r\n    FROM tbl_name[.*] [, tbl_name[.*]] ...\r\n    USING table_references\r\n
+  \   [WHERE where_condition]\r\n\r\n\r\nURL: http://dev.mysql.com/doc/refman/5.0/en/delete.html"

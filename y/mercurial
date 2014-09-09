@@ -1,0 +1,40 @@
+---
+mercurial: ! "Quick Start\n===========\n\nCreate a new repository:\nhg init\n\nAdd
+  new files and delete all old files to repository:\nhg addremove\n\nCommit with message\nhg
+  commit -m \"the commit message\"\n\nPush your changes to the repo\nhg push <repo
+  url>\n\n\nUsing the Built-in Help\n-----------------------\n\nMercurial has excellent
+  built-in documentation that can keep this cheat short:\n\n    hg help\n    hg help
+  <command>\n    hg help <extension>\n\nDon't miss the 'additional topics' sections,
+  as many of them are quite useful,\nlike 'patterns' and 'revisions.'\n\n\nMercurial
+  Queues\n================\n\nMercurial Queues ('mq') is an advanced extension, packaged
+  with the core Hg\ndistribution, that provides a system for managing patch queues
+  with the\nbenefits of version control. It was inspired by Quilt and is similar to\nStacked
+  Git, if you're coming from the Other Side of the DVCS world.\n\nOne of the most
+  common uses for mq is flexible rebasing, allowing you to work\non features in sets
+  of 'floating' patches that can be continually refreshed\nand rebased atop mainline
+  changes that occur while your work is ongoing. This\nalso provides a means for 'rewriting
+  history' to clean it up before pushing\nto permanent record on a shared repository.
+  If you're accustomed to git's\ninteractive rebasing, this is what you're looking
+  for.\n\nTo work with it, you must first enable it in your .hgrc:\n\n    [extensions]\n
+  \   hgext.mq =\n\nAnd you should probably also use git-style extended diffs:\n\n
+  \   [diff]\n    git = True\n\n`hg help` will now show a number of new commands beginning
+  with 'q'.\nThere are a number of other uses for mq and you're encouraged to check
+  out\nthe wiki for more on what you can do with it:\n\n    http://mercurial.selenic.com/wiki/MqExtension\n\n\nRewriting
+  History\n-----------------\n\nBy nature of Mercurial's Revlog format for storing
+  history, it is not really\npractical to 'rewrite' it once changes have been pushed
+  publicly. That being\nsaid, mq is here to help with work you haven't yet pushed
+  upstream (and can\nhelp for sharing in-progress patch queues too!).\n\nFollowing
+  is a rundown of using mq to change history (say you need to change\na commit message
+  or forgot to add a file needed for a build). First you\nrewind to the first revision
+  that you need to change:\n\n    hg qinit\n    hg qimport -r BADREV:tip\n    hg qpop
+  -a\n    hg qseries\n\n`qseries` shows the list of patches you're now managing, numbered
+  by local\nrevision. Your next step depends on what your goal is: if you just want
+  to\ndelete this one revision,\n\n    hg qdelete BADREV.diff\n\nOtherwise, you can
+  revise it:\n\n    hg qpush BADREV.diff\n    # Edit, add a file you forgot, revert
+  one you didn't mean to add\n    hg qrefresh\n\nNow you're ready to move on and finish:\n\n
+  \   hg qpush -a\n    hg qfinish -a\n\nIf you need to edit multiple commits, use
+  `qpush` without the `-a` (all)\noption to step through revisions one-at-a-time.
+  If you introduce any\nconflicts along the way, you'll need to fix them and `qrefresh`
+  before\nmoving on. You can also squash multiple patches into one with `qfold`.\n\nAt
+  this point you have rewritten your revisions and can push them publicly\nif you're
+  ready. See the hg wiki for more on history rewriting with mq:\n\n    http://mercurial.selenic.com/wiki/EditingHistory"

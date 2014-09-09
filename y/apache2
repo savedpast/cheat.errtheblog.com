@@ -1,0 +1,5 @@
+---
+apache2: ! "--------------------------\r\nApache 2 everyday commands\r\n--------------------------\r\n\r\nModule
+  enable/disable:\r\n   a2enmod -> list presented\r\n   a2dismod\r\n\r\nWebsite enable/disable:\r\n
+  \  a2ensite -> list presented\r\n   a2dissite\r\n\r\nRestart server nicely:\r\n
+  \  apache2 -k graceful\r\n"

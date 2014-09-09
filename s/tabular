@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>With the cursor positioned anywhere in the table, running :Tab/| produces:
+
+Scenario Outline: eating
+  Given there are &amp;lt;start&amp;gt; cucumbers
+  When I eat &amp;lt;eat&amp;gt; cucumbers
+  Then I should have &amp;lt;left&amp;gt; cucumbers
+
+  Examples:
+    | start | eat | left |
+    | 12    | 5   | 7    |
+    | 20    | 5   | 15   |
+
+
+For instance, consider starting with the following lines:
+&gt;
+    Some short phrase,some other phrase
+    A much longer phrase here,and another long phrase
+&lt;
+Let's say we want to line these lines up at the commas.  We can tell
+Tabularize to do this by passing a pattern matching , to the Tabularize
+command:
+&gt;
+  :Tabularize /,
+
+    Some short phrase         , some other phrase
+    A much longer phrase here , and another long phrase
+&lt;
+
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

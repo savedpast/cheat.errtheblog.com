@@ -1,0 +1,223 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>You've stumbled upon Matt Scilipoti's &quot;personal&quot; cheat sheet.
+
+Bash 
+============
+
+== Reset terminal when text is borked
+    $ reset
+
+== To list all environment variables
+  $ printenv
+
+
+Debug
+=============
+
+arspy
+
+
+git
+=================
+
+== config recommendations
+  [push] default=tracking
+
+== tracking
+  # creates a local branch, tracking the remote, witht the same name as the remote
+  gco --track origin/name_of_remote_branch
+
+== remove need for `origin master`
+[branch &quot;master&quot;]
+  remote = origin
+  merge = refs/heads/master
+
+== remote branches
+#remove remote
+git push origin :&lt;remote_branch_name&gt;
+
+#refresh list
+git remote prune origin
+
+== only push the current branch
+git config --global push.default current
+
+== compare
+git log --left-right --graph --cherry-pick --oneline master...stage_master
+
+
+guard
+========
+
+## Show rspec results in growl AND in terminal
+  see: https://github.com/vizjerai/guard-spin/issues/6#issuecomment-6628816
+
+    # Gemfile
+    group :test, :development do
+      gem 'growl-rspec'
+    end
+    
+    # .rspec
+    --require growl-rspec --format &quot;Growl::RSpec::Formatter&quot; --colour --format documentation
+
+
+haml
+=========
+
+Surround tag with parens:
+    = &quot;(%s)&quot; % link_to(&quot;Edit&quot;, ...)
+:ruby for ruby
+
+
+*nix
+=========
+
+ncdu: disk usage
+lsof: who is using file
+
+== file count (-f: don't sort)
+    $ ls -f | wc -l
+
+== clear a file
+    $ echo -n &gt; file
+
+== fix 'no init': 
+    $ sudo fdisk -l
+    $ sudo fsck /dev/sda1
+
+== boot record
+    $ update-initramfs -u
+    $ update-grub
+
+== Who is serving on port 3000?
+    $ lsof -w -n -i tcp:3000
+
+== redirect stderr to null
+    $ find /Volumes/Space -name 'cx_production*' 2&gt; /dev/null
+
+== fix prompt when not echoing key presses
+    $ stty sane
+
+== ascii art
+  figlet: http://www.go2linux.org/figlet-create-nice-signatures-emails-forums-usenet-708.html
+
+== cd in bash?  source it
+    $ . cdd karma
+
+~/bin/cdd
+sub_directory=$1 
+working_dir=`find ~/develop/ -name $sub_directory -type d`
+
+if test -d $working_dir; then
+  echo &quot;cd to $working_dir&quot;
+  cd $working_dir
+...
+
+
+osx
+=============
+
+Character Palette: Command-Option-T.
+
+eject disk: 
+    drutil eject
+
+dsn cache: 
+    dscacheutil -flushcache
+
+== File Dialog
+  Go to folder:      CMD + SHIFT + G
+  Show hidden files: CMD + Shift + .
+
+launchctl unload [~]/Library/LaunchDaemons/xyz.plist
+
+mysql.server stop
+
+nginx -s stop
+nginx #starts
+
+pbcopy, pbpaste  (pb==pasteboard)
+
+
+passenger
+===================
+
+== refresh against apache
+  cd /usr/local/src/passenger
+  sudo rake apache2
+  sudo /etc/init.d/apache2 restart
+
+
+rails
+=====
+
+Load optimization:
+    $ time script/rails runner &quot;puts 1&quot;
+
+
+rspec
+======
+
+each matcher: http://xtargets.com/2011/08/12/rspec-meta-expectations-over-collections
+
+
+ruby
+=====================
+
+#!/usr/bin/env ruby
+
+==log_buddy
+require 'lib/log_buddy'
+LogBuddy.init
+
+d { @a } # logs &quot;@a = 'my var'&quot;
+
+
+share
+==============
+http://drnicwilliams.com/2008/06/18/what-is-gitjour-gemjour-starjour/
+
+
+sinatra
+========
+
+console: tux, http://tagaholic.me/2011/04/10/tux-a-sinatra-console.html
+example, request.accept (compares w/o lib): http://97.107.136.245/github/sinatra/sinatra-contrib/master/Sinatra/RespondWith
+
+
+ssh
+=====================
+
+== add my public key to remote server (no more password)
+cat ~/.ssh/id_rsa.pub | ssh user@hostname 'cat &gt;&gt; .ssh/authorized_keys'
+ssh-copy-id user@host
+
+== Display fingerprint
+    $ ssh-keygen -l [-f file_name]
+
+
+tdd
+===================
+
+TDD Maturity Model: http://codemanship.co.uk/parlezuml/blog/?postid=1066
+
+### Rake
+ * http://robots.thoughtbot.com/post/11957424161/test-rake-tasks-like-a-boss
+ * http://robots.thoughtbot.com/post/159805695/testing-rakes-integration
+
+vim
+======================
+
+Move among windows: Cw&lt;direction&gt;
+Repeat command (not just text):Cp = :&lt;up arrow&gt;
+Format code: gg=G (top, format, bottom)
+Ext cmd to buffer: :% !html2haml %
+Spell checker (MacVim): set spell
+Find/replace across multiple files:
+  :args app/views/**/*.*
+  :argdo %s/test/)/gce | update
+
+== ascii art
+read!figlet -c 'Q&amp;A'
+vim:nolist</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

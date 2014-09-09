@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Guard is a command line tool to easily handle events on file system
+modifications.
+
+https://github.com/guard/guard
+
+
+Interacting with Guard
+----------------------
+
+When Guard is idle you can interact with it by entering a command followed by
+return/enter:
+
+  - stop: stop|quit|exit|s|q|e + return
+      Calls each guard's #stop method, in the same order they are declared in
+      the Guardfile, and then quits Guard itself.
+
+  - reload: reload|r|z + return
+      Calls each guard's #reload method, in the same order they are declared
+      in the Guardfile.
+
+  - pause: pause|p + return
+      Toggle files modification listening. Useful when switching git branches.
+
+  - run_all: just return (no commands)
+      Calls each guard's #run_all method, in the same order they are declared
+      in the Guardfile.
+
+reload and run_all actions can be scoped to only run on a certain guard or
+group:
+
+  - backend reload + return
+      Call only each guard's #reload method on backend group.
+
+  - rspec + return
+      Call only rspec guard's #run_all method.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

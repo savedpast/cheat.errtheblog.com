@@ -1,0 +1,50 @@
+---
+verilog: ! "// Comment\n/* Comment */\n\n`timescale 1ns/1ps\n`include \"file.vh\"\n`define
+  NAME TEXT\n`ifdef NAME\n`ifndef NAME\n`endif\n\n\nDECLARATIONS:\n  module NAME[(ARGS)];
+  STATEMENT endmodule\n  task NAME[(ARGS)]; STATEMENT endtask // time consuming method\n
+  \ function [RETURN] NAME([ARGS]) STATEMENT endfunction // zero-time\n  wire    [MSB:LSB]
+  SIG;\n  input   PORT;\n  inout   PORT;\n  output  PORT;\n  event   NAME; // sc_event
+  - rarely used\nVAR_DECLARATIONS:\n  integer VAR; // C int\n  real    VAR; // C float\n
+  \ reg     [MSB:LSB] VAR;\n  reg     [MSB:LSB] MEM [LSA:MSA]; // C array\n  reg unsigned
+  ... // Verilog 2001\n\nCONCURRENT_STATEMENTS:\n  initial STATEMENT   // SC_THREAD
+  process\n  always STATEMENT    // SC_METHOD process\n  assign WIRE = EXPR; // continuous
+  assignment\n\nSEQUENTIAL_STATEMENTS:\n  begin[:LABEL [VAR_DECLARATIONS]] STATEMENT_LIST
+  end\n  fork[:LABEL] STATEMENT_LIST join\n  if (EXPR) STATEMENT [else STATEMENT]\n
+  \ case (EXPR)\n    EXPR: STATEMENT\n    default: STATEMENT\n  endcase\n  casex (EXPR)\n
+  \   EXPR: STATEMENT\n    default: STATEMENT \n  endcase\n  casez (EXPR)\n    EXPR:
+  STATEMENT \n    default: STATEMENT \n  endcase\n  while (EXPR) STATEMENT\n  for
+  (EXPR1,EXPR2,EXPR3) STATEMENT\n  repeat (EXPR) STATEMENT\n  forever STATEMENT\n
+  \ disable LABEL\n  ;\n  @(EVENT_EXPR) STATEMENT; // wait for event expression\n
+  \ #(EXPR) STATEMENT;       // wait for time\n  TASK[(ARGS)];\n  REG = EXPR;  //
+  Variable \"blocking\" assignment\n  REG <= EXPR; // Signal \"non-blocking\" assignment\n
+  \ assign REG = EXPR;  // procedural assignment\n  release REG;\n  ->EVENT;\n  $display(\"FORMAT\",VARS,\"FORMAT\",VARS...);
+  // automatically append \\n\n  $write(\"FORMAT\",VARS,\"FORMAT\",VARS...);   //
+  printf\n  $finish;\n\nEVENTS:\n  EVENT\n  PORT\n  SIGNAL\n  posedge SIGNAL\n  negedge
+  SIGNAL\n\nUNARY OPERATORS:\n  - B\n  + B\n  ! B // logical NOT (non-zero test)\n
+  \ & B // logical AND all bits into a single bit result\n  | B // logical IOR all
+  bits into a single bit result\n  ^ B // logical XOR all bits into a single bit result\n
+  \ ~ B // bitwise complement\n\nBINARY OPERATORS (same as C):\n  A *   B  // \n  A
+  /   B  // \n  A %   B  // \n  A +   B  // \n  A -   B  // \n  A <<  B  // shift
+  left\n  A >>  B  // shift right\n  A ^   B  // bitwise XOR\n  A &   B  // bitwise
+  AND\n  A |   B  // bitwise IOR\n  A &&  B  // \n  A ||  B  // \n  A ==  B  // equality\n
+  \ A !=  B  // not equal\n  A <   B  // \n  A <=  B  // \n  A >   B  // \n  A >=
+  \ B  // \n  A === B  // identical (includes X & Z as part of equality test)\n  A
+  !== BB // not identical (includes X & Z as part of equality test)\n\nCOPYING/EXTRACTING
+  BITS\n  {A,B}         // concatenation (on left-hand side even!)\n  {A{B}}        //
+  replication of B bits\n  SIG[MSB:LSB]  // sub-range of bits\n  SIG[LSB+:WID] //
+  sub-range of bits LSB+WID..LSB\n  SIG[MSB-:WID] // sub-range of bits MSB..MSB-WID\n\nTRINARY
+  OPERATORS (same as C):\n  A ? B : C\n\nNOTES\n// Assigning larger number of bits
+  to smaller number truncates the MSB's\n// Assigning smaller number of bits to larger
+  number duplicates the MSB\n// All arithmetic is signed (1995)\n\nEXAMPLES:\n\nmodule
+  verilog1995(clock,status,value,request);\n  input clock;\n  output status;\n  output
+  [31:0] value;\n  inout [1:15] request;\n  reg status;\n  reg [31:0] value;\n  ...\nendmodule\n\nmodule
+  verilog2001 (\n  input clock,\n  output reg status,\n  output reg [31:0] value,\n
+  \ inout [1:15] request,\n);\n\n  reg [3:0] var;\n  reg [2:3] sig;\n\n  assign request
+  = 15'hZZZZ;\n  assign request[5] = 1'b1;\n\n  initial begin\n    status = 1'b0;\n
+  \   value  = {16{1'b1}};\n    {value[3:2],value[15:14]} = 1'hC;\n    begin :OUTSIDE\n
+  \     integer i; // legal immediately after block label\n      for(i=0;i<=10;i=i+1)
+  begin :INSIDE\n        if (i == 3) disable INSIDE; // continue\n        $display(\"i=%d\",i);\n
+  \       if (i == 9) disable OUTSIDE; // break\n        #18;\n      end\n    end\n
+  \   $write(\"Goodbye\\n value=%d\\n\",value,\"status=%d\\n\",status);\n    #500;\n
+  \   $finish;\n  end\n\n  always begin\n    @(posedge clock);\n    #42;\n    repeat
+  (5) value <= value + 1;\n  end\n\n  always @(clock or request) status = #5 ~status;\n\nendmodule"

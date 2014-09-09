@@ -1,0 +1,37 @@
+---
+http_status_codes: ! "1xx Informational\r\n  100: Continue (:continue)\r\n  101: Switching
+  Protocols (:switching_protocols)\r\n  102: Processing (:processing)\r\n\r\n2xx Success\r\n
+  \ 200: OK (:ok)\r\n  201: Created (:created)\r\n  202: Accepted (:accepted)\r\n
+  \ 203: Non-Authoritative Information (:non_authoritative_information)\r\n  204:
+  No Content (:no_content)\r\n  205: Reset Content (:reset_content)\r\n  206: Partial
+  Content (:partial_content)\r\n  207: Multi-Status (:multi_status)\r\n  208: Already
+  Reported\r\n  226: IM Used (:im_used)\r\n\r\n3xx Redirection\r\n  300: Multiple
+  Choices (:multiple_choices)\r\n  301: Moved Permanently (:moved_permanently)\r\n
+  \ 302: Moved Temporarily (HTTP/1.0)\r\n  302: Found (HTTP/1.1) (:found)\r\n  303:
+  See Other (HTTP/1.1) (:see_other)\r\n  304: Not Modified (:not_modified)\r\n  305:
+  Use Proxy (:use_proxy)\r\n  306: (no longer used, but reserved)\r\n  307: Temporary
+  Redirect (:temporary_redirect)\r\n  308: Permanent Redirect\r\n\r\n4xx Client Error\r\n
+  \ 400: Bad Request (:bad_request)\r\n  401: Unauthorized (:unauthorized)\r\n  402:
+  Payment Required (:payment_required)\r\n  403: Forbidden (:forbidden)\r\n  404:
+  Not Found (:not_found)\r\n  405: Method Not Allowed (:method_not_allowed)\r\n  406:
+  Not Acceptable (:not_acceptable)\r\n  407: Proxy Authentication Required (:proxy_authentication_required)\r\n
+  \ 408: Request Timeout (:request_timeout)\r\n  409: Conflict (:conflict)\r\n  410:
+  Gone (:gone)\r\n  411: Length Required (:length_required)\r\n  412: Precondition
+  Failed (:precondition_failed)\r\n  413: Request Entity Too Large (:request_entity_too_large)\r\n
+  \ 414: Request-URI Too Long (:request_uri_too_long)\r\n  415: Unsupported Media
+  Type (:unsupported_media_type)\r\n  416: Requested Range Not Satisfiable (:requested_range_not_satisfiable)\r\n
+  \ 417: Expectation Failed (:expectation_failed)\r\n  418: I'm a teapot (RFC 2324)\r\n
+  \ 422: Unprocessable Entity (:unprocessable_entity)\r\n  423: Locked (:locked)\r\n
+  \ 424: Failed Dependency (:failed_dependency)\r\n  425: Unordered Collection\r\n
+  \ 426: Upgrade Required (:upgrade_required)\r\n  428: Precondition Required\r\n
+  \ 429: Too Many Requests\r\n  431: Request Header Fields Too Large\r\n  444: No
+  Response\r\n  449: Retry With\r\n  450: Blocked by Windows Parental Controls\r\n
+  \ 451: Unavailable For Legal Reasons\r\n  499: Client Closed Request\r\n\r\n\r\n5xx
+  Server Error\r\n  500: Internal Server Error (:internal_server_error)\r\n  501:
+  Not Implemented (:not_implemented)\r\n  502: Bad Gateway (:bad_gateway)\r\n  503:
+  Service Unavailable (:service_unavailable)\r\n  504: Gateway Timeout (:gateway_timeout)\r\n
+  \ 505: HTTP Version Not Supported (:http_version_not_supported)\r\n  506: Variant
+  Also Negotiates\r\n  507: Insufficient Storage (:insufficient_storage)\r\n  508:
+  Loop Detected\r\n  509: Bandwidth Limit Exceeded\r\n  510: Not Extended (:not_extended)\r\n
+  \ 511: Network Authentication Required\r\n  598: Network read timeout error\r\n
+  \ 599: Network connect timeout error"

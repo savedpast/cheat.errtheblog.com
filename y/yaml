@@ -1,0 +1,34 @@
+---
+yaml: ! "%YAML 1.1   # Reference card (http://yaml.org/refcard.html)\n---\nCollection
+  indicators:\n    '? ' : Key indicator.\n    ': ' : Value indicator.\n    '- ' :
+  Nested series entry indicator.\n    ', ' : Separate in-line branch entries.\n    '[]'
+  : Surround in-line series branch.\n    '{}' : Surround in-line keyed branch.\nScalar
+  indicators:\n    '''' : Surround in-line unescaped scalar ('' escaped ').\n    '\"'
+  \ : Surround in-line escaped scalar (see escape codes below).\n    '|'  : Block
+  scalar indicator.\n    '>'  : Folded scalar indicator.\n    '-'  : Strip chomp modifier
+  ('|-' or '>-').\n    '+'  : Keep chomp modifier ('|+' or '>+').\n    1-9  : Explicit
+  indentation modifier ('|1' or '>2').\n           # Modifiers can be combined ('|2-',
+  '>+1').\nAlias indicators:\n    '&'  : Anchor property.\n    '*'  : Alias indicator.\nTag
+  property: # Usually unspecified.\n    none    : Unspecified tag (automatically resolved
+  by application).\n    '!'     : Non-specific tag (by default, \"!!map\"/\"!!seq\"/\"!!str\").\n
+  \   '!foo'  : Primary (by convention, means a local \"!foo\" tag).\n    '!!foo'
+  : Secondary (by convention, means \"tag:yaml.org,2002:foo\").\n    '!h!foo': Requires
+  \"%TAG !h! <prefix>\" (and then means \"<prefix>foo\").\n    '!<foo>': Verbatim
+  tag (always means \"foo\").\nDocument indicators:\n    '%'  : Directive indicator.\n
+  \   '---': Document header.\n    '...': Document terminator.\nMisc indicators:\n
+  \   ' #' : Throwaway comment indicator.\n    '`@' : Both reserved for future use.\nSpecial
+  keys:\n    '='  : Default \"value\" mapping key.\n    '<<' : Merge keys from another
+  mapping.\nCore types: # Default automatic tags.\n    '!!map' : { Hash table, dictionary,
+  mapping }\n    '!!seq' : { List, array, tuple, vector, sequence }\n    '!!str' :
+  Unicode string\nMore types:\n    '!!set' : { cherries, plums, apples }\n    '!!omap':
+  [ one: 1, two: 2 ]\nLanguage Independent Scalar types:\n    { ~, null }              :
+  Null (no value).\n    [ 1234, 0x4D2, 02333 ]   : [ Decimal int, Hexadecimal int,
+  Octal int ]\n    [ 1_230.15, 12.3015e+02 ]: [ Fixed float, Exponential float ]\n
+  \   [ .inf, -.Inf, .NAN ]    : [ Infinity (float), Negative, Not a number ]\n    {
+  Y, true, Yes, ON  }    : Boolean true\n    { n, FALSE, No, off }    : Boolean false\n
+  \   ? !!binary >\n        R0lG...BADS=\n    : >-\n        Base 64 binary value.\nEscape
+  codes:\n Numeric   : { \"\\x12\": 8-bit, \"\\u1234\": 16-bit, \"\\U00102030\": 32-bit
+  }\n Protective: { \"\\\\\": '\\', \"\\\"\": '\"', \"\\ \": ' ', \"\\<TAB>\": TAB
+  }\n C         : { \"\\0\": NUL, \"\\a\": BEL, \"\\b\": BS, \"\\f\": FF, \"\\n\":
+  LF, \"\\r\": CR,\n               \"\\t\": TAB, \"\\v\": VTAB }\n Additional: { \"\\e\":
+  ESC, \"\\_\": NBSP, \"\\N\": NEL, \"\\L\": LS, \"\\P\": PS }"

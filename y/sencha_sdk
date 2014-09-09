@@ -1,0 +1,20 @@
+---
+sencha_sdk: ! "Install the Sencha SDK found here:\r\nhttp://www.sencha.com/products/sdk-tools\r\n\r\n$
+  sencha\r\nSencha Command v2.0.0 Beta\r\nCopyright (c) 2012 Sencha Inc.\r\n\r\nusage:
+  sencha COMMAND [ARGS]\r\n\r\nThe available commands are:\r\n   build\t\t\tbuild
+  a JSB project\r\n   create bootstrapdata\t\tgenerate boostrap data\r\n   create
+  jsb\t\t\tgenerate a minimal JSB project for an app\r\n   create locale\t\t\tgenerate
+  a template locale file from source\r\n   create manifest\t\tgenerate classes manifest\r\n
+  \  package\t\t\tpackage your Touch web app into a native bundle\r\n   slice theme\t\t\tslice
+  a custom theme's images for IE\r\n\r\nSee 'sencha help COMMAND' for more information
+  on a specific command.\r\n\r\nsencha build\r\nusage: sencha build [OPTIONS...]\r\n\r\n
+  COMMAND: JS Builder\r\n\r\n DESCRIPTION:\r\n\r\n   JS Builder makes deploying JavaScript
+  projects easy with code consolidation, \r\n   obfuscation, and minification all
+  in one step. \r\n    \r\n   Example: \r\n      sencha build -p /home/tommy/www/trunk/ext.jsb3
+  -d /home/tommy/www/deploy/ \r\n    \r\n OPTIONS:\r\n\r\n --debugSuffix[=]value,
+  -s[=]value\r\n   Suffix to append to JS debug targets, defaults to '-debug' \r\n\r\n
+  --deployDir[=]value, -d[=]value (required)\r\n   The direction to build the project
+  to \r\n\r\n --nocompress, -c\r\n   Don't compress the targets \r\n\r\n --projectFile[=]value,
+  -p[=]value (required)\r\n   Location of a jsb3 project file \r\n\r\n --verbose,
+  -v\r\n   Output detailed information about what is being built\r\n\r\nGENERATE A
+  SENCHA APP\r\n$ sencha generate app NAME ../DIRECTORY"

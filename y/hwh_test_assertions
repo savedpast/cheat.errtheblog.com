@@ -1,0 +1,23 @@
+---
+hwh_test_assertions: ! "Assertion\tPurpose\r\nassert( boolean, [msg] )\t        Ensures
+  that the object/expression is true.\r\nassert_equal( obj1, obj2, [msg] )\tEnsures
+  that obj1 == obj2 is true.\r\nassert_not_equal( obj1, obj2, [msg] )\tEnsures that
+  obj1 == obj2 is false.\r\nassert_same( obj1, obj2, [msg] )\tEnsures that obj1.equal?(obj2)
+  is true.\r\nassert_not_same( obj1, obj2, [msg] )\tEnsures that obj1.equal?(obj2)
+  is false.\r\nassert_nil( obj, [msg] )\t        Ensures that obj.nil? is true.\r\nassert_not_nil(
+  obj, [msg] )\t        Ensures that obj.nil? is false.\r\nassert_match( regexp, string,
+  [msg] )\tEnsures that a string matches the regular expression.\r\nassert_no_match(
+  regexp, string, [msg] )\tEnsures that a string does not match the regular expression.\r\nassert_in_delta(
+  expecting, actual, delta, [msg] )\tEnsures that the numbers expecting and actual
+  are within delta of each other.\r\nassert_throws( symbol, [msg] ) { block }\tEnsures
+  that the given block throws the symbol.\r\nassert_raise( exception1, exception2,
+  ... ) { block }\tEnsures that the given block raises one of the given exceptions.\r\nassert_nothing_raised(
+  exception1, exception2, ... ) { block }\tEnsures that the given block does not raise
+  one of the given exceptions.\r\nassert_instance_of( class, obj, [msg] )\tEnsures
+  that obj is of the class type.\r\nassert_kind_of( class, obj, [msg] )\tEnsures that
+  obj is or descends from class.\r\nassert_respond_to( obj, symbol, [msg] )\tEnsures
+  that obj has a method called symbol.\r\nassert_operator( obj1, operator, obj2, [msg]
+  )\tEnsures that obj1.operator(obj2) is true.\r\nassert_send( array, [msg] )\tEnsures
+  that executing the method listed in array[1] on the object in array[0] with the
+  parameters of array[2 and up] is true. This one is weird eh?\r\nflunk( [msg] )\tEnsures
+  failure. This is useful to explicitly mark a test that isn’t finished yet."

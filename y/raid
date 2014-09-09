@@ -1,0 +1,12 @@
+---
+raid: ! "#create raid autodetect disk\r\nsudo fdisk /dev/sdc\r\nn p 1\r\nt 1 fd\r\nw\r\n\r\n#create
+  raid autodetect disk\r\nsudo fdisk /dev/sdb\r\nn p 1\r\nt 1 fd\r\nw\r\n\r\n#create
+  new raid1 array with one device\r\nmdadm --create /dev/md0 --level=1 --raid-disks=2
+  missing /dev/sdc1\r\n\r\n#make file system in array\r\nmkfs.ext3 /dev/md0\r\n\r\n#mount
+  device to /mnt\r\nmount /dev/md0 /mnt\r\n\r\n#check raid arrays\r\ncat /proc/mdstat\r\n\r\n#check
+  state of a certain array (here its md0)\r\nmdadm -D /dev/md0\r\n\r\n#Add device
+  sdb1 to md0\r\nmdadm -a /dev/md0 /dev/sdb1\r\n\r\n#Write configuration into config
+  file\r\ncd /etc/mdadm\r\nmdadm --detail --scan >> mdadm.conf\r\n\r\n#mark device
+  as failed\r\nmdadm -f /dev/md0 /dev/sdb1\r\n\r\n#Remove device sdb1 from raid md0\r\nmdadm
+  -r /dev/md0 /dev/sdb1\r\n\r\n#Add device sdd1 to md0 to replace sdb1\r\nmdadm -a
+  /dev/md0 /dev/sdd1\r\n\r\n#desctruct raid array md0\r\nmdadm --stop /dev/md0\r\n\r\n"

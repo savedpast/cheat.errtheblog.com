@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Bash parameter expansions
+=========================
+
+NOTE:
+  The `:' character used in many of the expansions is optional.
+  Using the `:' checks for param that is unset or null.
+  Without the `:' checks for param that is unset.
+
+| Expansion                | Note                            |
+|--------------------------+---------------------------------|
+| ${param}                 | Use value                       |
+| ${!param}                | Variable indirection            |
+| ${param:-word}           | Use default value               |
+| ${param:=word}           | Assign default value            |
+| ${param:?word}           | Display error                   |
+| ${param:+word}           | Use alternate value             |
+| ${param:offset}          | Substring expansion             |
+| ${param:offset:length}   | Substring expansion with length |
+| ${!prefix*}              | Name expansion with prefix      |
+| ${#param}                | Length in characters            |
+| ${param#word}            | Remove shortest match at start  |
+| ${param##word}           | Remove longest match at start   |
+| ${param%word}            | Remove shortest match at end    |
+| ${param%%word}           | Remove longest match at end     |
+| ${param/pattern/string}  | Replace first matching pattern  |
+| ${param//pattern/string} | Replace all matching patterns   |
+
+Examples:
+
+$ x=yes
+$ echo ${x}         #=&gt; yes
+$ echo ${x:-no}     #=&gt; yes
+$ x=
+$ echo ${x:-no}     #=&gt; no
+$ echo ${x-no}      #=&gt; &quot;&quot; &lt;an empty string&gt;
+$ unset x
+$ echo ${x:-no}     #=&gt; no
+$ echo ${x-no}      #=&gt; no
+
+$ path='/some/path/to/file.txt'
+$ echo ${path##*/}  #=&gt; file.txt
+$ echo ${path%/*}   #=&gt; /some/path/to
+
+$ x=yes
+$ y=x
+$ echo ${!y}        #=&gt; yes
+
+$ x=0123456789
+$ echo ${x:0}       #=&gt; 0123456789
+$ echo ${x:3}       #=&gt; 3456789
+$ echo ${x:3:2}     #=&gt; 34
+
+$ xval1=first
+$ xval2=second
+$ xval3=third
+$ echo ${!xval*}    #=&gt; xval1 xval2 xval3
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

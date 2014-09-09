@@ -1,0 +1,16 @@
+---
+diakonos: ! "Common commands for the Diakonos text editor. (http://purepistos.net/diakonos)\n\nThis
+  guide is available at http://wiki.purepistos.net/doku.php?id=Diakonos:Getting-Started\n\nMovement\n\nArrow
+  Keys\tCursor Movement\nHome, End\tMove cursor to beginning or end of current line\nPage
+  Up/Down\tPitch buffer view by one screenful of text\nAlt-Up/Down\tScroll up, down\n\nEditor
+  Control\n\nCtrl-Q\t\tQuit\nF1\t\tList key bindings\nF12\t\tEdit user's configuration
+  file\nAlt-M\t\tStart/stop macro recording\nF4\t\tPlay macro\nF6\t\tRepeat last command\n\nFile/Buffer
+  Control\n\nCtrl-O\t\tOpen a file\nCtrl-S\t\tSave current buffer\nAlt-S\t\tSave current
+  buffer to specific filename\nCtrl-W\t\tClose current buffer\nCtrl-N\t\tCreate new
+  empty buffer\nAlt-Shift-T\tSpecify buffer content type\nAlt-1 to 9\tSwitch among
+  first 9 buffers\nAlt-minus/=\tSwitch buffers\nCtrl-Z\t\tUndo\nCtrl-Y\t\tRedo\n\nClipboard\n\nCtrl-space\tAnchor
+  selection (like emacs)\nCtrl-C\t\tCopy selection to clipboard\nCtrl-X\t\tCopy selection
+  to clipboard and delete (i.e. cut)\nCtrl-V\t\tPase clipboard text\nAlt-U\t\tUnselect
+  (stop selecting)\nCtrl-K\t\tCut current line (can collect multiple lines)\n\nSearching\n\nCtrl-F\t\tFind\nCtrl-Alt-F\tFind
+  upwards\nF3\t\tFind again\nShift-F3\tFind again upwards\nCtrl-R\t\tSearch and replace\nCtrl-Alt-U\tClear
+  match highlight"

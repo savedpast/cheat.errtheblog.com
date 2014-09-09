@@ -1,0 +1,6 @@
+---
+gruff: ! "http://nubyonrails.com/pages/gruff\n\n#!/usr/bin/ruby\n\nrequire 'rubygems'\nrequire
+  'gruff'\n\ng = Gruff::Line.new\ng.title = \"My Graph\" \n\ng.data(\"Apples\", [1,
+  2, 3, 4, 4, 3])\ng.data(\"Oranges\", [4, 8, 7, 9, 8, 9])\ng.data(\"Watermelon\",
+  [2, 3, 1, 5, 6, 8])\ng.data(\"Peaches\", [9, 9, 10, 8, 7, 9])\n\ng.labels = {0 =>
+  '2003', 2 => '2004', 4 => '2005'}\n\ng.write('my_fruity_graph.png')"

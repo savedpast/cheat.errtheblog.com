@@ -1,0 +1,23 @@
+---
+cheats: ! "Hi, welcome to cheat (http://cheat.errtheblog.com).\nThanks for trying
+  it out.\n\nBe aware that the ENTIRE world will see your cheat sheets!  \n\nHere
+  are a few commands to get you started.\n===========================================\n\nInstallation:\n$
+  gem install cheat\n\nRecently added cheat sheets:\n$ cheat recent\n\nAll cheat sheets:\n$
+  cheat sheets\n\nThe `strftime' cheat sheet:\n$ cheat strftime\n\nView a cheat sheet
+  in TextMate:\n$ cheat strftime | mate\n\nLess or more, for scrolly terminal:\n$
+  cheat strftime | less\n$ cheat strftime | more\n\nPrint a cheat sheet\n$ cheat strftime
+  | lpr\n\nTo edit a cheat sheet, use the --edit switch.\n$ cheat markaby --edit\n\nTo
+  add a cheat sheet, use the --add switch.\n$ cheat readme --add\nDo you not use CAPITAL
+  letters in the name, or it will be lost in the void, due\nto cheat bugs.\n\nTo use
+  a different editor (such as TextMate) for --edit and --add, set the\nVISUAL (or
+  EDITOR) environment variable:\n$ export VISUAL='mate -w'\n\nTo see versions of a
+  sheet, use the --versions switch.\n$ cheat rspec --versions\n\nTo see a diff to
+  the current version, use the --diff switch.\n$ cheat rspec --diff 5\n\nTo see a
+  diff between two versions, use the start:end format.\n$ cheat rspec --diff 5:7\n\nSheets
+  are cached locally in ~/.cheat.  To clear your cache, pass --new to\ncheat.  You
+  won't get updates unless you do this.\n$ cheat --new\n$ cheat strftime --new\n\nAnd
+  to get all cached locally, you could do\n$ cheat sheets | grep '^  ' | xargs -n
+  1 -I {} bash -c 'cheat {} | :'\n\n** There's no need to run this in a screen or
+  to sit and watch it while it runs.\nThe -I argument to xargs allows you to specify
+  where in the command the\ncurrent arg should go. The `| :` is a Bash construct to
+  automatically discard\noutput (and it is faster than `> /dev/null`."

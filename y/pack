@@ -1,0 +1,39 @@
+---
+pack: ! "================================================================================\r\nArray#pack\r\n================================================================================\r\n+-----------+------------------------------------------------------------------+\r\n|
+  Directive |  Meang                                                         |\r\n+-----------+------------------------------------------------------------------+\r\n|
+  \   @      |  Moves to absolute position                                      |\r\n|
+  \   A      |  ASCII string (space padded, count is width)                     |\r\n|
+  \   a      |  ASCII string (null padded, count is width)                      |\r\n|
+  \   B      |  Bit string (descending bit order)                               |\r\n|
+  \   b      |  Bit string (ascending bit order)                                |\r\n|
+  \   C      |  Unsigned char                                                   |\r\n|
+  \   c      |  Char                                                            |\r\n|
+  \   D, d   |  Double-precision float, native format                           |\r\n|
+  \   E      |  Double-precision float, little-endian byte order                |\r\n|
+  \   e      |  Single-precision float, little-endian byte order                |\r\n|
+  \   F, f   |  Single-precision float, native format                           |\r\n|
+  \   G      |  Double-precision float, network (big-endian) byte order         |\r\n|
+  \   g      |  Single-precision float, network (big-endian) byte order         |\r\n|
+  \   H      |  Hex string (high nibble first)                                  |\r\n|
+  \   h      |  Hex string (low nibble first)                                   |\r\n|
+  \   I      |  Unsigned integer                                                |\r\n|
+  \   i      |  Integer                                                         |\r\n|
+  \   L      |  Unsigned long                                                   |\r\n|
+  \   l      |  Long                                                            |\r\n|
+  \   M      |  Quoted printable, MIME encoding (see RFC2045)                   |\r\n|
+  \   m      |  Base64 encoded string                                           |\r\n|
+  \   N      |  Long, network (big-endian) byte order                           |\r\n|
+  \   n      |  Short, network (big-endian) byte-order                          |\r\n|
+  \   P      |  Pointer to a structure (fixed-length string)                    |\r\n|
+  \   p      |  Pointer to a null-terminated string                             |\r\n|
+  \   Q, q   |  64-bit number                                                   |\r\n|
+  \   S      |  Unsigned short                                                  |\r\n|
+  \   s      |  Short                                                           |\r\n|
+  \   U      |  UTF-8                                                           |\r\n|
+  \   u      |  UU-encoded string                                               |\r\n|
+  \   V      |  Long, little-endian byte order                                  |\r\n|
+  \   v      |  Short, little-endian byte order                                 |\r\n|
+  \   w      |  BER-compressed integer\\fnm                                      |\r\n|
+  \   X      |  Back up a byte                                                  |\r\n|
+  \   x      |  Null byte                                                       |\r\n|
+  \   Z      |  Same as ``a'', except that null is added with *                 |\r\n+-----------+------------------------------------------------------------------+"

@@ -1,0 +1,8 @@
+---
+osmosis: ! "Import a planet file into a local PostgreSQL rails port database.\r\n
+  \  osmosis --read-xml file=\"planet.osm\" --write-apidb host=\"x\" database=\"x\"
+  user=\"x\" password=\"x\"\r\n\r\nExport a planet file from a local PostgreSQL rails
+  port database.\r\n   osmosis --read-apidb host=\"x\" database=\"x\" user=\"x\" password=\"x\"
+  --write-xml file=\"planet.osm\"\r\n\r\nMerging multiple OSM dumps into one:\r\n
+  \  osmosis --rb 1.osm.pbf --rb 2.osm.pbf --merge --wb merged.osm.pbf\r\n   osmosis
+  --rx 1.osm --rx 2.osm --rx 3.osm --merge --merge --wx merged.osm\r\n\r\nMore:\r\nhttp://wiki.openstreetmap.org/wiki/Osmosis"

@@ -1,0 +1,9 @@
+---
+dot: ! "Undirected graphs\n\ngraph graphname {\n  a -- b -- c;\n  b -- d;\n}\n\n-------------------------\n\nDirected
+  graphs\n\ndigraph graphname {\n  a -> b -> c;\n  b -> d;\n}\n\n-------------------------\n\nAttributes\n\ngraph
+  graphname {\n  // The label attribute can be used to change the label of a node\n
+  \ a [label=\"Foo\"];\n  // Here, the node shape is changed.\n  b [shape=box];\n
+  \ // These edges both have different line properties\n  a -- b -- c [color=blue];\n
+  \ b -- d [style=dotted];\n}\n\nMore attributes:\nhttp://www.graphviz.org/doc/schema/attributes.xml\n\n-------------------------\n\nComments\n\n
+  // This is a single line comment.\n /* This is a\n    multiple line\n    comment.
+  */\n # Lines like this are also ignored."

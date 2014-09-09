@@ -1,0 +1,12 @@
+---
+css_vertical_align: ! "DESCRIPTION\n\nThe `vertical-align` property sets the vertical\nalignement
+  of an element. It is defined in CSS1\nand supported by all browsers.\n\n\nSYNTAX\n\nelement
+  {\n  vertical-align: baseline|sub|super|top|\n    text-top|middle|bottom|text-bottom|\n
+  \   inherit|<length>|<percent>;\n}\n\n\nVALUES\n\nbaseline*\n    Align baseline
+  with the parent's\n\nsub\n    Align as if subscript\n\nsuper\n    Align as if superscript\n\ntop\n
+  \   Align top with the tallest element's on\n    the line\n\ntext-top\n    Align
+  top with the parent's font's\n\nmiddle\n    Place in the middle of the parent\n\nbottom\n
+  \   Align bottom with the lowest element's\n    on the line\n\ntext-bottom\n    Align
+  bottom with the parent's font's\n\ninherit\n    Inherit from parent\n\n<length>\n
+  \   Raise (+) or lower (-) element by <length>\n\n<percent>\n    Raise (+) or lower
+  (-) element by <percent>\n    of `line-height`"

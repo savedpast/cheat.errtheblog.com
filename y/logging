@@ -1,0 +1,6 @@
+---
+logging: ! "Here are some common logging idioms in various languages/frameworks.  Please
+  add more! (Keep them alphabetized)\r\n=========================================\r\n\r\nCocoa:\r\nNSLog(
+  @\"%d bottles of beer on the wall\", 99 );\r\n\r\nPython:\r\nimport logging\r\nlogging.warn(\"%d
+  bottles of beer on the wall\" % 99)\r\n\r\nRails:\r\nRAILS_DEFAULT_LOGGER.error(
+  \"%d bottles of beer on the wall\" % 99 )"

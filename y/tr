@@ -1,0 +1,25 @@
+---
+tr: ! "tr:\n  Translates characters, but, generally, is used to substitute or delete\ncharacters
+  from the content of standard input.\n\n  Forms:\n  \n    tr [-Ccsu] string1 string2\n
+  \   tr [-Ccu] -d string1\n    tr [-Ccu] -s string1\n    tr [-Ccu] -ds string1 string2\n\n\n
+  \ Options:\n\n    -C      # Complement characters in string1. Everything except
+  for the listed characters.\n    $ echo \"0123456789\" | tr -C 13579 \"[:number:]\"
+  \" \"\n    \n    -c     # Same as -C but complement the set of values in string1.\n\n
+  \   -d     # Delete characters in string1 from the input.\n\n    -s     # Squeeze
+  multiple occurrences of the characters listed in the last operand\n            (either
+  string1 or string2) in the input into a single instance of the character.\n            This
+  occurs after all deletion and translation is completed.\n\n    -u      # Guarantee
+  that any output is unbuffered.\n\n\n  Escape Chars:\n\n    \\char   # A backslash
+  followed by special characters escapes it to have special meaning.\n\n    \\a      #
+  Alert\n    \\b      # Backspace\n    \\f      # Form Feed\n    \\n      # Newline\n
+  \   \\r      # Carriage Return\n    \\t      # Tab>\n    \\v      # Vertical Tab\n\n
+  \n\n  Examples:\n  \n    tr -cs \"[:alpha:]\" \"\\n\" < file1\n    $ echo \"Round\\t
+  the\\brugged\" | tr -cs \"[:alpha:]\" \"\\n\"\n    Round\n    the\n    rugged\n
+  \   \n      # Create a list of the words in file1, one per line, where a word is\n
+  \     #  taken to be a maximal string of letters.\n\n\n    tr \"[:lower:]\" \"[:upper:]\"
+  < file1\n    \n      # Translate the contents of file1 to upper-case.\n\n\n    tr
+  a-z A-Z\n    $ echo \"hello world\" | tr a-z A-Z\n    HELLO WORLD\n    \n      #
+  A less locale-portable, but very common way to translate lowercase to upper case.\n\n\n
+  \   tr -cd \"[:print:]\" < file1\n    \n      # Strip out non-printable characters
+  from file1.\n\n\n    tr \"[=e=]\" \"e\"\n    \n      # Remove diacritical marks
+  from all accented variants of the letter `e'"

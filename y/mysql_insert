@@ -1,0 +1,13 @@
+---
+mysql_insert: ! "Name: 'INSERT'\nDescription:\nSyntax:\nINSERT [LOW_PRIORITY | DELAYED
+  | HIGH_PRIORITY] [IGNORE]\n    [INTO] tbl_name [(col_name,...)]\n    VALUES ({expr
+  | DEFAULT},...),(...),...\n    [ ON DUPLICATE KEY UPDATE col_name=expr, ... ]\n\nOr:\n\nINSERT
+  [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]\n    [INTO] tbl_name\n    SET
+  col_name={expr | DEFAULT}, ...\n    [ ON DUPLICATE KEY UPDATE col_name=expr, ...
+  ]\n\nOr:\n\nINSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]\n    [INTO] tbl_name
+  [(col_name,...)]\n    SELECT ...\n    [ ON DUPLICATE KEY UPDATE col_name=expr, ...
+  ]\n\nINSERT inserts new rows into an existing table. The INSERT ... VALUES\nand
+  INSERT ... SET forms of the statement insert rows based on\nexplicitly specified
+  values. The INSERT ... SELECT form inserts rows\nselected from another table or
+  tables. INSERT ... SELECT is discussed\nfurther in [HELP INSERT SELECT].\n\nURL:
+  http://dev.mysql.com/doc/refman/5.0/en/insert.html"

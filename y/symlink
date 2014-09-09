@@ -1,0 +1,5 @@
+---
+symlink: ! "Symlinks\n\n  ln -s TARGET LINK_NAME\n\nwhere TARGET is a file or directory
+  that exists and LINK_NAME is the name for \nthe symlink, which should not exist.
+  No trailing slashes.\n\nTo remove a symlink to a directory:\n\n  rm LINK_NAME\n\nDo
+  not recurse, do not force, no trailing slashes."

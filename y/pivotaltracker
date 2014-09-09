@@ -1,0 +1,9 @@
+---
+pivotaltracker: ! "Pivotal Tracker web-based shortcuts\r\n\r\nsearch                        /\r\nhelp
+  (this)                   ?\r\nadd story                     a\r\nsave currently
+  open story     <Ctrl> + s\r\nsave comment being edited     <Shift> + enter\r\ntoggle
+  backlog                <Shift> + b\r\ntoggle charts (graphs)        <Shift> + g\r\ntoggle
+  done                   <Shift> + d\r\ntoggle history                <Shift> + h\r\ntoggle
+  icebox                 <Shift> + i\r\ntoggle my work                <Shift> + w\r\ntoggle
+  labels & searches      <Shift> + l\r\ntoggle current                <Shift> + c\r\nadd
+  epic                      e\r\ntoggle epics panel            <Shift> + e"

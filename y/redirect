@@ -1,0 +1,9 @@
+---
+redirect: ! "# Send contents of file to command\n$ command < file\t\n\n# Redirect
+  Stderr twice\t\t\n$ command 2> file2 > file1 2>&1\t\n\n# Text to Stdin (command)\n$
+  command << 'text'\t\t\t\t\n\n# Redirect both Stdout and Stderr to file\n$ command
+  > file 2>&1\t\t\n\n# Redirect Stdout to one file and Stderr to another\n$ command
+  > file1 2> file2\t\n\n# Pipe Stdout and Stderr to another process\t\n$ command 2>&1
+  | command2\t\t\t\n\n$ less <(gzip -cd foo.gz)\n$ gzip -cd foo.gz && less foo\n\n#
+  Redirect an error\n$ echo An Error >&2 2>&1 | sed -e 's/A/I/'\n\n# Duplicate output\n$
+  command | tee file1 > file2"

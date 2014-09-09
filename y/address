@@ -1,0 +1,6 @@
+---
+address: ! "Here's a simple ERB snippet to output an address if you don't know which
+  components of the address will be provided.\r\n\r\n<%= record.address + content_tag(:br)
+  if record.address %>\r\n<%= record.address2 + content_tag(:br) if record.address2
+  %>\r\n<%= record.city.to_s + (record.state || record.zip ? ',' : '') %>\r\n<%= \"#{record.state}
+  #{record.zip}\" %>\r\n<%= content_tag(:br) + record.country if record.country %>"

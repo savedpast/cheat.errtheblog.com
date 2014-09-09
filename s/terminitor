@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>setup 'echo &quot;setup&quot;'   # code to run during setup
+
+# open a tab in current window with these commands
+tab &quot;echo 'default'&quot;, &quot;echo 'default tab'&quot;
+
+window do
+  before { run 'cd /path' } # run this command before each command.
+
+  run 'padrino start' # run in new window
+
+  tab &quot;echo 'first tab'&quot;, &quot;echo 'of window'&quot; # create a new tab in window and run it.
+
+  tab &quot;named tab&quot; do
+    run &quot;echo 'named tab'&quot;
+    run &quot;ls&quot;
+  end
+end
+
+tab &quot;echo 'hi'&quot;, &quot;gitx&quot;
+
+tab do
+  run &quot;echo 'hi'&quot;
+  run &quot;mate .&quot;
+end
+
+window do
+
+  run &quot;whoami&quot;    # Runs the command in the current window.
+
+  tab &quot;echo 'hi'&quot; # Creates another tab
+  tab &quot;mate .&quot;    # And another
+
+  tab do          # Last hoorah
+    run &quot;open http://www.google.com&quot;
+  end
+end
+
+before { run &quot;cd /path&quot; } # execute this command before other commands in the default window
+  run &quot;whoami&quot;
+tab 'uptime'
+
+# In this instance, &quot;cd /path&quot; wil be executed in the default window before 'whoami' 
+# and also in the tab before 'uptime'.
+# You can also use this inside a specific window context:
+
+window do
+  before 'cd /tmp'
+  run 'watchr test.watchr' # &quot;cd /tmp&quot; first than run watchr
+
+  tab do
+    run 'padrino start' # &quot;cd /tmp&quot; is ran beforehand and then padrino start is executed
+  end
+end
+
+setup do
+  run &quot;echo 'hi'&quot;
+  run &quot;bundle install&quot;
+  run 'git remote add upstream git://github.com/achiu/terminitor.git'
+end
+
+tab :name =&gt; &quot;named tab&quot;, :settings =&gt; &quot;Grass&quot; do
+  run &quot;echo 'named tab'&quot;
+  run &quot;ls&quot;
+end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

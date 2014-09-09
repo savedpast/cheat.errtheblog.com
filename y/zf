@@ -1,0 +1,38 @@
+---
+zf: ! 'Zend Framework MVC / Application
+
+  ================================
+
+
+  ### Controller Action Class Methods
+
+
+  init()            minimal logic, don''t use the Request here
+
+  preDispatch()     react to the Request object
+
+  postDispatch()    do stuff after the request
+
+  somePageAction()  general actions that (would use some-page.phtml by defalut)
+
+
+  ### Disable Layouts or View Render
+
+
+  (controller)
+
+  $this->_helper->disableLayout();
+
+  $this->_helper->viewRenderer->setNoRender(true);
+
+
+  (view script)
+
+  $this->layout()->disableLayout();
+
+
+  ===============
+
+  Thats all Folks
+
+  ==============='

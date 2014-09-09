@@ -1,0 +1,11 @@
+---
+balloon: ! "http://balloon.hobix.com/\r\n\r\nBalloon, another great service created
+  and provided by our benevolent overlord _why.  Run programs without going through
+  the trouble of downloading and installing the application or its libraries.  Definitely
+  read help page for _why's disclaimers.\r\n\r\nhttp://balloon.hobix.com/@help\r\n\r\nTo
+  make running balloons very easy you can install the handy 'blow' command (by hank):\r\n$
+  sudo ruby -ropen-uri -e 'eval(open(\"http://balloon.hobix.com/blow\").read)'\r\n\r\nafter
+  that you can run the balloon named 'me' by just running:\r\n$ blow me\r\n\r\n---\r\n\r\nSome
+  handy ballons:\r\n\r\n* cheat - by defunkt\r\n  Yep, balloon can bring you this
+  page!\r\n* serve - by _why\r\n  Serve the current directory on port 3000. Uses Mongrel
+  as the web server.\r\n* ringserver - by bishop\r\n  Who knows!"

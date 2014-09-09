@@ -1,0 +1,14 @@
+---
+powder: ! "Linking apps in Pow\r\n\r\npowder [-h|help] - Display usage information
+  \r\npowder link - Link the current dir to ~/.pow/<current_directory>\r\npowder link
+  [bacon] - Link the current dir to ~/.pow/bacon\r\npowder remove - Unlink current_dir\r\npowder
+  remove [bacon] - Unlink bacon\r\n\r\nWorking with Pow\r\n\r\npowder app log - tail
+  the log of the current app\r\npowder config - Get Pow's current configuration information\r\npowder
+  list - List all the current apps linked in ~/.pow\r\npowder log - Tails the pow
+  log. Not the application log, but the pow log.\r\npowder open - Opens the pow link
+  in a browser\r\npowder open [bacon] - Opens http://bacon.dev in a browser\r\npowder
+  restart - Restart the current app\r\npowder status - Get Pow's current status information\r\npowder
+  version - Returns the current powder version\r\n\r\nInstall and uninstall Pow\r\n\r\npowder
+  install - Installs pow server\r\npowder uninstall - Uninstalls pow server\r\npowder
+  update - Updates pow server\r\n\r\nEnable and Disable Pow\r\n\r\npowder up - Enable
+  Pow\r\npowder down - Disable Pow"

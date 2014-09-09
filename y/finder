@@ -1,0 +1,17 @@
+---
+finder: ! "Command-A\t\tSelect All Items\nCommand-C\t\tCopy Selected Items\nCommand-D\t\tDuplicate
+  Selected Items\nCommand-F\t\tSearch with Spotlight\nCommand-G\t\tFind Next Matched
+  Search\nCommand-H\t\tHide Window\nCommand-I\t\tOpen Get Info (Property) Pane\nCommand-J\t\tShow
+  View Options\nCommand-K\t\tConnect to Server\nCommand-L\t\tMake Alias of Selected
+  Items\nCommand-M\t\tMinimize Window\nCommand-N\t\tOpen New Window\nCommand-O\t\tOpen
+  Selected Items\nCommand-T\t\tCopy Items to Sidebar\nCommand-V\t\tPaste Items\nCommand-W\t\tClose
+  Finder Window\nCommand-Z\t\tUndo Action\nCommand-1\t\tView as Icons\nCommand-2\t\tView
+  as Lists\nCommand-3\t\tView as Columns\nCommand-4\t\tView as Coverflow\nCommand-Shift-A\t\tGo
+  to Application Folder\nCommand-Shift-B\t\tOpen Bluetooth\nCommand-Shift-C\t\tGo
+  to My Computer\nCommand-Shift-G\t\tOpen Address Bar\nCommand-Shift-H\t\tGo to Home
+  Folder\nCommand-Shift-I\t\tConnect to iDisk\nCommand-Shift-J\t\tOpen Journler (If
+  Any)\nCommand-Shift-K\t\tGo to Network Folder\nCommand-Shift-L\t\tGo to Safari\nCommand-Shift-N\t\tCreate
+  New Folder\nCommand-Shift-Q\t\tLog Out\nCommand-Shift-U\t\tGo to Utility Folder\nCommand-Shift-Y\t\tAttach
+  to Stickies\nCommand-Option-D\tHide the Dock\nCommand-Option-M\tMinimize All Windows\nCommand-Option-O\tOpen
+  File and Close Finder\nCommand-Option-T\tHide Toolbar\nCommand-Option-W\tClose All
+  Windows\nCommand-R\t\tShow Original (From Alias)"

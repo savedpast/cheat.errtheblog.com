@@ -1,0 +1,10 @@
+---
+arspy: ! "A Rails console command line tool for exploring, browsing and inspecting
+  the structure, associations and data of ActiveRecord data models.\n\nMethods:\n.lf
+  (list fields):\n  User.lf, user.blogs.lf\n\n.la (list attributes):\n  User.la, user.blogs.la\n\n.pr
+  (print): puts info in columns\n  user.friends.pr :first_name, :last_name, 'comments.count'\n
+  \ User.find(2).blogs.comments.comment.pr  \n  \n.wi (with): limit data \n  OR:  User.find(2).blogs.comments.wi(:user_id=>5,
+  :user_id=>9).comments.pr\n  AND: User.find(2).blogs.comments.wi(:blog_id=>6).wi(:user_id=>5).comments.pr\n
+  \ \n  User.find(2).blogs.comments.wi('user.last_name.include?(\"Grant\")').comment.pr\n
+  \ User.find(2).blogs.comments.wi(20,21,22).comment.pr\n  User.find(2).blogs.comments.wi(:blog_id=>[6,7,8]).comments.pr\n
+  \ \n.wo: opposite of .wi"

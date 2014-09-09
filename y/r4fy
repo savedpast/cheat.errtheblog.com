@@ -1,0 +1,6 @@
+---
+r4fy: ! "# double space a file\n    $  ruby -pe 'puts' < file.txt\n# triple space
+  a file\n    $  ruby -pe '2.times {puts}' < file.txt\n# undo double-spacing (w/ and
+  w/o whitespace in lines)\n    $  ruby -lne 'BEGIN{$/=\"\\n\\n\"}; puts $_' < file.txt\n
+  \   $  ruby -ne 'BEGIN{$/=\"\\n\\n\"}; puts $_.chomp' < file.txt\n    $  ruby -e
+  'puts STDIN.readlines.to_s.gsub(/\\n\\n/, \"\\n\")' < file.txt"

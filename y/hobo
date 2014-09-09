@@ -1,0 +1,76 @@
+---
+hobo: ! "Hobo Cheatsheet, version 0.1\r\n============================\r\nfrom http://zylstra.wordpress.com/2008/03/28/hobo-cheatsheet-0_1/\r\n\r\nRich
+  Data Types\r\n\r\nhtml_string\r\nmarkdown_string\r\ntextile_string\r\npassword_string\r\ntext\r\nemail_address\r\nenum_string\r\npercentage\r\nGenerators\r\n\r\nhobo\r\nhobo_front_controller\r\nhobo_model\r\nhobo_model_controller\r\nhobo_model_resource\r\nhobo_rapid\r\nhobo_user_controller\r\nhobo_user_model\r\nExtensions
+  to Object\r\nis_a?\r\n\r\nnow takes multiple arguments\r\n     >> \"foo\".is_a?(String,
+  Symbol)\r\n     => true\r\n     >> :foo.is_a?(String, Symbol)\r\n     => true\r\n
+  \    >> 1.is_a?(String, Symbol)\r\n     => false\r\n._?.\r\n\r\nonly calls the method
+  if the receiver is not nil.\r\n     >> \"foo\"._?.length\r\n     => 3\r\n     >>
+  nil._?.length\r\n     => nil\r\n\r\nObject#try\r\n\r\n\".try\" only calls the method
+  if the receiver responds to that method.\r\n\r\n     >> \"foo\".try.length\r\n     =>
+  3\r\n     >> :foo.try.length\r\n     => nil\r\nshorthand DryML\r\n\r\n<a:name/>
+  is a shorthand for <a field=\"name\"/>\r\n<input:name/> is a shorthand (afaiu) for
+  <input field=\"name\"/>\r\nCore Tag Library\r\n\r\ncall-tag\r\n    attributes: tag\r\nwrap\r\n
+  \   attributes: tag, when, parameter\r\npartial\r\n    attributes: name, locals\r\nrepeat\r\n
+  \   attributes: even-odd, join\r\nwith\r\n    alias-of=\"do\"/\r\nif\r\n    attributes:
+  test\r\nelse\r\n\r\nunless\r\n    attributes: test\r\nRapid Tag Library\r\n\r\nfield-list\r\n
+  \   attributes: tag\r\nitem\r\nnil-view\r\nul\r\n    attributes: empty\r\ntable\r\n
+  \   attributes: fields, field-tag, empty\r\nimage\r\n    attributes: src\r\nspinner\r\nhobo-rapid-javascripts\r\n
+  \   attributes: tiny-mce\r\ntype-name\r\n    attributes: type, plural, lowercase,
+  dasherize\r\na\r\n    attributes: action, to, params, query-params, href, format,
+  subsite\r\nview\r\n    attributes: inline, block, if-blank, no-wrapper, truncate\r\nbelongs-to-view\r\nhas-many-view\r\nview\r\n
+  \   for=\"Date\"\r\n    attributes: format\r\nview\r\n    for=\"Time\"\r\n    attributes:
+  format\r\nview\r\n    for=\"Numeric\"\r\n    attributes: format\r\nview\r\n    for=\"Hobo\"::Text\"\r\nview\r\n
+  \   for=\"html\"\r\nview\r\n    for=\"markdown\"\r\nview\r\n    for=\"textile\"\r\nview\r\n
+  \   for=\"password\"\r\nview\r\n    for=\"string\"\r\nview\r\n    for=\"boolean\"\r\nview\r\n
+  \   for=\"ActiveRecord\"::Base\"\r\ncount\r\n    attributes: label, prefix, if-any,
+  lowercase\r\ntheme-stylesheet\r\n    attributes: name\r\nhas-many-table\r\n    attributes:
+  part-id, delete-buttons, headings, id\r\nadd-by-name\r\n    attributes: action-name,
+  add-text, update, part-id\r\nyou\r\n    attributes: have, are, do, titleize\r\nYou\r\nyour\r\nYour\r\nlive-search\r\na-or-an\r\n
+  \   attributes: word\r\nA-or-An\r\n    attributes: word\r\nfilter-menu\r\n    attributes:
+  param-name, options, no-filter\r\ncomma-list\r\n    attributes: separator\r\nRapid
+  Document Tag Library\r\n\r\nlabelled-item-list\r\nlabelled-item\r\nitem-label\r\nitem-value\r\nheading\r\nsub-heading\r\nnav\r\nsection\r\n
+  \    attributes: empty\r\naside\r\n     attributes: empty\r\nheader\r\n     attributes:
+  empty\r\nfooter\r\n     attributes: empty\r\npiece\r\n     attributes: empty\r\npanel\r\nRapid
+  Editing Tag Library\r\n\r\neditor\r\nhas-many-editor\r\nbelongs-to-editor\r\neditor\r\n
+  \    for=\"string\"\r\neditor\r\n     for=\"text\"\r\neditor\r\n     for=\"html\"\r\neditor\r\n
+  \    for=\"datetime\"\r\neditor\r\n     for=\"date\"\r\neditor\r\n     for=\"integer\"\r\neditor\r\n
+  \    for=\"float\"\r\neditor\r\n     for=\"password\"\r\neditor\r\n     for=\"boolean\"\r\neditor\r\n
+  \    for=\"big_integer\"\r\neditor\r\n     for=\"Hobo::EnumString\"\r\nautocompleter\r\n
+  \    attributes: completer-model, completer-attr, id, filter, name, value\r\nbelongs-to-menu-editor\r\nbelongs-to-autocompleting-editor\r\n
+  \    attributes: update\r\nstring-select-editor\r\n     attributes: update, values\r\nboolean-checkbox-editor\r\n
+  \    attributes: update, message\r\nsti-type-editor\r\n     attributes: update\r\ninteger-select-editor\r\n
+  \    attributes: min, max, update, nil-option, message\r\nhas-many-checkbox-editor\r\n
+  \    attributes: model, update, message\r\nhas-many-checkbox-editors\r\nRapid Forms
+  Tag Library\r\n\r\nhidden-fields\r\n     attributes: fields, skip, for-query-string\r\nform\r\n
+  \    attributes: update, hidden-fields, action, method, web-method\r\nsubmit\r\n
+  \    attributes: label, image\r\ninput\r\ninput\r\n     for=\"text\" attributes:
+  name\r\ninput\r\n     for=\"boolean\" attributes: name\r\ninput\r\n     for=\"password\"
+  attributes: name\r\ninput\r\n     for=\"html\" attributes: name\r\ninput\r\n     for=\"date\"
+  attributes: order\r\ninput\r\n     for=\"datetime\" attributes: order\r\ninput\r\n
+  \    for=\"integer\" attributes: name\r\ninput\r\n     for=\"float\" attributes:
+  name\r\ninput\r\n     for=\"string\" attributes: name\r\ninput\r\n     for=\"big_integer\"
+  attributes: name\r\ninput\r\n     for=\"HoboFields::EnumString\" attributes: labels,titleize\r\ninput\r\n
+  \    for=\"percentage\" attributes: name\r\nbelongs-to-input\r\nremote-method-button\r\n
+  \    attributes: method, update, label\r\nupdate-button\r\n     attributes: label,
+  update, fields, params\r\ndelete-button\r\n     attributes: label, update, in-place,
+  image, confirm, fade, subsite\r\ncreate-button\r\n     attributes: model, update,
+  label, fields, message\r\nbelongs-to-menu-input\r\n     attributes: include-none,
+  blank-message, options\r\nbelongs-to-autocompleting-input\r\nsti-type-input\r\nselect-input\r\nerror-messages\r\nselect-many\r\n
+  \    attributes: options, targets, remove-label, prompt\r\nafter-submit\r\n     attributes:
+  uri, stay-here, go-back\r\nhidden-field\r\n     attributes: name, value\r\nselect-menu\r\n
+  \    attributes: options, selected, first-option, first-value\r\nRapid Generics
+  Tag Library\r\n\r\ncreation-details\r\nprimary-content\r\nassociation-count\r\nbase-card\r\ncard\r\nsearch-card\r\ncollection\r\ncollection-preview\r\n
+  \    attributes: limit\r\nRapid Navigation Tag Library\r\n\r\nnavigation\r\n     attributes:
+  current\r\nnav-item\r\naccount-nav\r\npage-nav\r\n     attributes: params\r\npage-n-of-count\r\nprevious-page-link\r\nnext-page-link\r\nfirst-page-link\r\nlast-page-link\r\nmagic-nav\r\nRapid
+  Pages Tag Library\r\n\r\nbase-page\r\n     attributes: title, doctype\r\nsimple-layout\r\naside-layout\r\npage\r\n
+  \    attributes: layout\r\nindex-page\r\nnew-page\r\nshow-page\r\n     attributes:
+  primary-collection\r\nedit-page\r\nnew-in-collection-page\r\nshow-collection-page\r\npermission-denied-page\r\n
+  \    attributes: message\r\nnot-found-page\r\n     attributes: message\r\ndoctype\r\n
+  \    attributes: version\r\nstylesheet\r\n     attributes: name, media\r\njavascript\r\n
+  \    attributes: name\r\nflash-message\r\n     attributes: type\r\najax-progress\r\ndefault-page-title\r\nRapid
+  Plus Tag Library\r\n\r\ntable-plus\r\n     attributes: sort-field, sort-direction,
+  sort-columns\r\nchange-password-form\r\nRapid Support Tag Library\r\n\r\nwith-fields\r\n
+  \    attributes: fields, associations, skip, skip-associations, include-timestamps,
+  force-all\r\nwith-field-names\r\n     attributes: fields, skip, skip-associations,
+  include-timestamps\r\nRapid User Pages Tag Library\r\n\r\nsignup-page\r\nlogin-page\r\n
+  \    attributes: remember-me\r\naccount-disabled-page\r\naccount-page"

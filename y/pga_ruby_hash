@@ -1,0 +1,3 @@
+---
+pga_ruby_hash: ! "course = {}\r\ncourse = { \"Title\" => \"Learn Ruby\", \"Teach\"
+  => \"Hal Helms\", \"Students\" => [\"Peter\",\"Andrew\",\"Jared\"] }"

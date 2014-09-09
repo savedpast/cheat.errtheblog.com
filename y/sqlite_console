@@ -1,0 +1,4 @@
+---
+sqlite_console: ! "Some useful tips for the sqlite3 console:\r\n\r\n.help\r\n  Show
+  concise help.\r\n.dump\r\n  Output the whole database as SQL.\r\n\r\nFor more readable
+  select output, try:\r\n.header on\r\n.mode column\r\n"

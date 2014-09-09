@@ -1,0 +1,173 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>// Comment
+/* Comment */
+
+`timescale 1ns/1ps
+`include &quot;file.vh&quot;
+`define NAME TEXT
+`ifdef NAME
+`ifndef NAME
+`endif
+
+
+DECLARATIONS:
+  module NAME[(ARGS)]; STATEMENT endmodule
+  task NAME[(ARGS)]; STATEMENT endtask // time consuming method
+  function [RETURN] NAME([ARGS]) STATEMENT endfunction // zero-time
+  wire    [MSB:LSB] SIG;
+  input   PORT;
+  inout   PORT;
+  output  PORT;
+  event   NAME; // sc_event - rarely used
+VAR_DECLARATIONS:
+  integer VAR; // C int
+  real    VAR; // C float
+  reg     [MSB:LSB] VAR;
+  reg     [MSB:LSB] MEM [LSA:MSA]; // C array
+  reg unsigned ... // Verilog 2001
+
+CONCURRENT_STATEMENTS:
+  initial STATEMENT   // SC_THREAD process
+  always STATEMENT    // SC_METHOD process
+  assign WIRE = EXPR; // continuous assignment
+
+SEQUENTIAL_STATEMENTS:
+  begin[:LABEL [VAR_DECLARATIONS]] STATEMENT_LIST end
+  fork[:LABEL] STATEMENT_LIST join
+  if (EXPR) STATEMENT [else STATEMENT]
+  case (EXPR)
+    EXPR: STATEMENT
+    default: STATEMENT
+  endcase
+  casex (EXPR)
+    EXPR: STATEMENT
+    default: STATEMENT 
+  endcase
+  casez (EXPR)
+    EXPR: STATEMENT 
+    default: STATEMENT 
+  endcase
+  while (EXPR) STATEMENT
+  for (EXPR1,EXPR2,EXPR3) STATEMENT
+  repeat (EXPR) STATEMENT
+  forever STATEMENT
+  disable LABEL
+  ;
+  @(EVENT_EXPR) STATEMENT; // wait for event expression
+  #(EXPR) STATEMENT;       // wait for time
+  TASK[(ARGS)];
+  REG = EXPR;  // Variable &quot;blocking&quot; assignment
+  REG &lt;= EXPR; // Signal &quot;non-blocking&quot; assignment
+  assign REG = EXPR;  // procedural assignment
+  release REG;
+  -&gt;EVENT;
+  $display(&quot;FORMAT&quot;,VARS,&quot;FORMAT&quot;,VARS...); // automatically append \n
+  $write(&quot;FORMAT&quot;,VARS,&quot;FORMAT&quot;,VARS...);   // printf
+  $finish;
+
+EVENTS:
+  EVENT
+  PORT
+  SIGNAL
+  posedge SIGNAL
+  negedge SIGNAL
+
+UNARY OPERATORS:
+  - B
+  + B
+  ! B // logical NOT (non-zero test)
+  &amp; B // logical AND all bits into a single bit result
+  | B // logical IOR all bits into a single bit result
+  ^ B // logical XOR all bits into a single bit result
+  ~ B // bitwise complement
+
+BINARY OPERATORS (same as C):
+  A *   B  // 
+  A /   B  // 
+  A %   B  // 
+  A +   B  // 
+  A -   B  // 
+  A &lt;&lt;  B  // shift left
+  A &gt;&gt;  B  // shift right
+  A ^   B  // bitwise XOR
+  A &amp;   B  // bitwise AND
+  A |   B  // bitwise IOR
+  A &amp;&amp;  B  // 
+  A ||  B  // 
+  A ==  B  // equality
+  A !=  B  // not equal
+  A &lt;   B  // 
+  A &lt;=  B  // 
+  A &gt;   B  // 
+  A &gt;=  B  // 
+  A === B  // identical (includes X &amp; Z as part of equality test)
+  A !== BB // not identical (includes X &amp; Z as part of equality test)
+
+COPYING/EXTRACTING BITS
+  {A,B}         // concatenation (on left-hand side even!)
+  {A{B}}        // replication of B bits
+  SIG[MSB:LSB]  // sub-range of bits
+  SIG[LSB+:WID] // sub-range of bits LSB+WID..LSB
+  SIG[MSB-:WID] // sub-range of bits MSB..MSB-WID
+
+TRINARY OPERATORS (same as C):
+  A ? B : C
+
+NOTES
+// Assigning larger number of bits to smaller number truncates the MSB's
+// Assigning smaller number of bits to larger number duplicates the MSB
+// All arithmetic is signed (1995)
+
+EXAMPLES:
+
+module verilog1995(clock,status,value,request);
+  input clock;
+  output status;
+  output [31:0] value;
+  inout [1:15] request;
+  reg status;
+  reg [31:0] value;
+  ...
+endmodule
+
+module verilog2001 (
+  input clock,
+  output reg status,
+  output reg [31:0] value,
+  inout [1:15] request,
+);
+
+  reg [3:0] var;
+  reg [2:3] sig;
+
+  assign request = 15'hZZZZ;
+  assign request[5] = 1'b1;
+
+  initial begin
+    status = 1'b0;
+    value  = {16{1'b1}};
+    {value[3:2],value[15:14]} = 1'hC;
+    begin :OUTSIDE
+      integer i; // legal immediately after block label
+      for(i=0;i&lt;=10;i=i+1) begin :INSIDE
+        if (i == 3) disable INSIDE; // continue
+        $display(&quot;i=%d&quot;,i);
+        if (i == 9) disable OUTSIDE; // break
+        #18;
+      end
+    end
+    $write(&quot;Goodbye\n value=%d\n&quot;,value,&quot;status=%d\n&quot;,status);
+    #500;
+    $finish;
+  end
+
+  always begin
+    @(posedge clock);
+    #42;
+    repeat (5) value &lt;= value + 1;
+  end
+
+  always @(clock or request) status = #5 ~status;
+
+endmodule</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

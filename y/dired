@@ -1,0 +1,9 @@
+---
+dired: ! "Dired mode in emacs\r\n\r\nCopy, Delete, Rename a File:\r\nEnter - Open
+  the file\r\nq     - Close the dir\r\nC     - Copy file\r\nR     - Rename file\r\nD
+  \    - Delete file\r\n+     - Create a new dir\r\nZ     - Compress/decompress the
+  file by gzip  \r\nd     - Flag file for deletion\r\nu     - Remove deletion flag
+  on this line\r\nx     - Delete all flagged files\r\n#     - Flag all auto-save files\r\n~
+  \    - Flag all backup files\r\n.     - Flag excess numeric backup files for deletion\r\n\r\nMark/Unmark
+  to Operate on Multiple Files:\r\nm     - Mark a file\r\nu     - Unmark\r\nU     -
+  Unmark all marked\r\n% m   - Mark by regular expression"

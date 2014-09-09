@@ -1,0 +1,43 @@
+---
+surround: ! "INTRODUCTION                                    *surround*\n\nThis plugin
+  is a tool for dealing with pairs of \"surroundings.\"  Examples\nof surroundings
+  include parentheses, quotes, and HTML tags.  They are\nclosely related to what Vim
+  refers to as |text-objects|.  Provided\nare mappings to allow for removing, changing,
+  and adding surroundings.\n\nDetails follow on the exact semantics, but first, consider
+  the following\nexamples.  An asterisk (*) is used to denote the cursor position.\n\n
+  \ Old text                  Command     New text ~\n  \"Hello *world!\"           ds\"
+  \        Hello world!\n  [123+4*56]/2              cs])        (123+456)/2\n  \"Look
+  ma, I'm *HTML!\"     cs\"<q>      <q>Look ma, I'm HTML!</q>\n  if *x>3 {                 ysW(
+  \       if ( x>3 ) {\n  my $str = *whee!;         vlllls'     my $str = 'whee!';\n\nWhile
+  a few features of this plugin will work in older versions of Vim,\nVim 7 is recommended
+  for full functionality.\n\nMAPPINGS                                        *surround-mappings*\n\nDelete
+  surroundings is *ds* .  The next character given determines the target\nto delete.
+  \ The exact nature of the target is explained in |surround-targets|\nbut essentially
+  it is the last character of a |text-object|.  This mapping\ndeletes the difference
+  between the \"i\"nner object and \"a\"n object.  This is\neasiest to understand
+  with some examples:\n\n  Old text                  Command     New text ~\n  \"Hello
+  *world!\"           ds\"         Hello world!\n  (123+4*56)/2              ds)         123+456/2\n
+  \ <div>Yo!*</div>           dst         Yo!\n\nChange surroundings is *cs* .  It
+  takes two arguments, a target like with\n|ds|, and a replacement.  Details about
+  the second argument can be found\nbelow in |surround-replacements|.  Once again,
+  examples are in order.\n\n  Old text                  Command     New text ~\n  \"Hello
+  *world!\"           cs\"'        'Hello world!'\n  \"Hello *world!\"           cs\"<q>
+  \     <q>Hello world!</q>\n  (123+4*56)/2              cs)]        [123+456]/2\n
+  \ (123+4*56)/2              cs)[        [ 123+456 ]/2\n  <div>Yo!*</div>           cst<p>
+  \     <p>Yo!</p>\n\n*ys* takes a valid Vim motion or text object as the first object,
+  and wraps\nit using the second argument as with |cs|.  (It's a stretch, but a good\nmnemonic
+  for \"ys\" is \"you surround\".)\n\n  Old text                  Command     New
+  text ~\n  Hello w*orld!             ysiw)       Hello (world)!\n\nAs a special case,
+  *yss* operates on the current line, ignoring leading\nwhitespace.\n\n  Old text
+  \                 Command     New text ~\n      Hello w*orld!         yssB            {Hello
+  world!}\n\nThere is also *yS* and *ySS* which indent the surrounded text and place
+  it\non a line of its own.\n\nIn visual mode, a simple \"s\" with an argument wraps
+  the selection.  This is\nreferred to as the *vS* mapping, although ordinarily there
+  will be\nadditional keystrokes between the v and s.  In linewise visual mode, the\nsurroundings
+  are placed on separate lines and indented.  In blockwise visual\nmode, each line
+  is surrounded.\n\nA \"gS\" in visual mode, known as *vgS* , behaves similarly.  In
+  linewise visual\nmode, the automatic indenting is surpressed.  In blockwise visual
+  mode, this\nenables surrounding past the end of the like with 'virtualedit' set
+  (there\nseems to be no way in Vim Script to differentiate between a jagged end of
+  line\nselection and a virtual block selected past the end of the line, so two maps\nwere
+  needed)."

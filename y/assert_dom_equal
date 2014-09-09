@@ -1,0 +1,6 @@
+---
+assert_dom_equal: ! "# 'cheat assertions' for the rest\n\nassert_dom_equal(expected,
+  actual, message = \"\")\n\nTest two HTML strings for equivalency (e.g., identical
+  up to reordering of attributes)\n\nExamples\n\n  # assert that the referenced method
+  generates the appropriate HTML string\n  assert_dom_equal '<a href=\"http://www.example.com\">Apples</a>',
+  link_to(\"Apples\", \"http://www.example.com\")\n"

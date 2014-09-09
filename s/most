@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Quitting:
+
+  Q                      Quit MOST.
+  :N,:n                  Quit this file and view next.
+                            (Use UP/DOWN arrow keys to select next file.)
+
+Movement:
+
+  SPACE, D              *Scroll down one Screen.
+  U, DELETE             *Scroll Up one screen.
+  RETURN, DOWN          *Move Down one line.
+  UP                    *Move Up one line.
+  T                      Goto Top of File.
+  B                      Goto Bottom of file.
+  &gt; , TAB                Scroll Window right
+  &lt;                      Scroll Window left
+  RIGHT                  Scroll Window left by 1 column
+  LEFT                   Scroll Window right by 1 column
+  J, G                   Goto line.
+  %                      Goto percent.
+
+Window Commands:
+
+  Ctrl-X 2, Ctrl-W 2     Split window.
+  Ctrl-X 1, Ctrl-W 1     Make only one window.
+  O, Ctrl-X O            Move to other window.
+  Ctrl-X 0               Delete Window.
+
+Searching:
+
+  S, f, /               *Search forward
+  ?                     *Search Backward
+  N                     *Find next in current search direction.
+
+Miscellaneous:
+
+  W                      Toggle width between 80 and 132 char mode.
+  Ctrl-X Ctrl-F          Read a file from disk
+  R, Ctrl-R              Redraw Screen.
+  F                      Simulate tail -f mode
+  :o                     Toggle options:  b-binary, w-wrap, t-tab
+  E                      Edit file.  Uses MOST_EDITOR and EDITOR
+                           environment variables.
+
+*Note:  This command may be repeated `n' times By entering a number then
+        the command key, e.g.,  '5 SPACE' moves 5 screens forward.
+
+(Lifted directly from most 5.0.0's own in-program documentation, which is a more succinct and useful subset of its manpage, but also is a bit awkward to look at when using most, because ::wait for it:: IT ISN'T PAGED. In cheat, it is paged. Yay.)</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

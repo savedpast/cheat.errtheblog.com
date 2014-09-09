@@ -1,0 +1,7 @@
+---
+mutt_gmail: ! "Check out this blog post to get mutt working with GMail on OSX (http://www.jstorimer.com/shells/2010/01/19/using-mutt-with-gmail-on-osx.html).\r\n\r\nYou
+  can always use the '?' command to see a full list of mutt commands. This sheet lists
+  commands that map to specific GMail functions.\r\n\r\nNavigating:\r\nSelect messages
+  (up and down): 'j' or 'k'\r\nPage through message: <Space>\r\nSee a list of mailboxes:
+  'c'\r\nList URLs: <Ctrl>-b\r\n\r\nModifying:\r\nMark as unread: <Shift>-n\r\nArchive
+  message: <Ctrl>-d\r\n\r\nSyncing:\r\nSync local mailbox to GMail: $\r\n"

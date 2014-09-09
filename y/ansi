@@ -1,0 +1,15 @@
+---
+ansi: ! "\\e[1m   -   Change text to hicolor (bold) mode\r\n\\e[4m   -      \"    \"
+  \  \"  Underline\r\n\\e[5m   -      \"    \"   \"  Blink\r\n\\e[8m   -      \"    \"
+  \  \"  Hidden (same color as bg)\r\n\\e[30m  -      \"    \"   \"  Black\r\n\\e[31m
+  \ -      \"    \"   \"  Red\r\n\\e[32m  -      \"    \"   \"  Green\r\n\\e[33m  -
+  \     \"    \"   \"  Yellow\r\n\\e[34m  -      \"    \"   \"  Blue\r\n\\e[35m  -
+  \     \"    \"   \"  Magenta\r\n\\e[36m  -      \"    \"   \"  Cyan\r\n\\e[37m  -
+  \     \"    \"   \"  White\r\n\\e[40m  -   Change background to Black\r\n\\e[41m
+  \ -      \"       \"      \"  Red\r\n\\e[42m  -      \"       \"      \"  Green\r\n\\e[43m
+  \ -      \"       \"      \"  Yellow\r\n\\e[44m  -      \"       \"      \"  Blue\r\n\\e[45m
+  \ -      \"       \"      \"  Magenta\r\n\\e[46m  -      \"       \"      \"  Cyan\r\n\\e[47m
+  \ -      \"       \"      \"  White\r\n\\e[7m   -   Change to Black text on a White
+  background\r\n\\e[0m   -   Turn off all attributes.\r\n\r\n\\e is the escape character,
+  it will not work in single quoted strings (you'll get a literal '\\e'). \\033 can
+  be used in it's place."

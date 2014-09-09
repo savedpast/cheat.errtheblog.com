@@ -1,0 +1,8 @@
+---
+remarkable: ! "Remarkable ActiveRecord Macros\n\n    should_belong_to :user\n    should_have_many
+  :comments\n    should_have_and_belong_to_many :tags\n\n    should_validate_presence_of
+  :body\n    should_validate_uniqueness_of :title, :allow_blank => true\n\nFor those
+  who likes more the Rspec way can simply do:\n\n    it { should belong_to(:user)
+  }\n    it { should have_many(:comments) }\n    it { should have_and_belong_to_many(:tags)
+  }\n\n    it { should validate_presence_of(:body) }\n    it { should validate_uniqueness_of(:title,
+  :allow_blank => true) }\n\nOther matchers:\n\n\taccept_nested_attributes_for\n\tallow_mass_assignment_of\n\tallow_values_for\n\thave_column\t\n\thave_default_scope\n\thave_index\n\thave_one\n\thave_readonly_attribute\n\thave_scope\n\tvalidate_acceptance_of\n\tvalidate_associated\n\tvalidate_confirmation_of\n\tvalidate_exclusion_of\n\tvalidate_format_of\n\tvalidate_inclusion_of\n\tvalidate_length_of\n\tvalidate_numericality_of"

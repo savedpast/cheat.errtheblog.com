@@ -1,0 +1,53 @@
+---
+rspec: ! "INSTALL\r\n=======\r\n\r\n$ gem install rspec\r\n\r\nRSPEC-RAILS\r\n===========\r\n\r\n
+  \ RAILS-3\r\n  =======\r\n\r\n    CONFIGURE THE GEMFILE\r\n    ======================\r\n
+  \   group :development, :test do\r\n      gem \"rspec-rails\", \"~> 2.0\"\r\n    end\r\n\r\n
+  \   INSTALL THE BUNDLE\r\n    ===============================\r\n    $ bundle install\r\n\r\n
+  \   BOOTSTRAP THE APP\r\n    ================= \r\n    $ ./script/rails generate
+  rspec:install\r\n          create  .rspec\r\n          create  spec\r\n          create
+  \ spec/spec_helper.rb\r\n          create  autotest\r\n          create  autotest/discover.rb\r\n\r\n
+  \ RAILS-2\r\n  =======\r\n\r\n    INSTALL\r\n    =======\r\n    $ gem install rspec-rails
+  -v 1.3.3\r\n\r\n    BOOTSTRAP THE APP\r\n    =================\r\n    $ ./script/generate
+  rspec\r\n        create  spec\r\n        create  spec/spec_helper.rb\r\n        create
+  \ spec/spec.opts\r\n        create  previous_failures.txt\r\n        create  script/spec_server\r\n
+  \       create  script/spec\r\n\r\nHOW TO USE\r\n==========\r\n\r\n  COMMAND LINE\r\n
+  \ =============\r\nrspec --color --format doc spec/widget_spec.rb\r\n\r\n  RAILS
+  3 (RSPEC 2)\r\n  =============\r\n./rails/generate model User\r\nrake -T spec #
+  lists all rspec rake tasks\r\nrake spec # run all specs\r\nrake spec/models/mymodel_spec.rb
+  # run a single spec file\r\nrake spec/models/mymodel_spec.rb:27 # run a single example
+  or group on line 27\r\n\r\n  RAILS 2 (RSPEC 1)\r\n  =============\r\n./script/generate
+  rspec_model User\r\nrake -T spec # lists all rspec rake tasks\r\nrake spec # run
+  all specs\r\nrake spec SPEC=spec/models/mymodel_spec.rb SPEC_OPTS=\"-e \\\"should
+  do something\\\"\" #run a single spec\r\n\r\n\r\n\r\nmodule UserSpecHelper\r\n  def
+  valid_user_attributes\r\n    { :email => \"joe@bloggs.com\",\r\n      :username
+  => \"joebloggs\",\r\n      :password => \"abcdefg\"}\r\n  end\r\nend\r\n\r\n\r\ndescribe
+  \"A User (in general)\" do\r\n  include UserSpecHelper\r\n\r\n  before(:each) do\r\n
+  \   @user = User.new\r\n  end\r\n\r\n  it \"should be invalid without a username\"
+  do\r\n    pending \"some other thing we depend on\"\r\n    @user.attributes = valid_user_attributes.except(:username)\r\n
+  \   @user.should_not be_valid\r\n    @user.should have(1).error_on(:username)\r\n
+  \   @user.errors.on(:username).should == \"is required\"\r\n    @user.username =
+  \"someusername\"\r\n    @user.should be_valid\r\n  end\r\nend\r\n\r\nEXPECTATIONS\r\n=====================\r\ntarget.should
+  satisfy {|arg| ...}\r\ntarget.should_not satisfy {|arg| ...}\r\n\r\ntarget.should
+  equal <value>\r\ntarget.should_not equal <value>\r\n\r\ntarget.should be_close <value>,
+  <tolerance>\r\ntarget.should_not be_close <value>, <tolerance>\r\n\r\ntarget.should
+  be <value>\r\ntarget.should_not be <value>\r\n\r\ntarget.should predicate [optional
+  args]\r\ntarget.should be_predicate [optional args]\r\ntarget.should_not predicate
+  [optional args]\r\ntarget.should_not be_predicate [optional args]\r\n\r\ntarget.should
+  be < 6\r\ntarget.should == 5\r\ntarget.should be_between(1, 10)\r\ntarget.should_not
+  == 'Samantha'\r\n\r\ntarget.should match <regex>\r\ntarget.should_not match <regex>\r\n\r\ntarget.should
+  be_an_instance_of <class>\r\ntarget.should_not be_an_instance_of <class>\r\n\r\ntarget.should
+  be_a_kind_of <class>\r\ntarget.should_not be_a_kind_of <class>\r\n\r\ntarget.should
+  respond_to <symbol>\r\ntarget.should_not respond_to <symbol>\r\n\r\nlambda {a_call}.should
+  raise_error\r\nlambda {a_call}.should raise_error(<exception> [, message])\r\nlambda
+  {a_call}.should_not raise_error\r\nlambda {a_call}.should_not raise_error(<exception>
+  [, message])\r\nlambda {a_call}.should change(instance, method).from(number).to(number)\r\n\r\nproc.should
+  throw <symbol>\r\nproc.should_not throw <symbol>\r\n\r\ntarget.should include <object>\r\ntarget.should_not
+  include <object>\r\n\r\ntarget.should have(<number>).things\r\ntarget.should have_at_least(<number>).things\r\ntarget.should
+  have_at_most(<number>).things\r\n\r\ntarget.should have(<number>).errors_on(:field)\r\n\r\nexpect
+  { thing.approve! }.to change(thing, :status).\r\n    from(Status::AWAITING_APPROVAL).\r\n
+  \   to(Status::APPROVED)\r\n\r\nexpect { thing.destroy }.to change(Thing, :count).by(-1)\r\n\r\nMocks
+  and Stubs\r\n===============\r\nuser_mock = mock \"User\"\r\nuser_mock.should_receive(:authenticate).with(\"password\").and_return(true)\r\nuser_mock.should_receive(:coffee).exactly(3).times.and_return(:americano)\r\nuser_mock.should_receive(:coffee).exactly(5).times.and_raise(NotEnoughCoffeeException)\r\n\r\npeople_stub
+  = mock \"people\"\r\npeople_stub.stub!(:each).and_yield(mock_user)\r\npeople_stub.stub!(:bad_method).and_raise(RuntimeError)\r\n\r\nuser_stub
+  = mock_model(\"User\", :id => 23, :username => \"pat\", :email => \"pat@example.com\")\r\n\r\nmy_instance.stub!(:msg).and_return(value)\r\nMyClass.stub!(:msg).and_return(value)\r\n\r\nExamples
+  (in the real world)\r\n\r\n============================\r\nhttp://madhatted.com/2008/7/10/rspec-real-world-testing\r\npresentation:
+  http://kerryb.github.com/iprug-rspec-presentation/#31"

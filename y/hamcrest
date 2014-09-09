@@ -1,0 +1,20 @@
+---
+hamcrest: ! "Hamcrest comes with a library of useful matchers. Here are some of the
+  most important ones.\r\n\r\nCore\r\n* anything - always matches, useful if you don't
+  care what the object under test is\r\n* describedAs - decorator to adding custom
+  failure description\r\n* is - decorator to improve readability - see \"Sugar\",
+  below\r\n\r\nLogical\r\n* allOf - matches if all matchers match, short circuits
+  (like Java &&)\r\n* anyOf - matches if any matchers match, short circuits (like
+  Java ||)\r\n* not - matches if the wrapped matcher doesn't match and vice versa\r\n\r\nObject\r\n*
+  equalTo - test object equality using Object.equals\r\n* hasToString - test Object.toString\r\n*
+  instanceOf, isCompatibleType - test type\r\n* notNullValue, nullValue - test for
+  null\r\n* sameInstance - test object identity\r\n\r\nBeans\r\n* hasProperty - test
+  JavaBeans properties\r\n\r\nCollections\r\n* array - test an array's elements against
+  an array of matchers\r\n* hasEntry, hasKey, hasValue - test a map contains an entry,
+  key or value\r\n* hasItem, hasItems - test a collection contains elements\r\n* hasItemInArray
+  - test an array contains an element\r\n\r\nNumber\r\n* closeTo - test floating point
+  values are close to a given value\r\n* greaterThan, greaterThanOrEqualTo, lessThan,
+  lessThanOrEqualTo - test ordering\r\n\r\nText\r\n* equalToIgnoringCase - test string
+  equality ignoring case\r\n* equalToIgnoringWhiteSpace - test string equality ignoring
+  differences in runs of whitespace\r\n* containsString, endsWith, startsWith - test
+  string matching\r\n"

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Test Macros
+=======
+
+&lt;level&gt; : WARN  (don't fail, only print a warning)
+          CHECK (generate error, but continue)
+          FAIL  (generate error and stop immediately)
+
+BOOST_&lt;level&gt;_BITWISE_EQUAL
+BOOST_&lt;level&gt;_CLOSE
+BOOST_&lt;level&gt;_CLOSE_FRACTION
+BOOST_&lt;level&gt;_EQUAL
+BOOST_&lt;level&gt;_EQUAL_COLLECTION
+BOOST_&lt;level&gt;_EXCEPTION
+BOOST_&lt;level&gt;_GE
+BOOST_&lt;level&gt;_GT
+BOOST_&lt;level&gt;_LE
+BOOST_&lt;level&gt;_LT
+BOOST_&lt;level&gt;_MESSAGE
+BOOST_&lt;level&gt;_NE
+BOOST_&lt;level&gt;_NO_THROW
+BOOST_&lt;level&gt;_PREDICATE
+BOOST_&lt;level&gt;_SMALL
+BOOST_&lt;level&gt;_THROW
+BOOST_ERROR
+BOOST_FAIL
+BOOST_IS_DEFINED</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

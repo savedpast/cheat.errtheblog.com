@@ -1,0 +1,229 @@
+---
+underscore: ! "ollection Functions (Arrays or Objects)\n\neach_.each(list, iterator,
+  [context]) Alias: forEach \nIterates over a list of elements, yielding each in turn
+  to an iterator function. The iterator is bound to the context object, if one is
+  passed. Each invocation of iterator is called with three arguments: (element, index,
+  list). If list is a JavaScript object, iterator's arguments will be (value, key,
+  list). Delegates to the native forEach function if it exists.\n_.each([1, 2, 3],
+  function(num){ alert(num); });\n=> alerts each number in turn...\n_.each({one :
+  1, two : 2, three : 3}, function(num, key){ alert(num); });\n=> alerts each number
+  in turn...\nmap_.map(list, iterator, [context]) \nProduces a new array of values
+  by mapping each value in list through a transformation function (iterator). If the
+  native map method exists, it will be used instead. If list is a JavaScript object,
+  iterator's arguments will be (value, key, list).\n_.map([1, 2, 3], function(num){
+  return num * 3; });\n=> [3, 6, 9]\n_.map({one : 1, two : 2, three : 3}, function(num,
+  key){ return num * 3; });\n=> [3, 6, 9]\nreduce_.reduce(list, iterator, memo, [context])
+  Aliases: inject, foldl \nAlso known as inject and foldl, reduce boils down a list
+  of values into a single value. Memo is the initial state of the reduction, and each
+  successive step of it should be returned by iterator.\nvar sum = _.reduce([1, 2,
+  3], function(memo, num){ return memo + num; }, 0);\n=> 6\nreduceRight_.reduceRight(list,
+  iterator, memo, [context]) Alias: foldr \nThe right-associative version of reduce.
+  Delegates to the JavaScript 1.8 version of reduceRight, if it exists. Foldr is not
+  as useful in JavaScript as it would be in a language with lazy evaluation.\nvar
+  list = [[0, 1], [2, 3], [4, 5]];\nvar flat = _.reduceRight(list, function(a, b)
+  { return a.concat(b); }, []);\n=> [4, 5, 2, 3, 0, 1]\ndetect_.detect(list, iterator,
+  [context]) \nLooks through each value in the list, returning the first one that
+  passes a truth test (iterator). The function returns as soon as it finds an acceptable
+  element, and doesn't traverse the entire list.\nvar even = _.detect([1, 2, 3, 4,
+  5, 6], function(num){ return num % 2 == 0; });\n=> 2\nselect_.select(list, iterator,
+  [context]) Alias: filter \nLooks through each value in the list, returning an array
+  of all the values that pass a truth test (iterator). Delegates to the native filter
+  method, if it exists.\nvar evens = _.select([1, 2, 3, 4, 5, 6], function(num){ return
+  num % 2 == 0; });\n=> [2, 4, 6]\nreject_.reject(list, iterator, [context]) \nReturns
+  the values in list without the elements that the truth test (iterator) passes. The
+  opposite of select.\nvar odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return
+  num % 2 == 0; });\n=> [1, 3, 5]\nall_.all(list, [iterator], [context]) Alias: every
+  \nReturns true if all of the values in the list pass the iterator truth test. If
+  an iterator is not provided, the truthy value of the element will be used instead.
+  Delegates to the native method every, if present.\n_.all([true, 1, null, 'yes']);\n=>
+  false\nany_.any(list, [iterator], [context]) Alias: some \nReturns true if any of
+  the values in the list pass the iterator truth test. Short-circuits and stops traversing
+  the list if a true element is found. Delegates to the native method some, if present.\n_.any([null,
+  0, 'yes', false]);\n=> true\ninclude_.include(list, value) Alias: contains \nReturns
+  true if the value is present in the list, using === to test equality. Uses indexOf
+  internally, if list is an Array.\n_.include([1, 2, 3], 3);\n=> true\ninvoke_.invoke(list,
+  methodName, [*arguments]) \nCalls the method named by methodName on each value in
+  the list. Any extra arguments passed to invoke will be forwarded on to the method
+  invocation.\n_.invoke([[5, 1, 7], [3, 2, 1]], 'sort');\n=> [[1, 5, 7], [1, 2, 3]]\npluck_.pluck(list,
+  propertyName) \nAn convenient version of what is perhaps the most common use-case
+  for map: extracting a list of property values.\nvar stooges = [{name : 'moe', age
+  : 40}, {name : 'larry', age : 50}, {name : 'curly', age : 60}];\n_.pluck(stooges,
+  'name');\n=> [\"moe\", \"larry\", \"curly\"]\nmax_.max(list, [iterator], [context])
+  \nReturns the maximum value in list. If iterator is passed, it will be used on each
+  value to generate the criterion by which the value is ranked.\nvar stooges = [{name
+  : 'moe', age : 40}, {name : 'larry', age : 50}, {name : 'curly', age : 60}];\n_.max(stooges,
+  function(stooge){ return stooge.age; });\n=> {name : 'curly', age : 60};\nmin_.min(list,
+  [iterator], [context]) \nReturns the minimum value in list. If iterator is passed,
+  it will be used on each value to generate the criterion by which the value is ranked.\nvar
+  numbers = [10, 5, 100, 2, 1000];\n_.min(numbers);\n=> 2\nsortBy_.sortBy(list, iterator,
+  [context]) \nReturns a sorted list, ranked by the results of running each value
+  through iterator.\n_.sortBy([1, 2, 3, 4, 5, 6], function(num){ return Math.sin(num);
+  });\n=> [5, 4, 6, 3, 1, 2]\nsortedIndex_.sortedIndex(list, value, [iterator]) \nUses
+  a binary search to determine the index at which the value should be inserted into
+  the list in order to maintain the list's sorted order. If an iterator is passed,
+  it will be used to compute the sort ranking of each value.\n_.sortedIndex([10, 20,
+  30, 40, 50], 35);\n=> 3\ntoArray_.toArray(list) \nConverts the list (anything that
+  can be iterated over), into a real Array. Useful for transmuting the arguments object.\n(function(){
+  return _.toArray(arguments).slice(0); })(1, 2, 3);\n=> [1, 2, 3]\nsize_.size(list)
+  \nReturn the number of values in the list.\n_.size({one : 1, two : 2, three : 3});\n=>
+  3\nArray Functions\n\nNote: All array functions will also work on the arguments
+  object.\nfirst_.first(array, [n]) Alias: head \nReturns the first element of an
+  array. Passing n will return the first n elements of the array.\n_.first([5, 4,
+  3, 2, 1]);\n=> 5\nrest_.rest(array, [index]) Alias: tail \nReturns the rest of the
+  elements in an array. Pass an index to return the values of the array from that
+  index onward.\n_.rest([5, 4, 3, 2, 1]);\n=> [4, 3, 2, 1]\nlast_.last(array) \nReturns
+  the last element of an array.\n_.last([5, 4, 3, 2, 1]);\n=> 1\ncompact_.compact(array)
+  \nReturns a copy of the array with all falsy values removed. In JavaScript, false,
+  null, 0, \"\", undefined and NaN are all falsy.\n_.compact([0, 1, false, 2, '',
+  3]);\n=> [1, 2, 3]\nflatten_.flatten(array) \nFlattens a nested array (the nesting
+  can be to any depth).\n_.flatten([1, [2], [3, [[[4]]]]]);\n=> [1, 2, 3, 4];\nwithout_.without(array,
+  [*values]) \nReturns a copy of the array with all instances of the values removed.
+  === is used for the equality test.\n_.without([1, 2, 1, 0, 3, 1, 4], 0, 1);\n=>
+  [2, 3, 4]\nuniq_.uniq(array, [isSorted]) Alias: unique \nProduces a duplicate-free
+  version of the array, using === to test object equality. If you know in advance
+  that the array is sorted, passing true for isSorted will run a much faster algorithm.\n_.uniq([1,
+  2, 1, 3, 1, 4]);\n=> [1, 2, 3, 4]\nintersect_.intersect(*arrays) \nComputes the
+  list of values that are the intersection of all the arrays. Each value in the result
+  is present in each of the arrays.\n_.intersect([1, 2, 3], [101, 2, 1, 10], [2, 1]);\n=>
+  [1, 2]\nzip_.zip(*arrays) \nMerges together the values of each of the arrays with
+  the values at the corresponding position. Useful when you have separate data sources
+  that are coordinated through matching array indexes.\n_.zip(['moe', 'larry', 'curly'],
+  [30, 40, 50], [true, false, false]);\n=> [[\"moe\", 30, true], [\"larry\", 40, false],
+  [\"curly\", 50, false]]\nindexOf_.indexOf(array, value, [isSorted]) \nReturns the
+  index at which value can be found in the array, or -1 if value is not present in
+  the array. Uses the native indexOf function unless it's missing. If you're working
+  with a large array, and you know that the array is already sorted, pass true for
+  isSorted to use a faster binary search.\n_.indexOf([1, 2, 3], 2);\n=> 1\nlastIndexOf_.lastIndexOf(array,
+  value) \nReturns the index of the last occurrence of value in the array, or -1 if
+  value is not present. Uses the native lastIndexOf function if possible.\n_.lastIndexOf([1,
+  2, 3, 1, 2, 3], 2);\n=> 4\nrange_.range([start], stop, [step]) \nA function to create
+  flexibly-numbered lists of integers, handy for each and map loops. start, if omitted,
+  defaults to 0; step defaults to 1. Returns a list of integers from start to stop,
+  incremented (or decremented) by step, exclusive.\n_.range(10);\n=> [0, 1, 2, 3,
+  4, 5, 6, 7, 8, 9]\n_.range(1, 11);\n=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n_.range(0,
+  30, 5);\n=> [0, 5, 10, 15, 20, 25]\n_.range(0, -10, -1);\n=> [0, -1, -2, -3, -4,
+  -5, -6, -7, -8, -9]\n_.range(0);\n=> []\nFunction (uh, ahem) Functions\n\nbind_.bind(function,
+  object, [*arguments]) \nBind a function to an object, meaning that whenever the
+  function is called, the value of this will be the object. Optionally, bind arguments
+  to the function to pre-fill them, also known as currying.\nvar func = function(greeting){
+  return greeting + ': ' + this.name };\nfunc = _.bind(func, {name : 'moe'}, 'hi');\nfunc();\n=>
+  'hi: moe'\nbindAll_.bindAll(object, [*methodNames]) \nBinds a number of methods
+  on the object, specified by methodNames, to be run in the context of that object
+  whenever they are invoked. Very handy for binding functions that are going to be
+  used as event handlers, which would otherwise be invoked with a fairly useless this.
+  If no methodNames are provided, all of the object's function properties will be
+  bound to it.\nvar buttonView = {\n  label   : 'underscore',\n  onClick : function(){
+  alert('clicked: ' + this.label); },\n  onHover : function(){ console.log('hovering:
+  ' + this.label); }\n};\n_.bindAll(buttonView);\njQuery('#underscore_button').bind('click',
+  buttonView.onClick);\n=> When the button is clicked, this.label will have the correct
+  value...\nmemoize_.memoize(function, [hashFunction]) \nMemoizes a given function
+  by caching the computed result. Useful for speeding up slow-running computations.
+  If passed an optional hashFunction, it will be used to compute the hash key for
+  storing the result, based on the arguments to the original function.\nvar fibonacci
+  = function(n) {\n  return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);\n};\nvar
+  fastFibonacci = _.memoize(fibonacci);\ndelay_.delay(function, wait, [*arguments])
+  \nMuch like setTimeout, invokes function after wait milliseconds. If you pass the
+  optional arguments, they will be forwarded on to the function when it is invoked.\nvar
+  log = _.bind(console.log, console);\n_.delay(log, 1000, 'logged later');\n=> 'logged
+  later' // Appears after one second.\ndefer_.defer(function) \nDefers invoking the
+  function until the current call stack has cleared, similar to using setTimeout with
+  a delay of 0. Useful for performing expensive computations or HTML rendering in
+  chunks without blocking the UI thread from updating.\n_.defer(function(){ alert('deferred');
+  });\n// Returns from the function before the alert runs.\nthrottle_.throttle(function,
+  wait) \nReturns a throttled version of the function, that, when invoked repeatedly,
+  will only actually call the wrapped function at most once per every wait milliseconds.
+  Useful for rate-limiting events that occur faster than you can keep up with.\nvar
+  throttled = _.throttle(updatePosition, 100);\n$(window).scroll(throttled);\ndebounce_.debounce(function,
+  wait) \nRepeated calls to a debounced function will postpone it's execution until
+  after wait milliseconds have elapsed. Useful for implementing behavior that should
+  only happen after the input has stopped arriving. For example: rendering a preview
+  of a Markdown comment, recalculating a layout after the window has stopped being
+  resized...\nvar lazyLayout = _.debounce(calculateLayout, 300);\n$(window).resize(lazyLayout);\nwrap_.wrap(function,
+  wrapper) \nWraps the first function inside of the wrapper function, passing it as
+  the first argument. This allows the wrapper to execute code before and after the
+  function runs, adjust the arguments, and execute it conditionally.\nvar hello =
+  function(name) { return \"hello: \" + name; };\nhello = _.wrap(hello, function(func)
+  {\n  return \"before, \" + func(\"moe\") + \", after\";\n});\nhello();\n=> 'before,
+  hello: moe, after'\ncompose_.compose(*functions) \nReturns the composition of a
+  list of functions, where each function consumes the return value of the function
+  that follows. In math terms, composing the functions f(), g(), and h() produces
+  f(g(h())).\nvar greet    = function(name){ return \"hi: \" + name; };\nvar exclaim
+  \ = function(statement){ return statement + \"!\"; };\nvar welcome = _.compose(greet,
+  exclaim);\nwelcome('moe');\n=> 'hi: moe!'\nObject Functions\n\nkeys_.keys(object)
+  \nRetrieve all the names of the object's properties.\n_.keys({one : 1, two : 2,
+  three : 3});\n=> [\"one\", \"two\", \"three\"]\nvalues_.values(object) \nReturn
+  all of the values of the object's properties.\n_.values({one : 1, two : 2, three
+  : 3});\n=> [1, 2, 3]\nfunctions_.functions(object) Alias: methods \nReturns a sorted
+  list of the names of every method in an object — that is to say, the name of every
+  function property of the object.\n_.functions(_);\n=> [\"all\", \"any\", \"bind\",
+  \"bindAll\", \"clone\", \"compact\", \"compose\" ...\nextend_.extend(destination,
+  *sources) \nCopy all of the properties in the source objects over to the destination
+  object. It's in-order, to the last source will override properties of the same name
+  in previous arguments.\n_.extend({name : 'moe'}, {age : 50});\n=> {name : 'moe',
+  age : 50}\nclone_.clone(object) \nCreate a shallow-copied clone of the object. Any
+  nested objects or arrays will be copied by reference, not duplicated.\n_.clone({name
+  : 'moe'});\n=> {name : 'moe'};\ntap_.tap(object, interceptor) \nInvokes interceptor
+  with the object, and then returns object. The primary purpose of this method is
+  to \"tap into\" a method chain, in order to perform operations on intermediate results
+  within the chain.\n_([1,2,3,200]).chain().\n  select(function(num) { return num
+  % 2 == 0; }).\n  tap(console.log).\n  map(function(num) { return num * num }).\n
+  \ value();\n=> [2, 200]\n=> [4, 40000]\nisEqual_.isEqual(object, other) \nPerforms
+  an optimized deep comparison between the two objects, to determine if they should
+  be considered equal.\nvar moe   = {name : 'moe', luckyNumbers : [13, 27, 34]};\nvar
+  clone = {name : 'moe', luckyNumbers : [13, 27, 34]};\nmoe == clone;\n=> false\n_.isEqual(moe,
+  clone);\n=> true\nisEmpty_.isEmpty(object) \nReturns true if object contains no
+  values.\n_.isEmpty([1, 2, 3]);\n=> false\n_.isEmpty({});\n=> true\nisElement_.isElement(object)
+  \nReturns true if object is a DOM element.\n_.isElement(jQuery('body')[0]);\n=>
+  true\nisArray_.isArray(object) \nReturns true if object is an Array.\n(function(){
+  return _.isArray(arguments); })();\n=> false\n_.isArray([1,2,3]);\n=> true\nisArguments_.isArguments(object)
+  \nReturns true if object is an Arguments object.\n(function(){ return _.isArguments(arguments);
+  })(1, 2, 3);\n=> true\n_.isArguments([1,2,3]);\n=> false\nisFunction_.isFunction(object)
+  \nReturns true if object is a Function.\n_.isFunction(alert);\n=> true\nisString_.isString(object)
+  \nReturns true if object is a String.\n_.isString(\"moe\");\n=> true\nisNumber_.isNumber(object)
+  \nReturns true if object is a Number.\n_.isNumber(8.4 * 5);\n=> true\nisBoolean_.isBoolean(object)
+  \nReturns true if object is either true or false.\n_.isBoolean(null);\n=> false\nisDate_.isDate(object)
+  \nReturns true if object is a Date.\n_.isDate(new Date());\n=> true\nisRegExp_.isRegExp(object)
+  \nReturns true if object is a RegExp.\n_.isRegExp(/moe/);\n=> true\nisNaN_.isNaN(object)
+  \nReturns true if object is NaN.\nNote: this is not the same as the native isNaN
+  function, which will also return true if the variable is undefined.\n_.isNaN(NaN);\n=>
+  true\nisNaN(undefined);\n=> true\n_.isNaN(undefined);\n=> false\nisNull_.isNull(object)
+  \nReturns true if the value of object is null.\n_.isNull(null);\n=> true\n_.isNull(undefined);\n=>
+  false\nisUndefined_.isUndefined(variable) \nReturns true if variable is undefined.\n_.isUndefined(window.missingVariable);\n=>
+  true\nUtility Functions\n\nnoConflict_.noConflict() \nGive control of the \"_\"
+  variable back to its previous owner. Returns a reference to the Underscore object.\nvar
+  underscore = _.noConflict();\nidentity_.identity(value) \nReturns the same value
+  that is used as the argument. In math: f(x) = x\nThis function looks useless, but
+  is used throughout Underscore as a default iterator.\nvar moe = {name : 'moe'};\nmoe
+  === _.identity(moe);\n=> true\ntimes_.times(n, iterator) \nInvokes the given iterator
+  function n times.\n_(3).times(function(){ genie.grantWish(); });\nmixin_.mixin(object)
+  \nAllows you to extend Underscore with your own utility functions. Pass a hash of
+  {name: function} definitions to have your functions added to the Underscore object,
+  as well as the OOP wrapper.\n_.mixin({\n  capitalize : function(string) {\n    return
+  string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();\n  }\n});\n_(\"fabio\").capitalize();\n=>
+  \"Fabio\"\nuniqueId_.uniqueId([prefix]) \nGenerate a globally-unique id for client-side
+  models or DOM elements that need one. If prefix is passed, the id will be appended
+  to it.\n_.uniqueId('contact_');\n=> 'contact_104'\ntemplate_.template(templateString,
+  [context]) \nCompiles JavaScript templates into functions that can be evaluated
+  for rendering. Useful for rendering complicated bits of HTML from JSON data sources.
+  Template functions can both interpolate variables, using\n<%= … %>, as well as execute
+  arbitrary JavaScript code, with <% … %>. When you evaluate a template function,
+  pass in a context object that has properties corresponding to the template's free
+  variables. If you're writing a one-off, you can pass the context object as the second
+  parameter to template in order to render immediately instead of returning a template
+  function.\nvar compiled = _.template(\"hello: <%= name %>\");\ncompiled({name :
+  'moe'});\n=> \"hello: moe\"\n\nvar list = \"<% _.each(people, function(name) { %>
+  <li><%= name %></li> <% }); %>\";\n_.template(list, {people : ['moe', 'curly', 'larry']});\n=>
+  \"<li>moe</li><li>curly</li><li>larry</li>\"\nIf ERB-style delimiters aren't your
+  cup of tea, you can change Underscore's template settings to use different symbols
+  to set off interpolated code. Define an interpolate regex, and an (optional) evaluate
+  regex to match expressions that should be inserted and evaluated, respectively.
+  For example, to perform Mustache.js style templating:\n_.templateSettings = {\n
+  \ interpolate : /\\{\\{(.+?)\\}\\}/g\n};\n\nvar template = _.template(\"Hello {{
+  name }}!\");\ntemplate({name : \"Mustache\"});\n=> \"Hello Mustache!\"\nChaining\n\nchain_(obj).chain()
+  \nReturns a wrapped object. Calling methods on this object will continue to return
+  wrapped objects until value is used. ( A more realistic example.)\nvar stooges =
+  [{name : 'curly', age : 25}, {name : 'moe', age : 21}, {name : 'larry', age : 23}];\nvar
+  youngest = _(stooges).chain()\n  .sortBy(function(stooge){ return stooge.age; })\n
+  \ .map(function(stooge){ return stooge.name + ' is ' + stooge.age; })\n  .first()\n
+  \ .value();\n=> \"moe is 21\"\nvalue_(obj).value() \nExtracts the value of a wrapped
+  object.\n_([1, 2, 3]).value();\n=> [1, 2, 3]"

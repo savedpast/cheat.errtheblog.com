@@ -1,0 +1,51 @@
+---
+net_http: ! "Standard HTTP Request\r\n=====================\r\n\r\nrequire \"net/http\"\r\nrequire
+  \"uri\"\r\n\r\nuri = URI.parse(\"http://google.com/\")\r\n\r\n# Shortcut\r\nresponse
+  = Net::HTTP.get_response(uri)\r\n\r\n# Will print response.body\r\nNet::HTTP.get_print(uri)\r\n\r\n#
+  Full\r\nhttp = Net::HTTP.new(uri.host, uri.port)\r\nresponse = http.request(Net::HTTP::Get.new(uri.request_uri))\r\n\r\n\r\nBasic
+  Auth\r\n==========\r\n\r\nrequire \"net/http\"\r\nrequire \"uri\"\r\n\r\nuri = URI.parse(\"http://google.com/\")\r\n\r\nhttp
+  = Net::HTTP.new(uri.host, uri.port)\r\nrequest = Net::HTTP::Get.new(uri.request_uri)\r\nrequest.basic_auth(\"username\",
+  \"password\")\r\nresponse = http.request(request)\r\n\r\n\r\nDealing with response
+  objects\r\n=============================\r\n\r\nrequire \"net/http\"\r\nrequire
+  \"uri\"\r\n\r\nuri = URI.parse(\"http://google.com/\")\r\n\r\nhttp = Net::HTTP.new(uri.host,
+  uri.port)\r\nrequest = Net::HTTP::Get.new(uri.request_uri)\r\n\r\nresponse = http.request(request)\r\n\r\nresponse.code
+  \            # => 301\r\nresponse.body             # => The body (HTML, XML, blob,
+  whatever)\r\n# Headers are lowercased\r\nresponse[\"cache-control\"] # => public,
+  max-age=2592000\r\n\r\n\r\nPOST form request\r\n=================\r\n\r\nrequire
+  \"net/http\"\r\nrequire \"uri\"\r\n\r\nuri = URI.parse(\"http://example.com/search\")\r\n\r\n#
+  Shortcut\r\nresponse = Net::HTTP.post_form(uri, {\"q\" => \"My query\", \"per_page\"
+  => \"50\"})\r\n\r\n# Full control\r\nhttp = Net::HTTP.new(uri.host, uri.port)\r\n\r\nrequest
+  = Net::HTTP::Post.new(uri.request_uri)\r\nrequest.set_form_data({\"q\" => \"My query\",
+  \"per_page\" => \"50\"})\r\n\r\nresponse = http.request(request)\r\n\r\n\r\nFile
+  upload - input type=\"file\" style\r\n=====================================\r\n\r\nrequire
+  \"net/http\"\r\nrequire \"uri\"\r\n\r\n# Token used to terminate the file in the
+  post body. Make sure it is not\r\n# present in the file you're uploading.\r\nBOUNDARY
+  = \"AaB03x\"\r\n\r\nuri = URI.parse(\"http://something.com/uploads\")\r\nfile =
+  \"/path/to/your/testfile.txt\"\r\n\r\npost_body = []\r\npost_body < < \"--#{BOUNDARY}\\r\\n\"\r\npost_body
+  < < \"Content-Disposition: form-data; name=\\\"datafile\\\"; filename=\\\"#{File.basename(file)}\\\"\\r\\n\"\r\npost_body
+  < < \"Content-Type: text/plain\\r\\n\"\r\npost_body < < \"\\r\\n\"\r\npost_body
+  < < File.read(file)\r\npost_body < < \"\\r\\n--#{BOUNDARY}--\\r\\n\"\r\n\r\nhttp
+  = Net::HTTP.new(uri.host, uri.port)\r\nrequest = Net::HTTP::Post.new(uri.request_uri)\r\nrequest.body
+  = post_body.join\r\nrequest[\"Content-Type\"] = \"multipart/form-data, boundary=#{BOUNDARY}\"\r\n\r\nhttp.request(request)\r\n\r\n\r\nSSL/HTTPS
+  request\r\n=================\r\n\r\nUpdate: There are some good reasons why this
+  code example is bad. It introduces a potential security vulnerability if it's essential
+  you use the server certificate to verify the identity of the server you're connecting
+  to. There's a fix for the issue though!\r\n\r\nrequire \"net/https\"\r\nrequire
+  \"uri\"\r\n\r\nuri = URI.parse(\"https://secure.com/\")\r\nhttp = Net::HTTP.new(uri.host,
+  uri.port)\r\nhttp.use_ssl = true\r\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\r\n\r\nrequest
+  = Net::HTTP::Get.new(uri.request_uri)\r\n\r\nresponse = http.request(request)\r\nresponse.body\r\nresponse.status\r\nresponse[\"header-here\"]
+  # All headers are lowercase\r\n\r\n\r\nSSL/HTTPS request with PEM certificate\r\n======================================\r\n\r\nrequire
+  \"net/https\"\r\nrequire \"uri\"\r\n\r\nuri = URI.parse(\"https://secure.com/\")\r\npem
+  = File.read(\"/path/to/my.pem\")\r\nhttp = Net::HTTP.new(uri.host, uri.port)\r\nhttp.use_ssl
+  = true\r\nhttp.cert = OpenSSL::X509::Certificate.new(pem)\r\nhttp.key = OpenSSL::PKey::RSA.new(pem)\r\nhttp.verify_mode
+  = OpenSSL::SSL::VERIFY_PEER\r\n\r\nrequest = Net::HTTP::Get.new(uri.request_uri)\r\n\r\n\r\nREST
+  methods\r\n============\r\n\r\n# Basic REST.\r\n# Most REST APIs will set semantic
+  values in response.body and response.code.\r\nrequire \"net/http\"\r\n\r\nhttp =
+  Net::HTTP.new(\"api.restsite.com\")\r\n\r\nrequest = Net::HTTP::Post.new(\"/users\")\r\nrequest.set_form_data({\"users[login]\"
+  => \"quentin\"})\r\nresponse = http.request(request)\r\n# Use nokogiri, hpricot,
+  etc to parse response.body.\r\n\r\nrequest = Net::HTTP::Get.new(\"/users/1\")\r\nresponse
+  = http.request(request)\r\n# As with POST, the data is in response.body.\r\n\r\nrequest
+  = Net::HTTP::Put.new(\"/users/1\")\r\nrequest.set_form_data({\"users[login]\" =>
+  \"changed\"})\r\nresponse = http.request(request)\r\n\r\nrequest = Net::HTTP::Delete.new(\"/users/1\")\r\nresponse
+  = http.request(request)\r\n\r\n\r\nCredits\r\n=======\r\n\r\nStolen from: http://www.rubyinside.com/nethttp-cheat-sheet-2940.html\r\nMore
+  examples: https://github.com/augustl/net-http-cheat-sheet"

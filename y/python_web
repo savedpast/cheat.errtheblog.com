@@ -1,0 +1,3 @@
+---
+python_web: ! "##Serve current directory tree at http://$HOSTNAME:8000/ \npython -m
+  SimpleHTTPServer"

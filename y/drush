@@ -1,0 +1,4 @@
+---
+drush: ! "Perform a database dump without needing username, password and database
+  name\r\n$ drush sql-dump > [FOLDER_LOC]database.sql\r\n\r\nLoad database file into
+  database\r\n$ `drush sql connect` < [FOLDER_LOC]database.sql"

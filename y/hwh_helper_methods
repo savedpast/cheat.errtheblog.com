@@ -1,0 +1,3 @@
+---
+hwh_helper_methods: ! "To use helper methods in controllers, instead of...\r\n\r\npluralize(
+  num, 'day' )\r\n\r\nUse\r\n\r\nview_context.pluralize( num, 'day' )"

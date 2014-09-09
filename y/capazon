@@ -1,0 +1,12 @@
+---
+capazon: ! "Capistrano tasks to manage Amazon EC2 Images. Requires Capistrano 2.x\nhttp://capazon.rubyforge.org/,
+  http://www.capify.org/\n\ngem install capazon\n\nEdit your your config/deploy.rb:\n\n
+  \       require 'capazon'\n\n        #AWS login info\n        set :aws_access_key_id,
+  'XXX'\n        set :aws_secret_access_key, 'X'\n\n        # Name of the keypair
+  used to spawn and connect to the Amazon EC2 Instance\n        # Defaults to one
+  created by the setup_keypair task\n        set :aws_keypair_name, \"#{application}-capazon\"\n\n
+  \       # Path to the private key for the Amazon EC2 Instance mentioned above\n
+  \       # Detaults to one created by setup_keypair task\n        set :aws_private_key_path,
+  \"#{Dir.pwd}/#{aws_keypair_name}-key\"\n\n        #defaults to an ubuntu image\n
+  \       #set :aws_ami_id, \"ami-e4b6538d\"\n\n        #defaults to, um, default\n
+  \       #set :aws_security_group, \"default\""

@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>This is a cheat sheet for my little utils.
+
+In general, I think cheat is a brilliant system for collaborative
+learning. If you are good natured, you can contribute to this &quot;flowing
+river&quot; in a way that benefits all.
+
+I have fallen in love with cheat &lt;cheat-sheet-name&gt; --add and --edit.
+It publishes your changes instantly. It is more useful than Wiki, IMO.
+
+Back to lilutils.
+
+1- Modules:
+   LilUtils::AlgoTestUtils::DataSets
+   LilUtils::Misc
+   LilUtils::CLI</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

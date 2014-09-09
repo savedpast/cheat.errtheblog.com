@@ -1,0 +1,131 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>SEARCH
+======
+*           Search forward, word under cursor
+#           Search backward, word under cursor
+/           Search forward
+?           Search backward
+fc          Search line forward for 'c'
+Fc          Search line backward for 'c'
+tc          Search line forward before 'c'
+Tc          Search line backward before 'c'
+
+MOVE
+====
+w           Word forward
+b           Word backward
+e           To end of word forward
+ge          To end of word backward
+^           Beginning of line
+$           End of line
+h,j,k,l     Left, down, up, right
+
+SCROLLING
+zz          Scroll current line to zenter
+zt          Scroll current line to top
+zb          Scroll current line to bottom
+
+MACROS
+======
+qa          Start recording macro 'a'
+q           End recording macro
+@a          Replay macro 'a'
+@:          Replay last command
+
+MARKS
+=====
+ma          Mark current position in 'a'
+`a          Goto position with mark 'a'
+'a          Goto line with mark 'a'
+
+REGISTERS
+=========
+:reg        List all registers
+&quot;c          Register 'c'
+&quot;.          Last edit
+&quot;/          Last search
+&quot;:          Last command
+&quot;%          Filepath
+
+SURROUND
+========
+cs'&quot;        Change surrounding quotes to double-quotes
+cs(}        Change surrounding parens to braces 
+cs({        Change surrounding parens to braces with space
+ds'         Delete surrounding quotes
+dst         Delete surrounding tags
+ysiw[       Surround inner word with brackets
+vees'       Surround 2 words (ee) with quote
+
+RUBY REFACTORING
+================
+,relv       Refactor Extract Local Variable
+,rem        Refactor Extract Method
+,rec        Refactor Extract Constant
+,rriv       Refactor Rename Instance Variable
+,rrlv       Refactor Rename Local Variable
+,rit        Refactor Inline temp
+,rap        Refactor Add Parameter
+,rcpc       Refactor Convert Post Conditonal
+,rel        Refactor Extract Let (RSPEC)
+
+SPELLING
+========
+]s          Next misspelled word
+[s          Previous misspelled word
+zg          Add word to wordlist
+zug         Undo last add word
+z=          Suggest word
+
+COMMAND MODE
+============
+C-p         Previous command
+C-n         Next command
+C-f         Enter command window mode
+C-h         Left
+C-l         Right
+C-b         Back word
+C-w         Word forward
+C-a         Beginning of line
+C-e         End of line
+
+COMMAND WINDOW
+==============
+q/          Command window for searches
+q:          Command window for commands
+
+
+WINDOWS
+=======
+C-h     Left window
+C-j     Down window
+C-k     Up window
+C-l     Right window
+:sp f   Split open f
+:vsp f  VSplit open f
+C-w +   Larger window
+C-w -   Smaller window
+C-w =   Equal window
+:only   Close other windows
+C-w r   Rotate clockwise
+
+
+UNIMPAIRED
+==========
+[space  New line above
+]space  New line below
+[e      Exchange line above
+]e      Exchange line below
+
+RAGTAG
+======
+C-x +       Insert &lt;%= %&gt;
+C-x space   Make tag p -&gt; &lt;p&gt;&lt;/p&gt;
+
+VIMDIFF
+=======
+do          Get changes from other window
+dp          Put the changes from current window
+]c          Jump to the next change.
+[c -        Jump to the previous change.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

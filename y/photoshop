@@ -1,0 +1,22 @@
+---
+photoshop: ! 'v = move / selection (pointer) tool
+
+  m = marquee tool
+
+  i = eye dropper
+
+
+  shift + a tool = cycle through tools
+
+
+  cmd + = zoom in
+
+  cmd - = zoom out
+
+  cmd t = scale
+
+  cmd t shift = scale with constant aspect ratio
+
+  opt backspace = fill selection
+
+  cmd d = delete selection'

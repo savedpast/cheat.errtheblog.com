@@ -1,0 +1,13 @@
+---
+callbacks: ! "Regular callbacks in ActiveRecord::Base:\n\n  1. before_validation\n
+  \ 2. before_validation_on_create\n  3. after_validation\n  4. after_validation_on_create\n
+  \ 5. before_save\n  6. before_create\n  7. after_create\n  8. after_save\n  9. before_destroy\n
+  \ 10. after_destroy\n\nUsage:\n\n  Define a method:\n\n    class Foo < ActiveRecord::Base\n
+  \     def before_create\n        # your code here\n      end\n    end\n\n Invoke
+  callback with a name of a method:\n\n    class Foo < ActiveRecord::Base\n      before_create
+  :do_stuff\n    protected\n      def do_stuff\n        # your code here\n      end\n
+  \   end\n\n  Invoke callback with a block:\n\n    class Foo < ActiveRecord::Base\n
+  \     before_create do\n        def do_stuff\n          # your code here\n        end\n
+  \     end\n    end\n\nExceptions:\n\n  1. after_find\n  2. after_initialize \n\nUsage:\n\n
+  \ Define a method:\n\n    class Foo < ActiveRecord::Base\n      def after_find\n
+  \       do_stuff\n      end\n    end"

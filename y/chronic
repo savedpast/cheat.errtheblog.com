@@ -1,0 +1,21 @@
+---
+chronic: ! "= CHRONIC (https://github.com/mojombo/chronic)\r\n\r\n  Pure Ruby natural
+  language date parser.\r\n\r\nInstalling\r\n==========\r\n\r\n  $ gem install chronic\r\n\r\nUsage\r\n=====\r\n\r\n
+  \ require 'rubygems'\r\n  require 'chronic'\r\n\r\n  Time.now   #=> Sun Aug 27 23:18:25
+  PDT 2006\r\n\r\n  Chronic.parse('tomorrow')\r\n    #=> Mon Aug 28 12:00:00 PDT 2006\r\n\r\n
+  \ Chronic.parse('monday', :context => :past)\r\n    #=> Mon Aug 21 12:00:00 PDT
+  2006\r\n\r\n  Chronic.parse('this tuesday 5:00')\r\n    #=> Tue Aug 29 17:00:00
+  PDT 2006\r\n\r\n  Chronic.parse('this tuesday 5:00', :ambiguous_time_range => :none)\r\n
+  \   #=> Tue Aug 29 05:00:00 PDT 2006\r\n\r\nParsing dates/times\r\n===================\r\n\r\nSimple\r\n------\r\n\r\nthursday\r\nnovember\r\nsummer\r\nfriday
+  13:00\r\nmon 2:35\r\n4pm\r\n6 in the morning\r\nfriday 1pm\r\nsat 7 in the evening\r\nyesterday\r\ntoday\r\ntomorrow\r\nthis
+  tuesday\r\nnext month\r\nlast winter\r\nthis morning\r\nlast night\r\nthis second\r\nyesterday
+  at 4:00\r\nlast friday at 20:00\r\nlast week tuesday\r\ntomorrow at 6:45pm\r\nafternoon
+  yesterday\r\nthursday last week\r\n\r\nComplex\r\n-------\r\n\r\n3 years ago\r\n5
+  months before now\r\n7 hours ago\r\n7 days from now\r\n1 week hence\r\nin 3 hours\r\n1
+  year ago tomorrow\r\n3 months ago saturday at 5:00 pm\r\n7 hours before tomorrow
+  at noon\r\n3rd wednesday in november\r\n3rd month next year\r\n3rd thursday this
+  september\r\n4th day last week\r\n\r\nSpecific Dates\r\n--------------\r\n\r\nJanuary
+  5\r\ndec 25\r\nmay 27th\r\nOctober 2006\r\noct 06\r\njan 3 2010\r\nfebruary 14,
+  2004\r\n3 jan 2000\r\n17 april 85\r\n5/27/1979\r\n27/5/1979\r\n05/06\r\n1979-05-27\r\nFriday\r\n5\r\n4:00\r\n17:00\r\n0800\r\n\r\nSpecific
+  Times (many of the above with an added time)\r\n--------------\r\n\r\nJanuary 5
+  at 7pm\r\n1979-05-27 05:00:00\r\netc\r\n"

@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>v = move / selection (pointer) tool
+m = marquee tool
+i = eye dropper
+
+shift + a tool = cycle through tools
+
+cmd + = zoom in
+cmd - = zoom out
+cmd t = scale
+cmd t shift = scale with constant aspect ratio
+opt backspace = fill selection
+cmd d = delete selection</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

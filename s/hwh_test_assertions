@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Assertion	Purpose
+assert( boolean, [msg] )	        Ensures that the object/expression is true.
+assert_equal( obj1, obj2, [msg] )	Ensures that obj1 == obj2 is true.
+assert_not_equal( obj1, obj2, [msg] )	Ensures that obj1 == obj2 is false.
+assert_same( obj1, obj2, [msg] )	Ensures that obj1.equal?(obj2) is true.
+assert_not_same( obj1, obj2, [msg] )	Ensures that obj1.equal?(obj2) is false.
+assert_nil( obj, [msg] )	        Ensures that obj.nil? is true.
+assert_not_nil( obj, [msg] )	        Ensures that obj.nil? is false.
+assert_match( regexp, string, [msg] )	Ensures that a string matches the regular expression.
+assert_no_match( regexp, string, [msg] )	Ensures that a string does not match the regular expression.
+assert_in_delta( expecting, actual, delta, [msg] )	Ensures that the numbers expecting and actual are within delta of each other.
+assert_throws( symbol, [msg] ) { block }	Ensures that the given block throws the symbol.
+assert_raise( exception1, exception2, ... ) { block }	Ensures that the given block raises one of the given exceptions.
+assert_nothing_raised( exception1, exception2, ... ) { block }	Ensures that the given block does not raise one of the given exceptions.
+assert_instance_of( class, obj, [msg] )	Ensures that obj is of the class type.
+assert_kind_of( class, obj, [msg] )	Ensures that obj is or descends from class.
+assert_respond_to( obj, symbol, [msg] )	Ensures that obj has a method called symbol.
+assert_operator( obj1, operator, obj2, [msg] )	Ensures that obj1.operator(obj2) is true.
+assert_send( array, [msg] )	Ensures that executing the method listed in array[1] on the object in array[0] with the parameters of array[2 and up] is true. This one is weird eh?
+flunk( [msg] )	Ensures failure. This is useful to explicitly mark a test that isn’t finished yet.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

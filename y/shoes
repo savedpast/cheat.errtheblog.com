@@ -1,0 +1,27 @@
+---
+shoes: ! "## \n# General Stuff\nstack do  # fills width 100%\n  contents\nend\n\nstack
+  :width => x, :margin-left => x do\n  contents\nend\n\nbutton \"label\" do\n  event\nend\n\nalert
+  'string'\ntext 'string'\nbackground rgb(1, 1, 1), :top => 50, :right => 0, :width
+  => 55\nimage 'static/blah.png', :top => 0, :left => 0 # also jpegs and gifs\n\nkeypress
+  do |k|\n  # keys may be strings or symbols\nend\n\n\n##\n# Colors\n rgb(1.0, 1.0,
+  1.0)     # white\n rgb(0xFF, 0xFF, 0xFF)  # white\n rgb(255, 255, 255)     # white\n
+  gray(1.0)              # white\n gray(0xFF)             # white\n gray(255)              #
+  white\n Color.parse(\"#FFFFFF\") # white\n Color.parse(\"#FFF\")    # white\n Color.parse(\"rgb(255,
+  255, 255)\")\n\n rgb(0.1, 0.1, 0.7)     # blue\n rgb(0.1, 0.7, 0.2, 0.5) # green
+  (50% transparent)\n gray(255, 0.5)         # white (50% transparent)\n\nThe color
+  can be passed into `background`, `fill` and `stroke`.\n\n\n##\n# Controls\n\n# dropdown
+  with One and Two as options\nlist = list_box :items => %w(One Two) \n\n# text field\ntext
+  = edit_line\n\n# text box\nbody = edit_box \nbody.text = 'default value'\n\nShoes.p
+  box.text # print to debug value of text box\n\n# other controls: progress\n\n\n##\n#
+  API Extracted from ruby.c [ http://pastie.caboo.se/90140 ]\ncAnim\n  remove\ncBackground\n
+  \ remove\ncButton\n  remove\ncCanvas\n  after\n  animate\n  append\n  arrow\n  background\n
+  \ before\n  button\n  clear\n  click\n  clipboard\n  clipboard=\n  contents\n  curve_to\n
+  \ edit_box\n  edit_line\n  fill\n  flow\n  goto\n  gray\n  height\n  hide\n  image\n
+  \ imagesize\n  keypress\n  line\n  line_to\n  list_box\n  motion\n  mouse\n  move_to\n
+  \ nofill\n  nostroke\n  oval\n  path\n  pop\n  prepend\n  progress\n  push\n  quit\n
+  \ rect\n  release\n  remove\n  reset\n  rgb\n  rotate\n  scale\n  show\n  skew\n
+  \ stack\n  star\n  stroke\n  strokewidth\n  text\n  toggle\n  transform\n  translate\n
+  \ width\ncColor\n  to_s\ncEditBox\n  remove\n  text\n  text=\ncEditLine\n  remove\n
+  \ text\n  text=\ncImage\n  remove\ncListBox\n  remove\n  text\ncPath\n  move\n  remove\ncProgress\n
+  \ remove\ncTextClass\n  cursor\n  cursor=\n  remove\n  replace\n  to_s\nrb_mKernel\n
+  \ alert\n  ask\n  ask_color\n  ask_open_file\n  ask_save_file\n  confirm"

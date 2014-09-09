@@ -1,0 +1,146 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Controllers
+
+    class EmployeesController &lt; ApplicationController
+      filter_resource_access
+      ...
+    end
+    
+    
+
+    class EmployeesController &lt; ApplicationController
+      filter_access_to :all
+      def index
+        ...
+      end
+      ...
+    end
+
+
+
+    class EmployeesController &lt; ApplicationController
+      filter_access_to :all
+      # this one would be included in :all, but :read seems to be
+      # a more suitable privilege than :auto_complete_for_user_name
+      filter_access_to :auto_complete_for_employee_name, :require =&gt; :read
+      def auto_complete_for_employee_name
+        ...
+      end
+      ...
+    end
+
+
+
+    class EmployeesController &lt; ApplicationController
+      filter_access_to :update, :attribute_check =&gt; true
+      def update
+        # @employee is already loaded from param[:id] because of :attribute_check
+      end
+    end
+
+
+
+    class EmployeesController &lt; ApplicationController
+      before_filter :new_employee_from_params, :only =&gt; :create
+      before_filter :new_employee, :only =&gt; [:index, :new]
+      filter_access_to :all, :attribute_check =&gt; true
+
+      def create
+        @employee.save!
+      end
+
+      protected
+      def new_employee_from_params
+        @employee = Employee.new(params[:employee])
+      end
+    end
+
+
+
+Views
+
+    &lt;% permitted_to? :create, :employees do %&gt;
+    &lt;%= link_to 'New', new_employee_path %&gt;
+    &lt;% end %&gt;
+
+
+
+    &lt;% permitted_to? :create, Branch.new(:company =&gt; @company) do
+            # or @company.branches.new
+            # or even @company.branches %&gt;
+    &lt;%= link_to 'New', new_company_branch_path(@company) %&gt;
+    &lt;% end %&gt;
+
+
+
+    &lt;% for employee in @employees %&gt;
+    &lt;%= link_to 'Edit', edit_employee_path(employee) if permitted_to? :update, employee %&gt;
+    &lt;% end %&gt;
+
+Models
+
+    class Employee &lt; ActiveRecord::Base
+      using_access_control
+      ...
+    end
+    
+    
+    Employee.with_permissions_to(:read)
+
+    Employee.with_permissions_to(:read).find(:all, :conditions =&gt; ...)
+
+Authorization Rules
+
+    authorization do
+      role :admin do
+        has_permission_on :employees, :to =&gt; [:create, :read, :update, :delete]
+      end
+    end
+
+
+    authorization do
+      role :admin do
+        has_permission_on :employees, :to =&gt; :manage
+      end
+    end
+
+    privileges do
+      privilege :manage do
+        includes :create, :read, :update, :delete
+      end
+    end
+
+
+    privileges do
+      privilege :manage, :employees, :includes =&gt; :increase_salary
+    end
+
+    authorization do
+      role :branch_admin do
+        has_permission_on :employees do
+          to :manage
+          # user refers to the current_user when evaluating
+          if_attribute :branch =&gt; is {user.branch}
+        end
+      end
+    end
+
+
+    authorization do
+      role :branch_admin do
+        has_permission_on :branches, :to =&gt; :manage do
+          if_attribute :managers =&gt; contains {user}
+        end
+
+        has_permission_on :employees, :to =&gt; :manage do
+          if_permitted_to :manage, :branch
+          # instead of
+          #if_attribute :branch =&gt; {:managers =&gt; contains {user}}
+        end
+      end
+    end
+
+      role :project_manager do
+        includes :employee
+      end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

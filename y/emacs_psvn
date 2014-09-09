@@ -1,0 +1,11 @@
+---
+emacs_psvn: ! "Emacs as Subversion front-end\n\nM-x svn-status                  Visit
+  a directory in SVN mode. You will be\n                                prompted for
+  the directory to visit.\n\nsvn-status mode\nc       svn-status-commit       Commit
+  selected files (or current file if none\n                                marked)\nD
+  \      svn-status-rm           Remove selected files from repository\n                                (`svn
+  rm')\n_       svn-status-toggle-hide-unmodified  Hide/show unmodified files\n* M
+  \    svn-status-mark-modified           Mark modified files          \n* !     svn-status-unset-all-user-marks
+  \   Unmark all marked files\n=       svn-status-show-svn-diff           Show diff
+  of current file\n* u     svn-status-show-svn-diff-for-marked-files    Show diff
+  of marked files"

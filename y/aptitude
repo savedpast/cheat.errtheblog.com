@@ -1,0 +1,17 @@
+---
+aptitude: ! "Keolo Keagy\nhttp://dreampointmedia.com/\n\nCommon aptitiude commands
+  for Ubuntu/Debian: \n\naptitude\n  Running it with no arguments brings up a beautiful
+  interface to \n  search, navigate, install, update and otherwise administer \n  packages.\n\nsudo
+  aptitude install <name>\n  Installing software for your system, installing needed
+  \n  dependencies as well.\n\naptitude remove\n  Removing packages as well as orphaned
+  dependencies.\n\naptitude purge\n  Removing packages and orphaned dependencies as
+  well as any \n  configuration files left behind.\n\naptitude search\n  Search for
+  packages in the local apt package lists.\n\naptitude update\n  Update the local
+  packages lists.\n\naptitude upgrade\n  Upgrade any installed packages that have
+  been updated.\n\naptitude clean\n  Delete any downloaded files necessary for installing
+  the \n  software on your system.\n\naptitude dist-upgrade\n  Upgrade packages, even
+  if it means uninstalling \n  certain packages.\n\naptitude show\n  Show details
+  about a package name.\n\naptitude autoclean\n  Delete only out-of-date packages,
+  but keep current ones.\n\naptitude hold\n  Fix a package at it’s current version,
+  and don’t update it.\n\napt-get moo\n  Try it yourself and find out. (Not all versions
+  of APT have this!)"

@@ -1,0 +1,116 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>---------------
+| INSERT MODE |
+---------------
+&lt;C-a&gt;   Move to first words or select all
+&lt;C-d&gt;   Delete forward char
+&lt;C-e&gt;   Move to end
+&lt;C-h&gt;   Delete backward char
+&lt;C-i&gt;   Launch the external editor,default 'editor' is 'gvim -f'.
+&lt;C-k&gt;   Delete forward to the end of the line.
+&lt;C-w&gt;   Delete backward word
+&lt;C-u&gt;   Delete backward to the beginning of the line.
+&lt;M-d&gt;   Delete forward word
+&lt;M-h&gt;   Move back a word
+&lt;M-l&gt;   Move forward a word
+&lt;M-j&gt;   Move back a char
+&lt;M-k&gt;   Move forward a char
+
+---------------
+| NORMAL MODE |
+---------------
+&lt;C-^&gt;   Select the previously selected tab.If [count] is specified, go to the [count]th tab.
+&lt;C-a&gt;   ncrements the last number in URL by 1, or by [count] if given.
+&lt;C-b&gt;   Scroll up [count] full page.
+&lt;C-d&gt;   Scroll down [count] half page
+&lt;C-f&gt;   Scroll down [count] full page
+&lt;C-i&gt;   Go [count] pages forward in the browser history.
+&lt;C-o&gt;   Go [count] pages back in the browser history.
+&lt;C-u&gt;   Scroll up [count] half page
+&lt;C-v&gt;   Pass through the next key
+&lt;C-x&gt;   Decrements the last number in URL by 1, or by [count] if given.
+&lt;C-y&gt;   Shorten current url,and copy it into clipboard
+&lt;C-z&gt;   Temporarily ignore all Vrome key bindings
+
+&lt;M-d&gt;     like `d`,but close current tab and selects the last selected tab.
+
+&lt;F1&gt;    Open the help page.
+
+0       Scroll to the absolute left of the document
+$       Scroll to the absolute right of the document
+
+D         Like d but selects the tab to the left of the deleted tab.
+F       Start QuickHint mode, but open link in a new tab
+G       Go to the end of the document
+H       Go back in the browser history
+L       Go forward in the browser history
+N       Find previous
+O       Open one or more URLs, based on current location
+R       Reload all Tabs
+T       Open one or more URLs in a new tab, based on current location
+Y       Copy selected text
+
+b       goto the [count] tab or the first matched tab.
+d       close current tab and selects the tab to the right of the deleted tab.
+f       Start QuickHint mode
+h       Scroll document to the left.If [count] is specified then move [count] times as much down.
+j       Scroll document down. If [count] is specified then move [count] times as much down.
+k       Scroll document up. If [count] is specified then move [count] times as much down.
+l       Scroll document to the right. If [count] is specified then move [count] times as much down.
+
+n       Find the next [count]
+o       Open one or more URLs
+r       Reload the current web page
+t       Open one or more URLs in a new tab
+u       Undo the last closed tab, If a [count] is specified then undo the [count]th last closed tab.
+y       Yank current location to the clipboard
+
+:       Enter Command-line mode
+
+/       Search forward for the next [count] word for a pattern
+?       Search backwards for the next [count] word for a pattern
+*       Find word under cursor
+#       Find word under cursor backwards
+
+N%      Scroll to [count] percent of the document
+
+.       Repeat the last keyboard mapping [count] times.
+
+]]      Follow the link labeled 'next' or '&gt;' if it exists
+[[      Follow the link labeled 'prev', 'previous' or '&lt;' if it exists
+
+g$      Go to the last tab
+g0      Go to the first tab
+gT      Go to the previous [count] tab
+gU      Go to the root of the website
+gf      View source
+gg      Go to the top of the document
+gi      Focus the [count]th input field
+gt      Go to the next [count] tab
+gu      Go to [count]th parent directory
+
+zI      Enlarge full zoom of current web page,[count]
+zM      Enlarge full zoom of current web page by a larger amount,[count]
+zO      Reduce full zoom of current web page,[count]
+zR      Reduce full zoom of current web page by a larger amount,[count]
+zZ      Set full zoom value of current web page
+zi      Enlarge text zoom of current web page,[count]
+zm      Enlarge text zoom of current web page by a larger amount,[count]
+zo      Reduce text zoom of current web page,[count]
+zr      Reduce text zoom of current web page by a larger amount,[count]
+zz      Set text zoom value of current web page
+
+
+go{a-zA-Z0-9}   Jump to a QuickMark in the current tab. Open any QuickMark in the current tab. You can mark any URLs with M{a-zA-Z0-9}. These QuickMarks are persistent across browser sessions.
+gn{a-zA-Z0-9}   Jump to a QuickMark in a new tab. Works like go{a-zA-Z0-9} but opens the QuickMark in a new tab.
+M{a-zA-Z0-9}    Add new QuickMark for current URL. You can go to a marked URL in the current tab with go{a-zA-Z0-9} or in a new tab with gn{a-zA-Z0-9}. These QuickMarks are persistent across browser sessions.
+
+m{a-zA-Z}       Set mark at the cursor position. Marks a-z are local to the buffer, whereas A-Z are valid between buffers.
+'{a-zA-Z}       Jump to the mark. Marks a-z are local to the buffer, whereas A-Z are valid between buffers.
+
+----------------
+| COMMAND MODE |
+----------------
+:help     Open the help page.
+:bdelete  Close all matched tabs.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,14 @@
+---
+sti: ! "Single Table Inheritance\n\nclass CreateSTI < ActiveRecord::Migration\n  def
+  self.up\n    create_table \"statuses\" do |t|\n      t.column :type, :string # You
+  need this!\n      t.column :invoice_id, :integer\n      t.column :employee_id, :integer\n
+  \     t.column :created_at, :datetime\n    end\n  end\n\n  def self.down\n    drop_table
+  \"statuses\"\n  end\nend\n\nclass Status < ActiveRecord::Base\n  #superclass\nend\n\nclass
+  Invoiced < Status\n  #subclass\n  belongs_to :invoice\nend\n\nclass Employeed <
+  Status\n  #subclass\n  belongs_to :employee, :class_name => \"Person\", :foreign_key
+  => 'employee_id'\nend\n\nFixtures for a STI model must go in the fixture file for
+  the\nsuperclass.\n\nTo find out what class an instance of the superclass use\n@instance.class
+  or you can use the value of the type column\nfrom other systems that do not go through
+  AR.\n\nIf you cannot use type (radio button helper has problems\nwith it) define
+  the new column in your superclass model\nlike this:\ndef self.inheritance_column\n
+  'role' \nend"

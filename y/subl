@@ -1,0 +1,25 @@
+---
+subl: ! "Sublime Text 2 - Useful Shortcuts\r\n=================================\r\n\r\n*Tested
+  in Mac OS X: super == command*\r\n\r\nOpen/Goto\r\n_________\r\n- super+t: go to
+  file\r\n- super+ctrl+p: go to project\r\n- super+r: go to methods\r\n- super+shift+p:
+  command prompt\r\n- ctrl+g: go to line\r\n- ctrl+`: Python console\r\n\r\nEditing\r\n_______\r\n-
+  super+l: select line (repeat select next lines)\r\n- super+d: select word (repeat
+  select others occurrences in context for multiple editing)\r\n- ctrl+shift+m: select
+  content into brackets\r\n- super+shift+enter: insert line before\r\n- super+enter:
+  inter line after\r\n- ctrl+shift+k: delete line\r\n- super+k-k: delete from cursor
+  to end of line\r\n- super+k-backspace: delete from cursor to start of line\r\n-
+  super+shift+d: duplicate line(s)\r\n- super+j: join lines\r\n- super+k-u: upper
+  case\r\n- super+k-l: lower case\r\n- super+/: comment\r\n- super+alt+/: block comment\r\n-
+  super+y: redo or repeat\r\n- super+shift+z: past and ident\r\n- ctrl+space: autocomplete
+  (repeat to select next suggestion)\r\n- ctrl+m: jump to matching brackets\r\n\r\nXML/HTML\r\n________\r\n-
+  super+shift+a: select content into tag\r\n- super+alt+.: close tag\r\n\r\nFind/Replace\r\n____________\r\n-
+  super+f: find\r\n- super+alt+f: replace\r\n- super+alt+g: find next occurrence of
+  current word\r\n- super+ctrl+g: select all occurrences of current word for multiple
+  editing\r\n- super+shift+f: find in files\r\n\r\nSplits/Tabs\r\n___________\r\n-
+  super+alt+1: Single column\r\n- super+alt+2: Two columns\r\n- super+alt+5: Grid
+  (4 groups)\r\n- ctrl+[1,2,3,4]: Focus group\r\n- ctrl+shift[1,2,3,4]: Move file
+  to group\r\n- super+[1,2,3...] Select tab\r\n\r\nBookmarks\r\n_________\r\n- super+f2:
+  Toggle bookmark\r\n- f2: next bookmark\r\n- shift+f2: previous bookmark\r\n- super+shift+f2:
+  clear bookmarks\r\n\r\nMarks\r\n_____\r\n- super+k-space: set mark // super+k-;
+  for me\r\n- super+k-w: delete from cursor to mark\r\n- super+k-a: select from cursor
+  to mark\r\n- super+k-g: clear mark\r\n\r\ncopied from https://gist.github.com/1207014/e2ce7129156cedc23e9f0961196048d412747399"

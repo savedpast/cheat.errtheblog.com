@@ -1,0 +1,5 @@
+---
+git_collaboration: ! "Restricted, shared git repo:\n  $ mkdir repo.git\n  $ cd repo.git\n
+  \ $ git --bare init --shared\n  $ touch git-daemon-export-ok\n  $ git --bare fetch
+  /git/git_repo_with_working master:master\n\nNow only developers with ssh access
+  in the 'git' group (if you set it up that way) can pull / push / clone the repo."

@@ -1,0 +1,11 @@
+---
+braid: ! "Homepage\n========\n\n  http://github.com/evilchelu/braid/wikis/home\n\n\nInstall
+  braid\n=============\n\nRequirements: git v. >= 1.6\n\nsudo gem install braid\n\n\nUsage\n=====\n\nAdd
+  a repository\n----------------\n\n  braid add <git-url> <dir>\n\n    where repos
+  = git://github.com/foo.git\n          dir = vendor/plugins/foo\n\n    This will
+  add the files and generate a commit. \n\nUpdate a repository\n-------------------\n\n
+  \ update a remote to the HEAD of the remote:\n\n    braid update <dir>\n\n  or to
+  a specific commit:\n\n    braid update <dir> -r <git-revision>\n\n  It doesn't appear
+  as though -r will take a git tag.  \n  Use the revision number which corresponds
+  to the tag.\n\nHelp\n====\n\n  for general help:\n\n    braid help \n\n  for specific
+  commands:\n\n    braid help <command>"

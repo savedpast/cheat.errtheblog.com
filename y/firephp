@@ -1,0 +1,16 @@
+---
+firephp: ! "<?php\r\n\r\nrequire_once('FirePHPCore/FirePHP.class.php');\r\nrequire_once('FirePHPCore/fb.php');\r\n\r\n//
+  some reports indicate the output buffering is required\r\n// ob_start();\r\n\r\nFB::setEnabled(true);\r\n\r\n//
+  the basic message types\r\nFB::log('Log message');\r\nFB::info('Info message');\r\nFB::warn('Warn
+  message');\r\n// note this fires the error indicator in the bottom right\r\nFB::error('Error
+  message');\r\n\r\n// dump an array\r\nFB::log($_SERVER);\r\n// with an optional
+  message\r\nFB::log($_SERVER, 'The $_SERVER array');\r\n\r\n// message grouping\r\nFB::group('Plain
+  Group');\r\nFB::log('Hello World');\r\nFB::log('These messages are all grouped together');\r\nFB::log('The
+  last message in this group');\r\nFB::groupEnd();\r\n\r\n$options = array('Collapsed'
+  => true, 'Color' => '#FF00FF');\r\nFB::group('Coloured Group', $options);\r\nFB::log('Hello
+  World');\r\nFB::log('These messages are all grouped together');\r\nFB::log('The
+  last message in this group');\r\nFB::groupEnd();\r\n\r\n// log a table of data \r\n$table
+  \  = array();\r\n$table[] = array('Col 1 Heading','Col 2 Heading');\r\n$table[]
+  = array('Row 1 Col 1','Row 1 Col 2');\r\n$table[] = array('Row 2 Col 1','Row 2 Col
+  2');\r\n$table[] = array('Row 3 Col 1','Row 3 Col 2');\r\nFB::table('Mumbo Jumbo
+  table', $table);\r\n\r\n// best practice: do not close the PHP tag"

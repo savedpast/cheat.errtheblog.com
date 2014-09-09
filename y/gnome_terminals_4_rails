@@ -1,0 +1,47 @@
+---
+gnome_terminals_4_rails: ! "#!/usr/bin/env ruby\r\n\r\n# A Ruby script that generates
+  a bash script which automates the opening\r\n# of terminals in Gnome.\r\n\r\ndef
+  assemble_script \r\n\tscript =  $script1 + $listing + $script2 + \r\n\t\t\"echo
+  #{$commands} \\n\\n#{$commands}\" +\r\n\t\t$error_message\r\n\tFile.open(ARGV[0],
+  'w') do |f|\r\n\t\tf.puts script\r\n\tend\r\nend\r\n\r\ndef display_help_and_exit\r\n\tputs
+  <<-EOF\r\n\tGnome Terminals 4 Rails. \r\n\t\r\n\tUSAGE: terminals4rails file_name
+  command1 command2 ... \"title\":\"exec\"\r\n\t\r\n\tfile_name: File name of the
+  generated bash script.\r\n\ttilte: Title of the terminal tab\r\n\texec: bash command.
+  GIGO\r\n\t\r\n\tBuilt-in commands:\r\n\t\tbash         The Bash\r\n\t\tvim          Vim
+  editor\r\n\t\tvimNERD      Vim with NERDTree, if pre-installed\r\n\t\tserver       Start
+  script/server\r\n\t\tautospec     Start autospect\r\n\tEOF\r\n\t\r\n\texit\r\nend\r\n\r\n#
+  Display helf if there are less than 2 arguments.\r\ndisplay_help_and_exit if ARGV.length
+  < 2 \r\nARGV.each { |arg| display_help_and_exit if arg == \"--help\" or arg == \"-h\"
+  }\r\n\r\n\r\n# Start the core script \r\n\r\n$script1 = <<-EOF\r\n#!/bin/bash\r\n\r\n#
+  Rails Terminals for Rails and Gnome\r\n# A simple script that opens a Gnome terminal
+  with titled tabs.\r\n\r\n# Tabs with following bash commands:\r\nEOF\r\n\r\n$script2
+  = <<-EOF\r\n\r\n# USAGE: terminal4rails.sh working_dir\r\n\r\ndir=$1\t# The first
+  argument is the path of the working directory.\r\nerr=0\t# If err becomes negative,
+  an error message is generated in the end. \r\n\r\nif [ -z $dir ] || [ ! -d $dir
+  ]; then\r\n\techo \"Please specify a working directory as the argument\"\r\n\texit\r\nfi\r\n\t\r\n#
+  If the argument is a relative path, then augment it with \r\n# the current dir.\r\nif
+  [ ${dir:0:1} != '~' ] && [ ${dir:0:1} != '/' ]; then\r\n\tdir=`pwd`'/'$dir\r\nfi\r\n\r\necho
+  \"Working directory: $dir\"\r\n\r\nEOF\r\n\r\n$error_message =<<-EOF\r\n\r\nif [
+  $err -lt 0 ]; then\r\n\techo \"WARNING: Some tabs could not be opened.\"\r\nfi\r\nEOF\r\n\r\n$commands=\"gnome-terminal
+  --working-directory=$dir --geometry=112x30 \"\r\n\r\nexecs = Array.new \r\n\r\nARGV[1..-1].each
+  do |arg|\r\n\tcase arg\r\n\twhen \"bash\" then exec=\"bash\"; title=\"Bash\"\r\n\twhen
+  \"vim\" then exec=\"vim\"; title=\"Vim\"\r\n\twhen \"vimNERD\" then exec='vim +NERDTree';
+  title=\"Vim\"\r\n\twhen \"server\" then exec=\"script/server && bash\" \r\n\t\ttitle=\"script/server\"\r\n\twhen
+  \"autospec\" then exec='autospec'; title=\"autospec\"\r\n\telse \r\n\t\tif arg =~
+  /.+:.+/ \r\n\t\t\ttitle, exec = arg.split(\":\")\r\n\t\telse raise \"ERROR: Input
+  is not recognised.\"\r\n\t\tend\r\n\tend\r\n\r\n\tfirst_exec = exec.split(\" \")[0]\r\n\tif
+  first_exec[0] == '\"' or first_exec[0] == \"'\"\r\n\t\tfirst_exec = first_exec[1..-1]\r\n\tend\r\n\tscript_title
+  = title.downcase.gsub(/\\W/, \"_\" )\r\n\r\n\t$script2 += <<-EOF\r\n\t#{script_title}_t=\"#{title}\"\r\n\tcheck_exec=(`whereis
+  -b #{first_exec}`)\t# Check whether binary exist\r\n\r\n\tif [ ${#check_exec[@]}
+  -gt \"1\" ]; then\r\n\t\techo \"#{title} found in ${check_exec[1]}.\"\r\n\t\t#{script_title}_e=\"bash
+  -c '#{exec}'\"\r\n\telif [ -x $dir/#{first_exec} ]; then\r\n\t\techo \"#{title}
+  found in \"$dir\"#{first_exec}.\"\r\n\t\t#{script_title}_e=\"bash -c '#{exec}'\"\r\n\telse\r\n\t\t#{script_title}_e=\"echo\"\t#
+  Closes the tab w/o action.\r\n\t\terr=$(( $err - 1 ))\r\n\t\techo \"#{first_exec}
+  not found.\"\r\n\tfi\r\n\t\r\n\tEOF\r\n\r\n\texecs << [exec, script_title] \r\nend\r\n\r\n$listing
+  = \"\"\r\n\r\nexecs.each do |exec, title|\r\n\t$commands += \"--tab -t $#{title}_t
+  -e \\\"$#{title}_e\\\" \"\r\n\t$listing += \"# * #{exec}\\n\"  \r\nend\t\r\n\r\n#
+  Ask for permission to overwrite an existing file.\r\nif File.exists? ARGV[0] then
+  \r\n\tprint \"Do you want to overwrite the file #{ARGV[0]} (y/n): \"\r\n\tanswer
+  = $stdin.gets\r\n\tif answer.downcase[0] == \"y\" then \r\n\t\tputs \"Script is
+  assembled.\"\r\n\t\tassemble_script\r\n\telse \r\n\t\tputs \"Script terminates without
+  writing.\"\r\n\t\texit\r\n\tend\r\nelse \r\n\tputs \"Script is assembled.\"\r\n\tassemble_script\r\nend"

@@ -1,0 +1,32 @@
+---
+nsupdate: ! '$ nsupdate # tool to do DNS updates (cheat dns for record types)
+
+  # new primary record for new-name
+
+  > update add new-name.example.com 48600 IN A 1.2.3.4
+
+  > send
+
+  # the reverse lookup
+
+  > update add 4.3.2.1.in-addr.arpa 48600 IN PTR new-name.example.com
+
+  > send
+
+  # a CNAME (alias) record
+
+  > update add alias-name.example.com 48600 IN CNAME new-name.example.com
+
+  > send
+
+  # a wildcard (handy for app development)
+
+  > update add *.new-name.example.com 48600 IN CNAME new-name.example.com
+
+  > send
+
+  # the delete... use with care
+
+  > update delete new-name.example.com
+
+  > send'

@@ -1,0 +1,14 @@
+---
+rails_console: ! "Reloading the Console Environment:\n>> reload!\n>> Dispatcher.reset_application!
+  \  # (outdated)\n\nLoad and execute a Ruby script:\n>> load \"the_file_name.rb\"\n\nUsing
+  app object:\n>> app.get '/stories/10002'\n=> 200\n>> app.assigns(:story)\n=> #<Story:0x24aad0c
+  ... >\n>> app.path\n=> \"/stories/10002\" \n>> app.reset!\n=> nil\n\nUsing helpers
+  methods:\n>> helper.pluralize 2, \"story\" \n=> \"2 stories\"\n\nClear the console:\nctrl
+  + l or Command + k (Mac)\n\nHow-to Examine Routes:\nrs = ActionController::Routing::Routes\nputs
+  rs.routes\nrs.recognize_path \"/session\"\nrs.generate :controller => \"users\",
+  :action => \"edit\", :id => \"4\"\n\nPrint as YAML\n>> y @something\n\nGrep available
+  methods between model objects:\n>> p = Post.new # in this case there's a corresponding
+  Comments model too\n>> y p.methods.grep(/commen/).sort\n--- \n- autosave_associated_records_for_comments\n-
+  comment_ids\n- comment_ids=\n- comments\n- comments=\n...\n...\netc.\n\nStart in
+  a sandbox (any modifications you make to the database will be rolled back on exit)\n$
+  ./script/console -s\n\nSee also:\n\n$ cheat console"

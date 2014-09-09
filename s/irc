@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Basic Commands
+
+Command            Description                       Example
+/join              Join a channel                    /join #channel
+/part              Leave a channel                   /part #channel
+/leave             Alias of /part                    /leave #channel
+/quit message      Quit IRC. Messgae is optional     /quit Catch ya!
+/msg nick message  Send a private message to a user  /msg dude hello there
+/query nick        Open a window for private chat    /query dude
+/nick newnick      Change your nick                  /nick dudeatwork
+/me action         Express an action                 /me waves to guymandood
+/away message      Tell others you are away          /away Lunch break
+/away              Cancel your away message          /away
+/list              List all channels                 /list
+/invite nick       Invite a user to a channnel       /invite guy #channel
+/ignore nick       Ignore messages from a nick       /ignore pita</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

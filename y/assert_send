@@ -1,0 +1,5 @@
+---
+assert_send: ! "# 'cheat assertions' for the rest\n\nassert_send(send_array, message=\"\")\n\nPasses
+  if the method send returns a true value.\n\nsend_array is composed of:\n\n    *
+  A receiver\n    * A method\n    * Arguments to the method\n\nExample:\n\n  assert_send
+  [[1, 2], :include?, 4]"

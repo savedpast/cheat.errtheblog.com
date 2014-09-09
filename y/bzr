@@ -1,0 +1,21 @@
+---
+bzr: ! "Bazaar -- a free distributed version-control tool\r\nhttp://bazaar-vcs.org/\r\n\r\nSetup:\r\n
+  \ $ bzr whoami \"Frank Chu <fchu@example.com>\"\r\n\r\nCreating a new branch:\r\n
+  \ $ bzr init ProjectDirectory\r\n  $ cd ProjectDirectory\r\n\r\nCreating a new branch
+  for an existing project that's not in source control:\r\n  $ cd ExistingProject\r\n
+  \ $ bzr init\r\n  $ bzr add\r\n  $ bzr commit -m \"Initial import of ExistingProject.\"\r\n\r\nStatus
+  of working copy:\r\n  $ bzr status\r\n\r\nDifference between the last commitment
+  and the working copy:\r\n  $ bzr diff\r\n\r\nCommitting changes in working copy:\r\n
+  \ $ bzr commit [-m \"Comment to the commitment\"]\r\n\r\nRollback:\r\n  $ bzr uncommit\r\n\r\nLooking
+  though logs:\r\n  $ bzr log\r\n\r\nMaking a new copy of an existing branch:\r\n
+  \ $ bzr branch ProjectDirectory RadicalRefactor\r\n  $ cd RadicalRefactor; # Go
+  nuts!\r\nMaking a local copy of an external branch:\r\n  $ bzr branch http://bazaar-vcs.org/bzr/bzr.dev.\r\n
+  \ $ cd bzr.dev\r\n\r\nExposing and updating a branch to the web\r\nIf the server
+  does not have bzr installed:\r\n  $ bzr push sftp://user@example.com/your/web/directory/ProjectDirectory\r\nFast
+  access, if server has bzr installed:\r\n  $ bzr push bzr+ssh://user@example.com/your/web/directory/ProjectDirectory\r\nNow
+  people can grab your repository with:.\r\n  $ bzr branch http://example.com/your/web/directory/ProjectDirectory\r\n\r\nCreating
+  a merge request for an upstream bzr branch:\r\nSend the maintainer an email:\r\n
+  \ $ bzr send http://project.example.com/upstream/branch\r\nCreate a merge bundle
+  file (containing a readable diff):\r\n  $ bzr send http://project.example.com/upstream/branch
+  -o my_feature.patch\r\n\r\nGet more help:\r\n  $ bzr help\r\n  $ bzr help topics\r\n
+  \ $ bzr help commands\r\n  $ bzr help merge #...etc"

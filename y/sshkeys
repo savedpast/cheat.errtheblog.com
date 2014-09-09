@@ -1,0 +1,7 @@
+---
+sshkeys: ! "LOCAL: \r\n-----  \r\nCreate key:\r\n$ ssh-keygen -t dsa\r\n\r\nCopy your
+  ssh keys to clipboard:\r\n$ cat ~/.ssh/id_rsa.pub | pbcopy  \r\n  [rescue: skip
+  the \"| pbcopy\" and just ctrl-C your key it]\r\n\r\nREMOTE:\r\n------\r\n\r\nCreate
+  key files (substitute in your editor):\r\nmkdir ~/.ssh\r\nemacs ~/.ssh/authorized_keys\r\n
+  \ [now paste the key. save. exit.]\r\nchmod 700 ~/.ssh\r\nchmod 600 ~/.ssh/authorized_keys\r\n\r\nSCP:\r\n----\r\n[instead
+  of the paste, you can...]\r\nscp ~/.ssh/id_rsa.pub username@ftp.yourdomain.com:.ssh/authorized_keys"

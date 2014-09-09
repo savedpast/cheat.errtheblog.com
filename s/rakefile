@@ -1,0 +1,147 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Rakefiles are Ruby scripts: 
+anything legal in a Ruby script is also allowed in a Rakefile
+
+Tasks; file and directory tasks; descriptions; prerequisites
+============================================================
+
+A minimal task:
+    task :mytask do
+       # actions
+    end
+
+A task with a description and prerequisites (req):
+    desc &quot;A description of mytask&quot;
+    task :mytask =&gt; [:req_task, &quot;req_file&quot;] do
+        # Any number of actions
+    end
+
+A file task, with a body that uses properties of the task object `t`,
+and string interpolation using `#{...}`:
+    file &quot;prog.exe&quot; =&gt; [&quot;a.o&quot;, &quot;b.o&quot;] do |t|
+        sh &quot;cc -o #{t.name} #{t.prerequisites.join(' ')}&quot;
+    end
+
+Create a directory (and the directories above it, as needed):
+    directory &quot;testdata/examples/doc&quot;
+
+
+Rules; FileList; tasks that take arguments; parallel execution
+==============================================================
+
+This rule says: &quot;For every .c file, create a file task to produce the
+corresponding .o file.&quot; The `source` attribute of each task is set to
+the matching source file.
+    rule '.o' =&gt; ['.c'] do |t|
+        sh &quot;cc #{t.source} -c -o #{t.name}&quot;
+    end
+
+This rule does the same thing, but using a regex as the rule pattern,
+and a proc to calculate the name of the source file.
+    rule( /\.o$/ =&gt; [
+        proc { |task_name| task_name.sub(/\.[^.]+$/, '.c') }
+    ]) do |t|
+        sh &quot;cc #{t.source} -c -o #{t.name}&quot;
+    end
+
+FileLists collect all files that match a shell pattern:
+    Filelist['*.o'].each do |f|
+        file finalprogram =&gt; f
+    end
+
+A task that can take arguments (and supplies default values):
+    task :print_name, [:first, :last] =&gt; [:req_task] do |t, args|
+        # specify default parameters:
+        args.with_defaults(:first =&gt; &quot;John&quot;, :last =&gt; &quot;Dough&quot;)
+        puts &quot;First name is #{args.first}&quot;
+    end
+
+To invoke a task with arguments from the command line:
+    rake &quot;print_name[James, Bond]&quot;
+(The quotation marks are because task+arguments must be a single string.)
+
+Parallel execution of prerequisites:
+    multitask :copy_files =&gt; [:copy_src, :copy_doc, :copy_bin] do
+        puts &quot;All Copies Complete&quot;
+    end
+
+Programming with tasks
+======================
+
+Any Ruby file (including other Rakefiles) can be included with a
+standard Ruby `require` command
+
+To access a task object:
+    Rake::Task[:mytask].add_description
+
+To access the current task, and its prerequisites:
+    task :mytask =&gt; [:prereq1, :prereq2] do |t|
+        
+        # p pretty-prints, for debugging purposes.
+        p t.name  # mytask
+        
+        # Prequisite strings index tasks in Rake::Task[].
+        t.prerequisites.each do |pretask|
+            Rake::Task[pretask].execute
+        end
+    end
+
+* t.add_description(description) 
+  Add a description to the task. 
+
+* t.arg_description 
+  Argument description (nil if none). 
+
+* t.arg_names 
+  Name of arguments for this task. 
+
+* t.clear 
+  Clear the existing prerequisites and actions of a rake task. 
+
+* t.clear_actions 
+  Clear the existing actions on a rake task. 
+
+* t.clear_prerequisites 
+  Clear the existing prerequisites of a rake task. 
+
+* t.enhance(deps = nil, &amp;block) 
+  Enhance a task with prerequisites or actions. 
+
+* t.execute(args = nil) 
+  Execute the actions associated with this task, regardless of
+  prerequisites
+
+* t.inspect, t.investigation 
+  Return a string describing the internal state of a task. 
+
+* t.invoke(*args) 
+  Invoke the task if it is needed. To force it, see t.execute.
+
+* t.invoke_prerequisites(task_args, invocation_chain) 
+  Invoke all the prerequisites of a task. 
+
+* t.name 
+  Name of the task, including any namespace qualifiers. 
+
+* t.name_with_args 
+  Name of task with argument list description. 
+
+* t.needed? 
+  Is this task needed? 
+
+* t.reenable 
+  Reenable the task, allowing it to be executed if the task is
+  invoked again. 
+
+* t.set_arg_names(args) 
+  Set the names of the arguments for this task. 
+
+* t.source 
+  First source from a rule (nil if no sources). 
+
+* t.timestamp 
+  Timestamp for this task. 
+
+* t.to_s 
+  Return task name.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

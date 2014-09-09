@@ -1,0 +1,61 @@
+---
+styleguide: ! "= Christian Neukirchen's Ruby Style Guide\r\n\r\nYou may not like all
+  rules presented here, but they work very well for\r\nme and have helped producing
+  high quality code.  Everyone is free to\r\ncode however they want, write and follow
+  their own style guides, but\r\nwhen you contribute to my code, please follow these
+  rules:\r\n\r\n\r\n== Formatting:\r\n\r\n* Use ASCII (or UTF-8, if you have to).\r\n\r\n*
+  Use 2 space indent, no tabs.\r\n\r\n* Use Unix-style line endings.\r\n\r\n* Use
+  spaces around operators, after commas, colons and semicolons,\r\n  around { and
+  before }.\r\n\r\n* No spaces after (, [ and before ], ).\r\n\r\n* Use two spaces
+  before statement modifiers (postfix\r\n  if/unless/while/until/rescue).\r\n\r\n*
+  Indent when as deep as case.\r\n\r\n* Use an empty line before the return value
+  of a method (unless it\r\n  only has one line), and an empty line between defs.\r\n\r\n*
+  Use RDoc and its conventions for API documentation.  Don't put an\r\n  empty line
+  between the comment block and the def.\r\n\r\n* Use empty lines to break up a long
+  method into logical paragraphs.\r\n\r\n* Keep lines fewer than 80 characters.\r\n\r\n*
+  Avoid trailing whitespace.\r\n\r\n\r\n== Syntax:\r\n\r\n* Use def with parentheses
+  when there are arguments.\r\n\r\n* Never use for, unless you exactly know why.\r\n\r\n*
+  Never use then.\r\n\r\n* Use when x; ... for one-line cases.\r\n\r\n* Use &&/||
+  for boolean expressions, and/or for control flow.  (Rule\r\n  of thumb: If you have
+  to use outer parentheses, you are using the\r\n  wrong operators.)\r\n\r\n* Avoid
+  multiline ?:, use if.\r\n\r\n* Suppress superfluous parentheses when calling methods,
+  but keep them\r\n  when calling \"functions\", i.e. when you use the return value
+  in the\r\n  same line.\r\n\r\n    x = Math.sin(y)\r\n    array.delete e\r\n\r\n*
+  Prefer {...} over do...end.  Multiline {...} is fine: having\r\n  different statement
+  endings (} for blocks, end for if/while/...)\r\n  makes it easier to see what ends
+  where.  But use do...end for\r\n  \"control flow\" and \"method definitions\" (e.g.
+  in Rakefiles and\r\n  certain DSLs.)  Avoid do...end when chaining.\r\n\r\n* Avoid
+  return where not required.\r\n\r\n* Avoid line continuation (\\) where not required.\r\n\r\n*
+  Using the return value of = is okay:\r\n\r\n    if v = array.grep(/foo/) ...\r\n\r\n*
+  Use ||= freely.\r\n\r\n* Use non-OO regexps (they won't make the code better).  Freely
+  use\r\n  =~, $0-9, $~, $` and $' when needed.\r\n\r\n\r\n== Naming:\r\n\r\n* Use
+  snake_case for methods.\r\n\r\n* Use CamelCase for classes and modules.  (Keep acronyms
+  like HTTP,\r\n  RFC, XML uppercase.)\r\n\r\n* Use SCREAMING_SNAKE_CASE for other
+  constants.\r\n\r\n* The length of an identifier determines its scope.  Use one-letter\r\n
+  \ variables for short block/method parameters, according to this\r\n  scheme:\r\n\r\n
+  \   a,b,c: any object\r\n    d: directory names\r\n    e: elements of an Enumerable\r\n
+  \   ex: rescued exceptions\r\n    f: files and file names\r\n    i,j: indexes\r\n
+  \   k: the key part of a hash entry\r\n    m: methods\r\n    o: any object\r\n    r:
+  return values of short methods\r\n    s: strings\r\n    v: any value\r\n    v: the
+  value part of a hash entry\r\n    x,y,z: numbers\r\n\r\n  And in general, the first
+  letter of the class name if all objects\r\n  are of that type.\r\n\r\n* Use _ or
+  names prefixed with _ for unused variables.\r\n\r\n* When using inject with short
+  blocks, name the arguments |a, e|\r\n  (mnemonic: accumulator, element)\r\n\r\n*
+  When defining binary operators, name the argument \"other\".\r\n\r\n* Prefer map
+  over collect, find over detect, find_all over select,\r\n  size over length.\r\n\r\n\r\n==
+  Comments:\r\n\r\n* Comments longer than a word are capitalized and use punctuation.\r\n
+  \ Use two spaces after periods.\r\n\r\n* Avoid superfluous comments.\r\n\r\n\r\n==
+  The rest:\r\n\r\n* Write ruby -w safe code.\r\n\r\n* Avoid hashes-as-optional-parameters.
+  \ Does the method do too much?\r\n\r\n* Avoid long methods.\r\n\r\n* Avoid long
+  parameter lists.\r\n\r\n* Use def self.method to define singleton methods.\r\n\r\n*
+  Add \"global\" methods to Kernel (if you have to) and make them private.\r\n\r\n*
+  Avoid alias when alias_method will do.\r\n\r\n* Use OptionParser for parsing complex
+  command line options and\r\n  ruby -s for trivial command line options.\r\n\r\n*
+  Write for 1.8, but avoid doing things you know that will break in 1.9.\r\n\r\n*
+  Avoid needless metaprogramming.\r\n\r\n\r\n== General:\r\n\r\n* Code in a functional
+  way, avoid mutation when it makes sense.\r\n\r\n* Do not mutate arguments unless
+  that is the purpose of the method.\r\n\r\n* Do not mess around in core classes when
+  writing libraries.\r\n\r\n* Do not program defensively.\r\n  (See http://www.erlang.se/doc/programming_rules.shtml#HDR11.)\r\n\r\n*
+  Keep the code simple.\r\n\r\n* Don't overdesign.\r\n\r\n* Don't underdesign.\r\n\r\n*
+  Avoid bugs.\r\n\r\n* Read other style guides and apply the parts that don't dissent
+  with\r\n  this list.\r\n\r\n* Be consistent.\r\n\r\n* Use common sense."

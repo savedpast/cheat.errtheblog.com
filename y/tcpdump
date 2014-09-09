@@ -1,0 +1,40 @@
+---
+tcpdump: ! "Command Line Options:\r\n-A Print frame payload in ASCII\r\n-c <count>
+  Exit after capturing count packets\r\n-D List available interfaces\r\n-e Print link-level
+  headers\r\n-F <file> Use file as the filter expression\r\n-G <n> Rotate the dump
+  file every n seconds\r\n-i <iface> Specifies the capture interface\r\n-K Don't verify
+  TCP checksums\r\n-L List data link types for the interface\r\n-n Don't convert addresses
+  to names\r\n-p Don't capture in promiscuous mode\r\n-q Quick output\r\n-r <file>
+  Read packets from file\r\n-s <len> Capture up to len bytes per packet\r\n-S Print
+  absolute TCP sequence numbers\r\n-t Don't print timestamps\r\n-v[v[v]] Print more
+  verbose output\r\n-w <file> Write captured packets to file\r\n-x Print frame payload
+  in hex\r\n-X Print frame payload in hex and ASCII\r\n-y <type> Specify the data
+  link type\r\n-Z <user> Drop privileges from root to user\r\n\r\nFilters:\r\n[src|dst]
+  host <host> Matches a host as the IP source, destination, or either\r\nether [src|dst]
+  host <ehost> Matches a host as the Ethernet source, destination, or either\r\ngateway
+  host <host> Matches packets which used host as a gateway\r\n[src|dst] net <network>/<len>
+  Matches packets to or from an endpoint residing in network\r\n[tcp|udp] [src|dst]
+  port <port> Matches TCP or UDP packets sent to/from port\r\n[tcp|udp] [src|dst]
+  portrange <p1>-<p2> Matches TCP or UDP packets to/from a port in the given range\r\nless
+  <length> Matches packets less than or equal to length\r\ngreater <length> Matches
+  packets greater than or equal to length\r\n(ether|ip|ip6) proto <protocol> Matches
+  an Ethernet, IPv4, or IPv6 protocol\r\n(ether|ip) broadcast Matches Ethernet or
+  IPv4 broadcasts\r\n(ether|ip|ip6) multicast Matches Ethernet, IPv4, or IPv6 multicasts\r\ntype
+  (mgt|ctl|data) [subtype <subtype>] Matches 802.11 frames based on type and optional
+  subtype\r\nvlan [<vlan>] Matches 802.1Q frames, optionally with a VLAN ID of vlan\r\nmpls
+  [<label>] Matches MPLS packets, optionally with a label of label\r\n<expr> <relop>
+  <expr> Matches packets by an arbitrary expression\r\n\r\nModifiers:\r\n! not\r\n&&
+  and\r\n|| or\r\n\r\nProtocols:\r\narp ether fddi icmp ip\r\nip6 link ppp radio rarp\r\nslip
+  tcp tr udp wlan\r\n\r\nTCP Flags:\r\ntcp-urg tcp-rst\r\ntcp-ack tcp-syn\r\ntcp-psh
+  tcp-fin\r\n\r\nICMP Types:\r\nicmp-echoreply icmp-routeradvert icmp-tstampreply\r\nicmp-unreach
+  icmp-routersolicit icmp-ireq\r\nicmp-sourcequench icmp-timxceed icmp-ireqreply\r\nicmp-redirect
+  icmp-paramprob icmp-maskreq\r\nicmp-echo icmp-tstamp icmp-maskreply\r\n\r\nExamples:\r\nudp
+  dst port not 53 - UDP not bound for port 53\r\nhost 10.0.0.1 && host 10.0.0.2 -
+  Traffic between these hosts\r\ntcp dst port 80 or 8080 - Packets to either TCP port\r\n\r\nUseful
+  options:\r\n-i any: when you don't know what interface the traffic will be on or
+  you're too lazy to find out\r\n-i lo: show traffic on loopback\r\n-s 10000 -w <file>:
+  save all the traffic to a file\r\n-r <file>: read from the file saved with -w\r\n-X:
+  show the payload in ascii\r\n-n: useful when you're tcpdumping all the traffic and
+  you don't want it to stop for ip->hostname lookups, and/or you don't want the lookup
+  traffic in your dump\r\n[and] not port 22: don't show ssh traffic, which is probably
+  from your own ssh session"

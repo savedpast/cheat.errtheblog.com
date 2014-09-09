@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>pop - Returns the last element in the array and deletes that element.
+
+push - Appends its argument to the end of the array.
+
+shift - Returns the first element of the array, deletes that 
+        element, and shifts all other elements down one 
+        location to fill its empty spot.
+
+unshift - Shifts all elements of the array up one, and places its 
+        argument at the beginning of the array.
+
+To iterate over an array:
+    my_array.each do |entry_i|
+        # something with entry_i
+    end
+
+To transform an array:
+    my_array.map do |entry_i|
+        return entry_i + 1
+    end
+
+To get a slice of an array:
+    my_array[5..7]
+
+To delete a slice in an array:
+    my_array[2,2] = [&quot;foo&quot;,&quot;bar&quot;]
+
+To replace foo and bar with tic, tac, toe:
+    my_array[2,2] = [&quot;tic&quot;,&quot;tac&quot;,&quot;toe&quot;]</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

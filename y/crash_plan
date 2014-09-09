@@ -1,0 +1,7 @@
+---
+crash_plan: ! "CLI\n====\n  Click the \"Green House\" logo in upper right of GUI.\n
+  \ http://support.crashplanpro.com/doku.php/reference/proclient/commands\n\nReduce
+  memory usage on OSX\n===========================\nsee  https://crashplan.zendesk.com/entries/116068\n\n==
+  Overview: edit /Library/LaunchDaemons/com.crashplan.engine.plist\n\n=== Run in 32bit
+  mode \n  add the \"-d32\" line.\n\t\t<string>-Dapp=CrashPlanService</string>\n\t\t<string>-d32</string>\n\t\t<string>-Xmn10m</string>\n\n===
+  Reduce the max memory (watch logs for Out Of Memory errors)\nChange:\n\t\t<string>-Xmx512m</string>\n\nTo:\n\t\t<string>-Xmx150m</string>"

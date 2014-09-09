@@ -1,0 +1,5 @@
+---
+assert_valid: ! "# 'cheat assertions' for the rest\n\nassert_valid(record) # DEPRECATED\n\nEnsures
+  that the passed record is valid by ActiveRecord standards and returns any error
+  messages if it is not.\n\nExamples\n\n  # assert that a newly created record is
+  valid\n  model = Model.new\n  assert_valid(model)"

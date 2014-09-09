@@ -1,0 +1,4 @@
+---
+zsh: ! "... no real cheat sheet for zsh yet.  \n\ncheck these sheets out though:\n
+  \ zsh_array\n  zsh_bang\n  zsh_case\n  zsh_ftp\n  zsh_glob\n  zsh_if\n  zsh_keys\n
+  \ zsh_loop\n  zsh_modifiers\n  zsh_param\n  zsh_process\n  zsh_ranges\n  zsh_rename"

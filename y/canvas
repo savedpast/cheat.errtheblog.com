@@ -1,0 +1,63 @@
+---
+canvas: ! "# HTML5 Canvas API\r\n\r\ninterface HTMLCanvasElement : HTMLElement {\r\n
+  \ ulong width = 300\r\n  ulong height = 150\r\n\r\n  string toDataURL(string type,
+  ...)\r\n  CanvasContext getContext(string contextID)\r\n}\r\n\r\ninterface CanvasRenderingContext2D
+  : CanvasContext {\r\n  readonly HTMLCanvasElement canvas\r\n  void save()\r\n  void
+  restore()\r\n\r\n  // Transformations /////////////////////////////////////////////////////////\r\n\r\n
+  \ void scale(float x, float y)\r\n  void rotate(float angle)\r\n  void translate(float
+  x, float y)\r\n  void transform(float m11, float m12,\r\n                 float
+  m21, float m22,\r\n                 float dx, float dy)\r\n  void setTransform(float
+  m11, float m12,\r\n                    float m21, float m22,\r\n                    float
+  dx, float dy)\r\n\r\n  // Compositing /////////////////////////////////////////////////////////////\r\n\r\n
+  \ float globalAlpha = 1.0\r\n  CompositeOperation globalCompositeOperation = 'source-over'\r\n\r\n
+  \ enum CompositeOperation {\r\n    'source-atop', 'source-in', 'source-out', 'source-over',\r\n
+  \   'destination-atop', 'destination-in', 'destination-out',\r\n    'destination-over',\r\n
+  \   'lighter', 'darker', 'copy', 'xor',\r\n    '<vendorName>-<operationName>  //
+  vendor extensions\r\n  }  # see [1] for examples\r\n\r\n  // Colors and Styles ///////////////////////////////////////////////////////\r\n\r\n
+  \ Style strokeStyle = 'black'\r\n  Style fillStyle = 'black'\r\n\r\n  CanvasGradient
+  createLinearGradient(float x0, float y0,\r\n                                      float
+  x1, float y1)\r\n  CanvasGradient createRadialGradient(float x0, float y0, float
+  r0,\r\n                                      float x1, float y1, float r1)\r\n  CanvasPattern
+  createPattern(HTML{Image,Canvas}Element Image,\r\n                              Repetition
+  repetition = 'repeat')\r\n  enum Repetition { 'repeat', 'repeat-x', 'repeat-y',
+  'no-repeat' }\r\n\r\n  interface CanvasGradient {\r\n    void addColorStop(float
+  offset, CSSColor color)\r\n  }\r\n\r\n  interface CanvasPattern {}\r\n\r\n  // Line
+  Caps and Joins /////////////////////////////////////////////////////\r\n\r\n  float
+  lineWidth = 1.0\r\n  LineCap lineCap = 'butt'\r\n  LineJoin lineJoin = 'miter'\r\n
+  \ float miterLimit = 10\r\n\r\n  enum LineCap { 'butt', 'round', 'square' }\r\n
+  \ enum LineJoin { 'round', 'bevel', 'miter' }\r\n\r\n  // Shadows /////////////////////////////////////////////////////////////////\r\n\r\n
+  \ float shadowOffsetX = 0.0\r\n  float shadowOffsetY = 0.0\r\n  float shadowBlur
+  = 0.0\r\n  CSS2Color shadowColor = 'transparent black'\r\n\r\n  // Rectangles //////////////////////////////////////////////////////////////\r\n\r\n
+  \ void  clearRect(float x, float y, float w, float h)\r\n  void   fillRect(float
+  x, float y, float w, float h)\r\n  void strokeRect(float x, float y, float w, float
+  h)\r\n\r\n  // Paths ///////////////////////////////////////////////////////////////////\r\n\r\n
+  \ void beginPath()\r\n  void closePath()\r\n  void moveTo(float x, float y)\r\n
+  \ void lineTo(float x, float y)\r\n  void quadraticCurveTo(float cpx, float cpy,
+  float x, float y)\r\n  void bezierCurveTo(float cp1x, float cp1y, float cp2x, float
+  cp2y,\r\n                     float x, float y)\r\n  void arcTo(float x1, float
+  y1, float x2, float y2, float radius)\r\n  void rect(float x, float y, float w,
+  float h)\r\n  void arc(float x, float y, float radius,\r\n           float startAngle,
+  float endAngle, boolean anticlockwise)\r\n  void fill()\r\n  void stroke()\r\n  void
+  clip()\r\n  boolean isPointInPath(float x, float y)\r\n\r\n  // Text ////////////////////////////////////////////////////////////////////\r\n\r\n
+  \ CSSFont font = '10px sans-serif'\r\n  TextAlign textAlign = 'start'\r\n  TextBaseline
+  textBaseline = 'alphabetic'\r\n\r\n  enum TextAlign { 'start', 'end', 'left', 'right',
+  'center' }\r\n  enum TextBaseline { 'top', 'hanging', 'middle',\r\n                       'alphabetic',
+  'ideographic', 'bottom' }\r\n\r\n  void fillText(string text, float x, float y,
+  float maxWidth=undefined)\r\n  void strokeText(string text, float x, float y, float
+  maxWidth=undefined)\r\n  TextMetrics measureText(string text)\r\n\r\n  TextMetrics
+  {\r\n    readonly float width\r\n  }\r\n\r\n  // Image Drawing ///////////////////////////////////////////////////////////\r\n\r\n
+  \ void drawImage(HTML{Image,Canvas,Video}Element image,\r\n                 float
+  dx, float dy)\r\n  void drawImage(HTML{Image,Canvas,Video}Element image,\r\n                 float
+  dx, float dy, float dw, float dh)\r\n  void drawImage(HTML{Image,Canvas}Element
+  image,\r\n                 float sx, float xy, float sw, float sh,\r\n                 float
+  dx, float dy, float dw, float dh)\r\n\r\n  // Pixel Manipulation //////////////////////////////////////////////////////\r\n\r\n
+  \ ImageData createImageData(float sw, float sh)\r\n  ImageData getImageData(float
+  sx, float sy, float sw, float sh)\r\n  void putImageData(ImageData imageData, float
+  dx, float dy,\r\n                    float dirtyX = 0, float dirtyY = 0,\r\n                    float
+  dirtyWidth = imageData.width,\r\n                    float dirtyHeight = imageData.height)\r\n\r\n
+  \ ImageData {\r\n    readonly ulong width\r\n    readonly ulong height\r\n    readonly
+  CanvasPixelArray data\r\n  }\r\n\r\n  CanvasPixelArray {\r\n    readonly ulong length
+  \ // = w*h*4\r\n    byte [](int index)\r\n    byte []=(int index)\r\n  }\r\n}\r\n\r\n\r\n#
+  More information\r\n\r\n[1] PDF cheat sheet\r\n    http://blog.nihilogic.dk/2009/02/html5-canvas-cheat-sheet.html\r\n[2]
+  WHATWG Spec\r\n    http://www.whatwg.org/specs/web-apps/current-work/#the-canvas-element\r\n[3]
+  Browser support\r\n    http://tinyurl.com/b2bt4h"

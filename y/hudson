@@ -1,0 +1,86 @@
+---
+hudson: ! "Template for Hudson Jobs for PHP Projects\r\n=========================================\r\n\r\n[Hudson](http://hudson-ci.org/)
+  is an extensible [continuous integration](http://martinfowler.com/articles/continuousIntegration.html)
+  server that starts to see widespread adoption in the PHP community.\r\nThe goal
+  of the `php-hudson-template` project is to provide a standard template ([Template
+  Project Plugin for Hudson](http://wiki.hudson-ci.org//display/HUDSON/Template+Project+Plugin))
+  for Hudson jobs for PHP projects.\r\n\r\nRequired Hudson Plugins\r\n-----------------------\r\n\r\nYou
+  need to install the following plugins for Hudson:\r\n\r\n* [Checkstyle](http://wiki.hudson-ci.org/display/HUDSON/Checkstyle+Plugin)
+  (for processing `PHP_CodeSniffer` logfiles in Checkstyle format)\r\n* [DRY](http://wiki.hudson-ci.org/display/HUDSON/DRY+Plugin)
+  (for processing `phpcpd` logfiles in PMD-CPD format)\r\n* [HTML Publisher](http://wiki.hudson-ci.org/display/HUDSON/HTML+Publisher+Plugin)
+  (for publishing the PHPUnit code coverage report, for instance)\r\n* [JDepend](http://wiki.hudson-ci.org/display/HUDSON/JDepend+Plugin)
+  (for processing `PHP_Depend` logfiles in JDepend format)\r\n* [PMD](http://wiki.hudson-ci.org/display/HUDSON/PMD+Plugin)
+  (for processing `phpmd` logfiles in PMD format)\r\n* [Template Project](http://wiki.hudson-ci.org/display/HUDSON/Template+Project+Plugin)
+  (for using `php-hudson-template` as a template for Hudson jobs)\r\n* [Violations](http://wiki.hudson-ci.org/display/HUDSON/Violations)
+  (for processing various logfiles)\r\n* [xUnit](http://wiki.hudson-ci.org/display/HUDSON/xUnit+Plugin)
+  (for processing PHPUnit logfiles in JUnit format)\r\n* [Clover](http://wiki.hudson-ci.org/display/HUDSON/Clover+Plugin)
+  (for processing PHPUnit code coverage xml output)\r\n\r\nYou can install these plugins
+  using the webfrontend http://SERVER/pluginManager/available or using the hudson-cli\r\n\r\nDownload:
+  http://SERVER/jnlpJars/hudson-cli.jar and execute\r\n\r\n    java -jar hudson-cli.jar
+  -s http://SERVER install-plugin checkstyle\r\n    java -jar hudson-cli.jar -s http://SERVER
+  install-plugin dry\r\n    java -jar hudson-cli.jar -s http://SERVER install-plugin
+  htmlpublisher\r\n    java -jar hudson-cli.jar -s http://SERVER install-plugin jdepend\r\n
+  \   java -jar hudson-cli.jar -s http://SERVER install-plugin pmd\r\n    java -jar
+  hudson-cli.jar -s http://SERVER install-plugin template-project\r\n    java -jar
+  hudson-cli.jar -s http://SERVER install-plugin violations\r\n    java -jar hudson-cli.jar
+  -s http://SERVER install-plugin xunit\r\n    java -jar hudson-cli.jar -s http://SERVER
+  install-plugin clover\r\n\r\n\r\nRequired PHP Tools\r\n------------------\r\n\r\n
+  \   sudo pear channel-discover pear.pdepend.org \r\n    sudo pear channel-discover
+  pear.phpmd.org \r\n    sudo pear channel-discover pear.phpunit.de\r\n    sudo pear
+  channel-discover components.ez.no\r\n    sudo pear channel-discover pear.symfony-project.com\r\n
+  \   sudo pear channel-discover pear.phpundercontrol.org\r\n\r\n\r\n    sudo pear
+  install --alldeps pdepend/PHP_Depend-beta\r\n    sudo pear install --alldeps phpmd/PHP_PMD-alpha\r\n
+  \   sudo pear install --alldeps phpunit/phpcpd\r\n    sudo pear install --alldeps
+  PHPDocumentor\r\n    sudo pear install --alldeps PHP_CodeSniffer\r\n    sudo pear
+  install --alldeps phpunit/PHP_CodeBrowser-alpha\r\n    sudo pear install --alldeps
+  phpunit/PHPUnit\r\n\r\nBuild Automation\r\n----------------\r\n\r\nFor example,
+  refer to the `build.xml` script of the [Object_Freezer](http://github.com/sebastianbergmann/php-object-freezer)
+  project:\r\n\r\n    <project name=\"php-object-freezer\" default=\"build\" basedir=\".\">\r\n
+  \    <target name=\"clean\">\r\n      <!-- Clean up -->\r\n      <delete dir=\"build\"/>\r\n\r\n
+  \     <!-- Create build directories -->\r\n      <mkdir dir=\"${basedir}/build/api\"/>\r\n
+  \     <mkdir dir=\"${basedir}/build/code-browser\"/>\r\n      <mkdir dir=\"${basedir}/build/coverage\"/>\r\n
+  \     <mkdir dir=\"${basedir}/build/logs\"/>\r\n      <mkdir dir=\"${basedir}/build/pdepend\"/>\r\n
+  \    </target>\r\n\r\n     <!-- Run unit tests and generate junit.xml and clover.xml
+  -->\r\n     <target name=\"phpunit\">\r\n      <exec executable=\"phpunit\" failonerror=\"true\"/>\r\n
+  \    </target>\r\n\r\n     <!-- Run pdepend, phpmd, phpcpd, and phpcs in parallel
+  -->\r\n     <target name=\"parallelTasks\">\r\n      <parallel>\r\n       <antcall
+  target=\"pdepend\"/>\r\n       <antcall target=\"phpmd\"/>\r\n       <antcall target=\"phpcpd\"/>\r\n
+  \      <antcall target=\"phpcs\"/>\r\n       <antcall target=\"phpdoc\"/>\r\n      </parallel>\r\n
+  \    </target>\r\n\r\n     <!-- Generate jdepend.xml and software metrics charts
+  -->\r\n     <target name=\"pdepend\">\r\n      <exec executable=\"pdepend\">\r\n
+  \      <arg line=\"--jdepend-xml=${basedir}/build/logs/jdepend.xml Object\" />\r\n
+  \     </exec>\r\n     </target>\r\n\r\n     <!-- Generate pmd.xml -->\r\n     <target
+  name=\"phpmd\">\r\n      <exec executable=\"phpmd\">\r\n       <arg line=\"Object
+  xml codesize,unusedcode\r\n                  --reportfile ${basedir}/build/logs/pmd.xml\"
+  />\r\n      </exec>\r\n     </target>\r\n\r\n     <!-- Generate pmd-cpd.xml -->\r\n
+  \    <target name=\"phpcpd\">\r\n      <exec executable=\"phpcpd\">\r\n       <arg
+  line=\"--log-pmd ${basedir}/build/logs/pmd-cpd.xml Object\" />\r\n      </exec>\r\n
+  \    </target>\r\n\r\n     <!-- Generate checkstyle.xml -->\r\n     <target name=\"phpcs\">\r\n
+  \     <exec executable=\"phpcs\" output=\"/dev/null\">\r\n       <arg line=\"--report=checkstyle\r\n
+  \                 --report-file=${basedir}/build/logs/checkstyle.xml\r\n                  --standard=Sebastian\r\n
+  \                 Object\" />\r\n      </exec>\r\n     </target>\r\n\r\n     <!--
+  Generate API documentation -->\r\n     <target name=\"phpdoc\">\r\n      <exec executable=\"phpdoc\">\r\n
+  \      <arg line=\"-d Object -t build/api\" />\r\n      </exec>\r\n     </target>\r\n\r\n
+  \    <target name=\"phpcb\">\r\n      <exec executable=\"phpcb\">\r\n       <arg
+  line=\"--log    ${basedir}/build/logs\r\n                  --source ${basedir}/Object\r\n
+  \                 --output ${basedir}/build/code-browser\" />\r\n      </exec>\r\n
+  \    </target>\r\n\r\n     <target name=\"build\" depends=\"clean,parallelTasks,phpunit,phpcb\"/>\r\n
+  \   </project>\r\n\r\nThe `build.xml` script above assumes that an XML configuration
+  file for PHPUnit is used to configure the following logging targets:\r\n\r\n    <logging>\r\n
+  \    <log type=\"coverage-html\" target=\"build/coverage\" title=\"Object_Freezer\"\r\n
+  \         charset=\"UTF-8\" yui=\"true\" highlight=\"true\"\r\n          lowUpperBound=\"35\"
+  highLowerBound=\"70\"/>\r\n     <log type=\"coverage-clover\" target=\"build/logs/clover.xml\"/>\r\n
+  \    <log type=\"junit\" target=\"build/logs/junit.xml\" logIncompleteSkipped=\"false\"/>\r\n
+  \   </logging>\r\n\r\nExecuting the `build.xml` script above will produce the following
+  `build` directory:\r\n\r\n    build\r\n    |-- api ...\r\n    |-- code-browser ...\r\n
+  \   |-- coverage ...\r\n    `-- logs\r\n        |-- checkstyle.xml\r\n        |--
+  clover.xml\r\n        |-- jdepend.xml\r\n        |-- junit.xml\r\n        |-- pmd-cpd.xml\r\n
+  \       `-- pmd.xml\r\n\r\nThese build artifacts will be processed by Hudson.\r\n\r\nUsing
+  the Job Template\r\n----------------------\r\n\r\nCheck out `php-hudson-template`
+  from Git:\r\n\r\n    cd $HUDSON_HOME/jobs\r\n    git clone git://github.com/sebastianbergmann/php-hudson-template.git\r\n\r\n*
+  Restart Hudson.\r\n* Create a new \"free-style software project\" job\r\n* Fill
+  in your \"Source Code Management\" information\r\n* Configure an Ant-based build\r\n*
+  Activate \"Use publishers from another project\" and select `php-hudson-template`
+  as the \"Template Project\".\r\n\r\n\r\n                                             dp
+  <dot> patel <at> gmail <dot> com\r\n                                                         Deven
+  Patel\r\n"

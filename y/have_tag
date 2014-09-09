@@ -1,0 +1,28 @@
+---
+have_tag: ! "response.should have_tag(\"li\")\r\n\r\nresponse.should have_tag(\"li\",
+  :text => \"I'm a list item\")\r\n\r\nresponse.should have_tag(\"li.my_class\", :text
+  => \"I'm a list item\")\r\nresponse.should have_tag(\"li#my_element_id\", :text
+  => \"I'm a list item\")\r\nresponse.should have_tag(\"li#my_element_id.my_class\",
+  :text => \"I'm a list item\")\r\n\r\nresponse.should have_tag(\"img[alt=My accessible
+  text]\")\r\n\r\nresponse.should have_tag(\"img[alt~=readable accessible usable]\")
+  # Match any of these words\r\nresponse.should have_tag(\"img[alt^=My]\") # Match
+  attribute beginning with \"My\"\r\nresponse.should have_tag(\"img[alt$=text]\")
+  # Match attribute ending with \"text\"\r\nresponse.should have_tag(\"img[alt*=essibl]\")
+  # Match \"essibl\" anywhere in attribute\r\nresponse.should have_tag(\"img[alt]\")
+  # Match any img element with alt attribute\r\n\r\nresponse.should have_tag(\"li:nth-child(2)\",
+  :text => \"I'm element 2\")\r\nresponse.should have_tag(\"li:nth-last-child(2)\",
+  :text => \"I'm element 4\")\r\nresponse.should have_tag(\"ul:first-child\", :text
+  => \"I'm element 1\")\r\nresponse.should have_tag(\"ul:last-child\", :text => \"I'm
+  element 5\")\r\n\r\nresponse.should have_tag(\"p:nth-of-type(2)\", :text => \"I'm
+  going to describe the list below\")\r\nresponse.should have_tag(\"li:nth-last-of-type(2)\",
+  :text => \"I'm list 2\")\r\nresponse.should have_tag(\"p:first-of-type\", :text
+  => \"I've got some paragraph text\")\r\nresponse.should have_tag(\"p:last-of-type\",
+  :text => \"I'm going to describe the list below\")\r\n\r\nresponse.should have_tag(\"li:nth-of-type(3n+1).highlight\",
+  :count => 3)\r\n\r\nresponse.should have_tag(\"li:nth-of-type(3n+1).highlight\",
+  :maximum => 4)\r\nresponse.should have_tag(\"li:nth-of-type(3n+1).highlight\", :minimum
+  => 1)\r\nresponse.should have_tag(\"li:nth-of-type(3n+1).highlight\", 1..4)\r\n\r\nresponse.should
+  have_tag \"form[action=/sessions]\" do\r\n  with_tag \"input[type=text][name=username]\"\r\n
+  \ with_tag \"input[type=password][name=password]\"\r\nend\r\n\r\nThis uses the examples
+  from http://rubypond.com/articles/2008/03/31/using-rspec-have_tag/\r\n\r\nMake sure
+  there is a certain link on the site:\r\nresponse.should have_tag(\"a[href=?]\",
+  \"http://somewebsite.com/interesting\")"

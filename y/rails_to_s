@@ -1,0 +1,7 @@
+---
+rails_to_s: ! ">> 3.days.ago.to_s(:db)\n\nFormats:\n  :db\n    \"%Y-%m-%d %H:%M:%S\"
+  (ie: \"2006-12-04 19:00:26\")\n  :long\n    \"%B %d, %Y %H:%M\" (ie: \"December
+  04, 2006 19:00\")\n  :rfc822\n    \"%a, %d %b %Y %H:%M:%S %z\" (ie: \"Mon, 04 Dec
+  2006 19:00:26 -0700\")\n  :short\n    \"%d %b %H:%M\" (ie: \"04 Dec 19:00\")\n  :time\n
+  \   \"%H:%M\" (ie: \"19:00\")\n\nAdd your own:\n  Time::DATE_FORMATS[:mine] = '%Y%m%d%M%S'\n
+  \  >> Time.new.to_s(:mine)\n   => \"200612040026\""

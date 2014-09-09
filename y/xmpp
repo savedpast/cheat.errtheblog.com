@@ -1,0 +1,2 @@
+---
+xmpp: ! "URI scheme for Multi-User Chat:\n  xmpp:room@conference.example.net?join"

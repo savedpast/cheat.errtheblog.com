@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('filename')                  # Positional
+parser.add_argument('-k', default=50, type=int)  # Optional
+args = parser.parse_args()
+
+
+parser.add_argument('-m', '--mode')
+parser.add_argument('--mymode')
+
+parser.add_argument('-s', action='store_true')
+parser.add_argument('-t', action='store_false')
+
+parser.add_argument('--extra-file', type=file)
+args = parser.parse_args()</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

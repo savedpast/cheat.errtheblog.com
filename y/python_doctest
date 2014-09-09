@@ -1,0 +1,6 @@
+---
+python_doctest: ! "Python 'doctest' cheatsheet\n\nExample Tests:\n\n  def double(arg):\n
+  \     \"\"\"\n      Doubles a number argument.\n\n      Example:\n\n      >>> double(3)\n
+  \     6\n\n      \"\"\"\n      return arg * 2\n\nExample Usage:\n\n  import sys\n
+  \ if(__name__ == \"__main__\"):\n      if(sys.argv[1] == \"test\"):\n        import
+  doctest\n        doctest.testmod()"

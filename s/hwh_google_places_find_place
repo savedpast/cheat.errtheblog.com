@@ -1,0 +1,268 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>In Order to retrieve information about a specific place you must first do a Place search to retrieve a reference key which can then be passed to the Place Details Search.
+
+PLACE SEARCHES
+
+Place Search Requests
+
+A Place search request must be in the following form
+https://maps.googleapis.com/maps/api/place/search/output?parameters
+
+Output can be either of the following values:
+json - (recommended) indicates output in JavaScript Object Notation (JSON)
+xml  - indicates output as XML
+
+Certain parameters are required to initiate a Place Search request. As is standard in URLs, all parameters are separated using the ampersand (&amp;) character. The list of parameters and their possible values are enumerated below.
+
+1.) key (required) — Your application's API key. This key identifies your application for purposes of quota management and so that Places added from your application are made immediately available to your app. Visit the APIs Console to create an API Project and obtain your key.
+
+2.) location (required) — The latitude/longitude around which to retrieve Place information. This must be specified as latitude,longitude.
+
+3.) radius (required) — The distance (in meters) within which to return Place results. The maximum allowed radius is 50 000 meters.
+
+4.) sensor (required) — Indicates whether or not the Place request came from a device using a location sensor (e.g. a GPS) to determine the location sent in this request. This value must be either true or false.
+
+5.) keyword (optional) — A term to be matched against all available fields, including but not limited to name, type, and address, as well as customer reviews and other third-party content.
+
+6.) language (optional) — The language code, indicating in which language the results should be returned, if possible. See the list of supported languages and their codes. Note that we often update supported languages so this list may not be exhaustive.
+
+7.) name (optional) — A term to be matched against the names of Places. Results will be restricted to those containing the passed name value.
+
+8.) types (optional) — Restricts the results to Places matching at least one of the specified types. Types should be separated with a pipe symbol (type1|type2|etc). 
+
+
+An example request is below, showing a search for Places of type 'food' within a 500m radius of a point in Sydney, Australia, containing the word 'harbour' in their name:
+
+https://maps.googleapis.com/maps/api/place/search/json?location=-33.8670522,151.1957362&amp;radius=500&amp;types=food&amp;name=harbour&amp;sensor=false&amp;key=AddYourOwnKeyHere
+
+
+PLACE SEARCH RESPONSES
+
+JSON:
+
+&quot;html_attributions&quot; : [
+    &quot;Listings by \u003ca href=\&quot;http://www.yellowpages.com.au/\&quot;\u003eYellow Pages\u003c/a\u003e&quot;
+  ],
+  &quot;results&quot; : [
+    {
+      &quot;geometry&quot; : {
+        &quot;location&quot; : {
+          &quot;lat&quot; : -33.8719830,
+          &quot;lng&quot; : 151.1990860
+        }
+      },
+        &quot;icon&quot; : &quot;http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png&quot;,
+        &quot;id&quot; : &quot;677679492a58049a7eae079e0890897eb953d79b&quot;,
+        &quot;name&quot; : &quot;Zaaffran Restaurant - BBQ and GRILL, Darling Harbour&quot;,
+        &quot;rating&quot; : 3.90,
+        &quot;reference&quot; : &quot;CpQBjAAAAHDHuimUQATR6gfoWNmZlk5dKUKq_n46BpSzPQCjk1m9glTKkiAHH_Gs4xGttdOSj35WJJDAV90dAPnNnZK2OaxMgogdeHKQhIedh6UduFrW53wtwXigUfpAzsCgIzYNI0UQtCj38cr_DE56RH4Wi9d2bWbbIuRyDX6tx2Fmk2EQzO_lVJ-oq4ZY5uI6I75RnxIQJ6smWUVVIHup9Jvc517DKhoUidfNPyQZZIgGiXS_SwGQ1wg0gtc&quot;,
+        &quot;types&quot; : [ &quot;restaurant&quot;, &quot;food&quot;, &quot;establishment&quot; ],
+        &quot;vicinity&quot; : &quot;Harbourside Centre 10 Darling Drive, Darling Harbour, Sydney&quot;
+    },
+    {
+      &quot;geometry&quot; : {
+        &quot;location&quot; : {
+          &quot;lat&quot; : -33.8722580,
+          &quot;lng&quot; : 151.1986550
+        }
+      },
+        &quot;icon&quot; : &quot;http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png&quot;,
+        &quot;id&quot; : &quot;27ea39c8fed1c0437069066b8dccf958a2d06f19&quot;,
+        &quot;name&quot; : &quot;Criniti's Darling Harbour&quot;,
+        &quot;rating&quot; : 3.60,
+        &quot;reference&quot; : &quot;CnRwAAAA-5kh5WZ3m1CMTO3LslvhRtAYsrOcQP7wB9AE1bV5R6Bd46NN5wB16MtImXWQ9eS1nWVbV_j-8iXYXRpU13Efp1t_d-Dp4WfEsFcYj-_g6db1SC1vAukyeCyotjS5xrwhzqWWAhgmA4qIliWeev2u1BIQprWzxl_hkj_w3QdTiUBYKxoUDVTjF4RugJdaJWkC4n6w6pSajKw&quot;,
+        &quot;types&quot; : [ &quot;restaurant&quot;, &quot;food&quot;, &quot;establishment&quot; ],
+        &quot;vicinity&quot; : &quot;Shop 461, 2-10 Darling Drive, Harbourside Shopping Centre, DARLING HARBOUR&quot;
+    },
+    ...additional results...
+  ],
+  &quot;status&quot; : &quot;OK&quot;
+}
+
+A JSON response contains three root elements:
+
+1.) &quot;status&quot; contains metadata on the request. See Status Codes below.
+
+2.) &quot;results&quot; contains an array of Places, with information about each. See Place Search Results for information about these results. The Places API returns up to 20 establishment results. Additionally, political results may be returned which serve to identify the area of the request.
+
+3.) html_attributions contain a set of attributions about this listing which must be displayed to the user.
+
+
+Status Codes
+
+The &quot;status&quot; field within the Place Search response object contains the status of the request, and may contain debugging information to help you track down why the Place Search request failed. The &quot;status&quot; field may contain the following values:
+
+OK indicates that no errors occurred; the place was successfully detected and at least one result was returned.
+
+ZERO_RESULTS indicates that the search was successful but returned no results. This may occur if the search was passed a latlng in a remote location.
+
+OVER_QUERY_LIMIT indicates that you are over your quota.
+
+REQUEST_DENIED indicates that your request was denied, generally because of lack of a sensor parameter.
+
+INVALID_REQUEST generally indicates that a required query parameter (location or radius) is missing.
+
+
+Place Search Results
+
+When the Places service returns JSON results from a search, it places them within a results array. Even if the service returns no results (such as if the location is remote) it still returns an empty results array. XML responses consist of zero or more &lt;result&gt; elements.
+
+Each element of the results array contains a single result from the specified area (location and radius), ordered by prominence. The ordering of results can be influenced by check-in activity within your application - Places with many recent check-ins may figure more prominently in your application's results. The result may also contain attribution information which must be displayed to the user.
+
+Each result within the results array may contain the following fields:
+
+icon contains the URL of a recommended icon which may be displayed to the user when indicating this result.
+
+id contains a unique stable identifier denoting this place. This identifier may not be used to retrieve information about this place, but is guaranteed to be valid across sessions. It can be used to consolidate data about this Place, and to verify the identity of a Place across separate searches.
+
+geometry contains geometry information about the result, generally including the 
+
+location (geocode) of the Place and (optionally) the viewport identifying its general area of coverage.
+
+name contains the human-readable name for the returned result. For establishment results, this is usually the business name.
+
+rating contains the Place's rating, from 0.0 to 5.0, based on user reviews.
+
+reference contains a unique token that you can use to retrieve additional information about this place in a Place Details request. You can store this token and use it at any time in future to refresh cached data about this Place, but the same token is not guaranteed to be returned for any given Place across different searches.
+
+types[] contains an array of feature types describing the given result. See the list of supported types at https://developers.google.com/maps/documentation/places/supported_types for more information. XML responses include multiple &lt;type&gt; elements if more than one type is assigned to the result.
+
+vicinity contains a feature name of a nearby location. Often this feature refers to a street or neighborhood within the given results.
+
+
+Place Details
+
+Once you have a reference from a Place Search request, you can request more details about a particular establishment or point of interest by initiating a Place Details request. A Place Details request returns more comprehensive information about the indicated place such as its complete address, phone number, user rating, etc.
+
+Place Details Requests
+
+A Place Details request is an HTTP URL of the following form:
+https://maps.googleapis.com/maps/api/place/details/output?parameters
+
+where output may be either of the following values:
+
+json (recommended) indicates output in JavaScript Object Notation (JSON)
+
+xml indicates output as XML
+
+Certain parameters are required to initiate a search request. As is standard in URLs, all parameters are separated using the ampersand (&amp;) character. The list of parameters and their possible values are enumerated below.
+
+key (required) — Your application's API key. This key identifies your application for purposes of quota management and so that Places added from your application are made immediately available to your app. Visit the APIs Console to create an API Project and obtain your key.
+
+reference (required) — A textual identifier that uniquely identifies a place, returned from a Place search request.
+
+sensor (required) — Indicates whether or not the Place Details request came from a device using a location sensor (e.g. a GPS). This value must be either true or false.
+
+language (optional) — The language code, indicating in which language the results should be returned, if possible. See the list of supported languages and their codes. Note that we often update supported languages so this list may not be exhaustive.
+
+An example request is shown below:
+https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&amp;sensor=true&amp;key=AddYourOwnKeyHere
+
+Place Details Responses
+
+Place Details responses are returned in the format indicated by the output flag within the URL request's path.
+
+{
+  &quot;html_attributions&quot; : [],
+  &quot;result&quot; : {
+    &quot;address_components&quot; : [
+      {
+        &quot;long_name&quot; : &quot;48&quot;,
+        &quot;short_name&quot; : &quot;48&quot;,
+        &quot;types&quot; : [ &quot;street_number&quot; ]
+      },
+      {
+        &quot;long_name&quot; : &quot;Pirrama Road&quot;,
+        &quot;short_name&quot; : &quot;Pirrama Road&quot;,
+        &quot;types&quot; : [ &quot;route&quot; ]
+      },
+      {
+        &quot;long_name&quot; : &quot;Pyrmont&quot;,
+        &quot;short_name&quot; : &quot;Pyrmont&quot;,
+        &quot;types&quot; : [ &quot;locality&quot;, &quot;political&quot; ]
+      },
+      {
+        &quot;long_name&quot; : &quot;NSW&quot;,
+        &quot;short_name&quot; : &quot;NSW&quot;,
+        &quot;types&quot; : [ &quot;administrative_area_level_1&quot;, &quot;political&quot; ]
+      },
+      {
+        &quot;long_name&quot; : &quot;AU&quot;,
+        &quot;short_name&quot; : &quot;AU&quot;,
+        &quot;types&quot; : [ &quot;country&quot;, &quot;political&quot; ]
+      },
+      {
+        &quot;long_name&quot; : &quot;2009&quot;,
+        &quot;short_name&quot; : &quot;2009&quot;,
+        &quot;types&quot; : [ &quot;postal_code&quot; ]
+      }
+    ],
+    &quot;formatted_address&quot; : &quot;5/48 Pirrama Road, Pyrmont NSW, Australia&quot;,
+    &quot;formatted_phone_number&quot; : &quot;(02) 9374 4000&quot;,
+    &quot;geometry&quot; : {
+      &quot;location&quot; : {
+        &quot;lat&quot; : -33.8669710,
+        &quot;lng&quot; : 151.1958750
+      }
+    },
+    &quot;icon&quot; : &quot;http://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png&quot;,
+    &quot;id&quot; : &quot;4f89212bf76dde31f092cfc14d7506555d85b5c7&quot;,
+    &quot;international_phone_number&quot; : &quot;+61 2 9374 4000&quot;,
+    &quot;name&quot; : &quot;Google Sydney&quot;,
+    &quot;rating&quot; : 4.60,
+    &quot;reference&quot; : &quot;CnRlAAAAAfV6JIqSzL8Cf4VnXn0EaI1d5k3IPhdkEonq0MxiUbQFFSVuptVbXbNH4mrevb0bc7G8yWqTUv76i4KTuO_Wf3OrRHjCJJwzQ0mNLjbYGSVqy2eqyrgOUkl6S_sJfTbHzWZYrfPy7KZaet0mM5S6thIQJYuy5v_JD--ZxXEJLWTQRRoU5UaciXBBo89K-bce18Ii9RsEIws&quot;,
+    &quot;types&quot; : [ &quot;store&quot;, &quot;establishment&quot; ],
+    &quot;url&quot; : &quot;http://maps.google.com/maps/place?cid=10281119596374313554&quot;,
+    &quot;vicinity&quot; : &quot;5/48 Pirrama Road, Pyrmont&quot;,
+    &quot;website&quot; : &quot;http://www.google.com.au/&quot;
+  },
+  &quot;status&quot; : &quot;OK&quot;
+}
+
+A JSON response contains three root elements:
+
+1.) &quot;status&quot; contains metadata on the request. See Status Codes below.
+
+2.) &quot;result&quot; contains the detailed information about the place requested. See Place Details Results for information about these results.
+
+3.) html_attributions contain a set of attributions about this listing which must be displayed to the user.
+
+
+Place Details Results
+
+When the Places service returns results from a details request, it places them within a single result. Each result may contain the following fields:
+
+address_components[] is an array of separate address components used to compose a given address. For example, the address &quot;111 8th Avenue, New York, NY&quot; contains separate address components for &quot;111&quot; (the street number, &quot;8th Avenue&quot; (the route), &quot;New York&quot; (the city) and &quot;NY&quot; (the US state). Each address_component typically contains:
+
+types[] is an array indicating the type of the address component.
+long_name is the full text description or name of the address component as returned by the Geocoder.
+
+short_name is an abbreviated textual name for the address component, if available. For example, an address component for the state of Alaska may have a long_name of &quot;Alaska&quot; and a short_name of &quot;AK&quot; using the 2-letter postal abbreviation.
+
+formatted_address is a string containing the human-readable address of this place. Often this address is equivalent to the &quot;postal address,&quot; which sometimes differs from country to country. (Note that some countries, such as the United Kingdom, do not allow distribution of complete postal addresses due to licensing restrictions.) This address is generally composed of one or more address components. For example, the address &quot;111 8th Avenue, New York, NY&quot; contains separate address components for &quot;111&quot; (the street number, &quot;8th Avenue&quot; (the route), &quot;New York&quot; (the city) and &quot;NY&quot; (the US state). These address components contain additional information as noted below.
+
+formatted_phone_number contains the Place's phone number in its local format. For example, the formatted_phone_number for Google's Sydney, Australia office is (02) 9374 4000.
+
+geometry contains the following information:
+
+location contains the geocoded latitude,longitude value for this place.
+
+icon contains the URL of a suggested icon which may be displayed to the user when indicating this result on a map
+
+id contains a unique stable identifier denoting this place. This identifier may not be used to retrieve information about this place, but can be used to consolidate data about this Place, and to verify the identity of a Place across separate searches. As ids can occasionally change, it's recommended that the stored id for a Place be compared with the id returned in later Details requests for the same Place, and updated if necessary.
+
+international_phone_number contains the Place's phone number in international format. International format includes the country code, and is prefixed with the plus (+) sign. For example, the formatted_phone_number for Google's Sydney, Australia office is +61 2 9374 4000.
+
+name contains the human-readable name for the returned result. For establishment results, this is usually the canonicalized business name.
+
+rating contains the Place's rating, from 0.0 to 5.0, based on user reviews.
+
+reference contains a token that can be used to query the Details service in future. This token may differ from the reference used in the request to the Details service. It is recommended that stored references for Places be regularly updated. Although this token uniquely identifies the Place, the converse is not true: a Place may have many valid reference tokens.
+
+types[] contains an array of feature types describing the given result. See the list of supported types for more information. XML responses include multiple &lt;type&gt; elements if more than one type is assigned to the result.
+
+url contains the official Google Place Page URL of this establishment. Applications must link to or embed the Google Place page on any screen that shows detailed results about this Place to the user.
+
+vicinity lists a simplified address for the Place, including the street name, street number, and locality, but not the province/state, postal code, or country. For example, Google's Sydney, Australia office has a vicinity value of 5/48 Pirrama Road, Pyrmont.
+website lists the authoritative website for this Place, such as a business' homepage.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

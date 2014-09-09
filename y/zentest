@@ -1,0 +1,11 @@
+---
+zentest: ! "gem install ZenTest\n\n# autotest\n\n$ autotest [options]\n\noptions:\n
+  \       -h\n        -help           You're looking at it.\n\n        -v              Be
+  verbose. Prints files that autotest doesn't know how to map to tests.\n\n        -q
+  \             Be more quiet.\n\n        -f              Fast start. Doesn't initially
+  run tests at start.\n\n# Rails testing\n\nrequire 'test/rails'\n\n## assertions\n\nassert_empty
+  []\nassert_in_epsilon a, b, 0.5\nassert_include [a, b, c], a\nassert_includes [a,
+  b, c], a  # just syntactical sugar\ndeny false\ndeny_empty [1, 2, 3]\ndeny_equal
+  1, 2               # alias for assert_not_equal\ndeny_include [a, b, c], d\ndeny_includes
+  [a, b, c], d    # just syntactical sugar\ndeny_nil []                   # alias
+  for assert_not_nil"

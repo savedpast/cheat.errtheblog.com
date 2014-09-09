@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Dired mode in emacs
+
+Copy, Delete, Rename a File:
+Enter - Open the file
+q     - Close the dir
+C     - Copy file
+R     - Rename file
+D     - Delete file
++     - Create a new dir
+Z     - Compress/decompress the file by gzip  
+d     - Flag file for deletion
+u     - Remove deletion flag on this line
+x     - Delete all flagged files
+#     - Flag all auto-save files
+~     - Flag all backup files
+.     - Flag excess numeric backup files for deletion
+
+Mark/Unmark to Operate on Multiple Files:
+m     - Mark a file
+u     - Unmark
+U     - Unmark all marked
+% m   - Mark by regular expression</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

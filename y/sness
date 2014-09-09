@@ -1,0 +1,17 @@
+---
+sness: ! "http://sness.net\r\n\r\nrake db:migrate VERSION=0 ; rake db:migrate ; rake
+  db:test:clone ; rake annotate_models ; rake db:load:all\r\nrake dev db:load:all
+  DBPATH=db/Development-initial\r\nrake pro db:load:all DBPATH=db/Production-initial\r\n\r\nspecrb
+  test/unit/produce_item_test.rb -t auto_build or -n function\r\nrake test:units:rcov\r\nrake
+  test:units:clobber_rcov\r\n\r\nsvn status | grep \\? | cut -d ' ' -f 7 | xargs svn
+  add\r\n\r\ncap setup\r\ncap deploy_with_migrations\r\n\r\nbittorrent-console .torrent
+  \ >& out.txt &\r\nfor i in **/*.txt; grep -H percent $i | tail -1\r\n\r\ngrowisofs
+  -dvd-compat -Z /dev/dvd=image.iso\r\ngrowisofs -Z /dev/dvd -R -J -graft-points fedora-core-4-RPMS=/usr/sness/RPMS\r\n\r\nffmpeg
+  -i $1 -y -target ntsc-dvd -sameq -aspect 16:9 1.mpg\r\nfor i in **/*.avi; ffmpeg
+  -i $i -y -target ntsc-dvd -sameq -aspect 4:3 $i:r.mpg\r\nfor i in **/*.avi; ffmpeg
+  -i $i -y -target ntsc-dvd -sameq -aspect 16:9 $i:r.mpg\r\ndvdauthor -o dvd -x ~/bin/dvd1.xml\r\nmplayer
+  dvd:// -dvd-device ./dvd\r\ngrowisofs -dvd-compat -dvd-video -Z /dev/dvd ./dvd\r\n\r\ncdparanoia
+  -B\r\ncdrecord -vvv -eject dev=/dev/dvd -audio -pad *.wav\r\n\r\nfor i in **/*.wav;
+  lame $i $i:r.mp3\r\nfor i in **/*.mp3; mpg123 -w $i:r.wav $i\r\nfor i in **/*.avi;
+  ffmpeg -i $i -y -target ntsc-dvd -sameq -aspect 16:9 $i:r.mpg\r\n\r\nzip -r out.zip
+  directory"

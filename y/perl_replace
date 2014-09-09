@@ -1,0 +1,7 @@
+---
+perl_replace: ! "Mass Find/replace in files\r\n==========================\r\n\r\n#
+  Replace all occurrences of one class with another. No backup file created.\r\n#\r\nperl
+  -pi -w -e 's/Test::Unit::TestCase/ActiveSupport::TestCase/g;' test/unit/*.rb\r\n\r\n#
+  Replace all occurrences of foo with bar and save a backup (e.g. file.txt.bak)\r\n#\r\nperl
+  -i.bak -pe 's/foo/bar/g' path/to/file.txt\r\n\r\n# Create a date-stamped backup
+  (e.g. file.txt-2012-09-12)\r\n#\r\nperl -i-`date +%F` -pe 's/foo/bar/g' path/to/file.txt\r\n"

@@ -1,0 +1,20 @@
+---
+raise_rescue: ! "Use the \"begin/rescue/end\" construct for exception handling.\nThe
+  global variable \"$!\" holds the raised exception object.\n\n  begin\n    1 / 0\n
+  \ rescue\n    puts $!.class.name + \": \" + $!.message\n  end\n  ==> ZeroDivisionError:
+  divided by 0\n\nRescue catches instances of StandardError or one of its subclasses.\nUse
+  \"cheat exceptions\" for a visual exception class hierarchy.\n\nUse Kernel#raise
+  (in one of its many forms) to raise the exception.\nBy default, this throws a RuntimeError
+  with the given message.\n\n  begin\n    raise \"foo bar\"\n  rescue\n    puts $!.class.name
+  + \": \" + $!.message\n  end\n\n  ==> RuntimeError: foo bar\n\nUse the \"begin/rescue/ensure/end\"
+  construct for \"tidy up\" code.\nThe ensure clause gets executed whether or not
+  an exception is raised.\n\n  begin\n    raise \"foo bar\"\n  rescue\n    puts $!.class.name
+  + \": \" + $!.message\n  ensure\n    puts \"That's it, Folks!\"\n  end\n  ==> RuntimeError:
+  foo bar\n      That's it, Folks!\n\n... or even without a rescue clause:\n\n  begin\n
+  \   raise \"foo bar\"\n  ensure\n    puts \"That's it, Folks!\"\n  end\n  ==> That's
+  it, Folks!\n      RuntimeError: foo bar\n          from (irb):2\n\nExceptions can
+  be re-raised in the rescue clause, using Kernel#raise.\n\n  begin\n    1 / 0\n  rescue\n
+  \   puts \"Something bad happened :-(\"\n    raise # this re-raises \"$!\" ...\n
+  \ end\n  ==> Something bad happened :-(\n      ZeroDivisionError: divided by 0\n
+  \         from (irb):2:in `/'\n          from (irb):2\n\nVarious assertions exist
+  to verify exception handling behaviour in test cases.\nSee also: \"cheat (assert_nothing_raised|assert_raise(s)|assert_nothing_thrown)\""

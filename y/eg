@@ -1,0 +1,16 @@
+---
+eg: ! "Creating repositories\n  eg clone       Clone a repository into a new directory\n
+  \ eg init        Create a new repository\n\nObtaining information about changes,
+  history, & state\n  eg diff        Show changes to file contents\n  eg log         Show
+  history of recorded changes\n  eg status      Summarize current changes\n\nMaking,
+  undoing, or recording changes\n  eg commit      Record changes locally\n  eg mv
+  \         Move or rename files (or directories or symlinks)\n  eg stage       Mark
+  content in files as being ready for commit\n\nManaging branches\n  eg branch      List,
+  create, or delete branches\n  eg merge       Join two or more development histories
+  (branches) together\n  eg switch      Switch the working copy to another branch\n\nCollaboration\n
+  \ eg pull        Get updates from another repository and merge them\n  eg push        Push
+  local commits to a published repository\n\nTime saving commands\n  eg bisect      Find
+  the change that introduced a bug by binary search\n  eg stash       Save and revert
+  local changes, or apply stashed changes\n\nAdditional help:\n  eg help COMMAND      Get
+  more help on COMMAND.\n  eg help --all        List more commands (not really all)\n
+  \ eg help topic        List specialized help topics."

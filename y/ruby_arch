@@ -1,0 +1,2 @@
+---
+ruby_arch: ! 'ruby -e "puts [''foo''].pack(''p'').size == 8 ? ''64 bits'' : ''32 bits''"'

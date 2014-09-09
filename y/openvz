@@ -1,0 +1,6 @@
+---
+openvz: ! "Creating a New Container\r\n----\r\n> Create a 101.conf in /etc/vz/conf
+  | /etc/sysconfig/vz-scripts\r\nvzctl create 101\r\nvzctl set 101 --onboot yes --save\r\nvzctl
+  set 101 --userpasswd root:password\r\nvzctl start 101\r\n\r\nSee stats on the VM\r\n----\r\nvzctl
+  exec 101 cat /proc/user_beancounters\r\n\r\nCheck Memory Usage (in MG)\r\n----\r\nvzmemcheck
+  -vA"

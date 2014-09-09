@@ -1,0 +1,26 @@
+---
+bash_param: ! "Bash parameter expansions\r\n=========================\r\n\r\nNOTE:\r\n
+  \ The `:' character used in many of the expansions is optional.\r\n  Using the `:'
+  checks for param that is unset or null.\r\n  Without the `:' checks for param that
+  is unset.\r\n\r\n| Expansion                | Note                            |\r\n|--------------------------+---------------------------------|\r\n|
+  ${param}                 | Use value                       |\r\n| ${!param}                |
+  Variable indirection            |\r\n| ${param:-word}           | Use default value
+  \              |\r\n| ${param:=word}           | Assign default value            |\r\n|
+  ${param:?word}           | Display error                   |\r\n| ${param:+word}
+  \          | Use alternate value             |\r\n| ${param:offset}          | Substring
+  expansion             |\r\n| ${param:offset:length}   | Substring expansion with
+  length |\r\n| ${!prefix*}              | Name expansion with prefix      |\r\n|
+  ${#param}                | Length in characters            |\r\n| ${param#word}
+  \           | Remove shortest match at start  |\r\n| ${param##word}           |
+  Remove longest match at start   |\r\n| ${param%word}            | Remove shortest
+  match at end    |\r\n| ${param%%word}           | Remove longest match at end     |\r\n|
+  ${param/pattern/string}  | Replace first matching pattern  |\r\n| ${param//pattern/string}
+  | Replace all matching patterns   |\r\n\r\nExamples:\r\n\r\n$ x=yes\r\n$ echo ${x}
+  \        #=> yes\r\n$ echo ${x:-no}     #=> yes\r\n$ x=\r\n$ echo ${x:-no}     #=>
+  no\r\n$ echo ${x-no}      #=> \"\" <an empty string>\r\n$ unset x\r\n$ echo ${x:-no}
+  \    #=> no\r\n$ echo ${x-no}      #=> no\r\n\r\n$ path='/some/path/to/file.txt'\r\n$
+  echo ${path##*/}  #=> file.txt\r\n$ echo ${path%/*}   #=> /some/path/to\r\n\r\n$
+  x=yes\r\n$ y=x\r\n$ echo ${!y}        #=> yes\r\n\r\n$ x=0123456789\r\n$ echo ${x:0}
+  \      #=> 0123456789\r\n$ echo ${x:3}       #=> 3456789\r\n$ echo ${x:3:2}     #=>
+  34\r\n\r\n$ xval1=first\r\n$ xval2=second\r\n$ xval3=third\r\n$ echo ${!xval*}    #=>
+  xval1 xval2 xval3\r\n"

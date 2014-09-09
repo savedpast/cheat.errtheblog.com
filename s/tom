@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>What's needed to start a good Rails project:
+
+  # Ensure git is installed.
+  # Ensure ruby is installed.
+  # Ensure rvm is installed.
+  rvm update --head
+  rvm reload
+  rvm install 1.8.7-p249 # or whatever version of ruby
+  rvm --create 1.8.7-p249@project_name # one alternative
+  rvm --create use 1.8.7-p249@project_name # another alternative
+  rvm --default use 1.8.7-p249@project_name
+  # Ensure rubygems (gem) is installed.
+  gem update --system # might have to be run via sudo
+  gem install rails --version 3.0.1 # might have to be run via sudo
+  mkdir -p ~/code
+  cd ~/code
+  rails new my_app
+  # Edit Gemfile
+
+Default Rails directory structure:
+
+  app/	Core application (app) code, including models, views,
+  		controllers, and helpers
+  config/	Application configuration
+  db/		Files to manipulate the database
+  doc/	Documentation for the application
+  lib/	Library modules
+  log/	Application log files
+  public/	Data accessible to the public (e.g., web browsers), such as
+  		images and ascading style sheets (CSS)
+  script/rails  A script provided by Rails for generating code, opening
+		console sessions, or starting a local web server
+  test/	Application tests (made obsolete by the spec/ directory in
+  		Section 3.1.2)
+  tmp/	Temporary files
+  vendor/	Third-party code such as plugins and gems
+  README	A brief description of the application
+  Rakefile	Utility tasks available via the rake command
+  Gemfile	Gem requirements for this app
+  config.ru	A configuration file for Rack middleware
+  .gitignore	Patterns for files that should be ignored by Git</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

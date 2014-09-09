@@ -1,0 +1,16 @@
+---
+wordpress: ! "Start a new project:  \n\n  # Add a new virtual host\n  sudo mate /etc/apache2/httpd.conf\n\n
+  \ # Add a new host\n  sudo mate /etc/hosts\n\n  # Create the database\n  mysqladmin
+  -u root create <database_name>\n\nInstall Thor:\n\n  # Install thor\n  sudo gem
+  install thor\n\n  # Install the thor task for WordPress\n  # Name it 'wordpress'
+  at the prompt\n  thor install http://github.com/adamstac/thor-wordpress/raw/master/wordpress.thor\n\nUse
+  Thor:\n\n  Learn more:\n  http://github.com/adamstac/thor-wordpress\n\n  wordpress\n
+  \ ---------\n  wordpress:install [--directory=DIRECTORY] [--version=VERSION]\n  #
+  Download and unpack WordPress from the interwebs\n\n  wordpress:theme\n  ---------------\n
+  \ wordpress:theme:install --theme=<theme> [--directory=DIRECTORY] [--theme=THEME]\n
+  \ # Unpacks the specified <theme> from the compass-wordpress gem\n\n  wordpress:styles\n
+  \ ----------------\n  wordpress:styles:generate\n  # Clears and Generates the styles\n\n
+  \ wordpress:styles:clear\n  # Clears the styles\n\n  wordpress:compass\n  -----------------\n
+  \ wordpress:compass:watch\n  # Runs compass --watch\n\n  wordpress:deploy\n  ----------------\n
+  \ wordpress:deploy:theme\n  # Deploys the theme\n\n  wordpress:deploy:generate_config\n
+  \ # Asks for ssh_user and remote_root, and generates the deploy.yaml file"

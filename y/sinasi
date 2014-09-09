@@ -1,0 +1,8 @@
+---
+sinasi: ! "\r\nSinasi SproutCore Minor Mode for Emacs:\r\n  GitHub: https://github.com/emk/sinasi\r\n\r\nkey
+  \            binding\r\n---             -------\r\n\r\nC-c             Prefix Command\r\n\r\nC-c
+  ,           Prefix Command\r\n\r\nC-c , c         sinasi-clean-tests\r\nC-c , f
+  \        Prefix Command\r\n\r\nC-c , f a       sinasi-find-core\r\nC-c , f c       sinasi-find-controller\r\nC-c
+  , f f       sinasi-find-fixture\r\nC-c , f i       sinasi-find-main\r\nC-c , f m
+  \      sinasi-find-model\r\nC-c , f p       sinasi-find-main-page\r\nC-c , f s       sinasi-find-stylesheet\r\nC-c
+  , f t       sinasi-find-test\r\nC-c , f v       sinasi-find-view\r\n"

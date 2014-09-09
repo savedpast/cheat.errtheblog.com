@@ -1,0 +1,101 @@
+---
+ack: ! "Ack's command flags\r\n\r\n$ ack --help\r\nUsage: ack [OPTION]... PATTERN
+  [FILE]\r\n\r\nSearch for PATTERN in each source file in the tree from cwd on down.\r\nIf
+  [FILES] is specified, then only those files/directories are checked.\r\nack may
+  also search STDIN, but only if no FILE are specified, or if\r\none of FILES is \"-\".\r\n\r\nDefault
+  switches may be specified in ACK_OPTIONS environment variable or\r\nan .ackrc file.
+  If you want no dependency on the environment, turn it\r\noff with --noenv.\r\n\r\nExample:
+  ack -i select\r\n\r\nSearching:\r\n  -i, --ignore-case     Ignore case distinctions
+  in PATTERN\r\n  --[no]smart-case      Ignore case distinctions in PATTERN,\r\n                        only
+  if PATTERN contains no upper case\r\n                        Ignored if -i is specified\r\n
+  \ -v, --invert-match    Invert match: select non-matching lines\r\n  -w, --word-regexp
+  \    Force PATTERN to match only whole words\r\n  -Q, --literal         Quote all
+  metacharacters; PATTERN is literal\r\n\r\nSearch output:\r\n  --line=NUM            Only
+  print line(s) NUM of each file\r\n  -l, --files-with-matches\r\n                        Only
+  print filenames containing matches\r\n  -L, --files-without-matches\r\n                        Only
+  print filenames with no matches\r\n  -o                    Show only the part of
+  a line matching PATTERN\r\n                        (turns off text highlighting)\r\n
+  \ --passthru            Print all lines, whether matching or not\r\n  --output=expr
+  \        Output the evaluation of expr for each line\r\n                        (turns
+  off text highlighting)\r\n  --match PATTERN       Specify PATTERN explicitly.\r\n
+  \ -m, --max-count=NUM   Stop searching in each file after NUM matches\r\n  -1                    Stop
+  searching after one match of any kind\r\n  -H, --with-filename   Print the filename
+  for each match\r\n  -h, --no-filename     Suppress the prefixing filename on output\r\n
+  \ -c, --count           Show number of lines matching per file\r\n  --column              Show
+  the column number of the first match\r\n\r\n  -A NUM, --after-context=NUM\r\n                        Print
+  NUM lines of trailing context after matching\r\n                        lines.\r\n
+  \ -B NUM, --before-context=NUM\r\n                        Print NUM lines of leading
+  context before matching\r\n                        lines.\r\n  -C [NUM], --context[=NUM]\r\n
+  \                       Print NUM lines (default 2) of output context.\r\n\r\n  --print0
+  \             Print null byte as separator between filenames,\r\n                        only
+  works with -f, -g, -l, -L or -c.\r\n\r\nFile presentation:\r\n  --pager=COMMAND
+  \      Pipes all ack output through COMMAND.  For example,\r\n                        --pager=\"less
+  -R\".  Ignored if output is redirected.\r\n  --nopager             Do not send output
+  through a pager.  Cancels any\r\n                        setting in ~/.ackrc, ACK_PAGER
+  or ACK_PAGER_COLOR.\r\n  --[no]heading         Print a filename heading above each
+  file's results.\r\n                        (default: on when used interactively)\r\n
+  \ --[no]break           Print a break between results from different files.\r\n
+  \                       (default: on when used interactively)\r\n  --group               Same
+  as --heading --break\r\n  --nogroup             Same as --noheading --nobreak\r\n
+  \ --[no]color           Highlight the matching text (default: on unless\r\n                        output
+  is redirected, or on Windows)\r\n  --[no]colour          Same as --[no]color\r\n
+  \ --color-filename=COLOR\r\n  --color-match=COLOR   Set the color for matches and
+  filenames.\r\n  --flush               Flush output immediately, even when ack is
+  used\r\n                        non-interactively (when output goes to a pipe or\r\n
+  \                       file).\r\n\r\nFile finding:\r\n  -f                    Only
+  print the files found, without searching.\r\n                        The PATTERN
+  must not be specified.\r\n  -g REGEX              Same as -f, but only print files
+  matching REGEX.\r\n  --sort-files          Sort the found files lexically.\r\n\r\nFile
+  inclusion/exclusion:\r\n  -a, --all-types       All file types searched;\r\n                        Ignores
+  CVS, .svn and other ignored directories\r\n  -u, --unrestricted    All files and
+  directories searched\r\n  --[no]ignore-dir=name Add/Remove directory from the list
+  of ignored dirs\r\n  -r, -R, --recurse     Recurse into subdirectories (ack's default
+  behavior)\r\n  -n, --no-recurse      No descending into subdirectories\r\n  -G REGEX
+  \             Only search files that match REGEX\r\n\r\n  --perl                Include
+  only Perl files.\r\n  --type=perl           Include only Perl files.\r\n  --noperl
+  \             Exclude Perl files.\r\n  --type=noperl         Exclude Perl files.\r\n
+  \                       See \"ack --help type\" for supported filetypes.\r\n\r\n
+  \ --type-set TYPE=.EXTENSION[,.EXT2[,...]]\r\n                        Files with
+  the given EXTENSION(s) are recognized as\r\n                        being of type
+  TYPE. This replaces an existing\r\n                        definition for type TYPE.\r\n
+  \ --type-add TYPE=.EXTENSION[,.EXT2[,...]]\r\n                        Files with
+  the given EXTENSION(s) are recognized as\r\n                        being of (the
+  existing) type TYPE\r\n\r\n  --[no]follow          Follow symlinks.  Default is
+  off.\r\n\r\n  Directories ignored by default:\r\n    autom4te.cache, blib, _build,
+  .bzr, .cdv, cover_db, CVS, _darcs, ~.dep,\r\n    ~.dot, .git, .hg, ~.nib, .pc, ~.plst,
+  RCS, SCCS, _sgbak and .svn\r\n\r\n  Files not checked for type:\r\n    /~$/           -
+  Unix backup files\r\n    /#.+#$/        - Emacs swap files\r\n    /[._].*\\.swp$/
+  - Vi(m) swap files\r\n    /core\\.\\d+$/   - core dumps\r\n\r\nMiscellaneous:\r\n
+  \ --noenv               Ignore environment variables and ~/.ackrc\r\n  --help                This
+  help\r\n  --man                 Man page\r\n  --version             Display version
+  & copyright\r\n  --thpppt              Bill the Cat\r\n\r\nExit status is 0 if match,
+  1 if no match.\r\n\r\nThis is version 1.90 of ack.\r\nFile types that ack understands\r\n\r\n$
+  ack --help-types\r\nUsage: ack [OPTION]... PATTERN [FILES]\r\n\r\nThe following
+  is the list of filetypes supported by ack.  You can\r\nspecify a file type with
+  the --type=TYPE format, or the --TYPE\r\nformat.  For example, both --type=perl
+  and --perl work.\r\n\r\nNote that some extensions may appear in multiple types.
+  \ For example,\r\n.pod files are both Perl and Parrot.\r\n\r\n    --[no]actionscript
+  .as .mxml\r\n    --[no]ada          .ada .adb .ads\r\n    --[no]asm          .asm
+  .s\r\n    --[no]batch        .bat .cmd\r\n    --[no]binary       Binary files, as
+  defined by Perl's -B op (default: off)\r\n    --[no]cc           .c .h .xs\r\n    --[no]cfmx
+  \        .cfc .cfm .cfml\r\n    --[no]cpp          .cpp .cc .cxx .m .hpp .hh .h
+  .hxx\r\n    --[no]csharp       .cs\r\n    --[no]css          .css\r\n    --[no]elisp
+  \       .el\r\n    --[no]erlang       .erl .hrl\r\n    --[no]fortran      .f .f77
+  .f90 .f95 .f03 .for .ftn .fpp\r\n    --[no]haskell      .hs .lhs\r\n    --[no]hh
+  \          .h\r\n    --[no]html         .htm .html .shtml .xhtml\r\n    --[no]java
+  \        .java .properties\r\n    --[no]js           .js\r\n    --[no]jsp          .jsp
+  .jspx .jhtm .jhtml\r\n    --[no]lisp         .lisp .lsp\r\n    --[no]lua          .lua\r\n
+  \   --[no]make         Makefiles\r\n    --[no]mason        .mas .mhtml .mpl .mtxt\r\n
+  \   --[no]objc         .m .h\r\n    --[no]objcpp       .mm .h\r\n    --[no]ocaml
+  \       .ml .mli\r\n    --[no]parrot       .pir .pasm .pmc .ops .pod .pg .tg\r\n
+  \   --[no]perl         .pl .pm .pod .t\r\n    --[no]php          .php .phpt .php3
+  .php4 .php5\r\n    --[no]plone        .pt .cpt .metadata .cpy .py\r\n    --[no]python
+  \      .py\r\n    --[no]rake         Rakefiles\r\n    --[no]ruby         .rb .rhtml
+  .rjs .rxml .erb .rake\r\n    --[no]scheme       .scm .ss\r\n    --[no]shell        .sh
+  .bash .csh .tcsh .ksh .zsh\r\n    --[no]skipped      Files, but not directories,
+  normally skipped by ack (default: off)\r\n    --[no]smalltalk    .st\r\n    --[no]sql
+  \         .sql .ctl\r\n    --[no]tcl          .tcl .itcl .itk\r\n    --[no]tex          .tex
+  .cls .sty\r\n    --[no]text         Text files, as defined by Perl's -T op (default:
+  off)\r\n    --[no]tt           .tt .tt2 .ttml\r\n    --[no]vb           .bas .cls
+  .frm .ctl .vb .resx\r\n    --[no]vim          .vim\r\n    --[no]xml          .xml
+  .dtd .xslt .ent\r\n    --[no]yaml         .yaml .yml"

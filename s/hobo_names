@@ -1,0 +1,1811 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Here are the 1,806 Hobo Names You Requested
+-------------------------------------------
+
+1	Stewbuilder Dennis 
+2	Cholly the Yegg 
+3	Holden the Expert Dreamtwister 
+4	The Rza 
+5	Jack Skunk 
+6	Jack Skunk Fils 
+7	Lord Dan X. Still-Standing 
+8	Marlon Fitz-fancy 
+9	Bazino Bazino, The Kid Whose Hair Is On Fire 
+10	Whispering-Lies McGruder 
+11	Nit Louse 
+12	Dan'l Dinsmore Tackadoo 
+13	Hobo Zero 
+14	The Silver Jacket Man 
+15	No-Shoulders Smalltooth Jones 
+16	Sistery Brothery Nabob 
+17	Name Withheld 
+18	Staniel the Spaniel 
+19	Frederick Bannister, the Tree Surgeon 
+20	Tarnose Cohen 
+21	Mr. Wilson Fancypants 
+22	Floyd Dangle 
+23	Shane Stoopback 
+24	Wicked Paul Fourteen-Toes 
+25	Normal-Face Olaf 
+26	Tearbaby Hannity Stoop 
+27	The Damned Swede 
+28	Pierre Tin-Hat 
+29	Ol' Barb Stab-You-Quick 
+30	Mr. Whist 
+31	James Fenimore Cooper 
+32	Twistback John, the Scoliosis Sufferer 
+33	Sweet Daddy Champagne 
+34	Senator Cletus Scoffpossum 
+35	Horus, the Bird-Headed Fool 
+36	50-Tooth Slim 
+37	Monk, the Monkey Man (which is to say: &quot;the Man&quot;) 
+38	Thad the Bunter 
+39	Balloonpopper Chillingsworth 
+40	All-but-Dissertation Tucker Dummychuck 
+41	Finnish Jim 
+42	Flemish Jim 
+43	Foreign Tomas, the Strangetalker 
+44	Roadhouse Ogilvy and Sons 
+45	Jokestealer John Selden 
+46	Giancarlo, Master of the Metal Trapeze 
+47	Dr. Bill Stain-Chin, the Boxcar Medic 
+48	Boxcar Ted 
+49	Boxcar Mick 
+50	Boxcars [sic] Timothy Twin 
+51	Boxcar Jones, the Boxcar Benjamin Disraeli 
+52	Boxcar Aldous Huxley 
+53	JR Lintstockings 
+54	Gila Monster Jr. 
+55	Irontrousers the Strong 
+56	&quot;X,&quot; the Anonymous Man or Woman 
+57	Orphaned Reynaldo, the Child with Haunting Eyes (while there were
+58	ren hoboes, Reynaldo took this when he was 45; prior to this, he was
+59	as...[See #58]) 
+60	Reynaldo Reynaldoson, Who Will One Day Kill His Father 
+61	Thoughtless Harry Hsu 
+62	Clinical Psychiatrist Huga Rivera 
+63	Peter Ox-Hands 
+64	Ponytail Douglas Winthrop 
+65	Lil' Jonny Songbird, the Songbird-Eater 
+66	King Snake: The Eternal Mystery 
+67	Ghostly Nose Silvie 
+68	Fonzie 
+69	DiCapa the Hound 
+70	Beef-or-Chicken Bob Nubbins 
+71	Honest Amelia Dirt 
+72	Slow Motion Jones 
+73	Canadian Football Pete 
+74	Meep Meep, the Italian Tailor 
+75	Jonathan William Coulton, the Colchester Kid 
+76	Maria the Pumpkin-Patch Crooner 
+77	Bix Shmix 
+78	Vice President Garrett Hobart 
+79	Stun Gun Jones 
+80	Prostate Davey 
+81	Flea Stick 
+82	Niles Butterbal, the Frozen Turkey 
+83	Todd Four-Flush 
+84	Stick-Legs McOhio 
+85	The Unanswered Question of Timothy 
+86	Mickey the Assistant Manager 
+87	Guesstimate Jones 
+88	Goofus 
+89	Gallant 
+90	Sir Roundbelly DeDelight 
+91	Newton Fig 
+92	Chicken Nugget Will 
+93	Parlor Peter, the Sneak Thief 
+94	Ovid 
+95	Bathsheba Ditz 
+96	Alan Pockmark, Esq. 
+97	Lolly Hoot Holler 
+98	Von Skump 
+99	Lonnie Choke 
+100	Chisolm Chesthair 
+101	Freak Le Freak, the Freakster 
+102	Rex Spangler, the Bedazzler 
+103	Randall Mouth-Harp 
+104	Chrysler LeBaron 
+105	The Fishin' Physician 
+106	Persuasive Frederick 
+107	Celestial Stubbs 
+108	Teary-Eyed Fingal 
+109	Mairah Nix 
+110	Cthulhu Carl 
+111	Del Folksy-Beard 
+112	No-Banjo Burnes 
+113	Chainmail Giles Godfrey 
+114	Lois &quot;Charles&quot; Ladyfinger 
+115	Plausible Zane Scarrey 
+116	Huckle Smothered 
+117	Mmmmm Dandy Dundee 
+118	Mountain-Humper Edgar Ames 
+119	Spasmodic Hilary 
+120	Doc Aquatic 
+121	Molly Bewigged 
+122	Cincinnati O'Gurk 
+123	Metuchen O'Sullivan 
+124	Cherry Hill O'Manley 
+125	Cheesequake O'Lennox 
+126	Booper O'Montauk 
+127	Zaxxon Galaxian 
+128	Drinky Drunky Thom, the Drunk 
+129	Terry Gross 
+130	Spooky-Night Spooky Day 
+131	Zipgun Gloucester Gluck 
+132	Human Hair Frum 
+133	Sherlock-Holmes-Hat Carl III 
+134	Patrick Intergalatic 
+135	Abmidextrous Stang 
+136	Yum-Yum Sinclair Snowballeater 
+137	Ponzi-Scheme Jeremiah Ponzi 
+138	Toodles Strunk 
+139	Monkeybars Matthew Manx 
+140	Pineneedle-Jacket Jericho Fop 
+141	Robert the Tot 
+142	Robert the Child-Size 
+143	Robert the Minuscule 
+144	Robert the Wee 
+145	Robert Fits-in-a-Case 
+146	Robert Eats-for-Free 
+147	Robert Is-He-an-Elf? (The seven Silk brothers, all named Robert,
+148	also kown for the small stature and predictable bitterness.) 
+149	Dennis Big-Ear Fox 
+150	Jethro the Pagan 
+151	Asterix the Gaul 
+152	Black Bolt, King of the Inhumans 
+153	Strictly Local Henry Bobtail 
+154	Manny the High-Ranking Mason 
+155	Fry-Pan Jim Fry 
+156	Slo-Mo Deuteronomy 
+157	Half-Bearded Mark 
+158	Knee-Brace Kenny 
+159	Morris the Personal Trainer 
+160	Thundertwine 
+161	Cleats Onionpocket 
+162	Deformed Abe 
+163	Trainwhistle Abejundio 
+164	David No-Ears 
+165	Achilles Snail-Hair the Buddha 
+166	Frog-Eatin' Lou 
+167	Admiral's Club Wilbur 
+168	Max Meatboots, the First-Class Lounger 
+169	Dora the Explorer 
+170	Ms. Mary Manx, the Tailless Cat 
+171	Free-Peanuts Doug 
+172	Steve the Human Tunneler 
+173	Redball Charlie Dickens 
+174	Twink the Reading-Room Snoozer 
+175	Microfiche Roy, the Side-Scroller 
+176	McGurk, Who May Be Found by the Card Catalogue 
+177	Booster D'Souza 
+178	Commodore Sixty-Four 
+179	Moped Enid, the Mopedist 
+180	Lamant the Junkman 
+181	Fast-Neck Nell 
+182	Bill Never-Uses-a-Cookbook 
+183	Bee-Beard 
+184	Lil' Max Meatboots 
+185	The Personal Secretary to Jed 
+186	Dee Snider 
+187	Sausage Patty 
+188	Desert Locust 
+189	Gummy Miles 
+190	Gyppo Moot, the Enigma Machine 
+191	Ol' Stiffpants 
+192	Skywise the Sexual Elf 
+193	Craine T. Eyebrow-Smeller 
+194	Lonely Heiney Alan Meister 
+195	Shakey Aitch the Boneyard Concierge 
+196	Woody Damn 
+197	Alatar 
+198	Pallando 
+199	Saltfish Bunyan 
+200	Poor, Poor, Poor Charlie Short 
+201	Venomous Byron 
+202	Five-Chambered-Stomach Mort St. John 
+203	Gravybelly Dunstan 
+204	Extra-Skin Dave 
+205	Beanbag-Chair Bill 
+206	Grant Sharpnails, the Scratcher 
+207	Tommy Lice-Comb 
+208	&quot;Medicated Shampoo&quot; Jonah Jump 
+209	General Woundwort, the Giant Rabbit 
+210	Genius L. Cravat, the Gentleman 
+211	Giant Bat Wings Roland 
+212	Nick Nolte 
+213	Salty Salty Friday 
+214	Fatman and the Creature (note: there was no creature) 
+215	Cecelia Graveside 
+216	Hoosegow Earl French 
+217	Stymie Stonewrist 
+218	Roadrunner &quot;Meep Meep&quot; Fabong 
+219	Bruised-Rib Johansson, the Beefer 
+220	Joachim Bat-in-Hair 
+221	Food-Eating Micah 
+222	Rubbery Dmitry, the Mad Monk 
+223	Honey Bunches of Donald 
+224	Crispy Morton 
+225	Feminine Forearms Rosengarten 
+226	Two-Headed Mike Hoover 
+227	Manny Stillwaggon, the Man with the Handlebar Eyebrows 
+228	Bean-Hoarder Newt 
+229	Texas Emil 
+230	The Moor of Venice 
+231	Averroes Nix 
+232	Human Hair Blanket Morris Burnes 
+233	Canadian Paul Tough 
+234	Crooner Sy 
+235	Manuel Pants-Too-High 
+236	Sylvia Patience Hidden-Forks 
+237	Sung, the Land Pirate 
+238	Opie, the Boston Bum 
+239	Hard-Flossing Hope Peak 
+240	Stingo the Bandana Origami Prodigy 
+241	Franklin Ape and His Inner Ear Infection 
+242	Questionable-Judgement Theodore Stomachbrace 
+243	Thermos H. Christ 
+244	Sir Mix-a-Lot 
+245	The Nine Doctor Whos 
+246	Lord Winston Two-Monocles 
+247	The Freewheelin' Barry Sin 
+248	Diego the Spark-Spitter 
+249	American Citizen Zane Pain 
+250	Abraham, the Secret Collector of Decorative China 
+251	Linty Sullivan, the Lint-Collector 
+252	Socks Monster 
+253	Ma Churchill 
+254	Pappy Churchill 
+255	The Young Churchill 
+256	The Young Churchill's Hated Bride 
+257	Churchill-Lover Phineas Redfish 
+258	Crispus T. Muzzlewitt 
+259	Stain-Sucker Duncan 
+260	Dick the Candy Dandy 
+261	Albuteral Inhaler Preson McWeak 
+262	Longtime Listener, First-Time Caller 
+263	Mastiff Mama 
+264	Tennessee Ernie Dietz 
+265	Sharkey, the Secret Cop 
+266	Gooseberry Johnson, Head Brain of the Hobosphere 
+267	Weekend-Cicular Deborah 
+268	Marcus Chickenstock 
+269	Stunted Newton 
+270	Magnus Shortwave 
+271	U.S. Fool 
+272	Manatee the Railyard Toreador 
+273	Utah Manfred Succor-Munt 
+274	Laura Delite 
+275	Edwin Winnipeg 
+276	Eyepatch Resse Andiron 
+277	Tom False-Lips Real-Teeth 
+278	Fabulon Darkness 
+279	Cricket-Eating Charles Digges 
+280	Pally McAffable, Everybody's Friend 
+281	Sully Straightjacket 
+282	Half-Dollar Funk Nelson 
+283	Whitman Sampler 
+284	Chili-Mix Wilma Bensen 
+285	Sting, the Glowing Blade 
+286	Professor Challenger 
+287	Lil' Shorty Longhorn 
+288	Rumpshaker Phil 
+289	Swing State Myron 
+290	Alistair Crowley, the Devil 
+291	Gutthrower Sy Salt 
+292	Sweetback Barney, the Dilettante 
+293	The Car-Knocker Killer 
+294	The Chamberlain 
+295	The Emperor 
+296	The Ritual-Master 
+297	The Garthim-Master 
+298	The Scientist 
+299	The Gourmand 
+300	The Slave-Master 
+301	The Treasurer 
+302	The Scroll Keeper 
+303	The Ornamentalist 
+304	Captain Slick-Talk 
+305	Sackfist, the Tapdancing Trombo 
+306	Souvenir-Selling Mlodinow 
+307	Blind Buck and &quot;Woozy,&quot; the Invisible Seeing-Eye Dog 
+308	Roundhouse Farter 
+309	Red Ball Pnutz 
+310	Fake Cockney Accent Alan Strippe 
+311	Air and Whiskey Dale McGlue 
+312	Johnny RC Airplane 
+313	Narcotic Morgan Suds 
+314	Sir Francis Drank 
+315	Mahayana Mike 
+316	Miniyana Geoffrey 
+317	Three-Bean Otz 
+318	Maury the Monsoon 
+319	Czech Czarlie Czill 
+320	Sssssssssssssssss, the Hisser 
+321	Thanatos Koch 
+322	Henry Eatsmelts 
+323	Modem-Sniffer Gunderson 
+324	Half-Albino Alejandro 
+325	Gluttonous-Slim 
+326	Ragweed-Allergic Matt 
+327	Amorous Luminous Dirk 
+328	Moray Eel Ken Elmer 
+329	The Railbender 
+330	Antonio the Ombudsman 
+331	Karl Solenoid IV 
+332	Czar King Rex the Glorious Leader 
+333	Andy Bunkum 
+334	Plastic-Moustache Mortimer Tall 
+335	Samuel Gel Insole 
+336	Lemuel Gel Insole 
+337	Amanda Until 
+338	Crispy Whiskery 
+339	Robert Louis Stevenson, the Pirate 
+340	Hobo Overload 
+341	Leopard Print Steven Kane 
+342	Astonishing Shaun Eyelash 
+343	Billy Creak Knees 
+344	Owlie 
+345	Anwar, the Bionic 
+346	Reasonably Priced Motel Resse Unger 
+347	Ribery Dana 
+348	Cranberry Sauce Oppenheimer 
+349	Nancified Frederick 
+350	The Loon 
+351	Itinerant Jane 
+352	Holy Hannah Hottentot-Smythe 
+353	Fleabottle Boone 
+354	Amazin' Jack Caroo 
+355	Stupefying P, the Riddle-Maker 
+356	Todd Flaky-Palms 
+357	Waspwaist Fritz 
+358	Judge Roughneck 
+359	Slam Dance Dooze 
+360	Mariah Duckface, the Beaked Woman 
+361	Count Mesmerize 
+362	Sonny-Boy Oedipus Acre 
+363	Pick Mama Susan Xavier 
+364	Chelsea Bacon 
+365	Archie Axe 
+366	Sally Hoot-Hoot 
+367	Mr. Pendleton 
+368	Saves-Receipts Dave 
+369	Sir Walter British 
+370	Elmer, the Crankscout 
+371	Golden Neck 
+372	Marinated Alex Pons 
+373	El Boot 
+374	Shapeshifting Demon 
+375	Jeremiah Tip Top 
+376	Amanda CeeCee Stobelight 
+377	Irving Alva Edison, Inventor of the Hobophone 
+378	Leather Apron 
+379	Lead Apron 
+380	Foil Apron 
+381	Burnt Goathead 
+382	Saint Sorryass 
+383	Overly Familiar Fung 
+384	Chalmers, the Bridge Champ 
+385	Elephantine McMoot 
+386	Neekerbeeker Perry Toenz 
+387	Teattime BB Stiles 
+388	Coalie T 
+389	Hubbel &quot;I Predicted Lindy Hop&quot; Deerblind 
+390	Hubie Hewitt, the Broadway Legend 
+391	Huge Crybaby McWeepy 
+392	Poo-Knickers Elias 
+393	Elffriend Weingarten 
+394	Forktongue Nigel Fork 
+395	Woodeye Apfel 
+396	Hairlip Mikhail 
+397	Solid First Draft Patton Taylor 
+398	Prettynickels, the Lamb 
+399	Not-Only But-Also Pete 
+400	Pentheif Hickock 
+401	La Grande Mel 
+402	Applebee O'Bennigan McFridays 
+403	Ladry Jerry Lardo 
+404	Low-Carb Aleks Stovepipe 
+405	Hugo Stares 
+406	Eldred Splinters 
+407	Oliver, the Train-Oyster 
+408	Pring, Ultralord of the Hobo Jungle 
+409	Utz, the Crab Chip 
+410	Salt-and-Pepper Chest 
+411	Beverly Hills Buntz 
+412	Mississippi Barry Phlegm 
+413	Matter-Eater Brad 
+414	49-State Apthorp, the Alaska-Phobe 
+415	New Hampshire Todd 
+416	&quot;Taxachusetts&quot; Glenn 
+417	Hydrocephalic Jones 
+418	Vermont &quot;Greenmountain Boy&quot; Phil Marijuana 
+419	Alaska Mick the Crabber 
+420	Arizona Ludwig 
+421	California Ainsley Shortpants 
+422	Collegeboy Brainiac, the Hobo Einstein 
+423	Dr. Zizmor 
+424	Silas Swollentoe 
+425	Slimneck Holden Fop 
+426	Aspiring Jaster 
+427	Illinois Obama 
+428	Sammy Austere 
+429	New Mexico Anselm Turquoise-Eater 
+430	Caboose-Fouling Ferris Ntz 
+431	Prayerful Stan, the Bent-Knee Yahoo 
+432	Four-Fisted Jock Socko 
+433	Buttery-Cheeks Anton 
+434	Shadow (&quot;Blinky&quot;) Preston 
+435	Godigisel the Vandal 
+436	Gunderic Godigiselson 
+437	Panzo the Spiral-Cut Ham 
+438	Smoke-Collecting Reg 
+439	Hot Gnome Jimmy Jackson 
+440	Pontius Cornsilk-Heart 
+441	Sanfor Who Lacks Fingerprints 
+442	Treesap-Covered N. Magruder 
+443	Thor Hammerskold, the Mexican 
+444	Bingo-Balls Nick Chintz 
+445	Bleedingtoe the Barefoot 'Bo 
+446	Hondo &quot;Whatever That Lizard Is That Walks on Water&quot; 
+447	Salami Sunshine 
+448	Fourteen-Bindelstick Frank 
+449	Oregon Brucie Shunt 
+450	Pirandello, the Many-Bearded 
+451	Quinn and His Quaker Oats Box Drum 
+452	Fatneck Runt 
+453	my-e-hobo.com 
+454	Somersaulting Mike Spitz 
+455	Bo 'Bo 
+456	Abelard &quot;Sunken Treasure&quot; Lowtrousers 
+457	Colin, That Cheeful Fuck 
+458	Battling Joe Frickinfrack 
+459	Monsieur Dookie, the Francophonic 
+460	Happy Horace Noosemaker 
+461	Hieronymous Crosseyes 
+462	Crumbjacket Timmy 
+463	Overload-the-Dishwasher Mac 
+464	Phythmic Clyde Hopp 
+465	Microbrew Stymie 
+466	El Caballo, the Spanish Steed 
+467	Lee Burned-Beyond-Recognition 
+468	Hollering Martin Mandible 
+469	Damien Pitchfork, the Freightyard Satan 
+470	Handformed Hamburger Clarence West 
+471	Dr. Nobel Dynamite 
+472	Pickled-Noggin Nettles 
+473	Mischievous Craig 
+474	Baldy Lutz, the Amityville Horror 
+475	Ashen Merle Buzzard 
+476	Frypan Nonstick McGee 
+477	Singleminded Hubbard 
+478	Maryland Sol Saynomore 
+479	Baked Salmon Salad Finn 
+480	Unshakably Morose Flo 
+481	Fr. Christian Irish, the Deep-Fat Friar 
+482	Smokestack-Hugger Jools Nygaard 
+483	Fossilwise Opie Fingernail 
+484	Tab-Collar Dix 
+485	George Slay, the Duck Throttler 
+486	Eldon Waxhat, the Waterproof Man 
+487	Timely Clayton, the Human Wristwatch (so named not because of this
+488	uality, but because one arm was significantly shorter than the
+489	.) 
+490	Both Dakotas Dave 
+491	Duke Jermiah Choo-Choo 
+492	Transistorized Maximillian, the Hobo Cyborg 
+493	Gravelbed Gavin Astor 
+494	Pantless, Sockless, Shoeless Buster Bareass 
+495	Alternate-Dimension Bela Boost 
+496	Atlas Flatshoulders 
+497	Scurvied Leo Falsebreath 
+498	Toby Anchovy, the Canned Man 
+499	Mad Max 
+500	The Goose 
+501	Not the Goose 
+502	Mister Torso, the Legless Wonder 
+503	Jedediah Dryasdust 
+504	Loving Vincent Hugsalot 
+505	The Rambling, Rambling Boris Wander 
+506	Business-Class Klaus Riel 
+507	Emergency Exit Aisle Gustav Nook 
+508	Unnervingly Candid Nicky Thain 
+509	Snoops Lightstep Trenchcoat, the Hobo PI 
+510	William Carlos Williams 
+511	Beef Grease Porter Dripchin 
+512	Exoskeleton Chester Fields 
+513	Roth IRA Romeo Leeds, the Well Prepared 
+514	Bum-Smiter Phillip 
+515	Bum-Hating Virgil Hate-Bum 
+516	Thor the Bum-Hammer 
+517	Bum-Tolerant Brendan Sleek 
+518	Most Agree: It's Kilpatrick 
+519	The Beloved Dale Thankyounote 
+520	Unpronounceable 
+521	Thad Malfeasance 
+522	Chiseltooth Muck Manly 
+523	Amsterdam Jocko 
+524	Sinister Leonard Longhair 
+525	Beery Clive the Eunuch 
+526	Chaim the Squirrelkeeper 
+527	Nightblind and Colorblind, the Blind Twins 
+528	Milosz the Anarchist Puppeteer 
+529	Jimmy &quot;New Man&quot; Neandertal 
+530	Lonnie Pina Colada 
+531	Washington State Amy Swipe 
+532	Gopher-State Sam, the Minnesota Man 
+533	Candle-Eyed Sally 
+534	Packrat Red and his Cart o' Sad Crap 
+535	Trixie of the East 
+536	Trixie of the West 
+537	Fine-Nipple Tom Bazoo 
+538	The Friends of Reginald McHate Society 
+539	Oregon Perry Hashpipe 
+540	Bold 'n' Zesty Brad 
+541	Mermaid Betty Scales 
+542	Spotted Dick 
+543	Shanty Queen Elizabeth Regina 
+544	Nichols Crackknuckle 
+545	Stew Socksarewarm 
+546	Huge-Calves Dwight 
+547	A-Number-1 
+548	N-Number-13 
+549	Arther Moonlight 
+550	Andrea Clarke, the Human Shark 
+551	Monkey's-Paw Patterson 
+552	Myron Biscuitspear, the Dumpster Archeologist 
+553	Ollie Ebonsquirrel 
+554	The Classic Brett Martin 
+555	Douglas, the Future of Hoboing 
+556	Ironbelly Norton 
+557	Dilly Shinguards 
+558	Rufus Caboose 
+559	Rear Admiral JF Grease Pencil 
+560	King Cotton 
+561	Prince Hal Oystershuck, the Royal Shucker 
+562	Unconditional Gavin 
+563	Squirrelcloak 
+564	Idaho Woody Harelson 
+565	Jane the Boxcar Beekeeper 
+566	Aaron Three-Shirts 
+567	Paste-Smeller Luke 
+568	Lowly Highley 
+569	Elihu Skinpockets 
+570	Marian May Wyomingsong 
+571	Stitches the Railyard Sutureman 
+572	Klonopin Clyde 
+573	Benny Twenty-Squirrels 
+574	Chickeny-Flavored Remy Bunk 
+575	Juicepockets Thomas Moone 
+576	Eustace Feetbeer 
+577	Amnesiac Jared Stringy 
+578	Shagrat, Orc of the Ozarks 
+579	Billy Butterfly Net 
+580	Ammonia Cocktail Jones 
+581	Norma Shinynickels 
+582	Jonathan Crouton 
+583	Antigone Spit 
+584	El Top-Hat Swindlefingers 
+585	PomPom the Texas Dancing Dog 
+586	Gin-Bucket Greg 
+587	Yuri Trimble, the Alien Pod-Person 
+588	South Carolina Sarah Lardblood 
+589	Bloody-Stool laSalle 
+590	Pith-Helmet Andy 
+591	Self-Taught-Guitarist Edmund 
+592	Don Tomasino di Shit-the-Bed 
+593	Markansas 
+594	Neckfat JK Trestle 
+595	Pansy Overpass 
+596	Ralph Raclette Cornichon, Hobo of the Mountains 
+597	Montana Nbdego Tch!k 
+598	Unbearably Oenophilic Ned 
+599	Jonas Tugboy, Professional Masturbator 
+600	Cinderfella Dana Dane 
+601	Kerosene-Soaked Tom 
+602	Black-Bottle Priam 
+603	Pinprick Butell 
+604	Stool-Sample Frank 
+605	Iowa Noam Chomksy 
+606	Etienne, Roi of the Rapier 
+607	Amesy Squirrelstomper, the Chipmunk Preferrer 
+608	Ned Gravelshirt 
+609	NPR Willard Hotz, the Soothing-Voiced 
+610	Amen to Polly Fud 
+611	Constanly Sobbing Forrester 
+612	Maine-iac Leonid 
+613	Magnetized James 
+614	Hobo Jake Jerrold, Representing the Whole Mid-Atlantic Region 
+615	Jiminy Sinner 
+616	Pamela Chickeneggs (i.e., Hobo Caviar) 
+617	Chuck McKindred: Not So Holy, But Very Moley 
+618	Q the Quantum Man 
+619	Salad-Fork Ron 
+620	Warbling Timmy Tin Voice and His Voicebox 
+621	Ambassador Roasting Pan 
+622	Warren Smazell, Founder of Hobotics** 
+623	Ventriloquism Jimmy and &quot;Madam&quot; the Talking Bean Can 
+624	Nosepicker Rick Pick 
+625	The Black Squirrel Fairy 
+626	Alabama Edsel Brainquake 
+627	Kid Silverhair, the Man of Indeterminate Age 
+628	Catscratch Tremont Nude 
+629	Bill Jaundice 
+630	Sugarhouse Morris the Sapper 
+631	Nutrition-Shake Emery 
+632	Nicknameless Norris Shine 
+633	Stinging Polly Papercuts 
+634	Deke Hidden Hornets' Nest 
+635	The Wisconsin Scourge 
+636	Brendan Headbristles 
+637	His Excellency Nooney Sockjelly 
+638	Whistling Anus Mecham, Le Petomaine 
+639	Talmidge, the Bactine Bearer 
+640	Tailstump Gunther, the Vestigial Man 
+641	The Hon. Charlie Weed-Farmer 
+642	Philatelist Joey Licks 
+643	Old Pliny Dance-for-Ham 
+644	Rheumy Sven 
+645	Wormy Glenn and Nootka the Flatworm 
+646	Hidalgo, the Devil Stick Artiste 
+647	The Fucky From Kentucky 
+648	Prince Bert in Exile, the Man in the Foil Mask 
+649	Siderodromophobic Billy 
+650	Antlered Calvin 
+651	Cambridge Massachusetts Claude 
+652	Cyrus the Persian Sturgeon 
+653	Kneepants Erasmus, the Humanist 
+654	Little Gavin Spittle 
+655	Tar-tongue Godfrey Strange 
+656	Honeypalms Gordon Lips 
+657	Luke &quot;the Lifestyle&quot; Dammmers 
+658	Simon Squirrelskin 
+659	Scabpicker Sandy Rump 
+660	Chicken Butt, Five Cents a Cut 
+661	Wise Solomon Babysplitter 
+662	Telekinetic Dave B. 
+663	Telekinetic Dave F. 
+664	Whiskeyblood Willie Sot 
+665	Unger and his Duststorm Bride 
+666	Zachary Goatflirter 
+667	&quot;La Grippe&quot; 
+668	Uranus John, the Star-Traveler 
+669	Accusin' Tim Dunn 
+670	Tennessee Linthelmet 
+671	The Unformed Twin of Tennessee Linthelmet 
+672	Turkeyballs Paco 
+673	Andre the Indianapolist 
+674	Wally Dregs, the Newfoundland Screech 
+675	Flaky Mike Psoriasis 
+676	Hell's Own Breath Hinkley 
+677	Gerald Chapcheeks 
+678	Acid-Saliva Curly Stokes 
+679	Oklahoma Stilgar 
+680	Rocky Shitstain Mankowicz 
+681	Rocky Shitstain Mankowicz Part II, the Quickening 
+682	Professor W* 
+683	Sanitized-for-Your-Protection Eddie Summers 
+684	Jan, the Jager-Meister 
+685	Big-Tipper Silas Fake-Nickel 
+686	Anaerobic Eben Stiles 
+687	Replicant Wemberly Plastiskin and his Clockwork Squrrel &quot;Toothy&quot; 
+688	Harry Coughblood 
+689	Aesop Bedroll, the Fluffy Pillow Man 
+690	Widow-Kisser Roger 
+691	Experimental Hobo Infiltration Droid &quot;41-K&quot; 
+692	Baron Bayonet, the Bull-Sticker 
+693	Mikey Gluesniff 
+694	Bell's-Palsy Brennan 
+695	Chiptooth Berman, the Bottle Biter 
+696	Undertaker Robert, the Lint-Coffin Weaver 
+697	Betty, the Exorcist 
+698	Tittytwister Blake Horrid 
+699	Mallory Many-Bruises 
+700	Mad or Sad Judd (no one can tell) 
+701	Troglodytic Amory Funt 
+702	Smokehouse &quot;Frankie&quot; Jowl-Poker 
+703	Utility-Belt Deana 
+704	The Unshakable Will of Wade Terps 
+705	Trainwhistle Ernie Roosevelt, the President's Long-Lost Brother 
+706	Hallelujah Bum Again 
+707	Allegheny Pilgrim Panam, the Defunct Airline Man 
+708	Butterknife Sal Slender 
+709	Saladfork Butt Bunter 
+710	Deboned Gary Wobbly-Arms 
+711	Pauly Twin-Oboes, the Double-Reed Man 
+712	Ansel Trick-Neck, the Human Gizzard 
+713	Stunned Silent Hopkins 
+714	Tiberius Claudius Drusus Nero Germanicus, the Crippled Hobo Emperor
+715	Brigand Blackguard McCatburglar, the Hobo Ne'er-Do-Well 
+716	Meyers Briggs, the Tester 
+717	&quot;Mac&quot; Hardcastle McCormick 
+718	Le Peteet Mort 
+719	Bisque-and-Chowder-Man Hoffman 
+720	The Freightening Reign of Phil 
+721	Stalling Pete Puts-You-Off 
+722	Timmy Hands-Covered-In-Scotch-Tape 
+723	Cravatted Jones Snaredrum 
+724	Amputated Benny 
+725	Old Beekeeper Stan Stingbelly 
+726	Kevin Eggsandbacon 
+727	Ol' Johnny One-Joke 
+728	Tramp Trampson (not a tramp, but a renowned hobo trampolinist) 
+729	Boom-Busy McPredictable Cycle 
+730	Dickie On-Star, the Satellite Man 
+731	Dickie Double Dickeys, Whose Pants Are Indestructible 
+732	High-Falutin' Pete 
+733	Moderately-Falutin' Pete 
+734	Anvil-carryin' Wyatt Strong-Calves 
+735	Stump Tongue Mumbler 
+736	Synonymin' Don Thesaurus 
+737	Post-it Perry, the Hobo Office Supply Guy 
+738	Crummy Carl Licetamer 
+739	Self-Satisfied Mick Pringle 
+740	Andrew Powderlips, the Doughnut Scholar 
+741	They Call Me MISTER Dumps 
+742	Library Bird Maurice Backissues 
+743	Lousy-anna Lamont Burnt 
+744	Festering Wound William, the Ointment-Refuser 
+745	Ron Rattlechest, the Fearful Wheezer 
+746	Ol' Eric, the Nickelflop Albino 
+747	Double-Entendre Dick Penis 
+748	Mike the Beard Recycler 
+749	Winnipeg Winnie Peg, the Cold and Bored 
+750	Jocker Jerry, the Whistlin' Kidnapper 
+751	J. Arthur Crank 
+752	Paul the Gorilla 
+753	Barrel-Aged Milton Oakbreath 
+754	Philip, the Eternal Antagonist 
+755	Crackles Spineshaker, the Hobo-osteopath 
+756	Cashy McSellout, Darling of the Newsreels 
+757	Honcho! Just: HONCHO! 
+758	Dr. Hall, A Slang Term for &quot;Alcohol&quot; 
+759	Dr. Alcohol, A Slang Term of &quot;A Corridor&quot; 
+760	Sir E. Dismal, the Hobo Economist 
+761	Roundhead Swedish Sven, the Hairless 
+762	Weedwine Farley, the Weed-fermenter 
+763	Santa Fe Santa Jinglebell, the World's Most Christmassy Tramp 
+764	Hank the Eczema Expert 
+765	Lon Chaney, Jr., the Wolfman 
+766	Clogged-Brain Harry Hoomp 
+767	Sketchartist Jim, the Slow Paparazzo 
+768	Admiral Crotch Rickets 
+769	Anthony Ethnic, the Other 
+770	Panel Discussion Dan Loaf 
+771	Owner's Manual Abbott, the Owner's Manual Horder 
+772	Dr. Know 
+773	Manny Gills, The Underwater Breather 
+774	Homunculus Jack, That Tiny Bold o' Lightning 
+775	Bob Brain-in-a-jar, the Bodiless 'Bo 
+776	Backwards-Looking Lou, the Parallel Parker 
+777	Acid-Blood-and-Spit Lionel Stander, the Spitter 
+778	Coffin-Breath Melissa Nestor 
+779	No-Credit/Bad Credit Bobby Hassle-freeloan, Mortgage Specialist of the Rails 
+780	Methie 
+781	B&amp;M Barton Tiny Teeth 
+782	Burrowing Andrew Brokenails 
+783	V-Neck Sweater Teddy G 
+784	Passably Competent Hal 
+785	Apparently Mitch Dixon 
+786	Arguably Tommy Ford 
+787	Unquestionably Moe Gin-Clobbered 
+788	Oft-Quoted Mandrake Silvertongue 
+789	Murray Head as &quot;Judas&quot; 
+790	Harry Canyon, the Unedited Version 
+791	Plush-bum Mr. Sweets 
+792	Prof. Stink Mullins, Who Currently Holds the Plush-bum Mr. Sweets
+793	in American Hobology 
+794	Secret Compartments Max and His Amazing Stovepipe Hat Full of Eggs and Junk 
+795	Breathe-Right Matty Nasal-Strip 
+796	Voweltooth Jenkins, the Man with the Scrabble Tile Dentures 
+797	Impulse-Buy Donny 
+798	Angelina Snakehead Fish 
+799	Fisher Stephens 
+800	Trivia-Master Johannes Wedge-keeper 
+801	Tom the Gentle Strangler 
+802	Boston Billy 
+803	Double Stuf Boston Billy 
+804	Chuck: The Ancient Evil Awakens 
+805	Nasdijj 
+806	You know what? I'm going to go ahead and keep Nick Nolte. 
+807	Scudders P. Keratosis
+808	No-Spleen McGee
+809	Argyle the Chess Player
+810	Jimmy Sits-on-a-Fence
+811	Slick Willie
+812	Wet Willie
+813	Misogynist Willie
+814	Gil Bates, Inventor of the Hobonet
+815	Apricottage Seamus
+816	Spamhead Fishbottom
+817	Gastroboy
+818	D-Boz
+819	Deebz
+820	Hoagie Hobie
+821	Pachycephalus Rex
+822	Amadeus the Seminary Dropout
+823	Helga the Bearded Lady of Mexico
+824	Joey Snoweater
+825	Ricky Crimson Piehole
+826	Lonely Pete the Leper
+827	Mixolydian Mike Mixton
+828	The Sworn Enemy of Bob Ross
+829	Shotgun Spiffs the Zombie Hunter
+830	Hobodroid H3000
+831	Terry Treeclimber
+832	Fishnet Dogstench the Carolina Bumpkin
+833	Half-Dead Pessimist Bob and his brother Half-Living Optimist Larry
+834	Old Man Lightning Shorts
+835	Throckmorton P. Gilderpant the Timid Hobonaut
+836	Salt Shaka Shaka Shaka
+837	Hatchet-Ass
+838	Uncle Overload
+839	Cousin Banjo Birdseed
+840	Chisel and his Toxic Liver
+841	Phlegm, That Bastard
+842	Big, Tall, Alien Mike the Nintendo Kid
+843	Fratricide Frank
+844	Unprotected Tex
+845	Simple Phil the Asian
+846	Horse Shriek Letterman
+847	Seven-Horse Sitwell, the Bringer of the Hobopocalypse
+848	Jackson the Viennese Asswipe
+849	Red Shirt Lifespan
+850	Nuggetface
+851	The Forkinator
+852	Limburger Lemuel
+853	Nobody-Doesn't-Like Sara Lee
+854	Nobody Doesn't-Like-Sara-Lee
+855	Nobody-Doesn't-Like-Sara Lee
+856	Won't Tip McStingy
+857	Hinkety Pinkety
+858	Scarf-for-a-Neck
+859	Thimble, the Ground Slug Connosieur
+860	Lunchbox O'Flox
+861	Sweet Sweet Picklebreath
+862	Sandwich of Glory Roman
+863	Wolflips
+864	Bada Bing, Bada Steve
+865	El Macaroni
+866	Father Crunchmas
+867	Wookie Bill
+868	Brown Ted, Famous for his Amazing Sugar Cookie Recipe
+869	Guy Asks-for-Change
+870	Gyros the Greek
+871	Hell's Unicorn
+872	Dan the Guitar Fiend
+873	Tin Cap Earl
+874	His Hoboness Prince Fatbert
+875	Soupcan Spitball Eater
+876	What's-Your-Name
+877	Ugly Mort
+878	Axe Pick Raul No-Pants
+879	Tossed Salad Ferdinand
+880	Carl the Cart Avenger
+881	Masked Ollie the XVII
+882	Brown Paper Bag Filthyhair
+883	Soytatoes Brownson
+884	Banananana Flashbulb
+885	The Boxcar Herald
+886	Blackwall Jensen
+887	The Under-Bridge Flapper
+888	Bodystubble
+889	Cowboy Dave, the Jew
+890	Krogg
+891	Backhair Mittens the Feline Tailor
+892	Skeletal Jones
+893	Glass Eyesockets the Hobo Express Conductor
+894	Timely Mark Twixt
+895	Jim Nauseam, the Disbarred Personal Injury Litigator
+896	Norman the Mormon
+897	Trotsky the Carp Wrangler
+898	Johnny Fists-of-Wrath
+899	Bluegrass Pendleton
+900	The Anonymous Donator, Patron of the Unknown
+901	Guest Lecturer Dr. Phyllis Stefanopoulos
+902	Three Piece Suit Max
+903	Honorable Judge Chamberlain Bindle Stiff
+904	Adam, the Mulligan Stew Originator
+905	Garrison Chucks-a-Dummy
+906	The Famed Cannonball Catcher
+907	Jimbo the FRED Hater
+908	Easy Mac, the Surreptitious Delinquent
+909	Plain Sam
+910	Supreme Overlord 7-Fingers
+911	Marcus the Itinerant Bellhop
+912	Squiggles T. Malarkey
+913	Lucky Joseph the Turd Collector
+914	Herman Papilloma Virus
+915	The Symbiotic Relationship of Tim and Howard
+916	Slightly Less Than Jerry
+917	Toolbelt Jack of the Penguins
+918	Randall the Male Soprano
+919	Latin Feely Roberts
+920	Dysart the Distress`ed
+921	Mystic Marion, or ESP
+922	Harry Clint, the Guide for Dummies
+923	Eric Anti-Perspirant
+924	The Self-Appointed King of Go-Carts
+925	Out-by-Eight-Thirty Mike
+926	Tae Kwon Moe
+927	Seersucker Bridgid
+928	Methadone Maleguena, the Turbana Lady
+929	The Blod
+930	Injun Tucker
+931	Carruthers the Summertime Flapass
+932	The Hobo Formerly Known as Stuart
+933	Ransom Jack
+934	Oklahoma Boesen
+935	Mark Sees-His-Own-Shadow
+936	Clem the Manpon Maker
+937	Good Gravy! Joe Burns
+938	Telltale &quot;Boobs&quot; Swarnson
+939	Millertime.
+940	Chief Stuffs-His-Wallet
+941	The Wonderful Wizard of Fuzz
+942	Stackemup
+943	General Sideburns
+944	Stakepounder Nelson
+945	!xobile the Dark
+946	Poobah Pruce
+947	Easy-Catch Clive, the Guy Who Eats Ransom Jack's Notes
+948	Namesake
+949	I've Got a Lovely Bunch of Doug
+950	Weathergates
+951	Bonbon Sean-Sean
+952	Spyflake Jake, Master of Interstate Espionage
+953	Ishityounot
+954	Burnin' Vernon and the Dulcitones
+955	Crippleknuckle
+956	English
+957	The Bellower
+958	Appendicitis Nixon
+959	Holecoat
+960	Hungry Hungry Horace
+961	Rabbitscalper Ted
+962	Lena, the Sockmonkeyteer
+963	Mr. Fold
+964	Big Manuel
+965	Tighteyes
+966	Bill Carver, Greatest Scar Museum on One Foot and a Stick
+967	Klepto Tarbox
+968	Da Jesus
+969	Paybacker
+970	Lord Linus, Dust Magnet
+971	Ratfriend Bates
+972	The Pinto Ressurector
+973	Meteorologist Alex, Forecaster of the Heavens
+974	Dead Oscar the Hypochondriac
+975	Unfortunate Dumas Curses-His-Parents
+976	Johnny Applecore
+977	Succulent Aaron Bacon
+978	Apollo the O
+979	Everyone's Hero, Lester
+980	Billllllllllllllllllllllllll
+981	iTodd, the Portable Music Hobo
+982	Village Elder Quicksand Murphy
+983	Village Idiot Quicksand Sinks-with-Flair
+984	The Blessed Virgin Gary
+985	Hamlet R. Snaggletooth, the Shakespearean Donut
+986	Invisible Invincible
+987	The Melting Pot of Utah
+988	Free-Time Wilson
+989	Ascension Jones
+990	Eusebius T
+991	Wombat Chew
+992	Jeweyes Buntmorton
+993	Spamzilla
+994	&quot;Pasty&quot; Brown
+995	Blackie White
+996	Balloonthigh
+997	Milton Willowmere, Inhaler of Aerosols
+998	Duct Tape Spyro Gyra
+999	Tether Bill Muscleteeth
+1000	Nick-L-Nips
+1001	Strawpoke Larry
+1002	Fitzpedro Sanchez, the Wetback Mick
+1003	Two-toed Cletus
+1004	Wolfchild Remus
+1005	Milt the Squirrel Whisperer
+1006	Breastmilk Carl
+1007	Plumb Bob
+1008	Thanks O'Banion
+1009	Can Can I'm the Whistle Man
+1010	Apologetic Hans
+1011	The One-Stop Taster
+1012	Gurgle the Leaden Backstrokist
+1013	Bourbon Hardbelly
+1014	Freddy Licks-Your-Face
+1015	Whole-Part-Whole
+1016	No. 625 in the Hobo Hymnal
+1017	Suds the Carwash Kid
+1018	Reincarnated Kerouac
+1019	Wonderful D, the Peg-Leg Athlete
+1020	Fire Marshall Question Mark
+1021	Interrogation Stan Hobart
+1022	Mayday Mayday Nathan
+1023	Percy Moonster, Hobo Scribe
+1024	Merciless Joe Hat-Too-Wide
+1025	Why, Wild Wyatt
+1026	Frank the Absurdly Rotund Pharmacist
+1027	Nicely-Nicely Johnsonville Bratwurst
+1028	Das Milk
+1029	The Wand of Doom
+1030	Prince Anubis of Denial
+1031	Merriam Webfoot, Inventor of Hobonics
+1032	Homer Bond, Otherwise Known as Double Oh Kevin
+1033	Jack B. Trimble
+1034	Jack Bisquick
+1035	Miraculous Fumblebottom
+1036	Stumpy the Former Acrobat
+1037	Uber Francis, Ruler of the Hobodom
+1038	Chuck the Eternal Dirtsmith
+1039	Motel No-Tell Phyllis
+1040	Jack of the Lantern
+1041	Fortbuilder Mount Vernon
+1042	Merlin the Intuitive Albino
+1043	Dumpa Dump
+1044	Slowtalker Imam
+1045	Brownose the Poosnitch
+1046	Rudolph the Sponge-nosed Caboose Jockey
+1047	John the Apostle
+1048	Greaserag Gary
+1049	Tiehopper Bill
+1050	Nadia Rainwalker Comanche
+1051	Rock Pocket Jones
+1052	Asphalt Martin
+1053	Tinshoe Gavin
+1054	Huge Keyring McGraw the Locksmith
+1055	Lenny the Dentist
+1056	Hoboy
+1057	The Original Athlete's Foot
+1058	Peterbilter
+1059	Enginehat
+1060	Cloudy Puffsmoke the Smoker
+1061	Blowhard Terry
+1062	Lennox
+1063	Sparks, the One-Man Volunteer Fire Department
+1064	Crabshack Jerome
+1065	Porter Rico
+1066	The Klob
+1067	Chewy the Masticator
+1068	Scootie
+1069	Sunfish the Meringue
+1070	Sweettone Dulcimator
+1071	Methodist Redd
+1072	Baptist-Fed
+1073	Papist-bred
+1074	Lutheran Ted
+1075	[sic]
+1076	Monkeyfist
+1077	Newport Knut
+1078	Hot Peppa Slick
+1079	Rootwitch
+1080	The Velveteen Babbitt
+1081	Treat Street No-Pleats
+1082	Rubbish Bin Top Hat
+1083	Giovanni the Circus Midget
+1084	The Personal Philosophy of Play-Doh
+1085	Welch's Grape Bruce
+1086	Sdrawkcab the Grammarian
+1087	Sidewinder the Technophobe
+1088	The Magical Ketchup Opener
+1089	The One-Year Difference Breitbach Twins
+1090	Dir-Dir-Dirk
+1091	Julio the Manager of the Britt Jungle
+1092	Hobo Schmobo The Cynical Prick
+1093	Mrs. S.'s Mescaline Prognosis
+1094	Ironspike
+1095	The Hobollusionist
+1096	Union Jack Pacific
+1097	Betty Brent
+1098	Dalcroze-Certified Keno the Insane
+1099	Sgt. Poorchoice
+1100	Dusty Vandersocks
+1101	Awkward Brint
+1102	Gracious Gate Knocker the Humble Dwarf
+1103	Ladder Hands Wind Flapper
+1104	Shinbone Sore
+1105	Broomstick Corner Leaner
+1106	Tree Hole Stump Jumper
+1107	Steamwhistle Piehole Johnson
+1108	Finnigan Tradepost
+1109	Overly Confident Beartamer
+1110	Nicholas Beans-in-a-Pan
+1111	Tartan Barton
+1112	Never-Late the Hearing Impaired
+1113	The Legend of Edwin
+1114	Twirl'em Holster
+1115	Punchdrunk Kraut Der Faust
+1116	Yanni's PA
+1117	Isaac the Freelance Assassin
+1118	Whiny the Futilist
+1119	Dem Old Ragtown Blues
+1120	Squeaky the Oboe Fondler
+1121	Tarfolgers Arnold
+1122	Reynold's Choice
+1123	Jon, the Anachronist
+1124	Magic Stu
+1125	Fons and Porter and their Half Hour of Power
+1126	Two-Time Leonard
+1127	Mick Jagger's Uncle
+1128	Jethro the Anarchist
+1129	The Lincoln Log Champ-peen
+1130	The Many Faces of Tito
+1131	Po'boy
+1132	Eleven O'clock Drop
+1133	Highwaters
+1134	Captain Leathers, the Roustabout Extraordinaire
+1135	Alistair du Jour
+1136	King Cornelius, Lord Dumpington
+1137	Beatus Angeli
+1138	Aromatic Steve
+1139	The Frugal Quail Gourmet
+1140	The Extravagant Quail Gourmand
+1141	Hammerfist George
+1142	Soy-Based Wade
+1143	Ufologist Dr. McSnorkel
+1144	The Gospel According to Otis
+1145	Post-it Flowerpot
+1146	Leroy the Avid Photographer
+1147	Hobo Nobo
+1148	Travellin' Sam, Medicine Man
+1149	Running Ed, the Guy Who Has Former Mafia Ties
+1150	Seven-Kids-Catholic O'Reilly
+1151	Assertive Shaky Knees
+1152	Kid Kix
+1153	Commodore Crunch
+1154	Two-Can Sam
+1155	The Quaker Oaf
+1156	Boney the Tiger Luckey Charms (The Breakfast Gang were the least
+1157	successful group of cereal killers in history due to
+1158	r overwhelming sense of hobo goodness.)
+1159	Scraper de Spatula
+1160	Goatman Yellowjinx
+1161	Panamanian Franklin Muskrat
+1162	Jerry the Ventriloquist
+1163	Hee Haw McGraw, the Hy-Vee Frequenter
+1164	Bloodgums Sourpuss
+1165	Caped Jimmy Douglas
+1166	The Canteenite
+1167	Pocket Change
+1168	Sid Skidson, Son of Skid
+1169	Farmer's Market Shoulder-Shrug
+1170	Belly-Faced McGurkin
+1171	The Mighty Spoon of God
+1172	Dee Minor, the Saddest of All Hoboes
+1173	Oktoberfest Franz
+1174	Phineas the Little
+1175	Moosefart
+1176	Max the Adrenaline Junkie
+1177	Sweet-n-Sour Liam
+1178	Basket Fred
+1179	Guitarra Fernandez the Maroon-Vested
+1180	Second-Rate Bertram
+1181	The Stamp Collector Aficionado
+1182	Sunny Sideways
+1183	Mortimer Flapcheeks, the Hobo Impressionist
+1184	Sting
+1185	Antidisestablishmentarianist Ed
+1186	Donald the Dire Drifter
+1187	Industrious Bart
+1188	Master Fizzlesticks Coatmeister
+1189	Da Dadada Da-Da-Da Jake
+1190	Amorous Franco
+1191	Suddenly-Certainly
+1192	Pete, Ominous Caster of Thirteen Days of Unending Shadow
+1193	Scoliosis McHunchalot
+1194	Chuck of the Pork Pie Hathood
+1195	Igor Sikorsky
+1196	Sonic Boomer
+1197	Stanley Too-Cheap
+1198	Spam-Tracker
+1199	Chewable Relief Tom
+1200	Marty the Thrift Store
+1201	Clean Sparky Gristle
+1202	Joe the Caboose Mechanic
+1203	Holy Man Miles
+1204	Studdering Buster
+1205	Big John Skin-Blanket
+1206	TJ, which is short for Testosterone Jill
+1207	Daniel Cardinal Goobermeister
+1208	End-is-Near Fredo
+1209	Fretless Scaredy-Pig
+1210	Kevin of the Bumpily-Headed
+1211	The Soloist
+1212	Four Star General Chester Chesthair, Chief of the United States Hobo Corps
+1213	The Anishinaabe Kid
+1214	Vince the Retired Bandit
+1215	Mr. Fipps the Hobotard
+1216	Bars-Can't-Hold-Im
+1217	Blackened-not-Burned Cliffbeaux Zydeco
+1218	Truman Sleeps
+1219	Nalgene Norbert
+1220	Chris Sillyface Jones
+1221	The Dixieland Wonder
+1222	Forks-not-Spoons Hank
+1223	Jack Gumwad
+1224	Horace, Directly Descended from a Second Cousin of Jesus Christ
+1225	Skinkjump Panhandler
+1226	Omnibus O'Flanaghan
+1227	Sewage Department Director Fuddlesworth
+1228	Overbite Nan
+1229	Underbite Fran
+1230	Inbetweenbite Tuck, the Outcast
+1231	Born-Again Christian
+1232	Druggie Howard, M.D.
+1233	Colonface Wilson
+1234	Duodenum Pat
+1235	The Ghost of Hobos Past
+1236	Mescaline Nelson
+1237	Jim Beam Jim
+1238	The Six-Million Peso Hombre
+1239	Paranoid Floyd
+1240	F'obo
+1241	Mighty Tex the Urinal Painter
+1242	Donald the Hobodontist
+1243	Dick the Hobotometrist
+1244	SuperLou, the Only Adhesive You'll Ever Need
+1245	R.I.P. Hobo Ralph
+1246	Vagabondus, the Father of Modern Hoboism
+1247	Thrice A, the Annoying Anabaptist Abednego
+1248	Carroll Spinney
+1249	Historic Pauline Wayne
+1250	Backwards, Forwards, Upside-Down BOB
+1251	Infectious Dwight
+1252	Claymation Phil
+1253	Floppy Reginald
+1254	Muddy Oliver, the Incredible Mustachioed Man
+1255	Zeke the Greek
+1256	The Star Spangled Arthur
+1257	The Ten Plagues of Egbert
+1258	Yessireebob
+1259	Top Hat Bottom Feeder
+1260	The Enduring Tradition of Ted
+1261	Lonnie Beaufort
+1262	Donnie Beaufort
+1263	Ronnie Beaufort
+1264	Connie Beaufort
+1265	Bonnie Beaufort (The K-Mart Gang were immortalized in Bill Bryson's book, &quot;The Lost Continent.&quot;)
+1266	Submarine Jack P. Jones
+1267	Chug-a-lug
+1268	Hobo-Earth.com
+1269	Honeycomb Fleecejacket
+1270	Colorado Nan
+1271	Spiffy Archibald, Keeper of Hobo Lore
+1272	Jill the Recluse
+1273	Sonny-not-Cher
+1274	Xanthan Julius
+1275	The Old Man
+1276	Scabbard de Bassthumper
+1277	Slim to None and Slim Just Left the Building, Therefore, &quot;None&quot;
+1278	Sweaty Britches
+1279	Roy, the Imaginary Hobosaurus
+1280	Freightmaster Willie
+1281	Raggedy Andy
+1282	Weary Steelrider
+1283	Cincinnati Steve Jones
+1284	Chattanooga Choo-Choo Charlie
+1285	Steamboat Ferguson the Deckhand Pioneer
+1286	Gravysuit
+1287	Yovowas, Ye Olde Vendor of Wares and Services
+1288	Pocketwatch McFlapperson
+1289	Der Clapmeister
+1290	Nantucket Pete, the Retired Sea Captain
+1291	Ol' Foamsides
+1292	Logical Bruce Ferretcloth
+1293	Idealist / Realist Moe Loesser
+1294	Sasquatch
+1295	The Midnight Special
+1296	Verne the Escape Artist
+1297	Nebraska Moral Brian
+1298	Hobo-for-Hire
+1299	The Unflappable Willingness of Ike
+1300	Ulysses S. Grunt
+1301	Pillowless O'Sobface
+1302	Ragboots, the Last of the Great Hobo Cobblers
+1303	Ollie No-Skills, Master of Futility
+1304	The Twenty-Ninth Incarnation of His Holiness, the Dalai Hobo
+1305	Insanely Lucky Rufus
+1306	The Clownhater
+1307	Captain Stupendous
+1308	The Backhand Face-Rearranger Throbo and his Half-Brother Strobo, whose misinformed assumption of their own superpowers led to their untimely deaths
+1309	Oh Sweet Gene S.
+1310	Iowegian Buster
+1311	Mr. Gambini the Wandering Minstrel
+1312	Jacksonville Bret Wurst
+1313	Tuck-and-roll
+1314	Beanie Boy
+1315	Friendly Floridian Felix
+1316	Four-of-a-Kind Slick Sparks
+1317	Ray Walston
+1318	Cablo Gubla
+1319	The Universal Borrower
+1320	Manwich
+1321	Patrick the Unibrowed Ex-Marine
+1322	Meefbucket
+1323	J Edgar Herman, Eternal Friend of Turtles
+1324	Levity Sam
+1325	The Venerable Daniel Kerrigan, Esq.
+1326	Motorless Carriage Enos
+1327	Prospector Dennis
+1328	Maestro Hiram the Steeple Bell Ringer
+1329	J G Wentworth, Certified Hobo Accountant
+1330	Stellar Spike
+1331	Bill and the Ancient Vastness
+1332	Lemon Battery-Operated Ephraim
+1333	Accident-Prone Jerry Idaho
+1334	Crabby Jones
+1335	Erik Hansen the Odinist
+1336	Melodic Flo and Her Travellin' Band
+1337	Flexy, the Mattress Tester
+1338	Overalls Stan
+1339	Peachy Keen Maureen
+1340	Eminent Dominic
+1341	Rattletooth
+1342	Tin Can Photographer Earl Snapson
+1343	Shaky the Duck
+1344	Mother Caboose, the Kindly Hobo Matron
+1345	Hooverlips
+1346	Teenie McGee
+1347	Wyoming Merle
+1348	The Outlaw Du Jour
+1349	False Imprisonment Rollo
+1350	Innocently Candid Dale
+1351	Fleastitch
+1352	Sonobe, the Modular Origami Artiste
+1353	Circushand Randy
+1354	Half-off Wildman
+1355	Colonel Sanford Pens-of-Fire
+1356	Penniless Walt Won't-Work
+1357	King Crab
+1358	Merlin the Alchemist
+1359	Ohio Claude Finkel
+1360	Saltwater Jeffy
+1361	Hector the Nightmare Machine
+1362	Icy Tim
+1363	Preston McPilfer
+1364	Chef Charles Le Phieux
+1365	Elephantitis Hank, the Towering Grinferno
+1366	Progressive George
+1367	Yellowstone Nicky Quickly
+1368	Little More Than a Wheelbarrow
+1369	The Hobo Missionary
+1370	Anders the Nordic Chorister
+1371	Diddlysquat
+1372	Brave, Brave Tom Crawlspace
+1373	The Grand Spelunker
+1374	Great Plains Horace
+1375	The Dakka Beast
+1376	Joseph and his Armored Dromedary
+1377	Fat Mark Chokes-on-his-own-Tongue
+1378	Ethel Alcohol
+1379	Contrabob
+1380	Jacques-Pierre the Legionnaire
+1381	The Hobous Ubiquitor
+1382	Dodecahed-Ron, the Mathematical Wunderkind
+1383	Young Olaf Tinpants
+1384	Philosophical Ed Debevic
+1385	The Uncontrollable Urge of Dennis
+1386	Hash-Slingin' Mickey of the Roadside Diner Alliance
+1387	Soup Jockey Mickette
+1388	Tophat Abraham Woodenthumb
+1389	Manford McCouch, the Flea Market Specialist
+1390	The Copiously Sweating Monk
+1391	Malicious Herpeginis Richard Dreyfuss
+1392	The Scourge of the Seven Streams
+1393	Liquormeister Vern
+1394	Grotesque Nilsson
+1395	Greg Festive Bellbottoms
+1396	Ferocious Tom Pokes-You-Hard
+1397	Silver-Nosed Willis
+1398	Blacknips
+1399	Ole Burned-Up McGee
+1400	Not This One But That One
+1401	Either/Or Xerxes
+1402	Whiskeybreath the Sober Drunkard
+1403	Frank M. Quentis, of Labcoat Notoriety
+1404	Steve Calcite
+1405	The Throat Plague of 1988
+1406	The Self-Proclaimed King of Rummy
+1407	Allegorical Chuck
+1408	Alfie Kohn's Toupee
+1409	Toadface Saul Krogmeier
+1410	Liam Kneeson
+1411	Recalcitrant Eddie, the Saved Crapshooter
+1412	Homestead Harvey of the Flask
+1413	Francis McMayonnaise
+1414	Idapoo
+1415	Father Sandpaper
+1416	Anecdotal Thurgood Liarface
+1417	Martin Scoreseasy, the Hobo Documentarist
+1418	The Polka Fish
+1419	Hymnal Samuel Roberts
+1420	The Fantastic Tale of Two-Thirds-Nosed Junior Swaddlesback
+1421	Mort, the Renegade Mosquito Collector
+1422	Commander Watersavvy, Sworn Enemy of All Pirates
+1423	Jail Cell Tom de Tin Yakky Yakky Yak
+1424	Oblivious Oblong
+1425	The Fool, Which is to Say, Mike Healy
+1426	Emperor Han, the Feisty Penguin
+1427	Hezekiah the Repentant Sinner
+1428	Ain't-No-Bum
+1429	Naive Magellan, Cartographer of the Great American	Hoboscape
+1430	Graphite Sam
+1431	Monkey See, Monkey Drew
+1432	The Sole Survivor of the Grand Coulee Dam Disaster	(What a Fiasco!)
+1433	Deersniff
+1434	Uiop, the ASDF Assassin
+1435	Speedy Slim, the Human Impala
+1436	Grassbags Walt, Groundskeep Hunchback from Birth
+1437	Amber Waves of Wayne
+1438	Purple Mountain Majesteve
+1439	Adirondack Jed, the Only Melungeon in Herkimer County
+1440	Quotable Granger, the Wild Ass
+1441	Common Adam
+1442	Lightning Rod DIY
+1443	Sand-Buried Bertram
+1444	Migratory Ivan Croclegs
+1445	Little Baby Raincloud
+1446	The Thrice-Drop Out English Major
+1447	Lardsweets Eats-for-Cash
+1448	Paul Cornshuck the Patriot
+1449	Galena Mine Ben
+1450	Frozen Yogi Dollarpiece
+1451	Sing-Along Kathryn and Her Battery-Operated Autoharp
+1452	The The More You Know Guy
+1453	Googol-Dex
+1454	Officer Frampton McChief Tophat
+1455	Acid-Blooded Kryznok the Outsider
+1456	Rejected Quinn
+1457	Dejected Quinn
+1458	Ejected Quinn
+1459	Wilhelm the Obese Kraut
+1460	Scampers
+1461	Holy Smokes, Supplier of Choice Tobacco Products for Hobos
+1462	Overdressed Clem, the Nudist
+1463	Lenora Mae Nightshade
+1464	The Hobo MacGyver
+1465	Mr. Sandman
+1466	Cocoa Orinoco
+1467	Bandsaw Vince, the Seven-Fingered Carpenter
+1468	Woody McThermite, the Poorly-Timed Pyromaniac
+1469	Audiophile Isaac Calamity, the Collector of All Things Noisy
+1470	Snoot
+1471	Inquisitive Jack
+1472	Lipscomb Sy Earwig
+1473	The Great Parole Maker, Master Conviction Avoider
+1474	Loophole Rosenstein, the Great Parole Maker's Legal Attache
+1475	Spaetzle und Schnitzel Akbar
+1476	Bluffdweller
+1477	Clean Slate Sam
+1478	Arliss the Cowboy
+1479	Horny Goutman
+1480	Duke Winchester McSpiral
+1481	The Most Holy Reverend Carbine
+1482	Boater Percy Smythe
+1483	The Moustachioed Trombonist
+1484	Simon and His Quartz Monocle
+1485	Smokey Flick Nostrilgap
+1486	Wabasha Gunther
+1487	The Minister of Rapid Hair Regrowth
+1488	Mike McRump
+1489	Keyface
+1490	Al the OSHA Retiree
+1491	Beerbait
+1492	The Carpeted Frenchman
+1493	Midnight Max
+1494	Nightspeeder
+1495	Old Familiar
+1496	Yodelin' Mick Begone
+1497	Wolfgang Noseart, Composer of the Hobo Requiem
+1498	The Junkyard Auditor
+1499	Every-So-Often Archibald
+1500	Sad Bill Licks-It-Up
+1501	Keytar Ivan Moonbeam
+1502	Fussy Ulysses the Sissy
+1503	Flat Karma Steve
+1504	Cougarbreath
+1505	Knuckles, the Hobo Clown Thief
+1506	One-Hour Photo Slick
+1507	Moe Fink
+1508	Eddie Packet Allen the Stowaway
+1509	Bjorn Bjornstad the Bjoring
+1510	Noble Ike
+1511	Cheeseholes
+1512	Even-Keeled George the Humanitarian
+1513	Basejump Fizzletwit
+1514	Frenzied Heinrich the Forgetful Banker
+1515	Anysea
+1516	Funny Laughy Jokeboy, Who's Dead Inside
+1517	Paper-or-Plastic Redd
+1518	The Humble Life of Wallace
+1519	Colin &quot;Nickname&quot; Kettlefish
+1520	Octogenarian Gary Generic
+1521	The Sandburrower
+1522	Rusty the Shopping Cart Salesman
+1523	Sodacrack, Distributor of Old Book Smell
+1524	Flashlight Don the Baptist
+1525	Skape
+1526	Canned Air Blowhard, the Subject of Much Ridicule
+1527	Clickin' Quincy and His Many Lens Adapters
+1528	Steel Wool Perry
+1529	Ballotthief
+1530	Ultimate Barry &quot;The Ocelot&quot;
+1531	H, Just H
+1532	Phantom X Minus One
+1533	One-shoe Iowa Roadwalker
+1534	Ramblin' Dan
+1535	Stone McPherson
+1536	Autumnfresh
+1537	Theisen the Cablehanger
+1538	Herb Alpert and the Tijuana Grass
+1539	The Double Deuce
+1540	Jackson Pincushion Jones
+1541	Mostly Toasty the Roastman
+1542	Grub
+1543	Chubbs
+1544	The Great and Powerful Zorbino
+1545	Evil Jim
+1546	Flick and His Tragically Underdeveloped Sense of Smell
+1547	Parrot Eduardo Accentuoso
+1548	Trimble, the Only Hobo Ever to Catch the 12:30 to Delmar
+1549	Omar Sheriff Hooker
+1550	Two-Lane Pete
+1551	Wrzyski, Maker of Not-so-Fine Polish Sausages
+1552	Zero Nine Eff Nine, Leader of the Revolution
+1553	Goes-in-a-Can
+1554	Radarange of the Amanas
+1555	Rabbit Stew and You-Can-Too
+1556	Sly Willy, the Derailment Insurance Salesman
+1557	Hundred-Yard-Stare Fritz
+1558	Stovecatcher the Hobo Witch Doctor
+1559	Long Elmyra Storkinatrix
+1560	Friday Odegard
+1561	Begrudged Ayler Tomatoleaf
+1562	Tomorrow Phillips
+1563	J.T. Bowel Renard
+1564	Double-A
+1565	S, s, s, Steve (Previously Known as Steve the Studderer, but Shortened for Practical Purposes)
+1566	Joe: Not Even Close
+1567	K-stick
+1568	Wheelie McSpinschair
+1569	Moonshine O'Halloran
+1570	Hobo Francis the Milkman
+1571	Stanosaurus Rex
+1572	Bootleg Sammy Magnetic
+1573	The Tar-Grin Miner
+1574	Hugh, the Ringleader
+1575	Thuringer Ulysses Tabletop
+1576	Horace the Elder
+1577	Unscheduled Tabitha Smits
+1578	Flaxen Walter Bran
+1579	Crunch Buttsteak and His MST3K Obsession
+1580	Marcellus the Papal Doppelganger
+1581	Tense McShitbrick
+1582	Could Be But Isn't
+1583	Planky Joe, the Veritable Anthology of Hobo Fables
+1584	Saint Stinkybritches
+1585	Manfred the Alliterative Fool
+1586	Minnesota Just Never Know
+1587	Bedford Falkirk
+1588	Spherical Henry Buttonchest
+1589	Fast-Talkin' Uganda O'Reilly
+1590	Wally and His Llama-skin Kneepatch
+1591	Recently Declassified Document 1950-HOBO
+1592	[Permanently Removed for Violation of Hobo Custom, but Formerly Known as Austin the Unhobo]
+1593	Old Half-Pipe Wilson
+1594	Misteranmissus
+1595	The Sunshine Special
+1596	Begonia Bait Sprague
+1597	Poodle the Mango Forager
+1598	Metal Popcorn Ralph Busttooth
+1599	Mugsy Pugsy Billy Bykovski
+1600	Irrhythmical Stumbletoes Lee
+1601	Rob and His Heartwarming Thanksgiving Story
+1602	Vocal Tommy Filibuster
+1603	Manly Fran, the Living Paradox
+1604	Impossible Freeman Noseplug
+1605	Bob the Hobo
+1606	Number 800, by Miraculous Happenstance
+1607	Number 801, by Contract
+1608	Tiny Tin Ty
+1609	Evenknickers
+1610	Excessively Malevolent Ian of Scots
+1611	The Kodak Busker, aka the Freelance Phobographer
+1612	Crabby Gordon Kerchief-Loser
+1613	Waddlin' Chuck
+1614	Stumpy the Heel Amputee
+1615	Francois the Sommelier, also known as although he hated the moniker, Frank the Wino
+1616	Whiny the Elder
+1617	Whiny the Younger
+1618	Whiny Shackleton, nee Whiny III
+1619	Never-Again Ned (Mind Your Own Business)
+1620	The Late Alfred Longchicken
+1621	Plumbbob Miles Fink Finkleroy
+1622	Dr. Harold Knapsack, the First and Last Hobo Visionary
+1623	The Cantankerous Tin Can Tech Man
+1624	Roadkill Seamus Baconbreath
+1625	Heavenly Disgust and the Muffin of Destiny
+1626	Russ Beerbottom
+1627	Failure-o-matic, the Android Hobot
+1628	Stinky Gus Woodshedder, Lead Tenor of the Belch Brigade
+1629	Spiny Eric P, the Toothpick Forager
+1630	Alfonso Ytterbium
+1631	Officious Mike Stamp-of-Approval
+1632	The Burly Soup Kitchen Raider
+1633	Traingrab, the Leapfrogging Railcar Bandit
+1634	Sparky, Constantly Excited Due to Botulism Intoxication
+1635	Apu of Pakistan
+1636	The Never-Convicted Ain't-a-Felon
+1637	Baked Beans McJeans, the Laundromat Frequenter
+1638	Richard, Legend of Luxury
+1639	Turbo Hobo
+1640	Ugly Waterbag
+1641	Politically Incorrect Misty, the Minimal Input St. Thomas Yatch
+1642	Mr. Sewercat Spooner
+1643	Steamy Croc Jacques
+1644	Dopey Iowa Fred Sprinkel
+1645	Transient Merle the Eloquent
+1646	Mark'n'Lester, the Split Personality Weirdo
+1647	Lynx McTypey, Editor for the National Hobographic Society
+1648	Clyde Tuesday Sidepatch
+1649	Voluminous Quentin Two-Seater
+1650	CB Radio Lee Truckstop
+1651	The Last Straw of Nassau, MN
+1652	Felt-Tipped Zen the Buddhist
+1653	Anyone-For-Dennis, the Speech Impediment Athlete
+1654	The Ol' Five Strings
+1655	Waxy
+1656	Pie Thief Nate Slipperyfingers
+1657	Luxsaurus the Terrible Lizard of Light
+1658	Teetering-Tottering Floyd, the Soberingly Unbalanced Drunk
+1659	The Phantom Tollbooth Assailant
+1660	Inner City Tom Bumbuster
+1661	Dalcroze-Trained Betsy Klean-o
+1662	Bayou Buck's Cousin Marty
+1663	Traditional Alvin McJones Ragcoat
+1664	Feminine Tammy Bootwalker
+1665	Meatloaf Up Chuck, also known as Chaz the Reflex Artist
+1666	Hobo Higgins, Inhibitor of Rudeness, Protector of Etiquette
+1667	Silent Ryan Trainyard, the Bullmobile Evader
+1668	Todd Under-Bridge, Not Seen Since 1942
+1669	Wrenchunks
+1670	Morton &quot;George&quot; Morton
+1671	The Public Area Heavysetter
+1672	Nevada-Proud Tim Whackbush
+1673	Giles McArmpit
+1674	Tummy Twiddler
+1675	Huge Frank Mattress-Envy
+1676	Martin Hands-Too-Big
+1677	Sweetbreads Hibbard
+1678	Stinkbait Larry Beefbroth
+1679	There's-No-One-Like-Him
+1680	Wretched Alfred Nonsense
+1681	Kid Whist
+1682	Tabless Jed, the Folk Guitarist
+1683	Deerstand James Hunchback
+1684	Col. Maestro Williams, Conductor of the Hobo Marching Band
+1685	Willy Nilly
+1686	Iowa State Chris-n-George
+1687	Ganges Ed the Yogagod
+1688	Albino Joe
+1689	The Whitejon
+1690	The Darkjon
+1691	The Infamous Scatophile Brett
+1692	Turdwall Jackson, Union General
+1693	Fishmael (The True Heir of Salt Lake)
+1694	Posh Sass, Queen of Illiteration
+1695	Barb and Bud the Outcasts, Who Live in the Air-Conditioned Rear End of K-Mart
+1696	Sassafras Smoothie
+1697	Recursion Fred, Whose Name Continues at the Beginning of This Name
+1698	Toehammad, Intercessor to the Footgods
+1699	Jesus H. Miller
+1700	Taco Tico
+1701	Burrito Vanburen, Brother-in-Law of Taco Tico
+1702	The Other Man Who Wanted Waco
+1703	Demon-Kutter Boris
+1704	Kitten-Kutter Gregor
+1705	F*ckSack
+1706	Chairman Mao Zedonk
+1707	Border-Patrol
+1708	Uncle Pennybag
+1709	Gastracula
+1710	The Blind Bartimaeus, Moonshine Connoseiur
+1711	Witness Protection Pilgrim
+1712	Knute Wallace, the Boy Who's Always Cramping for a Tamping
+1713	Wendy City
+1714	Coco Flan-nell
+1715	Strom Burges, PhD, the Doctor of Gain-Fatitude
+1716	Phyliss, Mistress of the Underporch
+1717	Pigs-In-An-Overcoat
+1718	The Little Puddin' Boy
+1719	Grimble
+1720	Steve Farmer Jones
+1721	Burlington Groats Olfactory
+1722	Old-Timey Illinois Centralist
+1723	Bombshell Bruce
+1724	Blacktoast
+1725	Burning Man's Cousin
+1726	Helter Skelton
+1727	The Connecticut Yankee and King Arthur's Corpse
+1728	Bursitis Don
+1729	Lord Timmy Twat
+1730	GORP
+1731	Corn Dog Smithers, Man on a Stick
+1732	Wailer
+1733	Pine-Nut
+1734	Beech-Nut
+1735	Meth-Nut
+1736	Tombourine
+1737	Strummin Thumbs, Who Was Never a Bum
+1738	Climber McDougal, the Scotch-on-the-Rocks
+1739	Tarballs
+1740	Fannie-Pincher Frannie
+1741	The Girl for Jeepaneema
+1742	PB&amp;K
+1743	Inseam Jan B.
+1744	Gunther the Hunther
+1745	Fisheye Bjorn
+1746	A Little Stan Mixed with Stale Crackers
+1747	The Parasol Lady
+1748	Ploughshares MacGillicuddy
+1749	Humdrum Pete
+1750	Jabber-Walky
+1751	Melt-Skin, Experienced Hobo Toxicologist
+1752	Merle 'N Earl
+1753	Damned Tammy
+1754	Stogie Joe
+1755	Poundcake
+1756	The Bum-Slapper
+1757	Dr. Who's Younger Brother, Ted Who
+1758	Hobowl
+1759	Clamsucker Nate
+1760	Time in a Biffy
+1761	The Davenport
+1762	40 Enemas, No More Please
+1763	Frisky Jed the Hobosexual
+1764	Shorty Stewart
+1765	Pine-Saul
+1766	Hoboweevil
+1767	Mexicanteen
+1768	Limey Stewart's Third Leg
+1769	Captain Esplanade
+1770	Spinach Joe Hatbottom
+1771	Iggy Grease
+1772	All-Tests-Were-Negative
+1773	Never Wrong Arnold, Who is, By His Very Nature, Almost Always Wrong
+1774	Dewey Cookie Dough Cook
+1775	The Great Hobo Panderer, Stuff of Legends
+1776	Whistlestop Stretch, Purveyor of Fine Arts and Crafts
+1777	Chemistry Nerd Tom L.
+1778	Hobo, Fo Sho
+1779	Not-My-Department Frank
+1780	Jangles the Hoboperator
+1781	(Parenthetical Hiram Burgess)
+1782	Drippy Keen
+1783	Punchy Dom Swagger
+1784	Rod Goodwin of the Forest
+1785	Tin Breath Magic Fingers
+1786	Thirty-Fifth Percentile Jack Topflap
+1787	Credentialless Gary
+1788	The Road Rouser
+1789	Nils, the Sunset Swede
+1790	Sir Escobar Trimblecap Fils
+1791	Fitzwilliam the Mutt Carrier
+1792	Crock Pot Jim
+1793	Tellalie
+1794	Llama-Fist
+1795	Fettucine Alfred
+1796	Closet Squat
+1797	Pum Pum
+1798	Hobogie the Hobo Pilot
+1799	Boy-o
+1800	Tingles
+1801	Blood Vessel Ethel
+1802	Bearjaw Willison
+1803	St. Biff of the BNSF Electee Turnbuckle Stewart Flags-On-High, Preeminent
+1804	Hobo Lobbyist of Our Time and the Great Defender of Hobo Liberty
+1805	Bucketspit
+1806	Caleb and His Lackluster Performance Skills</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

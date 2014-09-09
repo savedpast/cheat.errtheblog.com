@@ -1,0 +1,14 @@
+---
+vim2: ! "### vim cheat sheet                    ###\n### http://jmcpherson.org/editing.html
+  ###\n\nCursor Motion:\nfx  Move cursor forward to next occurrence of the character
+  x.\n    ; will repeat the last f command given.\ntx  Same as above but moves the
+  cursor to the right of character x.\nFx  Backward to next occurrence of character
+  x on current line.\nw   Forward by one word.\nb   Backward by a word.\nO   Beginning
+  of line.\n^   First character on current line.\n$   End of line.\n)   Forward to
+  next sentence.\n(   Backward by a sentence.\n\nC-f Forward by screenful of text.\nC-b
+  Backward by screenful of text.\nG     End of file.\nnumG  To line 'num'.\ngg    Beginning
+  of file.\nH     Top of screen.\nM     Middle of screen.\nL     Bottom of screen.\n*
+  \    Read string under cursor and go to next place it appears.\n#     Same as above,
+  except previous.\n/text Search for text.  'n' executes search again.\n?text Same
+  as above, but backwards.\nma    Mark with bookmark 'a'.\n`a    Go to bookmark 'a'.\n`.
+  \   Goto line last edited."

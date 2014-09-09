@@ -1,0 +1,5 @@
+---
+sinatra: ! "A basic Sinatra app\n\n  require 'rubygems'\n  require 'sinatra'\n\n  get
+  '/' do\n    erb :index                  # renders ./views/index.erb\n  end\n\nDefault
+  directories\n\n  /views\n  /public\n\nWith Haml\n\n  require 'haml'\n\n  get '/'
+  do\n    haml :index\n  end"

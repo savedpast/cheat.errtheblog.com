@@ -1,0 +1,39 @@
+---
+magit: ! "Starting\n-------\n\nM-x magit-status\n\nStatus Buffer\n-------------\n\nl
+  \  show history buffer starting from head\nL   show history buffer starting from
+  a specified point\n\nb   check out a different branch\nB   create and check out
+  a new branch\nd   compare working tree with specified branch\n\nm   manual merge\nM
+  \  automatic merge\n\nR   rebase / continue to rebase\n\nF   pull\nP   push\np   show
+  a buffer with push/pull command transcript\n\ng   refresh\ns   add a file to the
+  staging area\ni   ignore a file\nv   revert changes on current item\n\nS   move
+  all hunks of all diffs into the staging area\nU   unstage all hunks\n\nIn a hunk\n\ns
+  \  stage hunk\nu   unstage hunk\n\nc   pop up a buffer to write the change description\n
+  \   C-c C-c to commit the staged changes\n\nHistory Buffer\n--------------\n\nRET
+  show more info about the commit\nl   use commit as starting point of the history
+  buffer\nv   revert selected commit in working tree and staging area\nP   apply current
+  commit in the normal way\nC   switch your current working tree to the commit\n.
+  \  mark current commit\n=   diff marked commit and current commit\nx   soft reset
+  to current commit\nX   hard reset to current commit\n\n COMPLETE KEY BINDINGS\n\n
+  \ --------------------------------------------\n\n  TAB     magit-toggle-section\n
+  \ RET     magit-visit-item\n  C-w     magit-copy-item-as-kill\n  SPC     magit-show-item-or-scroll-up\n
+  \ $       magit-display-process\n  .       magit-mark-item\n  1       magit-jump-to-untracked\n
+  \ 2       magit-jump-to-unstaged\n  3       magit-jump-to-staged\n  4       magit-jump-to-unpushed\n
+  \ =       magit-diff-with-mark\n  ?       magit-describe-item\n  A       magit-cherry-pick-item\n
+  \ B       magit-create-branch\n  C       magit-add-log\n  D       magit-diff\n  E
+  \      magit-interactive-rebase\n  F       magit-pull\n  G       magit-refresh-all\n
+  \ H       magit-reflog\n  I       magit-ignore-item-locally\n  L       magit-log\n
+  \ M       magit-automatic-merge\n  N       Prefix Command\n  P       magit-push\n
+  \ R       magit-rebase-step\n  S       magit-stage-all\n  T       magit-annotated-tag\n
+  \ U       magit-unstage-all\n  V       magit-show-branches\n  X       magit-reset-working-tree\n
+  \ a       magit-apply-item\n  b       magit-checkout\n  c       magit-log-edit\n
+  \ d       magit-diff-working-tree\n  f       magit-remote-update\n  g       magit-refresh\n
+  \ h       magit-reflog-head\n  i       magit-ignore-item\n  k       magit-discard-item\n
+  \ l       magit-log-head\n  m       magit-manual-merge\n  n       magit-goto-next-section\n
+  \ p       magit-goto-previous-section\n  q       quit-window\n  r       Prefix Command\n
+  \ s       magit-stage-item\n  t       magit-tag\n  u       magit-unstage-item\n
+  \ v       magit-revert-item\n  w       magit-wazzup\n  x       magit-reset-head\n
+  \ z       magit-stash\n  DEL     magit-show-item-or-scroll-down\n\n  <backtab>       magit-expand-collapse-section\n
+  \ <remap>         Prefix Command\n\n  N c             magit-svn-dcommit\n  N r             magit-svn-rebase\n\n
+  \ r *             magit-rewrite-set-unused\n  r .             magit-rewrite-set-used\n
+  \ r a             magit-rewrite-abort\n  r f             magit-rewrite-finish\n
+  \ r s             magit-rewrite-start\n  r t             magit-rewrite-stop"

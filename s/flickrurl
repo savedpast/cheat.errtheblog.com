@@ -1,0 +1,41 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>FLICKR URL
+==========
+
+FORMAT:
+-------
+http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}.jpg
+http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}_[mstb].jpg
+http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)
+
+= Sizes:
+s	small square 75x75
+t	thumbnail, 100 on longest side
+m	small, 240 on longest side
+-	medium, 500 on longest side
+b	large, 1024 on longest side (only exists for very large original images)
+o	original image, either a jpg, gif or png, depending on source format
+
+= Example:
+http://farm1.static.flickr.com/2/1418878_1e92283336_m.jpg
+
+farm-id: 1
+server-id: 2
+photo-id: 1418878
+secret: 1e92283336
+size: m
+
+WEBPAGE URL:
+------------
+http://www.flickr.com/people/{user-id}/ - profile
+http://www.flickr.com/photos/{user-id}/ - photostream
+http://www.flickr.com/photos/{user-id}/{photo-id} - individual photo
+http://www.flickr.com/photos/{user-id}/sets/ - all photosets
+http://www.flickr.com/photos/{user-id}/sets/{photoset-id} - single photoset
+
+= Example:
+http://www.flickr.com/photos/12037949754@N01/
+http://www.flickr.com/photos/12037949754@N01/155761353/
+http://www.flickr.com/photos/12037949754@N01/sets/
+http://www.flickr.com/photos/12037949754@N01/sets/72157594162136485/</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

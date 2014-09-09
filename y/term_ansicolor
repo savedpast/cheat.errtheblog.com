@@ -1,0 +1,7 @@
+---
+term_ansicolor: ! "black\t\t- quite dark\ndark\t\t- grey\nitalic\t\t- not supported
+  outsite Mac OS\nwhite\t\t- regular tone\nintense_white\t- shiny white\nbold\t\t-
+  sets the type to bold. Most times it \n\t\t  will also change the type color to
+  the\n\t\t  color used in the `intense_` version\n\t\t  of the color. For example,
+  `blue(bold(\"text\")`\n\t\t  would be in the same hue as `intense_blue(\"text\")`\n\nblue\t\t-
+  dark blue\nintense_blue\t- sky blue\ngreen\t\t- green\nintense_green\t- lime"

@@ -1,0 +1,121 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>require 'nokogiri'
+require 'open-uri'
+
+# Get a Nokogiri::HTML:Document for the page we're interested in...
+
+doc = Nokogiri::HTML(open('http://www.google.com/search?q=tenderlove'))
+
+# Do funky things with it using Nokogiri::XML::Node methods...
+
+####
+# Search for nodes by css
+doc.css('h3.r a.l').each do |link|
+    puts link.content
+end
+
+doc.at_css('h3').content
+
+####
+# Search for nodes by xpath
+doc.xpath('//h3/a[@class=&quot;l&quot;]').each do |link|
+    puts link.content
+end
+
+####
+# Or mix and match.
+doc.search('h3.r a.l', '//h3/a[@class=&quot;l&quot;]').each do |link|
+    puts link.content
+end
+
+####
+# Work with attributes
+xml = &quot;&lt;foo wam='bam'&gt;bar&lt;/foo&gt;&quot;
+
+doc = Nokogiri::XML(xml)
+doc.at_css(&quot;foo&quot;).content =&gt; &quot;bar&quot;
+doc.at_css(&quot;foo&quot;)[&quot;wam&quot;].content =&gt; &quot;bam&quot;
+
+####
+# Work with elements
+el = doc.at_css(&quot;foo&quot;)
+el.children  # =&gt; array of elements
+
+####
+
+So for example if we wanted to know all the names of the food items in our
+document we simply say:
+&gt; doc.xpath(&quot;//name&quot;).collect(&amp;:text)
+=&gt; [&quot;carrot&quot;, &quot;tomato&quot;, &quot;corn&quot;, &quot;grapes&quot;, &quot;orange&quot;, &quot;pear&quot;, &quot;apple&quot;]
+
+If we were interested in the entire node we could leave off the
+.collect(&amp;:text). What if we wanted to select all the names of food items that
+were best baked?  This requires us to use what’s called an axis – we will
+first need to find the element “baked” but then go back up our XML elements to
+find which food the item is inside.
+&gt; doc.xpath(&quot;//tag[text()='baked']/ancestor::node()/name&quot;).collect(&amp;:text)
+=&gt; [&quot;pear&quot;, &quot;apple&quot;]
+
+What if we were only interested in vegetables that were good for roasting? 
+Just add //veggies:
+&gt;
+doc.xpath(&quot;//veggies//tag[text()='roasted']/ancestor::node()/name&quot;).collect(&amp;:t
+xt)
+=&gt; [&quot;carrot&quot;, &quot;tomato&quot;]
+
+What about if we wanted to know all the tags ‘corn’ had?  Again this is very
+easy:
+&gt; doc.xpath(&quot;//name[text()='corn']/../tags/tag&quot;).collect(&amp;:text)
+=&gt; [&quot;raw&quot;, &quot;boiled&quot;, &quot;grilled&quot;]
+
+We can even do searches matching the first character.  Let’s say we wanted to
+know all the food items that started with the letter ‘c’:
+&gt; doc.xpath(&quot;//name[starts-with(text(),'c')]&quot;).collect(&amp;:text)
+=&gt; [&quot;carrot&quot;, &quot;corn&quot;]
+
+You could also use [contains(text(),'rot'] and get back just carrot, useful
+when you want to do a partial match.
+
+####
+# Traversion
+
+node.ancestors                        # Ancestors for &lt;node&gt;
+node.at('xpath')                      # Returns node at given XPATH
+node.at_css('selector')               # Returns node at given CSS selector
+
+node.xpath('xpath')                   # Returns nodes at given XPATH
+node.css('selector')                  # Returns nodes at given selector
+
+node.child                            # Returns the child node
+node.children                         # Returns child nodes
+node.parent
+
+####
+# Data manipulation
+
+node.name                             # Element name
+node.node_type
+
+node.content                          # Returns text as string
+                                      # (aka: .inner_text, .text)
+node.content = '...'
+
+node.inner_html
+node.inner_html = '...'
+
+node.attribute_nodes                  # Returns attributes as nodes
+node.attributes                       # Returns attributes as hash
+
+####
+# Tree manipulation
+
+node.add_next_sibling(other)          # Place &lt;other&gt; after &lt;node&gt;
+node.add_previous_sibling(other)      # Place &lt;other&gt; before &lt;node&gt;
+node.add_child(other)                 # Put &lt;other&gt; inside &lt;node&gt;
+
+node.after(data)                      # Put a new node after &lt;node&gt;
+node.before(data)                     # Put a new node before &lt;node&gt;
+
+node.parent = other                   # Reparents &lt;node&gt; inside &lt;other&gt;
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

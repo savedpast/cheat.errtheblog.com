@@ -1,0 +1,40 @@
+---
+heroku: ! "=== General Commands\r\n\r\n help                         # show this usage\r\n
+  version                      # show the gem version\r\n\r\n list                         #
+  list your apps\r\n create [<name>]              # create a new app\r\n\r\n keys
+  \                        # show your user's public keys\r\n keys:add [<path to keyfile>]
+  # add a public key\r\n keys:remove <keyname>        # remove a key by name (user@host)\r\n
+  keys:clear                   # remove all keys\r\n\r\n=== App Commands (execute
+  inside a checkout directory, or use --app <appname>)\r\n\r\n info                         #
+  show app info, like web url and git repo\r\n open                         # open
+  the app in a web browser\r\n rename <newname>             # rename the app\r\n dynos
+  <qty>                  # set the app to use the specified qty of dynos\r\n\r\n sharing:add
+  <email>          # add a collaborator\r\n sharing:remove <email>       # remove
+  a collaborator\r\n sharing:transfer <email>     # transfers the app ownership\r\n\r\n
+  domains:add <domain>         # add a custom domain name\r\n domains:remove <domain>
+  \     # remove a custom domain name\r\n domains:clear                # remove all
+  custom domains\r\n\r\n ssl:add <pem> <key>          # add SSL cert to the app\r\n
+  ssl:remove <domain>          # removes SSL cert from the app domain\r\n\r\n rake
+  <command>               # remotely execute a rake command\r\n console <command>
+  \           # remotely execute a single console command\r\n console                      #
+  start an interactive console to the remote app\r\n\r\n restart                      #
+  restart app servers\r\n logs                         # fetch recent log output for
+  debugging\r\n logs:cron                    # fetch cron log output\r\n\r\n maintenance:on
+  \              # put the app into maintenance mode\r\n maintenance:off              #
+  take the app out of maintenance mode\r\n\r\n config                       # display
+  the app's config vars (environment)\r\n config:add key=val [...]     # add one or
+  more config vars\r\n config:remove key [...]      # remove one or more config vars\r\n
+  config:clear                 # clear user-set vars and reset to default\r\n\r\n
+  db:pull [<database_url>]     # pull the app's database into a local database\r\n
+  db:push [<database_url>]     # push a local database into the app's remote database\r\n
+  db:reset                     # reset the database for the app\r\n\r\n bundles                      #
+  list bundles for the app\r\n bundles:capture [<bundle>]   # capture a bundle of
+  the app's code and data\r\n bundles:download             # download most recent
+  app bundle as a tarball\r\n bundles:download <bundle>    # download the named bundle\r\n
+  bundles:animate <bundle>     # animate a bundle into a new app\r\n bundles:destroy
+  <bundle>     # destroy the named bundle\r\n\r\n addons                       # list
+  addons\r\n addons:add name [key=value]  # install addon (with zero or more config
+  vars)\r\n addons:remove name           # uninstall an addons\r\n addons:clear                 #
+  uninstall all addons\r\n\r\n destroy                      # destroy the app permanently\r\n\r\n===
+  Example:\r\n\r\n rails myapp\r\n cd myapp\r\n git init\r\n git add .\r\n git commit
+  -m \"my new app\"\r\n heroku create\r\n git push heroku master"

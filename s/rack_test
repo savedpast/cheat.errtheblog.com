@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Rack::Test is a small, simple testing API for Rack apps. It can be used on its
+own or as a reusable starting point for Web frameworks and testing libraries
+to build on. Most of its initial functionality is an extraction of Merb 1.0's
+request helpers feature.
+
+== Features
+
+* Maintains a cookie jar across requests
+* Easily follow redirects when desired
+* Set request headers to be used by all subsequent requests
+* Small footprint. Approximately 200 LOC
+
+== Example
+
+  require &quot;rack/test&quot;
+
+  class HomepageTest &lt; Test::Unit::TestCase
+    include Rack::Test::Methods
+
+    def app
+      MyApp.new
+    end
+
+    def test_redirect_logged_in_users_to_dashboard
+      authorize &quot;bryan&quot;, &quot;secret&quot;
+      get &quot;/&quot;
+      follow_redirect!
+
+      assert_equal &quot;http://example.org/redirected&quot;, last_request.url
+      assert last_response.ok?
+    end
+
+  end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

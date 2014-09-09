@@ -1,0 +1,27 @@
+---
+xfbml: ! "XFBML\r\n=====\r\n\r\nTags:\r\n  * fb:bookmark displays an Add Bookmark
+  button.\r\n  * fb:comments displays a Comments Box social widget.\r\n  * fb:connect-form
+  displays a form inviting a user's friends to connect their Facebook accounts to
+  a Facebook Connect site.\r\n  * fb:container provides a conditional attribute around
+  regular HTML markup.\r\n  * fb:eventlink, like the FBML tag of the same name, displays
+  the specified event name as a link to the event's page. \r\n  * fb:fan displays
+  a Fan Box social widget on your website.\r\n  * fb:grouplink, like the FBML tag
+  of the same name, displays the specified group name as a link to the group's page.\r\n
+  \ * fb:live-stream displays a Live Stream Box on a Facebook Connect site.\r\n  *
+  fb:login-button displays the login button, as described above.\r\n  * fb:name, like
+  the FBML tag of the same name, displays the name of the user optionally linked to
+  his or her profile.\r\n  * fb:photo, like the FBML tag of the same name, displays
+  a Facebook photo.\r\n  * fb:profile-pic, like the FBML tag of the same name, displays
+  the user's profile picture. This tag now takes a facebook-logo attribute, that when
+  set to true, returns the Facebook favicon image, which gets overlaid on top of the
+  user's profile picture on your site.\r\n  * fb:prompt-permission, like the FBML
+  tag of the same name, initiates a dialog requesting specified extended permissions
+  from the user.\r\n  * fb:pronoun, like the FBML tag of the same name, displays the
+  appropriate pronoun for the specified user.\r\n  * fb:serverFbml renders FBML on
+  a Facebook server and displays the content inside an iframe. You must use this tag
+  to render elements on Facebook like fb:request-form (for friend selectors). See
+  the note below.\r\n  * fb:share-button (XFBML), like the FBML tag of the same name,
+  displays a standard Facebook Share button.\r\n  * fb:unconnected-friends-count returns
+  the number of friends on the site who have not connected their accounts.\r\n  *
+  fb:user-status, like the FBML tag of the same name, displays the status of the specified
+  user."

@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Real Time Application Cheat Sheat
+
+Enviroments
+  ENV         IP              URL                              Git Branchs
+  ----------  --------------  -------------------------------  -----------
+  Production  50.19.243.83    http://tm.ksckreate.net          Master
+  Demo        107.20.239.111  http://tm-demo.ksckreate.net     Demo
+  QA          107.20.239.111  http://tm-qa.ksckreate.net       QA
+  Testing     107.20.239.111  http://tm-testing.ksckreate.net  Testing
+
+Deployment Commands with Capistrano (https://github.com/capistrano/capistrano/wiki/Documentation-v2.x) 
+
+  cap production deploy    # Deploys Master Branch to production server
+  cap demo deploy          # Deploys Demo Branch to development server
+  cap qa deploy            # Deploys qa Branch to development server
+  cap testing deploy       # Deploys testing branch to development server
+
+  Capistrano Commands
+  -------------------
+  cap clear_cache          # Blow up all the cache files CakePHP uses, ensuring...
+  cap deploy               # Deploys your project.
+  cap deploy:check         # Test deployment dependencies.
+  cap deploy:cleanup       # Clean up old releases.
+  cap deploy:cold          # Deploys and starts a `cold' application.
+  cap deploy:migrate       # Run the migrate rake task.
+  cap deploy:migrations    # Deploy and run pending migrations.
+  cap deploy:pending       # Displays the commits since your last deploy.
+  cap deploy:pending:diff  # Displays the `diff' since your last deploy.
+  cap deploy:restart       # Override the original :restart
+  cap deploy:rollback      # Rolls back to a previous version and restarts.
+  cap deploy:rollback:code # Rolls back to the previously deployed version.
+  cap deploy:setup         # Prepares one or more servers for deployment.
+  cap deploy:start         # Blank task exists as a hook into which to install
+  cap deploy:stop          # Blank task exists as a hook into which to install
+  cap deploy:symlink       # Updates the symlink to the most recently deployed
+  cap deploy:update        # Copies your project and updates the symlink.
+  cap deploy:update_code   # Copies your project to the remote servers.
+  cap deploy:upload        # Copy files to the currently deployed version.
+  cap deploy:web:disable   # Setup lock file
+  cap deploy:web:enable    # Enable the current access after deployment
+  cap invoke               # Invoke a single command on the remote servers.
+  cap pending              # Displays the commits since your last deploy.
+  cap pending:diff         # Displays the 'diff' since your last deploy.
+  cap shell                # Begin an interactive Capistrano session.
+
+Git Commands
+
+Local Alias Comnmands
+
+Server Alias Commands
+  cake 
+  time
+
+Application Code Quality Checklist
+  1. Each controller action only calls one model method other than an initial
+    find or new. (Make custom .new or .update methods in the model with all necessary). 
+  2. Only one or two instance variables are shared between each controller and view.
+  3. All model and variable names are both immediately obvious (to a new
+    developer) and as short as possible without using abbreviations.
+  4. A .find or .find_by_ is never called in a view or view helper. 
+  5. There is zero custom code that duplicates functionality of a built-in
+    function in rails.
+  6. Code has been aggressively DRYed during development. 
+  7. All functionality used in two or more models has been turned into a
+    library/module.
+  8. All logic duplicated between two or more apps has been turned into a
+    gemified plugin.
+  9. STI is not used anywhere 
+  10. Every design choice should yield the most simplistic design possible for
+    the need of users at the current time. No guesses for future functionality were designed into the application. 
+  11. Close to full test coverage exists at the highest level of the application: on and between controller actions.
+    Coverage is highest for code used by the most number of end users. 
+  12. All tests pass before code is merged into a shared repository. 
+  13. Every fixed defect on a deployed product has tests added to prevent regression.
+  14. Every plugin installed has been code reviewed.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

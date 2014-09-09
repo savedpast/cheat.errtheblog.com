@@ -1,0 +1,22 @@
+---
+autotest: ! "Autotest continuously scans the files in your project for changes and
+  runs the appropriate tests. Test failures are run until they have all passed. Then
+  the full test suite is run to ensure that nothing else was inadvertantly broken.\n\nIf
+  you want Autotest to start over from the top, hit ^C once. If you want Autotest
+  to quit, hit ^C twice.\n\nTo use Autotest with Rails:\n\n$ sudo gem install ZenTest\n$
+  cd /path/to/railsapp/\n$ autotest\n\nPlugins:\n\nPlugins are available by creating
+  a .autotest file either in your project root or in your home directory. You can
+  then write event handlers in the form of:\n\n  Autotest.add_hook hook_name { |autotest|
+  ... }\n\nThe available hooks are: initialize, run, run_command, ran_command,\n\n
+  \ red, green, all_good, reset, interrupt, and quit.\n\nSee example_dot_autotest.rb
+  for more details.\n\nNaming:\n\nAutotest uses a simple naming scheme to figure out
+  how to map implementation files to test files following the Test::Unit naming scheme.\n\n
+  \   * Test files must be stored in test/\n    * Test files names must start with
+  test_\n    * Test class names must start with Test\n    * Implementation files must
+  be stored in lib/\n    * Implementation files must match up with a test file named
+  test_.*implementation.rb\n\nStrategy:\n\n   1. Find all files and associate them
+  from impl <-> test.\n   2. Run all tests.\n   3. Scan for failures.\n   4. Detect
+  changes in ANY (ruby?. file, rerun all failures + changed files.\n   5. Until 0
+  defects, goto 3.\n   6. When 0 defects, goto 2.\n\nExclusions:\n\n  Autotest.add_hook
+  :initialize do |at|\n    at.add_exception(coverage)\n    at.add_exception(vendor)\n
+  \ end"

@@ -1,0 +1,150 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>#!/usr/bin/env ruby
+
+# A Ruby script that generates a bash script which automates the opening
+# of terminals in Gnome.
+
+def assemble_script 
+	script =  $script1 + $listing + $script2 + 
+		&quot;echo #{$commands} \n\n#{$commands}&quot; +
+		$error_message
+	File.open(ARGV[0], 'w') do |f|
+		f.puts script
+	end
+end
+
+def display_help_and_exit
+	puts &lt;&lt;-EOF
+	Gnome Terminals 4 Rails. 
+	
+	USAGE: terminals4rails file_name command1 command2 ... &quot;title&quot;:&quot;exec&quot;
+	
+	file_name: File name of the generated bash script.
+	tilte: Title of the terminal tab
+	exec: bash command. GIGO
+	
+	Built-in commands:
+		bash         The Bash
+		vim          Vim editor
+		vimNERD      Vim with NERDTree, if pre-installed
+		server       Start script/server
+		autospec     Start autospect
+	EOF
+	
+	exit
+end
+
+# Display helf if there are less than 2 arguments.
+display_help_and_exit if ARGV.length &lt; 2 
+ARGV.each { |arg| display_help_and_exit if arg == &quot;--help&quot; or arg == &quot;-h&quot; }
+
+
+# Start the core script 
+
+$script1 = &lt;&lt;-EOF
+#!/bin/bash
+
+# Rails Terminals for Rails and Gnome
+# A simple script that opens a Gnome terminal with titled tabs.
+
+# Tabs with following bash commands:
+EOF
+
+$script2 = &lt;&lt;-EOF
+
+# USAGE: terminal4rails.sh working_dir
+
+dir=$1	# The first argument is the path of the working directory.
+err=0	# If err becomes negative, an error message is generated in the end. 
+
+if [ -z $dir ] || [ ! -d $dir ]; then
+	echo &quot;Please specify a working directory as the argument&quot;
+	exit
+fi
+	
+# If the argument is a relative path, then augment it with 
+# the current dir.
+if [ ${dir:0:1} != '~' ] &amp;&amp; [ ${dir:0:1} != '/' ]; then
+	dir=`pwd`'/'$dir
+fi
+
+echo &quot;Working directory: $dir&quot;
+
+EOF
+
+$error_message =&lt;&lt;-EOF
+
+if [ $err -lt 0 ]; then
+	echo &quot;WARNING: Some tabs could not be opened.&quot;
+fi
+EOF
+
+$commands=&quot;gnome-terminal --working-directory=$dir --geometry=112x30 &quot;
+
+execs = Array.new 
+
+ARGV[1..-1].each do |arg|
+	case arg
+	when &quot;bash&quot; then exec=&quot;bash&quot;; title=&quot;Bash&quot;
+	when &quot;vim&quot; then exec=&quot;vim&quot;; title=&quot;Vim&quot;
+	when &quot;vimNERD&quot; then exec='vim +NERDTree'; title=&quot;Vim&quot;
+	when &quot;server&quot; then exec=&quot;script/server &amp;&amp; bash&quot; 
+		title=&quot;script/server&quot;
+	when &quot;autospec&quot; then exec='autospec'; title=&quot;autospec&quot;
+	else 
+		if arg =~ /.+:.+/ 
+			title, exec = arg.split(&quot;:&quot;)
+		else raise &quot;ERROR: Input is not recognised.&quot;
+		end
+	end
+
+	first_exec = exec.split(&quot; &quot;)[0]
+	if first_exec[0] == '&quot;' or first_exec[0] == &quot;'&quot;
+		first_exec = first_exec[1..-1]
+	end
+	script_title = title.downcase.gsub(/\W/, &quot;_&quot; )
+
+	$script2 += &lt;&lt;-EOF
+	#{script_title}_t=&quot;#{title}&quot;
+	check_exec=(`whereis -b #{first_exec}`)	# Check whether binary exist
+
+	if [ ${#check_exec[@]} -gt &quot;1&quot; ]; then
+		echo &quot;#{title} found in ${check_exec[1]}.&quot;
+		#{script_title}_e=&quot;bash -c '#{exec}'&quot;
+	elif [ -x $dir/#{first_exec} ]; then
+		echo &quot;#{title} found in &quot;$dir&quot;#{first_exec}.&quot;
+		#{script_title}_e=&quot;bash -c '#{exec}'&quot;
+	else
+		#{script_title}_e=&quot;echo&quot;	# Closes the tab w/o action.
+		err=$(( $err - 1 ))
+		echo &quot;#{first_exec} not found.&quot;
+	fi
+	
+	EOF
+
+	execs &lt;&lt; [exec, script_title] 
+end
+
+$listing = &quot;&quot;
+
+execs.each do |exec, title|
+	$commands += &quot;--tab -t $#{title}_t -e \&quot;$#{title}_e\&quot; &quot;
+	$listing += &quot;# * #{exec}\n&quot;  
+end	
+
+# Ask for permission to overwrite an existing file.
+if File.exists? ARGV[0] then 
+	print &quot;Do you want to overwrite the file #{ARGV[0]} (y/n): &quot;
+	answer = $stdin.gets
+	if answer.downcase[0] == &quot;y&quot; then 
+		puts &quot;Script is assembled.&quot;
+		assemble_script
+	else 
+		puts &quot;Script terminates without writing.&quot;
+		exit
+	end
+else 
+	puts &quot;Script is assembled.&quot;
+	assemble_script
+end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

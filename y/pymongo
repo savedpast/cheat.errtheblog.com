@@ -1,0 +1,5 @@
+---
+pymongo: ! "#insert data into mongodb\r\n\r\nfrom pymongo import Connection\r\n\r\nconnection
+  = Connection('localhost', 27017)\r\ndb = connection.database_name\r\n\r\n\r\nuser
+  = {'email': data['email'], 'password': generate_password_hash(data['password']),
+  'last_login': datetime.datetime.utcnow()}\r\n\r\ndb.insert(user)"

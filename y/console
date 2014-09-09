@@ -1,0 +1,12 @@
+---
+console: ! "Special Variables:\r\n\r\napp\r\nhelper\r\n\r\nSpecifying console environment
+  (defaults to development):\r\n\r\n$ script/console production\r\n$ script/console
+  test\r\n$ script/console development\r\n\r\nLoading a session for debugging:\r\n\r\n>>
+  session = Marshal.load(File.open(’tmp/sessions/ruby_sess.8eb9614a7e4e1e3b’))\r\n=>
+  {”hash”=>{:cart=...}}\r\n>> cart = session[”hash”][:cart]\r\n\r\nReloading the console:\r\n\r\n>>
+  reload!\r\n\r\n\r\nRollback all database changes on exit:\r\n\r\n$ script/console
+  --sandbox \r\nLoading development environment in sandbox.\r\nAny modifications you
+  make will be rolled back on exit.\r\n>> _\r\n\r\nTo maintain history across console
+  sessions, add the following to ~/.irbrc:\r\n\r\nrequire 'irb/ext/save-history'\r\nIRB.conf[:SAVE_HISTORY]
+  = 100\r\nIRB.conf[:HISTORY_FILE] = \"#{ENV['HOME']}/.irb-save-history\"\r\n\r\nSee
+  also:\r\n\r\n$ cheat rails_console"

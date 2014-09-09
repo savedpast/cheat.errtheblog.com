@@ -1,0 +1,18 @@
+---
+markaby: ! "# gem install markaby\r\n\r\nrequire 'rubygems'\r\nrequire 'markaby'\r\n\r\n#
+  Indent with two spaces, this is optional\r\nMarkaby::Builder.set(:indent, 2)\r\n\r\nmarkaby
+  = Markaby::Builder.new\r\n\r\nmarkaby.html do\r\n  head do\r\n    title \"Markaby
+  Cheat Sheet\"\r\n    meta :name => \"keywords\", :content => \"markaby, cheat, sheet,
+  ruby\"\r\n    style :type => \"text/css\" do\r\n      %[\r\n        body { font:
+  11px/120% Verdana, sans-serif }\r\n      ]\r\n    end\r\n  end\r\n\r\n  body do\r\n
+  \   div.content do \r\n      p \"Paragraph in a div with a class of content\"\r\n
+  \     p.hasclass \"Paragraph with a class of hasclass in a div with a class of content\"\r\n
+  \     p.third! \"Paragraph with an ID of third in a div with a class of content\"\r\n
+  \   end\r\n    ul {\r\n      li \"Markaby is just Ruby\"\r\n      li \"So Curly
+  Brace code blocks work too\"\r\n    }\r\n    div :style => \"font-size:32px\", \"This
+  is huge due to the style parameter!\"\r\n    img :src=> '/static/img/image.png'\r\n\r\n
+  \   iframe :src=>'http://mislav.uniqpath.com/poignant-guide/images/the.foxes-4b.png',\r\n
+  \          :scrolling=>'no',:frameborder=>'no',\r\n           :style=>'width:400px;height:240px;'\r\n\r\n
+  \   select.status! do\r\n      option 'Unavailable', :value=> 0\r\n      option
+  'Busy', :value=> 1, :selected=> true\r\n      option 'Available', :value=> 2\r\n
+  \   end\r\n  end\r\nend\r\n\r\nmarkaby.to_s"

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>;comment
+symbol a-zA-Z0-9*+!-_? ; &lt;- both are valid symbols
+:keyword
+\c \h \a \r \a \c \t \e \r \newline \space \tab \return \linefeed
+&quot;string&quot;
+#&quot;regex&quot;
+
+(a b c) ; list
+[1 2 3] ; vector
+{:a 1 :b 2} ; map
+#{:a :b :c} ; set
+
+(fn [x y] (+ x y)) ; anonymous fn
+#(+ 1 1)         ; short version, not a replacement for fn, eg. does not nest
+#(inc %)         ; one argument
+#(+ %1 %2)       ; numbered arguments
+#(apply + %1 %2 %&amp;) ; varargs
+
+^x   ; (meta x)
+#^y x  ; *not* equivalent to (with-meta x y)
+@x   ; (deref x)
+#'x ; (var x)
+
+; cool stuff
+(-&gt; {:foo {:bar :bat}} :foo :bar) ; gets :bat
+(take 10 (repeatedly rand))       ; 10 random numbers
+
+; Java interop
+(Classname. args*)
+; Old syntax: (Classname. ...) to be preferred
+(new Classname args*)
+
+(.getBytes &quot;foo&quot;) ; &quot;foo&quot;.getBytes();
+(Math/sqrt x) ; Math.sqrt(x);
+
+(.instanceMember instance args*)
+(.instanceMember Classname args*)
+(Classname/staticMethod args*)
+
+; Old syntax: (.method ...) (Class/staticMethod ...) to be preferred
+(. instance-expr member-symbol)
+(. Classname-symbol member-symbol)
+(. instance-expr (method-symbol args*)) or
+(. instance-expr method-symbol args*)
+(. Classname-symbol (method-symbol args*)) or
+(. Classname-symbol method-symbol args*)
+
+(-&gt; instance-expr (.method ...) (.method ...))
+; Obsoleted by the more general -&gt;
+(.. instance-expr member+)
+(.. Classname-symbol member+)
+
+(doto obj (.instanceMember) (.anotherInstanceMember args*) ...)</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,7 @@
+---
+triforce: ! " ▲\r\n▲ ▲\r\n\r\nHow to Triforce\r\n\r\nThe correct method of triforcing
+  requires use of non-breaking space characters:\r\nWindows: [alt-255] [alt-255] [alt-30]
+  [enter] [alt 30] [alt 255] [alt 30]\r\nMac: [option-space] + [option-space] + [option-J]
+  + [enter] + [option-J] + [option-space] + [option-J]\r\nLinux : [Ctrl+Shift+U +
+  a0] [Ctrl+Shift+U + a0] [Ctrl+Shift+U + 25b2] [Enter] [Ctrl+Shift+U + 25b2] [Ctrl+Shift+U
+  + a0] [Ctrl+Shift+U + 25b2] (thx dumuh)"

@@ -1,0 +1,124 @@
+---
+osxbash: ! "a\r\n  alias     Create an alias\r\n  alloc     List used and free memory\r\n
+  \ awk       Find and Replace text within file(s)\r\nb\r\n  basename  Convert a full
+  pathname to just a folder path\r\n  bash      Bourne-Again SHell\r\n  bg        Send
+  to background\r\n  bind      Display readline key and function bindings\r\n  bless
+  \    Set volume bootability and startup disk options.\r\n  break     Exit from a
+  For, While, Until or Select loop\r\n  builtin   Execute a shell builtin\r\nc\r\n
+  \ cal       Display a calendar\r\n  caller    Return the context of a subroutine
+  call\r\n  case      Conditionally perform a command\r\n  cat       Display the contents
+  of a file\r\n  cd        Change Directory\r\n  chflags   Change a file or folder's
+  flags\r\n  chgrp     Change group ownership\r\n  chmod     Change access permissions\r\n
+  \ chown     Change file owner and group\r\n  chroot    Run a command with a different
+  root directory\r\n  cksum     Print CRC checksum and byte counts\r\n  clear     Clear
+  terminal screen\r\n  cmp       Compare two files\r\n  comm      Compare two sorted
+  files line by line\r\n  command   Run a command (not a function)\r\n  complete  Edit
+  a command completion [word/pattern/list]\r\n  continue  Resume the next iteration
+  of a loop\r\n  cp        Copy one or more files to another location\r\n  cron      Daemon
+  to execute scheduled commands\r\n  crontab   Schedule a command to run at a later
+  date/time\r\n  cut       Divide a file into several parts\r\nd\r\n  date      Display
+  or change the date & time\r\n  dc        Desk Calculator\r\n  dd        Data Dump
+  - Convert and copy a file\r\n  declare   Declare variable & set attributes\r\n  defaults
+  \ Set preferences\r\n  df        Display free disk space\r\n  diff      Display
+  the differences between two files\r\n  diff3     Show differences among three files\r\n
+  \ dig       DNS lookup\r\n  dirname   Convert a full pathname to just a path\r\n
+  \ dirs      Display list of remembered directories\r\n  diskutil  Disk utilities
+  - Format, Verify, Repair\r\n  disown    Unbind a job from the current login session\r\n
+  \ ditto     Copy files and folders\r\n  dot_clean Remove dot-underscore files\r\n
+  \ drutil    Interact with CD/DVD burners\r\n  dscacheutil Query or flush the Directory
+  Service/DNS cache\r\n  dscl      Directory Service command line utility\r\n  du
+  \       Estimate file space usage\r\ne\r\n  echo      Display message on screen\r\n
+  \ ed        A line-oriented text editor (edlin)\r\n  enable    Enable and disable
+  builtin shell commands\r\n  env       Set environment and run a utility\r\n  eval
+  \     Evaluate several commands/arguments\r\n  exec      Execute a command\r\n  exit
+  \     Exit the shell\r\n  expand    Convert tabs to spaces\r\n  expect    Programmed
+  dialogue with interactive programs\r\n            Also see AppleScript\r\n  export
+  \   Set an environment variable\r\n  expr      Evaluate expressions\r\nf\r\n  false
+  \    Do nothing, unsuccessfully\r\n  fc        Fix command (history)\r\n  fdisk
+  \    Partition table manipulator for Darwin UFS/HFS/DOS\r\n  fg        Send job
+  to foreground\r\n  find      Search for files that meet a desired criteria\r\n  fmt
+  \      Reformat paragraph text\r\n  fold      Wrap text to fit a specified width\r\n
+  \ for       Loop command\r\n  fsck      Filesystem consistency check and repair\r\n
+  \ fsaclctl  Filesystem enable/disable ACL support\r\n  fs_usage  Filesystem usage
+  (process/pathname)\r\n  ftp       Internet file transfer program\r\ng\r\n  GetFileInfo
+  Get attributes of HFS+ files\r\n  getopt    Parse positional parameters\r\n  getopts
+  \  Parse positional parameters\r\n  goto      Jump to label and continue execution\r\n
+  \ grep      Search file(s) for lines that match a given pattern\r\n  groups    Print
+  group names a user is in\r\n  gzip      Compress or decompress files\r\nh\r\n  hash
+  \     Refresh the cached/remembered location of commands\r\n  head      Display
+  the first lines of a file\r\n  hdiutil   Manipulate iso disk images\r\n  history
+  \  Command History\r\n  hostname  Print or set system name\r\ni\r\n  id        Print
+  user and group names/id's\r\n  if        Conditionally perform a command\r\n  info
+  \     Help info\r\n  install   Copy files and set attributes\r\nj\r\n  jobs      List
+  active jobs\r\n  join      Join lines on a common field\r\nk\r\n  kextfind  List
+  kernel extensions\r\n  kill      Stop a process from running\r\nl\r\n  l         List
+  files in long format (ls -l)\r\n  last      Indicate last logins of users and ttys\r\n
+  \ launchctl Load or unload daemons/agents\r\n  ll        List files in long format,
+  showing invisible files (ls -la)\r\n  less      Display output one screen at a time\r\n
+  \ let       Evaluate expression\r\n  lipo      Convert a universal binary\r\n  ln
+  \       Make links between files (hard links, symbolic links)\r\n  local     Set
+  a local (function) variable\r\n  locate    Find files\r\n  logname   Print current
+  login name\r\n  login     log into the computer\r\n  logout    Exit a login shell
+  (bye)\r\n  lpr       Print files\r\n  lprm      Remove jobs from the print queue\r\n
+  \ lpstat    Printer status information\r\n  ls        List information about file(s)\r\n
+  \ lsregister Reset the Launch Services database\r\n  lsbom     List a bill of materials
+  file\r\n  lsof      List open files\r\nm\r\n  man       Help manual\r\n  mdfind
+  \   Spotlight search\r\n  mdutil    Manage Spotlight metadata store\r\n  mkdir     Create
+  new folder(s)\r\n  mkfifo    Make FIFOs (named pipes)\r\n  more      Display output
+  one screen at a time\r\n  mount     Mount a file system\r\n  mv        Move or rename
+  files or directories\r\nn\r\n  net       Manage network resources\r\n  netstat   Show
+  network status\r\n  networksetup Network and System Preferences\r\n  nice      Set
+  the priority of a command\r\n  nohup     Run a command immune to hangups\r\n  ntfs.util
+  NTFS file system utility\r\no\r\n  onintr    Control the action of a shell interrupt\r\n
+  \ open      Open a file/folder/URL/Application\r\n  osacompile Compile Applescript\r\n
+  \ osascript Execute AppleScript\r\np\r\n  passwd    Modify a user password\r\n  paste
+  \    Merge lines of files\r\n  pbcopy    Copy data to the clipboard\r\n  pbpaste
+  \  Paste data from the Clipboard\r\n  pico      Simple text editor\r\n  ping      Test
+  a network connection\r\n  pkgutil   Query and manipulate installed packages\r\n
+  \ plutil    Property list utility\r\n  pmset     Power Management settings\r\n  popd
+  \     Restore the previous value of the current directory\r\n  pr        Convert
+  text files for printing\r\n  printenv  Print environment variables\r\n  printf    Format
+  and print data\r\n  ps        Process status\r\n  pushd     Save and then change
+  the current directory\r\n  pwd       Print Working Directory\r\nq\r\n  quota     Display
+  disk usage and limits\r\nr\r\n  rcp       Copy files between machines\r\n  read
+  \     Read one line from standard input\r\n  readonly  Mark a variable or function
+  as read-only\r\n  reboot    Stop and restart the system\r\n  return    Exit a function\r\n
+  \ rev       Reverse lines of a file\r\n  rm        Remove files\r\n  rmdir     Remove
+  folder(s)\r\n  rpm       Remote Package Manager\r\n  rsync     Remote file copy
+  - Sync file tree (also RsyncX)\r\ns\r\n  say       Convert text to audible speech\r\n
+  \ screen    Multiplex terminal, run remote shells via ssh\r\n  screencapture Capture
+  screen image to file or disk\r\n  sdiff     Merge two files interactively\r\n  security
+  \ Administer Keychains, keys, certificates and the Security framework\r\n  sed       Stream
+  Editor\r\n  select    Generate a list of items\r\n  set       Set a shell variable
+  = value\r\n  setfile   Set attributes of HFS+ files\r\n  shift     Shift positional
+  parameters\r\n  shopt     Set shell options\r\n  shutdown  Shutdown or restart OS
+  X\r\n  sleep     Delay for a specified time\r\n  softwareupdate System software
+  update tool\r\n  sort      Sort text files\r\n  source    Execute commands from
+  a file\r\n  split     Split a file into fixed-size pieces\r\n  stop      Stop a
+  job or process\r\n  su        Substitute user identity\r\n  sudo      Execute a
+  command as another user\r\n  sum       Print a checksum for a file\r\n  suspend
+  \  Suspend execution of this shell\r\n  sw_vers   Print Mac OS X operating system
+  version\r\n  system_profiler  Report system configuration\r\n  systemsetup Computer
+  and display system settings\r\nt\r\n  tail      Output the last part of files\r\n
+  \ tar       Tape ARchiver\r\n  tee       Redirect output to multiple files\r\n  test
+  \     Condition evaluation\r\n  textutil  Manipulate text files in various formats
+  (Doc,html,rtf)\r\n  time      Measure Program Resource Use\r\n  times     Print
+  shell & shell process times\r\n  touch     Change file timestamps\r\n  tr        Translate,
+  squeeze, and/or delete characters\r\n  trap      Execute a command when the shell
+  receives a signal\r\n  traceroute Trace Route to Host\r\n  true      Do nothing,
+  successfully\r\n  tty       Print filename of terminal on stdin\r\n  type      Describe
+  a command\r\nu\r\n  ufs.util  Mount/unmount UFS file system\r\n  ulimit    limit
+  the use of system-wide resources\r\n  umask     Users file creation mask\r\n  umount
+  \   Unmount a device\r\n  unalias   Remove an alias\r\n  uname     Print system
+  information\r\n  unexpand  Convert spaces to tabs\r\n  uniq      Uniquify files\r\n
+  \ units     Convert units from one scale to another\r\n  unset     Remove variable
+  or function names\r\n  until     Loop command\r\n  users     Print login names of
+  users currently logged in\r\n  uuencode  Encode a binary file \r\n  uudecode  Decode
+  a file created by uuencode\r\n  uuidgen   Generate a Unique ID (UUID/GUID)\r\n  uucp
+  \     Unix to Unix copy\r\nv\r\n  vi        Text Editor\r\nw\r\n  wait      Wait
+  for a process to complete\r\n  wc        Print byte, word, and line counts\r\n  where
+  \    Report all known instances of a command\r\n  which     Locate a program file
+  in the user's path\r\n  while     Loop command\r\n  who       Print all usernames
+  currently logged on\r\n  whoami    Print the current user id and name (`id -un')\r\n
+  \ write     Send a message to another user\r\nx\r\n  xargs     Execute utility -
+  passing arguments\r\n  yes       Print a string until interrupted"

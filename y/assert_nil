@@ -1,0 +1,3 @@
+---
+assert_nil: ! "# 'cheat assertions' for the rest\n\nassert_nil(object, message=\"\")\n\nPasses
+  if object is nil.\n\nExample:\n\n  assert_nil [1, 2].uniq!"

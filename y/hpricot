@@ -1,0 +1,14 @@
+---
+hpricot: ! "Element#css_path\n\n doc.at(\"div > div:nth(1)\").css_path\n   #=> \"div
+  > div:nth(1)\" \n doc.at(\"#header\").css_path\n   #=> \"#header\" \n\nElement#xpath\n\n
+  doc.at(\"div > div:nth(1)\").xpath\n   #=> \"/div/div:eq(1)\" \n doc.at(\"#header\").xpath\n
+  \  #=> \"//div[@id='header']\" \n\nElement#swap\n\n doc = Hpricot(\"That's my <b>spoon</b>,
+  Tyler.\")\n doc.at(\"b\").swap(\"<i>fork</i>\")\n doc.to_html\n   #=> \"That's my
+  <i>fork</i>, Tyler.\" \n\nElement#next_sibling, Element#previous_sibling\n\n (doc/:h3).each
+  do |h3|\n   while ele = h3.next_sibling\n     ary << ele   # stuff away all the
+  elements under the h3\n   end\n end\n\n###########################################\n\nelements
+  = doc.search(\"a\")\nelements = doc.search(\"a.class\")\nelements = doc.search(\"a#ID\")\nelements
+  = doc.search(\"body > table > a\")\nelements = doc.search(\"a[@href='http://hoodwink.d/']\")\nelement
+  \ = doc.at(\"a#ID\") == doc.search(\"a#ID\").first\nattribute = doc.at(\"body\")['onload']
+  == doc.at(\"body\")[:onload]\nelements = doc.search(\"table > a#ID\") == (doc/\"table
+  > a#ID\") == (doc/\"table/a#ID\") == (doc/:table/:a#ID)"

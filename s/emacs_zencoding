@@ -1,0 +1,246 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># Usage
+
+Enable: `M-x zencoding-mode`.
+Expand: C-j or `M-x zencoding-expand-line`
+
+# Syntax examples
+
+--------------------------------------------------
+#  Basic tags
+
+a                        &lt;a&gt;&lt;/a&gt;
+a.x                      &lt;a class=&quot;x&quot;&gt;&lt;/a&gt;
+a#q.x                    &lt;a id=&quot;q&quot; class=&quot;x&quot;&gt;&lt;/a&gt;
+a#q.x.y.z                &lt;a id=&quot;q&quot; class=&quot;x y z&quot;&gt;&lt;/a&gt;
+#q                       &lt;div id=&quot;q&quot;&gt;
+                         &lt;/div&gt;
+.x                       &lt;div class=&quot;x&quot;&gt;
+                         &lt;/div&gt;
+#q.x                     &lt;div id=&quot;q&quot; class=&quot;x&quot;&gt;
+                         &lt;/div&gt;
+#q.x.y.z                 &lt;div id=&quot;q&quot; class=&quot;x y z&quot;&gt;
+                         &lt;/div&gt;
+
+--------------------------------------------------
+#  Empty tags
+
+a/                       &lt;a/&gt;
+a/.x                     &lt;a class=&quot;x&quot;/&gt;
+a/#q.x                   &lt;a id=&quot;q&quot; class=&quot;x&quot;/&gt;
+a/#q.x.y.z               &lt;a id=&quot;q&quot; class=&quot;x y z&quot;/&gt;
+
+--------------------------------------------------
+#  Self-closing tags
+
+input type=text          &lt;input type=&quot;text&quot;/&gt;
+img                      &lt;img/&gt;
+img&gt;metadata/*2          &lt;img&gt;
+                             &lt;metadata/&gt;
+                             &lt;metadata/&gt;
+                         &lt;/img&gt;
+
+--------------------------------------------------
+#  Siblings
+
+a+b                      &lt;a&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+a+b+c                    &lt;a&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+                         &lt;c&gt;&lt;/c&gt;
+a.x+b                    &lt;a class=&quot;x&quot;&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+a#q.x+b                  &lt;a id=&quot;q&quot; class=&quot;x&quot;&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+a#q.x.y.z+b              &lt;a id=&quot;q&quot; class=&quot;x y z&quot;&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+a#q.x.y.z+b#p.l.m.n      &lt;a id=&quot;q&quot; class=&quot;x y z&quot;&gt;&lt;/a&gt;
+                         &lt;b id=&quot;p&quot; class=&quot;l m n&quot;&gt;&lt;/b&gt;
+
+--------------------------------------------------
+#  Tag expansion
+
+table+                   &lt;table&gt;
+                             &lt;tr&gt;
+                                 &lt;td&gt;
+                                 &lt;/td&gt;
+                             &lt;/tr&gt;
+                         &lt;/table&gt;
+dl+                      &lt;dl&gt;
+                             &lt;dt&gt;&lt;/dt&gt;
+                             &lt;dd&gt;&lt;/dd&gt;
+                         &lt;/dl&gt;
+ul+                      &lt;ul&gt;
+                             &lt;li&gt;&lt;/li&gt;
+                         &lt;/ul&gt;
+ul++ol+                  &lt;ul&gt;
+                             &lt;li&gt;&lt;/li&gt;
+                         &lt;/ul&gt;
+                         &lt;ol&gt;
+                             &lt;li&gt;&lt;/li&gt;
+                         &lt;/ol&gt;
+ul#q.x.y m=l+            &lt;ul id=&quot;q&quot; class=&quot;x y&quot; m=&quot;l&quot;&gt;
+                             &lt;li&gt;&lt;/li&gt;
+                         &lt;/ul&gt;
+
+--------------------------------------------------
+#  Parent &gt; child
+
+a&gt;b                      &lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+a&gt;b&gt;c                    &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;/c&gt;&lt;/b&gt;&lt;/a&gt;
+a.x&gt;b                    &lt;a class=&quot;x&quot;&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+a#q.x&gt;b                  &lt;a id=&quot;q&quot; class=&quot;x&quot;&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+a#q.x.y.z&gt;b              &lt;a id=&quot;q&quot; class=&quot;x y z&quot;&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+a#q.x.y.z&gt;b#p.l.m.n      &lt;a id=&quot;q&quot; class=&quot;x y z&quot;&gt;&lt;b id=&quot;p&quot; class=&quot;l m n&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+#q&gt;.x                    &lt;div id=&quot;q&quot;&gt;
+                             &lt;div class=&quot;x&quot;&gt;
+                             &lt;/div&gt;
+                         &lt;/div&gt;
+a&gt;b+c                    &lt;a&gt;
+                             &lt;b&gt;&lt;/b&gt;
+                             &lt;c&gt;&lt;/c&gt;
+                         &lt;/a&gt;
+a&gt;b+c&gt;d                  &lt;a&gt;
+                             &lt;b&gt;&lt;/b&gt;
+                             &lt;c&gt;&lt;d&gt;&lt;/d&gt;&lt;/c&gt;
+                         &lt;/a&gt;
+
+--------------------------------------------------
+#  Multiplication
+
+a*1                      &lt;a&gt;&lt;/a&gt;
+a*2                      &lt;a&gt;&lt;/a&gt;
+                         &lt;a&gt;&lt;/a&gt;
+a/*2                     &lt;a/&gt;
+                         &lt;a/&gt;
+a*2+b*2                  &lt;a&gt;&lt;/a&gt;
+                         &lt;a&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+                         &lt;b&gt;&lt;/b&gt;
+a*2&gt;b*2                  &lt;a&gt;
+                             &lt;b&gt;&lt;/b&gt;
+                             &lt;b&gt;&lt;/b&gt;
+                         &lt;/a&gt;
+                         &lt;a&gt;
+                             &lt;b&gt;&lt;/b&gt;
+                             &lt;b&gt;&lt;/b&gt;
+                         &lt;/a&gt;
+a&gt;b*2                    &lt;a&gt;
+                             &lt;b&gt;&lt;/b&gt;
+                             &lt;b&gt;&lt;/b&gt;
+                         &lt;/a&gt;
+a#q.x&gt;b#q.x*2            &lt;a id=&quot;q&quot; class=&quot;x&quot;&gt;
+                             &lt;b id=&quot;q&quot; class=&quot;x&quot;&gt;&lt;/b&gt;
+                             &lt;b id=&quot;q&quot; class=&quot;x&quot;&gt;&lt;/b&gt;
+                         &lt;/a&gt;
+a#q.x&gt;b/#q.x*2           &lt;a id=&quot;q&quot; class=&quot;x&quot;&gt;
+                             &lt;b id=&quot;q&quot; class=&quot;x&quot;/&gt;
+                             &lt;b id=&quot;q&quot; class=&quot;x&quot;/&gt;
+                         &lt;/a&gt;
+
+--------------------------------------------------
+#  Properties
+
+a x                      &lt;a x=&quot;&quot;&gt;&lt;/a&gt;
+a x=                     &lt;a x=&quot;&quot;&gt;&lt;/a&gt;
+a x=&quot;&quot;                   &lt;a x=&quot;&quot;&gt;&lt;/a&gt;
+a x=y                    &lt;a x=&quot;y&quot;&gt;&lt;/a&gt;
+a x=&quot;y&quot;                  &lt;a x=&quot;y&quot;&gt;&lt;/a&gt;
+a x=&quot;()&quot;                 &lt;a x=&quot;()&quot;&gt;&lt;/a&gt;
+a x m                    &lt;a x=&quot;&quot; m=&quot;&quot;&gt;&lt;/a&gt;
+a x= m=&quot;&quot;                &lt;a x=&quot;&quot; m=&quot;&quot;&gt;&lt;/a&gt;
+a x=y m=l                &lt;a x=&quot;y&quot; m=&quot;l&quot;&gt;&lt;/a&gt;
+a/ x=y m=l               &lt;a x=&quot;y&quot; m=&quot;l&quot;/&gt;
+a#foo x=y m=l            &lt;a id=&quot;foo&quot; x=&quot;y&quot; m=&quot;l&quot;&gt;&lt;/a&gt;
+a.foo x=y m=l            &lt;a class=&quot;foo&quot; x=&quot;y&quot; m=&quot;l&quot;&gt;&lt;/a&gt;
+a#foo.bar.mu x=y m=l     &lt;a id=&quot;foo&quot; class=&quot;bar mu&quot; x=&quot;y&quot; m=&quot;l&quot;&gt;&lt;/a&gt;
+a/#foo.bar.mu x=y m=l    &lt;a id=&quot;foo&quot; class=&quot;bar mu&quot; x=&quot;y&quot; m=&quot;l&quot;/&gt;
+a x=y+b                  &lt;a x=&quot;y&quot;&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+a x=y+b x=y              &lt;a x=&quot;y&quot;&gt;&lt;/a&gt;
+                         &lt;b x=&quot;y&quot;&gt;&lt;/b&gt;
+a x=y&gt;b                  &lt;a x=&quot;y&quot;&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+a x=y&gt;b x=y              &lt;a x=&quot;y&quot;&gt;&lt;b x=&quot;y&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+a x=y&gt;b x=y+c x=y        &lt;a x=&quot;y&quot;&gt;
+                             &lt;b x=&quot;y&quot;&gt;&lt;/b&gt;
+                             &lt;c x=&quot;y&quot;&gt;&lt;/c&gt;
+                         &lt;/a&gt;
+
+--------------------------------------------------
+#  Parentheses
+
+(a)                      &lt;a&gt;&lt;/a&gt;
+(a)+(b)                  &lt;a&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+a&gt;(b)                    &lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+(a&gt;b)&gt;c                  &lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+(a&gt;b)+c                  &lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+                         &lt;c&gt;&lt;/c&gt;
+z+(a&gt;b)+c+k              &lt;z&gt;&lt;/z&gt;
+                         &lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+                         &lt;c&gt;&lt;/c&gt;
+                         &lt;k&gt;&lt;/k&gt;
+(a)*2                    &lt;a&gt;&lt;/a&gt;
+                         &lt;a&gt;&lt;/a&gt;
+((a)*2)                  &lt;a&gt;&lt;/a&gt;
+                         &lt;a&gt;&lt;/a&gt;
+((a))*2                  &lt;a&gt;&lt;/a&gt;
+                         &lt;a&gt;&lt;/a&gt;
+(a&gt;b)*2                  &lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+                         &lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+(a+b)*2                  &lt;a&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+                         &lt;a&gt;&lt;/a&gt;
+                         &lt;b&gt;&lt;/b&gt;
+
+--------------------------------------------------
+#  Filter: HTML with comments
+
+a.b|c                    &lt;!-- .b --&gt;
+                         &lt;a class=&quot;b&quot;&gt;&lt;/a&gt;
+                         &lt;!-- /.b --&gt;
+#a&gt;.b|c                  &lt;!-- #a --&gt;
+                         &lt;div id=&quot;a&quot;&gt;
+                             &lt;!-- .b --&gt;
+                             &lt;div class=&quot;b&quot;&gt;
+                             &lt;/div&gt;
+                             &lt;!-- /.b --&gt;
+                         &lt;/div&gt;
+                         &lt;!-- /#a --&gt;
+
+--------------------------------------------------
+#  Filter: HAML
+
+a|haml                   %a
+a#q.x.y.z|haml           %a#q.x.y.z
+a#q.x x=y m=l|haml       %a#q.x{:x =&gt; &quot;y&quot;, :m =&gt; &quot;l&quot;}
+div|haml                 %div
+div.footer|haml          .footer
+.footer|haml             .footer
+p&gt;a href=#+br|haml       %p
+                             %a{:href =&gt; &quot;#&quot;}
+                             %br
+
+--------------------------------------------------
+#  Filter: Hiccup
+
+a|hic                    [:a]
+a#q.x.y.z|hic            [:a#q.x.y.z]
+a#q.x x=y m=l|hic        [:a#q.x {:x &quot;y&quot;, :m &quot;l&quot;}]
+.footer|hic              [:div.footer]
+p&gt;a href=#+br|hic        [:p
+                             [:a {:href &quot;#&quot;}]
+                             [:br]]
+#q&gt;(a*2&gt;b)+p&gt;b|hic       [:div#q
+                             [:a [:b]]
+                             [:a [:b]]
+                             [:p
+                                 [:b]]]
+
+--------------------------------------------------
+#  Filter: escape
+
+script src=&amp;quot;|e      &amp;lt;script src=&quot;&amp;amp;quot;&quot;&amp;gt;
+                         &amp;lt;/script&amp;gt;
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

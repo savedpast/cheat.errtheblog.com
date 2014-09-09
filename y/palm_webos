@@ -1,0 +1,6 @@
+---
+palm_webos: ! "Package + Install + Launch:\r\n\r\n\tpalm-package HelloWorld\r\n\tpalm-install
+  com.mystuff.hello_1.0.0_all.ipk\r\n\tpalm-launch com.mystuff.hello\r\n\t\r\nLaunch
+  with inspector\r\n\r\n\tpalm-launch -i com.mystuff.hello\r\n\t\r\nClose application\r\n\r\n\tpalm-launch
+  -c com.mystuff.hello\r\n\t\r\nDelete the application from the emulator\r\n\r\n\tpalm-install
+  -r com.mystuff.hello"

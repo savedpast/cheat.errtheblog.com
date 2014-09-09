@@ -1,0 +1,3 @@
+---
+unicorn: ! "Restart servers\r\nkill -USR2 `cat tmp/pids/unicorn.pid`\r\n\r\nSet log
+  level to development\r\nkill -URG `cat tmp/pids/unicorn.pid`"

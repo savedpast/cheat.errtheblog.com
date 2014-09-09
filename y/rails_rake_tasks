@@ -1,0 +1,73 @@
+---
+rails_rake_tasks: ! "Also see `rake -T` (even better - not obsolete) \r\n\r\n-----\r\n\r\nrake
+  cache:clear                     # Clears all cached pages\r\n\r\nrake db:bootstrap
+  \                   # Loads a schema.rb file into the \r\n                                       database
+  and then loads the initial \r\n                                       database fixtures.\r\n\r\nrake
+  db:bootstrap:copy_default_theme # Copy default theme to site theme\r\n\r\nrake db:migrate
+  \                     # Migrate the database through scripts in \r\n                                       db/migrate.
+  Target specific version \r\n                                       with VERSION=x\r\n\r\nrake
+  db:schema:dump                  # Create a db/schema.rb file that can be \r\n                                       portably
+  used against any DB supported\r\n                                       by AR\r\n\r\nrake
+  db:schema:load                  # Load a schema.rb file into the database\r\n\r\nrake
+  db:bootstrap:load               # Load initial database fixtures (in \r\n                                       db/bootstrap/*.yml)
+  into the current \r\n                                       environment's database.
+  \ Load specific  \r\n                                       fixtures using FIXTURES=x,y\r\n\r\nrake
+  db:fixtures:load                # Load fixtures into the current    \r\n                                       environment's
+  database.  Load specific \r\n                                       fixtures using
+  FIXTURES=x,y\r\n\r\nrake db:sessions:clear               # Clear the sessions table\r\n\r\nrake
+  db:sessions:create              # Creates a sessions table for use with \r\n                                       CGI::Session::ActiveRecordStore\r\n\r\nrake
+  db:structure:dump               # Dump the database structure to a SQL\r\n                                       file\r\n\r\nrake
+  db:test:clone                   # Recreate the test database from the \r\n                                       current
+  environment's database schema\r\n\r\nrake db:test:clone_structure         # Recreate
+  the test databases from the \r\n                                       development
+  structure\r\n\r\nrake db:test:prepare                 # Prepare the test database
+  and load the \r\n                                       schema\r\n\r\nrake db:test:purge
+  \                  # Empty the test database\r\n\r\nrake deploy                          #
+  Push the latest revision into \r\n                                       production
+  using the release manager\r\n\r\nrake diff_from_last_deploy           # Describe
+  the differences between HEAD \r\n                                       and the
+  last production release\r\n\r\nrake doc:app                         # Build the
+  app HTML Files\r\n\r\nrake doc:clobber_app                 # Remove rdoc products\r\n\r\nrake
+  doc:clobber_plugins             # Remove plugin documentation\r\n\r\nrake doc:clobber_rails
+  \              # Remove rdoc products\r\n\r\nrake doc:plugins                     #
+  Generate documation for all installed  \r\n                                       plugins\r\n\r\nrake
+  doc:rails                       # Build the rails HTML Files\r\n\r\nrake doc:reapp
+  \                      # Force a rebuild of the RDOC files\r\n\r\nrake doc:rerails
+  \                    # Force a rebuild of the RDOC files\r\n\r\nrake edge                            #
+  freeze rails edge\r\n\r\nrake log:clear                       # Truncates all *.log
+  files in log/ to \r\n                                       zero bytes\r\n\r\nrake
+  rails:freeze:edge               # Lock to latest Edge Rails or a specific \r\n                                       revision
+  with REVISION=X (ex: \r\n                                       REVISION=4021) or
+  a tag with TAG=Y (ex: \r\n                                       TAG=rel_1-1-0)\r\n\r\nrake
+  rails:freeze:gems               # Lock this application to the current \r\n                                       gems
+  (by unpacking them into \r\n                                       vendor/rails)\r\n\r\nrake
+  rails:unfreeze                  # Unlock this application from freeze of \r\n                                       gems
+  or edge and return to a fluid use \r\n                                       of
+  system gems\r\n\r\nrake rails:update                    # Update both configs, scripts
+  and  \r\n                                       public/javascripts from Rails\r\n\r\nrake
+  rails:update:configs            # Update config/boot.rb from your current \r\n                                       rails
+  install\r\n\r\nrake rails:update:javascripts        # Update your javascripts from
+  your \r\n                                       current rails install\r\n\r\nrake
+  rails:update:scripts            # Add new scripts to the application \r\n                                       script/
+  directory\r\n\r\nrake remote_exec                     # Execute a specific action
+  using the  \r\n                                       release manager\r\n\r\nrake
+  rollback                        # Rollback to the release before the \r\n                                       current
+  release in production\r\n\r\nrake show_deploy_tasks               # Enumerate all
+  available deployment \r\n                                       tasks\r\n\r\nrake
+  stats                           # Report code statistics (KLOCs, etc) \r\n                                       from
+  the application\r\n\r\nrake test                            # Test all units and
+  functionals\r\n\r\nrake test:functionals                # Run tests for \r\n                                       functionalsdb:test:prepare\r\n\r\nrake
+  test:integration                # Run tests for \r\n                                       integrationdb:test:prepare\r\n\r\nrake
+  test:plugins                    # Run tests for pluginsenvironment\r\n\r\nrake test:recent
+  \                    # Run tests for recentdb:test:prepare\r\n\r\nrake test:uncommitted
+  \               # Run tests for \r\n                                       uncommitteddb:test:prepare\r\n\r\nrake
+  test:units                      # Run tests for unitsdb:test:prepare\r\n\r\nrake
+  tmp:cache:clear                 # Clears all files and directories in \r\n                                       tmp/cache\r\n\r\nrake
+  tmp:clear                       # Clear session, cache, and socket files \r\n                                       from
+  tmp/\r\n\r\nrake tmp:create                      # Creates tmp directories for sessions,\r\n
+  \                                      cache, and sockets\r\n\r\nrake tmp:pids:clear
+  \                 # Clears all files in tmp/pids\r\n\r\nrake tmp:sessions:clear
+  \             # Clears all files in tmp/sessions\r\n\r\nrake tmp:sockets:clear               #
+  Clears all files in tmp/sockets\r\n\r\nrake update_dialog_helper            # Copies
+  the latest dialog.js to the \r\n                                       application's
+  public directory"

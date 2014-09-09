@@ -1,0 +1,33 @@
+---
+textmate_ruby: ! "⌘ = command\n⌃ = control\n⌥ = option\n⇧ = shift\n\nRuby keyboard
+  shortcuts\n\nRun current line         ⇧ ⌃ E\nRun current document     ⌘ R\nRun single
+  unit test     ⌘ ⇧ R\n\nNAVIGATING:\n ⌘ ^ T\tFind  ⌘\n ⌘ T\t\tFind file in project
+  by name (type name or acronym for file)\n ⌘ ⇧ T\t\tGo to Symbol\n ⌘ 1 / 2 \tSwitch
+  to that number tab in Text\n ⌘ F2\t\tToggle Bookmark\nF2\t\t\tCycle Bookmarks\nF1\t\t\tToggle
+  Fold\n\nSELECTING:\n ^ W\t\tSelect current word\n ⌘ ⇧ L\t\tSelect current line\n
+  ⌘ ⇧ B\t\tSelect enclosed braces\n ⌘ ^ B\t\tSelect current scope\n\nEDITING:\nEscape\t\tTab
+  completion of variables / strings\n ⌘ Enter\tGo to end of line and return\n ⌘ ⇧
+  V\t\tPaste previous item in clipboard history\n ⌘ ^ ⌥ V\tSelect from Clipboard\n
+  ⌘ ^ A\t\tEdit Multiple Lines\n ^ U\t\tUpcase\n ^ ⇧ U\t\tDowncase\n ^ ⌥ U\t\tTitleCase\n
+  ^ ⌥ Q\t\tUnwrap line, remove newlines\n ^ K\t\tKill all text to end of line\n ^
+  Y\t\tYank back all text from kill\n ^ D\t\tDelete character (not backspace)\n\nSEARCH
+  & REPLACE:\n ^ S\t\tLive Search / Find Next\n ^ ⇧ S\t\tFind Previous\n ⌘ F\t\tFind\n
+  ⌘ ⇧ F\t\tFind in Project\n\nCOMMENTING, QUOTING, AND INDENTING:\n ⌘ /\t\tComment
+  Toggle\n ^ \"\t\tSingle/Double Quotes Toggle\n ⌘ ]\t\tIndent Selection\n ⌘ [\t\tUn-indent
+  Selection\n ⌘ ⌥ [\t\tReindent\n\nCTAGS:\n ^ ]\t\tLookup Definition\n  ⌘ ^ B\t\tSource
+  Browser\n\nWEB:\n  ⌘ ^ ⌥ P\tWeb Preview\n  ⌘ ^ ⇧ W \tUpdate missing tags for all
+  lines\n ^ ⇧ <\t\tCreate tags\t(HTML)\n ^ Enter\t<br/>\n ^ ⇧ L\t\tWrap selection
+  as Link\n doctype-tabDocument Type Section\n head-tab\n body-tab\n table-tab\n  ⌘-&\t\tMenu
+  for URL\n\nCOMMAND LINE:\n find {app,lib} -name '*.rb' -o -name '*.rhtml' -print0
+  | xargs -0 mate\n\nRUBY:\n ^H\t\t\tDocumentation for word\n ^{\t\t\tToggle do/end
+  {/}\n ^|\t\t\tInstall Plugin, Dump DB, etc. Menu\n %\t\t\tEval as Ruby (not in output)\n
+  \ ⌘ R\t\tRun Ruby Script\n ^ ⇧ E\t\tExecute Line as Ruby\n ^ ⇧ ⌘ E\tExecute all
+  lines marked with '# =>' as Ruby\n R-tab\t\tattr_reader\n W-tab\t\tattr_writer\n
+  RW-tab \tattr_accessor \n def-tab\tdefine method\n if-tab\n case-tab\n cla-tab\n
+  mod-tab\n ea-tab\n eawi-tab\n\nRAILS MIGRATIONS:\n mccc-tab\tCreate Several Columns\n
+  mcol-tab\tColumn Menu\n mtab-tab\tTable Menu\n\nRAILS VIEWS:\n ^ ⇧ V\t\t<%= %> Insert
+  (and Toggle)\n ^ ⇧ H\t\tCreate partial from selection\n\nRAILS CONTROLLERS:\n ^
+  P\t\tparams\n ^ J\t\tsession\n ⌘ ⇧ ⌥ Down\tJump to Controller helper/test/view/etc.\n\nSUBVERSION:\n
+  ^ ⇧ A\t\tSVN Menu\n  1\t\t\tAdd\n  2\t\t\tRemove\n  3\t\t\tRevert\n  5\t\t\tCommit\n
+  \ 6\t\t\tBlame\n  7\t\t\tInfo\n  8\t\t\tLog\n  9\t\t\tView Revision\n  0\t\t\tStat\n\nSHELL:\n
+  ^R\t\t\tRun Current Line in the Shell"

@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Αα	Alpha		Νν	Nu
+Ββ	Beta		Ξξ	Xi
+Γγ	Gamma		Οο	Omicron
+Δδ	Delta		Ππ	Pi
+Εε	Epsilon		Ρρ	Rho
+Ζζ	Zeta		Σσς	Sigma
+Ηη	Eta		Ττ	Tau
+Θθ	Theta		Υυ	Upsilon
+Ιι	Iota		Φφ	Phi
+Κκ	Kappa		Χχ	Chi
+Λλ	Lambda		Ψψ	Psi
+Μμ	Mu		Ωω	Omega
+
+See http://en.wikipedia.org/wiki/Greek_alphabet
+Skipped obsolete &amp; other characters</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

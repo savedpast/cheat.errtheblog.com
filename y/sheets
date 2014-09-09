@@ -1,0 +1,76 @@
+---
+sheets: ! "All Cheat Sheets:\r\n  acts_as_authenticated\r\n  acts_as_state_machine\r\n
+  \ acts_as_taggable_on\r\n  address\r\n  administrateme\r\n  agile\r\n  alias\r\n
+  \ ambition\r\n  ansi\r\n  arts\r\n  as3_formulas\r\n  ascii\r\n  assert\r\n  assertions\r\n
+  \ assert_block\r\n  assert_difference\r\n  assert_dom_equal\r\n  assert_dom_not_equal\r\n
+  \ assert_equal\r\n  assert_generates\r\n  assert_instance_of\r\n  assert_in_delta\r\n
+  \ assert_kind_of\r\n  assert_match\r\n  assert_nil\r\n  assert_nothing_raised\r\n
+  \ assert_nothing_thrown\r\n  assert_not_equal\r\n  assert_not_nil\r\n  assert_not_same\r\n
+  \ assert_no_difference\r\n  assert_no_match\r\n  assert_no_tag\r\n  assert_operator\r\n
+  \ assert_raise\r\n  assert_raises\r\n  assert_recognizes\r\n  assert_redirected_to\r\n
+  \ assert_respond_to\r\n  assert_response\r\n  assert_routing\r\n  assert_same\r\n
+  \ assert_select\r\n  assert_send\r\n  assert_tag\r\n  assert_template\r\n  assert_throws\r\n
+  \ assert_valid\r\n  association_methods\r\n  asunit\r\n  authorizenet\r\n  autotest\r\n
+  \ averylongnamethatwecanfind\r\n  awk\r\n  balloon\r\n  bartleby\r\n  bash\r\n  bash_complete\r\n
+  \ bash_scripting\r\n  belongs_to\r\n  benchmark\r\n  blogs\r\n  blow\r\n  bm\r\n
+  \ boyfriend\r\n  bp\r\n  bug\r\n  bzr\r\n  callbacks\r\n  capazon\r\n  capistrano\r\n
+  \ cap_bare\r\n  ccrb\r\n  cheat\r\n  cheat_el\r\n  chmod\r\n  chocolate\r\n  colored\r\n
+  \ conkeror\r\n  console\r\n  cool_options\r\n  cpio\r\n  cron\r\n  css3_selectors\r\n
+  \ css_at_rules\r\n  css_boxing\r\n  css_media\r\n  css_selectors\r\n  curl\r\n  cut\r\n
+  \ darcs\r\n  darcs_record\r\n  database_yml\r\n  datamapper\r\n  date\r\n  death\r\n
+  \ delete_me\r\n  deprec\r\n  deprec2\r\n  deprecated\r\n  dexagogo_form_validation\r\n
+  \ diakonos\r\n  ditz\r\n  doom\r\n  dpkg\r\n  e\r\n  elad\r\n  emacs\r\n  emacs_basics\r\n
+  \ emacs_psvn\r\n  emacs_slime\r\n  emacs_tips\r\n  enumerable\r\n  environments\r\n
+  \ exceptions\r\n  fela\r\n  ffmpeg\r\n  find\r\n  finder\r\n  firebug\r\n  fish\r\n
+  \ foo\r\n  form_for\r\n  freebsd\r\n  galician_stew\r\n  gazpacho\r\n  gem\r\n  gems\r\n
+  \ girlfriend\r\n  git\r\n  gitosis\r\n  gitsvn\r\n  git_add_i\r\n  git_buildpackage\r\n
+  \ git_collaboration\r\n  git_remote_branch\r\n  git_submodule\r\n  git_usage\r\n
+  \ globals\r\n  gmail\r\n  grails\r\n  greader\r\n  grep\r\n  groovy_sql\r\n  gruff\r\n
+  \ gslice\r\n  gsub\r\n  gtd\r\n  guitar\r\n  haiku\r\n  has_and_belongs_to_many\r\n
+  \ has_many\r\n  has_one\r\n  help\r\n  heroku\r\n  highline\r\n  history\r\n  hobo\r\n
+  \ hobo_template\r\n  hot_chocolate\r\n  hpricot\r\n  htaccess4\r\n  http_status_codes\r\n
+  \ husband\r\n  iana_port_list\r\n  install_cucumber_gem\r\n  install_rspec_rails\r\n
+  \ install_rspec_rails114\r\n  into_the_code\r\n  io\r\n  iomodes\r\n  iphone\r\n
+  \ ipod_touch\r\n  irb\r\n  java\r\n  jedit_ruby_editor_plugin\r\n  jquery\r\n  kenzu_ryu\r\n
+  \ kill\r\n  konami_code\r\n  leopard\r\n  less\r\n  life\r\n  lighthouse\r\n  link_to_remote\r\n
+  \ linux\r\n  linux_network_boot\r\n  ln\r\n  loose_weight\r\n  lotus_domino_url\r\n
+  \ ls\r\n  lsof\r\n  lucene_query_syntax\r\n  mac_glyphs\r\n  mac_shortcuts\r\n  magit\r\n
+  \ markaby\r\n  markdown\r\n  mate\r\n  matz_bot\r\n  merb\r\n  mercurial\r\n  microformats_helper\r\n
+  \ migrations\r\n  military_alphabet\r\n  misc\r\n  mktime\r\n  mocha\r\n  mplayer\r\n
+  \ mustache\r\n  mysql\r\n  mysql_insert\r\n  mysql_select\r\n  mysql_update\r\n
+  \ nanoc\r\n  netbeans\r\n  netstat\r\n  nginx\r\n  nils\r\n  nonsense\r\n  notify\r\n
+  \ number_lines\r\n  okay\r\n  opensc\r\n  openssl\r\n  oracle\r\n  passenger\r\n
+  \ paste\r\n  pastie_vim\r\n  pdf\r\n  permalink_fu\r\n  permissions\r\n  phonetic\r\n
+  \ piston\r\n  plugins\r\n  poker\r\n  police\r\n  postgis\r\n  postgres\r\n  predefined_variables\r\n
+  \ prototype\r\n  python_doctest\r\n  r4fy\r\n  rack\r\n  radrails\r\n  radrails_rhtml\r\n
+  \ radrails_ruby\r\n  rails\r\n  rails_checklist\r\n  rails_console\r\n  rails_date_formats\r\n
+  \ rails_edge\r\n  rails_environment\r\n  rails_helpers\r\n  rails_keywords\r\n  rails_migrations\r\n
+  \ rails_plugin_creation\r\n  rails_rake_tasks\r\n  rails_request_object\r\n  rails_reserved_words\r\n
+  \ rails_routes\r\n  rails_svn\r\n  rails_tasks\r\n  rails_tips\r\n  rails_to_s\r\n
+  \ rails_vim\r\n  ratpoison\r\n  rcov\r\n  rdebug\r\n  rdf\r\n  rdoc\r\n  readline\r\n
+  \ readme\r\n  recursive\r\n  redirect\r\n  regex\r\n  regexp\r\n  regex_lib\r\n
+  \ remind_commands\r\n  rest\r\n  rjs\r\n  rm\r\n  rope\r\n  rpm\r\n  rspec\r\n  rspec_formats\r\n
+  \ rsync\r\n  rtorrent\r\n  ruby\r\n  ruby1line\r\n  rubydebug\r\n  rubyio\r\n  rubyprof\r\n
+  \ ruby_about_com_example\r\n  ruby_comments\r\n  ruby_globals\r\n  ruby_kernel_test\r\n
+  \ ruby_keywords\r\n  ruby_mode_strings\r\n  ruby_tools\r\n  runescape\r\n  s3sync\r\n
+  \ sake\r\n  scaffold_resource\r\n  scala\r\n  scp\r\n  scrapi\r\n  screen\r\n  sed\r\n
+  \ sed_delete\r\n  sed_numbering\r\n  sed_print\r\n  sed_spacing\r\n  selenium\r\n
+  \ selenium_on_rails\r\n  semweb\r\n  seo\r\n  sequel\r\n  servers\r\n  seven_dwarves\r\n
+  \ sex\r\n  sh\r\n  shoes\r\n  shoulda\r\n  simpletest\r\n  slicehost\r\n  smalltalk\r\n
+  \ sness\r\n  solaris_smf\r\n  sort\r\n  spc\r\n  sprintf\r\n  sqld4r\r\n  sqlite\r\n
+  \ sql_alter\r\n  sre\r\n  ssh\r\n  status_codes\r\n  sti\r\n  strftime\r\n  string\r\n
+  \ string_unpack\r\n  strptime\r\n  svn\r\n  svnmerge\r\n  symlink\r\n  syntax\r\n
+  \ tar\r\n  taxes\r\n  tempfile\r\n  terminal\r\n  test\r\n  test2\r\n  testing\r\n
+  \ testtesttest\r\n  test_spec\r\n  test_spec_rails\r\n  test_unit\r\n  textile\r\n
+  \ textmate\r\n  textmate_rails\r\n  textmate_ruby\r\n  tld\r\n  todoist\r\n  to_i\r\n
+  \ tung\r\n  twitterrific\r\n  ubyubyuby\r\n  unicode\r\n  unix\r\n  validations\r\n
+  \ vi\r\n  vim\r\n  vim_folding\r\n  vim_goodies\r\n  watir_ie\r\n  webrat\r\n  websphere\r\n
+  \ wife\r\n  win32_sc\r\n  wmii3\r\n  word\r\n  wxd\r\n  xmonad\r\n  xmpp\r\n  xpath\r\n
+  \ xpath_result_type\r\n  xslt\r\n  yaml\r\n  yui_fonts\r\n  yui_grids\r\n  zentest\r\n
+  \ zsh\r\n  zsh_array\r\n  zsh_bang\r\n  zsh_case\r\n  zsh_ftp\r\n  zsh_glob\r\n
+  \ zsh_if\r\n  zsh_keys\r\n  zsh_loop\r\n  zsh_modifiers\r\n  zsh_param\r\n  zsh_process\r\n
+  \ zsh_ranges\r\n  zsh_rename\r\n  ztd\r\n\r\nI shouldn't be able to edit this, should
+  I?\r\n\r\nYour cheat sheet will be editable (fixable) by anyone. Each cheat sheet
+  is essentially a wiki page. It may also be used by millions of people for reference
+  purposes from the comfort of their command line. If this is okay with you, please
+  save."

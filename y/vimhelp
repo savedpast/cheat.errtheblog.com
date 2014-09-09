@@ -1,0 +1,53 @@
+---
+vimhelp: ! "Basics\n   ======\n\n   :e filename\t\t\t    Open filename for edition\n
+  \  :w\t\t\t\t    Save file\n   :q\t\t\t\t    Exit Vim\n   :w!\t\t\t\t    Exit Vim
+  without saving\n\n   Search\n   ======\n\n   /word\t\t\t    Search word from top
+  to bottom\n   ?word\t\t\t    Search word from bottom to top\n   /jo[ha]n\t\t\t    Search
+  john or joan\n   /\\< the\t\t\t    Search the, theatre or then\n   /the\\>\t\t\t
+  \   Search the or breathe\n   /\\< the\\>\t\t\t    Search the\n   /\\< ¦.\\>\t\t\t
+  \   Search all words of 4 letters\n   /\\/\t\t\t\t    Search fred but not alfred
+  or frederick\n   /fred\\|joe\t\t\t    Search fred or joe\n   /\\<\\d\\d\\d\\d\\>\t\t
+  \   Search exactly 4 digits\n   /^\\n\\{3}\t\t\t    Find 3 empty lines\n   :bufdo
+  /searchstr/\t\t    Search in all open files\n\n   Replace\n   =======\n\n   :%s/old/new/g\t\t
+  \   Replace all occurences of old by new in file\n   :%s/old/new/gw\t\t    Replace
+  all occurences with confirmation\n   :2,35s/old/new/g\t\t    Replace all occurences
+  between lines 2 and 35\n   :5,$s/old/new/g\t\t    Replace all occurences from line
+  5 to EOF\n   :%s/^/hello/g\t\t    Replace the begining of each line by hello\n   :%s/$/Harry/g\t\t
+  \   Replace the end of each line by Harry\n   :%s/onward/forward/gi\t    Replace
+  onward by forward, case unsensitive\n   :%s/ *$//g\t\t\t    Delete all white spaces\n
+  \  :g/string/d\t\t\t    Delete all lines containing string\n   :v/string/d\t\t\t
+  \   Delete all lines containing which didn’t contain string\n   :s/Bill/Steve/\t\t
+  \   Replace the first occurence of Bill by Steve in current line\n   :s/Bill/Steve/g\t\t
+  \   Replace Bill by Steve in current line\n   :%s/Bill/Steve/g\t\t    Replace Bill
+  by Steve in all the file\n   :%s/\\r//g\t\t\t    Delete DOS carriage returns (^M)\n
+  \  :%s/\\r/\\r/g\t\t\t    Transform DOS carriage returns in returns\n   :%s#<[^>]\\+>##g\t\t
+  \   Delete HTML tags but keeps text\n   :%s/^\\(.*\\)\\n\\1$/\\1/\t\t    Delete
+  lines which appears twice\n   Ctrl+a\t\t\t    Increment number under the cursor\n
+  \  Ctrl+x\t\t\t    Decrement number under cursor\n   ggVGg?\t\t\t    Change text
+  to Rot13\n\n   Case\n   =======\n\n   Vu\t\t\t\t    Lowercase line\n   VU\t\t\t\t
+  \   Uppercase line\n   g~~\t\t\t\t    Invert case\n   vEU\t\t\t\t    Switch word
+  to uppercase\n   vE~\t\t\t\t    Modify word case\n   ggguG\t\t\t    Set all text
+  to lowercase\n   :set ignorecase\t\t    Ignore case in searches\n   :set smartcase\t\t
+  \   Ignore case in searches excepted if an uppercase letter is used\n   :%s/\\<./\\u&/g\t\t
+  \   Sets first letter of each word to uppercase\n   :%s/\\<./\\l&/g\t\t    Sets
+  first letter of each word to lowercase\n   :%s/.*/\\u&\t\t\t    Sets first letter
+  of each line to uppercase\n   :%s/.*/\\l&\t\t\t    Sets first letter of each line
+  to lowercase\n\n   Read/Write files\n   ================\n\n   :1,10 w outfile\t\t
+  \   Saves lines 1 to 10 in outfile\n   :1,10 w >> outfile\t\t    Appends lines 1
+  to 10 to outfile\n   :r infile\t\t\t    Insert the content of infile\n   :23r infile\t\t\t
+  \   Insert the content of infile under line 23\n\n   File explorer\n   =============\n\n
+  \  :e .\t\t\t\t    Open integrated file explorer\n   :Sex\t\t\t\t    Split window
+  and open integrated file explorer\n   :browse e\t\t\t    Graphical file explorer\n
+  \  :ls\t\t\t\t    List buffers\n   :cd ..\t\t\t    Move to parent directory\n   :args\t\t\t
+  \   List files\n   :args *.php\t\t\t    Open file list\n   :grep expression *.php\t
+  \   Returns a list of .php files contening expression\n   gf\t\t\t\t    Open file
+  name under cursor\n\n   Interact with Unix\n   ==================\n\n   :!pwd\t\t\t
+  \   Execute the pwd unix command, then returns to Vi\n   !!pwd\t\t\t    Execute
+  the pwd unix command and insert output in file\n   :sh\t\t\t\t    Temporary returns
+  to Unix\n   $exit\t\t\t    Retourns to Vi\n\n   Alignment\n   =========\n\n   :%!fmt\t\t\t
+  \   Align all lines\n   !}fmt\t\t\t    Align all lines at the current position\n
+  \  5!!fmt\t\t\t    Align the next 5 lines\n\n   Tabs\n   ====\n\n   :tabnew\t\t\t
+  \   Creates a new tab\n   gt\t\t\t\t    Show next tab\n   :tabfirst\t\t\t    Show
+  first tab\n   :tablast\t\t\t    Show last tab\n   :tabm n(position)\t\t    Rearrange
+  tabs\n   :tabdo %s/foo/bar/g\t\t    Execute a command in all tabs\n   :tab ball\t\t\t
+  \   Puts all open files in tabs"

@@ -1,0 +1,36 @@
+---
+beyondtheurinal: ! "Here are those commands that you need to use a little less frequently
+  but are still indispensable for development using git.  They are based on some of
+  Scott Chacon's gitcasts.\n\n\nInteractive Adding:\ngit add -i\n(select \"patch\"
+  to add individual chunks from files)\n\nDiff:\ngit diff\n(between unstaged and index)\ngit
+  diff --cached\n(between index and repo)\ngit diff HEAD\n(between last commit and
+  all uncommitted changes)\ngit rev-parse master~3\n(prints the sha for the great
+  grandparent of master)\ngit diff master~3\n(shows the difference between master~3
+  and HEAD)\ngit diff -- (path or file)\n(just shows changes for the path or file)\ngit
+  diff master~3 master~10\n(differences between these 2 commits)\ngit diff --stat\n(shows
+  the changes in a more high level way)\ngit diff --name-status\n(similar, less detail)\ngit
+  diff --numstat\n(show how many changes in each file)\ngit diff --name-only\n(file
+  name only)\ngit diff --unified(3)\n(display 3 lines of context)\ngit diff ..master
+  > master.patch\ngit apply master.patch\n(create and apply a patch file)\n\nLog\ngit
+  log -3\n(show last 3 commits)\ngit log --stat (--shortstat)\n(additional info- what
+  happened, what file) \ngit log --pretty=oneline(--pretty=short)\n(clean up output)\ngit
+  log --since=\"2007-12-01\" --until=\"2007-12-20\"\n(specify date range)\ngit show
+  (sha)\n(show the change for that commit)\ngit log --(file)\n(show the commits for
+  one file)\ngit revlist\n(list out the shas for commits)\ngit blame\n(show who made
+  edited a file last)\n\nNormal Workflow\ngit ls-files \n(show all of the files tracked
+  by git)\ngit count-objects\n(counts the objects in the git repository)\nIt is also
+  mentioned that git add creates the sha and puts the object in the repo, git commit
+  adds a new tree object and a new commit object\n\nSetup, Initialization and Cloning\nMost
+  of the stuff in here is detailed elsewhere, but one nice trick is:\ngit clone (repo)
+  what_to_call_the_new_project\n\nBrowsing Git Objects\ngit show-refs\n(shows references)\ngit
+  cat-file -p (sha)\n(shows a commit object)\ngit cat-file -t (sha)\n(prints the type
+  of object- commit, tree, blob)\ngit cat-file -s (sha)\n(prints the size)\ngitk --since=\"2007-12-12\"\n(shows
+  commits since a certain point)\n(can take other options such as a filename to just
+  look at changes to a file)\ngit instaweb\n(runs a git browser in a web interface)\n\nBranching
+  and Merging\ngit branch\n(show branches)\ngit show-branch\n(a little more detail
+  on how the branches relate to each other)\ngit checkout\n(switch branches)\ngit
+  stash\n(put your changes away)\ngit merge (branch)\n(pull in the changes from (branch)
+  to the current branch\n\nRebasing\ngit reset\n (removes files from index)\ngit reset
+  --hard\n (removes files from index AND undoes local changes)\ngit rebase -i\n(allows
+  you to modify the commits that you'll be applying with the options below)\n -pick
+  (normal option)\n -edit (edit the commit)\n -squash (combine with commit above)"

@@ -1,0 +1,21 @@
+---
+hg: ! "Initialize project\r\n\r\n    hg init            # creates a new repository
+  in the current folder\r\n    hg init PROJECT    # creates an empty repository in
+  a new folder called \r\n                       # PROJECT\r\n\r\n    hg clone http://url.of/remote/repository\r\n\r\nAdd
+  files and track them\r\n    \r\n    cd project\r\n    (add files)\r\n    \r\n    hg
+  add             # add all untracked files\r\n    hg add [FILES]     # add the specified
+  files on the next commit\r\n    hg addremove       # add all new files, delete all
+  missing files\r\n\r\n    hg status          # show changed files in the working
+  directory\r\n\r\n    hg commit          # commit all outstanding changes\r\n    hg
+  commit -m \"commit message\"\r\n\r\nForget a change or file\r\n\r\n    hg revert
+  FILE  # existing changes are saved to FILE.orig\r\n    hg forget FILE  # remove
+  FILE from hg, not from working dir (WD)\r\n                    # FILE is removed
+  on next commit\r\n\r\nUpdate project from remote\r\n\r\n    hg pull     # pull changes
+  from default remote repository\r\n\r\n    hg update   # update WD to tip of history
+  (default)\r\n                # only works if there are no local changes\r\n\r\n
+  \   hg merge    # attempt auto-merge; call 3-way merge for conflicts\r\n\r\n    hg
+  resolve [FILE] \r\n                # cleanly re-attempt 3-way merge from scratch\r\n
+  \               # can also --(un)mark as resolved, or --list status\r\n\r\nCreate
+  a patch for upstream\r\n\r\n    hg export tip > patch.diff    # export last commit
+  as diff\r\n    hg export -g tip > patch.diff # git extended diff format\r\n    hg
+  export 2 4 > patch.diff    # export multiple commits"

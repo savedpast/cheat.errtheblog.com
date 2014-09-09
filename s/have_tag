@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>response.should have_tag(&quot;li&quot;)
+
+response.should have_tag(&quot;li&quot;, :text =&gt; &quot;I'm a list item&quot;)
+
+response.should have_tag(&quot;li.my_class&quot;, :text =&gt; &quot;I'm a list item&quot;)
+response.should have_tag(&quot;li#my_element_id&quot;, :text =&gt; &quot;I'm a list item&quot;)
+response.should have_tag(&quot;li#my_element_id.my_class&quot;, :text =&gt; &quot;I'm a list item&quot;)
+
+response.should have_tag(&quot;img[alt=My accessible text]&quot;)
+
+response.should have_tag(&quot;img[alt~=readable accessible usable]&quot;) # Match any of these words
+response.should have_tag(&quot;img[alt^=My]&quot;) # Match attribute beginning with &quot;My&quot;
+response.should have_tag(&quot;img[alt$=text]&quot;) # Match attribute ending with &quot;text&quot;
+response.should have_tag(&quot;img[alt*=essibl]&quot;) # Match &quot;essibl&quot; anywhere in attribute
+response.should have_tag(&quot;img[alt]&quot;) # Match any img element with alt attribute
+
+response.should have_tag(&quot;li:nth-child(2)&quot;, :text =&gt; &quot;I'm element 2&quot;)
+response.should have_tag(&quot;li:nth-last-child(2)&quot;, :text =&gt; &quot;I'm element 4&quot;)
+response.should have_tag(&quot;ul:first-child&quot;, :text =&gt; &quot;I'm element 1&quot;)
+response.should have_tag(&quot;ul:last-child&quot;, :text =&gt; &quot;I'm element 5&quot;)
+
+response.should have_tag(&quot;p:nth-of-type(2)&quot;, :text =&gt; &quot;I'm going to describe the list below&quot;)
+response.should have_tag(&quot;li:nth-last-of-type(2)&quot;, :text =&gt; &quot;I'm list 2&quot;)
+response.should have_tag(&quot;p:first-of-type&quot;, :text =&gt; &quot;I've got some paragraph text&quot;)
+response.should have_tag(&quot;p:last-of-type&quot;, :text =&gt; &quot;I'm going to describe the list below&quot;)
+
+response.should have_tag(&quot;li:nth-of-type(3n+1).highlight&quot;, :count =&gt; 3)
+
+response.should have_tag(&quot;li:nth-of-type(3n+1).highlight&quot;, :maximum =&gt; 4)
+response.should have_tag(&quot;li:nth-of-type(3n+1).highlight&quot;, :minimum =&gt; 1)
+response.should have_tag(&quot;li:nth-of-type(3n+1).highlight&quot;, 1..4)
+
+response.should have_tag &quot;form[action=/sessions]&quot; do
+  with_tag &quot;input[type=text][name=username]&quot;
+  with_tag &quot;input[type=password][name=password]&quot;
+end
+
+This uses the examples from http://rubypond.com/articles/2008/03/31/using-rspec-have_tag/
+
+Make sure there is a certain link on the site:
+response.should have_tag(&quot;a[href=?]&quot;, &quot;http://somewebsite.com/interesting&quot;)</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

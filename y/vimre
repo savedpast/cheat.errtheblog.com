@@ -1,0 +1,11 @@
+---
+vimre: ! "Vim Regex support\n\n\nafter:    \\v     \\m       \\M        \\V    matches\n
+  \                'magic'  'nomagic'\n          $      $        $         \\$    matches
+  end-of-line\n          .      .        \\.        \\.    matches any character\n
+  \         *      *        \\*        \\*    any number of the previous atom\n          ()
+  \    \\(\\)     \\(\\)      \\(\\)  grouping into an atom\n          |      \\|
+  \      \\|        \\|    separating alternatives\n          \\a     \\a       \\a
+  \       \\a    alphabetic character\n          \\\\     \\\\       \\\\        \\\\
+  \   literal backslash\n          \\.     \\.       .         .     literal dot\n
+  \         \\{     {        {         {     literal '{'\n          a      a        a
+  \        a     literal 'a'"

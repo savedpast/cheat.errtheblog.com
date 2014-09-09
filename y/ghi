@@ -1,0 +1,32 @@
+---
+ghi: ! "(github-cli)[jsmits@imac:~]$ ghi --help\r\nUsage: ghi command [args] [options]\r\n\r\nExamples:\r\nghi
+  list [-s open|closed|all]       show open, closed or all issues\r\n                                    (default:
+  open)\r\nghi [-s o|c|a] -v                   same as above, but with issue details\r\nghi
+  \                                same as: ghi list\r\nghi -v                              same
+  as: ghi list -v\r\nghi [-s o|c] -w                     show issues' GitHub page
+  in web browser\r\n                                    (default: open)\r\nghi show
+  <nr>                       show issue <nr>\r\nghi <nr>                            same
+  as: ghi show <nr>\r\nghi <nr> -w                         show issue <nr>'s GitHub
+  page in web\r\n                                    browser\r\nghi open (o)                        create
+  a new issue (with $EDITOR)\r\nghi close (c) <nr>                  close issue <nr>\r\nghi
+  open (o) <nr>                   reopen issue <nr>\r\nghi edit (e) <nr>                   edit
+  issue <nr> (with $EDITOR)\r\nghi label add (al) <label> <nr>     add <label> to
+  issue <nr>\r\nghi label remove (rl) <label> <nr>  remove <label> from issue <nr>\r\nghi
+  search (s) <term>               search for <term> (default: open)\r\nghi s <term>
+  [-s o|c] -v            same as above, but with details\r\nghi s <term> -s closed
+  \             only search in closed issues\r\nghi comment (m) <nr>                create
+  a comment for issue <nr>\r\n                                    (with $EDITOR)\r\nghi
+  -r <user>/<repo>                specify a repository (can be used for\r\n                                    all
+  commands)\r\nghi -r <repo>                       specify a repository (gets user
+  from\r\n                                    global git config)\r\n\r\nDescription:
+  command-line interface to GitHub's Issues API (v2)\r\n\r\nOptions:\r\n  -h, --help
+  \           show this help message and exit\r\n  -v, --verbose         show issue
+  details (only for list and search commands)\r\n                        [default:
+  False]\r\n  -s STATE, --state=STATE\r\n                        specify state (only
+  for list and search (except `all`)\r\n                        commands) choices
+  are: open (o), closed (c), all (a)\r\n                        [default: open]\r\n
+  \ -r REPO, --repo=REPO, --repository=REPO\r\n                        specify a repository
+  (format: `user/repo` or just\r\n                        `repo` (latter will get
+  the user from the global git\r\n                        config))\r\n  -w, --web,
+  --webbrowser\r\n                        show issue(s) GitHub page in web browser
+  (only for\r\n                        list and show commands) [default: False]\r\n"

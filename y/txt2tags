@@ -1,0 +1,42 @@
+---
+txt2tags: ! "txt2tags cheat Sheet\n Author Name\n Last Updated: %%mtime(%A %B %d,
+  %Y)\n  \n  % This is a comment.\n  \n  % which type of encoding you'd like to use
+  on the converted file:\n  %! encoding: utf-8\n  \n  % this specifies that you'd
+  like to use a Table Of Contents:\n  %! options: --toc\n  %! options: --toc-level
+  3\n  \n  % Enumerate all titles:\n  %! options: --enum-title\n  \n  % Pre-processed
+  named links:\n  %! preproc: '(Wikipedia)' '[\\1 http://www.wikipedia.org/]'\n  \n
+  \ % %date() can take stftime (cheat strftime)\n  The date of compilation of this
+  file was %%date(%m-%d-%Y).\n  \n  = Common formatting elements =\n  == Numbered
+  list ==\n\n  A numbered list is created by using a plus symbol (+) and a\n  space
+  before each item. To make a nested item, indent the + one\n  or more spaces. You
+  can have as many nested levels as you like.\n  Close the list with one empty item
+  (a + and a space) beneath the\n  list, which shows up as one blank line in the converted\n
+  \ document.\n  \n  + item one\n  + item two\n  + item three\n   + sub-item one\n
+  \  + sub-item two\n   + sub-item three\n  + item four\n  + item five\n  + item six\n
+  \ +\n  \n  == Unnumbered list ==\n\n  A plain list is created by using a dash (-)
+  and a space before\n  each item. Close the list with two blank lines beneath the
+  list,\n  which show up as one blank line in the converted document.\n\n  - item
+  one\n  - item two\n  - item three\n   + subitem one\n   + subitem two\n   + subitem
+  three\n  - item four\n  - item five\n  - item six\n  \n  \n  == File inclusion ==\n
+  \ === Include file as txt2tags file ===\n\n  %!include: sample.txt\n  \n  === Include
+  file as raw block ===\n\n  %!include: \"\"sample.txt\"\"\n  \n  === Include file
+  as verbatim block ===\n\n  %!include: ``sample.txt``\n  \n  == Styling elements
+  ==\n\n  - ``code``\n  - **bold**\n  - //italic//\n  - __underline__\n  - --strike--\n
+  \ - \"\"raw\"\"\n  \n  \n  == verbatim block ==\n\n  ```\n  verbatim\n  **block**\n
+  \ ```\n  \n  \n  == Definition list ==\n\n A definition list is created by using
+  a colon ( and a space\n before each word you wish to define, and putting the definition\n
+  on the next line. Close the list with two empty lines beneath\n it, which show up
+  as one blank line in the converted document.\n  \n  : enamored\n  charmed\n  : despicable\n
+  \ very unpleasant or evil\n  : relish\n  to get great pleasure from something\n
+  \ \n  \n  == Tables ==\n  === With border and centering ===\n\n    || This is a
+  table | It has two columns |\n    | Here's another row | Also with two columns |\n
+  \   | Here's another row | Also with two columns |\n    | Here's another row | Also
+  with two columns |\n  \n  === Without border and centering ===\n\n  || This is a
+  table | It has two columns\n  | Here's another row | Also with two columns\n  |
+  Here's another row | Also with two columns\n  | Here's another row | Also with two
+  columns\n  \n  === When some items span more than one column ===\n\n    | XXXXXXX
+  | XXXXXXX\n    |         | XXXXXXX\n    | XXXXXXX | XXXXXXX\n    | XXXXXXX |\n    |
+  XXXXXXX | XXXXXXX\n    |      XXXXXXX      ||\n    | XXXXXXX | XXXXXXX\n  \n  ==
+  Author ==\n\n You may contact me at jyoti.mickey at gmail. Or you may check\n [my
+  profile http://profiles.wikidot.com/profile:jyoti-sharma].\n you can check out my
+  blog at http://my.opera.com/jsharma/blog."

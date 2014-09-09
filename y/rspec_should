@@ -1,0 +1,48 @@
+---
+rspec_should: ! "Shoulda Rspec Matchers\r\n  For more information on rspec, shoulda\r\n
+  \   $ cheat rspec\r\n    $ cheat shoulda\r\n  \r\nModels Matchers\r\n  Data\r\n
+  \   it { should_not have_db_column(:admin).of_type(:boolean) }\r\n    it { should
+  have_db_column(:salary).\r\n          of_type(:decimal).\r\n          with_options(:precision
+  => 10, :scale => 2) }\r\n    \r\n  Associations\r\n    it { should belong_to(:parent)
+  }\r\n    \r\n    it { should have_many(:friends) }\r\n    it { should have_many(:enemies).through(:friends)
+  }\r\n    it { should have_many(:enemies).dependent(:destroy) }\r\n    \r\n    it
+  { should have_one(:god) }\r\n    \r\n    it { should have_and_belong_to_many(:posts)
+  }\r\n    \r\n  Validation Matchers\r\n    it { should validate_uniqueness_of(:keyword)
+  }\r\n    it { should validate_uniqueness_of(:keyword).with_message(/dup/) }\r\n
+  \   it { should validate_uniqueness_of(:email).scoped_to(:name) }\r\n    it { should
+  validate_uniqueness_of(:email).\r\n                  scoped_to(:first_name, :last_name)
+  }\r\n    it { should validate_uniqueness_of(:keyword).case_insensitive }\r\n    \r\n
+  \   it { should validate_presence_of(:name) }\r\n    it { should validate_presence_of(:name).\r\n
+  \                 with_message(/is not optional/) }\r\n    \r\n    it { should validate_numericality_of(:age)
+  }\r\n    \r\n    it { should validate_format_of(:name).\r\n                  with('12345').\r\n
+  \                 with_message(/is not optional/) }\r\n    it { should validate_format_of(:name).\r\n
+  \                 not_with('12D45').\r\n                  with_message(/is not optional/)
+  }\r\n    \r\n    it { should validate_acceptance_of(:eula) }\r\n    \r\n    it {
+  should have_readonly_attributes(:password) }\r\n    it { should ensure_length_of(:password).\r\n
+  \                 is_at_least(6).\r\n                  is_at_most(20) }\r\n    it
+  { should ensure_length_of(:name).\r\n                  is_at_least(3).\r\n                  with_short_message(/not
+  long enough/) }\r\n    it { should ensure_length_of(:ssn).\r\n                  is_equal_to(9).\r\n
+  \                 with_message(/is invalid/) }\r\n    \r\n    it { should ensure_inclusion_of(:age).in_range(0..100)
+  }\r\n    it { should_not allow_mass_assignment_of(:password) }\r\n    it { should
+  allow_mass_assignment_of(:first_name) }\r\n    \r\nController Matchers\r\n  Assigns
+  \ \r\n    it { should assign_to(:user)        }\r\n    it { should assign_to(:user)
+  \       }\r\n    it { should_not assign_to(:user)    }\r\n    it { should assign_to(:user).with_kind_of(User)
+  }\r\n    it { should assign_to(:user).with(@user) }\r\n    \r\n  Sessions\r\n    it
+  { should set_session(:message) }\r\n    it { should set_session(:user_id).to(@user.id)
+  }\r\n    it { should_not set_session(:user_id) }\r\n    \r\n  Flash\r\n    it {
+  should set_the_flash }\r\n    it { should set_the_flash.to(\"Thank you for placing
+  this order.\") }\r\n    it { should set_the_flash.to(/created/i) }\r\n    it { should_not
+  set_the_flash }\r\n    \r\n  Responses\r\n    it { should respond_with(:success)
+  \ }\r\n    it { should respond_with(:redirect) }\r\n    it { should respond_with(:missing)
+  \ }\r\n    it { should respond_with(:error)    }\r\n    it { should respond_with(501)
+  \      }\r\n    \r\n  Content-Type Responses\r\n    it { should respond_with_content_type(:xml)
+  \ }\r\n    it { should respond_with_content_type(:csv)  }\r\n    it { should respond_with_content_type(:atom)
+  }\r\n    it { should respond_with_content_type(:yaml) }\r\n    it { should respond_with_content_type(:text)
+  }\r\n    it { should respond_with_content_type('application/rss+xml')  }\r\n    it
+  { should respond_with_content_type(/json/) }\r\n    \r\n  Rendering\r\n    it {
+  should render_template(:new)         }\r\n    it { should render_with_layout            }\r\n
+  \   it { should render_with_layout(:special)  }\r\n    it { should_not render_with_layout
+  \       }\r\n    \r\n  Filter Parameter\r\n    it { should filter_param(:password)
+  \      }\r\n    \r\nRoute Matchers\r\n    it { should route(:get, \"/posts/new\").to(:action
+  => :new) }\r\n    it { should route(:put, \"/posts/1\").to(:action => :update, :id
+  => 1) }\r\n"

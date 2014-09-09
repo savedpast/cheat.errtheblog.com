@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>## Git
+git add .                     # Add all unstaged files to git
+git commit -m &quot;Message&quot;       # Commit with commit message 
+git clone &lt;repo-path&gt;         # Makes a local clone of a remote repo
+git remote add &lt;repo-path&gt;    # Adds a remote repository
+git remote rm &lt;repo-name&gt;     # Removes a remote repository
+
+## Gems
+gem env                       # Shows information such as gem paths, etc
+
+## RVM
+rvm list                      # Show a list of all installed rubies
+
+## Ruby</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

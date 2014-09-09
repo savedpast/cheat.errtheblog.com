@@ -1,0 +1,152 @@
+---
+forgery: ! "Forgery\r\n-------\r\n\r\nForgery is a fake data generator. A typical
+  use is as an extension to an object factory like Factory Girl to generate unique
+  data for each object.\r\n\r\n\r\nInstallation\r\n------------\r\n\r\n$ sudo gem
+  install forgery\r\n\r\nRails 2:\r\n\r\n# in config/environment.rb\r\nconfig.gem
+  'forgery'\r\n\r\n\r\nRails 3:\r\n\r\n# in Gemfile\r\ngem 'forgery'\r\n\r\n\r\nCustomisation\r\n-------------\r\n\r\nForgery
+  provides a generator to setup folders if you want to override or extend parts of
+  it.\r\n\r\nRails 2: \r\n\r\n$ ruby script/generate forgery\r\n\r\nRails 3:\r\n\r\n$
+  rails generate forgery   # not working at time of writing\r\n\r\nresults in:\r\n\r\n
+  create lib/forgery\r\n create lib/forgery/dictionaries\r\n create lib/forgery/extensions\r\n
+  create lib/forgery/forgeries\r\n create lib/forgery/formats\r\n\r\nFiles in these
+  directories take precedence over Forgery's built in files. So you could override
+  Forgery's builtin format for phone numbers, which produces e.g. \"1-(123)456-7890\",
+  by creating a new format file, e.g. in bash:\r\n\r\n$ echo $'(0#) #### ####\\n+61#
+  #### ####' > lib/forgery/formats/phone\r\n\r\nafter which Forgery::Address.phone
+  produces e.g. \"(08) 3582 5122\" or \"+612 7027 4990\".\r\n\r\n\r\nFormats\r\n-------\r\n\r\nTraditional:\r\n\r\nForgery::<Type>.method\r\ni.e.
+  Forgery::Basic.password  # => 'nJMKlpERFf'\r\n\r\nAlternate:\r\n\r\nForgery(:<type>).method\r\ni.e.
+  Forgery(:basic).password # => 'wYMYvq'\r\n\r\n\r\nForgeries\r\n---------\r\n\r\nA
+  few comma-separated example outputs are given for each call. Where parameters are
+  available they are (mostly) shown set to their defaults.\r\n\r\nAddress:-\r\n\r\nForgery::Address.street_name
+  \            # => \"Lukken\", \"Heath\", \"Jana\"\r\nForgery::Address.street_number
+  \          # => \"3926\", \"3\", \"390\"\r\nForgery::Address.street_suffix           #
+  => \"Avenue\", \"Place\"\r\nForgery::Address.street_address          # => \"856
+  Novick Pass\", \"0370 Westport Hill\", \"43 Ilene Hill\"\r\nForgery::Address.city
+  \                   # => \"Dana Point\", \"Agoura Hills\", \"Bell Gardens\"\r\nForgery::Address.state
+  \                  # => \"Minnesota\", \"Utah\", \"Idaho\"\r\nForgery::Address.state_abbrev
+  \           # => \"AL\", \"TN\", \"AK\"\r\nForgery::Address.province                #
+  => \"British Columbia\", \"New Brunswick\"\r\nForgery::Address.province_abbrev         #
+  => \"BC\", \"YT\", \"NU\"\r\nForgery::Address.zip                     # => \"52474\",
+  \"17606-0531\", \"55951-9920\"\r\nForgery::Address.phone                   # =>
+  \"8-(824)176-2699\", \"6-(960)921-9082\", \"1-(148)062-4183\"\r\nForgery::Address.country
+  \                # => \"Korea, North\", \"Puerto Rico\", \"Guadeloupe\"\r\nForgery::Address.continent
+  \              # => \"Asia\", \"Australia\", \"Europe\"\r\n\r\n\r\nBasic:-\r\n\r\nForgery::Basic.password
+  \                 # => \"2xHa8FVTB1pq\", \"3jcJEp\", \"abUYdEMHX\"\r\nForgery::Basic.password(\r\n
+  \ :at_least => 6,\r\n  :at_most => 12,\r\n  :allow_lower => true,\r\n  :allow_upper
+  => true,\r\n  :allow_numeric => true,\r\n  :allow_special => false\r\n)                                        #
+  => \"2xHa8FVTB1pq\", \"3jcJEp\", \"abUYdEMHX\"\r\nForgery::Basic.encrypt                   #
+  => \"2e76fa01cc37c8feac559961dffce03a901bfe15\"\r\nForgery::Basic.encrypt(\r\n  \"password\",\r\n
+  \ Time.now.to_s           # the salt\r\n)                                        #
+  => \"2e76fa01cc37c8feac559961dffce03a901bfe15\"\r\nForgery::Basic.boolean                   #
+  => false, true\r\nForgery::Basic.color                     # => \"Pink\", \"Blue\"\r\nForgery::Basic.hex_color
+  \                # => \"#48d0b1\", \"#795363\", \"#13097d\"\r\nForgery::Basic.short_hex_color
+  \          # => \"#275\", \"#740\", \"#709\"\r\nForgery::Basic.number                    #
+  => 8, 10, 5\r\nForgery::Basic.number(\r\n  :at_least => 1,\r\n  :at_most => 10\r\n)
+  \                                       # => 8, 10, 5\r\nForgery::Basic.text                      #
+  => \"IzRI9hcizVkJewN\", \"P0VWlX1J2npQQ9\", \"9DmJXvIxQ7YYnDK\"\r\nForgery::Basic.text(\r\n
+  \ :at_least => 10,\r\n  :at_most => 15,\r\n  :allow_lower => true,\r\n  :allow_upper
+  => true,\r\n  :allow_numeric => true,\r\n  :allow_special => false\r\n)                                        #
+  => \"IzRI9hcizVkJewN\", \"P0VWlX1J2npQQ9\", \"9DmJXvIxQ7YYnDK\"\r\nForgery::Basic.frequency
+  \                # => \"Never\", \"Seldom\", \"Monthly\"\r\n\r\n\r\nCreditCard:-\r\n\r\nForgery::CreditCard.type
+  \                # => \"Visa\", \"American Express\"\r\nForgery::CreditCard.number
+  \              # => \"5521817503186153\", \"5345748511721281\", \"349564942690988\"\r\nForgery::CreditCard.number(\r\n
+  \ type: <random>,\r\n  length: <15-16 depending on type>,\r\n  prefixes: <depends
+  on type>\r\n)                                        # => \"5521817503186153\",
+  \"5345748511721281\", \"349564942690988\"\r\n\r\n\r\nCurrency:-\r\n\r\nForgery::Currency.description
+  \           # => \"New Zealand Dollars\", \"Platinum Ounces\", \"Saudi Arabia Riyals\"\r\nForgery::Currency.code
+  \                  # => \"XAU\", \"SDG\", \"HUF\"\r\n\r\n\r\nDate:-\r\n\r\nForgery::Date.day_of_week
+  \               # => \"Thursday\", \"Tuesday\"\r\nForgery::Date.day_of_week(:abbr
+  => true) # => \"Sun\", \"Mon\"\r\nForgery::Date.month                      # =>
+  \"May\", \"November\"\r\nForgery::Date.month(:abbr => true)       # => \"Jan\",
+  \"Feb\"\r\nForgery::Date.month(:numerical => true)  # => 1, 2, 12\r\nForgery::Date.year
+  \                      # => 2010, 2030, 1998\r\nForgery::Date.year(\r\n  :future
+  => false,     # force year to be in the future only\r\n  :min_delta => 0,      #
+  min change fromcurrent year\r\n  :max_delta => 20\r\n)                                        #
+  => 2010, 2030, 1998\r\nForgery::Date.day                        # => 26, 28\r\nForgery::Date.date
+  \                      # => #<Date: 1996-10-18 (4900749/2,0,2299161)>\r\nForgery::Date.date(\r\n
+  \ :future => false,\r\n  :min_delta => 0,\r\n  :max_delta => 7300\r\n)                                        #
+  => #<Date: 1996-10-18 (4900749/2,0,2299161)>\r\n\r\n\r\nEmail:-\r\n\r\nForgery::Email.address
+  \                  # => \"jschmidt@vidoo.net\", \"rdavis@realmix.name\", \"wmcdonald@yoveo.gov\"\r\nForgery::Email.subject
+  \                  # => \"Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit\"\r\nForgery::Email.subject(\r\n
+  \ :random => nil,\r\n  :random_limit => <max>\r\n)                                        #
+  => \"Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit\"\r\nForgery::Email.body
+  \                     # => \"Lorem ipsum dolor sit amet, consectetuer adipiscing
+  elit. Proin risus. Praesent lectus.\\n...\r\nForgery::Email.body(\r\n  :quantity
+  <random 1-10>\r\n  :separator => \"\\n\\n\",\r\n  :wrap => {\r\n    :start => \"\",\r\n
+  \   :end => \"\"\r\n  },\r\n  :html => false,               # equiv to :wrap =>
+  {:start => \"<p>\", :end => \"</p>\"}\r\n  :sentences => 3\r\n  :random => nil,\r\n
+  \ :random_limit => <max>\r\n)                                        # => \"Lorem
+  ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\\n...\r\n\r\n\r\nInternet:-\r\n\r\nForgery::Internet.user_name
+  \             # => \"jrice\", \"erogers\", \"jpeters\"\r\nForgery::Internet.top_level_domain
+  \      # => \"gov\", \"name\"\r\nForgery::Internet.domain_name            # => \"lajo.mil\",
+  \"kaymbo.info\", \"yabox.net\"\r\nForgery::Internet.email_address          # =>
+  \"jweaver@geba.name\", \"cgrant@tavu.name\", \"jbryant@skinix.name\"\r\nForgery::Internet.email_subject
+  \         # => \"Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit\"\r\nForgery::Internet.email_subject(\r\n
+  \ :random => nil,\r\n  :random_limit => <max>\r\n)                                        #
+  => \"Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit\"\r\nForgery::Internet.cctld
+  \                 # => \"hu\", \"mg\", \"qa\"\r\nForgery::Internet.ip_v4                  #
+  => \"155.217.234.189\", \"18.128.82.110\", \"14.247.237.15\"\r\n\r\n\r\nLoremIpsum:-\r\n\r\nForgery::LoremIpsum.text
+  \                # => \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\"\r\nForgery::LoremIpsum.text(\r\n
+  \ :sentence,                # which other LoremIpsum method to call\r\n  2,                        #
+  quantity\r\n  {}                        # options\r\n)                                        #
+  => \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\"\r\nForgery::LoremIpsum.character
+  \           # => \"l\"\r\nForgery::LoremIpsum.character(\r\n  :random => nil,\r\n
+  \ :random_limit => <max>        # if :random, start selecting chars from (0..:random_limit).random\r\n)
+  \                                       # => \"l\"\r\nForgery::LoremIpsum.characters
+  \          # => \"lorem ipsu\"\r\nForgery::LoremIpsum.characters(\r\n  10,                           #
+  quantity\r\n  :random => nil,\r\n  :random_limit => <max>\r\n)                                        #
+  => \"lorem ipsu\"\r\nForgery::LoremIpsum.word                 # => \"lorem\"\r\nForgery::LoremIpsum.word(\r\n
+  \ :random => nil,\r\n  :random_limit => <max>\r\n)                                        #
+  => \"lorem\"\r\nForgery::LoremIpsum.words                # => \"lorem ipsum dolor
+  sit amet consectetuer adipiscing elit proin risus\"\r\nForgery::LoremIpsum.words(\r\n
+  \ 10                            # quantity\r\n  :random => nil,\r\n  :random_limit
+  => <max>\r\n)                                        # => \"lorem ipsum dolor sit
+  amet consectetuer adipiscing elit proin risus\"\r\nForgery::LoremIpsum.sentence
+  \            # => \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\"\r\nForgery::LoremIpsum.sentence(\r\n
+  \ :random => nil,\r\n  :random_limit => <max>\r\n)                                        #
+  => \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\"\r\nForgery::LoremIpsum.sentences
+  \           # => \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin
+  risus.\"\r\nForgery::LoremIpsum.sentences(\r\n  2                             #
+  quantity\r\n  :random => nil,\r\n  :random_limit => <max>\r\n)                                        #
+  => \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus.\"\r\nForgery::LoremIpsum.paragraph
+  \           # => \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin
+  risus. Praesent lectus...\r\nForgery::LoremIpsum.paragraph(\r\n  :separator => \"\\n\\n\",\r\n
+  \ :wrap => {\r\n    :start => \"\",\r\n    :end => \"\"\r\n  },\r\n  :html => false,
+  \              # equiv to :wrap => {:start => \"<p>\", :end => \"</p>\"}\r\n  :sentences
+  => 3\r\n  :random => nil,\r\n  :random_limit => <max>\r\n)                                        #
+  => \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent
+  lectus...\r\nForgery::LoremIpsum.paragraphs           # => \"Lorem ipsum dolor sit
+  amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\\n...\r\nForgery::LoremIpsum.paragraphs(\r\n
+  \ 2                             # quantity\r\n  :separator => \"\\n\\n\",\r\n  :wrap
+  => {\r\n    :start => \"\",\r\n    :end => \"\"\r\n  },\r\n  :html => false,               #
+  equiv to :wrap => {:start => \"<p>\", :end => \"</p>\"}\r\n  :sentences => 3\r\n
+  \ :random => nil,\r\n  :random_limit => <max>\r\n)                                        #
+  => \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent
+  lectus.\\n...\r\nForgery::LoremIpsum.title                # => \"Lorem Ipsum Dolor
+  Sit Amet, Consectetuer Adipiscing Elit\"\r\nForgery::LoremIpsum.title(\r\n  :random
+  => nil,\r\n  :random_limit => <max>\r\n)                                        #
+  => \"Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit\"\r\n\r\n\r\nMonetary:-\r\n\r\nForgery::Monetary.formatted_money
+  \       # => \"$9.92\", \"$6.25\", \"$9.96\"\r\nForgery::Monetary.formatted_money(\r\n
+  \ :min => 0,\r\n  :max => 10\r\n)                                        # => \"$9.92\",
+  \"$6.25\", \"$9.96\"\r\nForgery::Monetary.money                  # => \"2.02\",
+  \"7.99\", \"6.78\"\r\nForgery::Monetary.money(\r\n  :min => 0,\r\n  :max => 10\r\n)
+  \                                       # => \"2.02\", \"7.99\", \"6.78\"\r\n\r\n\r\nName:-\r\n\r\nForgery::Name.last_name
+  \                 # => \"Campbell\", \"Moore\", \"Diaz\"\r\nForgery::Name.first_name
+  \                # => \"Cheryl\", \"Bruce\", \"Earl\"\r\nForgery::Name.full_name
+  \                 # => \"Roger Kelley\", \"Ryan Garza\", \"Ernest Cruz\"\r\nForgery::Name.male_first_name
+  \           # => \"Aaron\", \"Carl\", \"Bruce\"\r\nForgery::Name.female_first_name
+  \         # => \"Deborah\", \"Christine\", \"Jean\"\r\nForgery::Name.company_name
+  \              # => \"Twitterlist\", \"Skiba\", \"Riffwire\"\r\nForgery::Name.job_title
+  \                 # => \"GIS Technical Architect\", \"Graphic Designer\", \"Staff
+  Accountant III\"\r\nForgery::Name.job_title_suffix           # => \"III\", \"IV\",
+  \"I\"\r\nForgery::Name.title                      # => \"Mr\", \"Honorable\", \"Mrs\"\r\nForgery::Name.suffix
+  \                    # => \"Sr\", \"Jr\"\r\nForgery::Name.location                   #
+  => \"The Frying Dutchman\", \"Alcatraz Island\", \"Cowboys Stadium\"\r\nForgery::Name.industry
+  \                  # => \"Farm & Construction Machinery\", \"Department Stores\",
+  \"Management Services\"\r\n\r\n\r\nPersonal:-\r\n\r\nForgery::Personal.gender                 #
+  => \"Male\", \"Female\"\r\nForgery::Personal.abbreviated_gender     # => \"F\",
+  \"M\"\r\nForgery::Personal.shirt_size             # => \"3XL\", \"L\"\r\nForgery::Personal.race
+  \                  # => \"Kiowa\", \"Chippewa\", \"American Indian\"\r\nForgery::Personal.language
+  \              # => \"Romanian\", \"Georgian\", \"Bulgarian\"\r\n\r\n\r\nTime:-\r\n\r\nForgery::Time.zone
+  \                      # => \"Azores\", \"Vienna\", \"Cape Verde Is.\"\r\n\r\n(The
+  above examples were generated with this script: https://github.com/JamesFerguson/forgery_cheat_sheet)"

@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>class User &lt; ActiveRecord::Base
+  named_scope :active, :conditions =&gt; {:active =&gt; true}
+  named_scope :inactive, :conditions =&gt; {:active =&gt; false}
+  named_scope :recent, lambda { { :conditions =&gt; ['created_at &gt; ?', 1.week.ago] } }
+end
+
+# Standard usage
+User.active    # same as User.find(:all, :conditions =&gt; {:active =&gt; true})
+User.inactive # same as User.find(:all, :conditions =&gt; {:active =&gt; false})
+User.recent   # same as User.find(:all, :conditions =&gt; ['created_at &gt; ?', 1.week.ago])
+
+# They're nest-able too!
+User.active.recent
+  # same as:
+  # User.with_scope(:conditions =&gt; {:active =&gt; true}) do
+  #   User.find(:all, :conditions =&gt; ['created_at &gt; ?', 1.week.ago])
+  # end
+
+# Passing Arguments
+class User &lt; ActiveRecord::Base
+  named_scope :registered, lambda { |time_ago| { :conditions =&gt; ['created_at &gt; ?', time_ago] } }
+end
+
+User.registered 7.days.ago # same as User.find(:all, :conditions =&gt; ['created_at &gt; ?', 7.days.ago])
+
+# Named scope extensions
+
+class User &lt; ActiveRecord::Base
+  named_scope :inactive, :conditions =&gt; {:active =&gt; false} do
+    def activate
+      each { |i| i.update_attribute(:active, true) }
+    end
+  end
+end
+
+# Re-activate all inactive users
+User.inactive.activate
+
+# Using a subquery..
+named_scope :non_administrative, :conditions =&gt; [ &quot;users.id NOT IN (SELECT admins.user_id from admins)&quot; ]
+named_scope :administrative, :conditions =&gt; [ &quot;users.id IN (SELECT admins.user_id from admins)&quot; ]
+
+User.administrative
+User.non_administrative
+
+Based on a solution at http://railsforum.com/viewtopic.php?id=24563</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

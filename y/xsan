@@ -1,0 +1,31 @@
+---
+xsan: ! "xsan:\n\nXSAN is a Storage Area Network solution by Apple.\n-------------------------------------------------------------------------\nVersion
+  0.3\t- 2012-06-27 - Arvinder Singh (http://twitter.com/askang)\nVersion 0.2\t- 2012-06-27
+  - Arvinder Singh (http://twitter.com/askang)\nVersion 0.1\t- 2012-06-27 - Arvinder
+  Singh (http://twitter.com/askang)\n-------------------------------------------------------------------------\n\nxsanctl
+  command [arg [...]]\n===========================\nhelp \t\t\t: Display a list of
+  the available xsanctl commands\nping \t\t\t: `ping' xsand. Used to verify that xsand
+  is responsive.\nmount volumeName \t: Mounts the volume volumeName.  Then auto-mount
+  at startup.\nunmount volumeName \t: Unmounts the volume volumeName.\nlist \t\t\t:
+  Lists the volumes available on the SAN and mounted path.\nsanConfigChanged \t: Notify
+  Xsan that SAN conf changed and should be reloaded.\nroleChanged \t\t: Notify Xsan
+  that role of this computer has changed/removed.\ndisksChanged \t\t: Notify Xsan
+  that disks have changed and should be rescanned.\n\nConfiguration files (/Library/Filesystems/Xsan/config)\n======================================================\nvolume.cfg\t\t:
+  Volume settings\nvolume-auxdata.plist\t: Additional volume settings used by Xsan
+  Admin\nfsmlist\t\t\t: Volume autostart list\nfsnameservers\t\t: Controller list\nautomount.plist\t\t:
+  Xsan volumes auto mounts and their mount options\nconfig.plist\t\t: Private Xsan
+  Admin configuration information\nnotification.plist\t: Notification settings made
+  with Xsan Admin\nnotes/\t\t: Note files whose contents were entered in Admin Inspector
+  window\nuuid\t\t\t: Private Xsan Admin computer identification information\nlicense.dat\t\t:
+  File to place StorNext licenses if add StorNext clients\n.auth_secret\t\t: Shared
+  secret file used when adding StorNext clients to your SAN\n\nManagement\n==========\ncvmkdir
+  \t: Create an Xsan Directory with an Affinity\nsnfsdefrag\t: move files to new storage
+  pool after changing an affinity\ncvfail\t: sends out email notification configured
+  in XSAN Admin\n\ncvadmin \t: View or change volume and storage pool settings\ncvaffinity
+  \t: Manipulate affinity tags manually \ncvcp \t\t: Copy files or folders \ncvfsck
+  \t: Check or repair a volume \ncvlabel \t: View, label, and initialize LUNs\ncvmkdir
+  \t: Create a folder and assign an affinity\ncvmkfile \t: Create and preallocate
+  a file\ncvmkfs \t: Initialize a volume\ncvupdatefs \t: Apply volume setup changes\nsnfsdefrag
+  \t: Defragment a volume\nxsanctl \t: Mount and unmount Xsan volumes\nGlossery\n========\nfsmpm\t\t:
+  File System Manager port mapper daemon. Both on server and client.\nfsm\t\t\t: File
+  System Manager daemon. Server daemon manages XSAN volume."

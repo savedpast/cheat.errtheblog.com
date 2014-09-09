@@ -1,0 +1,5 @@
+---
+assert_template: ! "# 'cheat assertions' for the rest\n\nassert_template(expected
+  = nil, message=nil)\n\nAsserts that the request was rendered with the appropriate
+  template file.\n\nExamples\n\n  # assert that the \"new\" view template was rendered\n
+  \ assert_template \"new\""

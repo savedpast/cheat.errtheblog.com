@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Parts of a ruby URI:
+
+fragment   The part of URI after ’#’ sign ('#poignantcontent')
+host     Server host name ('whytheluckystiff.net')
+path    Path on server ('/incidents.html')
+port    Server port  ('80')
+query    Query string ( '?chunkybacon=true' )
+scheme    Protocol scheme ('http','ftp','mailto' and so on)
+userinfo    User name and password ('sdmitry:bla')
+
+Using with net/http:
+  Net::HTTP.start(uri.host, uri.port) do |http|
+    http.get(uri.path, header)
+  end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

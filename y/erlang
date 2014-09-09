@@ -1,0 +1,37 @@
+---
+erlang: ! "% Erlang Cheat Sheet\r\n\r\n% this is a comment\r\n-module(cheat_sheet).
+  % These are called \"attributes\" to your \"module\"\r\n-behavior(behavior_name).
+  % Optional, Includes A Standard \"Behavior\"\r\n-export([data_types/1]).\r\n\r\n-record(stuff,{a,b,c}).\r\n\r\n%
+  Here are various data types, expressed as multiple clauses of a function.\r\n% When
+  the function is called with a certain atom, it returns the example list.\r\ndata_types(atoms)
+  ->\r\n  [\r\n    lower_cased_words_like_this,\r\n    'escaped values with single
+  quotes',\r\n    'Even Works For Upper Case When Escaped'\r\n  ];\r\ndata_types(lists)
+  ->\r\n  [\r\n    [1,2,3],\r\n    [a,b,c],\r\n    \"strings are technically lists
+  of characters\"\r\n  ];\r\ndata_types(numbers) ->\r\n  [\r\n    1, % arbitrarily
+  sized integer\r\n    2,\r\n    5.0, % floating point\r\n    3.14159, \r\n    16#deadbeef,
+  % hexadecimal\r\n    8#077, % octal\r\n    2#001101, % binary\r\n    $E,$r,$l,$a,$n,$g,$!,$\\n
+  % Numeric values for the characters \"Erlang!\\n\"\r\n  ];\r\ndata_types(binaries)
+  ->\r\n  [\r\n    <<1:4>>, % a 4-bit bit-string\r\n    <<\"some string as a binary\">>,
+  % a full binary, created from this string\r\n    <<1,2,3>>, % a full binary, created
+  from these integers\r\n    <<16#deadbeef:32/unsigned-integer-bigendian>>,\r\n  ];\r\ndata_types(tuples)
+  ->\r\n  [\r\n    {a,b,1,2}, % Some random stuff\r\n    {size,45,gigabytes}, % a
+  lot of capacity\r\n    {size,36,'DD'}, % also a lot of capacity\r\n    #stuff{a=1,b=foo,c=\"bar\"},
+  % records are just tuples in disguise\r\n    {stuff,1,foo,\"bar\"}, % the above
+  record as a raw tuple\r\n  ];\r\ndata_types(exotic) ->\r\n  [\r\n    fun (X,Y,Z)
+  -> % an anonymous function\r\n      this_is_a_function\r\n    end,\r\n    fun lists:foreach/2,
+  % an external function\r\n    self(), % returns a process ID\r\n    make_ref() %
+  returns a reference\r\n  ].\r\n\r\ncontrol_structures(A,B,C) ->\r\n  Check0 = if
+  % note, these clauses are guards, not full expressions\r\n    A > 5 -> bigger_than_5;\r\n
+  \   A < 0 -> negative;\r\n    B > C -> stuff;\r\n    true -> default_value\r\n  end,\r\n
+  \ Check1 = case {check1,A,B+C} of % the extra atom helps locate match failures\r\n
+  \   {check1,1,2} -> stuff;\r\n    {check1,2,X} when X > 5 -> other_stuff;\r\n    {check1,3,Y}
+  ->\r\n      case {subcheck,Y} of % the extra atom helps locate match failures\r\n
+  \       {subcheck,0} -> zero;\r\n        {subcheck,_} -> default_value\r\n      end;\r\n
+  \   _ -> default_value\r\n  end,\r\n  Check2 = try A / B of % Note, the case-like
+  matching part is optional\r\n    1 -> one_times; % exceptions are not caught here,
+  only in the expression\r\n    2 -> two_times;\r\n    3 -> three_times;\r\n    X
+  when X < 0 -> fractional;\r\n    X when X > 3 -> a_bunch;\r\n    _ -> default_value\r\n
+  \ catch\r\n    error:bad_arith -> division_by_zero;\r\n    error:_ -> some_other_error\r\n
+  \ end,\r\n  ok.\r\n\r\n% TODO: Pattern Matches\r\n% TODO: Standard Behaviors\r\n%
+  TODO: Messaging and Receiving\r\n% TODO: Tail-Recursion\r\n% TODO: Macros\r\n% TODO:
+  List Comprehensions\r\n"

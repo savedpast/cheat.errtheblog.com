@@ -1,0 +1,34 @@
+---
+pcre: ! "Escapes:\n\t\\a\t\talarm (0x07)\n\t\\cx\t\t\"control + x\"\n\t\\e\t\tescape
+  (0x1B)\n\t\\f\t\tformfeed (0x0C)\n\t\\n\t\tnewline (0x0A)\n\t\\p{xx}\tchar with
+  xx property*\n\t\\P{xx}\tchar without xx property*\n\t\\r\t\tcarriage return (0x0D)\n\t\\t\t\ttab
+  (0x09)4\n\t\\xhh\tchar with hex code hh*\n\t\\ddd\tchar with octal code ddd, or
+  backreference\n\t\n\t* see http://us2.php.net/manual/en/regexp.reference.unicode.php\n\t\nCharacter
+  classes:\n\t\\d\t\tdecimal digit\n\t\\D\t\tnot decimal digit\n\t\\h\t\thorizontal
+  whitespace (v5.2.4)\n\t\\H\t\tnot horizontal whitespace (v5.2.4)\n\t\\s\t\twhitespace\n\t\\S\t\tnot
+  whitespace\n\t\\v\t\tvertical whitespace (v5.2.4)\n\t\\V\t\tnot vertical whitespace
+  (v5.2.4)\n\t\\w\t\tword character [a-zA-Z0-9_]\n\t\\W\t\tnot word character\n\t\n[:_____:]
+  style character classes:\n\talnum\talphanumeric\n\talpha\tletters\n\tascii\tchar
+  codes 0 - 127\n\tblank\tspace or tab\n\tcntrl\tcontrol chars\n\tdigit\tdecimal digits
+  (eq to \\d)\n\tgraph\tany printing chars, except space\n\tlower\tany lowercase letters\n\tprint\tany
+  printing chars, including space\n\tpunct\tany printing chars, except letters and
+  digits\n\tspace\twhitespace*\n\tupper\tany uppercase letters\n\tword\tany word chars
+  (eq to \\w)\n\txdigit\thexadecimal digits\n\t\n\t[:^_____:] is negation of [:_____:]\n\t\n\t*
+  [:space:] includes HT(9), LF(10), VT(11), FF(12), CR(13), space(32)\n\t  \\s does
+  not include VT\n\nAssertions:\n\t\\b\t\tword boundary\n\t\\B\t\tnot word boundary\n\t\\A\t\tstart
+  of subject\n\t\\Z\t\tend of subject, before newline if there\n\t\\z\t\tend of subject\n\t\\G\t\tmatching
+  position is at start of match, given offset by preg_match()\n\t\n\t(?=)\tpositive
+  look-ahead\n\t(?!)\tnegative look-ahead\n\t(?<=)\tpositive look-behind\n\t(?<!)\tnegative
+  look-behind\n\nOther:\n\t\\Q\t\tstart \"quoted\" (escaped) section\n\t\\E\t\tend
+  quoted section\n\t\t/\\w+\\Q.$.\\E$/  matches 1+ word chars then a literal .$. at
+  end of string\n\t\t\n\t\\K\t\tresets match start\n\t\tpreg_match('/foo\\Kbar/','foobar',$matches)
+  => $matches = array(0=>'bar')\n\t\n\t(?>)\tonce-only subpat (fails if first evaluation
+  fails, no backtrack)\n\t\n\t(?R)\trecursive subpat\n\t\nConditional subpatterns:
+  (?(condition)yes-pattern[|no-pattern])\n\tif condition is digits, then true if that
+  subpattern matched\n\tif condition is \"R\", then true if recursive call to pat
+  or subpat was made\n\totherwise, must be an assertion, pos/neg look-ahead/behind\n\t\t\t\n\nOptions:\n\ti\t\tPCRE_CASELESS\n\tm\t\tPCRE_MULTILINE\n\ts\t\tPCRE_DOTALL\n\tx\t\tPCRE_EXTENDED\n\tU\t\tPCRE_UNGREEDY\n\tX\t\tPCRE_EXTRA\n\tJ\t\tPCRE_INFO_JCHANGED\n\t\t/ab(?i)c/
+  matches abc and abC, but not Abc or aBc\n\nSubpatterns:\n\t(?:)\t\tNon-capturing\n\t(?x:)\t\tTemporary
+  option-set, x is an option flag\n\t(?P<name>)\n\t(?<name>)\n\t(?'name')\tNamed subpats\n\t(?|)\t\tAlternation
+  non-capturing subpat: each SP in each branch\n\t\t\t\tgets the same backreference.
+  in /(?|(Sat)ur|(Sun))day/, \\1\n\t\t\t\trefers to either Sat or Sun, depending on
+  which branch matched"

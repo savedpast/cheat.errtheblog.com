@@ -1,0 +1,4 @@
+---
+number_lines: ! "nl      Number lines. Advanced options.\r\ncat -n  Number all lines\r\ncat
+  -b  Number all non-blank lines\r\n\r\n\r\n# Count lines\r\nwc -l   \r\nawk 'NF !=
+  0 {++count} END {print count}';\r\nsed -n '$='"

@@ -1,0 +1,59 @@
+---
+chromium: ! "---\nchromium: |-\n  Linux shortcuts for Chromium browser\n\n  Tab and
+  window shortcuts\n\n      Ctrl+N                  Open new window. ?\n      Ctrl+T
+  \                 Open new tab.\n      Ctrl+Shift+N            Open new window in
+  incognito mode.\n      Ctrl+O                  Open file.\n      Ctrl+click link
+  \        Open link in new tab in background.\n      Ctrl+Shift+click link   Open
+  link in new tab and switch to it.\n      Shift+click link        Open link in new
+  window.\n      Ctrl+Shift+T            Reopen last tab you've closed. \n      Ctrl+1
+  to Ctrl+8        Switch to tab at specified position.\n      Ctrl+9                  Switch
+  to last tab.\n      Ctrl+PgUp/PgDown        Switch to next/previous tab.\n      Ctrl+Shift+Q
+  \           Close Chromium.\n      Ctrl+W/F4               Close current tab or
+  pop-up.\n      Alt+left/right          Goto previous/next page in browsing history.\n\n
+  \ Chromium feature shortcuts\n\n      Alt+F                   Tools menu.\n      Ctrl+Shift+B
+  \           Toggle bookmarks bar.\n      Ctrl+H                  History page.\n
+  \     Ctrl+J                  Downloads page.\n      Shift+Esc               Task
+  Manager.\n      Ctrl+Shift+J            Developer Tools.\n      Ctrl+Shift+Delete
+  \      Clear Browsing Data dialog.\n      F1                      Help Center in
+  new tab.\n\n  Address bar shortcuts\n\n      Ctrl+L                 Move focus to
+  address bar and highlight URL \n      Ctrl+K/E               Place '?' in address
+  bar.\n      Ctrl+Shift+left/right  Move cursor to preceding/next key term in address
+  bar\n      Ctrl+Backspace         Deletes key term preceding cursor in address bar\n\n
+  \  In address bar\n   \n      Type search term and press enter\n                  Performs
+  search using default search engine.\n      Type ? followed by search term and press
+  enter\n                  Perform search using default search engine.\n      Type
+  search engine keyword, press Space, type search term, and press Enter.\n                  Performs
+  search using the search engine associated with the keyword.\n      Select entry
+  in address-bar drop-down menu with keyboard arrows, then press Shift+Delete.                     Deletes
+  the entry from your browsing history, if possible.\n      Click entry in address
+  bar drop-down menu with middle mouse button (or mousewheel).\n                  Open
+  entry in new tab in background.\n      Press PageUp/PageDown when the address bar
+  drop-down menu is visible.\n                  Selects first/last entry in drop-down
+  menu.\n\n  Webpage shortcuts\n\n      Ctrl+P                 Print current page.\n
+  \     Ctrl+S                 Save current page.\n      Ctrl+R                 Reload
+  current page.\n      Esc                    Stop loading current page.\n      Ctrl+F
+  \                Open find bar.\n      Enter/(Shift+Enter)    Finds next/previous
+  match for input in find bar.\n      Alt+click link         Download target of link.\n
+  \     Ctrl+U                 Open source of current page.\n      Ctrl+D                 Save
+  current webpage as bookmark.\n      Ctrl+Shift+D           Save all open pages as
+  bookmarks in new folder.\n      F11                    Toggle full-screen mode.\n
+  \     Ctrl++/-               Enlarge/reduce page.\n      Ctrl+0                 Returns
+  page to normal size.\n      Space bar              Scroll down page.\n      Home/End
+  \              Goto top/bottom of page.\n      \nText shortcuts\n\n      Ctrl+C
+  \                Copies highlighted content to the clipboard.\n      Ctrl+V                 Pastes
+  content from the clipboard.\n      Ctrl+Shift+V           Paste content from the
+  clipboard without formatting.\n      Ctrl+X                 Deletes the highlighted
+  content and copies it to the clipboard.\n\nMouse actions\n\n      Drag link to bookmarks
+  bar\n                  Saves the link as a bookmark.      \n      Drag link to tab.\n
+  \                 Opens the link in the tab.\n      Drag link to blank area on tab
+  strip.\n                  Opens the link in a new tab.\n      Drag tab out of tab
+  strip.\n                  Opens the tab in a new window.\n      Drag tab out of
+  tab strip and into existing window.\n                  Opens the tab in the existing
+  wndow.\n      Press Esc while dragging tab.\n                  Returns the tab to
+  its original position.\n      Click tab with middle mouse button/mousewheel.\n                  Closes
+  the tab you clicked.\n      Right-click, or click and hold Back/Forward arrow in
+  browser toolbar.\n                  Displays your browsing history in the tab.\n
+  \     Click either the Back arrow, Forward arrow, or Go button in the toolbar with
+  your middle mouse button (or mousewheel).\n                  Opens the button destination
+  in a new tab in the background.\n      Double-click the blank area on the tab strip.\n
+  \                 Maximizes or minimizes the window."

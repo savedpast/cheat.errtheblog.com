@@ -1,0 +1,45 @@
+---
+mate: ! "NAVIGATING:\nCommand-Control-T        Find Command\nCommand-T                Find
+  file in project by name (type name or acronym for file)\nCommand-Shift-T          Go
+  to Symbol\nCommand-1 / 2 / etc      Switch to that number tab in Text\nCommand-F2
+  \              Toggle Bookmark\nF2                       Cycle Bookmarks\nF1                       Toggle
+  Fold\nCtrl-Shift-T             Show TODO List\n\nSELECTING:\nControl-W                Select
+  current word\nCommand-Shift-L          Select current line\nCommand-Shift-B          Select
+  enclosed braces\nCommand-Control-B        Select current scope\n\nEDITING:\nEscape
+  \                  Tab completion of variables / strings\nCommand-Enter            Go
+  to end of line and return\nCommand-Shift-V          Paste previous item in clipboard
+  history\nCommand-Control-Alt-V    Select from Clipboard\nCommand-Alt-A            Edit
+  Multiple Lines\nControl-U                Upcase\nControl-Shift-U          Downcase\nControl-Alt-U
+  \           TitleCase\nControl-Alt-Q            Unwrap line, remove newlines\nControl-K
+  \               Kill all text to end of line\nControl-Y                Yank back
+  all text from kill\nControl-D                Delete character (not backspace)\n\nSEARCH
+  & REPLACE:\nControl-S                Live Search / Find Next\nControl-Shift-S          Find
+  Previous\nCommand-F                Find\nCommand-Shift-F          Find in Project\n\nCOMMENTING,
+  QUOTING, AND INDENTING:\nCommand-/                Comment Toggle\nControl-\"                Single/Double
+  Quotes Toggle\nCommand-]                Indent Selection\nCommand-[                Un-indent
+  Selection\nCommand-Alt-[            Reindent\n\nCTAGS:\nControl-]                Lookup
+  Definition\nCommand-Control-B        Source Browser\n\nWEB:\nCommand-Control-Alt-P
+  \   Web Preview\nCommand-Control-Shift-W  Update missing tags for all lines\nControl-Shift-<
+  \         Create tags        (HTML)\nControl-Enter            <br/>\nControl-Shift-L
+  \         Wrap selection as Link\ndoctype-Tab              Document Type Section\nhead-Tab
+  \         \nbody-Tab\ntable-Tab\nCommand-&                Menu for URL\nCommand-Shift-C
+  \         Edit Hex Color with Color Picker\n\nCOMMAND LINE:\nfind {app,lib} -name
+  '*.rb' -o -name '*.rhtml' -print0 | xargs -0 mate\n\nRUBY:\nControl-H                Documentation
+  for word\nControl-{                Toggle do/end {/}\nControl-|                Install
+  Plugin, Dump DB, etc. Menu\n%                        Eval as Ruby (not in output)\nCommand-R
+  \               Run Ruby Script\nControl-Shift-E          Execute Line as Ruby\nControl-Shift-Command-E
+  \ Execute all lines marked with '# =>' as Ruby\nR-Tab                    attr_reader\nW-Tab
+  \                   attr_writer\nRW-Tab                   attr_accessor \ndef-Tab
+  \                 define method\nif-Tab                   if... end\ncase-Tab                 case...when...end\ncla-Tab
+  \                 Menu for different types of classes\nmod-Tab                  Menu
+  for different types of modules\nea-Tab                   each { |e|  }\neawi-Tab
+  \                each_with_index { |e, i|  }\n\nRAILS MIGRATIONS:\nmccc-Tab                 Create
+  Several Columns\nmcol-Tab                 Column Menu\nmtab-Tab                 Table
+  Menu\n\nRAILS VIEWS:\nControl-Shift-V          <%= %> Insert (and Toggle)\nControl-Shift-H
+  \         Create partial from selection\n\nRAILS CONTROLLERS:\nControl-P                params\nControl-J
+  \               session\nCommand-Shift-Alt-Down   Jump to controller helper/test/view/etc.\n\nSUBVERSION:\nControl-Shift-A
+  \         SVN Menu\n  1                      Add\n  2                      Remove\n
+  \ 3                      Revert\n  5                      Commit\n  6                      Blame\n
+  \ 7                      Info\n  8                      Log\n  9                      View
+  Revision\n  0                      Stat\n\nSHELL:\nContol-R                 Run
+  Current Line in the Shell"

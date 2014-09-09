@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># Shortcuts
+
+- 1 : home
+- 2 : timeline/profile
+- 3 : friends
+- 4 : messages
+- 5 : notifications
+- 6 : general account settings
+- 7 : privacy settings
+- 8 : Facebook’s Facebook page
+- 9 : legal terms
+- 0 : help center
+- m : new message
+- ? : search
+
+## In lightbox mode:
+
+- L: Like/Unlike photos
+- Left and right arrow keys: Skip back and forth between photos</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

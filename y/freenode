@@ -1,0 +1,3 @@
+---
+freenode: ! "Set nickname as operator at #channel\r\n/msg ChanServ OP <#channel> [nickname]\r\n\r\nSet
+  channel topic\r\n/topic \"The channel topic\""

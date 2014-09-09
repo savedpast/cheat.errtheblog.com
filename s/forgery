@@ -1,0 +1,320 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Forgery
+-------
+
+Forgery is a fake data generator. A typical use is as an extension to an object factory like Factory Girl to generate unique data for each object.
+
+
+Installation
+------------
+
+$ sudo gem install forgery
+
+Rails 2:
+
+# in config/environment.rb
+config.gem 'forgery'
+
+
+Rails 3:
+
+# in Gemfile
+gem 'forgery'
+
+
+Customisation
+-------------
+
+Forgery provides a generator to setup folders if you want to override or extend parts of it.
+
+Rails 2: 
+
+$ ruby script/generate forgery
+
+Rails 3:
+
+$ rails generate forgery   # not working at time of writing
+
+results in:
+
+ create lib/forgery
+ create lib/forgery/dictionaries
+ create lib/forgery/extensions
+ create lib/forgery/forgeries
+ create lib/forgery/formats
+
+Files in these directories take precedence over Forgery's built in files. So you could override Forgery's builtin format for phone numbers, which produces e.g. &quot;1-(123)456-7890&quot;, by creating a new format file, e.g. in bash:
+
+$ echo $'(0#) #### ####\n+61# #### ####' &gt; lib/forgery/formats/phone
+
+after which Forgery::Address.phone produces e.g. &quot;(08) 3582 5122&quot; or &quot;+612 7027 4990&quot;.
+
+
+Formats
+-------
+
+Traditional:
+
+Forgery::&lt;Type&gt;.method
+i.e. Forgery::Basic.password  # =&gt; 'nJMKlpERFf'
+
+Alternate:
+
+Forgery(:&lt;type&gt;).method
+i.e. Forgery(:basic).password # =&gt; 'wYMYvq'
+
+
+Forgeries
+---------
+
+A few comma-separated example outputs are given for each call. Where parameters are available they are (mostly) shown set to their defaults.
+
+Address:-
+
+Forgery::Address.street_name             # =&gt; &quot;Lukken&quot;, &quot;Heath&quot;, &quot;Jana&quot;
+Forgery::Address.street_number           # =&gt; &quot;3926&quot;, &quot;3&quot;, &quot;390&quot;
+Forgery::Address.street_suffix           # =&gt; &quot;Avenue&quot;, &quot;Place&quot;
+Forgery::Address.street_address          # =&gt; &quot;856 Novick Pass&quot;, &quot;0370 Westport Hill&quot;, &quot;43 Ilene Hill&quot;
+Forgery::Address.city                    # =&gt; &quot;Dana Point&quot;, &quot;Agoura Hills&quot;, &quot;Bell Gardens&quot;
+Forgery::Address.state                   # =&gt; &quot;Minnesota&quot;, &quot;Utah&quot;, &quot;Idaho&quot;
+Forgery::Address.state_abbrev            # =&gt; &quot;AL&quot;, &quot;TN&quot;, &quot;AK&quot;
+Forgery::Address.province                # =&gt; &quot;British Columbia&quot;, &quot;New Brunswick&quot;
+Forgery::Address.province_abbrev         # =&gt; &quot;BC&quot;, &quot;YT&quot;, &quot;NU&quot;
+Forgery::Address.zip                     # =&gt; &quot;52474&quot;, &quot;17606-0531&quot;, &quot;55951-9920&quot;
+Forgery::Address.phone                   # =&gt; &quot;8-(824)176-2699&quot;, &quot;6-(960)921-9082&quot;, &quot;1-(148)062-4183&quot;
+Forgery::Address.country                 # =&gt; &quot;Korea, North&quot;, &quot;Puerto Rico&quot;, &quot;Guadeloupe&quot;
+Forgery::Address.continent               # =&gt; &quot;Asia&quot;, &quot;Australia&quot;, &quot;Europe&quot;
+
+
+Basic:-
+
+Forgery::Basic.password                  # =&gt; &quot;2xHa8FVTB1pq&quot;, &quot;3jcJEp&quot;, &quot;abUYdEMHX&quot;
+Forgery::Basic.password(
+  :at_least =&gt; 6,
+  :at_most =&gt; 12,
+  :allow_lower =&gt; true,
+  :allow_upper =&gt; true,
+  :allow_numeric =&gt; true,
+  :allow_special =&gt; false
+)                                        # =&gt; &quot;2xHa8FVTB1pq&quot;, &quot;3jcJEp&quot;, &quot;abUYdEMHX&quot;
+Forgery::Basic.encrypt                   # =&gt; &quot;2e76fa01cc37c8feac559961dffce03a901bfe15&quot;
+Forgery::Basic.encrypt(
+  &quot;password&quot;,
+  Time.now.to_s           # the salt
+)                                        # =&gt; &quot;2e76fa01cc37c8feac559961dffce03a901bfe15&quot;
+Forgery::Basic.boolean                   # =&gt; false, true
+Forgery::Basic.color                     # =&gt; &quot;Pink&quot;, &quot;Blue&quot;
+Forgery::Basic.hex_color                 # =&gt; &quot;#48d0b1&quot;, &quot;#795363&quot;, &quot;#13097d&quot;
+Forgery::Basic.short_hex_color           # =&gt; &quot;#275&quot;, &quot;#740&quot;, &quot;#709&quot;
+Forgery::Basic.number                    # =&gt; 8, 10, 5
+Forgery::Basic.number(
+  :at_least =&gt; 1,
+  :at_most =&gt; 10
+)                                        # =&gt; 8, 10, 5
+Forgery::Basic.text                      # =&gt; &quot;IzRI9hcizVkJewN&quot;, &quot;P0VWlX1J2npQQ9&quot;, &quot;9DmJXvIxQ7YYnDK&quot;
+Forgery::Basic.text(
+  :at_least =&gt; 10,
+  :at_most =&gt; 15,
+  :allow_lower =&gt; true,
+  :allow_upper =&gt; true,
+  :allow_numeric =&gt; true,
+  :allow_special =&gt; false
+)                                        # =&gt; &quot;IzRI9hcizVkJewN&quot;, &quot;P0VWlX1J2npQQ9&quot;, &quot;9DmJXvIxQ7YYnDK&quot;
+Forgery::Basic.frequency                 # =&gt; &quot;Never&quot;, &quot;Seldom&quot;, &quot;Monthly&quot;
+
+
+CreditCard:-
+
+Forgery::CreditCard.type                 # =&gt; &quot;Visa&quot;, &quot;American Express&quot;
+Forgery::CreditCard.number               # =&gt; &quot;5521817503186153&quot;, &quot;5345748511721281&quot;, &quot;349564942690988&quot;
+Forgery::CreditCard.number(
+  type: &lt;random&gt;,
+  length: &lt;15-16 depending on type&gt;,
+  prefixes: &lt;depends on type&gt;
+)                                        # =&gt; &quot;5521817503186153&quot;, &quot;5345748511721281&quot;, &quot;349564942690988&quot;
+
+
+Currency:-
+
+Forgery::Currency.description            # =&gt; &quot;New Zealand Dollars&quot;, &quot;Platinum Ounces&quot;, &quot;Saudi Arabia Riyals&quot;
+Forgery::Currency.code                   # =&gt; &quot;XAU&quot;, &quot;SDG&quot;, &quot;HUF&quot;
+
+
+Date:-
+
+Forgery::Date.day_of_week                # =&gt; &quot;Thursday&quot;, &quot;Tuesday&quot;
+Forgery::Date.day_of_week(:abbr =&gt; true) # =&gt; &quot;Sun&quot;, &quot;Mon&quot;
+Forgery::Date.month                      # =&gt; &quot;May&quot;, &quot;November&quot;
+Forgery::Date.month(:abbr =&gt; true)       # =&gt; &quot;Jan&quot;, &quot;Feb&quot;
+Forgery::Date.month(:numerical =&gt; true)  # =&gt; 1, 2, 12
+Forgery::Date.year                       # =&gt; 2010, 2030, 1998
+Forgery::Date.year(
+  :future =&gt; false,     # force year to be in the future only
+  :min_delta =&gt; 0,      # min change fromcurrent year
+  :max_delta =&gt; 20
+)                                        # =&gt; 2010, 2030, 1998
+Forgery::Date.day                        # =&gt; 26, 28
+Forgery::Date.date                       # =&gt; #&lt;Date: 1996-10-18 (4900749/2,0,2299161)&gt;
+Forgery::Date.date(
+  :future =&gt; false,
+  :min_delta =&gt; 0,
+  :max_delta =&gt; 7300
+)                                        # =&gt; #&lt;Date: 1996-10-18 (4900749/2,0,2299161)&gt;
+
+
+Email:-
+
+Forgery::Email.address                   # =&gt; &quot;jschmidt@vidoo.net&quot;, &quot;rdavis@realmix.name&quot;, &quot;wmcdonald@yoveo.gov&quot;
+Forgery::Email.subject                   # =&gt; &quot;Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit&quot;
+Forgery::Email.subject(
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit&quot;
+Forgery::Email.body                      # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n...
+Forgery::Email.body(
+  :quantity &lt;random 1-10&gt;
+  :separator =&gt; &quot;\n\n&quot;,
+  :wrap =&gt; {
+    :start =&gt; &quot;&quot;,
+    :end =&gt; &quot;&quot;
+  },
+  :html =&gt; false,               # equiv to :wrap =&gt; {:start =&gt; &quot;&lt;p&gt;&quot;, :end =&gt; &quot;&lt;/p&gt;&quot;}
+  :sentences =&gt; 3
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n...
+
+
+Internet:-
+
+Forgery::Internet.user_name              # =&gt; &quot;jrice&quot;, &quot;erogers&quot;, &quot;jpeters&quot;
+Forgery::Internet.top_level_domain       # =&gt; &quot;gov&quot;, &quot;name&quot;
+Forgery::Internet.domain_name            # =&gt; &quot;lajo.mil&quot;, &quot;kaymbo.info&quot;, &quot;yabox.net&quot;
+Forgery::Internet.email_address          # =&gt; &quot;jweaver@geba.name&quot;, &quot;cgrant@tavu.name&quot;, &quot;jbryant@skinix.name&quot;
+Forgery::Internet.email_subject          # =&gt; &quot;Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit&quot;
+Forgery::Internet.email_subject(
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit&quot;
+Forgery::Internet.cctld                  # =&gt; &quot;hu&quot;, &quot;mg&quot;, &quot;qa&quot;
+Forgery::Internet.ip_v4                  # =&gt; &quot;155.217.234.189&quot;, &quot;18.128.82.110&quot;, &quot;14.247.237.15&quot;
+
+
+LoremIpsum:-
+
+Forgery::LoremIpsum.text                 # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&quot;
+Forgery::LoremIpsum.text(
+  :sentence,                # which other LoremIpsum method to call
+  2,                        # quantity
+  {}                        # options
+)                                        # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&quot;
+Forgery::LoremIpsum.character            # =&gt; &quot;l&quot;
+Forgery::LoremIpsum.character(
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;        # if :random, start selecting chars from (0..:random_limit).random
+)                                        # =&gt; &quot;l&quot;
+Forgery::LoremIpsum.characters           # =&gt; &quot;lorem ipsu&quot;
+Forgery::LoremIpsum.characters(
+  10,                           # quantity
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;lorem ipsu&quot;
+Forgery::LoremIpsum.word                 # =&gt; &quot;lorem&quot;
+Forgery::LoremIpsum.word(
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;lorem&quot;
+Forgery::LoremIpsum.words                # =&gt; &quot;lorem ipsum dolor sit amet consectetuer adipiscing elit proin risus&quot;
+Forgery::LoremIpsum.words(
+  10                            # quantity
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;lorem ipsum dolor sit amet consectetuer adipiscing elit proin risus&quot;
+Forgery::LoremIpsum.sentence             # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&quot;
+Forgery::LoremIpsum.sentence(
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&quot;
+Forgery::LoremIpsum.sentences            # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus.&quot;
+Forgery::LoremIpsum.sentences(
+  2                             # quantity
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus.&quot;
+Forgery::LoremIpsum.paragraph            # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus...
+Forgery::LoremIpsum.paragraph(
+  :separator =&gt; &quot;\n\n&quot;,
+  :wrap =&gt; {
+    :start =&gt; &quot;&quot;,
+    :end =&gt; &quot;&quot;
+  },
+  :html =&gt; false,               # equiv to :wrap =&gt; {:start =&gt; &quot;&lt;p&gt;&quot;, :end =&gt; &quot;&lt;/p&gt;&quot;}
+  :sentences =&gt; 3
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus...
+Forgery::LoremIpsum.paragraphs           # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n...
+Forgery::LoremIpsum.paragraphs(
+  2                             # quantity
+  :separator =&gt; &quot;\n\n&quot;,
+  :wrap =&gt; {
+    :start =&gt; &quot;&quot;,
+    :end =&gt; &quot;&quot;
+  },
+  :html =&gt; false,               # equiv to :wrap =&gt; {:start =&gt; &quot;&lt;p&gt;&quot;, :end =&gt; &quot;&lt;/p&gt;&quot;}
+  :sentences =&gt; 3
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n...
+Forgery::LoremIpsum.title                # =&gt; &quot;Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit&quot;
+Forgery::LoremIpsum.title(
+  :random =&gt; nil,
+  :random_limit =&gt; &lt;max&gt;
+)                                        # =&gt; &quot;Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit&quot;
+
+
+Monetary:-
+
+Forgery::Monetary.formatted_money        # =&gt; &quot;$9.92&quot;, &quot;$6.25&quot;, &quot;$9.96&quot;
+Forgery::Monetary.formatted_money(
+  :min =&gt; 0,
+  :max =&gt; 10
+)                                        # =&gt; &quot;$9.92&quot;, &quot;$6.25&quot;, &quot;$9.96&quot;
+Forgery::Monetary.money                  # =&gt; &quot;2.02&quot;, &quot;7.99&quot;, &quot;6.78&quot;
+Forgery::Monetary.money(
+  :min =&gt; 0,
+  :max =&gt; 10
+)                                        # =&gt; &quot;2.02&quot;, &quot;7.99&quot;, &quot;6.78&quot;
+
+
+Name:-
+
+Forgery::Name.last_name                  # =&gt; &quot;Campbell&quot;, &quot;Moore&quot;, &quot;Diaz&quot;
+Forgery::Name.first_name                 # =&gt; &quot;Cheryl&quot;, &quot;Bruce&quot;, &quot;Earl&quot;
+Forgery::Name.full_name                  # =&gt; &quot;Roger Kelley&quot;, &quot;Ryan Garza&quot;, &quot;Ernest Cruz&quot;
+Forgery::Name.male_first_name            # =&gt; &quot;Aaron&quot;, &quot;Carl&quot;, &quot;Bruce&quot;
+Forgery::Name.female_first_name          # =&gt; &quot;Deborah&quot;, &quot;Christine&quot;, &quot;Jean&quot;
+Forgery::Name.company_name               # =&gt; &quot;Twitterlist&quot;, &quot;Skiba&quot;, &quot;Riffwire&quot;
+Forgery::Name.job_title                  # =&gt; &quot;GIS Technical Architect&quot;, &quot;Graphic Designer&quot;, &quot;Staff Accountant III&quot;
+Forgery::Name.job_title_suffix           # =&gt; &quot;III&quot;, &quot;IV&quot;, &quot;I&quot;
+Forgery::Name.title                      # =&gt; &quot;Mr&quot;, &quot;Honorable&quot;, &quot;Mrs&quot;
+Forgery::Name.suffix                     # =&gt; &quot;Sr&quot;, &quot;Jr&quot;
+Forgery::Name.location                   # =&gt; &quot;The Frying Dutchman&quot;, &quot;Alcatraz Island&quot;, &quot;Cowboys Stadium&quot;
+Forgery::Name.industry                   # =&gt; &quot;Farm &amp; Construction Machinery&quot;, &quot;Department Stores&quot;, &quot;Management Services&quot;
+
+
+Personal:-
+
+Forgery::Personal.gender                 # =&gt; &quot;Male&quot;, &quot;Female&quot;
+Forgery::Personal.abbreviated_gender     # =&gt; &quot;F&quot;, &quot;M&quot;
+Forgery::Personal.shirt_size             # =&gt; &quot;3XL&quot;, &quot;L&quot;
+Forgery::Personal.race                   # =&gt; &quot;Kiowa&quot;, &quot;Chippewa&quot;, &quot;American Indian&quot;
+Forgery::Personal.language               # =&gt; &quot;Romanian&quot;, &quot;Georgian&quot;, &quot;Bulgarian&quot;
+
+
+Time:-
+
+Forgery::Time.zone                       # =&gt; &quot;Azores&quot;, &quot;Vienna&quot;, &quot;Cape Verde Is.&quot;
+
+(The above examples were generated with this script: https://github.com/JamesFerguson/forgery_cheat_sheet)</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

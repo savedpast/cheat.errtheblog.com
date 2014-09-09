@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>50% 
+ - Height and width both scaled by specified percentage.
+
+50%x50%
+ - Height and width individually scaled by specified percentages. (Only one % symbol needed.)
+
+500
+ - Width given, height automagically selected to preserve aspect ratio.
+
+x350
+ - Height given, width automagically selected to preserve aspect ratio.
+
+500x350
+ - Maximum values of height and width given, aspect ratio preserved.
+
+500x350^
+ - Minimum values of width and height given, aspect ratio preserved.
+
+500x350!
+ - Width and height emphatically given, original aspect ratio ignored.
+
+500x350&gt;
+ - Change as per widthxheight but only if an image dimension exceeds a specified dimension.
+
+500x350&lt;
+ - Change dimensions only if both image dimensions exceed specified dimensions.
+
+area@
+ - Resize image to have specified area in pixels. Aspect ratio is preserved.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

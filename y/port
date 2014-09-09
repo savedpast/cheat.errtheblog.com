@@ -1,0 +1,14 @@
+---
+port: ! "Update local ports and upgrade the MacPorts infrastructure:\r\n$ sudo port
+  selfupdate\r\n\r\nSearch all available ports:\r\n$ port search <string>\r\n\r\nInstall
+  a port:\r\n$ sudo port install <port> [+variant]\r\n\r\nFind outdated local ports\r\n$
+  port outdated\r\n\r\nUpgrade a port:\r\n$ sudo port upgrade <port>\r\n\r\nCleaning:\r\n$
+  sudo port clean --all <port>\r\n\r\nInformation:\r\n$ port info <port>\r\n\r\nDependencies:\r\n$
+  port deps <port>\r\n\r\nVariations:\r\n$ port variants <port>\r\n\r\nCreating Packages\r\n\r\n$
+  port pkg <port>\r\n$ port dmg <port>\r\n$ port rpm <port>\r\n\r\nOther Useful Options\r\n\r\n\tFetch\r\n\tExtract\r\n\tPatch\r\n\tConfigure\r\n\tBuild\r\n\tDestroot\r\n\t\r\n$
+  port clean --all <port>\r\n\r\n$ port contents <port>\r\n$ port installed\r\n$ port
+  outdated\r\n$ port upgrade <port>\r\n$ port dependents <port>\r\n$ port livecheck
+  <port>\r\n$ port lint <port>\r\n$ port lint <port>\r\n$ port variants <port>\r\n$
+  port -v install <port> +<variant>\r\n$ sudo port -f uninstall inactive\r\n\r\nTo
+  see more information, add -d, e.g.\r\n$ sudo port -d selfupdate\r\n\r\nMore information
+  on Using MacPorts:\r\nhttp://guide.macports.org/#usi"

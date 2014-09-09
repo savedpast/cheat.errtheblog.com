@@ -1,0 +1,12 @@
+---
+svnmerge: ! "Development Branch:\n\n  Prepare branch\n\n  $ svn co <branch url> branch\n
+  \ $ cd branch\n  $ svnmerge.py init\n  $ svn ci -F svnmerge-commit-message.txt\n
+  \ $ rm svnmerge-commit-message.txt\n\n  Merge branch\n\n  $ svnmerge.py merge\n\n
+  \ See available changes\n\n  $ svnmerge.py avail               # show only the revision
+  numbers\n  $ svnmerge.py avail --log         # show logs of the revisions\n  $ svnmerge.py
+  avail --diff        # show diffs of the revisions\n\nMerging Back To Trunk:\n\n
+  \ Prepare trunk\n\n  $ svn co <trunk url> trunk\n  $ cd trunk\n  $ svnmerge.py init
+  <branch url>\n  $ svn ci -F svnmerge-commit-message.txt\n  $ rm svnmerge-commit-message.txt\n\n
+  \ Merge trunk\n\n  $ svnmerge.py merge --bidirectional  # merges all changes back
+  into trunk\n\n  Quit working with branch\n\n  $ svnmerge.py uninit\n  $ svn ci -F
+  svnmerge-commit-message.txt\n\n\n\nMore information at: http://www.orcaware.com/svn/wiki/Svnmerge.py"

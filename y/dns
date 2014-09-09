@@ -1,0 +1,69 @@
+---
+dns: ! "The job of dns is to translate hostnames and domain names to ip addresses.
+  \ There are a number of dns entry types:\r\n\r\nA     :translates a hostname to
+  an ip address\r\nAAAA  :translates a hostname to an IPv6 address\r\nAXFR  :a meta
+  type used by clients to request a full transfer of all dns entries for a particular
+  domain\r\nCNAME :translates a hostname to another hostname\r\nHINFO :describes the
+  hardware running a particular host, not often used\r\nNS    :tells the dns client
+  to use a particular nameserver\r\nMX    :tells the dns client the hostname of the
+  mailserver to use when sending mail\r\nPTR   :used for mapping an ip address to
+  a hostname (rdns)\r\nRP    :describes the person responsible for a domain, subdomain
+  or hostname\r\nSOA   :sets global parameters for a domain including dns servers,
+  hostmaster contact details and TTL\r\nSRV   :describes hostnames to use for special
+  services like SIP and XMPP\r\nTXT   :used for setting notes, often used for SPF
+  records\r\nWKS   :used for describing well known services that the hostname runs,
+  not often used or supported\r\n\r\nIn Bind zonefiles you may use all of the above
+  except AXFR, which is used only by clients to request a full transfer of the entire
+  zone.\r\n\r\nThe root domain is generally described as '@' but can also be left
+  blank in zonefiles.  Subdomains will be described as just the subdomain part with
+  the domain being added automatically when resolved.  When referrering to external
+  domain names (ie. CNAMEs, MX records and NS records for hosts on other domains)
+  you should end the domain name with a '.' to denote it is a fully qualified domain
+  name.\r\n\r\nA root domain name may not point to a CNAME, it must use A (or AAAA)
+  records.  The use of CNAMEs should be limited as they add an extra dns lookup every
+  time they are used.\r\n\r\nExamples\r\n\r\nwww IN A 10.5.1.2; maps the 'www' hostname
+  to the ip address 10.5.1.2\r\n\r\nwww IN AAAA fe80::250:56ff:fec0 ; as above but
+  for an IPv6 address\r\n\r\n@ IN A 10.5.1.2; maps the root of the domain to 10.5.1.2,
+  note that this must be an A record and not a CNAME.\r\n\r\nwebmail IN CNAME mail
+  ; maps the webmail hostname to the mail hostname, the dns client now needs to look
+  up the IP address of the mail hostname.\r\n\r\nwebmail IN CNAME mail.example.com.
+  ; as above but maps to an external hostname. Notice the final period to denote a
+  fully qualified domain name.\r\n\r\nmail IN HINFO VAX-11/780   UNIX; the mail server
+  is running Unix on a VAX server, we probably don't want to tell people this\r\n\r\n@
+  IN MX 10 mail ; the mailserver for this domain is 'mail' (which must have an A record
+  listed)\r\n\r\n@ IN MX 20 backupmail ; 'backupmail' is another server responsible
+  for mail for this domain, but has a lower priority than the above mail server and
+  thus should be tried second. 'backupmail' must also have an A record listed.\r\n\r\n@
+  IN NS ns1 ; the ns1 nameserver is responsible for this domain\r\n\r\ndev IN ns ns1.example.org;
+  Don't ask me for anything related to the dev subdomain, ask ns1.example.org instead.\r\n\r\n_sip._tcp.example.com.
+  86400 IN SRV 10 60 5060 bigbox.example.com. ; bigbox.example.com is responsible
+  for handling sip connections on this domain.\r\n\r\n@ IN TXT \"v=spf1 a mx ?all\"
+  ; An SPF record for the domain, used to help with spam filtering\r\n\r\n@ IN SOA
+  ns1.example.com. ns2.example.com. (\r\n  201101141308 ; Serial number of this file
+  (typically based on date)\r\n  604800 ; Refresh time\r\n  86400 ; Retry time\r\n
+  \ 2419200 ; Expire time\r\n  604800 ; Negative Cache TTL\r\n)\r\n\r\nThe above zone
+  file is completely made up and invalid, but does give some nice examples.  It would
+  typically be loaded by Bind from named.conf.local using:\r\n\r\nzone \"example.com\"
+  {\r\ntype master;\r\nfile \"/etc/bind/db.example.com\";\r\n}\r\n\r\n# Taken from
+  http://whatexit.org/tal/mywritings/dnssoa.html\r\n\r\nHandling change:\r\n\r\nIn
+  the static environment you might have a situation where you plan on making a big
+  change at 5pm on Wednesday and you want the change to propagate quickly. You have
+  been propagating TTL's of 1 day for ages. How do you you get the change on Wednesday
+  to propagate instantly?\r\nIn a worst-case scenerio, changes take N+M seconds to
+  propagate. (where N is the refresh period time, and M is the default TTL)). That's
+  because a secondary might have gotten a zone right before the new zone data was
+  avaiable AND then a client might have gotten a RR that it thinks is valid for M
+  seconds. Since M and N are usually the same, the real propagation is often 2N seconds
+  long.\r\n\r\nSo, how do we make this change on Wednesday? It takes some pre-planning.\r\n\r\nOn
+  Monday morning you would set the SOA to have 1-hour refreshes and 1-hour TTLs. All
+  the data sitting out there with a 24-hour refreshes will eventually time out and
+  load the new data with the 1-hour/1-hour timeouts. You had to make this change on
+  Monday, since you need 2 days (2N) for the change to propagate.\r\n\r\nWhen you
+  make the change on Wednesday at 5pm, it should propagate in one or two hours. Nearly
+  an instant change.\r\n\r\nLet things settle for a while. Take a day to make sure
+  the changes you made are the way you really want them. You'll want the fixes to
+  propagate quickly also. The editional load on your servers will be minor... since
+  the check to see if a serial number has changed is extremely low-impact on server
+  performance.\r\n\r\nFinally when you are confident your changes were correct (for
+  example, on Friday) you can set your SOA back to the way it used to be. Huge refreshes
+  and huge TTLs."

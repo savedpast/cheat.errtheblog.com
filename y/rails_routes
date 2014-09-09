@@ -1,0 +1,16 @@
+---
+rails_routes: ! "http://api.rubyonrails.com/classes/ActionController/Routing.html\n\nTEST/UNIT:\n\nassert_routing:
+  lets you test whether or not the route properly resolves into options.\n\n def test_movie_route_properly_splits\n
+  \ opts = {:controller => \"plugin\", :action => \"checkout\", :id => \"2\"}\n  assert_routing
+  \"plugin/checkout/2\", opts\n end\n\n\nassert_recognizes:  tests that an URL breaks
+  into parameters properly.\n\n def test_route_has_options\n  opts = {:controller
+  => \"plugin\", :action => \"show\", :id => \"12\"}\n  assert_recognizes opts, \"/plugins/show/12\"\n
+  end\n\n\nIn tests you can simply pass the URL or named route to get or post.\n def
+  send_to_jail\n   get '/jail'\n   assert_response :success\n   assert_template \"jail/front\"\n
+  end\n\n def goes_to_login\n   get login_url\n   #...\n end\n\n---- \n RSPEC:\n\n
+  it \"index should be landing page for companies\" do\n    route_for(:controller
+  => \"companies\", :action => \"index\").should == '/companies'\n end\n\n it \"should
+  be landing page for companies\" do\n    params_for('/companies').should == {:controller
+  => \"companies\", :action => \"index\"}\n end\n\n specify \"{:controller => 'sessions',
+  :action => 'new'} from GET /login\" do \n    params_from(\"/login\", :method =>
+  :get).should == {:controller => \"sessions\", :action => \"new\"} \n end"

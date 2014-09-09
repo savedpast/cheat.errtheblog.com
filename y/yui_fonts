@@ -1,0 +1,6 @@
+---
+yui_fonts: ! "This is a cheat sheet for those using the yui font normalization stuff
+  (http://developer.yahoo.com/yui/fonts/#using). To achieve the desired pixel, enter
+  the percent as the font size.\n\npx  \t%\n10 \t77\n11 \t85\n12 \t93\n13 \t100\n14
+  \t108\n15 \t116\n16 \t123.1\n17 \t131\n18 \t138.5\n19 \t146.5\n20 \t153.9\n21 \t161.6\n22
+  \t167\n23 \t174\n24 \t182\n25 \t189\n26 \t197"

@@ -1,0 +1,2 @@
+---
+crontab: ! "crontab \n\nmin\thour\t\tday/month\t\tmonth\t\tday/week\tpath\n*\t*\t\t*\t\t\t*\t\t*\t\tpath_to_file"

@@ -1,0 +1,20 @@
+---
+terminitor: ! "setup 'echo \"setup\"'   # code to run during setup\n\n# open a tab
+  in current window with these commands\ntab \"echo 'default'\", \"echo 'default tab'\"\n\nwindow
+  do\n  before { run 'cd /path' } # run this command before each command.\n\n  run
+  'padrino start' # run in new window\n\n  tab \"echo 'first tab'\", \"echo 'of window'\"
+  # create a new tab in window and run it.\n\n  tab \"named tab\" do\n    run \"echo
+  'named tab'\"\n    run \"ls\"\n  end\nend\n\ntab \"echo 'hi'\", \"gitx\"\n\ntab
+  do\n  run \"echo 'hi'\"\n  run \"mate .\"\nend\n\nwindow do\n\n  run \"whoami\"
+  \   # Runs the command in the current window.\n\n  tab \"echo 'hi'\" # Creates another
+  tab\n  tab \"mate .\"    # And another\n\n  tab do          # Last hoorah\n    run
+  \"open http://www.google.com\"\n  end\nend\n\nbefore { run \"cd /path\" } # execute
+  this command before other commands in the default window\n  run \"whoami\"\ntab
+  'uptime'\n\n# In this instance, \"cd /path\" wil be executed in the default window
+  before 'whoami' \n# and also in the tab before 'uptime'.\n# You can also use this
+  inside a specific window context:\n\nwindow do\n  before 'cd /tmp'\n  run 'watchr
+  test.watchr' # \"cd /tmp\" first than run watchr\n\n  tab do\n    run 'padrino start'
+  # \"cd /tmp\" is ran beforehand and then padrino start is executed\n  end\nend\n\nsetup
+  do\n  run \"echo 'hi'\"\n  run \"bundle install\"\n  run 'git remote add upstream
+  git://github.com/achiu/terminitor.git'\nend\n\ntab :name => \"named tab\", :settings
+  => \"Grass\" do\n  run \"echo 'named tab'\"\n  run \"ls\"\nend"

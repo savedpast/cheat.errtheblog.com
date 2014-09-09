@@ -1,0 +1,23 @@
+---
+tina: ! "tina:\n\tTime Navigator (tina) is a tape backup solution by Atempo. \n\t\n\tVersion
+  0.1\t\t2012-06-27\t\tArvinder Singh (http://twitter.com/askang)\n\t\t\n\tdaemon
+  \t\t\t: tina_daemon\n\tdefault TCP port\t: 2525\n\tdefault UDP port\t: 2525\n\n\tCommands\n\t========\n\tsource
+  ./.tina.sh\t: set up environment variables before any command\n\ttina_daemon\t\t:
+  start tina daemon\n\ttina_stop\t\t: stop tina daemon\n\ttina_catalog_ctrl\t: check/start/stop
+  catalog status. Require running tina_daemon\n\t\n\tGUI\n\t===\n\ttina_adm \t\t:
+  Launch Admin console\n\ttina_user_info \t\t: Launches agent job viewer\n\ttina_event\t\t:
+  launches event viewer\n\ttina_job\t\t: launches job manager\n\ttina_library\t\t:
+  launches library manager\n\ttina_operator\t\t: launches media request console\n\ttina_scm
+  \t\t: launches security and compliance manager\n\ttina_sched\t\t: launches task
+  viewer\n\t\n\tBackup\n\t======\n\ttina_backup\t\t: start a customized backup (For
+  options -help)\n\ttina_start_backup\t: start a setup strategy backup\n\ttina_cart\t\t:
+  list or restore directory from cartridge\n\ttina_init\t\t: catalog maintainance\n\ttina_odbsave\t\t:
+  save catalog to local file\n\t\n\tMaintainance\n\t============\n\ttina_user_info\t\t:
+  Launch tina agent job viewer\n\ttina_alarm\t\t: sent alarm to tina server\n\ttina_acct\t\t:
+  generate report\n\t\n\t \n\tLibrary Diagnostic\n\t==================\n\tqcdiag\t\t\t:
+  commmand line tool for library diagnostic\n\t(qcdiag) help\t\t: list all command
+  option\n\n\tTroubleshooting\n\t===============\n\n\ttina_dmin not starting up\n\t-------------------------\n\t1.
+  Check port process atempo and lmgrd (licence manager) are running\n\t\n\t\tps -A
+  | grep atempo\n\t\tps -A | grep lmgrd\n\n\t2. Check licence file contents\n\t\n\t\tcat
+  /Applications/Atempo/FlexLM/atempo.lic\n\t\n\t2. Check port 25000 is not blocked
+  between licence manager and atempo server(if seperate)"

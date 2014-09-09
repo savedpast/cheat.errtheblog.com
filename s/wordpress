@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Start a new project:  
+
+  # Add a new virtual host
+  sudo mate /etc/apache2/httpd.conf
+
+  # Add a new host
+  sudo mate /etc/hosts
+
+  # Create the database
+  mysqladmin -u root create &lt;database_name&gt;
+
+Install Thor:
+
+  # Install thor
+  sudo gem install thor
+
+  # Install the thor task for WordPress
+  # Name it 'wordpress' at the prompt
+  thor install http://github.com/adamstac/thor-wordpress/raw/master/wordpress.thor
+
+Use Thor:
+
+  Learn more:
+  http://github.com/adamstac/thor-wordpress
+
+  wordpress
+  ---------
+  wordpress:install [--directory=DIRECTORY] [--version=VERSION]
+  # Download and unpack WordPress from the interwebs
+
+  wordpress:theme
+  ---------------
+  wordpress:theme:install --theme=&lt;theme&gt; [--directory=DIRECTORY] [--theme=THEME]
+  # Unpacks the specified &lt;theme&gt; from the compass-wordpress gem
+
+  wordpress:styles
+  ----------------
+  wordpress:styles:generate
+  # Clears and Generates the styles
+
+  wordpress:styles:clear
+  # Clears the styles
+
+  wordpress:compass
+  -----------------
+  wordpress:compass:watch
+  # Runs compass --watch
+
+  wordpress:deploy
+  ----------------
+  wordpress:deploy:theme
+  # Deploys the theme
+
+  wordpress:deploy:generate_config
+  # Asks for ssh_user and remote_root, and generates the deploy.yaml file</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

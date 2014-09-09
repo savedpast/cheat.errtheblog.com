@@ -1,0 +1,8 @@
+---
+useradd: ! "useradd (creating users in Linux)\n=================================\n\nSyntax\n------\nuseradd
+  [options] {username}\n\nDepending on command line options, the useradd command will
+  update system files (/etc/passwd and /etc/shadow file with password) and may also
+  create the new user's home directory and copy initial files.\n\n\nLinux add a new
+  user called rakhi\n---------------------------------\n\n  useradd rakhi # creates
+  the user\n  passwd rakhi  # sets the user's password\n\n  useradd -m radkhi # creates
+  the user and his home directory"

@@ -1,0 +1,13 @@
+---
+tweet_im: ! "How do I control my Twitter through tweet.IM?\r\nJust type your Twitter
+  message to twitter.tweet.im or your-username.tweet.im and it will appear in your
+  timeline. Type a single keyword help to see more commands. Current commands include:\r\n\r\n@username
+  message — public reply/send a message to this person\r\n\r\nd username message —
+  sends a direct message to this person\r\n\r\n\r\nf username — follow this person\r\n\r\nu
+  username — unfollow this person\r\n\r\n\r\np username — information on user profile\r\n\r\ning
+  — list people you follow (following)\r\n\r\ners &mdashl list people that follow
+  you (followers)\r\n\r\n\r\nss — show saved searches\r\n\r\nsd searchname — delete
+  saved search\r\n\r\nsa query — save a search query\r\n\r\n\r\nts — show your current
+  tweet mode: on, off or auto\r\n\r\ntm mode — set tweet mode where mode is:\r\n\r\n
+  \   on - always receive tweets\r\n\r\n    off - never receive tweets\r\n\r\n    auto
+  - receive tweets depending on your current status"

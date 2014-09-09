@@ -1,0 +1,50 @@
+---
+yard: ! "YARD Documentation Syntax\r\nhttp://www.yardoc.org\r\n\r\nTaken from:\r\n
+  \ http://yardoc.org/docs/yard/file:docs/GettingStarted.md\r\n\r\nI. Tags\r\n\r\n@abstract:
+  Marks a class/module/method as abstract with optional implementor information.\r\n\r\n
+  \   @abstract Subclass and override {#run} to implement a custom Threadable class.\r\n\r\n@author:
+  List the author(s) of a class/method\r\n\r\n    @author Full Name\r\n\r\n@deprecated:
+  Marks a method/class as deprecated with an optional reason.\r\n\r\n    @deprecated
+  Describe the reason or provide alt. references here\r\n\r\n@example: Show an example
+  snippet of code for an object. The first line is an optional title.\r\n\r\n    @example
+  Reverse a string\r\n      \"mystring.reverse\" #=> \"gnirtsym\"\r\n\r\n@option:
+  Describe an options hash in a method. The tag takes the name of the options parameter
+  first, followed by optional types, the option key name, an optional default value
+  for the key and a description of the option.\r\n\r\n    # @param [Hash] opts the
+  options to create a message with.\r\n    # @option opts [String] :subject The subject\r\n
+  \   # @option opts [String] :from ('nobody') From address\r\n    # @option opts
+  [String] :to Recipient email\r\n    # @option opts [String] :body ('') The email's
+  body \r\n    def send_email(opts = {})\r\n    end\r\n\r\n@overload: Describe that
+  your method can be used in various contexts with various parameters or return types.
+  The first line should declare the new method signature, and the following indented
+  tag data will be a new documentation string with its own tags adding metadata for
+  such an overload.\r\n\r\n    # @overload set(key, value)\r\n    #   Sets a value
+  on key\r\n    #   @param [Symbol] key describe key param\r\n    #   @param [Object]
+  value describe value param\r\n    # @overload set(value)\r\n    #   Sets a value
+  on the default key `:foo`\r\n    #   @param [Object] value describe value param\r\n
+  \   def set(*args)\r\n    end\r\n\r\n@param: Defines method parameters\r\n\r\n    @param
+  [optional, types, ...] argname description\r\n\r\n@private: Defines an object as
+  private. This exists for classes, modules and constants that do not obey Ruby's
+  visibility rules. For instance, an inner class might be considered \"private\",
+  though Ruby would make no such distinction. By declaring the @private tag, the class
+  can be hidden from documentation by using the --no-private command-line switch to
+  yardoc (see README.md).\r\n\r\n    @private\r\n\r\n@raise: Describes an Exception
+  that a method may throw\r\n\r\n    @raise [ExceptionClass] description\r\n\r\n@return:
+  Describes return value of method\r\n\r\n    @return [optional, types, ...] description\r\n\r\n@see:
+  \"See Also\" references for an object. Accepts URLs or other code objects with an
+  optional description at the end.\r\n\r\n    @see http://example.com Description
+  of URL\r\n    @see SomeOtherClass#method\r\n\r\n@since: Lists the version the feature/object
+  was first added\r\n\r\n    @since 1.2.4\r\n\r\n@todo: Marks a TODO note in the object
+  being documented\r\n\r\n    @todo Add support for Jabberwocky service\r\n      There
+  is an open source Jabberwocky library available \r\n      at http://somesite.com
+  that can be integrated easily\r\n      into the project.\r\n\r\n@version: Lists
+  the version of a class, module or method\r\n\r\n    @version 1.0\r\n\r\n@yield:
+  Describes the block. Use types to list the parameter names the block yields.\r\n\r\n
+  \   # for block {|a, b, c| ... }\r\n    @yield [a, b, c] Description of block\r\n\r\n@yieldparam:
+  Defines parameters yielded by a block\r\n\r\n    @yieldparam [optional, types, ...]
+  argname description\r\n\r\n@yieldreturn: Defines return type of a block\r\n\r\n
+  \   @yieldreturn [optional, types, ...] description\r\n\r\nII. Type Info Descriptions\r\n\r\n*
+  class names: ``Whatever'' = an object that is an instance of Whatever\r\n* duck
+  typing: ``#to_s'' = object that responds to the method to_s\r\n* collections: ``Array<String,
+  Symbol>'' = array of strings and symbols\r\n* known constants: ``true'' = the value
+  true\r\n\r\nIII. Tag References\r\n\r\n# @param name (see OtherClass#method)"

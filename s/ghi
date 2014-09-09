@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>(github-cli)[jsmits@imac:~]$ ghi --help
+Usage: ghi command [args] [options]
+
+Examples:
+ghi list [-s open|closed|all]       show open, closed or all issues
+                                    (default: open)
+ghi [-s o|c|a] -v                   same as above, but with issue details
+ghi                                 same as: ghi list
+ghi -v                              same as: ghi list -v
+ghi [-s o|c] -w                     show issues' GitHub page in web browser
+                                    (default: open)
+ghi show &lt;nr&gt;                       show issue &lt;nr&gt;
+ghi &lt;nr&gt;                            same as: ghi show &lt;nr&gt;
+ghi &lt;nr&gt; -w                         show issue &lt;nr&gt;'s GitHub page in web
+                                    browser
+ghi open (o)                        create a new issue (with $EDITOR)
+ghi close (c) &lt;nr&gt;                  close issue &lt;nr&gt;
+ghi open (o) &lt;nr&gt;                   reopen issue &lt;nr&gt;
+ghi edit (e) &lt;nr&gt;                   edit issue &lt;nr&gt; (with $EDITOR)
+ghi label add (al) &lt;label&gt; &lt;nr&gt;     add &lt;label&gt; to issue &lt;nr&gt;
+ghi label remove (rl) &lt;label&gt; &lt;nr&gt;  remove &lt;label&gt; from issue &lt;nr&gt;
+ghi search (s) &lt;term&gt;               search for &lt;term&gt; (default: open)
+ghi s &lt;term&gt; [-s o|c] -v            same as above, but with details
+ghi s &lt;term&gt; -s closed              only search in closed issues
+ghi comment (m) &lt;nr&gt;                create a comment for issue &lt;nr&gt;
+                                    (with $EDITOR)
+ghi -r &lt;user&gt;/&lt;repo&gt;                specify a repository (can be used for
+                                    all commands)
+ghi -r &lt;repo&gt;                       specify a repository (gets user from
+                                    global git config)
+
+Description: command-line interface to GitHub's Issues API (v2)
+
+Options:
+  -h, --help            show this help message and exit
+  -v, --verbose         show issue details (only for list and search commands)
+                        [default: False]
+  -s STATE, --state=STATE
+                        specify state (only for list and search (except `all`)
+                        commands) choices are: open (o), closed (c), all (a)
+                        [default: open]
+  -r REPO, --repo=REPO, --repository=REPO
+                        specify a repository (format: `user/repo` or just
+                        `repo` (latter will get the user from the global git
+                        config))
+  -w, --web, --webbrowser
+                        show issue(s) GitHub page in web browser (only for
+                        list and show commands) [default: False]
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

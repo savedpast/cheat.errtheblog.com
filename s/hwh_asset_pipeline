@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>3 goals
+  + precompile
+  + concatenate
+  + minify assets into a central path ( /public/assets folder )
+
+Defaults to 3 possible asset paths
+  + app/assets
+  + lib/assets
+  + vendor/assets
+
+Manifest file
+  By default, Rails creates app/assets/stylesheets/application.css and
+app/assets/javascripts/applications.js
+
+  Manifests use directives to declare dependencies in asset source files. Some directives that can be used:
+
+  + require [path] inserts the contents. If the file is required multiple times, it will be included only once
+
+  + include works like require but WILL include multiple times ( if so requested )
+
+  + require_directory [path] requires all source files of the same format in the specified directory. Files are required in alphabetical order
+
+  + required_tree [path] works like require_directory but operates recursively
+
+  + require_self inserts contents of current file BEFORE any subsequent require or include directives
+
+  + depend_on [path] declares a dependency on the given path without including it in the bundle. Useful when you need to expire an asset's cache in response to a change in another file
+
+  + stub [path] allows dependency to be excluded from asset bundle.
+
+Helper methods used with asset pipeline:
+  + audio_path( &quot;bang.wav&quot; ) # =&gt; /audios/bang.wav
+  + audio_tag( &quot;sound&quot; ) # =&gt; &lt;audio src=&quot;/audios/sound&quot; /&gt;
+  + font_path( &quot;font.ttf&quot; ) =&gt; /fonts/font.ttf
+  + image_path( &quot;dog.png&quot; ) =&gt; /images/dog.png
+  + image_tag( &quot;dog.png&quot; ) =&gt; &lt;img src=&quot;/images/dog.png&quot; alt=&quot;Dob&quot; /&gt;
+  + video_path( &quot;hd.avi&quot; ) =&gt; /videos/hd.avi
+  + video_tag( &quot;hd.avi&quot; ) =&gt; &lt;video src=&quot;/videos/hd.avi&quot; /&gt;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

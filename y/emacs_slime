@@ -1,0 +1,29 @@
+---
+emacs_slime: ! "Slime (Superior Lisp Interaction Mode for Emacs)\n\nCompilation\n\nC-c
+  C-k      slime-compile-and-load-file. Compile and load the current buffer.\nC-c
+  M-k      slime-compile-file. Compile (but don't load) the current buffer.\nC-c C-c
+  \     slime-compile-defun. Compile the top-level form at or around point.\nM-n          slime-next-note.
+  Move to the next compiler note.\nM-p          slime-previous-note. Move to the previous
+  compiler note.\nC-c M-c      slime-remove-notes. Remove all annotations from the
+  buffer.\n\nREPL\n\nC-Return     slime-repl-closing-return. Close all open parentheses
+  and evaluate the current line.\n\nNavigation\n\nM-.          slime-edit-definition.
+  Go to the definition of the symbol at point.\nM-,          slime-pop-find-definition-stack.
+  Go back from the definition found with slime-edit-definition.\n\nEvaluation\n\nC-M-x
+  \       slime-eval-defun. Evaluate the top-level form.\nC-x C-e      slime-eval-last-expression.
+  Evaluate the last expression before point.\nC-c C-p      slime-pprint-eval-last-expression.
+  Evaluate the expression before point and pretty-print the result.\nC-c C-r      slime-eval-region.
+  Evaluate the region.\nC-c :        slime-interactive-eval. Evaluate an expression
+  read from the minibuffer.\n\n             slime-scratch. Create a buffer like Emacs'
+  *scratch*, eval expressions with C-j.\n\nCoding\n\nC-c M-i      slime-fuzzy-complete-symbol.
+  Presents a list of likely completions to choose from for an abbreviation at point.\nC-c
+  C-s      slime-insert-arglist. Look up and insert the arg list for the function
+  at point.\nC-c C-m      slime-macroexpand-1. Macroexpand the expression at point
+  once. Use a prefix to call macroexpand instead of macroexpand-1.\nC-c C-t      slime-toggle-trace-fdefinition.
+  Toggle tracing of the function at point.\nC-c M-d      slime-disassemble-symbol.
+  Dissassemble the function definition of the symbol at point.\n\nReference\n\nC-c
+  <        slime-who-calls. Reveal callers of the function at or around point.\nC-c
+  >        slime-who-references. Reveal references to the global variable at or around
+  point.\n\nC-c C-d is the prefix for the following help commands:\n    d        slime-describe-symbol.
+  Describe the symbol at point.\n    a        slime-apropos.\n    z        slime-apropos-all.
+  Includes internal symbols.\n    p        slime-apropos-package.\n    h        slime-hyperspec-lookup.
+  Customize with common-lisp-hyperspec-root browse-url-browser-function.\n    ~        common-lisp-hyperspec-format"

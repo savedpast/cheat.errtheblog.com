@@ -1,0 +1,22 @@
+---
+rails_helpers: ! "ApplicationController helpers in views \n(putting the methods in
+  ApplicationHelper only makes them available to views,\nif you need them in controllers
+  AND views, define them in ApplicationController\nand use the helper_method method)\nin
+  ApplicationController: \n  helper_method :method_name1, :method_name2, :so_on_and_so_forth\n\nView
+  Helpers in Controllers or Models\n(might make you feel dirty, but if you need to
+  you'll get over it)\n1. make a module in /lib:\n  \"shared.rb\"\n  --\n  module
+  Shared\n    def shared_help\n      SharedHelper.instance\n    end\n\t  \n    class
+  SharedHelper\n      include Singleton\n      include ActionView::Helpers::TextHelper\n
+  \     include ActionView::Helpers::UrlHelper\n      include ActionView::Helpers::DateHelper\n
+  \     include ActionView::Helpers::TagHelper\n      include ActionView::Helpers::NumberHelper\n
+  \     # and whatever else you need ...\n    end\n  end\n\t\n2. include the module
+  in a Controller or Model:\ninclude Shared\n\n3. call your view helpers like 'shared_help.method',
+  i.e.:\nshared_help.mail_to(email_addr)\n\nAnother way to do it, using a class instead
+  of a module:\n   1. # create a new file inside lib/ and call it helpers.rb\n   2.
+  # paste the following:\n   3.  \n   4. def help\n   5.  Helper.instance\n   6. end\n
+  \  7.  \n   8. class Helper\n   9.  include Singleton\n  11.  include ActionView::Helpers::DateHelper\n
+  \ 12.  include ActionView::Helpers::TextHelper\n  13. end\n  14.  \n  15. # then
+  in any model or controller:\n  16. require 'lib/helpers'\n  17.  \n  18. # to use:\n
+  \ 19. # help.name_of_helper\n  20. # EX: help.pluralize 10, \"person\"\n\nView helpers
+  in email templates\nuse the helper method in your mailer class, like:\nclass Notifier
+  < ActionMailer::Base\n  helper :application\n  # ... your mailer methods\nend"

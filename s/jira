@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Global Shortcuts
+================
+
+Go to Dashboard: g then d
+Browse to a Project: g then p
+Go to Planning Board: g then a
+Go to Task Board: g then t
+Go to Chart Board: g then c
+Go to Released Board: g then r
+Find Issues: g then i
+Administration Quick Search: g then g
+Quick Search: /
+Create an Issue: c
+Open shortcut help: ?
+Form Submit: Ctrl + Alt + s
+
+Navigating Issues
+=================
+
+View selected Issue: o or Enter
+Next Issue: j
+Previous Issue: k
+Back to the Navigator: u
+Hide/Show Left Section: [
+Next Activity: n
+Previous Activity: p
+Focus search field: f
+
+Issue Actions
+=============
+
+Edit Issue: e
+Assign Issue: a
+Comment on Issue: m
+Edit Issue Labels: l
+Operations Dialog: .
+
+Agile Shortcuts
+===============
+Search Board:b
+Hide/Show Column:]
+Next Box:n
+Previous Box:p
+Expand/Collapse Box:x
+List to Card Toggle:t
+Edit Priority:w
+Delete Issue:d
+Projector Mode:z
+Send to Top:s then t
+Send to Bottom:s then b</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

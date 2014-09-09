@@ -1,0 +1,5 @@
+---
+python: ! "basics\r\n\r\n$ sudo apt-get install python-setuptools python-dev build-essential\r\n$
+  sudo easy_install -U pip\r\n$ sudo pip install -U virtualenv\r\n$ virtualenv --no-site-packages
+  --distribute MY_VIRTUALENV\r\n$ source MY_VIRTUALENV/bin/activate\r\n$ pip install
+  yolk\r\n$ yolk -l\r\n\r\n"

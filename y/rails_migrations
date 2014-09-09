@@ -1,0 +1,12 @@
+---
+rails_migrations: ! "AT notes:\n# Add to existing model\n$ rails generate migration
+  AddStaticDataJSONToReports static_data_json:string\n$ vim db/migrate/20120209232000_add_static_data_json_to_reports.rb
+  \n+ \"add_column :reports, :static_data_json, :text, :limit => 4294967295\"\n$ bundle
+  exec rake db:migrate\n# Create a new model\n$ rails generate model GhostApplication
+  application_name:string application_label:string file_hash:string  file_hash_sha1:string
+  file_hash_sha256:string platform:integer requests:integer \n\n\n\nhttp://wiki.rubyonrails.com/rails/pages/UsingMigrations\n\nvalid
+  data types:\n  :integer :float\n  :datetime :date :timestamp :time\n  :text :string\n
+  \ :binary\n  :boolean\noptions:\n  :null (boolean)\n  :limit (integer)\n  :default\n
+  \ :precision (integer)\n  :scale (integer)\n\ncreate the model       ./script/generate
+  model model_name\napply schema changes   rake db:migrate\nmodify schema          ./script
+  generate migration description_name"

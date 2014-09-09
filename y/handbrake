@@ -1,0 +1,3 @@
+---
+handbrake: ! "---\nHandBrakeCli: -|\n    EXAMPLE\n    =======\n    WORKING ON A SINGLE
+  FILE\n\n    HandBrakeCLI -i \"video.avi\" -o \"new_video.m4v\" --preset \"AppleTV\""

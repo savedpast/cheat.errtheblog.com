@@ -1,0 +1,34 @@
+---
+sqlite: ! "sqlite> .help\r\n.backup ?DB? FILE      Backup DB (default \"main\") to
+  FILE\r\n.bail ON|OFF           Stop after hitting an error.  Default OFF\r\n.databases
+  \            List names and files of attached databases\r\n.dump ?TABLE? ...      Dump
+  the database in an SQL text format\r\n.echo ON|OFF           Turn command echo on
+  or off\r\n.exit                  Exit this program\r\n.explain ON|OFF        Turn
+  output mode suitable for EXPLAIN on or off.\r\n.genfkey ?OPTIONS?     Options are:\r\n
+  \                        --no-drop: Do not drop old fkey triggers.\r\n                         --ignore-errors:
+  Ignore tables with fkey errors\r\n                         --exec: Execute generated
+  SQL immediately\r\n                       See file tool/genfkey.README in the source
+  \r\n                       distribution for further information.\r\n.header(s) ON|OFF
+  \     Turn display of headers on or off\r\n.help                  Show this message\r\n.import
+  FILE TABLE     Import data from FILE into TABLE\r\n.indices TABLE         Show names
+  of all indices on TABLE\r\n.iotrace FILE          Enable I/O diagnostic logging
+  to FILE\r\n.load FILE ?ENTRY?     Load an extension library\r\n.mode MODE ?TABLE?
+  \    Set output mode where MODE is one of:\r\n                         csv      Comma-separated
+  values\r\n                         column   Left-aligned columns.  (See .width)\r\n
+  \                        html     HTML <table> code\r\n                         insert
+  \  SQL insert statements for TABLE\r\n                         line     One value
+  per line\r\n                         list     Values delimited by .separator string\r\n
+  \                        tabs     Tab-separated values\r\n                         tcl
+  \     TCL list elements\r\n.nullvalue STRING      Print STRING in place of NULL
+  values\r\n.output FILENAME       Send output to FILENAME\r\n.output stdout         Send
+  output to the screen\r\n.prompt MAIN CONTINUE  Replace the standard prompts\r\n.quit
+  \                 Exit this program\r\n.read FILENAME         Execute SQL in FILENAME\r\n.restore
+  ?DB? FILE     Restore content of DB (default \"main\") from FILE\r\n.schema ?TABLE?
+  \       Show the CREATE statements\r\n.separator STRING      Change separator used
+  by output mode and .import\r\n.show                  Show the current values for
+  various settings\r\n.tables ?PATTERN?      List names of tables matching a LIKE
+  pattern\r\n.timeout MS            Try opening locked tables for MS milliseconds\r\n.timer
+  ON|OFF          Turn the CPU timer measurement on or off\r\n.width NUM NUM ...     Set
+  column widths for \"column\" mode\r\nsqlite>\r\n\r\nInstallation info:\r\n  http://wiki.rubyonrails.com/rails/pages/HowtoUseSQLite\r\n\r\nIn
+  memory, in Rails:\r\n  database.yml:\r\ntest:\r\n  adapter: sqlite3\r\n  database:
+  \":memory:\""

@@ -1,0 +1,14 @@
+---
+test_spec: ! "http://chneukirchen.org/blog/archive/2007/01/announcing-test-spec-0-3-a-bdd-interface-for-test-unit.html\n\nhttp://weblog.techno-weenie.net/2006/11/24/test-spec-kicks-simply_bdds-ass\n\nWrapped
+  Assertions:\n  assert_equal:           should.equal, should ==\n  assert_not_equal:
+  \      should.not.equal, should.not ==\n  assert_same:            should.be\n  assert_not_same:
+  \       should.not.be\n  assert_nil:             should.be.nil\n  assert_not_nil:
+  \        should.not.be.nil\n  assert_in_delta:        should.be.close\n  assert_match:
+  \          should.match, should =~\n  assert_no_match:        should.not.match,
+  should.not =~\n  assert_instance_of:     should.be.an.instance_of\n  assert_kind_of:
+  \        should.be.a.kind_of\n  assert_respond_to:      should.respond_to\n  assert_raise:
+  \          should.raise\n  assert_nothing_raised:  should.not.raise\n  assert_throws:
+  \         should.throw\n  assert_nothing_thrown:  should.not.throw\n  assert_block:
+  \          should.satisfy\n\nAdditional Assertions:\n  should.not.satisfy\n  a.should.predicate
+  (works like assert a.predicate?)\n  a.should.be operator (where operator is <, <=,
+  >, >=, or ===)\n  should.output, to check what is printed"

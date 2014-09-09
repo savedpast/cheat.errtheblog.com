@@ -1,0 +1,10 @@
+---
+activerecord: ! "ActiveRecord\r\n\r\nSupported Types:\r\n  :primary_key\r\n  :string\r\n
+  \ :text\r\n  :integer\r\n  :float\r\n  :decimal\r\n  :datetime\r\n  :timestamp\r\n
+  \ :time\r\n  :date\r\n  :binary\r\n  :boolean\r\n\r\nSupported Options:\r\n  :limit
+  - Requests a maximum column length. This is number of characters for :string and
+  :text columns and number of bytes for :binary and :integer columns.\r\n  :default
+  - The column's default value. Use nil for NULL.\r\n  :null - Allows or disallows
+  NULL values in the column. This option could have been named :null_allowed.\r\n
+  \ :precision - Specifies the precision for a :decimal column.\r\n  :scale - Specifies
+  the scale for a :decimal column."

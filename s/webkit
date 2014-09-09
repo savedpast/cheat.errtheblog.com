@@ -1,0 +1,143 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>SELECTORS
+
+    El[att^=&quot;val&quot;]  Match attribute values beginning w/ 'val'
+    El[att$=&quot;val&quot;]  Match ending values
+    El[att*=&quot;val&quot;]  Match substring values
+    El:not(s)       Element that is not 's'
+    El:nth-child(n) Element that is n-th child of its parent
+    El:target       Element that is target of referring URL
+
+
+FLEXIBLE BOX MODEL
+create HBox and VBox
+
+    display: -webkit-box;
+    -webkit-box-orient: horizontal | vertical;
+    -webkit-box-flex: 1;
+
+
+BOX SIZING
+standard box vs. padding/border inside
+
+    -webkit-box-sizing: content-box | border-box;
+
+
+MULTIPLE COLUMNS
+newspaper-like columns of text
+
+    -webkit-columns:        width count
+    -webkit-column-width:   width
+    -webkit-column-count:   number
+    -webkit-column-gap:     gutter width
+    -webkit-column-rule:    vertical divider, style like border
+
+
+RGBA
+red, green, blue and alpha transparency
+
+    rgba(0-255, 0-255, 0-255, 0-1)
+    color: rgba(255,255,255,0.8);   White with 80% opacity
+
+
+BORDER RADIUS
+vendor prefix required for iOS &lt;4.0
+
+    -webkit-border-radius: 4px;
+    -webkit-border-top-left-radius: 4px;    For single corners
+
+
+MARQUEE
+create scrolling text across the screen
+
+    -webkit-marquee: direction repetition style speed
+    
+    overflow-x: -webkit-marquee;    Required
+    -webkit-marquee-direction:      left, right, reverse, etc.
+    -webkit-marquee-repetition:     Number or 'infinite';
+    -webkit-marquee-style:          scroll | alternate | none;
+    -webkit-marquee-speed:          fast | normal | slow;
+
+
+SHADOWS
+box and text shadows use same syntax
+
+    box-shadow or text-shadow: x-offset y-offset blur color
+    text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+
+
+ANIMATIONS
+
+    -webkit-animation: name duration timing_function;
+    
+    -webkit-animation-name:             Of @-webkit-keyframe
+    -webkit-animation-duration:         Time in seconds
+    -webkit-animation-timing-function:  ease-in, linear etc.
+    -webkit-animation-delay:            Time until start
+    -webkit-animation-iteration-count:  Count or infinite
+    
+    @-webkit-keyframes &quot;colorShift&quot; { /* Give it a name */
+        0%  { background-color: red; }
+        100% { background-color: blue; }
+    }
+    
+    /* Call the animation */
+    #myDiv { -webkit-animation: colorShift 10s linear; }
+
+
+TRANSITIONS
+
+    -webkit-transition: opacity 1s linear;
+    
+    -webkit-transition-property:    Property to change or all
+    -webkit-transition-duration:    Time in seconds
+    -webkit-transition-timing-function:
+        linear, ease-in, ease-out, ease-in-out, etc.
+
+
+GRADIENTS
+used in background-image
+
+    -webkit-gradient(
+        type,                   Linear or radial
+        x-offset y-offset,      Starting position
+        x-offset y-offset,      Ending position
+        color-stop(0.0,color),  As many stops as you
+        color-stop(1.0,color)       want from 0 to 1
+    )
+    
+    background-image: -webkit-gradient(
+        linear,
+        0 0,
+        0 100%,
+        from(red), color-stop(0.5, green), to (blue)
+    )
+
+
+BACKGROUND SIZE
+
+    -webkit-background-size: length_x length_y
+
+
+TEXT SIZE ADJUST
+
+    -webkit-text-size-adjust: percentage | auto | none;
+
+
+TEXT OVERFLOW
+
+    text-overflow: ellipsis;
+    overflow: hidden;       Required
+    white-space: nowrap;    Required
+
+
+FONT FACE
+
+    @font-face {
+        font-family: 'MyFont';
+        src: url('MyFont.file'); }
+
+
+Download this sheet at http://www.sencha.com/csscheatsheet
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

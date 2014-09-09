@@ -1,0 +1,7 @@
+---
+git_log: ! "Common Git Log Commands\n=======================\n\nView the hash, commit
+  date, committer name and subject since a given time\n\n  git log --format=\"%h |
+  %cD - %cn - %s\" --since=3.2.weeks.ago\n\n  Example: \n\n    06f55be | Tue, 16 Aug
+  2011 19:53:10 -0700 - Aryk Grosz - Commit Message\n\nView the changes on a branch
+  since it deviated from the trunk. \n\n  git log --oneline $(git merge-base branch
+  trunk)..branch\n\n  This trick will also work with other commands like \"git diff\"."

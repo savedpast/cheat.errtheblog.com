@@ -1,0 +1,8 @@
+---
+nmap: ! "nmap\r\n    Network exploration tool and security / port scanner\r\n\r\n
+  \   -- basic fast scan\r\n    nmap -F target.host.com\r\n\r\n    -- multiple hosts\r\n
+  \   nmap -sS host1.target.com host2.target.com\r\n\r\n   -- Ping scan: whats on
+  the network?\r\n   nmap -sn 10.0.0.0/24\r\n\r\n   -- Aggressive all-ports scan (no
+  ping, no DNS)\r\n   nmap -sS -PN -n -T4 -p- target.host.com\r\n\r\n   -- Advanced
+  target designation\r\n   nmap -sS 192.168.1,3.1-10\r\n\r\n   -- Full scan with OS
+  detection, version detection, script scanning and traceroute\r\n   nmap -A -T4 target.host.com"

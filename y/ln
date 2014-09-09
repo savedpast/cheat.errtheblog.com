@@ -1,0 +1,9 @@
+---
+ln: ! "To create a symbolic link:\r\n\r\n  $ ln -s original/file new/symbolic/link\r\n\r\n\r\nFor
+  example, assuming you are in a Rails app:\r\n\r\n  $ ln -s ../vendor/assets/swf/swf.file
+  public\r\n  OR\r\n  $ ln -s ../vendor/assets/swf/swf.file public/swf.file\r\n\r\nwould
+  create a new symbolic link of public/swf.file to vendor/assets/swf/swf.file. Had
+  I not specified the .., then the link would have not worked.\r\n\r\n\r\nTo test
+  that you have the paths correct, you can do \r\n\r\n  $ file new/symbolic/link\r\n\r\nIf
+  you 'broken symbolic link to ...' in the output, make sure that you specified the
+  original file path relative to the directory that the file will live in.\r\n"

@@ -1,0 +1,50 @@
+---
+rest: ! "Resource Routes (in config/routes.rb)\n  Simple\n   map.resources :users,
+  :sessions \n\n  Nested\n    map.resources :teams do |teams| \n      teams.resources
+  :players \n    end \n\n  Customized\n    map.resources :articles, \n                  :collection
+  \ => {:sort => :put}, \n                  :member      => {:deactivate => :delete},
+  \n                  :new         => {:preview => :post}, \n                  :controller
+  \ => 'articles', \n                  :singular    => 'article', \n                  :path_prefix
+  => '/book/:book_id', \n                  :name_prefix => 'book_' \n\n  Including
+  the default route (/:controller/:action/:id) will allow any verb to\n  access any
+  action. This is usually not what you want, so you should probably \n  delete it
+  from routes.rb \n\n| Standard Methods       | Verb   | Path          | Action  |\n|------------------------|--------|---------------|---------|\n|
+  \      plural_path      | GET    | /teams        | index   |\n|     singular_path(id)
+  \ | GET    | /teams/1      | show    |\n| new_singular_path      | GET    | /teams/new
+  \   | new     |\n|       plural_path      | POST   | /teams        | create  |\n|
+  edit_singular_path(id) | GET    | /teams/1;edit | edit    |\n|      singular_path(id)
+  | PUT    | /teams/1      | update  |\n|      singular_path(id) | DELETE | /teams/1
+  \     | destroy |\n\n  Each method also has a counterpart ending in _url that includes
+  the protocol,\n  domain, and port. There is also a hash_for_ version of each method
+  that \n  returns a hash instead of a string.\n\n| Formats in the URL                         |
+  Path                  |\n|--------------------------------------------|-----------------------|\n|
+  formatted_plural_path(:xml)                | /teams.xml            |\n| formatted_singular_path(id,
+  :rss)          | /teams.1.rss          |\n| formatted_players_path(@team, :atom)
+  \      | /teams/1/players.atom |\n| formatted_player_path(@team, @player, :js) |
+  /teams/1/players/5.js |\n| formatted_player_path(:team_id => 1,       | /teams/1/players/5.js
+  |\n|               id => 5, :format => :js)     |                       |\n\n  Any
+  URL-generating method can take a hash of options instead of bare \n  arguments.
+  This is the only way to generate a URL with extra querystring \n  params.\n\nbutton_to
+  \"Destroy\", \n          team_path(@team), \n          :confirm => \"Are you sure?\",
+  \n          :method => :delete \n\nlink_to \"Destroy\", \n        team_path(@team),
+  \n        :confirm => \"Are you sure?\", \n        :method => :delete\n\nlink_to_remote
+  \"Destroy\", \n               :url => team_path(@team), \n               :confirm
+  => \"Are you sure?\", \n               :method => :delete\n\nform_for :team, \n
+  \        @team, \n         :url => team_path(@team), \n         :html => { \n           :method
+  => :put \n         } do |f| ... \n\n| Nested Resources            | Path                        |\n|-----------------------------|-----------------------------|\n|
+  players_path(@team)         | /teams/:team_id/players     |\n|                             |
+  /teams/1/players            |\n| player_path(@team, @player) | /teams/:team_id/players/:id
+  |\n|                             | /teams/1/players/5          |\n\n  Nested resources
+  must be defined in routes.rb. See above for an example.\n\nUseful Plugins\n* Beast
+  Forum (an app built with RESTful design) \n    http://svn.techno-weenie.net/projects/beast/trunk/\n*
+  RESTFUL Authentication Plugin \n    http://svn.techno-weenie.net/projects/plugins/restful_authentication/\n*
+  Simply Helpful Plugin \n    http://dev.rubyonrails.org/svn/rails/plugins/simply_helpful/\n\nrespond_to
+  { |wants| \n  wants.all | .text | .html | .js | .ics | .xml | .rss | .atom | .yaml
+  \n}\n\nAdd New MIME types (in config/initializers/mime.rb)\n  Mime::Type.register
+  \"image/jpg\", :jpg\n  Mime::Type.register \"application/vnd.visa+xml\", :visa\n\n
+  \ Types listed here can be used in a respond_to block and as a forced format \n
+  \ extension at the end of urls.\n\nScaffold Resource Generator\n  ./script/generate
+  scaffold\n                    Episode\n                    title:string\n                    description:text\n
+  \                   program_id:integer\n\n  Use a singular word for the model/resource
+  name. The other arguments will be \n  used to pre-populate the database migration
+  and fields in view templates.\n\nMostly from http://peepcode.com/articles/2006/10/08/restful-rails"

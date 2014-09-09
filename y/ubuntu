@@ -1,0 +1,8 @@
+---
+ubuntu: ! "== versions == (Versioning taken from Wikipedia.com)\n4.10\tWarty Warthog\n5.04\tHoary
+  Hedgehog\n5.10\tBreezy Badger\n6.06\tDapper Drake (LTS)\n6.10\tEdgy Eft\n7.04\tFeisty
+  Fawn\n7.10\tGutsy Gibbon\n8.04\tHardy Heron (LTS)\n8.10\tIntrepid Ibex\n9.04\tJaunty
+  Jackalope\n9.10\tKarmic Koala\n10.04\tLucid Lynx (LTS)\n10.10\tMaverick Meerkat\n11.04\tNatty
+  Narwhal\n11.10\tOneiric Ocelot\n12.04\tPrecise Pangolin\n12.10\tQuantal Quetzal\n\n==
+  getting a list of all installed packages ==\n\ndpkg --get-selections\n\n== searching
+  for a package on command line ==\n\napt-cache search <string>"

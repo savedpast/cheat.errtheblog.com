@@ -1,0 +1,28 @@
+---
+mysql: ! "To create a database:\n\n$ mysqladmin -u root create <database_name>\n\n\n----\nTo
+  CREATE a database and assign rights to a NEW user.  Useful when starting a new Rails
+  app, especially when you aren't using root:empty password.\n\n$ mysql --user=root\nmsql>
+  CREATE DATABASE <database_name>;\nmsql> USE <database_name>;\nmsql> GRANT ALL PRIVILEGES
+  ON *.* TO '<new_user>'@'localhost' IDENTIFIED BY '<new_user_password>' WITH GRANT
+  OPTION;\nmsql> quit;\n\n\n----\nTo DELETE a database:\n\nmsql> DROP DATABASE <database_name>;\n\n\n---\nTo
+  DELETE a row\n\nmsql> DELETE FROM MYTABLE where <column_name>=1;\n\n\n----\nShow
+  databases, connect, show tables and table schema\n\nmsql> SHOW DATABASES;\nmsql>
+  CONNECT <database_name>;\nmsql> SHOW TABLES;\nmsql> DESC <table_name>;\n\n\n----\nTo
+  create and grant all privileges to a user\n\nmysql> grant all privileges on some_db.*
+  to 'someuser'@'localhost' identified by 'somepassword';\nmysql> flush privileges;\n\n\n----\nTo
+  SET a user password\n\nmysql> use mysql;\nmysql> update user set Password = PASSWORD('<password>')
+  where host='<host_name>' and user='<user_name>';\nmysql> flush privileges;\nmysql>
+  exit\n$ mysqladmin -uroot -p<password> reload\n\n\n----\nTo rename a column\n\nmysql>
+  ALTER TABLE <table_name> change <old_col_name> <new_col_name> <data_type>;\n\n\n----\nTo
+  dump a database into an sql-text file\n\n$ mysqldump --opt -u username -p database
+  > database_backup.sql\n\n\n---\nTo load a dump file into a database\n\n$ mysql -u
+  username -p database < dump_file.sql\n\n\n----\nTo reset the root password to the
+  original empty password:\n\nUse the commandline tool mysqladmin \n  - the trick
+  is to use 2 single-quotes (ticks) to specify an empty password:\n\nLinux:\n  Note:
+  you probably need to run this from the mysql bin dir:\n$ cd /usr/local/mysql/bin\n$
+  ./mysqladmin -uroot -p<existing_password> password ''\n\nWindows: \n  Note: Use
+  2 double-quotes (windows doesn't trim out the single-quotes).  \n  If you ran the
+  Linux version ('') your password is now two single-quotes.\n> mysqladmin -uroot
+  -p<existing_password> password \"\"\n\nTo be prompted for password:\n  omit <existing_password>,
+  but include the -p arg.\n\n\n----\nDisplay as table  \nmysql> select * from queries
+  order by id desc limit 1 \\G"

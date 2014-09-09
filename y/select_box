@@ -1,0 +1,25 @@
+---
+select_box: ! "---\nThis select box serves two purposes in a view, say a 'new' or
+  'edit' view:\n1. The user can choose a pre-existing object by selecting from a dropdown\n
+  \  list of the existing objects, rather than typing into an entry field.\n2. The
+  user can reference the object by a friendly name rather than by id.\n\nIn the 'foobar'
+  Person view, to select a reference to a Person:\n\n  <% form_for([foobar]) do |f|
+  %>\n    <%= f.label \"Name:\" %>\n    <%= f.select :person_id, Person.select_list
+  %>\n\nAnd in the Person model:\n\n  def self.select_list\n    self.find(:all).map
+  { |p| [p.name, p.id] }\n  end\n\n\nTo choose from a list of a subset of all People:\n\nIn
+  the view:\n  <%= f.label \"Member:\" %>\n  <%= f.select :person_id, Person.select_member_list
+  %>\n\nAnd in the Person model:\n  def self.select_member_list\n    self.find(:all).map
+  { |p| [p.name, p.id] if p.member? }.compact\n  end\n\n--\nWhen there is a one-to-many
+  association involved, and you are presenting\na choice from among the existing association
+  objects, there is an easy\ncollection_select method that the belongs_to association
+  gives you.  As\nRyan Bates discusses in Railscasts episode 057, in the view to create
+  a\nProduct, to choose its Category, you can use:\n\n  <%= f.collection_select :category_id,
+  Category.all, :id, :name,\n    :prompt => \"Select a category:\" %>\n\nTo provide
+  the option to define & choose a new Category when creating a\nProduct, you can add
+  the Category creation to the Person model and view.\nThe belongs_to association
+  provides the 'create_[associated model]'\nmethod.\n\nIn the view:\n  ... Or create
+  a new category:\n  <%= f.text_field :new_category_name %>\n\nAnd in the Person model,
+  define the new attribute (new_category_name),\nand a before_save callback to create
+  the new category if entered:\n\n  attr_accessor :new_category_name\n  before_save
+  :create_category_from_name\n  def create_category_from_name\n    create_category(:name
+  => new_category_name) unless \\\n      new_category_name.blank?"

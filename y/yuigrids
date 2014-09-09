@@ -1,0 +1,14 @@
+---
+yuigrids: ! "YUI Grids\n=========\n\n== SAMPLE LAYOUT\n\n<div id=\"doc[#]\" class=\"yui-t[#]\">\n
+  <!-- HEADER -->\n <div id=\"hd\">...</div>\n\n <!-- BODY -->\n <div id=\"bd\">\n\n
+  \ <!-- MAIN COLUMN -->\n  <div class=\"yui-main\">\n    <div class=\"yui-b\">\n\n
+  \     <!-- GRID -->\n      <div class=\"yui-g\">\n        <!-- GRID UNIT -->\n        <div
+  class=\"yui-u first\">\n          Column 1 - 50%\n        </div>\n\n        <!--
+  GRID UNIT -->\n        <div class=\"yui-u\">\n          Column 2 - 50%\n        </div>\n
+  \     </div>\n\n    </div>\n  </div>\n\n  <!-- SIDEBAR COLUMN -->\n  <div class=\"yui-b\">\n\n
+  \ </div>\n </div>\n\n <!-- FOOTER -->\n <div id=\"ft\">...</ft>\n</div>\n\n== DESCRIPTION\n\n#doc
+  = 750px width\n#doc2 = 950px width\n#doc3 = 100% width \n#doc4 = 974px width, centered\n\n.yui-t1
+  \ \t160 on left\n.yui-t2 \t180 on left\n.yui-t3 \t300 on left\n.yui-t4 \t180 on
+  right\n.yui-t5 \t240 on right\n.yui-t6 \t300 on right\n\n.yui-g    1/2 - 1/2\n.yui-gb
+  \ \t1/3 - 1/3 - 1/3\n.yui-gc \t2/3 - 1/3\n.yui-gd \t1/3 - 2/3\n.yui-ge \t3/4 - 1/4\n.yui-gf
+  \t1/4 - 3/4"

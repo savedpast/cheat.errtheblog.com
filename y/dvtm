@@ -1,0 +1,9 @@
+---
+dvtm: ! "C-g followed by:\r\n\r\nc - create new window\r\nx - kill window\r\n\r\nj
+  - next window\r\nk - previous window\r\nu - next window (ignoring those minimised)\r\ni
+  - previous window (ignoring those minimised)\r\n\r\nt - left focussed layout\r\nb
+  - top focussed layout\r\ng - bottom focussed layout\r\nm - one window at a time
+  layout\r\n[space] - next layout\r\n\r\nh - move vertical window separator left\r\nl
+  - move vertical window separator right\r\n\r\n. - toggle minimise\r\nreturn - toggle
+  focus\r\n\r\n(1-0) - set focus to window of that number\r\n\r\nL - redraw\r\nq -
+  quit\r\nG - escape key\r\n"

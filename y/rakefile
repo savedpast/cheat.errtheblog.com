@@ -1,0 +1,50 @@
+---
+rakefile: ! "Rakefiles are Ruby scripts: \nanything legal in a Ruby script is also
+  allowed in a Rakefile\n\nTasks; file and directory tasks; descriptions; prerequisites\n============================================================\n\nA
+  minimal task:\n    task :mytask do\n       # actions\n    end\n\nA task with a description
+  and prerequisites (req):\n    desc \"A description of mytask\"\n    task :mytask
+  => [:req_task, \"req_file\"] do\n        # Any number of actions\n    end\n\nA file
+  task, with a body that uses properties of the task object `t`,\nand string interpolation
+  using `#{...}`:\n    file \"prog.exe\" => [\"a.o\", \"b.o\"] do |t|\n        sh
+  \"cc -o #{t.name} #{t.prerequisites.join(' ')}\"\n    end\n\nCreate a directory
+  (and the directories above it, as needed):\n    directory \"testdata/examples/doc\"\n\n\nRules;
+  FileList; tasks that take arguments; parallel execution\n==============================================================\n\nThis
+  rule says: \"For every .c file, create a file task to produce the\ncorresponding
+  .o file.\" The `source` attribute of each task is set to\nthe matching source file.\n
+  \   rule '.o' => ['.c'] do |t|\n        sh \"cc #{t.source} -c -o #{t.name}\"\n
+  \   end\n\nThis rule does the same thing, but using a regex as the rule pattern,\nand
+  a proc to calculate the name of the source file.\n    rule( /\\.o$/ => [\n        proc
+  { |task_name| task_name.sub(/\\.[^.]+$/, '.c') }\n    ]) do |t|\n        sh \"cc
+  #{t.source} -c -o #{t.name}\"\n    end\n\nFileLists collect all files that match
+  a shell pattern:\n    Filelist['*.o'].each do |f|\n        file finalprogram =>
+  f\n    end\n\nA task that can take arguments (and supplies default values):\n    task
+  :print_name, [:first, :last] => [:req_task] do |t, args|\n        # specify default
+  parameters:\n        args.with_defaults(:first => \"John\", :last => \"Dough\")\n
+  \       puts \"First name is #{args.first}\"\n    end\n\nTo invoke a task with arguments
+  from the command line:\n    rake \"print_name[James, Bond]\"\n(The quotation marks
+  are because task+arguments must be a single string.)\n\nParallel execution of prerequisites:\n
+  \   multitask :copy_files => [:copy_src, :copy_doc, :copy_bin] do\n        puts
+  \"All Copies Complete\"\n    end\n\nProgramming with tasks\n======================\n\nAny
+  Ruby file (including other Rakefiles) can be included with a\nstandard Ruby `require`
+  command\n\nTo access a task object:\n    Rake::Task[:mytask].add_description\n\nTo
+  access the current task, and its prerequisites:\n    task :mytask => [:prereq1,
+  :prereq2] do |t|\n        \n        # p pretty-prints, for debugging purposes.\n
+  \       p t.name  # mytask\n        \n        # Prequisite strings index tasks in
+  Rake::Task[].\n        t.prerequisites.each do |pretask|\n            Rake::Task[pretask].execute\n
+  \       end\n    end\n\n* t.add_description(description) \n  Add a description to
+  the task. \n\n* t.arg_description \n  Argument description (nil if none). \n\n*
+  t.arg_names \n  Name of arguments for this task. \n\n* t.clear \n  Clear the existing
+  prerequisites and actions of a rake task. \n\n* t.clear_actions \n  Clear the existing
+  actions on a rake task. \n\n* t.clear_prerequisites \n  Clear the existing prerequisites
+  of a rake task. \n\n* t.enhance(deps = nil, &block) \n  Enhance a task with prerequisites
+  or actions. \n\n* t.execute(args = nil) \n  Execute the actions associated with
+  this task, regardless of\n  prerequisites\n\n* t.inspect, t.investigation \n  Return
+  a string describing the internal state of a task. \n\n* t.invoke(*args) \n  Invoke
+  the task if it is needed. To force it, see t.execute.\n\n* t.invoke_prerequisites(task_args,
+  invocation_chain) \n  Invoke all the prerequisites of a task. \n\n* t.name \n  Name
+  of the task, including any namespace qualifiers. \n\n* t.name_with_args \n  Name
+  of task with argument list description. \n\n* t.needed? \n  Is this task needed?
+  \n\n* t.reenable \n  Reenable the task, allowing it to be executed if the task is\n
+  \ invoked again. \n\n* t.set_arg_names(args) \n  Set the names of the arguments
+  for this task. \n\n* t.source \n  First source from a rule (nil if no sources).
+  \n\n* t.timestamp \n  Timestamp for this task. \n\n* t.to_s \n  Return task name."

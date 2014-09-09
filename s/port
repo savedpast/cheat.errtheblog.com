@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Update local ports and upgrade the MacPorts infrastructure:
+$ sudo port selfupdate
+
+Search all available ports:
+$ port search &lt;string&gt;
+
+Install a port:
+$ sudo port install &lt;port&gt; [+variant]
+
+Find outdated local ports
+$ port outdated
+
+Upgrade a port:
+$ sudo port upgrade &lt;port&gt;
+
+Cleaning:
+$ sudo port clean --all &lt;port&gt;
+
+Information:
+$ port info &lt;port&gt;
+
+Dependencies:
+$ port deps &lt;port&gt;
+
+Variations:
+$ port variants &lt;port&gt;
+
+Creating Packages
+
+$ port pkg &lt;port&gt;
+$ port dmg &lt;port&gt;
+$ port rpm &lt;port&gt;
+
+Other Useful Options
+
+	Fetch
+	Extract
+	Patch
+	Configure
+	Build
+	Destroot
+	
+$ port clean --all &lt;port&gt;
+
+$ port contents &lt;port&gt;
+$ port installed
+$ port outdated
+$ port upgrade &lt;port&gt;
+$ port dependents &lt;port&gt;
+$ port livecheck &lt;port&gt;
+$ port lint &lt;port&gt;
+$ port lint &lt;port&gt;
+$ port variants &lt;port&gt;
+$ port -v install &lt;port&gt; +&lt;variant&gt;
+$ sudo port -f uninstall inactive
+
+To see more information, add -d, e.g.
+$ sudo port -d selfupdate
+
+More information on Using MacPorts:
+http://guide.macports.org/#usi</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

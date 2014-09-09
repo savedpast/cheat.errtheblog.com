@@ -1,0 +1,13 @@
+---
+vim_viewports: ! "VIM VIEWPORT REFERENCE\n======================\n:sp         split
+  window horizontally (:split)\n:vsp        split window vertically   (:vsplit)\n\nCtrl-w
+  \     move between viewports\n\nCtrl-w j    move one viewport down\nCtrl-w k    move
+  one viewport up\nCtrl-w h    move one viewport left\nCtrl-w l    move one viewport
+  right\n\nCtrl-w =    resize viewports to be equal size\n\nCtrl-w -    reduce viewport
+  by 1 line\nCtrl-w 20-  reduce viewport by 20 line\n\nCtrl-w +    increase viewport
+  by 1 line\nCtrl-w 20+  increase viewport by 20 line\n\nCtrl-w <    narrows viewport
+  by 1 line\nCtrl-w 20<  narrows viewport by 20 line\n\nCtrl-w >    widens viewport
+  by 1 line\nCtrl-w 20>  widens viewport by 20 line\n\nCtrl-w q    close the active
+  window\n\nCtrl-w r    rotate windows to the right\nCtrl-w R    rotate windows to
+  the left\n\nCtrl-w o    the current window zooms into a full screen, or\n            previous
+  set of windows is restored.\n            requires: ZoomWin plugin"

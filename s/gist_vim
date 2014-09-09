@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>This is vimscript for gist (http://gist.github.com)
+
+Get it here: http://www.vim.org/scripts/script.php?script_id=2423
+
+Usage:
+
+  :Gist
+    post whole text to gist.
+
+  :'&lt;,'&gt;Gist
+    post selected text to gist.
+
+  :Gist -p
+    post whole text to gist with private.
+
+  :Gist XXXXX
+    edit gist XXXXX.
+
+  :Gist -l
+    list gists from mine.
+
+  :Gist -la
+    list gists from all.
+
+Require:
+  curl, and if you want to use profile of git, it require git command.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

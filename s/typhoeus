@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>require 'typhoeus'
+
+###
+# Making Quick Requests
+response  = Typhoeus::Request.get(&quot;http://www.google.com/search?q=paul%20dix&quot;)
+response  = Typhoeus::Request.head(&quot;http://www.google.com/&quot;)
+response  = Typhoeus::Request.put(&quot;http://localhost:3000/posts/1&quot;,  
+							:body   =&gt; &quot;whoo, a body&quot;)
+response  = Typhoeus::Request.post(&quot;http://localhost:3000/posts&quot;,   
+							:params =&gt;  { 
+								:title =&gt; &quot;test post&quot;,  :content =&gt; &quot;this is my test&quot; 
+							} )
+response  = Typhoeus::Request.delete(&quot;http://localhost:3000/posts/1&quot;)
+
+###
+# More Request Options
+response  = Typhoeus::Request.get(&quot;http://localhost:3000/&quot;,
+							:headers =&gt; {
+								'User-Agent' =&gt; &quot;Some User Agent&quot;,	# UA
+							},
+							:connect_timeout  =&gt;  1000,       		# milliseconds 
+							:timeout  =&gt;  1000,               		# milliseconds
+							:interface  =&gt;  &quot;en0&quot;,            		# Ethernet interface on my MBP            
+							:follow_location  =&gt;  true,       		# Following redirects                     
+							:max_redirects  =&gt;  5,            		# If prev, # of redirects                 
+							:proxy  =&gt; &quot;127.0.0.1:8080&quot;,      		# Proxy IP:Port                           
+							:proxy_username =&gt; &quot;user&quot;,        		# Proxy Username                          
+							:proxy_password =&gt; &quot;password&quot; )   		# Proxy Password                          
+
+###
+# Handling Responses
+response  = Typhoeus::Request.get(&quot;http://httpstat.us/200&quot;)
+puts &quot;This was a total success!&quot;  if response.success? &amp;&amp; response.code == 200
+
+response  = Typhoeus::Request.get(&quot;http://httpstat.us/404&quot;)
+puts &quot;This was not a success!&quot;    unless response.success? &amp;&amp; response.status_message == &quot;Not Found&quot;
+
+response  = Typhoeus::Request.get(&quot;http://httpstat.us/408&quot;, :timeout =&gt; -1)
+puts &quot;This request timed out!&quot;    if response.timed_out? &amp;&amp; response.curl_return_code == 28
+
+response  = Typhoeus::Request.get(&quot;http://www.google.com/&quot;)
+puts response.body if response.success?</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

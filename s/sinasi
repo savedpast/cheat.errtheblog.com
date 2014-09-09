@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>
+Sinasi SproutCore Minor Mode for Emacs:
+  GitHub: https://github.com/emk/sinasi
+
+key             binding
+---             -------
+
+C-c             Prefix Command
+
+C-c ,           Prefix Command
+
+C-c , c         sinasi-clean-tests
+C-c , f         Prefix Command
+
+C-c , f a       sinasi-find-core
+C-c , f c       sinasi-find-controller
+C-c , f f       sinasi-find-fixture
+C-c , f i       sinasi-find-main
+C-c , f m       sinasi-find-model
+C-c , f p       sinasi-find-main-page
+C-c , f s       sinasi-find-stylesheet
+C-c , f t       sinasi-find-test
+C-c , f v       sinasi-find-view
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

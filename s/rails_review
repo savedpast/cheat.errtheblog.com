@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Como analisar um projeto em Rails a primeira vista
+
+1. Versão do rails
+2. Conseguir levantar o database (rake db:migrate)
+3. Quais gems ou plugins usa
+4. Qual framework de teste?
+5. Usa fixture replacement?
+6. Gerar um diagrama do banco de dados
+7. Rotas
+9. Restful controllers?
+10. Como estÃ¡ feita a estratÃ©gia de deploy?
+
+How to analyze a project in Rails at first sight
+
+1. Version of rails
+2. Getting up the database (rake db: migrate)
+3. What uses gems or plugins
+4. What test framework?
+5. Uses fixture replacement?
+6. Generate a database diagram
+7. Routes
+9. Restful Controllers?
+10. How is made the strategy of deployment?</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

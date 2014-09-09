@@ -1,0 +1,651 @@
+---
+hobo_names: ! "Here are the 1,806 Hobo Names You Requested\n-------------------------------------------\n\n1\tStewbuilder
+  Dennis \n2\tCholly the Yegg \n3\tHolden the Expert Dreamtwister \n4\tThe Rza \n5\tJack
+  Skunk \n6\tJack Skunk Fils \n7\tLord Dan X. Still-Standing \n8\tMarlon Fitz-fancy
+  \n9\tBazino Bazino, The Kid Whose Hair Is On Fire \n10\tWhispering-Lies McGruder
+  \n11\tNit Louse \n12\tDan'l Dinsmore Tackadoo \n13\tHobo Zero \n14\tThe Silver Jacket
+  Man \n15\tNo-Shoulders Smalltooth Jones \n16\tSistery Brothery Nabob \n17\tName
+  Withheld \n18\tStaniel the Spaniel \n19\tFrederick Bannister, the Tree Surgeon \n20\tTarnose
+  Cohen \n21\tMr. Wilson Fancypants \n22\tFloyd Dangle \n23\tShane Stoopback \n24\tWicked
+  Paul Fourteen-Toes \n25\tNormal-Face Olaf \n26\tTearbaby Hannity Stoop \n27\tThe
+  Damned Swede \n28\tPierre Tin-Hat \n29\tOl' Barb Stab-You-Quick \n30\tMr. Whist
+  \n31\tJames Fenimore Cooper \n32\tTwistback John, the Scoliosis Sufferer \n33\tSweet
+  Daddy Champagne \n34\tSenator Cletus Scoffpossum \n35\tHorus, the Bird-Headed Fool
+  \n36\t50-Tooth Slim \n37\tMonk, the Monkey Man (which is to say: \"the Man\") \n38\tThad
+  the Bunter \n39\tBalloonpopper Chillingsworth \n40\tAll-but-Dissertation Tucker
+  Dummychuck \n41\tFinnish Jim \n42\tFlemish Jim \n43\tForeign Tomas, the Strangetalker
+  \n44\tRoadhouse Ogilvy and Sons \n45\tJokestealer John Selden \n46\tGiancarlo, Master
+  of the Metal Trapeze \n47\tDr. Bill Stain-Chin, the Boxcar Medic \n48\tBoxcar Ted
+  \n49\tBoxcar Mick \n50\tBoxcars [sic] Timothy Twin \n51\tBoxcar Jones, the Boxcar
+  Benjamin Disraeli \n52\tBoxcar Aldous Huxley \n53\tJR Lintstockings \n54\tGila Monster
+  Jr. \n55\tIrontrousers the Strong \n56\t\"X,\" the Anonymous Man or Woman \n57\tOrphaned
+  Reynaldo, the Child with Haunting Eyes (while there were\n58\tren hoboes, Reynaldo
+  took this when he was 45; prior to this, he was\n59\tas...[See #58]) \n60\tReynaldo
+  Reynaldoson, Who Will One Day Kill His Father \n61\tThoughtless Harry Hsu \n62\tClinical
+  Psychiatrist Huga Rivera \n63\tPeter Ox-Hands \n64\tPonytail Douglas Winthrop \n65\tLil'
+  Jonny Songbird, the Songbird-Eater \n66\tKing Snake: The Eternal Mystery \n67\tGhostly
+  Nose Silvie \n68\tFonzie \n69\tDiCapa the Hound \n70\tBeef-or-Chicken Bob Nubbins
+  \n71\tHonest Amelia Dirt \n72\tSlow Motion Jones \n73\tCanadian Football Pete \n74\tMeep
+  Meep, the Italian Tailor \n75\tJonathan William Coulton, the Colchester Kid \n76\tMaria
+  the Pumpkin-Patch Crooner \n77\tBix Shmix \n78\tVice President Garrett Hobart \n79\tStun
+  Gun Jones \n80\tProstate Davey \n81\tFlea Stick \n82\tNiles Butterbal, the Frozen
+  Turkey \n83\tTodd Four-Flush \n84\tStick-Legs McOhio \n85\tThe Unanswered Question
+  of Timothy \n86\tMickey the Assistant Manager \n87\tGuesstimate Jones \n88\tGoofus
+  \n89\tGallant \n90\tSir Roundbelly DeDelight \n91\tNewton Fig \n92\tChicken Nugget
+  Will \n93\tParlor Peter, the Sneak Thief \n94\tOvid \n95\tBathsheba Ditz \n96\tAlan
+  Pockmark, Esq. \n97\tLolly Hoot Holler \n98\tVon Skump \n99\tLonnie Choke \n100\tChisolm
+  Chesthair \n101\tFreak Le Freak, the Freakster \n102\tRex Spangler, the Bedazzler
+  \n103\tRandall Mouth-Harp \n104\tChrysler LeBaron \n105\tThe Fishin' Physician \n106\tPersuasive
+  Frederick \n107\tCelestial Stubbs \n108\tTeary-Eyed Fingal \n109\tMairah Nix \n110\tCthulhu
+  Carl \n111\tDel Folksy-Beard \n112\tNo-Banjo Burnes \n113\tChainmail Giles Godfrey
+  \n114\tLois \"Charles\" Ladyfinger \n115\tPlausible Zane Scarrey \n116\tHuckle Smothered
+  \n117\tMmmmm Dandy Dundee \n118\tMountain-Humper Edgar Ames \n119\tSpasmodic Hilary
+  \n120\tDoc Aquatic \n121\tMolly Bewigged \n122\tCincinnati O'Gurk \n123\tMetuchen
+  O'Sullivan \n124\tCherry Hill O'Manley \n125\tCheesequake O'Lennox \n126\tBooper
+  O'Montauk \n127\tZaxxon Galaxian \n128\tDrinky Drunky Thom, the Drunk \n129\tTerry
+  Gross \n130\tSpooky-Night Spooky Day \n131\tZipgun Gloucester Gluck \n132\tHuman
+  Hair Frum \n133\tSherlock-Holmes-Hat Carl III \n134\tPatrick Intergalatic \n135\tAbmidextrous
+  Stang \n136\tYum-Yum Sinclair Snowballeater \n137\tPonzi-Scheme Jeremiah Ponzi \n138\tToodles
+  Strunk \n139\tMonkeybars Matthew Manx \n140\tPineneedle-Jacket Jericho Fop \n141\tRobert
+  the Tot \n142\tRobert the Child-Size \n143\tRobert the Minuscule \n144\tRobert the
+  Wee \n145\tRobert Fits-in-a-Case \n146\tRobert Eats-for-Free \n147\tRobert Is-He-an-Elf?
+  (The seven Silk brothers, all named Robert,\n148\talso kown for the small stature
+  and predictable bitterness.) \n149\tDennis Big-Ear Fox \n150\tJethro the Pagan \n151\tAsterix
+  the Gaul \n152\tBlack Bolt, King of the Inhumans \n153\tStrictly Local Henry Bobtail
+  \n154\tManny the High-Ranking Mason \n155\tFry-Pan Jim Fry \n156\tSlo-Mo Deuteronomy
+  \n157\tHalf-Bearded Mark \n158\tKnee-Brace Kenny \n159\tMorris the Personal Trainer
+  \n160\tThundertwine \n161\tCleats Onionpocket \n162\tDeformed Abe \n163\tTrainwhistle
+  Abejundio \n164\tDavid No-Ears \n165\tAchilles Snail-Hair the Buddha \n166\tFrog-Eatin'
+  Lou \n167\tAdmiral's Club Wilbur \n168\tMax Meatboots, the First-Class Lounger \n169\tDora
+  the Explorer \n170\tMs. Mary Manx, the Tailless Cat \n171\tFree-Peanuts Doug \n172\tSteve
+  the Human Tunneler \n173\tRedball Charlie Dickens \n174\tTwink the Reading-Room
+  Snoozer \n175\tMicrofiche Roy, the Side-Scroller \n176\tMcGurk, Who May Be Found
+  by the Card Catalogue \n177\tBooster D'Souza \n178\tCommodore Sixty-Four \n179\tMoped
+  Enid, the Mopedist \n180\tLamant the Junkman \n181\tFast-Neck Nell \n182\tBill Never-Uses-a-Cookbook
+  \n183\tBee-Beard \n184\tLil' Max Meatboots \n185\tThe Personal Secretary to Jed
+  \n186\tDee Snider \n187\tSausage Patty \n188\tDesert Locust \n189\tGummy Miles \n190\tGyppo
+  Moot, the Enigma Machine \n191\tOl' Stiffpants \n192\tSkywise the Sexual Elf \n193\tCraine
+  T. Eyebrow-Smeller \n194\tLonely Heiney Alan Meister \n195\tShakey Aitch the Boneyard
+  Concierge \n196\tWoody Damn \n197\tAlatar \n198\tPallando \n199\tSaltfish Bunyan
+  \n200\tPoor, Poor, Poor Charlie Short \n201\tVenomous Byron \n202\tFive-Chambered-Stomach
+  Mort St. John \n203\tGravybelly Dunstan \n204\tExtra-Skin Dave \n205\tBeanbag-Chair
+  Bill \n206\tGrant Sharpnails, the Scratcher \n207\tTommy Lice-Comb \n208\t\"Medicated
+  Shampoo\" Jonah Jump \n209\tGeneral Woundwort, the Giant Rabbit \n210\tGenius L.
+  Cravat, the Gentleman \n211\tGiant Bat Wings Roland \n212\tNick Nolte \n213\tSalty
+  Salty Friday \n214\tFatman and the Creature (note: there was no creature) \n215\tCecelia
+  Graveside \n216\tHoosegow Earl French \n217\tStymie Stonewrist \n218\tRoadrunner
+  \"Meep Meep\" Fabong \n219\tBruised-Rib Johansson, the Beefer \n220\tJoachim Bat-in-Hair
+  \n221\tFood-Eating Micah \n222\tRubbery Dmitry, the Mad Monk \n223\tHoney Bunches
+  of Donald \n224\tCrispy Morton \n225\tFeminine Forearms Rosengarten \n226\tTwo-Headed
+  Mike Hoover \n227\tManny Stillwaggon, the Man with the Handlebar Eyebrows \n228\tBean-Hoarder
+  Newt \n229\tTexas Emil \n230\tThe Moor of Venice \n231\tAverroes Nix \n232\tHuman
+  Hair Blanket Morris Burnes \n233\tCanadian Paul Tough \n234\tCrooner Sy \n235\tManuel
+  Pants-Too-High \n236\tSylvia Patience Hidden-Forks \n237\tSung, the Land Pirate
+  \n238\tOpie, the Boston Bum \n239\tHard-Flossing Hope Peak \n240\tStingo the Bandana
+  Origami Prodigy \n241\tFranklin Ape and His Inner Ear Infection \n242\tQuestionable-Judgement
+  Theodore Stomachbrace \n243\tThermos H. Christ \n244\tSir Mix-a-Lot \n245\tThe Nine
+  Doctor Whos \n246\tLord Winston Two-Monocles \n247\tThe Freewheelin' Barry Sin \n248\tDiego
+  the Spark-Spitter \n249\tAmerican Citizen Zane Pain \n250\tAbraham, the Secret Collector
+  of Decorative China \n251\tLinty Sullivan, the Lint-Collector \n252\tSocks Monster
+  \n253\tMa Churchill \n254\tPappy Churchill \n255\tThe Young Churchill \n256\tThe
+  Young Churchill's Hated Bride \n257\tChurchill-Lover Phineas Redfish \n258\tCrispus
+  T. Muzzlewitt \n259\tStain-Sucker Duncan \n260\tDick the Candy Dandy \n261\tAlbuteral
+  Inhaler Preson McWeak \n262\tLongtime Listener, First-Time Caller \n263\tMastiff
+  Mama \n264\tTennessee Ernie Dietz \n265\tSharkey, the Secret Cop \n266\tGooseberry
+  Johnson, Head Brain of the Hobosphere \n267\tWeekend-Cicular Deborah \n268\tMarcus
+  Chickenstock \n269\tStunted Newton \n270\tMagnus Shortwave \n271\tU.S. Fool \n272\tManatee
+  the Railyard Toreador \n273\tUtah Manfred Succor-Munt \n274\tLaura Delite \n275\tEdwin
+  Winnipeg \n276\tEyepatch Resse Andiron \n277\tTom False-Lips Real-Teeth \n278\tFabulon
+  Darkness \n279\tCricket-Eating Charles Digges \n280\tPally McAffable, Everybody's
+  Friend \n281\tSully Straightjacket \n282\tHalf-Dollar Funk Nelson \n283\tWhitman
+  Sampler \n284\tChili-Mix Wilma Bensen \n285\tSting, the Glowing Blade \n286\tProfessor
+  Challenger \n287\tLil' Shorty Longhorn \n288\tRumpshaker Phil \n289\tSwing State
+  Myron \n290\tAlistair Crowley, the Devil \n291\tGutthrower Sy Salt \n292\tSweetback
+  Barney, the Dilettante \n293\tThe Car-Knocker Killer \n294\tThe Chamberlain \n295\tThe
+  Emperor \n296\tThe Ritual-Master \n297\tThe Garthim-Master \n298\tThe Scientist
+  \n299\tThe Gourmand \n300\tThe Slave-Master \n301\tThe Treasurer \n302\tThe Scroll
+  Keeper \n303\tThe Ornamentalist \n304\tCaptain Slick-Talk \n305\tSackfist, the Tapdancing
+  Trombo \n306\tSouvenir-Selling Mlodinow \n307\tBlind Buck and \"Woozy,\" the Invisible
+  Seeing-Eye Dog \n308\tRoundhouse Farter \n309\tRed Ball Pnutz \n310\tFake Cockney
+  Accent Alan Strippe \n311\tAir and Whiskey Dale McGlue \n312\tJohnny RC Airplane
+  \n313\tNarcotic Morgan Suds \n314\tSir Francis Drank \n315\tMahayana Mike \n316\tMiniyana
+  Geoffrey \n317\tThree-Bean Otz \n318\tMaury the Monsoon \n319\tCzech Czarlie Czill
+  \n320\tSssssssssssssssss, the Hisser \n321\tThanatos Koch \n322\tHenry Eatsmelts
+  \n323\tModem-Sniffer Gunderson \n324\tHalf-Albino Alejandro \n325\tGluttonous-Slim
+  \n326\tRagweed-Allergic Matt \n327\tAmorous Luminous Dirk \n328\tMoray Eel Ken Elmer
+  \n329\tThe Railbender \n330\tAntonio the Ombudsman \n331\tKarl Solenoid IV \n332\tCzar
+  King Rex the Glorious Leader \n333\tAndy Bunkum \n334\tPlastic-Moustache Mortimer
+  Tall \n335\tSamuel Gel Insole \n336\tLemuel Gel Insole \n337\tAmanda Until \n338\tCrispy
+  Whiskery \n339\tRobert Louis Stevenson, the Pirate \n340\tHobo Overload \n341\tLeopard
+  Print Steven Kane \n342\tAstonishing Shaun Eyelash \n343\tBilly Creak Knees \n344\tOwlie
+  \n345\tAnwar, the Bionic \n346\tReasonably Priced Motel Resse Unger \n347\tRibery
+  Dana \n348\tCranberry Sauce Oppenheimer \n349\tNancified Frederick \n350\tThe Loon
+  \n351\tItinerant Jane \n352\tHoly Hannah Hottentot-Smythe \n353\tFleabottle Boone
+  \n354\tAmazin' Jack Caroo \n355\tStupefying P, the Riddle-Maker \n356\tTodd Flaky-Palms
+  \n357\tWaspwaist Fritz \n358\tJudge Roughneck \n359\tSlam Dance Dooze \n360\tMariah
+  Duckface, the Beaked Woman \n361\tCount Mesmerize \n362\tSonny-Boy Oedipus Acre
+  \n363\tPick Mama Susan Xavier \n364\tChelsea Bacon \n365\tArchie Axe \n366\tSally
+  Hoot-Hoot \n367\tMr. Pendleton \n368\tSaves-Receipts Dave \n369\tSir Walter British
+  \n370\tElmer, the Crankscout \n371\tGolden Neck \n372\tMarinated Alex Pons \n373\tEl
+  Boot \n374\tShapeshifting Demon \n375\tJeremiah Tip Top \n376\tAmanda CeeCee Stobelight
+  \n377\tIrving Alva Edison, Inventor of the Hobophone \n378\tLeather Apron \n379\tLead
+  Apron \n380\tFoil Apron \n381\tBurnt Goathead \n382\tSaint Sorryass \n383\tOverly
+  Familiar Fung \n384\tChalmers, the Bridge Champ \n385\tElephantine McMoot \n386\tNeekerbeeker
+  Perry Toenz \n387\tTeattime BB Stiles \n388\tCoalie T \n389\tHubbel \"I Predicted
+  Lindy Hop\" Deerblind \n390\tHubie Hewitt, the Broadway Legend \n391\tHuge Crybaby
+  McWeepy \n392\tPoo-Knickers Elias \n393\tElffriend Weingarten \n394\tForktongue
+  Nigel Fork \n395\tWoodeye Apfel \n396\tHairlip Mikhail \n397\tSolid First Draft
+  Patton Taylor \n398\tPrettynickels, the Lamb \n399\tNot-Only But-Also Pete \n400\tPentheif
+  Hickock \n401\tLa Grande Mel \n402\tApplebee O'Bennigan McFridays \n403\tLadry Jerry
+  Lardo \n404\tLow-Carb Aleks Stovepipe \n405\tHugo Stares \n406\tEldred Splinters
+  \n407\tOliver, the Train-Oyster \n408\tPring, Ultralord of the Hobo Jungle \n409\tUtz,
+  the Crab Chip \n410\tSalt-and-Pepper Chest \n411\tBeverly Hills Buntz \n412\tMississippi
+  Barry Phlegm \n413\tMatter-Eater Brad \n414\t49-State Apthorp, the Alaska-Phobe
+  \n415\tNew Hampshire Todd \n416\t\"Taxachusetts\" Glenn \n417\tHydrocephalic Jones
+  \n418\tVermont \"Greenmountain Boy\" Phil Marijuana \n419\tAlaska Mick the Crabber
+  \n420\tArizona Ludwig \n421\tCalifornia Ainsley Shortpants \n422\tCollegeboy Brainiac,
+  the Hobo Einstein \n423\tDr. Zizmor \n424\tSilas Swollentoe \n425\tSlimneck Holden
+  Fop \n426\tAspiring Jaster \n427\tIllinois Obama \n428\tSammy Austere \n429\tNew
+  Mexico Anselm Turquoise-Eater \n430\tCaboose-Fouling Ferris Ntz \n431\tPrayerful
+  Stan, the Bent-Knee Yahoo \n432\tFour-Fisted Jock Socko \n433\tButtery-Cheeks Anton
+  \n434\tShadow (\"Blinky\") Preston \n435\tGodigisel the Vandal \n436\tGunderic Godigiselson
+  \n437\tPanzo the Spiral-Cut Ham \n438\tSmoke-Collecting Reg \n439\tHot Gnome Jimmy
+  Jackson \n440\tPontius Cornsilk-Heart \n441\tSanfor Who Lacks Fingerprints \n442\tTreesap-Covered
+  N. Magruder \n443\tThor Hammerskold, the Mexican \n444\tBingo-Balls Nick Chintz
+  \n445\tBleedingtoe the Barefoot 'Bo \n446\tHondo \"Whatever That Lizard Is That
+  Walks on Water\" \n447\tSalami Sunshine \n448\tFourteen-Bindelstick Frank \n449\tOregon
+  Brucie Shunt \n450\tPirandello, the Many-Bearded \n451\tQuinn and His Quaker Oats
+  Box Drum \n452\tFatneck Runt \n453\tmy-e-hobo.com \n454\tSomersaulting Mike Spitz
+  \n455\tBo 'Bo \n456\tAbelard \"Sunken Treasure\" Lowtrousers \n457\tColin, That
+  Cheeful Fuck \n458\tBattling Joe Frickinfrack \n459\tMonsieur Dookie, the Francophonic
+  \n460\tHappy Horace Noosemaker \n461\tHieronymous Crosseyes \n462\tCrumbjacket Timmy
+  \n463\tOverload-the-Dishwasher Mac \n464\tPhythmic Clyde Hopp \n465\tMicrobrew Stymie
+  \n466\tEl Caballo, the Spanish Steed \n467\tLee Burned-Beyond-Recognition \n468\tHollering
+  Martin Mandible \n469\tDamien Pitchfork, the Freightyard Satan \n470\tHandformed
+  Hamburger Clarence West \n471\tDr. Nobel Dynamite \n472\tPickled-Noggin Nettles
+  \n473\tMischievous Craig \n474\tBaldy Lutz, the Amityville Horror \n475\tAshen Merle
+  Buzzard \n476\tFrypan Nonstick McGee \n477\tSingleminded Hubbard \n478\tMaryland
+  Sol Saynomore \n479\tBaked Salmon Salad Finn \n480\tUnshakably Morose Flo \n481\tFr.
+  Christian Irish, the Deep-Fat Friar \n482\tSmokestack-Hugger Jools Nygaard \n483\tFossilwise
+  Opie Fingernail \n484\tTab-Collar Dix \n485\tGeorge Slay, the Duck Throttler \n486\tEldon
+  Waxhat, the Waterproof Man \n487\tTimely Clayton, the Human Wristwatch (so named
+  not because of this\n488\tuality, but because one arm was significantly shorter
+  than the\n489\t.) \n490\tBoth Dakotas Dave \n491\tDuke Jermiah Choo-Choo \n492\tTransistorized
+  Maximillian, the Hobo Cyborg \n493\tGravelbed Gavin Astor \n494\tPantless, Sockless,
+  Shoeless Buster Bareass \n495\tAlternate-Dimension Bela Boost \n496\tAtlas Flatshoulders
+  \n497\tScurvied Leo Falsebreath \n498\tToby Anchovy, the Canned Man \n499\tMad Max
+  \n500\tThe Goose \n501\tNot the Goose \n502\tMister Torso, the Legless Wonder \n503\tJedediah
+  Dryasdust \n504\tLoving Vincent Hugsalot \n505\tThe Rambling, Rambling Boris Wander
+  \n506\tBusiness-Class Klaus Riel \n507\tEmergency Exit Aisle Gustav Nook \n508\tUnnervingly
+  Candid Nicky Thain \n509\tSnoops Lightstep Trenchcoat, the Hobo PI \n510\tWilliam
+  Carlos Williams \n511\tBeef Grease Porter Dripchin \n512\tExoskeleton Chester Fields
+  \n513\tRoth IRA Romeo Leeds, the Well Prepared \n514\tBum-Smiter Phillip \n515\tBum-Hating
+  Virgil Hate-Bum \n516\tThor the Bum-Hammer \n517\tBum-Tolerant Brendan Sleek \n518\tMost
+  Agree: It's Kilpatrick \n519\tThe Beloved Dale Thankyounote \n520\tUnpronounceable
+  \n521\tThad Malfeasance \n522\tChiseltooth Muck Manly \n523\tAmsterdam Jocko \n524\tSinister
+  Leonard Longhair \n525\tBeery Clive the Eunuch \n526\tChaim the Squirrelkeeper \n527\tNightblind
+  and Colorblind, the Blind Twins \n528\tMilosz the Anarchist Puppeteer \n529\tJimmy
+  \"New Man\" Neandertal \n530\tLonnie Pina Colada \n531\tWashington State Amy Swipe
+  \n532\tGopher-State Sam, the Minnesota Man \n533\tCandle-Eyed Sally \n534\tPackrat
+  Red and his Cart o' Sad Crap \n535\tTrixie of the East \n536\tTrixie of the West
+  \n537\tFine-Nipple Tom Bazoo \n538\tThe Friends of Reginald McHate Society \n539\tOregon
+  Perry Hashpipe \n540\tBold 'n' Zesty Brad \n541\tMermaid Betty Scales \n542\tSpotted
+  Dick \n543\tShanty Queen Elizabeth Regina \n544\tNichols Crackknuckle \n545\tStew
+  Socksarewarm \n546\tHuge-Calves Dwight \n547\tA-Number-1 \n548\tN-Number-13 \n549\tArther
+  Moonlight \n550\tAndrea Clarke, the Human Shark \n551\tMonkey's-Paw Patterson \n552\tMyron
+  Biscuitspear, the Dumpster Archeologist \n553\tOllie Ebonsquirrel \n554\tThe Classic
+  Brett Martin \n555\tDouglas, the Future of Hoboing \n556\tIronbelly Norton \n557\tDilly
+  Shinguards \n558\tRufus Caboose \n559\tRear Admiral JF Grease Pencil \n560\tKing
+  Cotton \n561\tPrince Hal Oystershuck, the Royal Shucker \n562\tUnconditional Gavin
+  \n563\tSquirrelcloak \n564\tIdaho Woody Harelson \n565\tJane the Boxcar Beekeeper
+  \n566\tAaron Three-Shirts \n567\tPaste-Smeller Luke \n568\tLowly Highley \n569\tElihu
+  Skinpockets \n570\tMarian May Wyomingsong \n571\tStitches the Railyard Sutureman
+  \n572\tKlonopin Clyde \n573\tBenny Twenty-Squirrels \n574\tChickeny-Flavored Remy
+  Bunk \n575\tJuicepockets Thomas Moone \n576\tEustace Feetbeer \n577\tAmnesiac Jared
+  Stringy \n578\tShagrat, Orc of the Ozarks \n579\tBilly Butterfly Net \n580\tAmmonia
+  Cocktail Jones \n581\tNorma Shinynickels \n582\tJonathan Crouton \n583\tAntigone
+  Spit \n584\tEl Top-Hat Swindlefingers \n585\tPomPom the Texas Dancing Dog \n586\tGin-Bucket
+  Greg \n587\tYuri Trimble, the Alien Pod-Person \n588\tSouth Carolina Sarah Lardblood
+  \n589\tBloody-Stool laSalle \n590\tPith-Helmet Andy \n591\tSelf-Taught-Guitarist
+  Edmund \n592\tDon Tomasino di Shit-the-Bed \n593\tMarkansas \n594\tNeckfat JK Trestle
+  \n595\tPansy Overpass \n596\tRalph Raclette Cornichon, Hobo of the Mountains \n597\tMontana
+  Nbdego Tch!k \n598\tUnbearably Oenophilic Ned \n599\tJonas Tugboy, Professional
+  Masturbator \n600\tCinderfella Dana Dane \n601\tKerosene-Soaked Tom \n602\tBlack-Bottle
+  Priam \n603\tPinprick Butell \n604\tStool-Sample Frank \n605\tIowa Noam Chomksy
+  \n606\tEtienne, Roi of the Rapier \n607\tAmesy Squirrelstomper, the Chipmunk Preferrer
+  \n608\tNed Gravelshirt \n609\tNPR Willard Hotz, the Soothing-Voiced \n610\tAmen
+  to Polly Fud \n611\tConstanly Sobbing Forrester \n612\tMaine-iac Leonid \n613\tMagnetized
+  James \n614\tHobo Jake Jerrold, Representing the Whole Mid-Atlantic Region \n615\tJiminy
+  Sinner \n616\tPamela Chickeneggs (i.e., Hobo Caviar) \n617\tChuck McKindred: Not
+  So Holy, But Very Moley \n618\tQ the Quantum Man \n619\tSalad-Fork Ron \n620\tWarbling
+  Timmy Tin Voice and His Voicebox \n621\tAmbassador Roasting Pan \n622\tWarren Smazell,
+  Founder of Hobotics** \n623\tVentriloquism Jimmy and \"Madam\" the Talking Bean
+  Can \n624\tNosepicker Rick Pick \n625\tThe Black Squirrel Fairy \n626\tAlabama Edsel
+  Brainquake \n627\tKid Silverhair, the Man of Indeterminate Age \n628\tCatscratch
+  Tremont Nude \n629\tBill Jaundice \n630\tSugarhouse Morris the Sapper \n631\tNutrition-Shake
+  Emery \n632\tNicknameless Norris Shine \n633\tStinging Polly Papercuts \n634\tDeke
+  Hidden Hornets' Nest \n635\tThe Wisconsin Scourge \n636\tBrendan Headbristles \n637\tHis
+  Excellency Nooney Sockjelly \n638\tWhistling Anus Mecham, Le Petomaine \n639\tTalmidge,
+  the Bactine Bearer \n640\tTailstump Gunther, the Vestigial Man \n641\tThe Hon. Charlie
+  Weed-Farmer \n642\tPhilatelist Joey Licks \n643\tOld Pliny Dance-for-Ham \n644\tRheumy
+  Sven \n645\tWormy Glenn and Nootka the Flatworm \n646\tHidalgo, the Devil Stick
+  Artiste \n647\tThe Fucky From Kentucky \n648\tPrince Bert in Exile, the Man in the
+  Foil Mask \n649\tSiderodromophobic Billy \n650\tAntlered Calvin \n651\tCambridge
+  Massachusetts Claude \n652\tCyrus the Persian Sturgeon \n653\tKneepants Erasmus,
+  the Humanist \n654\tLittle Gavin Spittle \n655\tTar-tongue Godfrey Strange \n656\tHoneypalms
+  Gordon Lips \n657\tLuke \"the Lifestyle\" Dammmers \n658\tSimon Squirrelskin \n659\tScabpicker
+  Sandy Rump \n660\tChicken Butt, Five Cents a Cut \n661\tWise Solomon Babysplitter
+  \n662\tTelekinetic Dave B. \n663\tTelekinetic Dave F. \n664\tWhiskeyblood Willie
+  Sot \n665\tUnger and his Duststorm Bride \n666\tZachary Goatflirter \n667\t\"La
+  Grippe\" \n668\tUranus John, the Star-Traveler \n669\tAccusin' Tim Dunn \n670\tTennessee
+  Linthelmet \n671\tThe Unformed Twin of Tennessee Linthelmet \n672\tTurkeyballs Paco
+  \n673\tAndre the Indianapolist \n674\tWally Dregs, the Newfoundland Screech \n675\tFlaky
+  Mike Psoriasis \n676\tHell's Own Breath Hinkley \n677\tGerald Chapcheeks \n678\tAcid-Saliva
+  Curly Stokes \n679\tOklahoma Stilgar \n680\tRocky Shitstain Mankowicz \n681\tRocky
+  Shitstain Mankowicz Part II, the Quickening \n682\tProfessor W* \n683\tSanitized-for-Your-Protection
+  Eddie Summers \n684\tJan, the Jager-Meister \n685\tBig-Tipper Silas Fake-Nickel
+  \n686\tAnaerobic Eben Stiles \n687\tReplicant Wemberly Plastiskin and his Clockwork
+  Squrrel \"Toothy\" \n688\tHarry Coughblood \n689\tAesop Bedroll, the Fluffy Pillow
+  Man \n690\tWidow-Kisser Roger \n691\tExperimental Hobo Infiltration Droid \"41-K\"
+  \n692\tBaron Bayonet, the Bull-Sticker \n693\tMikey Gluesniff \n694\tBell's-Palsy
+  Brennan \n695\tChiptooth Berman, the Bottle Biter \n696\tUndertaker Robert, the
+  Lint-Coffin Weaver \n697\tBetty, the Exorcist \n698\tTittytwister Blake Horrid \n699\tMallory
+  Many-Bruises \n700\tMad or Sad Judd (no one can tell) \n701\tTroglodytic Amory Funt
+  \n702\tSmokehouse \"Frankie\" Jowl-Poker \n703\tUtility-Belt Deana \n704\tThe Unshakable
+  Will of Wade Terps \n705\tTrainwhistle Ernie Roosevelt, the President's Long-Lost
+  Brother \n706\tHallelujah Bum Again \n707\tAllegheny Pilgrim Panam, the Defunct
+  Airline Man \n708\tButterknife Sal Slender \n709\tSaladfork Butt Bunter \n710\tDeboned
+  Gary Wobbly-Arms \n711\tPauly Twin-Oboes, the Double-Reed Man \n712\tAnsel Trick-Neck,
+  the Human Gizzard \n713\tStunned Silent Hopkins \n714\tTiberius Claudius Drusus
+  Nero Germanicus, the Crippled Hobo Emperor\n715\tBrigand Blackguard McCatburglar,
+  the Hobo Ne'er-Do-Well \n716\tMeyers Briggs, the Tester \n717\t\"Mac\" Hardcastle
+  McCormick \n718\tLe Peteet Mort \n719\tBisque-and-Chowder-Man Hoffman \n720\tThe
+  Freightening Reign of Phil \n721\tStalling Pete Puts-You-Off \n722\tTimmy Hands-Covered-In-Scotch-Tape
+  \n723\tCravatted Jones Snaredrum \n724\tAmputated Benny \n725\tOld Beekeeper Stan
+  Stingbelly \n726\tKevin Eggsandbacon \n727\tOl' Johnny One-Joke \n728\tTramp Trampson
+  (not a tramp, but a renowned hobo trampolinist) \n729\tBoom-Busy McPredictable Cycle
+  \n730\tDickie On-Star, the Satellite Man \n731\tDickie Double Dickeys, Whose Pants
+  Are Indestructible \n732\tHigh-Falutin' Pete \n733\tModerately-Falutin' Pete \n734\tAnvil-carryin'
+  Wyatt Strong-Calves \n735\tStump Tongue Mumbler \n736\tSynonymin' Don Thesaurus
+  \n737\tPost-it Perry, the Hobo Office Supply Guy \n738\tCrummy Carl Licetamer \n739\tSelf-Satisfied
+  Mick Pringle \n740\tAndrew Powderlips, the Doughnut Scholar \n741\tThey Call Me
+  MISTER Dumps \n742\tLibrary Bird Maurice Backissues \n743\tLousy-anna Lamont Burnt
+  \n744\tFestering Wound William, the Ointment-Refuser \n745\tRon Rattlechest, the
+  Fearful Wheezer \n746\tOl' Eric, the Nickelflop Albino \n747\tDouble-Entendre Dick
+  Penis \n748\tMike the Beard Recycler \n749\tWinnipeg Winnie Peg, the Cold and Bored
+  \n750\tJocker Jerry, the Whistlin' Kidnapper \n751\tJ. Arthur Crank \n752\tPaul
+  the Gorilla \n753\tBarrel-Aged Milton Oakbreath \n754\tPhilip, the Eternal Antagonist
+  \n755\tCrackles Spineshaker, the Hobo-osteopath \n756\tCashy McSellout, Darling
+  of the Newsreels \n757\tHoncho! Just: HONCHO! \n758\tDr. Hall, A Slang Term for
+  \"Alcohol\" \n759\tDr. Alcohol, A Slang Term of \"A Corridor\" \n760\tSir E. Dismal,
+  the Hobo Economist \n761\tRoundhead Swedish Sven, the Hairless \n762\tWeedwine Farley,
+  the Weed-fermenter \n763\tSanta Fe Santa Jinglebell, the World's Most Christmassy
+  Tramp \n764\tHank the Eczema Expert \n765\tLon Chaney, Jr., the Wolfman \n766\tClogged-Brain
+  Harry Hoomp \n767\tSketchartist Jim, the Slow Paparazzo \n768\tAdmiral Crotch Rickets
+  \n769\tAnthony Ethnic, the Other \n770\tPanel Discussion Dan Loaf \n771\tOwner's
+  Manual Abbott, the Owner's Manual Horder \n772\tDr. Know \n773\tManny Gills, The
+  Underwater Breather \n774\tHomunculus Jack, That Tiny Bold o' Lightning \n775\tBob
+  Brain-in-a-jar, the Bodiless 'Bo \n776\tBackwards-Looking Lou, the Parallel Parker
+  \n777\tAcid-Blood-and-Spit Lionel Stander, the Spitter \n778\tCoffin-Breath Melissa
+  Nestor \n779\tNo-Credit/Bad Credit Bobby Hassle-freeloan, Mortgage Specialist of
+  the Rails \n780\tMethie \n781\tB&M Barton Tiny Teeth \n782\tBurrowing Andrew Brokenails
+  \n783\tV-Neck Sweater Teddy G \n784\tPassably Competent Hal \n785\tApparently Mitch
+  Dixon \n786\tArguably Tommy Ford \n787\tUnquestionably Moe Gin-Clobbered \n788\tOft-Quoted
+  Mandrake Silvertongue \n789\tMurray Head as \"Judas\" \n790\tHarry Canyon, the Unedited
+  Version \n791\tPlush-bum Mr. Sweets \n792\tProf. Stink Mullins, Who Currently Holds
+  the Plush-bum Mr. Sweets\n793\tin American Hobology \n794\tSecret Compartments Max
+  and His Amazing Stovepipe Hat Full of Eggs and Junk \n795\tBreathe-Right Matty Nasal-Strip
+  \n796\tVoweltooth Jenkins, the Man with the Scrabble Tile Dentures \n797\tImpulse-Buy
+  Donny \n798\tAngelina Snakehead Fish \n799\tFisher Stephens \n800\tTrivia-Master
+  Johannes Wedge-keeper \n801\tTom the Gentle Strangler \n802\tBoston Billy \n803\tDouble
+  Stuf Boston Billy \n804\tChuck: The Ancient Evil Awakens \n805\tNasdijj \n806\tYou
+  know what? I'm going to go ahead and keep Nick Nolte. \n807\tScudders P. Keratosis\n808\tNo-Spleen
+  McGee\n809\tArgyle the Chess Player\n810\tJimmy Sits-on-a-Fence\n811\tSlick Willie\n812\tWet
+  Willie\n813\tMisogynist Willie\n814\tGil Bates, Inventor of the Hobonet\n815\tApricottage
+  Seamus\n816\tSpamhead Fishbottom\n817\tGastroboy\n818\tD-Boz\n819\tDeebz\n820\tHoagie
+  Hobie\n821\tPachycephalus Rex\n822\tAmadeus the Seminary Dropout\n823\tHelga the
+  Bearded Lady of Mexico\n824\tJoey Snoweater\n825\tRicky Crimson Piehole\n826\tLonely
+  Pete the Leper\n827\tMixolydian Mike Mixton\n828\tThe Sworn Enemy of Bob Ross\n829\tShotgun
+  Spiffs the Zombie Hunter\n830\tHobodroid H3000\n831\tTerry Treeclimber\n832\tFishnet
+  Dogstench the Carolina Bumpkin\n833\tHalf-Dead Pessimist Bob and his brother Half-Living
+  Optimist Larry\n834\tOld Man Lightning Shorts\n835\tThrockmorton P. Gilderpant the
+  Timid Hobonaut\n836\tSalt Shaka Shaka Shaka\n837\tHatchet-Ass\n838\tUncle Overload\n839\tCousin
+  Banjo Birdseed\n840\tChisel and his Toxic Liver\n841\tPhlegm, That Bastard\n842\tBig,
+  Tall, Alien Mike the Nintendo Kid\n843\tFratricide Frank\n844\tUnprotected Tex\n845\tSimple
+  Phil the Asian\n846\tHorse Shriek Letterman\n847\tSeven-Horse Sitwell, the Bringer
+  of the Hobopocalypse\n848\tJackson the Viennese Asswipe\n849\tRed Shirt Lifespan\n850\tNuggetface\n851\tThe
+  Forkinator\n852\tLimburger Lemuel\n853\tNobody-Doesn't-Like Sara Lee\n854\tNobody
+  Doesn't-Like-Sara-Lee\n855\tNobody-Doesn't-Like-Sara Lee\n856\tWon't Tip McStingy\n857\tHinkety
+  Pinkety\n858\tScarf-for-a-Neck\n859\tThimble, the Ground Slug Connosieur\n860\tLunchbox
+  O'Flox\n861\tSweet Sweet Picklebreath\n862\tSandwich of Glory Roman\n863\tWolflips\n864\tBada
+  Bing, Bada Steve\n865\tEl Macaroni\n866\tFather Crunchmas\n867\tWookie Bill\n868\tBrown
+  Ted, Famous for his Amazing Sugar Cookie Recipe\n869\tGuy Asks-for-Change\n870\tGyros
+  the Greek\n871\tHell's Unicorn\n872\tDan the Guitar Fiend\n873\tTin Cap Earl\n874\tHis
+  Hoboness Prince Fatbert\n875\tSoupcan Spitball Eater\n876\tWhat's-Your-Name\n877\tUgly
+  Mort\n878\tAxe Pick Raul No-Pants\n879\tTossed Salad Ferdinand\n880\tCarl the Cart
+  Avenger\n881\tMasked Ollie the XVII\n882\tBrown Paper Bag Filthyhair\n883\tSoytatoes
+  Brownson\n884\tBanananana Flashbulb\n885\tThe Boxcar Herald\n886\tBlackwall Jensen\n887\tThe
+  Under-Bridge Flapper\n888\tBodystubble\n889\tCowboy Dave, the Jew\n890\tKrogg\n891\tBackhair
+  Mittens the Feline Tailor\n892\tSkeletal Jones\n893\tGlass Eyesockets the Hobo Express
+  Conductor\n894\tTimely Mark Twixt\n895\tJim Nauseam, the Disbarred Personal Injury
+  Litigator\n896\tNorman the Mormon\n897\tTrotsky the Carp Wrangler\n898\tJohnny Fists-of-Wrath\n899\tBluegrass
+  Pendleton\n900\tThe Anonymous Donator, Patron of the Unknown\n901\tGuest Lecturer
+  Dr. Phyllis Stefanopoulos\n902\tThree Piece Suit Max\n903\tHonorable Judge Chamberlain
+  Bindle Stiff\n904\tAdam, the Mulligan Stew Originator\n905\tGarrison Chucks-a-Dummy\n906\tThe
+  Famed Cannonball Catcher\n907\tJimbo the FRED Hater\n908\tEasy Mac, the Surreptitious
+  Delinquent\n909\tPlain Sam\n910\tSupreme Overlord 7-Fingers\n911\tMarcus the Itinerant
+  Bellhop\n912\tSquiggles T. Malarkey\n913\tLucky Joseph the Turd Collector\n914\tHerman
+  Papilloma Virus\n915\tThe Symbiotic Relationship of Tim and Howard\n916\tSlightly
+  Less Than Jerry\n917\tToolbelt Jack of the Penguins\n918\tRandall the Male Soprano\n919\tLatin
+  Feely Roberts\n920\tDysart the Distress`ed\n921\tMystic Marion, or ESP\n922\tHarry
+  Clint, the Guide for Dummies\n923\tEric Anti-Perspirant\n924\tThe Self-Appointed
+  King of Go-Carts\n925\tOut-by-Eight-Thirty Mike\n926\tTae Kwon Moe\n927\tSeersucker
+  Bridgid\n928\tMethadone Maleguena, the Turbana Lady\n929\tThe Blod\n930\tInjun Tucker\n931\tCarruthers
+  the Summertime Flapass\n932\tThe Hobo Formerly Known as Stuart\n933\tRansom Jack\n934\tOklahoma
+  Boesen\n935\tMark Sees-His-Own-Shadow\n936\tClem the Manpon Maker\n937\tGood Gravy!
+  Joe Burns\n938\tTelltale \"Boobs\" Swarnson\n939\tMillertime.\n940\tChief Stuffs-His-Wallet\n941\tThe
+  Wonderful Wizard of Fuzz\n942\tStackemup\n943\tGeneral Sideburns\n944\tStakepounder
+  Nelson\n945\t!xobile the Dark\n946\tPoobah Pruce\n947\tEasy-Catch Clive, the Guy
+  Who Eats Ransom Jack's Notes\n948\tNamesake\n949\tI've Got a Lovely Bunch of Doug\n950\tWeathergates\n951\tBonbon
+  Sean-Sean\n952\tSpyflake Jake, Master of Interstate Espionage\n953\tIshityounot\n954\tBurnin'
+  Vernon and the Dulcitones\n955\tCrippleknuckle\n956\tEnglish\n957\tThe Bellower\n958\tAppendicitis
+  Nixon\n959\tHolecoat\n960\tHungry Hungry Horace\n961\tRabbitscalper Ted\n962\tLena,
+  the Sockmonkeyteer\n963\tMr. Fold\n964\tBig Manuel\n965\tTighteyes\n966\tBill Carver,
+  Greatest Scar Museum on One Foot and a Stick\n967\tKlepto Tarbox\n968\tDa Jesus\n969\tPaybacker\n970\tLord
+  Linus, Dust Magnet\n971\tRatfriend Bates\n972\tThe Pinto Ressurector\n973\tMeteorologist
+  Alex, Forecaster of the Heavens\n974\tDead Oscar the Hypochondriac\n975\tUnfortunate
+  Dumas Curses-His-Parents\n976\tJohnny Applecore\n977\tSucculent Aaron Bacon\n978\tApollo
+  the O\n979\tEveryone's Hero, Lester\n980\tBillllllllllllllllllllllllll\n981\tiTodd,
+  the Portable Music Hobo\n982\tVillage Elder Quicksand Murphy\n983\tVillage Idiot
+  Quicksand Sinks-with-Flair\n984\tThe Blessed Virgin Gary\n985\tHamlet R. Snaggletooth,
+  the Shakespearean Donut\n986\tInvisible Invincible\n987\tThe Melting Pot of Utah\n988\tFree-Time
+  Wilson\n989\tAscension Jones\n990\tEusebius T\n991\tWombat Chew\n992\tJeweyes Buntmorton\n993\tSpamzilla\n994\t\"Pasty\"
+  Brown\n995\tBlackie White\n996\tBalloonthigh\n997\tMilton Willowmere, Inhaler of
+  Aerosols\n998\tDuct Tape Spyro Gyra\n999\tTether Bill Muscleteeth\n1000\tNick-L-Nips\n1001\tStrawpoke
+  Larry\n1002\tFitzpedro Sanchez, the Wetback Mick\n1003\tTwo-toed Cletus\n1004\tWolfchild
+  Remus\n1005\tMilt the Squirrel Whisperer\n1006\tBreastmilk Carl\n1007\tPlumb Bob\n1008\tThanks
+  O'Banion\n1009\tCan Can I'm the Whistle Man\n1010\tApologetic Hans\n1011\tThe One-Stop
+  Taster\n1012\tGurgle the Leaden Backstrokist\n1013\tBourbon Hardbelly\n1014\tFreddy
+  Licks-Your-Face\n1015\tWhole-Part-Whole\n1016\tNo. 625 in the Hobo Hymnal\n1017\tSuds
+  the Carwash Kid\n1018\tReincarnated Kerouac\n1019\tWonderful D, the Peg-Leg Athlete\n1020\tFire
+  Marshall Question Mark\n1021\tInterrogation Stan Hobart\n1022\tMayday Mayday Nathan\n1023\tPercy
+  Moonster, Hobo Scribe\n1024\tMerciless Joe Hat-Too-Wide\n1025\tWhy, Wild Wyatt\n1026\tFrank
+  the Absurdly Rotund Pharmacist\n1027\tNicely-Nicely Johnsonville Bratwurst\n1028\tDas
+  Milk\n1029\tThe Wand of Doom\n1030\tPrince Anubis of Denial\n1031\tMerriam Webfoot,
+  Inventor of Hobonics\n1032\tHomer Bond, Otherwise Known as Double Oh Kevin\n1033\tJack
+  B. Trimble\n1034\tJack Bisquick\n1035\tMiraculous Fumblebottom\n1036\tStumpy the
+  Former Acrobat\n1037\tUber Francis, Ruler of the Hobodom\n1038\tChuck the Eternal
+  Dirtsmith\n1039\tMotel No-Tell Phyllis\n1040\tJack of the Lantern\n1041\tFortbuilder
+  Mount Vernon\n1042\tMerlin the Intuitive Albino\n1043\tDumpa Dump\n1044\tSlowtalker
+  Imam\n1045\tBrownose the Poosnitch\n1046\tRudolph the Sponge-nosed Caboose Jockey\n1047\tJohn
+  the Apostle\n1048\tGreaserag Gary\n1049\tTiehopper Bill\n1050\tNadia Rainwalker
+  Comanche\n1051\tRock Pocket Jones\n1052\tAsphalt Martin\n1053\tTinshoe Gavin\n1054\tHuge
+  Keyring McGraw the Locksmith\n1055\tLenny the Dentist\n1056\tHoboy\n1057\tThe Original
+  Athlete's Foot\n1058\tPeterbilter\n1059\tEnginehat\n1060\tCloudy Puffsmoke the Smoker\n1061\tBlowhard
+  Terry\n1062\tLennox\n1063\tSparks, the One-Man Volunteer Fire Department\n1064\tCrabshack
+  Jerome\n1065\tPorter Rico\n1066\tThe Klob\n1067\tChewy the Masticator\n1068\tScootie\n1069\tSunfish
+  the Meringue\n1070\tSweettone Dulcimator\n1071\tMethodist Redd\n1072\tBaptist-Fed\n1073\tPapist-bred\n1074\tLutheran
+  Ted\n1075\t[sic]\n1076\tMonkeyfist\n1077\tNewport Knut\n1078\tHot Peppa Slick\n1079\tRootwitch\n1080\tThe
+  Velveteen Babbitt\n1081\tTreat Street No-Pleats\n1082\tRubbish Bin Top Hat\n1083\tGiovanni
+  the Circus Midget\n1084\tThe Personal Philosophy of Play-Doh\n1085\tWelch's Grape
+  Bruce\n1086\tSdrawkcab the Grammarian\n1087\tSidewinder the Technophobe\n1088\tThe
+  Magical Ketchup Opener\n1089\tThe One-Year Difference Breitbach Twins\n1090\tDir-Dir-Dirk\n1091\tJulio
+  the Manager of the Britt Jungle\n1092\tHobo Schmobo The Cynical Prick\n1093\tMrs.
+  S.'s Mescaline Prognosis\n1094\tIronspike\n1095\tThe Hobollusionist\n1096\tUnion
+  Jack Pacific\n1097\tBetty Brent\n1098\tDalcroze-Certified Keno the Insane\n1099\tSgt.
+  Poorchoice\n1100\tDusty Vandersocks\n1101\tAwkward Brint\n1102\tGracious Gate Knocker
+  the Humble Dwarf\n1103\tLadder Hands Wind Flapper\n1104\tShinbone Sore\n1105\tBroomstick
+  Corner Leaner\n1106\tTree Hole Stump Jumper\n1107\tSteamwhistle Piehole Johnson\n1108\tFinnigan
+  Tradepost\n1109\tOverly Confident Beartamer\n1110\tNicholas Beans-in-a-Pan\n1111\tTartan
+  Barton\n1112\tNever-Late the Hearing Impaired\n1113\tThe Legend of Edwin\n1114\tTwirl'em
+  Holster\n1115\tPunchdrunk Kraut Der Faust\n1116\tYanni's PA\n1117\tIsaac the Freelance
+  Assassin\n1118\tWhiny the Futilist\n1119\tDem Old Ragtown Blues\n1120\tSqueaky the
+  Oboe Fondler\n1121\tTarfolgers Arnold\n1122\tReynold's Choice\n1123\tJon, the Anachronist\n1124\tMagic
+  Stu\n1125\tFons and Porter and their Half Hour of Power\n1126\tTwo-Time Leonard\n1127\tMick
+  Jagger's Uncle\n1128\tJethro the Anarchist\n1129\tThe Lincoln Log Champ-peen\n1130\tThe
+  Many Faces of Tito\n1131\tPo'boy\n1132\tEleven O'clock Drop\n1133\tHighwaters\n1134\tCaptain
+  Leathers, the Roustabout Extraordinaire\n1135\tAlistair du Jour\n1136\tKing Cornelius,
+  Lord Dumpington\n1137\tBeatus Angeli\n1138\tAromatic Steve\n1139\tThe Frugal Quail
+  Gourmet\n1140\tThe Extravagant Quail Gourmand\n1141\tHammerfist George\n1142\tSoy-Based
+  Wade\n1143\tUfologist Dr. McSnorkel\n1144\tThe Gospel According to Otis\n1145\tPost-it
+  Flowerpot\n1146\tLeroy the Avid Photographer\n1147\tHobo Nobo\n1148\tTravellin'
+  Sam, Medicine Man\n1149\tRunning Ed, the Guy Who Has Former Mafia Ties\n1150\tSeven-Kids-Catholic
+  O'Reilly\n1151\tAssertive Shaky Knees\n1152\tKid Kix\n1153\tCommodore Crunch\n1154\tTwo-Can
+  Sam\n1155\tThe Quaker Oaf\n1156\tBoney the Tiger Luckey Charms (The Breakfast Gang
+  were the least\n1157\tsuccessful group of cereal killers in history due to\n1158\tr
+  overwhelming sense of hobo goodness.)\n1159\tScraper de Spatula\n1160\tGoatman Yellowjinx\n1161\tPanamanian
+  Franklin Muskrat\n1162\tJerry the Ventriloquist\n1163\tHee Haw McGraw, the Hy-Vee
+  Frequenter\n1164\tBloodgums Sourpuss\n1165\tCaped Jimmy Douglas\n1166\tThe Canteenite\n1167\tPocket
+  Change\n1168\tSid Skidson, Son of Skid\n1169\tFarmer's Market Shoulder-Shrug\n1170\tBelly-Faced
+  McGurkin\n1171\tThe Mighty Spoon of God\n1172\tDee Minor, the Saddest of All Hoboes\n1173\tOktoberfest
+  Franz\n1174\tPhineas the Little\n1175\tMoosefart\n1176\tMax the Adrenaline Junkie\n1177\tSweet-n-Sour
+  Liam\n1178\tBasket Fred\n1179\tGuitarra Fernandez the Maroon-Vested\n1180\tSecond-Rate
+  Bertram\n1181\tThe Stamp Collector Aficionado\n1182\tSunny Sideways\n1183\tMortimer
+  Flapcheeks, the Hobo Impressionist\n1184\tSting\n1185\tAntidisestablishmentarianist
+  Ed\n1186\tDonald the Dire Drifter\n1187\tIndustrious Bart\n1188\tMaster Fizzlesticks
+  Coatmeister\n1189\tDa Dadada Da-Da-Da Jake\n1190\tAmorous Franco\n1191\tSuddenly-Certainly\n1192\tPete,
+  Ominous Caster of Thirteen Days of Unending Shadow\n1193\tScoliosis McHunchalot\n1194\tChuck
+  of the Pork Pie Hathood\n1195\tIgor Sikorsky\n1196\tSonic Boomer\n1197\tStanley
+  Too-Cheap\n1198\tSpam-Tracker\n1199\tChewable Relief Tom\n1200\tMarty the Thrift
+  Store\n1201\tClean Sparky Gristle\n1202\tJoe the Caboose Mechanic\n1203\tHoly Man
+  Miles\n1204\tStuddering Buster\n1205\tBig John Skin-Blanket\n1206\tTJ, which is
+  short for Testosterone Jill\n1207\tDaniel Cardinal Goobermeister\n1208\tEnd-is-Near
+  Fredo\n1209\tFretless Scaredy-Pig\n1210\tKevin of the Bumpily-Headed\n1211\tThe
+  Soloist\n1212\tFour Star General Chester Chesthair, Chief of the United States Hobo
+  Corps\n1213\tThe Anishinaabe Kid\n1214\tVince the Retired Bandit\n1215\tMr. Fipps
+  the Hobotard\n1216\tBars-Can't-Hold-Im\n1217\tBlackened-not-Burned Cliffbeaux Zydeco\n1218\tTruman
+  Sleeps\n1219\tNalgene Norbert\n1220\tChris Sillyface Jones\n1221\tThe Dixieland
+  Wonder\n1222\tForks-not-Spoons Hank\n1223\tJack Gumwad\n1224\tHorace, Directly Descended
+  from a Second Cousin of Jesus Christ\n1225\tSkinkjump Panhandler\n1226\tOmnibus
+  O'Flanaghan\n1227\tSewage Department Director Fuddlesworth\n1228\tOverbite Nan\n1229\tUnderbite
+  Fran\n1230\tInbetweenbite Tuck, the Outcast\n1231\tBorn-Again Christian\n1232\tDruggie
+  Howard, M.D.\n1233\tColonface Wilson\n1234\tDuodenum Pat\n1235\tThe Ghost of Hobos
+  Past\n1236\tMescaline Nelson\n1237\tJim Beam Jim\n1238\tThe Six-Million Peso Hombre\n1239\tParanoid
+  Floyd\n1240\tF'obo\n1241\tMighty Tex the Urinal Painter\n1242\tDonald the Hobodontist\n1243\tDick
+  the Hobotometrist\n1244\tSuperLou, the Only Adhesive You'll Ever Need\n1245\tR.I.P.
+  Hobo Ralph\n1246\tVagabondus, the Father of Modern Hoboism\n1247\tThrice A, the
+  Annoying Anabaptist Abednego\n1248\tCarroll Spinney\n1249\tHistoric Pauline Wayne\n1250\tBackwards,
+  Forwards, Upside-Down BOB\n1251\tInfectious Dwight\n1252\tClaymation Phil\n1253\tFloppy
+  Reginald\n1254\tMuddy Oliver, the Incredible Mustachioed Man\n1255\tZeke the Greek\n1256\tThe
+  Star Spangled Arthur\n1257\tThe Ten Plagues of Egbert\n1258\tYessireebob\n1259\tTop
+  Hat Bottom Feeder\n1260\tThe Enduring Tradition of Ted\n1261\tLonnie Beaufort\n1262\tDonnie
+  Beaufort\n1263\tRonnie Beaufort\n1264\tConnie Beaufort\n1265\tBonnie Beaufort (The
+  K-Mart Gang were immortalized in Bill Bryson's book, \"The Lost Continent.\")\n1266\tSubmarine
+  Jack P. Jones\n1267\tChug-a-lug\n1268\tHobo-Earth.com\n1269\tHoneycomb Fleecejacket\n1270\tColorado
+  Nan\n1271\tSpiffy Archibald, Keeper of Hobo Lore\n1272\tJill the Recluse\n1273\tSonny-not-Cher\n1274\tXanthan
+  Julius\n1275\tThe Old Man\n1276\tScabbard de Bassthumper\n1277\tSlim to None and
+  Slim Just Left the Building, Therefore, \"None\"\n1278\tSweaty Britches\n1279\tRoy,
+  the Imaginary Hobosaurus\n1280\tFreightmaster Willie\n1281\tRaggedy Andy\n1282\tWeary
+  Steelrider\n1283\tCincinnati Steve Jones\n1284\tChattanooga Choo-Choo Charlie\n1285\tSteamboat
+  Ferguson the Deckhand Pioneer\n1286\tGravysuit\n1287\tYovowas, Ye Olde Vendor of
+  Wares and Services\n1288\tPocketwatch McFlapperson\n1289\tDer Clapmeister\n1290\tNantucket
+  Pete, the Retired Sea Captain\n1291\tOl' Foamsides\n1292\tLogical Bruce Ferretcloth\n1293\tIdealist
+  / Realist Moe Loesser\n1294\tSasquatch\n1295\tThe Midnight Special\n1296\tVerne
+  the Escape Artist\n1297\tNebraska Moral Brian\n1298\tHobo-for-Hire\n1299\tThe Unflappable
+  Willingness of Ike\n1300\tUlysses S. Grunt\n1301\tPillowless O'Sobface\n1302\tRagboots,
+  the Last of the Great Hobo Cobblers\n1303\tOllie No-Skills, Master of Futility\n1304\tThe
+  Twenty-Ninth Incarnation of His Holiness, the Dalai Hobo\n1305\tInsanely Lucky Rufus\n1306\tThe
+  Clownhater\n1307\tCaptain Stupendous\n1308\tThe Backhand Face-Rearranger Throbo
+  and his Half-Brother Strobo, whose misinformed assumption of their own superpowers
+  led to their untimely deaths\n1309\tOh Sweet Gene S.\n1310\tIowegian Buster\n1311\tMr.
+  Gambini the Wandering Minstrel\n1312\tJacksonville Bret Wurst\n1313\tTuck-and-roll\n1314\tBeanie
+  Boy\n1315\tFriendly Floridian Felix\n1316\tFour-of-a-Kind Slick Sparks\n1317\tRay
+  Walston\n1318\tCablo Gubla\n1319\tThe Universal Borrower\n1320\tManwich\n1321\tPatrick
+  the Unibrowed Ex-Marine\n1322\tMeefbucket\n1323\tJ Edgar Herman, Eternal Friend
+  of Turtles\n1324\tLevity Sam\n1325\tThe Venerable Daniel Kerrigan, Esq.\n1326\tMotorless
+  Carriage Enos\n1327\tProspector Dennis\n1328\tMaestro Hiram the Steeple Bell Ringer\n1329\tJ
+  G Wentworth, Certified Hobo Accountant\n1330\tStellar Spike\n1331\tBill and the
+  Ancient Vastness\n1332\tLemon Battery-Operated Ephraim\n1333\tAccident-Prone Jerry
+  Idaho\n1334\tCrabby Jones\n1335\tErik Hansen the Odinist\n1336\tMelodic Flo and
+  Her Travellin' Band\n1337\tFlexy, the Mattress Tester\n1338\tOveralls Stan\n1339\tPeachy
+  Keen Maureen\n1340\tEminent Dominic\n1341\tRattletooth\n1342\tTin Can Photographer
+  Earl Snapson\n1343\tShaky the Duck\n1344\tMother Caboose, the Kindly Hobo Matron\n1345\tHooverlips\n1346\tTeenie
+  McGee\n1347\tWyoming Merle\n1348\tThe Outlaw Du Jour\n1349\tFalse Imprisonment Rollo\n1350\tInnocently
+  Candid Dale\n1351\tFleastitch\n1352\tSonobe, the Modular Origami Artiste\n1353\tCircushand
+  Randy\n1354\tHalf-off Wildman\n1355\tColonel Sanford Pens-of-Fire\n1356\tPenniless
+  Walt Won't-Work\n1357\tKing Crab\n1358\tMerlin the Alchemist\n1359\tOhio Claude
+  Finkel\n1360\tSaltwater Jeffy\n1361\tHector the Nightmare Machine\n1362\tIcy Tim\n1363\tPreston
+  McPilfer\n1364\tChef Charles Le Phieux\n1365\tElephantitis Hank, the Towering Grinferno\n1366\tProgressive
+  George\n1367\tYellowstone Nicky Quickly\n1368\tLittle More Than a Wheelbarrow\n1369\tThe
+  Hobo Missionary\n1370\tAnders the Nordic Chorister\n1371\tDiddlysquat\n1372\tBrave,
+  Brave Tom Crawlspace\n1373\tThe Grand Spelunker\n1374\tGreat Plains Horace\n1375\tThe
+  Dakka Beast\n1376\tJoseph and his Armored Dromedary\n1377\tFat Mark Chokes-on-his-own-Tongue\n1378\tEthel
+  Alcohol\n1379\tContrabob\n1380\tJacques-Pierre the Legionnaire\n1381\tThe Hobous
+  Ubiquitor\n1382\tDodecahed-Ron, the Mathematical Wunderkind\n1383\tYoung Olaf Tinpants\n1384\tPhilosophical
+  Ed Debevic\n1385\tThe Uncontrollable Urge of Dennis\n1386\tHash-Slingin' Mickey
+  of the Roadside Diner Alliance\n1387\tSoup Jockey Mickette\n1388\tTophat Abraham
+  Woodenthumb\n1389\tManford McCouch, the Flea Market Specialist\n1390\tThe Copiously
+  Sweating Monk\n1391\tMalicious Herpeginis Richard Dreyfuss\n1392\tThe Scourge of
+  the Seven Streams\n1393\tLiquormeister Vern\n1394\tGrotesque Nilsson\n1395\tGreg
+  Festive Bellbottoms\n1396\tFerocious Tom Pokes-You-Hard\n1397\tSilver-Nosed Willis\n1398\tBlacknips\n1399\tOle
+  Burned-Up McGee\n1400\tNot This One But That One\n1401\tEither/Or Xerxes\n1402\tWhiskeybreath
+  the Sober Drunkard\n1403\tFrank M. Quentis, of Labcoat Notoriety\n1404\tSteve Calcite\n1405\tThe
+  Throat Plague of 1988\n1406\tThe Self-Proclaimed King of Rummy\n1407\tAllegorical
+  Chuck\n1408\tAlfie Kohn's Toupee\n1409\tToadface Saul Krogmeier\n1410\tLiam Kneeson\n1411\tRecalcitrant
+  Eddie, the Saved Crapshooter\n1412\tHomestead Harvey of the Flask\n1413\tFrancis
+  McMayonnaise\n1414\tIdapoo\n1415\tFather Sandpaper\n1416\tAnecdotal Thurgood Liarface\n1417\tMartin
+  Scoreseasy, the Hobo Documentarist\n1418\tThe Polka Fish\n1419\tHymnal Samuel Roberts\n1420\tThe
+  Fantastic Tale of Two-Thirds-Nosed Junior Swaddlesback\n1421\tMort, the Renegade
+  Mosquito Collector\n1422\tCommander Watersavvy, Sworn Enemy of All Pirates\n1423\tJail
+  Cell Tom de Tin Yakky Yakky Yak\n1424\tOblivious Oblong\n1425\tThe Fool, Which is
+  to Say, Mike Healy\n1426\tEmperor Han, the Feisty Penguin\n1427\tHezekiah the Repentant
+  Sinner\n1428\tAin't-No-Bum\n1429\tNaive Magellan, Cartographer of the Great American\tHoboscape\n1430\tGraphite
+  Sam\n1431\tMonkey See, Monkey Drew\n1432\tThe Sole Survivor of the Grand Coulee
+  Dam Disaster\t(What a Fiasco!)\n1433\tDeersniff\n1434\tUiop, the ASDF Assassin\n1435\tSpeedy
+  Slim, the Human Impala\n1436\tGrassbags Walt, Groundskeep Hunchback from Birth\n1437\tAmber
+  Waves of Wayne\n1438\tPurple Mountain Majesteve\n1439\tAdirondack Jed, the Only
+  Melungeon in Herkimer County\n1440\tQuotable Granger, the Wild Ass\n1441\tCommon
+  Adam\n1442\tLightning Rod DIY\n1443\tSand-Buried Bertram\n1444\tMigratory Ivan Croclegs\n1445\tLittle
+  Baby Raincloud\n1446\tThe Thrice-Drop Out English Major\n1447\tLardsweets Eats-for-Cash\n1448\tPaul
+  Cornshuck the Patriot\n1449\tGalena Mine Ben\n1450\tFrozen Yogi Dollarpiece\n1451\tSing-Along
+  Kathryn and Her Battery-Operated Autoharp\n1452\tThe The More You Know Guy\n1453\tGoogol-Dex\n1454\tOfficer
+  Frampton McChief Tophat\n1455\tAcid-Blooded Kryznok the Outsider\n1456\tRejected
+  Quinn\n1457\tDejected Quinn\n1458\tEjected Quinn\n1459\tWilhelm the Obese Kraut\n1460\tScampers\n1461\tHoly
+  Smokes, Supplier of Choice Tobacco Products for Hobos\n1462\tOverdressed Clem, the
+  Nudist\n1463\tLenora Mae Nightshade\n1464\tThe Hobo MacGyver\n1465\tMr. Sandman\n1466\tCocoa
+  Orinoco\n1467\tBandsaw Vince, the Seven-Fingered Carpenter\n1468\tWoody McThermite,
+  the Poorly-Timed Pyromaniac\n1469\tAudiophile Isaac Calamity, the Collector of All
+  Things Noisy\n1470\tSnoot\n1471\tInquisitive Jack\n1472\tLipscomb Sy Earwig\n1473\tThe
+  Great Parole Maker, Master Conviction Avoider\n1474\tLoophole Rosenstein, the Great
+  Parole Maker's Legal Attache\n1475\tSpaetzle und Schnitzel Akbar\n1476\tBluffdweller\n1477\tClean
+  Slate Sam\n1478\tArliss the Cowboy\n1479\tHorny Goutman\n1480\tDuke Winchester McSpiral\n1481\tThe
+  Most Holy Reverend Carbine\n1482\tBoater Percy Smythe\n1483\tThe Moustachioed Trombonist\n1484\tSimon
+  and His Quartz Monocle\n1485\tSmokey Flick Nostrilgap\n1486\tWabasha Gunther\n1487\tThe
+  Minister of Rapid Hair Regrowth\n1488\tMike McRump\n1489\tKeyface\n1490\tAl the
+  OSHA Retiree\n1491\tBeerbait\n1492\tThe Carpeted Frenchman\n1493\tMidnight Max\n1494\tNightspeeder\n1495\tOld
+  Familiar\n1496\tYodelin' Mick Begone\n1497\tWolfgang Noseart, Composer of the Hobo
+  Requiem\n1498\tThe Junkyard Auditor\n1499\tEvery-So-Often Archibald\n1500\tSad Bill
+  Licks-It-Up\n1501\tKeytar Ivan Moonbeam\n1502\tFussy Ulysses the Sissy\n1503\tFlat
+  Karma Steve\n1504\tCougarbreath\n1505\tKnuckles, the Hobo Clown Thief\n1506\tOne-Hour
+  Photo Slick\n1507\tMoe Fink\n1508\tEddie Packet Allen the Stowaway\n1509\tBjorn
+  Bjornstad the Bjoring\n1510\tNoble Ike\n1511\tCheeseholes\n1512\tEven-Keeled George
+  the Humanitarian\n1513\tBasejump Fizzletwit\n1514\tFrenzied Heinrich the Forgetful
+  Banker\n1515\tAnysea\n1516\tFunny Laughy Jokeboy, Who's Dead Inside\n1517\tPaper-or-Plastic
+  Redd\n1518\tThe Humble Life of Wallace\n1519\tColin \"Nickname\" Kettlefish\n1520\tOctogenarian
+  Gary Generic\n1521\tThe Sandburrower\n1522\tRusty the Shopping Cart Salesman\n1523\tSodacrack,
+  Distributor of Old Book Smell\n1524\tFlashlight Don the Baptist\n1525\tSkape\n1526\tCanned
+  Air Blowhard, the Subject of Much Ridicule\n1527\tClickin' Quincy and His Many Lens
+  Adapters\n1528\tSteel Wool Perry\n1529\tBallotthief\n1530\tUltimate Barry \"The
+  Ocelot\"\n1531\tH, Just H\n1532\tPhantom X Minus One\n1533\tOne-shoe Iowa Roadwalker\n1534\tRamblin'
+  Dan\n1535\tStone McPherson\n1536\tAutumnfresh\n1537\tTheisen the Cablehanger\n1538\tHerb
+  Alpert and the Tijuana Grass\n1539\tThe Double Deuce\n1540\tJackson Pincushion Jones\n1541\tMostly
+  Toasty the Roastman\n1542\tGrub\n1543\tChubbs\n1544\tThe Great and Powerful Zorbino\n1545\tEvil
+  Jim\n1546\tFlick and His Tragically Underdeveloped Sense of Smell\n1547\tParrot
+  Eduardo Accentuoso\n1548\tTrimble, the Only Hobo Ever to Catch the 12:30 to Delmar\n1549\tOmar
+  Sheriff Hooker\n1550\tTwo-Lane Pete\n1551\tWrzyski, Maker of Not-so-Fine Polish
+  Sausages\n1552\tZero Nine Eff Nine, Leader of the Revolution\n1553\tGoes-in-a-Can\n1554\tRadarange
+  of the Amanas\n1555\tRabbit Stew and You-Can-Too\n1556\tSly Willy, the Derailment
+  Insurance Salesman\n1557\tHundred-Yard-Stare Fritz\n1558\tStovecatcher the Hobo
+  Witch Doctor\n1559\tLong Elmyra Storkinatrix\n1560\tFriday Odegard\n1561\tBegrudged
+  Ayler Tomatoleaf\n1562\tTomorrow Phillips\n1563\tJ.T. Bowel Renard\n1564\tDouble-A\n1565\tS,
+  s, s, Steve (Previously Known as Steve the Studderer, but Shortened for Practical
+  Purposes)\n1566\tJoe: Not Even Close\n1567\tK-stick\n1568\tWheelie McSpinschair\n1569\tMoonshine
+  O'Halloran\n1570\tHobo Francis the Milkman\n1571\tStanosaurus Rex\n1572\tBootleg
+  Sammy Magnetic\n1573\tThe Tar-Grin Miner\n1574\tHugh, the Ringleader\n1575\tThuringer
+  Ulysses Tabletop\n1576\tHorace the Elder\n1577\tUnscheduled Tabitha Smits\n1578\tFlaxen
+  Walter Bran\n1579\tCrunch Buttsteak and His MST3K Obsession\n1580\tMarcellus the
+  Papal Doppelganger\n1581\tTense McShitbrick\n1582\tCould Be But Isn't\n1583\tPlanky
+  Joe, the Veritable Anthology of Hobo Fables\n1584\tSaint Stinkybritches\n1585\tManfred
+  the Alliterative Fool\n1586\tMinnesota Just Never Know\n1587\tBedford Falkirk\n1588\tSpherical
+  Henry Buttonchest\n1589\tFast-Talkin' Uganda O'Reilly\n1590\tWally and His Llama-skin
+  Kneepatch\n1591\tRecently Declassified Document 1950-HOBO\n1592\t[Permanently Removed
+  for Violation of Hobo Custom, but Formerly Known as Austin the Unhobo]\n1593\tOld
+  Half-Pipe Wilson\n1594\tMisteranmissus\n1595\tThe Sunshine Special\n1596\tBegonia
+  Bait Sprague\n1597\tPoodle the Mango Forager\n1598\tMetal Popcorn Ralph Busttooth\n1599\tMugsy
+  Pugsy Billy Bykovski\n1600\tIrrhythmical Stumbletoes Lee\n1601\tRob and His Heartwarming
+  Thanksgiving Story\n1602\tVocal Tommy Filibuster\n1603\tManly Fran, the Living Paradox\n1604\tImpossible
+  Freeman Noseplug\n1605\tBob the Hobo\n1606\tNumber 800, by Miraculous Happenstance\n1607\tNumber
+  801, by Contract\n1608\tTiny Tin Ty\n1609\tEvenknickers\n1610\tExcessively Malevolent
+  Ian of Scots\n1611\tThe Kodak Busker, aka the Freelance Phobographer\n1612\tCrabby
+  Gordon Kerchief-Loser\n1613\tWaddlin' Chuck\n1614\tStumpy the Heel Amputee\n1615\tFrancois
+  the Sommelier, also known as although he hated the moniker, Frank the Wino\n1616\tWhiny
+  the Elder\n1617\tWhiny the Younger\n1618\tWhiny Shackleton, nee Whiny III\n1619\tNever-Again
+  Ned (Mind Your Own Business)\n1620\tThe Late Alfred Longchicken\n1621\tPlumbbob
+  Miles Fink Finkleroy\n1622\tDr. Harold Knapsack, the First and Last Hobo Visionary\n1623\tThe
+  Cantankerous Tin Can Tech Man\n1624\tRoadkill Seamus Baconbreath\n1625\tHeavenly
+  Disgust and the Muffin of Destiny\n1626\tRuss Beerbottom\n1627\tFailure-o-matic,
+  the Android Hobot\n1628\tStinky Gus Woodshedder, Lead Tenor of the Belch Brigade\n1629\tSpiny
+  Eric P, the Toothpick Forager\n1630\tAlfonso Ytterbium\n1631\tOfficious Mike Stamp-of-Approval\n1632\tThe
+  Burly Soup Kitchen Raider\n1633\tTraingrab, the Leapfrogging Railcar Bandit\n1634\tSparky,
+  Constantly Excited Due to Botulism Intoxication\n1635\tApu of Pakistan\n1636\tThe
+  Never-Convicted Ain't-a-Felon\n1637\tBaked Beans McJeans, the Laundromat Frequenter\n1638\tRichard,
+  Legend of Luxury\n1639\tTurbo Hobo\n1640\tUgly Waterbag\n1641\tPolitically Incorrect
+  Misty, the Minimal Input St. Thomas Yatch\n1642\tMr. Sewercat Spooner\n1643\tSteamy
+  Croc Jacques\n1644\tDopey Iowa Fred Sprinkel\n1645\tTransient Merle the Eloquent\n1646\tMark'n'Lester,
+  the Split Personality Weirdo\n1647\tLynx McTypey, Editor for the National Hobographic
+  Society\n1648\tClyde Tuesday Sidepatch\n1649\tVoluminous Quentin Two-Seater\n1650\tCB
+  Radio Lee Truckstop\n1651\tThe Last Straw of Nassau, MN\n1652\tFelt-Tipped Zen the
+  Buddhist\n1653\tAnyone-For-Dennis, the Speech Impediment Athlete\n1654\tThe Ol'
+  Five Strings\n1655\tWaxy\n1656\tPie Thief Nate Slipperyfingers\n1657\tLuxsaurus
+  the Terrible Lizard of Light\n1658\tTeetering-Tottering Floyd, the Soberingly Unbalanced
+  Drunk\n1659\tThe Phantom Tollbooth Assailant\n1660\tInner City Tom Bumbuster\n1661\tDalcroze-Trained
+  Betsy Klean-o\n1662\tBayou Buck's Cousin Marty\n1663\tTraditional Alvin McJones
+  Ragcoat\n1664\tFeminine Tammy Bootwalker\n1665\tMeatloaf Up Chuck, also known as
+  Chaz the Reflex Artist\n1666\tHobo Higgins, Inhibitor of Rudeness, Protector of
+  Etiquette\n1667\tSilent Ryan Trainyard, the Bullmobile Evader\n1668\tTodd Under-Bridge,
+  Not Seen Since 1942\n1669\tWrenchunks\n1670\tMorton \"George\" Morton\n1671\tThe
+  Public Area Heavysetter\n1672\tNevada-Proud Tim Whackbush\n1673\tGiles McArmpit\n1674\tTummy
+  Twiddler\n1675\tHuge Frank Mattress-Envy\n1676\tMartin Hands-Too-Big\n1677\tSweetbreads
+  Hibbard\n1678\tStinkbait Larry Beefbroth\n1679\tThere's-No-One-Like-Him\n1680\tWretched
+  Alfred Nonsense\n1681\tKid Whist\n1682\tTabless Jed, the Folk Guitarist\n1683\tDeerstand
+  James Hunchback\n1684\tCol. Maestro Williams, Conductor of the Hobo Marching Band\n1685\tWilly
+  Nilly\n1686\tIowa State Chris-n-George\n1687\tGanges Ed the Yogagod\n1688\tAlbino
+  Joe\n1689\tThe Whitejon\n1690\tThe Darkjon\n1691\tThe Infamous Scatophile Brett\n1692\tTurdwall
+  Jackson, Union General\n1693\tFishmael (The True Heir of Salt Lake)\n1694\tPosh
+  Sass, Queen of Illiteration\n1695\tBarb and Bud the Outcasts, Who Live in the Air-Conditioned
+  Rear End of K-Mart\n1696\tSassafras Smoothie\n1697\tRecursion Fred, Whose Name Continues
+  at the Beginning of This Name\n1698\tToehammad, Intercessor to the Footgods\n1699\tJesus
+  H. Miller\n1700\tTaco Tico\n1701\tBurrito Vanburen, Brother-in-Law of Taco Tico\n1702\tThe
+  Other Man Who Wanted Waco\n1703\tDemon-Kutter Boris\n1704\tKitten-Kutter Gregor\n1705\tF*ckSack\n1706\tChairman
+  Mao Zedonk\n1707\tBorder-Patrol\n1708\tUncle Pennybag\n1709\tGastracula\n1710\tThe
+  Blind Bartimaeus, Moonshine Connoseiur\n1711\tWitness Protection Pilgrim\n1712\tKnute
+  Wallace, the Boy Who's Always Cramping for a Tamping\n1713\tWendy City\n1714\tCoco
+  Flan-nell\n1715\tStrom Burges, PhD, the Doctor of Gain-Fatitude\n1716\tPhyliss,
+  Mistress of the Underporch\n1717\tPigs-In-An-Overcoat\n1718\tThe Little Puddin'
+  Boy\n1719\tGrimble\n1720\tSteve Farmer Jones\n1721\tBurlington Groats Olfactory\n1722\tOld-Timey
+  Illinois Centralist\n1723\tBombshell Bruce\n1724\tBlacktoast\n1725\tBurning Man's
+  Cousin\n1726\tHelter Skelton\n1727\tThe Connecticut Yankee and King Arthur's Corpse\n1728\tBursitis
+  Don\n1729\tLord Timmy Twat\n1730\tGORP\n1731\tCorn Dog Smithers, Man on a Stick\n1732\tWailer\n1733\tPine-Nut\n1734\tBeech-Nut\n1735\tMeth-Nut\n1736\tTombourine\n1737\tStrummin
+  Thumbs, Who Was Never a Bum\n1738\tClimber McDougal, the Scotch-on-the-Rocks\n1739\tTarballs\n1740\tFannie-Pincher
+  Frannie\n1741\tThe Girl for Jeepaneema\n1742\tPB&K\n1743\tInseam Jan B.\n1744\tGunther
+  the Hunther\n1745\tFisheye Bjorn\n1746\tA Little Stan Mixed with Stale Crackers\n1747\tThe
+  Parasol Lady\n1748\tPloughshares MacGillicuddy\n1749\tHumdrum Pete\n1750\tJabber-Walky\n1751\tMelt-Skin,
+  Experienced Hobo Toxicologist\n1752\tMerle 'N Earl\n1753\tDamned Tammy\n1754\tStogie
+  Joe\n1755\tPoundcake\n1756\tThe Bum-Slapper\n1757\tDr. Who's Younger Brother, Ted
+  Who\n1758\tHobowl\n1759\tClamsucker Nate\n1760\tTime in a Biffy\n1761\tThe Davenport\n1762\t40
+  Enemas, No More Please\n1763\tFrisky Jed the Hobosexual\n1764\tShorty Stewart\n1765\tPine-Saul\n1766\tHoboweevil\n1767\tMexicanteen\n1768\tLimey
+  Stewart's Third Leg\n1769\tCaptain Esplanade\n1770\tSpinach Joe Hatbottom\n1771\tIggy
+  Grease\n1772\tAll-Tests-Were-Negative\n1773\tNever Wrong Arnold, Who is, By His
+  Very Nature, Almost Always Wrong\n1774\tDewey Cookie Dough Cook\n1775\tThe Great
+  Hobo Panderer, Stuff of Legends\n1776\tWhistlestop Stretch, Purveyor of Fine Arts
+  and Crafts\n1777\tChemistry Nerd Tom L.\n1778\tHobo, Fo Sho\n1779\tNot-My-Department
+  Frank\n1780\tJangles the Hoboperator\n1781\t(Parenthetical Hiram Burgess)\n1782\tDrippy
+  Keen\n1783\tPunchy Dom Swagger\n1784\tRod Goodwin of the Forest\n1785\tTin Breath
+  Magic Fingers\n1786\tThirty-Fifth Percentile Jack Topflap\n1787\tCredentialless
+  Gary\n1788\tThe Road Rouser\n1789\tNils, the Sunset Swede\n1790\tSir Escobar Trimblecap
+  Fils\n1791\tFitzwilliam the Mutt Carrier\n1792\tCrock Pot Jim\n1793\tTellalie\n1794\tLlama-Fist\n1795\tFettucine
+  Alfred\n1796\tCloset Squat\n1797\tPum Pum\n1798\tHobogie the Hobo Pilot\n1799\tBoy-o\n1800\tTingles\n1801\tBlood
+  Vessel Ethel\n1802\tBearjaw Willison\n1803\tSt. Biff of the BNSF Electee Turnbuckle
+  Stewart Flags-On-High, Preeminent\n1804\tHobo Lobbyist of Our Time and the Great
+  Defender of Hobo Liberty\n1805\tBucketspit\n1806\tCaleb and His Lackluster Performance
+  Skills"

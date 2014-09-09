@@ -1,0 +1,6 @@
+---
+slicehost: ! "Installation help:\nhttp://articles.slicehost.com/tags/gutsy\nhttp://articles.slicehost.com/2007/11/6/ubuntu-gutsy-setup-page-1\nhttp://articles.slicehost.com/2007/11/6/ubuntu-gutsy-setup-page-2\n\nhttp://articles.slicehost.com/2007/12/7/ubuntu-gutsy-installing-nginx-via-aptitude\nhttp://articles.slicehost.com/2007/12/13/ubuntu-gutsy-nginx-configuration-1\n\nhttp://articles.slicehost.com/2007/11/23/ubuntu-gutsy-mysql-and-ror\nhttp://articles.slicehost.com/2007/12/14/ubuntu-gutsy-nginx-virtual-host\nhttp://articles.slicehost.com/2007/11/29/ubuntu-gutsy-mongrel-clusters-and-surviving-a-reboots\n\nnginx:\nsudo
+  /etc/init.d/nginx start|stop|restart\n\nnginx vhosts:\n1.  create a virtual host
+  file:\n  sudo nano /etc/nginx/sites-available/example.com\n\n2. enable it\n sudo
+  ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/example.com\n\n3.
+  Restart Nginx:\n  sudo /etc/init.d/nginx restart\n\napache vhosts?"

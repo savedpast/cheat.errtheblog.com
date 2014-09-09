@@ -1,0 +1,11 @@
+---
+textorize: ! "textorize [options] string\r\n  -f, --font=[FONT]                Font
+  name\r\n  -s, --size=[SIZE]                Font size in point\r\n  -l, --lineheight=[HEIGHT]
+  \       Line height in point\r\n  -t, --ligatures=[TYPE]           Ligatures usage:
+  all, standard or off\r\n      --list-fonts                 List available fonts\r\n
+  \ -k, --kerning=[VALUE]            Kerning adjustment\r\n  -o, --output=[FILENAME]
+  \         Specify filename for saving\r\n  -b, --obliqueness=[ANGLE]        Slant
+  angle\r\n  -c, --color=[COLOR]              Render text in specific color (CSS color
+  value)\r\n  -g, --background=[COLOR]         Render background in specific color
+  (CSS color value)\r\n  -a, --smoothing=[VALUE]          Font smoothing: 0=no subpixel
+  AA, 1=light, 2=normal, 3=strong"

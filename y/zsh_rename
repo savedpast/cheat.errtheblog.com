@@ -1,0 +1,18 @@
+---
+zsh_rename: ! "# Renaming files with Zsh\n\n\n### Numerical prefix:\n$  i=1; for j
+  in *; do mv $j $i.$j; ((i++)); done\n  \t \n$  i=1; for f in *; do mv $f $(echo
+  $i| awk '{ printf(\"%03d\", $0)}').$f; ((i++)); done\n\n$  integer i=0; for f in
+  *; do mv $f $[i+=1].$f; done\n\n\n### Rename all files from name.mp3 to Name.mp3:\n$
+  \ zmv `([a-z])(*).mp3` `${(C)1}$2.mp3`\t\n\n### Capitalize file\n$  zmv '([a-z])(*).pdf'
+  '${(C)1}$2.pdf'\n\n### Replaces spaces with underlines\n$  zmv '* *' '$f:gs/ /_'\n\n###
+  FOO to foo\n$  for i in *(.); mv $i ${i:l}\n\n### Rename pic1.jpg to pic0001.jpg
+  ...\n$  zmv 'pic(*).jpg' 'pic${(1:4::0:)1}.jpg'\n$  zmv '(**/)pic(*).jpg' '$1/pic1:4::0:)2}.jpg'
+  \ # recursive\n\n### Remove spaces from filenames\n$  for a in ./**/*\\ *(Dod);
+  do mv $a ${a:h}/${a:t:gs/ /_}; done\n\n### Substitute r for l\n\n\t\ts/l/r[/]\n\nUnless
+  preceded immediately by a g, with no colon between, the substitution is done only
+  for the first string that matches l. For arrays and filename expansion, this applies
+  to each word of the expanded text. \n\nThe left-hand side of substitutions are not
+  regular expressions, but character strings. \n\nAny character can be used as the
+  delimiter in place of '/'. A backslash quotes the delimiter character.\n\nThe character
+  '&', in the right-hand-side r, is replaced by the text from the left-hand-side l.
+  The '&' can be quoted with a backslash. \n\n[See Zshlovers for more]"

@@ -1,0 +1,20 @@
+---
+chmod: ! "chmod: a Unix utility for managing file permissions\n\nModes can be expressed
+  in octal or human-readable:\n\n                          Description | Octal  |
+  Human-readable\n    ----------------------------------+--------+---------------\n
+  \                      Set user write | 200    | u=w\n    Set user rwx, group and
+  others rx | 755    | u=rwx,go=rx\n                       Add group read | -      |
+  g+w\n                   Remove all execute | 111    | a-x\n     Set user rws, everyone
+  else none | 4700   | u=rwxs,go-rwx\n                      Add user sticky | -      |
+  u+s\n                     Add group sticky | -      | g+s\nOctal\n-----\nWith three-digit
+  octal notation, each numeral represents a different component of the permission
+  set: user class, group class, and \"others\" class respectively.\n\nEach of these
+  digits is the sum of its component bits. As a result, specific bits add to the sum
+  as it is represented by a numeral:\n\n * The read bit adds 4 to its total,\n * The
+  write bit adds 2 to its total,\n * The execute bit adds 1 to its total.\n\nExamples\n--------\n\n\"-rwxr-xr-x\"
+  would be represented as 755 in three-digit octal.\n\"-rw-rw-r--\" would be represented
+  as 664 in three-digit octal.\n\"-r-x------\" would be represented as 500 in three-digit
+  octal.\n\nExample: Make foo u=rwx and go=rx:\n  $ chmod u=rwx,go=rx foo\n\nExample:
+  Make foo u=rwx and go=rx (in octal):\n  $ chmod 755 foo\n\nExample: Find all subdirectories,
+  put them in 'mygroup', make them group sticky:\n  $ find . -type d -exec chgrp mygroup
+  \\{\\} \\;\n  $ find . -type d -exec chmod g+s \\{\\} \\;"

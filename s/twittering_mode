@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>twittering-mode emacs mode:
+Major mode for Twitter
+key             binding
+---             -------
+
+C-c             Prefix Command
+TAB             twittering-goto-next-thing
+RET             twittering-enter
+C-v             twittering-scroll-up
+ESC             Prefix Command
+SPC             twittering-scroll-up
+$               end-of-line
+0               beginning-of-line
+G               end-of-buffer
+H               twittering-goto-first-status
+L               twittering-other-user-list-interactive
+U               twittering-push-uri-onto-kill-ring
+V               twittering-visit-timeline
+^               beginning-of-line-text
+a               twittering-toggle-activate-buffer
+b               twittering-switch-to-previous-timeline
+d               twittering-direct-message
+f               twittering-switch-to-next-timeline
+g               twittering-current-timeline
+h               backward-char
+i               twittering-icon-mode
+j               twittering-goto-next-status
+k               twittering-goto-previous-status
+l               forward-char
+n               twittering-goto-next-status-of-user
+p               twittering-goto-previous-status-of-user
+q               twittering-kill-buffer
+r               twittering-toggle-show-replied-statuses
+s               twittering-scroll-mode
+t               twittering-toggle-proxy
+u               twittering-update-status-interactive
+v               twittering-other-user-timeline
+&lt;C-mouse-3&gt;     twittering-push-tweet-onto-kill-ring
+  (that binding is currently shadowed by another mode)
+&lt;backspace&gt;     twittering-scroll-down
+&lt;backtab&gt;       twittering-goto-previous-thing
+&lt;mouse-1&gt;       twittering-click
+
+M-TAB           twittering-goto-previous-thing
+M-v             twittering-scroll-down
+
+C-c C-d         twittering-direct-messages-timeline
+C-c C-e         twittering-erase-old-statuses
+C-c C-f         twittering-friends-timeline
+C-c C-l         twittering-update-lambda
+C-c RET         twittering-retweet
+C-c C-p         twittering-toggle-proxy
+C-c C-q         twittering-search
+C-c C-r         twittering-replies-timeline
+C-c C-s         twittering-update-status-interactive
+C-c C-t         twittering-set-current-hashtag
+C-c C-u         twittering-user-timeline
+C-c C-v         twittering-view-user-page
+C-c D           twittering-delete-status</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Common Git Log Commands
+=======================
+
+View the hash, commit date, committer name and subject since a given time
+
+  git log --format=&quot;%h | %cD - %cn - %s&quot; --since=3.2.weeks.ago
+
+  Example: 
+
+    06f55be | Tue, 16 Aug 2011 19:53:10 -0700 - Aryk Grosz - Commit Message
+
+View the changes on a branch since it deviated from the trunk. 
+
+  git log --oneline $(git merge-base branch trunk)..branch
+
+  This trick will also work with other commands like &quot;git diff&quot;.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

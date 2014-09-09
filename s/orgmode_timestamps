@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>================================================================================
+Timestamps
+================================================================================
+
+prompt for date and insert timestamp              C-c .
+like C-c . but insert date and time format        C-u C-c .
+like C-c . but make stamp inactive                C-c !
+insert DEADLINE timestamp                         C-c C-d
+insert SCHEDULED timestamp                        C-c C-s
+create sparse tree with all deadlines due         C-c C-w
+the time between 2 dates in a time range          C-c C-y
+change timestamp at cursor by Â±1 day              S-RIGHT/LEFT [3]
+change year/month/day at cursor by Â±1             S-UP/DOWN [3]
+access the calendar for the current date          C-c &gt;
+insert timestamp matching date in calendar        C-c &lt;
+access agenda for current date                    C-c C-o
+select date while prompted                        mouse-1/RET
+toggle custom format display for dates/times      C-c C-x C-t
+
+--------------------------------------------------------------------------------
+Clocking time
+--------------------------------------------------------------------------------
+
+start clock on current item                       C-c C-x C-i
+stop clock on current item                        C-c C-x C-o
+cancel current clock                              C-c C-x C-x
+display total subtree times                       C-c C-x C-d
+remove displayed times                            C-c C-c
+insert/update table with clock report             C-c C-x C-r</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

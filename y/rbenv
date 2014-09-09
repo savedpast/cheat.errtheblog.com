@@ -1,0 +1,16 @@
+---
+rbenv: ! "DEFAULT\r\n\r\nSets the default ruby version in all your shells (just for
+  your user, not system-wide)\r\n\r\n  rbenv global 1.9.2-p290\r\n\r\n\r\nPROJECT\r\n\r\nThis
+  sets the ruby version for the current directory. Typically used to set a ruby version
+  for a particular project.\r\n\r\n  rbenv local ree-1.8.7-2011.03\r\n\r\nAnd then
+  you might want to do...\r\n\r\n  git add .rbenv-version\r\n  git commit -m\"specify
+  the ruby version for this project\"\r\n\r\n\r\nTEMPORARY\r\n\r\nYou can also set
+  the ruby version for a particular session. so maybe you want to switch your ruby
+  to a different version and then cd all over the place with wild abandon while the
+  ruby version stays the same:\r\n\r\n  rbenv shell jruby-1.6.4\r\n\r\n\r\nINSTALL
+  A RUNTIME\r\n\r\nInstall a ruby runtime (requires installing ruby-build first. easy
+  and highly recommended!)\r\n\r\nSee what runtimes are available to be installed:\r\n
+  \ rbenv install --list\r\n\r\nwill show you something like:\r\n\r\nAvailable versions:\r\n
+  \ 1.8.6-p383\r\n  1.9.3-rc1\r\n  jruby-1.7.0-preview2\r\n  ...\r\n\r\nInstall a
+  ruby runtime:\r\n\r\n  rbenv install 1.9.3-rc1\r\n\r\n\r\nSee which runtimes you've
+  installed:\r\n\r\n  rbenv versions\r\n\r\n"

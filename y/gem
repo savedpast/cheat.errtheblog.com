@@ -1,0 +1,15 @@
+---
+gem: ! "Install a gem\n\n  gem install [gem name]\n\nUpdate to latest Rubygems (if
+  any):\n\n  gem update --system\n\nSearch for a gem:\n\n  gem query --remote --name
+  [regular expession]\n\nGet list of outdated gems and update as necessary:\n\n  gem
+  outdated\n\nClean up outdated gems:\n\n  gem clean\n\nList installed gems by last
+  access time:\n\n  gem stale\n\nCurrent Local Gem Repository:\n\n  gem environment\n\n
+  \ or\n\n  ruby -rrubygems -e\"puts Gem.path\"\n\nDiscover Dependency for a Gem:\n\n
+  \ gem dependency [gem name]\n\nDon't generate Ri and RDoc when installing gems:\n\n
+  \ gem install [gem name] --no-ri --no-rdoc\n\n  to set this as default behavior:\n\n
+  \ echo \"gem: --no-ri --no-rdoc\" >> ~/.gemrc\n\nUninstalling:\n\n  gem uninstall
+  [gem name]\n\n  if that fails with something like:\n  ERROR:  While executing gem
+  ... (Gem::InstallError)\n      Unknown gem [gem name]\n  then do this...\n\n  gem
+  list -d [gem name]\n  gem list --local or -l\n  gem list --remote or -r\n  gem uninstall
+  --install-dir [install directory] [gem name]\n\nAdd a repository for remote gems:\n\n
+  \ gem sources -a [repository url]"

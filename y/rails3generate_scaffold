@@ -1,0 +1,6 @@
+---
+rails3generate_scaffold: ! 'a list of available field types for $ rails3 generate
+  scaffold
+
+  :primary_key, :string, :text, :integer, :float, :decimal, :datetime, :timestamp,
+  :time, :date, :binary, :boolean.'

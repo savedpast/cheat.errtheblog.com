@@ -1,0 +1,7 @@
+---
+hwh_nested_attributes: ! "class User < ActiveRecord::Base\r\n  accepts_nested_attributes_for
+  :account_setting\r\n  ...\r\nend\r\n\r\n// app/views/users/edit.html.erb\r\n<%=
+  form_for( @user ) do |f| %>\r\n  ...\r\n  <%= f.fields_for :account_setting do |a|
+  %>\r\n    ...\r\n\r\n// \r\nclass UsersController < ApplicationController\r\n  def
+  new\r\n    @user = User.new( :account_setting => AccountSetting.new )\r\n  end\r\n\r\n
+  \ def create\r\n    @user = User.create( params[ :user ] )\r\n  end\r\nend"

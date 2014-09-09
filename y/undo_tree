@@ -1,0 +1,14 @@
+---
+undo_tree: ! "Cheat Sheet for Emacs undo-tree mode\r\nhttp://www.dr-qubit.org/undo-tree/undo-tree.el\r\n\r\nC-_
+  \ C-/  (`undo-tree-undo')\r\n  Undo changes.\r\n\r\nM-_  C-?  (`undo-tree-redo')\r\n
+  \ Redo changes.\r\n\r\n`undo-tree-switch-branch'\r\n  Switch undo-tree branch.\r\n
+  \ (What does this mean? Better press the button and see!)\r\n\r\nC-x u  (`undo-tree-visualize')\r\n
+  \ Visualize the undo tree.\r\n  (Better try pressing this button too!)\r\n\r\n\r\nIn
+  the undo visualizer:\r\n\r\n<up>  p  C-p  (`undo-tree-visualize-undo')\r\n  Undo
+  changes.\r\n\r\n<down>  n  C-n  (`undo-tree-visualize-undo')\r\n  Undo changes.\r\n\r\n<left>
+  \ b  C-b  (`undo-tree-visualize-switch-branch-left')\r\n  Switch to previous undo-tree
+  branch.\r\n\r\n<right>  f  C-f  (`undo-tree-visualize-switch-branch-right')\r\n
+  \ Switch to next undo-tree branch.\r\n\r\nt  (`undo-tree-visualizer-toggle-timestamps')\r\n
+  \ Toggle display of time-stamps.\r\n\r\nq  C-q  (`undo-tree-visualizer-quit')\r\n
+  \ Quit undo-tree-visualizer.\r\n\r\n,  <\r\n  Scroll left.\r\n\r\n.  >\r\n  Scroll
+  right.\r\n\r\n<pgup>\r\n  Scroll up.\r\n\r\n<pgdown>\r\n  Scroll down."

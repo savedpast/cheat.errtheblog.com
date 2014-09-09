@@ -1,0 +1,14 @@
+---
+oh_my_zsh: ! "Commands:\n\n* `tab` - Create a new tab in the current directory (OS
+  X)\n* `take` - Create a new directory and change to it, will create intermediate
+  directories as required.\n* `zsh_stats` - get a list of the top ten commands and
+  how many times they have been run\n* `uninstall_oh_my_zsh` - Uninstall Oh-my-zsh
+  \n* `upgrade_oh_my_zsh` - Upgrade Oh-my-zsh \n\nTab-completion:\n\n* `ls -(tab)`
+  - for options and helpful text of what they do\n* `cap (tab)`\n* `rake (tab)`\n*
+  `ssh (tab)`\n* `sudo umount (tab)`\n* `kill (tab)`\n\nGit:\n\nDynamic access to
+  current branch name with the current_branch function.\n\n* `git pull origin $(current_branch)`\n*
+  `grb publish $(current_branch) origin`\n\nHelpful aliases for common git tasks:\n*
+  `g` - git\n* `gst` - git status\n* `gl` - git pull\n* `gup` - git fetch && git rebase\n*
+  `gp` - git push\n* `gd` - git diff | mate\n* `gdv` - git diff -w \"$@\" | vim -R
+  -\n* `gc` - git commit -v\n* `gca` - git commit -v -a\n* `gb` - git branch\n* `gba`
+  - git branch -a"

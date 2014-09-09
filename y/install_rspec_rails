@@ -1,0 +1,4 @@
+---
+install_rspec_rails: ! "# This is to install the latest rspec/rspec-rails into \r\n#
+  a rails project. \r\nscript/plugin install git://github.com/dchelimsky/rspec.git\r\nscript/plugin
+  install git://github.com/dchelimsky/rspec-rails.git\r\nscript/generate rspec"

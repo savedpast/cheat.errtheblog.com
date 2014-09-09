@@ -1,0 +1,81 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>## Syntax
+
+ {{! ignored...}}   # comment
+ {{propertyName}}   # output is HTML-escaped
+{{{propertyName}}}  # output is NOT HTML-escaped
+
+{{#propertyName}} some stuff {{/propertyName}}
+  # if false/empty list:   contents skipped
+  # if true scalar value:  contents rendered
+  # if hash value:         context set to hash before rendering contents
+  # if list value:         loops through list, sets context to each element
+  #                        before rendering contents
+  # if function:           passes contents to it (see docs)
+
+{{^propertyName}} some stuff {{/propertyName}}  # behaves like 'unless'
+                                                # (opposite of #propertyName)
+
+## Contexts
+
+{{my_tag this}}      # 'this' refers to current context
+{{person.name}}      # use '.' paths to access nested contexts
+{{../company.name}}  # use '../' paths to access ancestor contexts
+{{articles.[5]}}     # use '[]' to access a list element
+{{App.someVal}}      # use absolute paths, too
+
+## Built-In Helpers
+
+{{#if}}  {{else}}  {{/if}}
+{{#unless}}    {{/unless}}
+{{#with}}        {{/with}}
+{{#each}}        {{/each}}
+
+## Custom Helpers
+#
+#  Single-Tag:  {{myHelper [args]}} -&gt; function ([args])
+#  Block:  {{#myHelper [arg]}} blah {{/myHelper}} -&gt; function (arg|context, fn)
+#
+#  Allowed args:  strings, context paths, hash args (foo=&quot;bar&quot;)
+#  'this' is always set to the current context within the helper
+
+# to prevent your helper's output from being HTML-escaped
+Handlebars.SafeString(string)
+# to escape something inside your helper
+Handlebars.Utils.escapeExpression(string)
+
+{{#posts}} &lt;li&gt;{{{link_to this}}}&lt;/li&gt; {{/posts}}
+Handlebars.registerHelper('link_to', function (context) {
+  return '&lt;a href=&quot;' + context.url + '&quot;&gt;' + context.body + '&lt;/a&gt;';
+});
+
+{{#posts}} &lt;li&gt;{{{headline title class=&quot;foo&quot;}}}&lt;/li&gt; {{/posts}}
+Handlebars.registerHelper('headline', function (title, options) {
+  var attrs = [];
+  for(var prop in options.hash) {
+    attrs.push(prop + '=&quot;' + options.hash[prop] + '&quot;');
+  }
+  return new Handlebars.SafeString(
+    &quot;&lt;h2 &quot; + attrs.join(&quot; &quot;) + &quot;&gt;&quot; + title + &quot;&lt;/h2&gt;&quot;
+  );
+});
+
+{{#people}} &lt;li&gt;{{{#link}}}{{name}}{{/link}}&lt;/li&gt; {{/people}}
+Handlebars.registerHelper('link', function(context, fn) {
+  return '&lt;a href=&quot;/people/' + this.__get__(&quot;id&quot;) + '&quot;&gt;' + fn(this) + '&lt;/a&gt;';
+});
+
+## Partials
+
+{{&gt; templateName}}  # inline another template's contents (inherits context)
+
+{{#people}} &lt;li&gt;{{&gt; link}}&lt;/li&gt; {{/people}}
+Handlebars.registerPartial('link', '&lt;a href=&quot;/people/{{id}}&quot;&gt;{{name}}&lt;/a&gt;')
+
+## Inlining Templates
+
+&lt;script type=&quot;text/x-handlebars&quot; [data-template-name=&quot;intro&quot;]&gt;
+  My name is {{name}}.
+&lt;/script&gt;
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

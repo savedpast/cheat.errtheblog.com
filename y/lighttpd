@@ -1,0 +1,20 @@
+---
+lighttpd: ! "# Lighttpd\n\nfastcgi.debug = 0|1\n\nfastcgi.server = (\n  <extension>
+  =>  (\n    [<name>] => (\n      \"host\" = <string>,\n      \"port\" = <int>,\n
+  \     \"socket\" = <path>,\n      [\"bin-path\" = <path>,]\n      [\"bin-environment
+  = <array>,]\n      [\"mode\" = <string>,]\n      [\"docroot\" = <path>,]\n      [\"check-local\"
+  = <string>,]\n      [\"max-procs\" = <int>,]\n    )\n  )\n)\n\n[] denotes optional
+  directive.\n\n* __extension__ is the file-extension or prefix (if started with \"/\")\n*
+  __host__ is ip of the FastCGI process (no support for hostnames right now)\n* __port__
+  is tcp-port on the \"host\" used by the FastCGI process\n* __socket__ path to the
+  unix-domain socket\n\n> Either __host__ and __port__ or __socket__ must be provided.\n\n*
+  __bin-path__ path to the local FastCGI binary which should be started if\n  no local
+  FastCGI is running\n* __mode__ is the FastCGI protocol mode. Default is \"responder\",
+  also\n  \"authorizer\" mode is implemented.\n* __docroot__ is the docroot on the
+  remote host for default \"responder\" mode.\n  For \"authorizer\" mode it is _mandatory_
+  and it points to docroot for\n  authorized requests. For security reasons it is
+  recommended to keep this\n  docroot outside of server.document-root tree.\n* __check-local__
+  is optional and may be \"enable\" (default) or \"disable\".\n  If enabled the server
+  first checks for a file in local 'server.document-root'\n  tree and returns 404
+  (Not Found) if no such file, and does not fall back to\n  FastCGI. If disabled,
+  the server forwards a request to the FastCGI interface\n  without this check."

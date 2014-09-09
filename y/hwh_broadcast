@@ -1,0 +1,6 @@
+---
+hwh_broadcast: ! "To listen in CoffeeScript\r\n\r\nBroadcast.listen 'event regex',
+  ( event_name, event_object ) ->\r\n   # your code here\r\n\r\nTo announce in JavaScript
+  (typical)\r\n\r\n// create the event first\r\nevent = new Event()\r\n   .name( 'event.name.here'
+  )\r\n   .display_context( 'jquery addressable selector' )\r\n   .display_mode( 'append|replace|prepend|etc'
+  )\r\n   .attr( 'name', 'value' )\r\n   .values();\r\n\r\neventHandler( event )"

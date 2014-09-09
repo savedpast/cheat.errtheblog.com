@@ -1,0 +1,12 @@
+---
+converted: ! "= IMAGEMAGICK\r\n\r\nWorking with images, PDFs and the command line\r\n\r\n#
+  convert from one format to another\r\n\r\nconvert image.gif image.jpg\r\n\r\n# convert
+  specific PDF page to image\r\n\r\nconvert -thumbnail x300 test.pdf[0] test.png\r\n\r\n#
+  create thumbnails for all pages in PDF document\r\n\r\nconvert -thumbnail x300 test.pdf
+  test.png\r\n\r\n# as above, controlling the width, having height suited\r\n\r\nconvert
+  -thumbnail 400 test.pdf test.png\r\n\r\n# crop an image from the bottom corner\r\n\r\nconvert
+  -crop '595x711-0+1309' image.jpg output.jpg\r\n\r\n# make a looping animated gif\r\n\r\nconvert
+  -delay 20 -loop 0 image*.jpg image.gif\r\n\r\n# resize image\r\n\r\nconvert -resize
+  50% source.png dest.png\r\n\r\n# rotate image (-90 degrees)\r\n\r\nconvert -rotate
+  -90 source.png dest.png\r\n\r\n# see list of available compression methods\r\n\r\nconvert
+  -list compress"

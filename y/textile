@@ -1,0 +1,16 @@
+---
+textile: ! "Quick block modifiers:\n  Header: hn.\n  Blockquote: bq.\n  Block code:
+  bc.\n  Footnote: fnn.\n  Paragraph: p.\n  Pre-formatted: pre.\n  Numeric list: #\n
+  \ Bulleted list: *\n\nQuick phrase modifiers:\n  _emphasis_\n  *strong*\n  ??citation??\n
+  \ -deleted text-\n  +inserted text+\n  ^superscript^\n  ~subscript~\n  %span%\n
+  \ @code@\n  \nNested Lists:\n  * List A\n  ## Item 1\n  *** Item 1a\n\nTo apply
+  attributes:\n  (class)\n  (#id)\n  {style}\n  [language]\n\nTo align blocks:\n  <
+  right\n  > left\n  = center\n  <> justify\n\nTo insert a table:\n  |_. a|_. table|_.
+  header|\n  |a|table|row|\n  |a|table|row|\n\nTo insert a link:\n  \"linktext\":url\n\nTo
+  insert an image:\n  !imageurl!\n\nTo insert a link around an image:\n  !mypic.gif!:http://myurl.org/\n\nTo
+  define an acronym:\n  ABC(Always Be Closing)\n\n\nFootnote Usage:\n  See foo[1].\n\n
+  \ fn1. Foo.\n  \nTo reference a footnote:\n  [n]\n  \nPunctuation:\n  \"quotes\"
+  → “quotes”\n  'quotes' → ‘quotes’\n  it's → it’s\n  em -- dash → em — dash\n  en
+  - dash → en – dash\n  2 x 4 → 2 × 4\n  foo(tm) → foo™\n  foo(r) → foo®\n  foo(c)
+  → foo©\n\nRaw HTML:\n  ==no <b>textile</b>==\n\n  notextile. no <b>textilehere</b>\n
+  \ \nExtended Blocks:\n  bq.. quote\n  \n  \n  continued quote\n  \n  \n  p. paragraph"

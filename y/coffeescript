@@ -1,0 +1,37 @@
+---
+coffeescript: ! "### Usage\n\nmost commonly used parameters from coffeescript.org\n-c,
+  --compile\n-i, --interactive\n-o, --output [DIR]\n-p, --print\n-e, --eval\n--nodejs\n\n###
+  Functions\n\n#Last expression value is return value\nadd(a, b) -> a + b\nadd(1,
+  2) == 3\n\n# internal variables override outer ones\n\nmessage = 'Outer'\ngetMessage
+  = -> message\noverrideMessage = -> message = 'Inner'\noverrideMessage() == 'Inner'\n\n#
+  supports splats\nreturnAllArgs = (allargs...) -> allargs\nreturnAllArgs('first',
+  'second', 'third') == ['first', 'second', 'third']\n\nreturnAllButFirst = (firstArg,
+  rest...) -> rest\nreturnAllBut­First('first', 'second', 'third') == ['second', 'third']\n\n#destructuring
+  assignment\nweatherReport = (location) -> [location, 22, 'Mostly sunny']\n[city,
+  temper­ature, forecast] = weatherReport 'London'\ncity == 'London'\ntemper­ature
+  == 22\n\n### Higher Order\n\n2 in [1..3] == true\n\n#Javascript-style filter\neven
+  = (a) -> a % 2 == 0\n[1..6].filter even == [2, 4, 6]\n\n### Coffee­Script-style
+  filter\nodds = (x for x in [1..6] when not even x)\n\n### Coffee­Script-style map\ntwice
+  = (a) -> a * 2\ndoubles = (twice x for x in [1..6])\n  \n###Objects\nmeglom­aniac
+  = {}\n\nbeforeEach ->\nmeglom­aniac =\nmastermind: 'The Monarch'\nhenchwoman: 'Dr
+  Girlfriend'\ntheBomb: true\n\n# ? existence operator\nmeglom­aniac.theBomb? == true
+  \nmeglom­aniac.theDetonator? == false\n\n# properties can be added and deleted\nmeglom­aniac.­master­mind2
+  = 'Agent Smith'\ndelete meglom­ani­ac.­mas­termind\n\n# prototype to add to all
+  projects\nCircle = (radius) -> @radius = radius\n\n'­@­' = 'this context' In Coffee­script\nInheritance\n#
+  running example from Muppets\n\nclass Muppet\nconstr­uctor: (@age, @hobby) ->\nanswer­Nanny:
+  -> \"Everything's cool!\"\n\nclass Swedis­hChef extends Muppet\nconstructor: (age,
+  hobby, @mood) ->\nsuper(age, hobby)\ncook: -> 'Mmmm soup!'\n\n@swedis­hChef = new
+  Swedis­hChef 3, 'cooking', 'chillin'\n\n@swedis­hCh­ef.cook() == 'Mmmm soup!'\n\n#base
+  object\n@swedis­hCh­ef.­ans­wer­Nanny() == \"Everything's cool!\"\n\n#instances
+  to override class methods\ngonzo = new Muppet 3, 'daredevil performer'\ngonzo.­answer­Nanny
+  = -> 'Hehehe!'\nHello World\necho \"consol­e.log 'Hello World'\" > hello.­coffee\ncoffee
+  hello.­coffee\n  \nArrays\n[1..5] == [1, 2, 3, 4, 5]\n[1...5] == [1, 2, 3, 4] #
+  extra dot\n[3..1] == [3, 2, 1]\n\nfourNumberArray = [1, 2, 3, 4]\nfourNumberAr­ray­.push(5,
+  6)\nfourNumberArray == [1, 2, 3, 4, 5, 6]\n\n[1..10][3..5] == [4, 5, 6] # range
+  slicing\n\n\"my string\"[0..1] == \"my\" # string slicing\n\ncopyOf­Array = array.­slice()\nArray
+  Reduction\n# Javascript style\ntotal = (i, a) -> i + a\nreduction = [1..3].reduce
+  total == 6\n\n# Coffee­script-style\ntotal = 0\nsum = (a) -> total = total + a\nsum
+  x for x in [1..3]\ntotal == 6\nMDN Docume­ntation:\nhttps://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/Reduce\nCredits\nThis
+  cheat sheet is (mostly) based on work of sleepyfox, which can be found here: https://github.com/sleepyfox/coffeescript-koans\n\nCoffee­Script
+  @github: http://jashke­nas.github.com/coffee-script/\nMisc\nOfficial Site: http://coffee­scr­ipt.org/\n\nTextmate
+  Bundle: https://github.com/jashkenas/coffee-script-tmbundle\n\nBook: http://pragpr­og.com/book/tbcoffee/coffee­script"

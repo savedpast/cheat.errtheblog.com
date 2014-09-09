@@ -1,0 +1,30 @@
+---
+factory_girl: ! "Factory girl is an object factory library to be used with your tests.\r\n\r\nInstallation:\r\n$
+  [sudo] gem install factory_girl\r\n\r\nor with Rails >2.1 dependency management,
+  add to environment.rb\r\n\r\nconfig.gem \"factory_girl\", :lib => false\r\n\r\nThen
+  add:\r\n  require 'factory_girl'\r\nto your test_helper.rb or spec_helper.rb\r\n\r\nDefining
+  factories:\r\n# This will guess the User class\r\nFactory.define :user do |u|\r\n
+  \ u.first_name 'John'\r\n  u.last_name  'Doe'\r\n  u.admin false\r\nend\r\n\r\n#
+  This will use the User class (Admin would have been guessed)\r\nFactory.define :admin,
+  :class => User do |u|\r\n  u.first_name 'Admin'\r\n  u.last_name  'User'\r\n  u.admin
+  true\r\nend\r\n\r\n# This will copy the attributes from the parent factory to the
+  current one with an ability to override them.\r\nFactory.define :super_user, :parent
+  => :user do |u|\r\n  u.super_user true\r\nend\r\n\r\n# Alternatively you can use
+  traits\r\nFactory.define :user do |u|\r\n  u.first_name 'John'\r\n  u.last_name
+  \ 'Doe'\r\n  u.admin false\r\n\r\n  trait :super_user do\r\n    u.super_user true\r\n
+  \ end\r\nend\r\n\r\n# then pass in the trait options\r\nFactory.create :user, :super_user\r\n\r\nLazy
+  Attributes:\r\nFactory.define :user do |u|\r\n  # ...\r\n  u.activation_code { User.generate_activation_code
+  }\r\nend\r\n\r\nDependent Attributes:\r\nFactory.define :user do |u|\r\n  u.first_name
+  'Joe'\r\n  u.last_name  'Blow'\r\n  u.email {|a| \"#{a.first_name}.#{a.last_name}@example.com\".downcase
+  }\r\nend\r\n\r\nAssociations:\r\nFactory.define :post do |p|\r\n  # ...\r\n  p.author
+  {|author| author.association(:user, :last_name => 'Writely') }\r\nend\r\n\r\n# Or
+  in short form\r\nFactory.define :post do |p|\r\n  p.association :author, :factory
+  => :user\r\nend\r\n\r\nSequences:\r\n# Defines a new sequence\r\nFactory.sequence
+  :email do |n|\r\n  \"person#{n}@example.com\" \r\nend\r\n\r\n#Uses the sequence\r\nFactory.next
+  :email\r\n# => \"person1@example.com\"\r\n\r\n# can also be defined inline:\r\nFactory.define
+  :user do |u|\r\n  u.sequence(:email) { |n| \"persion#{n}@example.com\" }\r\nend\r\n\r\nCallbacks:\r\n#
+  Run a callback after building the record. Handy for Devise.\r\nFactory.define :user
+  do |u|\r\n  u.after_build { |u| u.skip_confirmation! }\r\nend\r\n\r\nUsing factories:\r\n#
+  Build and save a User instance\r\nFactory(:user)\r\n\r\n# Build a User instance
+  and override the first_name property\r\nFactory.build(:user, :first_name => 'Joe')\r\n\r\n#
+  Return an attributes Hash that can be used to build a User instance\r\nattrs = Factory.attributes_for(:user)"

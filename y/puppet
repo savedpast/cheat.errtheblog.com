@@ -1,0 +1,7 @@
+---
+puppet: ! 'Puppet [docs.puppetlabs.com]
+
+  ============================
+
+
+  Core resource types: [notify, file, package, service, exec, cron, user, group]'

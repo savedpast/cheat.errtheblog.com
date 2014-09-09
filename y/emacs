@@ -1,0 +1,58 @@
+---
+emacs: ! "oh sh*t - what to do if you've screwed something up\n================================================================================\nC-_
+  / C-x u / C-/      undo (undo)\nC-g                    abort command sequence (keyboard-quit)\nC-x
+  C-c                quit (save-buffers-kill-terminal)\nM-x menu-bar-mode RET  toggle
+  the menu bar on or off (menu-bar-mode)\nM-x revert-buffer RET  reload current buffer
+  from disk\nC-x C-s                save the current file\n\nfiles, buffers & windows\n======================================================================\nC-x
+  C-f            open or create a file (open)\nC-x C-s            save the current
+  file/buffer\nC-x C-w            save as\nC-x k              kill (close) a file/buffer\nC-x
+  b              switch to another buffer/window (choose from prompt)\nC-x C-b            list
+  all open buffers (list-buffers)\nC-x 2              split window horizontally\nC-x
+  3              split window vertically\nC-x 1              kill (close) other window\nC-x
+  0              kill (close) this window\n\nmoving around\n======================================================================\nC-f
+  / C-b          forward / back one character\nM-f / M-b          forward / back one
+  word\nC-n / C-p          next / previous line\nC-a / C-e          beginning of /
+  end of line\nM-a / M-e          backward / forward sentence\nM-{ / M-}          backward
+  / forward paragraph\nM-< / M->          beginning of / end of buffer\nC-M-f / C-M-b
+  \     forward / back one \"sexp\"\nC-v / M-v          page down / page up\nC-M-v
+  / S-C-M-v    page down / page up in other window\n\nselect, cut, copy, paste\n======================================================================\nC-x
+  h              select all (select-whole-buffer)\n\nsearch and replace\n======================================================================\nC-s
+  \               search (isearch-foward)\n  C-s                next match; use twice
+  to repeat last search\n  C-r                previous match\n  RET                stop
+  here\n  C-g                stop and go back to starting location\n\nM-%                find
+  & replace (query-replace)\nC-M-%              regexp find & replace\n  y                  replace
+  current match\n  n                  skip current match\n  !                  replace
+  all\n  RET                stop here\n  C-g                stop and go back to starting
+  location\n\n\ncoding\n======================================================================\nM-g
+  g                      goto line\nM-;                        comment/uncomment selection\nC-M-\\
+  \                     re-indent (reformat) selection\nM-x toggle-truncate-lines
+  \ switches between line-wrap and no-line-wrap\n\nspelling\n======================================================================\nM-x
+  flyspell         \"live\" spellchecking (flyspell)\nM-$                  spell check
+  (ispell-word)\n\nbookmarks - C-x r\n======================================================================\nC-x
+  r m              set a bookmark at the current location (e.g. in a file)\nC-x r
+  b              jump to a bookmark\nC-x r l              list your bookmarks\n   a
+  \                show annotation for the current bookmark\n   A                 show
+  all annotations for your bookmarks\n   d                 mark various entries for
+  deletion (‘x’ – to delete them)\n   e                 edit the annotation for the
+  current bookmark\n   m                 mark various entries for display and other
+  operations, (‘v’ – to visit)\n   o                 visit the current bookmark in
+  another window, keeping the bookmark list open\n   C-o               switch to the
+  current bookmark in another window\n   r                 rename the current bookmark\nM-x
+  bookmark-delete  delete a bookmark by name\n\nshell\n======================================================================\nM-!
+  \               run a shell command\nM+x shell          open a shell buffer\nC+u
+  M+x shell      open a new shell buffer\nM+x term           open a terminal emulator\nC+u
+  M+x term       open a new terminal emulator\n\nmisc\n======================================================================\nC-x
+  C-+            increase font size; C-+ to repeat\nC-x C--            decrease font
+  size; C-- to repeat\n\ngetting help\n======================================================================\nC-h
+  b              list all key bindings\nC-h w <function>   list all key bindings for
+  <function>\nC-h c <sequence>   list function bound to <sequence>\nC-h k <sequence>
+  \  show help for function bound  to <sequence>\nC-h i              show help/tutorial
+  (Use C-x k to close it)\nC-x C-h            list key bindings starting with C-x\nC-c
+  C-h            list key bindings starting with C-c\n\nnotes\n======================================================================\nC-x
+  means \"Control-x\"\nM-x (usually) means \"Alt-x\"\nS-x means \"Special-X\", typically
+  \"Windows-X\" (or clover-X on Apple?)\n\nKey bindings can be changed by your .emacs
+  file and the major- or\nminor-mode you are in. They could be different than what
+  you see here.\n\nmore cheat sheets and help\n======================================================================\ncheat
+  emacs_basics\ncheat emacs_tips\ncheat emacs-ruby      - ruby support in emacs (sheet
+  has been deleted?)\ncheat emacs_psvn      - svn supprort in emacs\ncheat emacs_slime
+  \    - \"superior\" lisp support in emacs\n\nhttp://www.gnu.org/software/libtool/manual/emacs/\nhttp://refcards.com/docs/wingb/xemacs/xemacs-refcard-a4.pdf\nhttp://www.stevenchan.us/files/Notesheet-Emacs.pdf\nhttps://ccrma.stanford.edu/guides/package/emacs/emacs.html\nhttp://www.rgrjr.com/emacs/emacs_cheat.html"

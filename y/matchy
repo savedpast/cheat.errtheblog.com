@@ -1,0 +1,24 @@
+---
+matchy: ! "* Get BDD on your objects\n\n    x = 13 * 4\n    x.should == 42\n\n    y
+  = \"hello\"\n    y.length.should_not be(4)\n\n* Use familiar syntax to specify things\n\n
+  \   # RSpec\n    \"my string\".should =~ /string/\n    lambda { raise \"FAIL\" }.should
+  raise_error\n\n    # matchy\n    \"my string\".should =~ /string/\n    lambda {
+  raise \"FAIL\" }.should raise_error\n\n* Most of familiar RSpec Matchers are built
+  in\n\n    # raise_error matcher\n    lambda {raise}.should raise_error                                  #pass\n
+  \   lambda {raise MyCustomError.new}.should raise_error(MyCustomError) #pass\n    lambda
+  {raise \"message\"}.should raise_error(\"message\")             #pass\n    lambda
+  {raise \"message\"}.should raise_error(/essa/)                #pass\n\n    # change
+  matcher\n    lambda {@var+=1}.should change {@var}\n    # passes\n    lambda { }.should
+  change {@var}\n    # fails\n    @var = 1\n    lambda {@var+=1}.should change {@var}.from(1).to(2)\n
+  \   # passes\n\n    # be_something matcher\n    @obj.should be_something\n    #
+  passes if @obj.something? is true\n\n    * a lot more ...\n\n* Get the speed of
+  Test:Unit with the syntax of RSpec\n\n* Create your own matchers\n\n    # nil_matcher
+  (As a simple and quick example)\n    def_matcher :be_nil do |receiver, matcher,
+  args|\n      receiver.nil?\n    end\n\n    nil.should be_nil            # pass\n
+  \   nil.should_not be_nil        # fails\n    'notnil'.should be_nil       # fails\n
+  \   'notnil'.should_not be_nil   # pass\n\n    # have(n).somethings matcher (A little
+  bit more complex)\n    def_matcher :have do |receiver, matcher, args|  \n\t\t  count
+  = args[0]\n\t\t  something = matcher.msgs[0].name\n\t\t  actual = receiver.send(something).length\n\t\t
+  \ matcher.positive_msg = \"Expected #{receiver} to have #{actual} #{something},
+  but found #{count} \"\n\t\t  actual == count\n\t\tend\n\t\t\n\t\tclass Thing\n\t\t
+  \ def widgets\n\t\t    @widgets ||= []\n\t\t  end\n\t\tend\n\t\t@thing.should have(3).widgets"

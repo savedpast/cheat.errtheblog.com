@@ -1,0 +1,17 @@
+---
+xcode: ! "WINDOW FOCUS\r\n------------\r\nshift-cmd-b (build window)\r\nshift-cmd-e
+  (toggles edit-only window)\r\nshift-cmd-option-e (toggle zooming of editor to full
+  window mode)\r\ncmd-0 (switch to editor)\r\nshift-cmd-y (switch to debugger)\r\n\r\n\r\nFILE
+  NAVIGATION\r\n---------------\r\ncmd-option-<up> (toggle header/implementation)\r\nctrl-cmd-N
+  (create new empty file)\r\nshift-command-d (open quickly..)\r\ncommand-click (open
+  this quickly)\r\nshift-option-cmd-D (open this quickly (when cursor is on target
+  class))\r\nshitt-cmd-W (close file)\r\n\r\nPOP-UPS\r\n-------\r\nctrl-2 (pop up
+  symbol navigation)\r\nctrl-1 (pop up loaded files list)\r\n\r\n\r\nCODE FOLDING\r\n------------\r\nctrl-cmd-(up-arrow)
+  (fold all methods/functions)\r\nctrl-cmd-(down-arrow) (unfold all methods/functions)\r\n\r\nDEBUG\r\n-----\r\ncmd-shift-R
+  (show console)\r\ncmd-option-ctrl-R (clear console)\r\n\r\n\r\nTEXTMATE LOVERS\r\n---------------\r\nshift-cmd-D
+  (like TextMates' cmd-T for finding a file fast)\r\nshift-option-cmd-E (full screen
+  view, less noise)\r\nctrl-1 (jumpt to file)\r\nctrl-2 (jumpt to method)\r\ncmd-option-<up>
+  (jump to related file)\r\ncmd-ctrl-<left> (fold at cursor)\r\ncmd-ctrl-<right> (expand
+  at cursor)\r\n\r\nNOTE\r\n----\r\ncmd    = Apple Key\r\noption = Alt key \r\n\r\nTobin
+  Harris updated to include shortcuts from:\r\nhttp://cocoasamurai.blogspot.com/2008/02/complete-xcode-keyboard-shortcut-list.html
+  \r\nThanks to Colin Wheeler :)\r\n"

@@ -1,0 +1,110 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>CASCADING COOKBOOK
+
+Copy a Tuple
+
+  Tuple orig = new Tuple();
+  orig.add( &quot;some value&quot; );
+  // copy constructor
+  Tuple copy = new Tuple( orig );
+
+Nest a Tuple in a Tuple
+
+  Tuple parent = new Tuple();
+  Tuple child = new Tuple( &quot;value1&quot;, &quot;value2&quot; );
+  parent.add( child );
+
+Split a stream and name the branches
+
+  pipe = new Each( pipe, new SomeFunction() )
+  Pipe lhs = new Pipe( &quot;lhs&quot;, pipe );
+  Pipe rhs = new Pipe( &quot;rhs&quot;, pipe );
+
+Copy a value
+
+  pipe = new Each( pipe, new Fields( &quot;field&quot; ), new Identity( new Fields( &quot;copy&quot; ) ), Fields.ALL );
+
+Rename a field
+
+  // two incoming fields: &quot;other&quot; and &quot;field&quot;
+  pipe = new Each( pipe, new Fields( &quot;field&quot; ),
+                   new Identity( new Fields( &quot;renamed&quot; ) ),
+                   new Fields( &quot;other&quot;, &quot;renamed&quot; ) );
+
+Convert strings to primitive types
+
+  Class[] types = new Class[] {Long.class, Float.class, Boolean.class};
+  pipe = new Each( pipe,
+                   new Fields( &quot;longField&quot;, &quot;floatField&quot;, &quot;booleanField&quot; ),
+                   new Identity( types ) );
+
+Reorder fields
+
+  // two incoming fields: &quot;field1&quot; and &quot;field2&quot;
+  pipe = new Each( pipe, new Fields( &quot;field2&quot;, &quot;field1&quot; ), new Identity() );
+
+Discard unused fields
+
+  // two incoming fields: &quot;field1&quot; and &quot;field2&quot;
+  pipe = new Each( pipe, new Fields( &quot;field2&quot; ), new Identity() );
+
+Sort values passed to Aggregator
+
+  pipe = new GroupBy( pipe, new Fields( &quot;group1&quot;, &quot;group2&quot; ), new Fields( &quot;value&quot; ) );
+
+Insert constant values into a value stream
+
+  pipe = new Each( pipe, new Insert( new Fields( &quot;field1&quot;, &quot;field2&quot; ), &quot;value1&quot;, &quot;value2&quot; ), Fields.ALL );
+
+Create 'timestamp' from date/time fields
+
+  // build 'datetime' string.
+  FieldFormatter formatter = new FieldFormatter( new Fields( &quot;datetime&quot; ), &quot;%s:%s:%s:%s:%s:%s.%s&quot; );
+  Fields timeFields = new Fields( &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;hour&quot;, &quot;minute&quot;, &quot;second&quot;, &quot;millisecond&quot; );
+  pipe = new Each( pipe, timeFields, formatter, Fields.ALL );
+  pipe = new Each( pipe, new Fields( &quot;datetime&quot; ), new DateParser( new Fields( &quot;ts&quot; ), &quot;yyyy:MM:dd:HH:mm:ss.SSS&quot; ), Fields.ALL );
+
+Create date/time string from 'timestamp' field
+
+  DateFormatter timeFormatter = new DateFormatter(new Fields( &quot;datetime&quot; ), &quot;HH:mm:ss.SSS&quot; );
+  pass field &quot;ts&quot; into the timeFormatter function, which returns a &quot;datetime&quot; field
+  pipe = new Each( pipe, new Fields( &quot;ts&quot; ), timeFormatter, Fields.ALL );
+
+Get 'DISTINCT' (unique) values from a Tuple stream
+
+  // group on all values
+  pipe = new GroupBy( pipe, Fields.ALL );
+  only take the first tuple in the grouping, ignore the rest
+  pipe = new Every( pipe, Fields.ALL, new First(), Fields.RESULTS );
+
+Merge two streams with the same column names
+
+  // merge streams, group on 'last' field name
+  lhs = 'first', 'last', 'middle'
+  rhs = 'first', 'last', 'middle'
+  pipe = new GroupBy( lhs, rhs, new Fields(&quot;last&quot;) );
+
+Passing properties to an Operation
+
+  // set propery on Flow
+  Properties props = new Properties();
+  props.set( &quot;key&quot;, &quot;value&quot;);
+  FlowConnector conn = new FlowConnector( props );
+  ...
+  // get property from within an Operation (Function,Filter,etc)
+  String value = flowProcess.getProperty( &quot;key&quot; );
+
+Passing a JobConf to a Flow and Operation
+
+  // set JobConf on Flow
+  JobConf jobConf = new JobConf();
+  jobConf.set( &quot;key&quot;, &quot;value&quot; );
+  Properties props = new Properties();
+  MultiMapReducePlanner.setJobConf( properties, jobConf );
+  FlowConnector conn = new FlowConnector( props );
+  ...                        ....
+  // get property from within an Operation (Function,Filter,etc)
+  String value = flowProcess.getProperty( &quot;key&quot; );
+  // or
+  JobConf jobConf = ((HadoopFlowProcess) flowProcess).getJobConf();</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

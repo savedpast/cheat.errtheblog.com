@@ -1,0 +1,50 @@
+---
+backbone_testing: ! "# Libraries used:\r\n# jasmine\r\n# jasmine-jquery\r\n# jasmine-sinon\r\n#
+  sinon\r\n\r\n##### Basics Overview #####\r\n\r\ndescribe \"APP_NAME.Views.VIEW_FOLDER.VIEW_NAME
+  \", ->\r\n  beforeEach ->\r\n    # Stuff run before each test\r\n  afterEach ->\r\n
+  \   # Stuff run after each test\r\n\r\n  describe \"render\", ->\r\n    it \"should
+  be visible\", ->\r\n      expect($(@app.el)).toContain(\"#flash-message\") # with
+  jquery jasmine matchers\r\n      expect($(\".pickImage\", @view.el)).toExist() #
+  without jquery jasmine matchers\r\n\r\n\r\n##### Frequent Tests #####\r\n# Make
+  sure a function is called:\r\nbeforeEach( ->\r\n  collection = new SomethingCollection()\r\n
+  \ spyOn(collection, \"fetch\")\r\n  view = new SomethingView({collection: collection})\r\n)\r\n\r\nit(\"should
+  fetch the collection\", function() {\r\n  expect(collection.fetch).toHaveBeenCalled()\r\n)\r\n\r\n#####
+  Jasmine Matchers (using jQuery) #####\r\nexpect($(@app.el)).toContain(\"#flash-message\")\r\nexpect($(\"div.item\",
+  @view.el).length).toEqual(1)\r\nexpect(iframe.find(\"style#inlineBlurbCss\")).not.toExist()\r\nexpect(x).toEqual(y)\r\nexpect(x).toMatch(pattern)\r\nexpect(x).toBeDefined()\r\nexpect(x).toBeNull()\r\nexpect(x).toBeTruthy()\r\nexpect(x).toBeFalsy()\r\nexpect(x).toContain(y)\r\nexpect(x).not.toEqual(y)\r\n\r\n#####
+  Jasmine Spying #####\r\nspyOn(obj, 'method')\r\nspyOn(obj, 'method').andReturn('Pow!')\r\nexpect(obj.method).toHaveBeenCalled()\r\nexpect(obj.method).toHaveBeenCalledWith('foo',
+  'bar')\r\nobj.method.callCount\r\nobj.method.mostRecentCall.args \r\n\r\n##### Sinon
+  #####\r\n@stub = sinon.stub(@view, \"renderHeaderItems\")\r\nexpect(@stub).toHaveBeenCalled()
+  # needs jasmine-sinon.js\r\n@view.renderHeaderItems.restore()\r\nserver = sinon.fakeServer.create()\r\nserver.respondWith
+  \"GET\", \"resources.json\", [200, \"Content-Type\": \"application/json\", (JSON.stringify(@resourcesFixture))]\r\n$(\"a.pickImage\",
+  @view.el).trigger(\"click\")\r\nserver.respond()\r\nserver.restore()\r\n@xhr = sinon.useFakeXMLHttpRequest();\r\n@requests
+  = []\r\n@xhr.onCreate = (xhr) => @requests.push(xhr)\r\n\r\n##### Helpers #####\r\n#
+  mock all reqeusts, nothing should hit the server.\r\n@xhr = sinon.useFakeXMLHttpRequest();\r\n@requests
+  = []\r\n@xhr.onCreate = (xhr) => @requests.push(xhr)\r\n# Fixtures\r\njasmine.getFixtures().fixturesPath
+  = \"/assets/fixtures\"\r\napp.headers = jasmine.getFixtures().read(\"contact_import/headers.json\")\r\n\r\n#####
+  Misc #####\r\nwaitsFor( (=> $(\"#previewFrame\", @el).contents().find(\"div\").length),
+  \"frame to load\")\r\n\r\n\r\n\r\nSinon.JS & Jasmine BDD Cheat Sheet (https://github.com/mattfysh/cheat-sinon-jasmine)\r\nSpy\r\n*sinon*\r\n
+  \ spy()\r\n  spy(fn)\r\n  spy(obj, 'fn')\r\n\r\n*spy*\r\n  callCount\r\n  called\r\n
+  \ calledOnce\r\n  calledTwice\r\n  calledThrice\r\n  calledBefore(spy)\r\n  calledAfter(spy)\r\n
+  \ calledOn(obj)\r\n  alwaysCalledOn(obj)\r\n  calledWith(*)\r\n  alwaysCalledWith(*)\r\n
+  \ calledWithExactly(*)\r\n  alwaysCalledWithExactly(*)\r\n  threw()\r\n  threw('err')\r\n
+  \ threw(obj)\r\n  alwaysThrew()\r\n  alwaysThrew('err')\r\n  alwaysThrew(obj)\r\n
+  \ returned(obj)\r\n  alwaysReturned(obj)\r\n  thisValues\r\n  args\r\n  exceptions\r\n
+  \ returnValues\r\n\r\n*spyCall --- getCall(n)*\r\n  calledOn(obj)\r\n  calledWith(*)\r\n
+  \ calledWithExactly(*)\r\n  threw()\r\n  threw('err')\r\n  threw(obj)\r\n  thisValue\r\n
+  \ args\r\n  exception\r\n  returnValue\r\n\r\n* argument list\r\nStub\r\n*sinon*\r\n
+  \ stub()\r\n  stub(obj, \"fn\")\r\n  stub(obj, \"fn\", fn\r\n  stub(obj)\r\n\r\n*stub*\r\n
+  \ withArgs(*)\r\n  returns(obj)\r\n  throws()\r\n  throws('err')\r\n  throws(obj)\r\n
+  \ callsArg(index)\r\n  callsArgWith(index, *)\r\n  yields(*)\r\n  yieldsTo(property,
+  *)\r\n\r\nMock\r\n*sinon*\r\n  mock(obj)\r\n  mock()\r\n\r\n*mock*\r\n  verify()\r\n
+  \ restore()\r\n\r\n*expectation --- expects('fn')*\r\n  atLeast(n)\r\n  atMost(n)\r\n
+  \ never()\r\n  once()\r\n  twice()\r\n  thrice()\r\n  exactly(n)\r\n  withArgs(*)\r\n
+  \ withExactArgs(*)\r\n  on(obj)\r\n  verify()\r\n\r\nMatchers\r\n\r\nJasmine Matchers\r\n*expect(x)*\r\n
+  \ toEqual(y)\r\n  toBe(y)\r\n  toMatch(pattern)\r\n  toBeDefined()\r\n  toBeNull()\r\n
+  \ toBeTruthy()\r\n  toBeFalsy()\r\n  toContain()\r\n  toBeLessThan(y)\r\n  toBeGreaterThan(y)
+  \   \r\n  toHaveBeenCalled(y)   \r\n  toHaveBeenCalledWith(y)\r\n\r\n*expect(fn)*\r\n
+  \ toThrow(e)\r\n\r\n*expect(e).not* - negate criteria\r\n\r\nSinon.JS Matchers\r\n*expect(spy)*\r\n
+  \ toHaveBeen\r\n    Called()\r\n    CalledOnce()\r\n    CalledTwice()\r\n    CalledThrice()\r\n
+  \   CalledBefore(spy)\r\n    CalledAfter(spy)\r\n    CalledOn(obj)\r\n    AlwaysCalledOn(obj)\r\n
+  \   CalledWith(*)\r\n    AlwaysCalledWith(*)\r\n    CalledWithExactly(*)\r\n    AlwaysCalledWithExactly(*)\r\n
+  \ toHaveReturned(obj)\r\n  toHaveAlwaysReturned(obj)\r\n\r\n*expect(spy).not* -
+  negate criteria"

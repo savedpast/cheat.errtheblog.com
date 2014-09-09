@@ -1,0 +1,21 @@
+---
+openssl: ! "View a certificate:\n  openssl x509 -in mycert.crt -text\n\nRemove passphrase
+  from a key:\n  openssl rsa -in server.key -out server-without-passphrase.key\n\nGenerate
+  a self-signed cert/key:\n  openssl req -new -newkey rsa:2048 -days 365 -nodes -x509
+  -keyout server.key -out server.pem\n\nEncrypt and decrypt a single file:\n  openssl
+  aes-128-cbc -salt -in file -out file.aes\n  openssl aes-128-cbc -d -salt -in file.aes
+  -out file\n\ntar and encrypt a whole directory:\n  tar -cf - directory | openssl
+  aes-128-cbc -salt -out directory.tar.aes\n  openssl aes-128-cbc -d -salt -in directory.tar.aes
+  | tar -x\n\ntar zip and encrypt a whole directory:\n  tar -zcf - directory | openssl
+  aes-128-cbc -salt -out directory.tgz.aes\n  openssl aes-128-cbc -d -salt -in directory.tgz.aes
+  | tar -xz\n\nconvert a .crt to .pem\n  openssl x509 -inform DER -in ca_cert.crt
+  -out ca_cert.pem -outform PEM\n\nprint cert info\n  openssl x509 -in ca_cert.pem
+  -text -noout\n\nadd CA cert to \"trusted\" (your unix distribution might have a
+  different path to configuration). this will add a sym link with the hash as name\n
+  \ cd /System/Library/OpenSSL/certs\n  sudo ln -s ca_cert.pem `openssl x509 -hash
+  -noout -in ca_cert.pem`.0\n\nverify a server cert against a CA\n  openssl verify
+  -CApath /System/Library/OpenSSL/certs/ /tmp/securesite.com.pem\n\nconnect to a server
+  (CApath to your distro)\n  openssl s_client -CApath /System/Library/OpenSSL/certs/certs/
+  -connect securesite.com:443\n\nverify private key match\n  openssl x509 -noout -modulus
+  -in server.pem | openssl md5 ;\\\n  openssl rsa -noout -modulus -in server.key |
+  openssl md5"

@@ -1,0 +1,4 @@
+---
+assert_kind_of: ! "# 'cheat assertions' for the rest\n\nassert_kind_of(klass, object,
+  message=\"\")\n\nPasses if object .kind_of? klass\n\nExample:\n\n  assert_kind_of
+  Object, 'foo'"

@@ -1,0 +1,39 @@
+---
+radrails_rhtml: ! "-- RadRails RHTML Cheat Sheet -- \narrow\n&#x2192;\n\nbackspace\n&#x232B;\n\nbacktab\n&#x21E4;\n\nbase\n<base
+  href=\"${href}\"${target}>\n\nbody\n<body>\n\t${cursor}\n</body>\n\nbodyo\n<body
+  onload=\"${onload}; return false\">\n\t${cursor}\n</body>\n\nbr\n<br />\n\ncommand\n&#x2318;\n\ncontrol\n&#x2303;\n\ndelete\n&#x2326;\n\ndiv\n<${div}
+  id=\"${name}\" class=\"${classes}\">\n\t${paste}\n</${div}>\n\ndoctype\n<!DOCTYPE
+  HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\"\n\t\"http://www.w3.org/TR/html4/strict.dtd\">\n\n\ndoctype\n<!DOCTYPE
+  HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\t\"http://www.w3.org/TR/html4/loose.dtd\">\n\n\ndoctype\n<!DOCTYPE
+  html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\"\n\t\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">\n\n\ndoctype\n<!DOCTYPE
+  html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n\t\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n\ndoctype\n<!DOCTYPE
+  html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n\t\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n\ndoctype\n<!DOCTYPE
+  html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\"\n\t\"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n\n\ndown\n&#x2193;\n\nenter\n&#x2305;\n\nerb\n<%=
+  ${paste} %>\n\nescape\n&#x238B;\n\nform\n<form action=\"${action}\" method=\"${get}\"
+  accept-charset=\"utf-8\">\n\t${cursor}\n\n\t<p><input type=\"submit\" value=\"Continue
+  &rarr;\"></p>\n</form>\n\nft\n<%= form_tag :action => \"${update}\" %>\n\nh1\n<h1
+  id=\"${name}\">${paste}</h1>\n\nhead\n<head>\n\t<meta http-equiv=\"Content-type\"
+  content=\"text/html; charset=utf-8\">\n\t<title>${title}</title>\n\t${cursor}\n</head>\n\ninput\n<input
+  type=\"${button}\" name=\"${some_name}\" value=\"${3}\"${id}>\n\nleft\n&#x2190;\n\nlia\n<%=
+  link_to \"${text}\", :action => \"${index}\" %>\n\nliai\n<%= link_to \"${text}\",
+  :action => \"${edit}\", :id => ${item} %>\n\nlic\n<%= link_to \"${text}\", :controller
+  => \"${items}\" %>\n\nlica\n<%= link_to \"${text}\", :controller => \"${items}\",
+  :action => \"${index}\" %>\n\nlicai\n<%= link_to \"${text}\", :controller => \"${items}\",
+  :action => \"${edit}\", :id => ${item} %>\n\nlink\n<link rel=\"${stylesheet}\" href=\"${master}\"
+  type=\"text/css\" media=\"${screen}\" title=\"${title}\" charset=\"${utf}\"${TM_XHTML}>\n\nmailto\n<a
+  href=\"mailto:${email}?subject=${feedback}\">${email}</a>\n\nmeta\n<meta name=\"${name}\"
+  content=\"${content}\"${TM_XHTML}>\n\nmovie\n<object width=\"${320}\" height=\"${240}\"
+  classid=\"clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B\" codebase=\"http://www.apple.com/qtactivex/qtplugin.cab\">\n\t<param
+  name=\"src\" value=\"${movie}\">\n\t<param name=\"controller\" value=\"${true}\">\n\t<param
+  name=\"autoplay\" value=\"${false}\">\n\t<embed src=\"${movie}\"\n\t\twidth=\"${320}\"
+  height=\"${240}\"\n\t\tcontroller=\"${true}\" autoplay=\"${false}\"\n\t\tscale=\"tofit\"
+  cache=\"true\"\n\t\tpluginspage=\"http://www.apple.com/quicktime/download/\"\n\t>\n</object>\n\nnbsp\n&nbsp;\n\noption\n&#x2325;\n\nreturn\n&#x21A9;\n\nright\n&#x2192;\n\nrp\n<%=
+  render :partial => \"${item}\" %>\n\nrpc\n<%= render :partial => \"${item}\", :collection
+  => ${items} %>\n\nrpl\n<%= render :partial => \"${item}\", :locals => { :${name}
+  => ${value} } %>\n\nrpo\n<%= \trender :partial => \"${item}\", :object => ${object}
+  %>\n\nrps\n<%= render :partial => \"${item}\", :status => ${500} %>\n\nscript\n<script
+  type=\"text/javascript\" charset=\"utf-8\">\n\t${cursor}\n</script>\n\nscriptsrc\n<script
+  src=\"${url}\" type=\"text/javascript\" charset=\"${utf}\"></script>\n\nshift\n&#x21E7;\n\nstyle\n<style
+  type=\"text/css\" media=\"${screen}\">\n\t${cursor}\n</style>\n\ntab\n&#x21E5;\n\ntable\n<table
+  border=\"${0}\" cellpadding=\"${0}\">\n\t<tr><th>${Header}</th></tr>\n\t<tr><td>${Data}</td></tr>\n</table>\n\ntextarea\n<textarea
+  name=\"${name}\" rows=\"${8}\" cols=\"${40}\">${cursor}</textarea>\n\ntitle\n<title>${title}</title>\n\nup\n&#x2191;"

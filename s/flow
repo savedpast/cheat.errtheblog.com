@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># a work flow for hacking in the land of git (one of many) inspired from:
+# http://jonrohan.me/guide/git/dead-simple-git-workflow-for-agile-teams/
+###
+$ git clone (URL to repo)          # get that code
+### branching for hacking together a pull request
+$ git pull                         # sync up to latest           |
+$ git checkout -b HACKING_TOPIC    # branch to start hacking on  | gcb
+### keep hacking branch in sync with production
+$ git checkout master              # back to master              |
+$ git pull origin master           # resync your master          |
+$ git checkout HACKING_TOPIC       # back to hacking branch      |
+$ git rebase master                # sync your hacking branch    | 
+  # -&gt; hack -&gt; hack -&gt; hack on your banch                        | hack.sh
+### ship it! this is production! merge to master and push  
+$ git checkout master              # back to master              |
+$ git merge HACKING_TOPIC          # merge the goodness          | 
+$ git push origin master           # shipping to production      | 
+$ git checkout HACKING_TOPIC       # back to hacking branch      | ship.sh
+### done with feature. delete this branch (ship good stuff first)
+$ git checkout master              # back to master              |
+$ git branch -d HACKING_TOPIC      # delete branch               | dwf.sh</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

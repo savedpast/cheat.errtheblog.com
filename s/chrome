@@ -1,0 +1,162 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>===========================================
+Mac shortcuts
+===========================================
+
+===========================================
+Tab and window shortcuts
+===========================================
+
+⌘-N
+Opens a new window.
+
+⌘-T
+Opens a new tab.
+
+⌘-Shift-N
+Opens a new window in incognito mode.
+
+⌘-B
+Toggles the bookmarks bar on and off.
+
+Press ⌘-O, then select file.
+Opens a file from your computer in Google Chrome.
+
+Press ⌘ and click a link. Or click a link with your middle mouse button (or mousewheel).
+Opens the link in a new tab in the background .
+
+Press ⌘-Shift and click a link. Or press Shift and click a link with your middle mouse button (or mousewheel).
+Opens the link in a new tab and switches to the newly opened tab.
+
+Press Shift and click a link.
+Opens the link in a new window.
+
+⌘-Shift-T
+Reopens the last tab you've closed. Google Chrome remembers the last 10 tabs you've closed.
+
+Drag a tab out of the tab strip.
+Opens the tab in a new window.
+
+Drag a tab out of the tab strip and into an existing window.
+Opens the tab in the existing window.
+
+Ctrl-Tab
+Switches to the next tab.
+
+Ctrl-Shift-Tab
+Switches to the previous tab.
+
+⌘-Q
+Closes Google Chrome.
+
+⌘-W
+Closes the current tab or pop-up.
+
+Click and hold either the Back or Forward arrow in the browser toolbar.
+Displays your browsing history in the tab.
+
+Delete
+Goes to the previous page in your browsing history for the tab.
+
+Shift-Delete
+Goes to the next page in your browsing history for the tab.
+
+Press Shift while clicking the + button in the top left corner of the window.
+Maximizes the window.
+
+Double-click the blank area on the tab strip.
+Minimizes the window.
+
+===========================================
+Address bar shortcuts
+===========================================
+
+Use the following shortcuts in the address bar:
+
+Type a search term, then press Enter.
+Performs a search using your default search engine.
+
+Type a search engine keyword, press Space, type a search term, and press Enter.
+Performs a search using the search engine associated with the keyword.
+
+Begin typing a search engine URL, press Tab when prompted, type a search term, and press Enter.
+Performs a search using the search engine associated with the URL.
+
+Ctrl+Enter
+Adds www. and .com to your input in the address bar and open the resulting URL.
+
+Type a URL, then press ⌘-Enter.
+Opens the URL in a new background tab.
+
+⌘-L
+Highlights the URL.
+
+⌘-Option-F
+Places a '?' in the address bar. Type a search term after the question mark to perform a search using your default search engine.
+
+Press Option and the left arrow together.
+Moves your cursor to the preceding key term in the address bar
+
+Press Option and the right arrow together.
+Moves your cursor to the next key term in the address bar
+
+Press Shift-Option and the left arrow together.
+Highlights the preceding key term in the address bar
+
+Press Shift-Option and the right arrow together.
+Highlights the next key term in the address bar
+
+⌘-Delete
+Deletes the key term that precedes your cursor in the address bar
+
+Press Page Up or Page Down in the addess bar menu.
+Selects the previous or next entry in the menu.
+
+===========================================
+Webpage shortcuts
+===========================================
+
+⌘-P
+Prints your current page.
+
+⌘-S
+Saves your current page.
+
+⌘-R
+Reloads your current page.
+
+⌘-F
+Opens the find bar.
+
+⌘-G
+Finds the next match for your input in the find bar.
+
+⌘-Shift-G or Shift-Enter
+Finds the previous match for your input in the find bar.
+
+Press Option and click a link.
+Downloads the target of the link.
+
+Drag a link to bookmarks bar
+Bookmarks the link.
+
+⌘-D
+Bookmarks your current webpage.
+
+Space bar
+Scrolls down the web page.
+
+===========================================
+Text shortcuts
+===========================================
+
+⌘-C
+Copies highlighted content to the clipboard.
+
+⌘-V
+Pastes content from the clipboard.
+
+⌘-X or Shift-Delete
+Deletes the highlighted content and copies it to the clipboard.
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

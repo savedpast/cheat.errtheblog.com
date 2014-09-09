@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>EventMachine
+============
+
+Installation:
+$ gem install eventmachine
+
+Synchronous Ruby code (Not EM appropriate):
+ret = operation(); do_something_with(ret)
+
+Evented, asynchronous code (EM appropriate):
+operation{ |ret| do_something_with(ret) }
+
+Start the reactor:
+EM.run {...} | EventMachine.run do ... end
+
+Check that the reactor is running:
+EM.reactor_running?
+
+Start a server:
+EM.run { EM.start_server '0.0.0.0', 6666, FooServer }
+
+Stop the reactor:
+EM.stop | EM.run{ puts &quot;reactor started!&quot;; EM.stop; }; puts &quot;this will happen&quot;
+
+Queue a proc to be executed on the next iteration of the reactor loop:
+EM.next_tick | do_work = proc{...}; EM.next_tick(&amp;do_work)
+
+Iterate over multiple ticks of the reactor:
+EM::Iterator.new(0..10, 2).each(proc{ |num,iter| iter.next }, proc{ puts 'All done' })
+
+Set the size of the worker thread pool:
+EM.threadpool_size
+
+Push a job onto the thread pool:
+EM.defer(proc{ result = long_blocking_call_on_worker_thread; result }, proc{|result| use_reactor_thread(result) })
+
+Schedule/defer something for specified seconds:
+EventMachine.add_timer(1) { puts &quot;hello one second from #{time}!&quot; }
+
+Create interval timing:
+EM::PeriodicTimer.new(0.25) { foo_every_quarter_second() }
+
+Specify event handlers:
+operation{ do_something } | operation(proc{ do_something }) | operation(&amp;method(:do_something)) | operation(obj.method(:do_something))
+
+Standard EM:Callback interface:
+def operation(*args, &amp;blk) { handler = EM::Callback(*args, &amp;blk); handler.call }
+
+
+EM.schedule
+EM::Deferrable
+EM::Queue
+EM::Channel
+EM.system
+EM.start_server (and EM.stop_server): TCP Server
+EM.connect (and EM.bind_connect): TCP Client
+EM.open_datagram_socket: UDP Socket
+EM::Protocols
+EM.watch and EM.attach
+EM.watch_file
+EM.watch_process
+EM.open_keyboard</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

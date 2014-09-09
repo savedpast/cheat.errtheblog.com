@@ -1,0 +1,7 @@
+---
+lighthouse: ! "- Commit comment [#213]\nAdds message as comment to ticket #213\n\n
+  \ * tagged - adds tag to the ticket (does not replace)\n  * responsible - sets the
+  user responsible for ticket (responsible:none to clear)\n  * milestone - sets the
+  milestone for ticket (milestone:none to clear)\n  * state - sets state (new, open,
+  hold, resolved, invalid)\n\n- Commit comment [#213 tagged:committed responsible:johan
+  milestone:\"Launch\" state:resolved]"

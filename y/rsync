@@ -1,0 +1,5 @@
+---
+rsync: ! "Synchronize directory with remote\n  rsync -auz -e ssh remote:/dir/ . &&
+  rsync -auz -e ssh . remote:/dir/\n\nYou can always use the --dry-run option for
+  testing.\n\nCheck out --modify-window option when syncing with a non-POSIX file
+  system like FAT."

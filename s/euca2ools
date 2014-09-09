@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Initialization variables:
+  $ . ~/.euca/eucarc
+
+Infos:
+  $ euca-describe-availability-zones verbose
+  $ euca-describe-images
+  $ euca-describe-keypairs
+  $ euca-describe-instances
+  $ euca-describe-volumes
+  $ euca-describe-snapshots
+  $ euca-describe-addresses
+  $ euca-describe-groups
+
+Keypairs:
+  $ euca-add-keypair mykey &gt; mykey.priv
+  $ euca-delete-keypair helloworld
+
+---
+
+Registering kernel image:
+  $ euca-bundle-image -i vmlinuz-2.6.28-11-server --kernel true
+  $ euca-upload-bundle -b mybucket -m /tmp/vmlinuz-2.6.28-11-server.manifest.xml
+  $ euca-register mybucket/vmlinuz-2.6.28-11-server.manifest.xml
+
+Registering ramdisk image:
+  $ euca-bundle-image -i  initrd.img-2.6.28-11-server
+  $ euca-upload-bundle -b mybucket -m /tmp/initrd.img-2.6.28-11-server.manifest.xml
+  $ euca-register mybucket/initrd.img-2.6.28-11-server.manifest.xml
+
+Registering disk image:
+  $ euca-bundle-image -i image.img --kernel eki-XXXXXXXX --ramdisk eri-XXXXXXXX
+  $ euca-upload-bundle -b mybucket -m /tmp/image.img.manifest.xml
+  $ euca-register mybucket/image.img.manifest.xml
+
+---
+
+Lounching and manage instances:
+  $ euca-run-instances emi-XXXXXXXX -k mykey -t c1.medium
+  $ euca-get-console-output i-XXXXXXXX
+
+Launching an instance associated with the security group “webservers” :
+  $ euca-run-instances emi-XXXXXXXX -k mykey -g webservers
+
+Connecting to the instance:
+  $ ssh -i mykey.priv user@ip
+  $ euca-reboot-instances i-XXXXXXXX
+  $ euca-terminate-instances i-XXXXXXXX
+
+---
+
+Create new 10GB volume:
+  $ euca-create-volume -s 10 -z mycloud
+  $ euca-create-volume -s 10 --snapshot snap-ZZZZZZZZ --zone mycloud
+
+Attach a volume to a runing instance:
+  $ euca-attach-volume -i i-XXXXXXX -d /dev/sdb vol-YYYYYYYY
+
+Detach a volume:
+  $ euca-detach-volume vol-YYYYYYYY
+  $ euca-delete-volume vol-YYYYYYYY  ### for windows only
+
+Snapshots:
+  $ euca-create-snapshot vol-YYYYYYYY
+  $ euca-delete-snapshot snap-ZZZZZZZZ
+
+---
+
+Allocating IP address:
+  $ euca-allocate-address
+  ADDRESS IP
+
+Releasing a public ip address from a specify user:
+  $ euca-release-address IP
+
+Associating a public ip address to a running instance
+  $ euca-associate-address -i i-XXXXXXXX ip
+
+Disassociating a public ip address from a running instance
+  $ euca-disassociate-address ip
+
+---
+
+Creating a security group named “webservers”:
+  $ euca-add-group -d &quot;Web Servers&quot; webservers
+
+Adding a rule to the security group “webservers” allowing icmp and tcp traffic from a.b.c.d:
+  $ euca-authorize -P tcp -s a.b.c.d webservers
+  $ euca-authorize -P icmp -s a.b.c.d webservers
+
+Removing the rule for icmp traffic from the source ip a.b.c.d from the security group “webservers”:
+  $ euca-revoke -P icmp -s a.b.c.d webservers
+
+Deleting the security group “webservers”:
+  $ euca-delete-group webservers
+
+---
+
+source: http://cssoss.wordpress.com/2010/05/10/eucalyptus-beginner%E2%80%99s-guide-%E2%80%93-uec-edition-chapter-10-%E2%80%93-euca%C2%A0commands/</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

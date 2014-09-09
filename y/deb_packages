@@ -1,0 +1,15 @@
+---
+deb_packages: ! 'dpkg --get-selections > installed-software
+
+
+  dpkg --set-selections < installed-software
+
+
+  dselect
+
+
+
+  # How to install .deb files?
+
+
+  $ sudo dpkg -i package.deb'

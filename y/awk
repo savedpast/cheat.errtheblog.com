@@ -1,0 +1,29 @@
+---
+awk: ! "Useful awk programs are often short, just a line or two. Here is a collection\nof
+  useful, short programs to get you started. Some of these programs contain\nconstructs
+  that haven't been covered yet. The description of the program will\ngive you a good
+  idea of what is going on, but please read the rest of the\nmanual to become an awk
+  expert!\n\nawk '{ if (NF > max) max = NF }\n     END { print max }'\n    This program
+  prints the maximum number of fields on any input line. \nawk 'length($0) > 80'\n
+  \   This program prints every line longer than 80 characters. The sole rule has
+  a relational expression as its pattern, and has no action (so the default action,
+  printing the record, is used). \nawk 'NF > 0'\n    This program prints every line
+  that has at least one field. This is an easy way to delete blank lines from a file
+  (or rather, to create a new file similar to the old file but from which the blank
+  lines have been deleted). \nawk '{ if (NF > 0) print }'\n    This program also prints
+  every line that has at least one field. Here we allow the rule to match every line,
+  then decide in the action whether to print. \nawk 'BEGIN { for (i = 1; i <= 7; i++)\n
+  \              print int(101 * rand()) }'\n    This program prints 7 random numbers
+  from 0 to 100, inclusive. \nls -l files | awk '{ x += $4 } ; END { print \"total
+  bytes: \" x }'\n    This program prints the total number of bytes used by files.
+  \nexpand file | awk '{ if (x < length()) x = length() }\n                  END {
+  print \"maximum line length is \" x }'\n    This program prints the maximum line
+  length of file. The input is piped through the expand program to change tabs into
+  spaces, so the widths compared are actually the right-margin columns. \nawk 'BEGIN
+  { FS = \":\" }\n     { print $1 | \"sort\" }' /etc/passwd\n    This program prints
+  a sorted list of the login names of all users. \nawk '{ nlines++ }\n     END { print
+  nlines }'\n    This programs counts lines in a file. \nawk 'END { print NR }'\n
+  \   This program also counts lines in a file, but lets awk do the work. \nawk '{
+  print NR, $0 }'\n    This program adds line numbers to all its input files, similar
+  to `cat -n'.\nawk -F \"\\\"*,\\\"*\" '{print $3}' file.csv\n    CSV parsing, prints
+  3rd field"

@@ -1,0 +1,3 @@
+---
+zsh_process: ! "backgrounding\n  command &\n  ^Z bg\n\ndisowning\n  command &!\n  disown
+  [job]"

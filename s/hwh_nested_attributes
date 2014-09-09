@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>class User &lt; ActiveRecord::Base
+  accepts_nested_attributes_for :account_setting
+  ...
+end
+
+// app/views/users/edit.html.erb
+&lt;%= form_for( @user ) do |f| %&gt;
+  ...
+  &lt;%= f.fields_for :account_setting do |a| %&gt;
+    ...
+
+// 
+class UsersController &lt; ApplicationController
+  def new
+    @user = User.new( :account_setting =&gt; AccountSetting.new )
+  end
+
+  def create
+    @user = User.create( params[ :user ] )
+  end
+end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

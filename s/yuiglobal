@@ -1,0 +1,257 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>YUI Global Object
+=================
+
+The YAHOO Global Object provides a single global namespace within which all YUI Library code resides. It must be included on every page that utilizes the YUI Library, and it must appear before any of the other YUI component.
+
+The YAHOO Global Object also contains a number of methods that are used throughout the library.
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://yui.yahooapis.com/2.6.0/build/yahoo/yahoo-min.js&quot; &gt;&lt;/script&gt; 
+
+Using the Utility Methods in YAHOO
+    * YAHOO.namespace
+    * YAHOO.lang
+    * YAHOO.lang.hasOwnProperty
+    * YAHOO.lang.extend
+    * YAHOO.lang.augment
+    * YAHOO.log
+    * YAHOO_config and YAHOO.env
+    * YUI Module Names
+
+YAHOO.namespace
+---------------
+// Creates a namespace for &quot;myproduct1&quot; 
+YAHOO.namespace (&quot;myproduct1&quot;); 
+YAHOO.myproduct1.Class1 = function(info) { 
+  alert(info); 
+}; 
+	 
+// Creates a namespace for &quot;myproduct2&quot;, and for &quot;mysubproject1&quot; 
+YAHOO.namespace (&quot;myproduct2.mysubproject1&quot;); 
+YAHOO.myproduct2.mysubproject1.Class1 = function(info) { 
+  alert(info); 
+};
+
+YAHOO.lang
+---------------
+// true, an array literal is an array
+YAHOO.lang.isArray([1, 2]);
+
+// false, an object literal is not an array
+YAHOO.lang.isArray({&quot;one&quot;: &quot;two&quot;});
+
+// however, when declared as an array, it is true
+function() {
+    var a = new Array();
+    a[&quot;one&quot;] = &quot;two&quot;;
+    return YAHOO.lang.isArray(a);
+}();
+
+// false, a collection of elements is like an array, but isn't
+YAHOO.lang.isArray(document.getElementsByTagName(&quot;body&quot;));
+
+// true, false is a boolean
+YAHOO.lang.isBoolean(false);
+
+// false, 1 and the string &quot;true&quot; are not booleans
+YAHOO.lang.isBoolean(1);
+YAHOO.lang.isBoolean(&quot;true&quot;);
+
+// null is null, but false, undefined and &quot;&quot; are not
+YAHOO.lang.isNull(null); // true
+YAHOO.lang.isNull(undefined); // false
+YAHOO.lang.isNull(&quot;&quot;); // false
+
+// a function is a function, but an object is not
+YAHOO.lang.isFunction(function(){}); // true
+YAHOO.lang.isFunction({foo: &quot;bar&quot;}); // false
+
+// true, ints and floats are numbers
+YAHOO.lang.isNumber(0);
+YAHOO.lang.isNumber(123.123);
+
+// false, strings that can be cast to numbers aren't really numbers
+YAHOO.lang.isNumber(&quot;123.123&quot;);
+
+// false, undefined numbers and infinity are not numbers we want to use
+YAHOO.lang.isNumber(1/0);
+
+// true, objects, functions, and arrays are objects
+YAHOO.lang.isObject({});
+YAHOO.lang.isObject(function(){});
+YAHOO.lang.isObject([1,2]);
+
+// false, primitives are not objects
+YAHOO.lang.isObject(1);
+YAHOO.lang.isObject(true);
+YAHOO.lang.isObject(&quot;{}&quot;);
+
+// strings
+YAHOO.lang.isString(&quot;{}&quot;); // true
+YAHOO.lang.isString({foo: &quot;bar&quot;}); // false
+YAHOO.lang.isString(123); // false
+YAHOO.lang.isString(true); // false
+
+// undefined is undefined, but null and false are not
+YAHOO.lang.isUndefined(undefined); // true
+YAHOO.lang.isUndefined(false); // false
+YAHOO.lang.isUndefined(null); // false
+
+YAHOO.lang.hasOwnProperty
+-------------------------
+// this is what we are protecting against
+Object.prototype.myCustomFunction = function(x) {
+    alert(x);
+}
+
+var o = {};
+o[&quot;foo&quot;] = &quot;bar&quot;;
+o[&quot;marco&quot;] = &quot;polo&quot;;
+
+// this is where we need the protection
+for (var i in o) {
+    if (YAHOO.lang.hasOwnProperty(o, i)) {
+        alert(&quot;good key: &quot; + i);
+    } else {
+        alert(&quot;bad key: &quot; + i);
+    }
+}
+
+YAHOO.lang.extend
+-----------------
+YAHOO.namespace(&quot;test&quot;);
+
+YAHOO.test.Class1 = function(info) {
+    alert(&quot;Class1: &quot; + info);
+};
+
+YAHOO.test.Class1.prototype.testMethod = function(info) {
+    alert(&quot;Class1: &quot; + info);
+};
+
+YAHOO.test.Class2 = function(info) {
+    // chain the constructors
+    YAHOO.test.Class2.superclass.constructor.call(this, info);
+    alert(&quot;Class2: &quot; + info);
+};
+
+// Class2 extends Class1.  Must be done immediately after the Class2 constructor
+YAHOO.lang.extend(YAHOO.test.Class2, YAHOO.test.Class1);
+
+YAHOO.test.Class2.prototype.testMethod = function(info) {
+    // chain the method
+    YAHOO.test.Class2.superclass.testMethod.call(this, info);
+    alert(&quot;Class2: &quot; + info);
+};
+
+var class2Instance = new YAHOO.test.Class2(&quot;constructor executed&quot;);
+class2Instance.testMethod(&quot;testMethod invoked&quot;);
+
+YAHOO.lang.augment
+------------------
+&lt;!-- debugger output for environments without &quot;console&quot; --&gt;
+&lt;div id=&quot;consoleelement&quot;&gt;&amp;nbsp;&lt;/div&gt;
+
+////////////////////////////////////////////////////////////////////////////
+// The ConsoleProvider example will log to the console if available, or a 
+// div with id=&quot;consoleelement&quot; if the console is not available
+////////////////////////////////////////////////////////////////////////////
+YAHOO.example.ConsoleProvider = function() { };
+YAHOO.example.ConsoleProvider.prototype = {
+    log: function(msg) {
+        // use the error console if available (FF+FireBug or Safari)
+        if (typeof console != &quot;undefined&quot;) {
+            console.log(msg);
+        // write the msg to a well-known div element
+        } else {
+            var el = document.getElementById(&quot;consoleelement&quot;);
+            if (el) {
+                el.innerHTML += &quot;&lt;p&gt;&quot; + msg + &quot;&lt;/p&gt;&quot;;
+            }
+        }
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////
+// Define a class that should be able to write debug messages
+////////////////////////////////////////////////////////////////////////////
+YAHOO.example.ClassWithLogging = function() { };
+YAHOO.lang.augment(YAHOO.example.ClassWithLogging, YAHOO.example.ConsoleProvider);
+
+////////////////////////////////////////////////////////////////////////////
+// Try it out
+////////////////////////////////////////////////////////////////////////////
+var c = new YAHOO.example.ClassWithLogging();
+c.log(&quot;worked&quot;);
+
+YAHOO_config and YAHOO.env
+--------------------------
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+// will be called each time a module is loaded
+function mycallback(info) {
+
+    // see the table in the documentation above for
+	// the contents of the info object passed in here
+	// as your argument. 
+
+    alert(info.name + &quot; loaded&quot;);
+
+    // once the logger is on the page we can get to work
+    if (info.name == &quot;logger&quot;) {
+        YAHOO.widget.Logger.enableBrowserConsole() 
+        var l = new YAHOO.widget.LogWriter(&quot;(&quot;);
+
+        YAHOO.example.EnvTest = function() {
+            function log(msg,cat) {
+                var c=c||&quot;info&quot;;
+                YAHOO.log(msg,c,&quot;LangTest&quot;);
+            }
+
+            return { 
+                init: function() {
+                    new YAHOO.widget.LogReader(&quot;logoutput&quot;);
+                    log(&quot;init&quot;);
+                },
+
+                showInfo: function(e, module){
+                    // YAHOO.env.getVersion returns the same data
+                    // object that YAHOO_config.listener receives
+                    var info = YAHOO.env.getVersion(module);
+
+                    log(&quot;name: &quot; + info.name);
+                    log(&quot;version: &quot; + info.version);
+                    log(&quot;build: &quot; + info.build);
+                    log(&quot;versions: &quot; + info.versions);
+                    log(&quot;builds: &quot; + info.builds);
+                    log(&quot;mainClass version: &quot; + info.mainClass.VERSION);
+                }
+            };
+        } ();
+
+        YAHOO.util.Event.addListener(window, &quot;load&quot;, YAHOO.example.EnvTest.init);
+        YAHOO.util.Event.addListener(&quot;showeventbutton&quot;, &quot;click&quot;, YAHOO.example.EnvTest.showInfo, &quot;event&quot;);
+    }
+}
+
+YAHOO_config = {
+    listener: mycallback
+};
+
+&lt;/script&gt;
+&lt;script src = &quot;../src/js/YAHOO.js&quot; &gt;&lt;/script&gt;
+&lt;script src = &quot;../../build/event/event.js&quot; &gt;&lt;/script&gt;
+&lt;script src = &quot;../../build/dom/dom.js&quot; &gt;&lt;/script&gt;
+&lt;script src = &quot;../../build/dragdrop/dragdrop.js&quot; &gt;&lt;/script&gt;
+&lt;script src = &quot;../../build/logger/logger.js&quot; &gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../../build/logger/assets/logger.css&quot;&gt;
+&lt;style&gt; #logoutput {float: right}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type=&quot;button&quot; id=&quot;showeventbutton&quot; value=&quot;show event version&quot; /&gt;
+&lt;div id=&quot;logoutput&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

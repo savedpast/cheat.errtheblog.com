@@ -1,0 +1,6 @@
+---
+assert_dom_not_equal: ! "# 'cheat assertions' for the rest\n\nassert_dom_not_equal(expected,
+  actual, message = \"\")\n\nThe negated form of assert_dom_equivalent.\n\nExamples\n\n
+  \ # assert that the referenced method does not generate the specified HTML string\n
+  \ assert_dom_not_equal '<a href=\"http://www.example.com\">Apples</a>', link_to(\"Oranges\",
+  \"http://www.example.com\")\n"

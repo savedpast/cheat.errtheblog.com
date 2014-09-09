@@ -1,0 +1,5 @@
+---
+cd: ! "Current Directory\r\n\r\nUsing the 'cd' command allows you to change the 'current
+  directory' within a console.\r\n\r\n\"cd\"    jump to the home directory\r\n\"cd
+  -\"  jump to the previous directory \r\n\"cd ..\" jump one level up\r\n\"cd .\"
+  \ jump to the same directory"

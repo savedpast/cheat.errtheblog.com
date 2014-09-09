@@ -1,0 +1,11 @@
+---
+tabular: ! "With the cursor positioned anywhere in the table, running :Tab/| produces:\r\n\r\nScenario
+  Outline: eating\r\n  Given there are &lt;start&gt; cucumbers\r\n  When I eat &lt;eat&gt;
+  cucumbers\r\n  Then I should have &lt;left&gt; cucumbers\r\n\r\n  Examples:\r\n
+  \   | start | eat | left |\r\n    | 12    | 5   | 7    |\r\n    | 20    | 5   |
+  15   |\r\n\r\n\r\nFor instance, consider starting with the following lines:\r\n>\r\n
+  \   Some short phrase,some other phrase\r\n    A much longer phrase here,and another
+  long phrase\r\n<\r\nLet's say we want to line these lines up at the commas.  We
+  can tell\r\nTabularize to do this by passing a pattern matching , to the Tabularize\r\ncommand:\r\n>\r\n
+  \ :Tabularize /,\r\n\r\n    Some short phrase         , some other phrase\r\n    A
+  much longer phrase here , and another long phrase\r\n<\r\n\r\n"

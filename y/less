@@ -1,0 +1,7 @@
+---
+less: ! "to make apple-specific control characters \n show up instead of their octal
+  sequence use:  less -r\n\nv = to edit the current file using $VISUAL or $EDITOR\nh
+  = help\n/ = search forward\n? = search backward\nn = repeat last search\nb = go
+  backward\nF = Follow changes to the file (like tail -f), use ESC key to stop\ng
+  = goto the beginning of the file\nG = goto the end of the file\nSPACE = page down\nreturn
+  = line down"

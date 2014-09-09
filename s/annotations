@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># Annotations
+
+* TODO to note missing features or functionality that should be added at
+  a later date.
+
+* FIXME to note broken code that needs to be fixed.
+
+* OPTIMIZE to note slow or inefficient code that may cause performance
+  problems.
+
+* HACK to note code smells where questionable coding practices were used and
+  should be refactored away.
+
+* REVIEW to note anything that should be looked at to confirm it is working as
+  intended. For example: REVIEW: Are we sure this is how the client does
+  X currently?
+
+* WTF to note that you don't understand something. Add your name to show who
+  doesn't understand. Example WTF anders, Where does this method come from.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Semantic Versioning Specification (SemVer &lt;http://semver.org/&gt;)
+
+The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be interpreted as described in RFC 2119.
+
+   1. Software using Semantic Versioning MUST declare a public API. This API could be declared in the code itself or exist strictly in documentation. However it is done, it should be precise and comprehensive.
+
+   2. A normal version number MUST take the form X.Y.Z where X, Y, and Z are integers. X is the major version, Y is the minor version, and Z is the patch version. Each element MUST increase numerically. For instance: 1.9.0 &lt; 1.10.0 &lt; 1.11.0.
+
+   3. A special version number MAY be denoted by appending an arbitrary string immediately following the patch version. The string MUST be comprised of only alphanumerics plus dash [0-9A-Za-z-] and MUST begin with an alpha character [A-Za-z]. Special versions satisfy but have a lower precedence than the associated normal version. Precedence SHOULD be determined by lexicographic ASCII sort order. For instance: 1.0.0beta1 &lt; 1.0.0beta2 &lt; 1.0.0.
+
+   4. Once a versioned package has been released, the contents of that version MUST NOT be modified. Any modifications must be released as a new version.
+
+   5. Major version zero (0.y.z) is for initial development. Anything may change at any time. The public API should not be considered stable.
+
+   6. Version 1.0.0 defines the public API. The way in which the version number is incremented is now dependent on this public API and how it changes.
+
+   7. Patch version Z (x.y.Z | x &gt; 0) MUST be incremented if only backwards compatible bug fixes are introduced. A bug fix is defined as an internal change that fixes incorrect behavior.
+
+   8. Minor version Y (x.Y.z | x &gt; 0) MUST be incremented if new, backwards compatible functionality is introduced to the public API. It MAY be incremented if substantial new functionality or improvements are introduced within the private code. It MAY include patch level changes.
+
+   9. Major version X (X.y.z | X &gt; 0) MUST be incremented if any backwards incompatible changes are introduced to the public API. It MAY include minor and patch level changes.
+
+
+Tagging Specification (SemVerTag)
+
+This sub-specification SHOULD be used if you use a version control system (Git, Mercurial, SVN, etc) to store your code. Using this system allows automated tools to inspect your package and determine SemVer compliance and released versions.
+
+   1. When tagging releases in a version control system, the tag for a version MUST be &quot;vX.Y.Z&quot; e.g. &quot;v3.1.0&quot;.
+
+   2. The first revision that introduces SemVer compliance SHOULD be tagged &quot;semver&quot;. This allows pre-existing projects to assume compliance at any arbitrary point and for automated tools to discover this fact.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

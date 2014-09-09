@@ -1,0 +1,52 @@
+---
+assert_select: ! "Selectors\n*                       any element\nE                       an
+  element of type E\nE.warning               an E element whose class is \"warning\"
+  (the document language specifies how class is determined).\nE#myid                  an
+  E element with ID equal to \"myid\".\nE[foo]                  an E element with
+  a \"foo\" attribute\nE[foo=\"bar\"]            an E element whose \"foo\" attribute
+  value is exactly equal to \"bar\"\nE[foo~=\"bar\"]           an E element whose
+  \"foo\" attribute value is a list of space-separated values, one of which is exactly
+  equal to \"bar\"\nE[foo^=\"bar\"]           an E element whose \"foo\" attribute
+  value begins exactly with the string \"bar\"\nE[foo$=\"bar\"]           an E element
+  whose \"foo\" attribute value ends exactly with the string \"bar\"\nE[foo*=\"bar\"]
+  \          an E element whose \"foo\" attribute value contains the substring \"bar\"\nE[hreflang|=\"en\"]
+  \      an E element whose \"hreflang\" attribute has a hyphen-separated list of
+  values beginning (from the left) with \"en\"\nE:root                  an E element,
+  root of the document\nE:nth-child(n)          an E element, the n-th child of its
+  parent\nE:nth-last-child(n)     an E element, the n-th child of its parent, counting
+  from the last one\nE:nth-of-type(n)        an E element, the n-th sibling of its
+  type\nE:nth-last-of-type(n)   an E element, the n-th sibling of its type, counting
+  from the last one\nE:first-child           an E element, first child of its parent\nE:last-child
+  \           an E element, last child of its parent\nE:first-of-type         an E
+  element, first sibling of its type\nE:last-of-type          an E element, last sibling
+  of its type\nE:only-child            an E element, only child of its parent\nE:only-of-type
+  \         an E element, only sibling of its type\nE:empty                 an E element
+  that has no children (including text nodes)\nE:not(s)                an E element
+  that does not match simple selector s\nE F                     an F element descendant
+  of an E element\nE > F                   an F element child of an E element\nE +
+  F                   an F element immediately preceded by an E element\nE ~ F                   an
+  F element preceded by an E element\n\nSubstitution values\n.?                      Class
+  name\n#?                      ID attribute\n[foo=?]                 Attribute value\nMay
+  be string or regular expression, e.g. \"[foo=?]\", /bar/i\n\n\nassert_select(selector,
+  equality?, message?) { |elems| ... }\nassert_select(element, selector, equality?,
+  message?) { |elems| ... }\n\n  Use selector to select elements from response page
+  or first argument (element), and evalute\n  equality test. Raises exception with
+  message if equality test fails.\n\n  Equality tests include:\n    true                At
+  least one element found (:minimum=>1)\n    false               No element found
+  (:count=>0)\n    text, :text=>text   All elements found have the text contents (string
+  or regexp)\n    n, :count=>n        Exactly n elements found\n    :minimum=>n         At
+  least n elements found\n    :maximum=>n         At most n elements found\n    n..m
+  \               Between n and m elements found\n\n  If no count specified, :minimum=>1
+  assumed.\n\n  If no count specified, default is :minimum=>1.\n\n  With block, calls
+  block with all selected elements. Calling assert_select (or any of the other\n  functions)
+  within that block operates on element selected by outer block.\n\nassert_select_rjs(id?)
+  { |elems| ... }\nassert_select_rjs(statement, id?) { |elems| ... }\nassert_select_rjs(:insert,
+  position, id?) { |elems| ... }\n\n  Asserts that RJS statement updates/inserts HTML
+  content and allows nested assertions on the content.\n  With id, selects only RJS
+  statement affecting elements with that id. With statement, RJS statements\n  that
+  :replace, :replace_html or :insert. With :insert can limit position (:before, :after,
+  etc).\n\nassert_select_email() { |elems| ... }\n\n  Assertions on the (HTML) body
+  of the delivered e-mail.\n\nassert_select_encoded(element?) { |elems| ... }\n\n
+  \ For operating on encoded HTML (e.g. RSS item description).\n\ncss_select(selector)
+  => array\ncss_select(element, selector) => array\n\n  Returns an array with selected
+  elements (empty if no elements selected)."

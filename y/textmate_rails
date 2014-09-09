@@ -1,0 +1,34 @@
+---
+textmate_rails: ! "⌘ = command\n⌃ = control\n⌥ = option\n⇧ = shift\n\nMeta\n  Find
+  shortcut                             ⌃ ⌘ T\n  \nFile Navigation\n  go to file                                  ⌘
+  T\n  go to line                                  ⌘ L\n  go to method                              ⇧
+  ⌘ T\n  find in project                           ⇧ ⌘ F\n  reveal in project                         ⌃
+  ⌘ R\n  go to related file                     ⌥ ⌘ DOWN\n  go to...                            ⇧
+  \ ⌥ ⌘ DOWN           \n\nSelection\n  select word                                 ⌃
+  W\n  select line                               ⇧ ⌘ L\n  select block                              ⇧
+  ⌘ B\n\nDeleting\n  Delete rest of the line                      ⌃K\n  Delete line
+  \                              ⇧  ⌃K\n  Join line                                 ⇧
+  \ ⌃J\n  \nToggle\n  Quotes                                       ⌃\"\n  Symbol                                       ⌃:\n
+  \ \nEditing\n  code completion                          Escape\n  fold / unfold
+  \                               F1\n  comment selection                           ⌘
+  /\n  indent selection                   ⌘ [  and ⌘ ]\n  move selection                      ⌃
+  ⌘ (arrow)\n  edit selection                            ⌥ ⌘ A\n  column selection
+  \                      ⌥ (drag)\n\n\nViews\n  wrap selection as link                    ⌃
+  ⇧ L\n  <%  %>                                      ⌃ ⇧ > (twice)\n  <%=  %>                                     ⌃
+  ⇧ > (once)\n  \n  create partial from selection             ⌃ ⇧ H\n  \nCommands
+  \                                 ⌃ ⌥ ⌘ C\n  run file as ruby                            ⌘
+  R\n  start irb                                 ⌃ ⇧ I\n\nSnippets                                  ⌃
+  ⌥ ⌘ S\n                                      Tab Trigger\n  class class_name                          class\n
+  \ def method_name                             def\n  each { |element| ... }                     each\n
+  \ for element in collection                 forin\n  if condition                       if
+  or ifelse\n  unless condition                         unless\n  :key => \"value\"
+  \                              :\n  flash[:notice] = \"...\"                    flash\n
+  \ logger.info \"...\"                          logi\n  assert_equal value, @o.attr
+  \                 ae\n  redirect_to options                     rec[ai]\n  render
+  :action => \"action\"                   ra\n  render :partial => \"item\"               rp[loc]\n
+  \ create_table \"table\" ...                    mct\n  create several: table.column
+  : , :         mccc\n\n  has_many :objects ...                        hm\n  belongs_to
+  :object ...                       bt\n  validates_presence_of :attr ...            vpif\n\n
+  \                                         Hot Key\n  =>                                          ⌃
+  L\n  params[:id]                                 ⌃ P\n  session[:user]                              ⌃
+  J"

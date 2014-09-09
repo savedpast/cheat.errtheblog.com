@@ -1,0 +1,20 @@
+---
+ftp: ! "Terminal ftp commands:\r\n\r\n---\r\nNotes:\r\n\tYou cannot directly upload
+  entire directories containing files and/or other directories.\r\n\t'binary' and
+  'ascii' modes are often set automatically according to file type, so don't worry
+  about them unless you need to.\r\n\r\n---\r\nFirst, go to the directory on your
+  machine from/to which you will upload/download files:\r\n\tcd [directoryName]\r\n\r\nthen
+  connect to the remote machine:\r\n\tftp yourdomain.name\r\n\t(enter login and password
+  when prompted)\r\n\r\n---\r\nlist all files, print current dir, change directory:\r\n\tls
+  -al\r\n\tpwd\r\n\tcd [directoryName]\r\ngo up one level to the parent directory:\r\n\tcd
+  ..\r\nadd ! to for commands to the local machine:\r\n\t!ls -al\r\n\r\nchange directory
+  on the local machine you're running on:\r\n\tlcd [directoryName]\r\n\r\n---\r\ndownload/upload
+  a single file from/to the remote directory:\r\n\tget [fileName]\r\n\tput [fileName]\r\ndownload/upload
+  multiple files from/to the remote directory:\r\n\tmget [fileName wildcard or pattern]\r\n\tmput
+  [fileName wildcard or pattern]\t\r\nexample to upload all .jpg files:\r\n\tmput
+  *.jpg\r\n\r\n---\r\nmake a directory on the remote machine:\r\n\tmkdir [directoryName]\r\ndelete
+  a directory on the remote machine:\r\n\trmdir [directoryName]\r\n\r\n---\r\ndelete
+  a file:\r\n\tdelete [fileName]\r\ndelete multiple files:\r\n\tdelete [fileName wildcard
+  or pattern]\r\nexample to delete all .jpg files:\r\n\tdelete *.jpg\r\n\r\n---\r\nturn
+  confirmation on/off:\r\n\tprompt\r\n\r\nget help:\r\n\thelp\r\n\r\nclose the ftp
+  session with either:\r\n\tbye\r\n\tquit\r\n\r\nmore information online e.g.:\r\n\thttp://linux.about.com/od/commands/l/blcmdl1_ftp.htm\r\n"

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Here's a quick cheat sheet for wycat's moneta cache (http://github.com/wycats/moneta)
+
+
+Instantiate the cache:
+======================
+
+Create a Moneta::Memory cache store:
+&gt;&gt; require 'moneta'
+&gt;&gt; require 'moneta/memory'
+&gt;&gt; cache = Moneta::Memory.new
+
+Create a Moneta::BasicFile cache store:
+&gt;&gt; require 'moneta'
+&gt;&gt; require 'moneta/basic_file'
+&gt;&gt; cache = Moneta::BasicFile.new(:path =&gt; 'my_cache_dir')
+
+
+Use the cache:
+==============
+
+Basic Usage:
+&gt;&gt; cache['my_key'] = 'my_value'
+=&gt; &quot;my_value&quot;
+&gt;&gt; cache['my_key']
+=&gt; &quot;my_value&quot;
+
+Set an expiration:
+&gt;&gt; cache.store('my_2nd_key', 'my_2nd_value', :expires =&gt; 100)
+&gt;&gt; cache['my_2nd_key']
+=&gt; &quot;my_2nd_value&quot;
+
+
+
+The API:
+========
+
+#initialize(options)::
+Options differs per-store, and is used to set up the store.
+
+#[](key)::
+Retrieve a key. if the key is not available, return nil.
+
+#[]=(key, value)::
+Set a value for a key. if the key is already used, clobber it. Keys set using []= will never expire.
+
+#delete(key)::
+Delete the key from the store and return the current value.
+
+#key?(key)::
+true if the key exists, false if it does not
+
+#has_key?(key)::
+Alias for key?
+
+#store(key, value, options)::   
+Same as []=, but you can supply an :expires_in option, which will specify a number of seconds before the key should expire. In order to support the same features across all stores, only full seconds are supported.
+
+#update_key(key, options)::     
+Updates an existing key with a new :expires_in option. If the key has already expired, it will not be updated.
+
+#clear::                        
+Clear all keys in this store.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

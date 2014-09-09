@@ -1,0 +1,34 @@
+---
+minitest: ! "### test\r\n\r\ncapture_io\r\nflunk msg = nil\r\npass  msg = nil\r\nskip
+  \ msg = nil, bt = caller\r\n\r\nassert             test, msg = nil\r\nassert_block
+  \      msg = nil\r\nassert_empty       obj, msg = nil\r\nassert_equal       exp,
+  act, msg = nil\r\nassert_in_delta    exp, act, delta = 0.001, msg = nil\r\nassert_in_epsilon
+  \ a, b, epsilon = 0.001, msg = nil\r\nassert_includes    collection, obj, msg =
+  nil\r\nassert_instance_of cls, obj, msg = nil\r\nassert_kind_of     cls, obj, msg
+  = nil\r\nassert_match       exp, act, msg = nil\r\nassert_nil         obj, msg =
+  nil\r\nassert_operator    o1, op, o2, msg = nil\r\nassert_output      stdout = nil,
+  stderr = nil\r\nassert_raises      *exp\r\nassert_respond_to  obj, meth, msg = nil\r\nassert_same
+  \       exp, act, msg = nil\r\nassert_send        send_ary, m = nil\r\nassert_silent\r\nassert_throws
+  \     sym, msg = nil\r\n\r\nrefute             test, msg = nil\r\nrefute_empty       obj,
+  msg = nil\r\nrefute_equal       exp, act, msg = nil\r\nrefute_in_delta    exp, act,
+  delta = 0.001, msg = nil\r\nrefute_in_epsilon  a, b, epsilon = 0.001, msg = nil\r\nrefute_includes
+  \   collection, obj, msg = nil\r\nrefute_instance_of cls, obj, msg = nil\r\nrefute_kind_of
+  \    cls, obj, msg = nil\r\nrefute_match       exp, act, msg = nil\r\nrefute_nil
+  \        obj, msg = nil\r\nrefute_operator    o1, op, o2, msg = nil\r\nrefute_respond_to
+  \ obj, meth, msg = nil\r\nrefute_same        exp, act, msg = nil\r\n\r\n### spec\r\n\r\nmust_be
+  \               -> assert_operator\r\nmust_be_close_to       -> assert_in_delta\r\nmust_be_empty
+  \         -> assert_empty\r\nmust_be_instance_of    -> assert_instance_of\r\nmust_be_kind_of
+  \       -> assert_kind_of\r\nmust_be_nil            -> assert_nil\r\nmust_be_same_as
+  \       -> assert_same\r\nmust_be_silent         -> assert_silent\r\nmust_be_within_delta
+  \  -> assert_in_delta\r\nmust_be_within_epsilon -> assert_in_epsilon\r\nmust_equal
+  \            -> assert_equal\r\nmust_include           -> assert_includes\r\nmust_match
+  \            -> assert_match\r\nmust_output            -> assert_output\r\nmust_raise
+  \            -> assert_raises\r\nmust_respond_to        -> assert_respond_to\r\nmust_send
+  \             -> assert_send\r\nmust_throw             -> assert_throws\r\n\r\nwont_be
+  \               -> refute_operator\r\nwont_be_close_to       -> refute_in_delta\r\nwont_be_empty
+  \         -> refute_empty\r\nwont_be_instance_of    -> refute_instance_of\r\nwont_be_kind_of
+  \       -> refute_kind_of\r\nwont_be_nil            -> refute_nil\r\nwont_be_same_as
+  \       -> refute_same\r\nwont_be_within_delta   -> refute_in_delta\r\nwont_be_within_epsilon
+  -> refute_in_epsilon\r\nwont_equal             -> refute_equal\r\nwont_include           ->
+  refute_includes\r\nwont_match             -> refute_match\r\nwont_respond_to        ->
+  refute_respond_to\r\n\r\n### mock\r\n\r\nexpect(name, retval, args=[])\r\nverify\r\n"

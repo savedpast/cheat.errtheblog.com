@@ -1,0 +1,12 @@
+---
+legit: ! "Get a nice pretty list of available branches.\r\n$ legit branches\r\n\r\nSyncronizes
+  the given branch. Defaults to current branch. Stash, Fetch, Auto-Merge/Rebase, Push,
+  and Unstash. You can only sync published branches.\r\n$ legit sync [<branch>]\r\n\r\nSwitches
+  to specified branch. Automatically stashes and unstashes any changes.\r\n$ legit
+  switch <branch>\r\n\r\nCreates a new branch off of the specified branch. Swiches
+  to it immediately.\r\n$ legit sprout [<branch>] <new-branch>\r\n\r\nMerges specified
+  branch into the second branch, and removes it. You can only graft unpublished branches.\r\n$
+  legit graft <branch> <into-branch>\r\n\r\nPublishes specified branch to the remote.\r\n$
+  legit publish <branch>\r\n\r\nRemoves specified branch from the remote.\r\n$ legit
+  unpublish <branch>\r\n\r\nadd & commit are also available, but you should just use
+  git for those.\r\n\r\n"

@@ -1,0 +1,26 @@
+---
+font_stacks: ! "// from http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/\n\nBalanced
+  for paragraphs *and* for headers\n-----------------------------------------\n\nArial,
+  \"Helvetica Neue\", Helvetica, sans-serif\nCambria, Georgia, Times, \"Times New
+  Roman\", serif\n\"Century Gothic\", \"Apple Gothic\", sans-serif\nConsolas, \"Lucida
+  Console\", Monaco, monospace\n\"Copperplate Light\", \"Copperplate Gothic Light\",
+  serif\n\"Courier New\", Courier, monospace\n\"Franklin Gothic Medium\", \"Arial
+  Narrow Bold\", Arial, sans-serif\nFutura, \"Century Gothic\", AppleGothic, sans-serif\nImpact,
+  Haettenschweiler, \"Arial Narrow Bold\", sans-serif\n\"Lucida Sans\", \"Lucida Grande\",
+  \"Lucida Sans Unicode\", sans-serif\nTimes, \"Times New Roman\", Georgia, serif\n\n\nBalanced
+  for paragraphs or body copy\n------------------------------------\n\nBaskerville,
+  \"Times New Roman\", Times, serif\nGaramond, \"Hoefler Text\", Times New Roman,
+  Times, serif\nGeneva, \"Lucida Sans\", \"Lucida Grande\", \"Lucida Sans Unicode\",
+  \n    Verdana, sans-serif\nGeorgia, Palatino, \"Palatino Linotype\", Times, \"Times
+  New Roman\", \n    serif\n\"Gill Sans\", Calibri, \"Trebuchet MS\", sans-serif\n\"Helvetica
+  Neue\", Arial, Helvetica, sans-serif\nPalatino, \"Palatino Linotype\", Georgia,
+  Times, \"Times New Roman\", \n    serif\nTahoma, Geneva, Verdana\n\"Trebuchet MS\",
+  \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", \n    Arial, sans-serif\nVerdana,
+  Geneva, Tahoma, sans-serif\n\n\nBalanced for headlines or titles\n--------------------------------\n\nBaskerville,
+  Times, \"Times New Roman\", serif\nGaramond, \"Hoefler Text\", Palatino, \"Palatino
+  Linotype\", serif\nGeneva, Verdana, \"Lucida Sans\", \"Lucida Grande\", \"Lucida
+  Sans Unicode\", \n    sans-serif\nGeorgia, Times, \"Times New Roman\", serif\n\"Gill
+  Sans\", \"Trebuchet MS\", Calibri, sans-serif\nHelvetica, \"Helvetica Neue\", Arial,
+  sans-serif\nPalatino, \"Palatino Linotype\", \"Hoefler Text\", Times, \"Times New
+  Roman\", \n    serif\nTahoma, Verdana, Geneva\n\"Trebuchet MS\", Tahoma, Arial,
+  sans-serif\nVerdana, Tahoma, Geneva, sans-serif"

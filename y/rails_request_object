@@ -1,0 +1,8 @@
+---
+rails_request_object: ! "Methods\n  - accepts\n  - content_type\n  - delete?\n  -
+  domain\n  - env\n  - formatted_post?\n  - get?\n  - head?\n  - host\n  - host_with_port\n
+  \ - method\n  - parameters\n  - path\n  - path_parameters\n  - port\n  - port_string\n
+  \ - post?\n  - post_format\n  - protocol\n  - put?\n  - raw_post\n  - relative_url_root\n
+  \ - remote_ip\n  - request_uri\n  - server_software\n  - ssl?\n  - standard_port\n
+  \ - subdomains\n  - symbolized_path_parameters\n  - xhr?\n  - xml_http_request?\n
+  \ - xml_post?\n  - yaml_post?"

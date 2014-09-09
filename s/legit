@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Get a nice pretty list of available branches.
+$ legit branches
+
+Syncronizes the given branch. Defaults to current branch. Stash, Fetch, Auto-Merge/Rebase, Push, and Unstash. You can only sync published branches.
+$ legit sync [&lt;branch&gt;]
+
+Switches to specified branch. Automatically stashes and unstashes any changes.
+$ legit switch &lt;branch&gt;
+
+Creates a new branch off of the specified branch. Swiches to it immediately.
+$ legit sprout [&lt;branch&gt;] &lt;new-branch&gt;
+
+Merges specified branch into the second branch, and removes it. You can only graft unpublished branches.
+$ legit graft &lt;branch&gt; &lt;into-branch&gt;
+
+Publishes specified branch to the remote.
+$ legit publish &lt;branch&gt;
+
+Removes specified branch from the remote.
+$ legit unpublish &lt;branch&gt;
+
+add &amp; commit are also available, but you should just use git for those.
+
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

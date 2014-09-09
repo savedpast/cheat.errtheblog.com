@@ -1,0 +1,185 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Template for Hudson Jobs for PHP Projects
+=========================================
+
+[Hudson](http://hudson-ci.org/) is an extensible [continuous integration](http://martinfowler.com/articles/continuousIntegration.html) server that starts to see widespread adoption in the PHP community.
+The goal of the `php-hudson-template` project is to provide a standard template ([Template Project Plugin for Hudson](http://wiki.hudson-ci.org//display/HUDSON/Template+Project+Plugin)) for Hudson jobs for PHP projects.
+
+Required Hudson Plugins
+-----------------------
+
+You need to install the following plugins for Hudson:
+
+* [Checkstyle](http://wiki.hudson-ci.org/display/HUDSON/Checkstyle+Plugin) (for processing `PHP_CodeSniffer` logfiles in Checkstyle format)
+* [DRY](http://wiki.hudson-ci.org/display/HUDSON/DRY+Plugin) (for processing `phpcpd` logfiles in PMD-CPD format)
+* [HTML Publisher](http://wiki.hudson-ci.org/display/HUDSON/HTML+Publisher+Plugin) (for publishing the PHPUnit code coverage report, for instance)
+* [JDepend](http://wiki.hudson-ci.org/display/HUDSON/JDepend+Plugin) (for processing `PHP_Depend` logfiles in JDepend format)
+* [PMD](http://wiki.hudson-ci.org/display/HUDSON/PMD+Plugin) (for processing `phpmd` logfiles in PMD format)
+* [Template Project](http://wiki.hudson-ci.org/display/HUDSON/Template+Project+Plugin) (for using `php-hudson-template` as a template for Hudson jobs)
+* [Violations](http://wiki.hudson-ci.org/display/HUDSON/Violations) (for processing various logfiles)
+* [xUnit](http://wiki.hudson-ci.org/display/HUDSON/xUnit+Plugin) (for processing PHPUnit logfiles in JUnit format)
+* [Clover](http://wiki.hudson-ci.org/display/HUDSON/Clover+Plugin) (for processing PHPUnit code coverage xml output)
+
+You can install these plugins using the webfrontend http://SERVER/pluginManager/available or using the hudson-cli
+
+Download: http://SERVER/jnlpJars/hudson-cli.jar and execute
+
+    java -jar hudson-cli.jar -s http://SERVER install-plugin checkstyle
+    java -jar hudson-cli.jar -s http://SERVER install-plugin dry
+    java -jar hudson-cli.jar -s http://SERVER install-plugin htmlpublisher
+    java -jar hudson-cli.jar -s http://SERVER install-plugin jdepend
+    java -jar hudson-cli.jar -s http://SERVER install-plugin pmd
+    java -jar hudson-cli.jar -s http://SERVER install-plugin template-project
+    java -jar hudson-cli.jar -s http://SERVER install-plugin violations
+    java -jar hudson-cli.jar -s http://SERVER install-plugin xunit
+    java -jar hudson-cli.jar -s http://SERVER install-plugin clover
+
+
+Required PHP Tools
+------------------
+
+    sudo pear channel-discover pear.pdepend.org 
+    sudo pear channel-discover pear.phpmd.org 
+    sudo pear channel-discover pear.phpunit.de
+    sudo pear channel-discover components.ez.no
+    sudo pear channel-discover pear.symfony-project.com
+    sudo pear channel-discover pear.phpundercontrol.org
+
+
+    sudo pear install --alldeps pdepend/PHP_Depend-beta
+    sudo pear install --alldeps phpmd/PHP_PMD-alpha
+    sudo pear install --alldeps phpunit/phpcpd
+    sudo pear install --alldeps PHPDocumentor
+    sudo pear install --alldeps PHP_CodeSniffer
+    sudo pear install --alldeps phpunit/PHP_CodeBrowser-alpha
+    sudo pear install --alldeps phpunit/PHPUnit
+
+Build Automation
+----------------
+
+For example, refer to the `build.xml` script of the [Object_Freezer](http://github.com/sebastianbergmann/php-object-freezer) project:
+
+    &lt;project name=&quot;php-object-freezer&quot; default=&quot;build&quot; basedir=&quot;.&quot;&gt;
+     &lt;target name=&quot;clean&quot;&gt;
+      &lt;!-- Clean up --&gt;
+      &lt;delete dir=&quot;build&quot;/&gt;
+
+      &lt;!-- Create build directories --&gt;
+      &lt;mkdir dir=&quot;${basedir}/build/api&quot;/&gt;
+      &lt;mkdir dir=&quot;${basedir}/build/code-browser&quot;/&gt;
+      &lt;mkdir dir=&quot;${basedir}/build/coverage&quot;/&gt;
+      &lt;mkdir dir=&quot;${basedir}/build/logs&quot;/&gt;
+      &lt;mkdir dir=&quot;${basedir}/build/pdepend&quot;/&gt;
+     &lt;/target&gt;
+
+     &lt;!-- Run unit tests and generate junit.xml and clover.xml --&gt;
+     &lt;target name=&quot;phpunit&quot;&gt;
+      &lt;exec executable=&quot;phpunit&quot; failonerror=&quot;true&quot;/&gt;
+     &lt;/target&gt;
+
+     &lt;!-- Run pdepend, phpmd, phpcpd, and phpcs in parallel --&gt;
+     &lt;target name=&quot;parallelTasks&quot;&gt;
+      &lt;parallel&gt;
+       &lt;antcall target=&quot;pdepend&quot;/&gt;
+       &lt;antcall target=&quot;phpmd&quot;/&gt;
+       &lt;antcall target=&quot;phpcpd&quot;/&gt;
+       &lt;antcall target=&quot;phpcs&quot;/&gt;
+       &lt;antcall target=&quot;phpdoc&quot;/&gt;
+      &lt;/parallel&gt;
+     &lt;/target&gt;
+
+     &lt;!-- Generate jdepend.xml and software metrics charts --&gt;
+     &lt;target name=&quot;pdepend&quot;&gt;
+      &lt;exec executable=&quot;pdepend&quot;&gt;
+       &lt;arg line=&quot;--jdepend-xml=${basedir}/build/logs/jdepend.xml Object&quot; /&gt;
+      &lt;/exec&gt;
+     &lt;/target&gt;
+
+     &lt;!-- Generate pmd.xml --&gt;
+     &lt;target name=&quot;phpmd&quot;&gt;
+      &lt;exec executable=&quot;phpmd&quot;&gt;
+       &lt;arg line=&quot;Object xml codesize,unusedcode
+                  --reportfile ${basedir}/build/logs/pmd.xml&quot; /&gt;
+      &lt;/exec&gt;
+     &lt;/target&gt;
+
+     &lt;!-- Generate pmd-cpd.xml --&gt;
+     &lt;target name=&quot;phpcpd&quot;&gt;
+      &lt;exec executable=&quot;phpcpd&quot;&gt;
+       &lt;arg line=&quot;--log-pmd ${basedir}/build/logs/pmd-cpd.xml Object&quot; /&gt;
+      &lt;/exec&gt;
+     &lt;/target&gt;
+
+     &lt;!-- Generate checkstyle.xml --&gt;
+     &lt;target name=&quot;phpcs&quot;&gt;
+      &lt;exec executable=&quot;phpcs&quot; output=&quot;/dev/null&quot;&gt;
+       &lt;arg line=&quot;--report=checkstyle
+                  --report-file=${basedir}/build/logs/checkstyle.xml
+                  --standard=Sebastian
+                  Object&quot; /&gt;
+      &lt;/exec&gt;
+     &lt;/target&gt;
+
+     &lt;!-- Generate API documentation --&gt;
+     &lt;target name=&quot;phpdoc&quot;&gt;
+      &lt;exec executable=&quot;phpdoc&quot;&gt;
+       &lt;arg line=&quot;-d Object -t build/api&quot; /&gt;
+      &lt;/exec&gt;
+     &lt;/target&gt;
+
+     &lt;target name=&quot;phpcb&quot;&gt;
+      &lt;exec executable=&quot;phpcb&quot;&gt;
+       &lt;arg line=&quot;--log    ${basedir}/build/logs
+                  --source ${basedir}/Object
+                  --output ${basedir}/build/code-browser&quot; /&gt;
+      &lt;/exec&gt;
+     &lt;/target&gt;
+
+     &lt;target name=&quot;build&quot; depends=&quot;clean,parallelTasks,phpunit,phpcb&quot;/&gt;
+    &lt;/project&gt;
+
+The `build.xml` script above assumes that an XML configuration file for PHPUnit is used to configure the following logging targets:
+
+    &lt;logging&gt;
+     &lt;log type=&quot;coverage-html&quot; target=&quot;build/coverage&quot; title=&quot;Object_Freezer&quot;
+          charset=&quot;UTF-8&quot; yui=&quot;true&quot; highlight=&quot;true&quot;
+          lowUpperBound=&quot;35&quot; highLowerBound=&quot;70&quot;/&gt;
+     &lt;log type=&quot;coverage-clover&quot; target=&quot;build/logs/clover.xml&quot;/&gt;
+     &lt;log type=&quot;junit&quot; target=&quot;build/logs/junit.xml&quot; logIncompleteSkipped=&quot;false&quot;/&gt;
+    &lt;/logging&gt;
+
+Executing the `build.xml` script above will produce the following `build` directory:
+
+    build
+    |-- api ...
+    |-- code-browser ...
+    |-- coverage ...
+    `-- logs
+        |-- checkstyle.xml
+        |-- clover.xml
+        |-- jdepend.xml
+        |-- junit.xml
+        |-- pmd-cpd.xml
+        `-- pmd.xml
+
+These build artifacts will be processed by Hudson.
+
+Using the Job Template
+----------------------
+
+Check out `php-hudson-template` from Git:
+
+    cd $HUDSON_HOME/jobs
+    git clone git://github.com/sebastianbergmann/php-hudson-template.git
+
+* Restart Hudson.
+* Create a new &quot;free-style software project&quot; job
+* Fill in your &quot;Source Code Management&quot; information
+* Configure an Ant-based build
+* Activate &quot;Use publishers from another project&quot; and select `php-hudson-template` as the &quot;Template Project&quot;.
+
+
+                                             dp &lt;dot&gt; patel &lt;at&gt; gmail &lt;dot&gt; com
+                                                         Deven Patel
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,23 @@
+---
+find: ! "To search current directory and sub directories for a specific file:\r\n$
+  find . -name \"rc.conf\" -print\r\n\r\nSame, but case insensitive:\r\n$ find . -iname
+  \"rc.conf\" -print\r\n\r\nSearch for both mpg & avi:\r\n$ find . -iname '*.mpg'
+  -o -iname '*.avi'\r\n\r\nSame, but files only:\r\n$ find . -type f -name \"rc.conf\"
+  -print\r\n\r\nTo search the entire filesystem for a specific file:\r\n$ find / -name
+  \"rc.conf\" -print\r\n\r\nTo search for content inside files:\r\n$ find . -name
+  \"*.css\" -exec grep -l \"#content\" {} \\;\r\n\r\nTo replace content inside files:\r\n$find
+  . -name \"*.css\" -exec sed -i -r 's/#(FF0000|F00)\\b/#0F0/' {} \\;\r\n(replaces
+  #FF0000 red w/ #00FF00 green )\r\n\r\nTo find files changed in the last 1 day\r\n$
+  find . -ctime -1 -type f \r\n\r\nTo find files larger than 1 Mb in /tmp\r\n$ find
+  /tmp -size 1M -type f\r\n\r\nTo find files newer than main.css in ~/src\r\n$ find
+  ~/src -newer main.css\r\n\r\n\r\nTo execute a command on every file/dir\r\n$ find
+  [expression..] -exec [command..] '{}' \\;\r\n\r\nExample: find all files/dirs named
+  CVS and delete them:\r\n$ find -name CVS -exec rm -Rf '{}' \\;\r\n\r\nExample: find
+  all files containing a string:\r\n$ find * -exec grep -l '<string>' {} \\;\r\n\r\nTo
+  search only on the given directory:\r\n$ find [directory..] -maxdepth 1\r\n\r\nExample:
+  find all directories modified in the past day and permission 755:\r\n$ find . -type
+  d -mtime 1 -perm 755\r\n\r\nExample: find and fix all files that have permission
+  o+w:\r\n$ find -type f -perm /002 -exec chmod o-w '{}' \\;\r\n\r\nExample: find
+  all files except *.rdoc and *.json and grep them for a string:\r\n$ find . -type
+  f ! -iname '*.rdoc' ! -iname '*.json' | xargs grep -rni 'cloud'\r\n\r\nMore examples
+  - http://johnmeister.com/CS/UNIX/FIND/find-usage.html"

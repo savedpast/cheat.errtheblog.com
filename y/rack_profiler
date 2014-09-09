@@ -1,0 +1,13 @@
+---
+rack_profiler: ! "SETUP                                               \n=====                                               \n\n
+  \ Install the gem:\n\n    $ sudo gem install rack-contrib\n\n  Edit config.ru:\n\n
+  \   require 'rack/contrib'\n    use Rack::Profiler if ENV['RACK_ENV'] == 'development'\n\n
+  \ In a sinatra app:\n\n    require 'rack/contrib'\n    configure :development do\n
+  \     use Rack::Profiler     \n    end                      \n\n  Default output
+  is in call tree format, suitable for use with KCacheGrind.\n\n  To get flat text
+  output:\n\n    use Rack::Profiler, :printer => :flat\n\n  To get a text call graph\n\n
+  \   use Rack::Profiler, :printer => :graph\n\n  To get an HTML call graph:\n\n    use
+  Rack::Profiler, :printer => :graph_html\n\n\nUSAGE\n=====\n\n  For process time:\n\n
+  \   http://localhost:4567/my_slow_action?profile=process_time\n\n  For wallclock
+  time:\n\n    http://localhost:4567/my_slow_action?profile=wall_time\n\n  For CPU
+  time:\n\n    http://localhost:4567/my_slow_action?profile=cpu_time"

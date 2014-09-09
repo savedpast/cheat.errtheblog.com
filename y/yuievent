@@ -1,0 +1,58 @@
+---
+yuievent: ! "YAHOO.util.Event\n================\n\n<!-- Dependency --> \n<script type=\"text/javascript\"
+  src=\"http://yui.yahooapis.com/2.6.0/build/yahoo/yahoo-min.js\" ></script>\n\n<!--
+  Event source file -->\n<script type=\"text/javascript\" src=\"http://yui.yahooapis.com/2.6.0/build/event/event-min.js\"
+  ></script>\n\nAdd Event Listener\n-------------------\n// array can contain object
+  references, element ids, or both\nvar ids = [\"el1\", \"el2\", \"el3\"];\nfunction
+  fnCallback(e) { alert(this.id); }\nYAHOO.util.Event.addListener(ids, \"click\",
+  fnCallback);\n\n\nSend Arbitary Object to Event Listener\n---------------------------------------\nfunction
+  MyObj(elementId, customProp, callback) {\n   this.elementId = elementId;\n   this.customProp
+  = customProp;\n   this.callback = callback;\n}\n\nMyObj.prototype.addClickHandler
+  = function() {\n   YAHOO.util.Event.addListener(this.elementId, \"click\", this.callback,
+  this);\n};\n\nfunction fnCallback1(e, obj) {\n  // the execution context is the
+  html element (\"myelementid\")\n  alert(this.id + \" click event: \" + obj.customProp);\n}\n\nfunction
+  fnCallback2(e, obj) {\n  // the execution context is the custom object\n  alert(\"click
+  event: \" + this.customProp);\n}\n\nvar myobj = new MyObj(\"myelementid\", \"hello
+  world\", fnCallback1);\nvar mydata = {id: 10 };\n\n// One way to add the handler:\nmyobj.addClickHandler();\n\n//
+  This will do the same thing:\nYAHOO.util.Event.addListener(\"myelementid\", \"click\",
+  fnCallback1, myobj);\n\n// If we pass true as the final parameter, the custom object
+  that is passed\n// is used for the execution scope (so it becomes \"this\" in the
+  callback).\nYAHOO.util.Event.addListener(\"myelementid\", \"click\", fnCallback2,
+  myobj, true);\n\n// Alternatively, we can assign a completely different object to
+  be the\n// execution scope:\nYAHOO.util.Event.addListener(\"myelementid\", \"click\",
+  fnCallback2, mydata, myobj);\n\nRemove Events\n-------------\nYAHOO.util.Event.removeListener(\"myelementid\",
+  \"click\", fnCallback1); \nYAHOO.util.Event.removeListener(\"myelementid\", \"click\");
+  \n\nQuery Listeners List\n--------------------\n// all listeners\nvar listeners
+  = YAHOO.util.Event.getListeners(myelement);\nfor (var i=0; i<listeners.length; ++i)
+  {\n    var listener = listeners[i];\n\talert( listener.type   ); // The event type\n\talert(
+  listener.fn     ); // The function to execute\n\talert( listener.obj    ); // The
+  custom object passed into addListener\n\talert( listener.adjust ); // Scope correction
+  requested, if true, listener.obj\n                              // is the scope,
+  if an object, that object is the scope\n}\n\n// only click listeners \nvar listeners
+  = YAHOO.util.Event.getListeners(myelement, \"click\");\n\nPurge Listeners\n---------------\n//
+  all listeners\nYAHOO.util.Event.purgeElement(myelement);\n// all listeners and recurse
+  children\nYAHOO.util.Event.purgeElement(myelement, true);\n// only click listeners\nYAHOO.util.Event.purgeElement(myelement,
+  false, \"click\");\n\nonAvailable/onContentReady\n---------------------------\nonAvailable:
+  Fire when element is available\nonContentReady: Fire when element and its siblings
+  are available\n\nfunction TestObj(id) {\n  YAHOO.util.Event.onAvailable(id, this.handleOnAvailable,
+  this); \n}\n\nTestObj.prototype.handleOnAvailable = function(me) {\n  alert(this.id
+  + \" is available\");\n}\n\nvar obj = new TestObj(\"myelementid\");\n\nonDOMReady\n----------\nfunction
+  init() {\n   YAHOO.util.Dom.setStyle(\"hidden_element\", \"visibility\", \"\");\n}\nYAHOO.util.Event.onDOMReady(init);\n\n//
+  As with addListener, onAvailable, and onContentReady, you can pass a data object
+  and adjust the scope\n// YAHOO.util.Event.onDOMReady(init, data, scope);\n\nCustom
+  Event\n------------\n\n= Define \n// custom object\nfunction TestObj(name) {\n    this.name
+  = name;\n    // define a custom event\n    this.event1 = new YAHOO.util.CustomEvent(\"event1\",
+  this);\n}\n\n// a custom consumer object that will listen to \"event1\"\nfunction
+  Consumer(name, testObj) {\n    this.name = name;\n    this.testObj = testObj;\n
+  \   this.testObj.event1.subscribe(this.onEvent1, this);\n}\n\nConsumer.prototype.onEvent1
+  = function(type, args, me) {\n    alert(\" this: \" + this +\n          \"\\n this.name:
+  \" + this.name +\n          \"\\n type: \" + type +\n          \"\\n args[0].data:
+  \" + args[0].data +\n          \"\\n me.name: \" + me.name);\n}\n\n\n// random test
+  data to be used as an event argument\nfunction TestData(data) {\n    this.data =
+  data;\n}\n\n// create an instance of our test object\nvar t1 = new TestObj(\"mytestobj1\");\n\n//
+  create the event consumer, passing in the custom \n// object so that it can subscribe
+  to the custom event\nvar c1 = new Consumer(\"mytestconsumer1\", t1);\n\n// create
+  a data object that will be passed to the consumer when the event fires\nvar d1 =
+  new TestData(\"mydata1\");\n\n// fire the test object's event1 event, passing the
+  data object as a parameter\nt1.event1.fire(d1);\n\n// OUTPUT\nthis: [object Object]\nthis.name:
+  mytestobj1\ntype: event1\nargs[0].data: mydata1\nme.name: mytestconsumer1"

@@ -1,0 +1,34 @@
+---
+ec2: ! "------------------------------------------------------------------------------\r\nCommand
+  Group            Long (Prefix: ec2-)         Short (prefix: ec2)\r\n------------------------------------------------------------------------------\r\nAMIs
+  \                    bundle-image                  \r\n                         bundle-vol
+  \                   \r\n                         upload-bundle                 \r\n
+  \                        download-bundle               \r\n                         unbundle
+  \                     \r\n                         delete-bundle                 \r\nImages
+  \                  register                      reg\r\n                         deregister
+  \                   dereg\r\n                         describe-images               dim\r\nInstances
+  \               run-instances                 run\r\n                         terminate-instances
+  \          kill\r\n                         confirm-product-instances     cpi\r\n
+  \                        describe-instances            din\r\nImage Attributes         modify-image-attribute
+  \       matt\r\n                         reset-image-attribute         ratt\r\n
+  \                        describe-image-attribute      datt\r\nKey Pairs                add-keypair
+  \                  addkey\r\n                         describe-keypairs             dkey\r\n
+  \                        delete-keypair                delkey\r\n                         fingerprint-key
+  \              fp\r\nAvailability Zones       describe-availability-zones   daz\r\nEBS
+  \                     create-volume                 addvol\r\n                         describe-volumes
+  \             dvol\r\n                         delete-volume                 delvol\r\n
+  \                        attach-volume                 attvol\r\n                         detach-volume
+  \                detvol\r\n                         create-snapshot               addsnap\r\n
+  \                        describe-snapshot             dsnap\r\n                         delete-snapshot
+  \              delsnap\r\nSecurity Groups          add-group                     addgrp\r\n
+  \                        delete-group                  delgrp\r\n                         describe-group
+  \               dgrp\r\n                         authorize                     auth\r\n
+  \                        revoke                        revoke\r\nIP Addresses             allocate-address
+  \             allocaddr\r\n                         describe-addresses            daddr\r\n
+  \                        release-address               reladdr\r\n                         associate-address
+  \            assocaddr\r\n                         disassociate-address          disaddr\r\nOther
+  \                   get-console-output            gcons\r\n------------------------------------------------------------------------------\r\n\r\nRun
+  a command with --help for more information.\r\n\r\n# Resources\r\n\r\n* PDF Quick
+  Reference\r\n  http://s3.amazonaws.com/awsdocs/EC2/2008-05-05/ec2-qrc-2008-05-05.pdf\r\n*
+  EC2 Technical Documentation index\r\n  http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=87\r\n\r\nTo
+  get instance information from within a machine:\r\n  $ curl http://169.254.169.254/latest/meta-data/kernel-id"

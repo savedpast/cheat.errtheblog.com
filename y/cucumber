@@ -1,0 +1,50 @@
+---
+cucumber: ! "INSTALL\r\n=======\r\n\r\n  INSTALL cucumber & webrat (rspec rspec-rails)\r\n
+  \ =============================================\r\n  $ [sudo] gem install rspec
+  rspec-rails cucumber webrat\r\n  \r\n  Starting from Cucumber 0.4.5 you will need
+  the cucumber-rails gem\r\n\r\n  INSTALL DEPENDENCIES\r\n  ====================\r\n
+  \ $ [sudo] gem install term-ansicolor treetop diff-lcs nokogiri\r\n  \r\n  \r\nBOOTSTRAP
+  THE APP\r\n=================\r\n  script/generate cucumber\r\n  \r\n  \r\nHOW TO
+  USE\r\n==========\r\n  \r\n  RAILS\r\n  =====\r\n  # Generate a basic feature and
+  its step file,\r\n  # its better to make your own!\r\n  script/generate feature
+  post\r\n  \r\n  # run your features\r\n  rake cucumber \r\n  \r\n  # run a specific
+  feature\r\n  rake cucumber features/authentication.feature\r\n  \r\n  COMMAND LINE\r\n
+  \ ============\r\n  # run a specific scenario (this scenario starts on\r\n  # line
+  5 of authentication.feature)\r\n  cucumber features/authentication.feature:5\r\n
+  \ \r\n  \r\n  SAMPLE FEATURE DEFINITION\r\n  =========================\r\n  Feature:
+  [feature name]\r\n    In order to [goal]\r\n    As a [stakeholder]\r\n    I want
+  [behavior]\r\n\r\n  BUILT-IN WEBRAT STEPS\r\n  =====================\r\n  Given
+  I am on [page_name]\r\n\r\n  When I go to [page_name]\r\n  When I press \"[button]\"\r\n
+  \ When I follow \"[link]\"\r\n  When I follow \"[link]\" within \"[parent]\"\r\n
+  \ When I fill in \"[field]\" with \"[value]\"\r\n  When I fill in \"[value]\" for
+  \"[field]\"\r\n  When I fill in the following:\r\n    | field | value |\r\n\r\n
+  \ When I select \"[value]\" from \"[field]\"\r\n  When I select \"[time]\" as the
+  date and time\r\n  When I select \"[datetime]\" as the \"[datetime_label]\" date
+  and time\r\n  When I select \"[time]\" as the time\r\n  When I select \"[time]\"
+  as the \"[time_label]\" time\r\n  When I select \"[date]\" as the date\r\n  When
+  I select \"[date]\" as the \"[date_label]\" date\r\n  When I check \"[field]\"\r\n
+  \ When I uncheck \"[field]\"\r\n  When I choose \"[field]\"\r\n  When I attach the
+  file \"[path]\" to \"[field]\"\r\n\r\n  Then I should see \"[text]\"\r\n  Then I
+  should see \"[text]\" within \"[selector]\"\r\n  Then I should not see \"[text]\"\r\n
+  \ Then I should not see \"[text]\" within \"[selector]\"\r\n  Then the \"[field]\"
+  field should contain \"[value]\"\r\n  Then the \"[field]\" field should not contain
+  \"[value]\"\r\n  Then the \"[label]\" checkbox should be checked\r\n  Then the \"[label]\"
+  checkbox should not be checked\r\n  Then I should be on [page_name]\r\n  Then show
+  me the page\r\n\r\n\r\nDeveloping with Cucumber and BDD\r\n================================\r\n\r\n
+  \ Business value and MMF\r\n  ======================\r\n  You should discuss the
+  “In order to” part of the feature and pop the why stack max 5 times (ask why recursively)
+  until you end up with one of the following business values:\r\n\r\n  * Protect revenue\r\n
+  \ * Increase revenue\r\n  * Manage cost\r\n\r\n  If you’re about to implement a
+  feature that doesn’t support one of those values, chances are you’re about to implement
+  a non-valuable feature. Consider tossing it altogether or pushing it down in your
+  backlog. Focus on implementing the MMFs (Minimum Marketable Features) that will
+  yield the most value.\r\n\r\n  Outcomes and bottom-up scenarios\r\n  ================================\r\n
+  \ The value provided by a system is what you can get out of it – not what you put
+  into it (Chris Matts said that). Just like the value is expressed at the top of
+  a feature (In order to…), the value should be in the steps of a scenarios too, more
+  precisely in the Then steps.\r\n\r\n  When you’re writing a new scenario, I recommend
+  you start with the formulation of the desired outcome. Write the Then steps first.
+  Then write the When step to discover the action/operation and finally write the
+  Given steps that need to be in place in order for the When/Then to make sense.\r\n\r\n
+  \ Read more about cucumber:\r\n  * http://github.com/cucumber/cucumber/wiki/\r\n
+  \ * http://cukes.info/"

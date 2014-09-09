@@ -1,0 +1,3 @@
+---
+ditto: ! "To unzip a zip file into a named directory:\r\n\r\n$ ditto -xk myFolder.zip
+  myFolder"

@@ -1,0 +1,104 @@
+---
+vi: ! 'Primary Commands
+
+  d  delete
+
+  y  copy
+
+  c  change
+
+  r  replace
+
+  p  paste
+
+  u  undo
+
+  a  append
+
+  o  new line
+
+  x  delete char
+
+  control-R  redo
+
+
+  Edit
+
+  dd dw d4j  delete line, delete word, delete 5 lines
+
+  yy yw  copy line, copy word
+
+  cw change word
+
+  p  paste a line
+
+  :s/a/b/  replace a with b
+
+
+  Navigation
+
+  h j k l  left, down, up right, one character/line at a time
+
+  w b e  next word, back word, end of word
+
+  W B E  same, but ignores punctuation
+
+  gg  beginning of file
+
+  G  end of File
+
+  0  first column in a line
+
+  ^  beginning of line
+
+  $  end of line
+
+  /  enter a string, searches for string
+
+  control-b  page up
+
+  control-f  page down
+
+  100G - goto line 100
+
+
+  Modes
+
+  Escape  command mode
+
+  i  insert mode
+
+  v  visual mode
+
+  V  visual (line) mode
+
+
+  File
+
+  :u undo
+
+  :q quit
+
+  :q! force quit
+
+  :wq write, quit
+
+  :/<string>  Search for next occurrence of <string>
+
+  :?<string> Search for previous occurrence of <string>
+
+  :%s/<str_a>/<str_b>/g Replace all str_a with str_b in current buffer
+
+
+  Remote files:
+
+  vi scp://username@password:host/path/to/file/ open
+
+  :e  scp://username@password:host/path/to/file/ open inside vi
+
+  :let g:netrw_scp_cmd=''scp -i private_key.pub'' to use private keys
+
+
+  Recover
+
+  :rec <swapfile>'

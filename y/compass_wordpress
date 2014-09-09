@@ -1,0 +1,8 @@
+---
+compass_wordpress: ! "To install a theme, add this to your compass.rb file:\n\n  ##
+  This assumes '.'\n  require 'compass-wordpress'\n\n  ## An alternate command to
+  run:\n  compass -r compass-wordpress -f wordpress --sass-dir=sass --css-dir=css
+  -s compressed -p <Theme Name> /path/to/installation\n\nWhat this does is call compass,
+  requires the compass-wordpress extension, uses the framework wordpress, sets the
+  sass and css directories, sets the Sass output to be compressed and finally ends
+  with you setting the theme name."

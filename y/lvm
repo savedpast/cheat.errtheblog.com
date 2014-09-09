@@ -1,0 +1,23 @@
+---
+lvm: ! "Creating new PV for LVM\r\n  pvcreate /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1\r\n\r\nRemoving
+  PV from LVM\r\n  pvremove /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1\r\n\r\nShowing
+  info\r\n  pvdisplay\r\n  lvdisplay\r\n  vgdisplay\r\n  lvs\r\n  pvs\r\n  vgs\r\n
+  \ vgscan\r\n  lvscan\r\n  pvscan\r\n\r\nCreating VG \"fileserver\" and add to it
+  our PV\r\n  vgcreate fileserver /dev/sdb1 /dev/sdc1 /dev/sdd1\r\n\r\nExtending VG
+  \"fileserver\" by additional PV\r\n  vgextend fileserver /dev/sde1\r\n\r\nCopying
+  data from one PV to other PV\r\n  pvmove /dev/sdb1 /dev/sde1\r\n\r\nRemoving one
+  PV from VG \"fileserver\" \r\n(first you need to move data from this PV to another
+  PV)\r\n  vgreduce fileserver /dev/sdb1\r\n\r\nRenaming VG\r\n  vgrename fileserver
+  data\r\n\r\nRemoving VG\r\n  vgremove data\r\n\r\nCreating 1GB LV \"media\" in \"fileserver\"
+  VG\r\n  lvcreate --name media --size 1G fileserver\r\n\r\nCreating a filesystem
+  in our LV\r\n  mkfs.ext4 /dev/fileserver/media\r\n\r\nExtending our LV from 1GB
+  to 1.5GB\r\n  lvextend -L1.5G /dev/fileserver/media\r\n\r\nChecking LV filesystem\r\n
+  \ e2fsck -f /dev/fileserver/media\r\nExtending LV filesystem\r\n  resize2fs /dev/fileserver/media\r\nShrinking
+  LV filesystem\r\n  resize2fs /dev/fileserver/media <nr-of-blocks>\r\n\r\nShrinking
+  our LV from 1.5GB to 1GB\r\n(Shrinking a logical volume is the other way round:
+  first we must shrink the filesystem before we reduce the logical volume's size)\r\n
+  \ lvreduce -L1G /dev/fileserver/media\r\n\r\nMounting LV\r\n  mkdir /var/media \r\n
+  \ mount /dev/fileserver/media /var/media\r\n  df -h\r\n\r\nRenaming LV from \"fileserver\"
+  VG\r\n  lvrename fileserver media films\r\n\r\nRemoving LV from \"fileserver\" VG\r\n
+  \ lvremove /dev/fileserver/films\r\n\r\n\r\n\r\n\r\nCreating a snapshot:\r\n  lvcreate
+  --size <snapsize> -s --name <snapname> <root-volume>\r\n\r\n\r\n\r\nsource: http://www.howtoforge.com/linux_lvm_p6"

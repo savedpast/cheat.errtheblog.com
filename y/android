@@ -1,0 +1,45 @@
+---
+android: ! "Android Development\n  Google's Mobile Operating System\n  Currently on
+  the G1 phone available from T-Mobile in the US. \n==========================================================\n\nHello
+  World: \n  http://developer.android.com/guide/tutorials/hello-world.html\n\nNot
+  Using Eclipse IDE? \n  http://developer.android.com/guide/developing/other-ide.html\n\n\nTable
+  of Contents\n==================================\n* Creating a Project Without Eclipse\n*
+  Running a Project\n* Android Virtual Device (AVD)\n    Creating an AVD\n    Listing
+  Targets\n* Working with Virtual SD Cards\n    Creating an SD Card\n    Mounting
+  SD Card\n    Adding Card to AVD\n* Android and Google Maps API\n    Getting MD5
+  Fingerprint of SDK Debug Certificate\n    Getting a Google Maps API Key\n\n\nCreating
+  a Project Without Eclipse\n $ android create project \\\n      --package com.android.helloandroid
+  \\\n      --activity HelloAndroid \\ \n      --target 2 \\\n      --path <path-to-your-project>/HelloAndroid
+  \n\n\nRunning a Project\n  Launch the Emulator (see AVD below):\n    $ emulator
+  -avd <your_avd_name>\n    $ ant debug # compile and sign up with debug key \n    $
+  adb install /path/to/your/application.apk # Install to AVD \n\n   \"If there is
+  more than one emulator running, you must specify the \n   emulator upon which to
+  install the application, by its serial number, \n   with the -s option.  For example:\"\n
+  \  $ adb -s emulator-5554 install /my/project/path/myapp.apk\n\n\nAndroid Virtual
+  Device (AVD)\n  This is the Android emulator, written in Java and available \n  for
+  Windows, OS X, and Linux. \n  http://developer.android.com/guide/developing/tools/avd.html\n\n
+  \ Creating an AVD\n    $ android create avd -n <name> -t <targetID> [-<option> <value>]
+  ...\n\n    Example: \n      Here's an example that creates an AVD with name \"my_android1.5\"
+  \n      and target ID \"2\" (the  standard Android 1.5 system image in \n      the
+  list above): \n\n      $ android create avd -n my_android1.5 -t 2\n\n  Listing Targets\n
+  \   $ android list targets\n\n\nWorking with Virtual SD Cards\n===============================================\nCreating
+  an SD Card\n  $ mksdcard 1024 1024.sdcard # bytes \n  $ mksdcard 128M 128M.sdcard
+  \n  $ mksdcard 2048M 2gig.sdcard\n\nMounting SD Card\n  $ sudo mount -o loop 128M.sdcard
+  /media/card\n  $ sudo cp file1.mp3 file2.jpg file3.txt file4.txt /media/card\n\nAdding
+  Card to AVD\n  Make sure to unmount after copying files to card\n  $ sudo umount
+  /media/card\n  $ ./android create avd --name myAVD --target 2 --sdcard 128M.sdcard\n\nIf
+  you get a warning that the SD card is locked, make sure: \n\"emulator: WARNING:
+  ignoring locked SD Card image at\"\n  Emulator has permissions to read/write the
+  card file\n  Emulator has RWX access to the card file's directory\n  I had problems
+  with the card file being on a FAT32 partition. \n  Moving it to ext3 or reiserFS
+  worked. \n\n\nThanks to \nhttp://blog.jayway.com/2009/04/22/working-with-sd-cards-in-the-android-emulator/\n\n\n\nAndroid
+  and Google Maps API\n================================================\nUse an AVD
+  with target 3 for applications that use \nthe Google Maps API.\n\nGetting MD5 Fingerprint
+  of SDK Debug Certificate\n  You will need this key if you want to obtain a Google
+  Maps API Key.\n  This is necessary if you are using Google Maps in your Android
+  app.\n\n  * OS X and Linux: ~/.android/debug.keystore\n  * Windows XP: C:\\Documents
+  and Settings\\<user>\\.android\\debug.keystore\n  * Windows Vista: C:\\Users\\<user>\\.android\\debug.keystore\n\n
+  \ $ keytool -list -alias androiddebugkey \\\n  -keystore <path_to_debug_keystore>.keystore
+  \\\n  -storepass android -keypass android\n\nGet a Google Maps API Key: \n  The
+  link on the official android site is a 404\n  Avoid this: http://code.google.com/android/add-ons/google-apis/maps-api-signup.html\n
+  \ Use the new link: http://code.google.com/android/maps-api-signup.html"

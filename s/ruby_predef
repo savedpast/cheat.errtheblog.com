@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>---------------------------
+Ruby pre-defined variables:
+---------------------------
+
+$!         exception information message set by 'raise'.
+$@         Array of backtrace of the last exception thrown.
+
+-----------
+$&amp;         string matched by the last successful pattern match in this scope.
+$`         string to the left of the last successful match.
+$'         string to the right of the last successful match.
+$+         last bracket matched by the last successful match.
+$1 to $9   Nth group of the last successful regexp match.
+$~         information about the last match in the current scope.
+
+-----------
+$=         flag for case insensitive, nil by default.
+$/         input record separator, newline by default.
+$\         output record separator for the print and IO#write. Default is nil.
+$,         output field separator for the print and Array#join.
+$;         default separator for String#split.
+
+-----------
+$.         current input line number of the last file that was read.
+$&lt;         virtual concatenation file of the files given on command line.
+$&gt;         default output for print, printf. $stdout by default.
+$_         last input line of string by gets or readline.
+
+-----------
+$0         Contains the name of the script being executed. May be assignable.
+$*         Command line arguments given for the script sans args.
+$$         process number of the Ruby running this script.
+$?         status of the last executed child process.
+$:         Load path for scripts and binary modules by load or require.
+
+-----------
+$&quot;         array contains the module names loaded by require.
+$DEBUG     status of the -d switch.
+$FILENAME  Current input file from $&lt;. Same as $&lt;.filename.
+$LOAD_PATH alias to the $:.
+$stderr    current standard error output.
+$stdin     current standard input.
+$stdout    current standard output.
+$VERBOSE   verbose flag, which is set by the -v switch.
+$-0        alias to $/.
+$-a        True if option -a (&quot;autosplit&quot; mode) is set. Read-only variable.
+$-d        alias to $DEBUG.
+$-F        alias to $;.
+$-i        If in-place-edit mode is set, this variable holds the extension, otherwise nil.
+$-I        alias to $:.
+$-l        True if option -l is set (&quot;line-ending processing&quot; is on). Read-only variable.
+$-p        True if option -p is set (&quot;loop&quot; mode is on). Read-only variable.
+$-v        alias to $VERBOSE.
+$-w        True if option -w is set.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

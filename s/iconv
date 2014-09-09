@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># Iconv for Ruby
+# -&gt; Character Encoding Conversion Library
+
+require 'iconv'
+
+Iconv class methods generally take two or more parameters
+   with the first two being strings containing:
+   -&gt; a target encoding name
+   -&gt; a source encoding name
+
+A few character set name strings:
+  - 'ascii'   - 'utf-16'
+  - 'utf-8'   - 'latin1'
+  ( blah de blah blah blah ...)
+  --&gt; try `iconv -l' on a command line for a full list
+
+quick, one-time conversion of several strings:
+  Iconv.iconv(to, from, *strings) # =&gt; [converted, strings, ...] or
+  Iconv.conv(to, from, *strings)  # same as Iconv.iconv(to, from, *strings).join
+                                  # =&gt; &quot;converted strings joined togeter&quot;
+
+creating a reusable, conversion object that is
+automatically closed (in the style of File.open):
+  Iconv.open(to, from) do |c|   # c is a Iconv conversion object
+    ...                         # the block value is returned 
+  end                           # c is closed after the block exits
+
+Example: 
+  Iconv.open('utf-16', 'ascii') do |c|
+    c.iconv(&quot;\377\376n\000o\000n\000s\000e\000n\000s\000e\000&quot;)
+    # =&gt; &quot;nonsense&quot;
+  end
+
+create a plain old object you close explicitly somewhere later on:
+  converter = Iconv.new(to, from)
+  
+Example:
+  c = Iconv.new('utf-8', 'latin1')
+  c.iconv(&quot;\253 frenchy \273&quot;)  # =&gt; &quot;« frenchy »&quot;
+  ...
+  c.close</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

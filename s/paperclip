@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Paperclip is intended as an easy file attachment library for ActiveRecord.
+
+  Installation:
+  put:
+    gem &quot;paperclip&quot;, &quot;~&gt; 2.3&quot;
+  in your Gemfile
+  
+  Usage:
+  In your model add:
+    class User &lt; ActiveRecord::Base
+      has_attached_file :avatar, :styles =&gt; { :medium =&gt; &quot;300x300&gt;&quot;, :thumb =&gt; &quot;100x100&gt;&quot; }
+    end
+  
+  Your model need the following attributes:
+    &lt;name&gt;_file_name, &lt;name&gt;_content_type, &lt;name&gt;_file_size and &lt;name&gt;_uploaded_at
+
+  an example migration:
+  
+    class AddAvatarColumnsToUser &lt; ActiveRecord::Migration
+      def self.up
+        add_column :users, :avatar_file_name,    :string
+        add_column :users, :avatar_content_type, :string
+        add_column :users, :avatar_file_size,    :integer
+        add_column :users, :avatar_updated_at,   :datetime
+      end
+
+      def self.down
+        remove_column :users, :avatar_file_name
+        remove_column :users, :avatar_content_type
+        remove_column :users, :avatar_file_size
+        remove_column :users, :avatar_updated_at
+      end
+    end
+  
+  In form view:
+    &lt;% form_for :user, @user, :url =&gt; user_path, :html =&gt; { :multipart =&gt; true } do |form| %&gt;
+      &lt;%= form.file_field :avatar %&gt;
+    &lt;% end %&gt;
+
+  To show:
+    &lt;%= image_tag @user.avatar.url %&gt;
+    &lt;%= image_tag @user.avatar.url(:medium) %&gt;
+    &lt;%= image_tag @user.avatar.url(:thumb) %&gt;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

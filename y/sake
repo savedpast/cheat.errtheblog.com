@@ -1,0 +1,17 @@
+---
+sake: ! "***************************************************************************\nSake
+  - system-wide Rake.\nFor more information: http://errtheblog.com/posts/60-sake-bomb\n\n$
+  sudo gem install sake\n\n***************************************************************************\n**
+  Auto Completion Of Sake Tasks\n***************************************************************************\nbash:
+  complete -W \"$(sake -T | awk {'print $2'})\" sake\nz: function sake_task_list {
+  reply=(`sake -T | awk '{ print $2 }'); } \n   compctl -K sake_task_list sake\n\n***************************************************************************\n**
+  Pastie (http://drnicwilliams.com/2007/06/28/pastie-paradise/)\n***************************************************************************\n$
+  sake -i http://pastie.caboo.se/73801.txt\n$ sake -T\n$ sake pastie:send\n  # Sends
+  STDIN or FILE=file to Pastie;\n  # USAGE: cat some_code.rb | sake pastie:send\n
+  \ # OR:    sake pastie:send FILE=some_code.rb\n\nOn OSX, you can get the url for
+  your new pastie in the clipboard using pbcopy:\n$ cat some_code.rb | sake pastie:send
+  | pbcopy\n\nWant to send a patch to someone via pastie?\n$ svn diff | sake pastie:send
+  | pbcopy\n\n***************************************************************************\n**
+  Load up any RubyGem into an editor from cache.\n***************************************************************************\nTo
+  Install:\n$ sake -i http://pastie.org/76167.txt\n\nExample:\n$ sake gems:find activerecord
+  | xargs mate\n***************************************************************************"

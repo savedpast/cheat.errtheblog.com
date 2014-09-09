@@ -1,0 +1,11 @@
+---
+cocoaerrors: ! "Cocoa error codes related to validation.\r\n\r\nopen -h CoreDataErrors.h\r\n\r\nNSManagedObjectValidationError
+  \                  = 1550,\r\nNSValidationMultipleErrorsError                  =
+  1560,\r\nNSValidationMissingMandatoryPropertyError        = 1570,\r\nNSValidationRelationshipLacksMinimumCountError
+  \  = 1580,\r\nNSValidationRelationshipExceedsMaximumCountError = 1590,\r\nNSValidationRelationshipDeniedDeleteError
+  \       = 1600,\r\nNSValidationNumberTooLargeError                  = 1610,\r\nNSValidationNumberTooSmallError
+  \                 = 1620,\r\nNSValidationDateTooLateError                     =
+  1630,\r\nNSValidationDateTooSoonError                     = 1640,\r\nNSValidationInvalidDateError
+  \                    = 1650,\r\nNSValidationStringTooLongError                   =
+  1660,\r\nNSValidationStringTooShortError                  = 1670,\r\nNSValidationStringPatternMatchingError
+  \          = 1680,"

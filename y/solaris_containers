@@ -1,0 +1,97 @@
+---
+solaris_containers: ! "Solaris Containers (formally zones) cheat sheet\n\nThere are
+  two types of zones global and non-global. The global zone is the server itself and
+  is used as the system-wide configuration and control, there can only be one global
+  zone per system. A maximum of 8192 non-global zones can exist on a system, all non-global
+  zones are isolated from each other.\n\nThere are two type types of non-global zones
+  sparse root zone or whole root zones.\n\nwhole root zone\tSolaris packages are copied
+  to the zone's private file system. Disk space usage is much greater than using a
+  sparse zone\nsparse zone\t\nYou can determine how much of the global zone file system
+  you want to be inherited from the global zone. Sparse zones use loopback file systems
+  from global zone.\n\nUse the inherit-pkg-dir resource to specify which directories
+  to inherit.\n\nZone States\n\nConfigured\tConfiguration has been completed and storage
+  has been committed. Additional configuration is still required.\nIncomplete\tZone
+  is in this state when it is being installed or uninstalled.\nInstalled\tThe zone
+  has a confirmed configuration, zoneadm is used to verify the configuration, Solaris
+  packages have been installed, even through it has been installed, it still has no
+  virtual platform associated with it.\nReady (active)\tZone's virtual platform is
+  established. The kernel creates the zsched process, the network interfaces are plumbed
+  and filesystems mounted. The system also assigns a zone ID at this state, but no
+  processes are associated with this zone.\nRunning (active)\tA zone enters this state
+  when the first user process is created. This is the normal state for an operational
+  zone.\nShutting down + Down (active)\tNormal state when a zone is being shutdown.\nZone
+  Daemons\n\nzoneadm\t\nEach zone will have a zoneadm associated with it and carries
+  out the following actions:\n\nallocates the zone ID and starts the zsched process\nsets
+  system-wide resource controls\nprepares the zone's devices if any specified in the
+  zone configuration\nplumbs the virtual network interface\nmounts any loopback or
+  conventional filesystems\n\nzsched\tThe job of the zsched is to keep track of kernel
+  threads running within the zone.\nList zone name\n\n# zonename\nList all zones\n\nAll
+  the configured zone and there status should be listed.\n\n# zoneadm list -cv\nID
+  \  NAME       STATUS    PATH \n0    global     running   / \n3    testzone   running
+  \  /zones/testzone\n\nCreating a zone\n\nWhen creating a zone the zonename must
+  be unique, no longer than 64 characters and is case-sensitive and must begin with
+  a\nalpha-numeric character. It can include underbars(_), hyphens (-) and periods
+  (.). The name global and SUNW are reserved\nwords and cannot be used.\n\n# zonecfg
+  -z testzone\ntestzone: No such zone configured \nUse 'create' to begin configuring
+  a new zone. \nzonecfg:testzone> create \nzonecfg:testzone> set zonepath=/zones/testzone
+  \nzonecfg:testzone> set autoboot=true \nzonecfg:testzone> info \nzonepath: /zones/testzone
+  \nautoboot: true \npool: \ninherit-pkg-dir: \ndir: /lib \ninherit-pkg-dir: \ndir:
+  /platform\ninherit-pkg-dir:\ndir: /sbin \ninherit-pkg-dir: \ndir: /usr \nzonecfg:testzone>
+  verify\nzonecfg:testzone> commit \nzonecfg:testzone> ^D\n\nThe zone will now be
+  created in a configured state, ignore the error at the top as this is just reporting
+  that there is no other testzone.\n\n# zoneadm list -cv\nID  NAME     STATUS     PATH\n0
+  \  global   running    / \n-   testzone configured  /zones/testzone\n\n/zones can
+  be a filesystem or directory. Although the zone has been create it does not have
+  resouces yet i.e no ip address.\n\nInstall the zone\n\nCopy the necessary files
+  from the global zone and populate the product database for the zone. While the zone
+  is being installed\nthe state changes to incomplete.\n\n# zoneadm -z testzone install
+  \n# zoneadm list -cv\nID   NAME    STATUS   PATH \n0     global      running       /
+  \n1    testzone   incomplete        /zones/testzone\n\nOnce the zone is installed
+  the state changes again to installed\n\n# zoneadm list -cv\nID   NAME        STATUS
+  \       PATH \n0    global      running       / \n1    testzone    installed     /zones/testzone\n\nReady
+  a zone\n\nWhen the zone is in the ready state it is associated with a virtual platform,
+  network interfaces are plumbed and filesystems mounted.\nThere is no \"ok>\" prompt
+  in a zone.\n\n# zoneadm -z testzone ready\n# zoneadm list -cv\nID   NAME    STATUS
+  \  PATH \n0     global      running       / \n1    testzone   ready         /zones/testzone\n\nBooting
+  a zone\n\nWhen you boot a zone the state changes to running. When booting a zone
+  it automatically readies the state of a zone so you\ndo not need to ready a zone
+  beforehand.\n\n# zoneadm -z testzone boot\n# zlogin -C testzone \n[Connected to
+  zone 'testzone' console] \n[NOTICE: Zone booting up]\nSunOS Release 5.10 Version
+  Generic 64-bit \nCopyright 1983-2005 Sun Microsystems, Inc. All rights reserved.
+  \nUse is subject to license terms. \nHostname: ukstsg10\nukstsg10 console login:\n\n#
+  zoneadm list -cv\nID   NAME      STATUS   PATH\n0    global    running  / \n4    testzone
+  \ running  /export/home/testzone\n\nLogin into a zones console\n\nYou can login
+  to the zones console, use '~.' to exit out of the console. All console messages
+  will be reported here as per a \nnormal console, they only difference is there is
+  no \"ok>\" prompt.\n\nThe first time a zone is booted you have to finish off the
+  configuration which asks you set language, terminal type, etc\n\n# zlogin -C testzone\nAdding
+  a network resource to a zone\n\nYou need to log into the zone for the changes to
+  take effect\n\n# zonecfg -z testzone \nzonecfg:testzone> add net \nzonecfg:testzone:net>
+  set address=192.168.0.12 \nzonecfg:testzone:net> set physical=hme0 \nzonecfg:testzone:net>
+  end \nzonecfg:testzone> export \ncreate -b \nset zonepath=/zones/testzone \nset
+  autoboot=false \nadd inherit-pkg-dir \nset dir=/lib \nend \nadd inherit-pkg-dir
+  \nset dir=/platform \nend \nadd inherit-pkg-dir \nset dir=/sbin \nend \nadd inherit-pkg-dir
+  \nset dir=/usr \nend \nadd net\nset address=147.184.30.12 \nset physical=hme0 \nend
+  \nzonecfg:testzone>exit\n\nMount a LOFS in a zone (ideal for cdrom)\n\nYou need
+  to log into the zone for the changes to take effect\n\n# zonecfg -z testzone\nzonecfg:myzone>
+  add fs\nzonecfg:myzone:fs> set dir=/mnt\nzonecfg:myzone:fs> set special=/cdrom\nzonecfg:myzone:fs>
+  set type=lofs\nzonecfg:myzone:fs> add options [ro,nodevices]\nzonecfg:myzone:fs>
+  end\nzonecfg:myzone> commit\nzonecfg:myzone> exit\n\nAdd a disk/filesystem device
+  to a zone\n\nYou need to log into the zone for the changes to take effect\n\n# zonecfg
+  -z testzone \nzonecfg:my-zone3> add fs \nzonecfg:my-zone3:fs> set dir=/data1\nzonecfg:my-zone3:fs>
+  set special=/dev/dsk/c1t1d0s0\nzonecfg:my-zone3:fs> set raw=/dev/rdsk/c1t1d0s0\nzonecfg:my-zone3:fs>
+  set type=ufs\nzonecfg:my-zone3:fs> add options [logging, nosuid] \nzonecfg:my-zone3:fs>
+  end \nzonecfg:my-zone3:fs> commit \nzonecfg:my-zone3:fs> exit\n\ncreate the vfstab
+  file entry and mount the device\n\n# df -k\n/data1 8705501 8657 8609789 1% /data1\n\n#
+  mount \n/data1 on /data1 read/write/setuid/devices/intr/largefiles/logging/xattr/onerror=panic/dev=80008
+  8 on Mon Mar 7 15:50:53 2005\n\n# cat /etc/mnttab\n/dev/dsk/c1t1d0s0 /export/home/testzone/root/data1
+  ufs rw,intr,largefiles, logging, xattr,onerror=panic,dev=800088 1110211568\n\nMount
+  a filesystem from the global zone\n\nYou need to log into the zone for the changes
+  to take effect\n\n# zonecfg -z testzone\nzonecfg:myzone> add inherit-pkg-dir\nzonecfg:myzone:fs>
+  set dir=/opt/sfw\nzonecfg:myzone:fs> end\nzonecfg:myzone> commit\nzonecfg:myzone>
+  exit\n\nHalting a zone\n\n# zoneadm -z testzone halt \n# zoneadm list -cv\n\nID
+  NAME     STATUS     PATH \n0  global   running    / \n-  testzone installed  /zones/testzone\n\nRebooting
+  a zone\n\n# zoneadm -z testzone reboot \n# zoneadm list -cv\n\nID NAME     STATUS
+  \    PATH \n0  global   running    / \n1 testzone running  /zones/testzone\n\nUninstalling
+  a zone\n\n# zoneadm -z testzone uninstall -F \n\nDeleting a zone\n\n# zoneadm -z
+  testzone delete -F"

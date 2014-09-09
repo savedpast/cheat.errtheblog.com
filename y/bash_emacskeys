@@ -1,0 +1,26 @@
+---
+bash_emacskeys: ! "Emacs keyboard bindings\r\n\r\nFor OS X, open Terminal Preferences
+  > keyboard, and check:\r\n\"Use option key as meta key\"\r\n\r\n---\r\nIn Terminal\r\n\r\n*
+  and ** = variable user input\r\n\r\nopt-b       : back one word\r\nopt-f       :
+  forward one word\r\nctrl-a      : beginning of line\r\nctrl-e      : end of line\r\nctrl-]*
+  \    : jump forward to character *\r\nctrl-opt-]* : jump backward to character *
+  (not OS X 10.4?)\r\nopt-*       : repeat the next command * times where * is an
+  integer\r\n\r\nctrl-r *    : reverse history search for *\r\nctrl-j      : edit
+  found command\r\n!*          : run last command matching *\r\n* opt-.     : find
+  last command matching * (repeat to cycle)\r\n*!$         : grab last command argument
+  and execute\r\n!#:*        : grab *th argument of current line (to repeat it)\r\n:s/*/**
+  \    : search and replace * with **\r\n\r\n^*^**       : search and replace in previous
+  command\r\n  e.g.\r\n  ls al\r\n  ls: al: No such file or directory\r\n  ^al^-al\r\n
+  \ gives\r\n  ls -al\r\n\r\n^*          : delete first instance of * in previous
+  command\r\n  e.g.\r\n  lss -al\r\n  -bash: lss: command not found\r\n  ^s\r\n  gives\r\n
+  \ ls -al\r\n\r\nCut and paste (Kill and Yank)\r\n\r\nctrl -w     : delete argument
+  back to previous space\r\n            : press immediately more than once to save
+  multiple in one go\r\nopt-del     : delete word back to previous word boundary\r\nopt-d
+  \      : delete forward one word\r\nctrl-k      : kill to end of line\r\nctrl-u
+  \     : kill to start of line\r\n\r\nctrl-y      : paste\r\nopt-y       : (after
+  ctrl-y) cycle through 'kill ring'\r\n\r\ngrab numbered argument e.g.\r\necho a b
+  c d > file.txt\r\necho !echo:3\r\ngives echo c\r\n\r\ntransform: grab tail end :t
+  of last argument e.g.\r\nwget ftp://somedomain.com/somefile.tar.gz\r\ntar xzf !$:t\r\ngives:\r\ntar
+  xzf ftp://somedomain.com/somefile.tar.gz\r\n\r\nremove two extensions with :r\r\ncd
+  !$:r:r\r\ngives\r\ncd somefile\r\n\r\n\r\nsee:\r\nhttp://teachmetocode.com/screencasts/bash-command-line-editing/\r\n\r\nctrl-x
+  ctrl-v : default bash editor\r\n"

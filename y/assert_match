@@ -1,0 +1,4 @@
+---
+assert_match: ! "# 'cheat assertions' for the rest\n\nassert_match(pattern, string,
+  message=\"\")\n\nPasses if string =~ pattern.\n\nExample:\n\n  assert_match(/\\d+/,
+  'five, 6, seven')"

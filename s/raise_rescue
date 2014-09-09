@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Use the &quot;begin/rescue/end&quot; construct for exception handling.
+The global variable &quot;$!&quot; holds the raised exception object.
+
+  begin
+    1 / 0
+  rescue
+    puts $!.class.name + &quot;: &quot; + $!.message
+  end
+  ==&gt; ZeroDivisionError: divided by 0
+
+Rescue catches instances of StandardError or one of its subclasses.
+Use &quot;cheat exceptions&quot; for a visual exception class hierarchy.
+
+Use Kernel#raise (in one of its many forms) to raise the exception.
+By default, this throws a RuntimeError with the given message.
+
+  begin
+    raise &quot;foo bar&quot;
+  rescue
+    puts $!.class.name + &quot;: &quot; + $!.message
+  end
+
+  ==&gt; RuntimeError: foo bar
+
+Use the &quot;begin/rescue/ensure/end&quot; construct for &quot;tidy up&quot; code.
+The ensure clause gets executed whether or not an exception is raised.
+
+  begin
+    raise &quot;foo bar&quot;
+  rescue
+    puts $!.class.name + &quot;: &quot; + $!.message
+  ensure
+    puts &quot;That's it, Folks!&quot;
+  end
+  ==&gt; RuntimeError: foo bar
+      That's it, Folks!
+
+... or even without a rescue clause:
+
+  begin
+    raise &quot;foo bar&quot;
+  ensure
+    puts &quot;That's it, Folks!&quot;
+  end
+  ==&gt; That's it, Folks!
+      RuntimeError: foo bar
+          from (irb):2
+
+Exceptions can be re-raised in the rescue clause, using Kernel#raise.
+
+  begin
+    1 / 0
+  rescue
+    puts &quot;Something bad happened :-(&quot;
+    raise # this re-raises &quot;$!&quot; ...
+  end
+  ==&gt; Something bad happened :-(
+      ZeroDivisionError: divided by 0
+          from (irb):2:in `/'
+          from (irb):2
+
+Various assertions exist to verify exception handling behaviour in test cases.
+See also: &quot;cheat (assert_nothing_raised|assert_raise(s)|assert_nothing_thrown)&quot;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

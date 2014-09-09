@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Creating a New Container
+----
+&gt; Create a 101.conf in /etc/vz/conf | /etc/sysconfig/vz-scripts
+vzctl create 101
+vzctl set 101 --onboot yes --save
+vzctl set 101 --userpasswd root:password
+vzctl start 101
+
+See stats on the VM
+----
+vzctl exec 101 cat /proc/user_beancounters
+
+Check Memory Usage (in MG)
+----
+vzmemcheck -vA</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

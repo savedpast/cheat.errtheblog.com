@@ -1,0 +1,52 @@
+---
+terminal_escapes: ! "ANSI / Xterm / VT100 / Yada Yada Yada\nEscape Codes\n\n==[ ANSI
+  Text Attributes ]===================================================\n\n  Single
+  \   -> \"\\e[<ATTR>m\"\n  Multiple  -> \"\\e[<ATTR>;<ATTR>;...;<ATTR>m\"\n\n  <ATTR>
+  = one of the numeric codes below\n\n  +--------+-------------------------------+\n
+  \ | <ATTR> | Description                   |\n  +--------+-------------------------------+\n
+  \ | Text attributes                        |\n  +--------+-------------------------------+\n
+  \ | 0      | All attributes off            |\n  | 1      | Bold on                       |\n
+  \ | 4      | Underscore                    |\n  | 5      | Blink on                      |\n
+  \ | 7      | Reverse video on              |\n  | 8      | Concealed on                  |\n
+  \ +--------+-------------------------------+\n  | Foreground colors                      |\n
+  \ +--------+-------------------------------+\n  | 30     | Black                         |\n
+  \ | 31     | Red                           |\n  | 32     | Green                         |\n
+  \ | 33     | Yellow                        |\n  | 34     | Blue                          |\n
+  \ | 35     | Magenta                       |\n  | 36     | Cyan                          |\n
+  \ | 37     | White                         |\n  +--------+-------------------------------+\n
+  \ | Background colors                      |\n  +--------+-------------------------------+\n
+  \ | 40     | Black                         |\n  | 41     | Red                           |\n
+  \ | 42     | Green                         |\n  | 43     | Yellow                        |\n
+  \ | 44     | Blue                          |\n  | 45     | Magenta                       |\n
+  \ | 46     | Cyan                          |\n  | 47     | White                         |\n
+  \ +--------+-------------------------------+\n\n==[ Fancier Text Attributes ]================================================\n\n
+  \ +------------------------+------------------+\n  | Escape                 | Description
+  \     |\n  +------------------------+------------------+\n  | XTerm 256 Color Terminals
+  \                |\n  +------------------------+------------------+\n  | \"\\e[38;5;<N>m\"
+  \        | Forground Color  |\n  | \"\\e[48;5;<N>m\"         | Background Color
+  |\n  +------------------------+------------------+\n  | Konsole 24-bit Color                      |\n
+  \ +------------------------+------------------+\n  | \"\\e[38;2;<r>;<g>;<b>m\" |
+  Forground Color  |\n  | \"\\e[48;2;<r>;<g>;<b>m\" | Background Color |\n  +------------------------+------------------+\n\n
+  \ * <N> = color index\n  * <r>, <g>, <b> = red, green, blue values respectively\n
+  \ * <N>, <r>, <g>, <b> are all integers between 0 and 255\n  * 24-bit Color codes
+  appear only appear to be implemented\n    for Konsole (a KDE / Linux Terminal Emulator)\n\n==[
+  Text Size ]==============================================================\n\n  *
+  NOTE: These only work with VT100 compatible terminals\n\n  +--------+-------------------------------------+\n
+  \ | Escape | Description                         |\n  +--------+-------------------------------------+\n
+  \ | \"\\e#3\" | Double-height letters, top half     |\n  | \"\\e#4\" | Double-height
+  letters, bottom half  |\n  | \"\\e#5\" | Single width, single height letters |\n
+  \ | \"\\e#6\" | Double width, single height letters |\n  +--------+-------------------------------------+\n\n==[
+  Cursor ]=================================================================\n\n  +-----------------------+-----------------------------------------+\n
+  \ | Escape                | Description                             |\n  +-----------------------+-----------------------------------------+\n
+  \ | \"\\e[<LINE>;<COLUMN>H\" | Move to line <LINE> and column <COLUMN> |\n  | \"\\e[<N>A\"
+  \            | Move up <N> lines                       |\n  | \"\\e[<N>B\"             |
+  Move down <N> lines                     |\n  | \"\\e[<N>C\"             | Move forward
+  <N> columns                |\n  | \"\\e[<N>D\"             | Move back <N> columns
+  \                  |\n  | \"\\e[s\"                | Save cursor position                    |\n
+  \ | \"\\e[u\"                | Restore cursor position                 |\n  +-----------------------+-----------------------------------------+\n\n==[
+  Clearing the Display ]===================================================\n\n  +---------+-----------------------------------+\n
+  \ | Escape  | Description                       |\n  +---------+-----------------------------------+\n
+  \ | \"\\e[0J\" | Clear screen from cursor down     |\n  | \"\\e[1J\" | Clear screen
+  from cursor up       |\n  | \"\\e[2J\" | Clear entire screen               |\n  |
+  \"\\e[K\"  | Clear line starting at the cursor |\n  | \"\\e[1K\" | Clear line up
+  to the cursor       |\n  | \"\\e[2K\" | Clear entire line                 |\n  +---------+-----------------------------------+"

@@ -1,0 +1,10 @@
+---
+thor_executable: ! "Making an executable with Thor\n==============================\n\n>
+  Read more about Thor on `cheat thor`\n\nYou may want to make a script as an executable
+  command. To do this with Thor:\n\n* include the ruby shebang line.\n* require \"thor\"
+  in your script.\n* define your Thor class.\n* add `#{YourThorClassname}.start` to
+  the bottom of your script.\n\nExample: mythorcommand.rb\n\n``` ruby\n#!/usr/bin/env
+  ruby\nrequire \"rubygems\" # ruby1.9 doesn't \"require\" it though\nrequire \"thor\"\n\nclass
+  MyThorCommand < Thor\n  desc \"foo\", \"Prints foo\"\n  def foo\n    puts \"foo\"\n
+  \ end\nend\n\nMyThorCommand.start\n```\n\nMake the script executable:\n\n``` sh\nchmod
+  a+x mythorcommand.rb\n```\n\nNow you can type:\n\n``` sh\n./mythorcommand.rb foo\n```"

@@ -1,0 +1,62 @@
+---
+virtualenvwrapper: ! '# Virtualenvwrapper
+
+
+  ## Create and start a new virtual environment
+
+
+  v.mk myvirtualenv
+
+
+  ## Deactivating a virtual environment
+
+
+  deactivate
+
+
+  ## Switch to an existing virtual environment
+
+
+  v myvirtualenv
+
+
+  ## List packages used by current virtual environment
+
+
+  yolk -l
+
+
+  ## Take a snapshot of the current environment''s packages
+
+
+  pip freeze > requirements.txt
+
+
+  ## Install from a snapshot
+
+
+  pip install -r requirements.txt
+
+
+  ## Aliases
+
+
+  v=''workon''
+
+  v.deactivate=''deactivate''
+
+  v.mk=''mkvirtualenv --no-site-packages''
+
+  v.mk_withsitepackages=''mkvirtualenv''
+
+  v.rm=''rmvirtualenv''
+
+  v.switch=''workon''
+
+  v.add2virtualenv=''add2virtualenv''
+
+  v.cdsitepackages=''cdsitepackages''
+
+  v.cd=''cdvirtualenv''
+
+  v.lssitepackages=''lssitepackages'''

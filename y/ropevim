@@ -1,0 +1,17 @@
+---
+ropevim: ! "M-/               RopeCodeAssist\r\nM-?               RopeLuckyAssist\r\nC-c
+  g             RopeGotoDefinition\r\nC-c d             RopeShowDoc\r\nC-c f             RopeFindOccurrences\r\n\r\nC-x
+  p o           RopeOpenProject\r\nC-x p k           RopeCloseProject\r\nC-x p f           RopeFindFile\r\nC-x
+  p 4 f         RopeFindFileOtherWindow\r\nC-x p u           RopeUndo\r\nC-x p r           RopeRedo\r\nC-x
+  p c           RopeProjectConfig\r\nC-x p n [mpfd]    RopeCreate(Module|Package|File|Directory)\r\n
+  \                 RopeWriteProject\r\n\r\nC-c r r           RopeRename\r\nC-c r
+  l           RopeExtractVariable\r\nC-c r m           RopeExtractMethod\r\nC-c r
+  i           RopeInline\r\nC-c r v           RopeMove\r\nC-c r x           RopeRestructure\r\nC-c
+  r u           RopeUseFunction\r\nC-c r f           RopeIntroduceFactory\r\nC-c r
+  s           RopeChangeSignature\r\nC-c r 1 r         RopeRenameCurrentModule\r\nC-c
+  r 1 v         RopeMoveCurrentModule\r\nC-c r 1 p         RopeModuleToPackage\r\n\r\nC-c
+  r o           RopeOrganizeImports\r\nC-c r n [vfcmp]   RopeGenerate(Variable|Function|Class|Module|Package)\r\n\r\nC-c
+  r a /         RopeCodeAssist\r\nC-c r a g         RopeGotoDefinition\r\nC-c r a
+  d         RopeShowDoc\r\nC-c r a f         RopeFindOccurrences\r\nC-c r a ?         RopeLuckyAssist\r\nC-c
+  r a j         RopeJumpToGlobal\r\nC-c r a c         RopeShowCalltip\r\n                  RopeAnalyzeModule\r\n\r\n
+  \                 RopeAutoImport\r\n                  RopeGenerateAutoimportCache"

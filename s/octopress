@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># Define Excerpts
+&lt;!--more--&gt;
+
+# Video Tag
+{% video url/to/video [width height] [url/to/poster] %}
+
+# Code Block
+{% codeblock [title(.ext)] [url] [link text] %}
+snippet 
+{% endcodeblock %} 
+
+Specifying the language extension as .ext triggers highlighting for that language. 
+
+Or Backtick which works in Markdown, HTML but not Textile:
+  ``` ruby
+      class Fixnum
+        def prime?
+          ('1' * self) !~ /^1?$|^(11+?)\1+$/
+        end
+      end
+  ```
+
+# Include Code
+{% include_code [title] url %} Url should be path/to/code  Code snippets default to /source/downloads/code change in _config.yml
+
+# Gist Tag
+{% gist gist_id [filename] %}
+
+# Image Tag
+{% img [class names] /path/to/image [width height] [title text] %}
+
+# Render Partial Tag
+{% render_partial path/to/file %}
+
+# Block quote Tag
+{% blockquote [author[, source]] [link] [source_link_title] %}
+Quote string
+{% endblockquote %}
+
+# Pull Quote tag
+  {% pullquote %}
+  Surround your paragraph with the pull quote tags. Then when you come to
+  the text you want to pull, {&quot; surround it like this &quot;} and that's all there is       to it. 
+  {% endpullquote %}</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

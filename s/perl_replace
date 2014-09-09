@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Mass Find/replace in files
+==========================
+
+# Replace all occurrences of one class with another. No backup file created.
+#
+perl -pi -w -e 's/Test::Unit::TestCase/ActiveSupport::TestCase/g;' test/unit/*.rb
+
+# Replace all occurrences of foo with bar and save a backup (e.g. file.txt.bak)
+#
+perl -i.bak -pe 's/foo/bar/g' path/to/file.txt
+
+# Create a date-stamped backup (e.g. file.txt-2012-09-12)
+#
+perl -i-`date +%F` -pe 's/foo/bar/g' path/to/file.txt
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

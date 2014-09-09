@@ -1,0 +1,6 @@
+---
+environment_variables: ! "to set a shell environment variable, type the following
+  at the prompt: VARAIBLE_NAME=value\r\n\r\nexample setting and getting a variable:\r\n>DATE_FORMAT=DMY\r\n>echo
+  $DATE_FORMAT\r\n\r\nnote, this variable will only be available to the given instance
+  of the shell.  It will not be available on a system reboot or to other instances
+  of the shell.\r\n"

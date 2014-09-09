@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>// from http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
+
+Balanced for paragraphs *and* for headers
+-----------------------------------------
+
+Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif
+Cambria, Georgia, Times, &quot;Times New Roman&quot;, serif
+&quot;Century Gothic&quot;, &quot;Apple Gothic&quot;, sans-serif
+Consolas, &quot;Lucida Console&quot;, Monaco, monospace
+&quot;Copperplate Light&quot;, &quot;Copperplate Gothic Light&quot;, serif
+&quot;Courier New&quot;, Courier, monospace
+&quot;Franklin Gothic Medium&quot;, &quot;Arial Narrow Bold&quot;, Arial, sans-serif
+Futura, &quot;Century Gothic&quot;, AppleGothic, sans-serif
+Impact, Haettenschweiler, &quot;Arial Narrow Bold&quot;, sans-serif
+&quot;Lucida Sans&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, sans-serif
+Times, &quot;Times New Roman&quot;, Georgia, serif
+
+
+Balanced for paragraphs or body copy
+------------------------------------
+
+Baskerville, &quot;Times New Roman&quot;, Times, serif
+Garamond, &quot;Hoefler Text&quot;, Times New Roman, Times, serif
+Geneva, &quot;Lucida Sans&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, 
+    Verdana, sans-serif
+Georgia, Palatino, &quot;Palatino Linotype&quot;, Times, &quot;Times New Roman&quot;, 
+    serif
+&quot;Gill Sans&quot;, Calibri, &quot;Trebuchet MS&quot;, sans-serif
+&quot;Helvetica Neue&quot;, Arial, Helvetica, sans-serif
+Palatino, &quot;Palatino Linotype&quot;, Georgia, Times, &quot;Times New Roman&quot;, 
+    serif
+Tahoma, Geneva, Verdana
+&quot;Trebuchet MS&quot;, &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, 
+    Arial, sans-serif
+Verdana, Geneva, Tahoma, sans-serif
+
+
+Balanced for headlines or titles
+--------------------------------
+
+Baskerville, Times, &quot;Times New Roman&quot;, serif
+Garamond, &quot;Hoefler Text&quot;, Palatino, &quot;Palatino Linotype&quot;, serif
+Geneva, Verdana, &quot;Lucida Sans&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, 
+    sans-serif
+Georgia, Times, &quot;Times New Roman&quot;, serif
+&quot;Gill Sans&quot;, &quot;Trebuchet MS&quot;, Calibri, sans-serif
+Helvetica, &quot;Helvetica Neue&quot;, Arial, sans-serif
+Palatino, &quot;Palatino Linotype&quot;, &quot;Hoefler Text&quot;, Times, &quot;Times New Roman&quot;, 
+    serif
+Tahoma, Verdana, Geneva
+&quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif
+Verdana, Tahoma, Geneva, sans-serif</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,41 @@
+---
+devise: ! "Devise is a flexible authentication.\r\n\r\nhttps://github.com/plataformatec/devise\r\n\r\nInstallation\r\n------------\r\n\r\nRails
+  3: Add the following to your Gemfile\r\n\r\n    gem \"devise\"\r\n    gem \"hpricot\"\r\n
+  \   gem \"ruby_parser\"\r\n\r\nInstall devise in your project\r\n\r\n    $ rails
+  generate devise:install\r\n\r\nGenerate devise for your model\r\n\r\n    $ rails
+  generate devise MODEL\r\n    $ rake db:migrate\r\n\r\n(Optional) Generate devise
+  views\r\n\r\n    $ rails generate devise:views\r\n\r\nHelpers\r\n-------\r\n\r\n
+  \   user_signed_in?\r\n    current_user\r\n    user_session\r\n    destroy_user_session_path
+  (Logout)\r\n    new_user_session_path (Login)\r\n    edit_user_registration_path
+  (Edit registration)\r\n    new_user_registration_path (Register new user)\r\n\r\nController
+  stuff\r\n----------------\r\n\r\n    before_filter :authenticate_user!\r\n\r\nModel\r\n-----\r\n\r\n###
+  Model options\r\n\r\n    class User < ActiveRecord::Base\r\n      devise :database_authenticatable,\r\n
+  \       :registerable,\r\n        :confirmable,\r\n        :recoverable,\r\n        :rememberable,\r\n
+  \       :trackable,\r\n        :validatable\r\n    end\r\n\r\n### Migration helpers\r\n\r\n
+  \   create_table :users do |t|\r\n      t.database_authenticatable\r\n      t.confirmable\r\n
+  \     t.recoverable\r\n      t.rememberable\r\n      t.trackable\r\n      t.timestamps\r\n
+  \   end\r\n\r\nRouting\r\n-------\r\n\r\n### Authenticated and unauthenticated routes\r\n\r\n
+  \   unauthenticated do\r\n       root :to => 'home#index'\r\n    end\r\n\r\n    authenticated
+  do\r\n      root :to => 'dashboard#index'\r\n    end\r\n\r\n### As\r\n    as :user
+  do\r\n      get 'sign_in', :to => 'devise/sessions#new'\r\n    end\r\n\r\n### Devise_for
+  magic\r\n  \r\n    devise_for :users\r\n\r\n        # Session routes for Authenticatable
+  (default)\r\n             new_user_session GET  /users/sign_in                    {:controller=>\"devise/sessions\",
+  :action=>\"new\"}\r\n                 user_session POST /users/sign_in                    {:controller=>\"devise/sessions\",
+  :action=>\"create\"}\r\n         destroy_user_session GET  /users/sign_out                   {:controller=>\"devise/sessions\",
+  :action=>\"destroy\"}\r\n       \r\n        # Password routes for Recoverable, if
+  User model has :recoverable configured\r\n            new_user_password GET  /users/password/new(.:format)
+  \    {:controller=>\"devise/passwords\", :action=>\"new\"}\r\n           edit_user_password
+  GET  /users/password/edit(.:format)    {:controller=>\"devise/passwords\", :action=>\"edit\"}\r\n
+  \               user_password PUT  /users/password(.:format)         {:controller=>\"devise/passwords\",
+  :action=>\"update\"}\r\n                              POST /users/password(.:format)
+  \        {:controller=>\"devise/passwords\", :action=>\"create\"}\r\n       \r\n
+  \       # Confirmation routes for Confirmable, if User model has :confirmable configured\r\n
+  \       new_user_confirmation GET  /users/confirmation/new(.:format) {:controller=>\"devise/confirmations\",
+  :action=>\"new\"}\r\n            user_confirmation GET  /users/confirmation(.:format)
+  \    {:controller=>\"devise/confirmations\", :action=>\"show\"}\r\n                              POST
+  /users/confirmation(.:format)     {:controller=>\"devise/confirmations\", :action=>\"create\"}\r\n\r\n###
+  Customizing devise_for\r\n\r\n    devise_for :users,\r\n      :path => \"usuarios\",\r\n
+  \     :path_names => {\r\n        :sign_in => 'login',\r\n        :sign_out => 'logout',\r\n
+  \       :password => 'secret',\r\n        :confirmation => 'verification',\r\n        :unlock
+  => 'unblock',\r\n        :registration => 'register',\r\n        :sign_up => 'cmon_let_me_in'
+  }\r\n\r\nTest helpers\r\n------------\r\n\r\n    sign_in @user\r\n    sign_out @user\r\n"

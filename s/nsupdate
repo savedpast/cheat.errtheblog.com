@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>$ nsupdate # tool to do DNS updates (cheat dns for record types)
+# new primary record for new-name
+&gt; update add new-name.example.com 48600 IN A 1.2.3.4
+&gt; send
+# the reverse lookup
+&gt; update add 4.3.2.1.in-addr.arpa 48600 IN PTR new-name.example.com
+&gt; send
+# a CNAME (alias) record
+&gt; update add alias-name.example.com 48600 IN CNAME new-name.example.com
+&gt; send
+# a wildcard (handy for app development)
+&gt; update add *.new-name.example.com 48600 IN CNAME new-name.example.com
+&gt; send
+# the delete... use with care
+&gt; update delete new-name.example.com
+&gt; send</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>== Implemented assertions
+
+* should.&lt;predicate&gt; and should.be.&lt;predicate&gt;
+* should.equal
+* should.match
+* should.be.identical_to / should.be.same_as
+* should.raise(*exceptions) { }
+* should.change { }
+* should.throw(symbol) { }
+* should.satisfy { |object| }
+
+
+== Added core predicates
+
+* Object#true?
+* Object#false?
+* Proc#change?
+* Proc#raise?
+* Proc#throw?
+* Numeric#close?
+
+== before/after
+
+before and after need to be defined before the first specification in
+a context and are run before and after each specification.
+
+  describe 'A new array' do
+    before do
+      @ary = Array.new
+    end
+    # ...
+  end
+
+== Shared contexts
+
+  shared &quot;an empty container&quot; do
+    it &quot;should have size zero&quot; do
+    end
+
+    it &quot;should be empty&quot; do
+    end
+  end
+
+  context &quot;A new array&quot; do
+    behaves_like &quot;an empty container&quot;
+  end
+
+These contexts are not executed on their own, but can be included with
+behaves_like in other contexts.  You can use shared contexts to
+structure suites with many recurring specifications.
+
+== Matchers
+
+  def shorter_than(max_size)
+    lambda { |obj| obj.size &lt; max_size }
+  end
+
+  [1,2,3].should.be shorter_than(5)
+
+You can use modules and extend to group matchers for use in multiple
+contexts.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

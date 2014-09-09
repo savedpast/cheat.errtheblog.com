@@ -1,0 +1,11 @@
+---
+vim_goodies: ! "to get direct access from vim to your cheat-sheets add something like
+  this to \nyour .vimrc\nmap <F3> :!cheat<SPACE>\n\nor\n\ncom -nargs=* Cheat :r !
+  cheat <args>\n\nwhich lets you :Cheat sheet\n\n\nAlternatively, you can install
+  the Cheat vim plugin:\nhttp://vim.sourceforge.net/scripts/script.php?script_id=2015\n\nwhich,
+  besides offering the :Cheat command it also has tab completion for \ncheat sheets
+  names, the <leader>C shortcut to the :Cheat command as well \nas searching for a
+  cheat sheet based on the current keyword (e.g. if the \ncursor is on a word like
+  \"ambition\", pressing <leader>ch will bring the \nambition cheatsheet).\n\n\nwonderful
+  support for ruby within vim is available after\n$ sudo gem install vim-ruby\njust
+  follow the instructions afterwards"

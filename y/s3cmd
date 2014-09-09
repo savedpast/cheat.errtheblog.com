@@ -1,0 +1,4 @@
+---
+s3cmd: ! "Upload:\n  s3cmd put file s3://bucket\n\nUpload public file:\n  s3cmd -P
+  put file s3://bucket\n\nUpload with metadata:\n  s3cmd --add-header=x-amz-meta-foo:bar
+  put file s3://bucket\n\nDelete:\n  s3cmd del s3://bucket/key"

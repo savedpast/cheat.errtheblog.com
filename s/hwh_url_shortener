@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Google Url Shortener - https://github.com/wearestac/google_url_shortener
+
+Installation
+
+add the following gem to Gemfile:
+gem 'google_url_shortener'
+
+In your controller add the following and replace &quot;key&quot; with your real API Key from the google API console at https://code.google.com/apis/console
+
+Google::UrlShortener::Base.api_key = &quot;KEY&quot;
+
+You can also turn on verbose logging to inspect requests made by the library. Behind the scenes the library uses RestClient to call the API, therefore whatever you set here will be used as the RestClient log (RestClient.log).
+
+Google::UrlShortener::Base.log = $stdout
+
+Shorten/Expand a URL
+
+To shorten a URL:
+url = Google::UrlShortener::Url.new(:long_url =&gt; &quot;http://blog.josh-nesbitt.net&quot;)
+@shortened_url = url.shorten! # =&gt; http://goo.gl/r5akx
+
+Or you can do short form of URL:
+Google::UrlShortener.shorten!(&quot;http://blog.josh-nesbitt.net&quot;) # =&gt; http://goo.gl/r5akx
+
+To expand a URL:
+
+url = Google::UrlShortener::Url.new(:short_url =&gt; &quot;http://goo.gl/r5akx&quot;)
+url.expand! # =&gt; http://blog.josh-nesbitt.net
+
+Or the shorthand form:
+
+Google::UrlShortener.expand!(&quot;http://goo.gl/r5akx&quot;) # =&gt; http://blog.josh-nesbitt.net
+
+
+Getting more data from an expanded URL
+
+More data is available from a URL once it’s been expanded:
+
+url = Google::UrlShortener::Url.new(:short_url =&gt; &quot;http://goo.gl/r5akx&quot;)
+url.expand! # =&gt; http://blog.josh-nesbitt.net
+url.created_at # =&gt; 2011-01-11
+url.created_at.year # =&gt; 2011
+url.analytics # =&gt; Google::UrlShortener::Analytics
+url.analytics.all # =&gt; Google::UrlShortener::AnalyticsGroup
+url.analytics.all.browsers # =&gt; { &quot;Chrome&quot; =&gt; 1 }
+url.analytics.all.countries # =&gt; { &quot;GB&quot; =&gt; 1 }
+url.analytics.all.platforms # =&gt; { &quot;Macintosh&quot; =&gt; 1 }
+url.analytics.all.referrers # =&gt; { &quot;Unknown/empty&quot; =&gt; 1 }
+url.analytics.all.long_url_clicks # =&gt; 23
+url.analytics.all.short_url_clicks # =&gt; 3
+Available scopes are:
+
+all
+month
+week
+day
+two_hours
+E.g: url.analytics.month.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,20 @@
+---
+apache2_conf: ! "Apache Cheat Sheet\nSetup a Virtual Domain\n\nNameVirtualHost *\n<VirtualHost
+  *>\n  DocumentRoot /web/example.com/www\n  ServerName www.example.com\n  ServerAlias
+  example.com\n  CustomLog /web/example.com/logs/access.log combined\n  ErrorLog /web/example.com/logs/error.log\n</VirtualHost>\n\nInclude
+  another conf file\n\nInclude /etc/apache/virtual-hosts/*.conf\n\nHide apache version
+  info\n\nServerSignature Off\nServerTokens Prod\n\nCustom 404 Error message\n\nErrorDocument
+  404 /404.html\n\nCreate a virtual directory (mod_alias)\n\nAlias /common /web/common\n\nPerminant
+  redirect (mod_alias)\n\nRedirect permanent /old http://example.com/new\n\nCreate
+  a cgi-bin\n\nScriptAlias /cgi-bin/ /web/cgi-bin/\n\nProcess .cgi scripts\n\nAddHandler
+  cgi-script .cgi\n\nAdd a directory index\n\nDirectoryIndex index.cfm index.cfm\n\nTurn
+  off directory browsing\n\nOptions -Indexes\n\nTurn on directory browsing\n\n<Location
+  /images>\n  Options +Indexes\n</Location>\n\nCreate a new user for basic auth (command
+  line)\n\nhtpasswd -c /etc/apacheusers\n\nApache basic authentication\n\nAuthName
+  \"Authentication Required\"\nAuthType Basic\nAuthUserFile /etc/apacheusers\nRequire
+  valid-user\n\nOnly allow access from a specific IP\n\nOrder Deny,Allow\nDeny from
+  all\nAllow from 127.0.0.1\n\nOnly allow access from your subnet\n\nOrder Deny,Allow\nDeny
+  from all\nAllow from 176.16.0.0/16\n\nmod_rewrite\nTurn on the rewrite engine\n\nRewriteEngine
+  On\n\nRedirect /news/123 to /news.cfm?id=123\n\nRewriteRule ^/news/([0-9]+)$ /news.cfm?id=$1
+  [PT,L]\n\nRedirect www.example.com to example.com\n\nRewriteCond %{HTTP_HOST} ^www\\.example\\.com$
+  [NC]\nRewriteRule ^(.*)$ http://example.com$1 [R=301,L]"

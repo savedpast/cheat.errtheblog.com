@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>The 10 rules
+
+1: Eat every 2-3 hours
+2: Eat complete, lean protein with each feeding oppurtinity
+3: Eat vegetables with each feeding oppurtinity
+4: Eat veggies and fruits with any meal;&quot;other carbs&quot; only after exercise
+5: Eat healthy fats daily
+6: Don't drink beverages with more than 0 calories
+7: Eat whole foods instead of supplements whenever possible
+10: Plan to break the rules 10% of the time
+
+http://support.trainingpeaks.com/articles.aspx</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

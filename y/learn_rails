@@ -1,0 +1,29 @@
+---
+learn_rails: ! "Things to give a go, for now at least:\n\n  Erb\n  Yaml\n\n\nI think
+  I understand these things enough now:\n  Gem (for Setup)\n  Bundle (for Setup)\n
+  \ Prototype (for View)\n  PrototypeHelper (for View)\n  jQuery (for View)\n  Xpath
+  (for View)\n  CSS (for View)\n\n\nA good bird's eye view of what's in Rails (expanded
+  from guides.rails.org top page):\n  Start Here\n  Getting Started with Rails\n\n
+  \ Models\n  Rails Database Migrations\n  Active Record Validations and Callbacks\n
+  \ Active Record Associations\n  Active Record Query Interface\n\n  Views\n  Layouts
+  and Rendering in Rails\n  Action View Form Helpers\n  [HAML]\n  [SASS]\n  [RJS?]\n\n
+  \ Controllers\n  Action Controller Overview\n  Rails Routing from the Outside In\n
+  \   [The 7 RESTful actions]\n\n  Digging Deeper [some content elided]\n  Testing
+  Rails Applications\n    [Cucumber (but what is there to learn about it other than
+  Gherkin?)]\n    [RSpec?]\n  Debugging Rails Applications\n  Rails Command Line Tasks
+  and Rake\n  Tasks\n\n\nWell-recommended books on Rails:\n  Agile Web Development
+  with Rails\n  Ruby on Rails Way [but not for a beginner at Rails]\n  Ruby on Rails
+  3 Way [but not for a beginner at Rails]\n  Ruby on Rails 3 Tutorial [but for Rails
+  3]\n\n\nDefine resource:\n  The combination of a data model and a web interface
+  to it.\n\nLearn this kind of default routing by heart:\n  /users        index\n
+  \ /users/1      show\n  /users/new    new\n  /users/1/edit edit\n\n  These don't
+  typically render pages:\n  /users        create\n  /users/1      update\n  /users
+  \       destroy\n\nMVC example:\n  1. Browser visit to /users\n  2. The router routes
+  /users to the index action in the Users controller;\n     the router dispatches
+  to the proper controller action; config/routes.rb\n     is used to set up a table
+  of URL/action pairs\n  3. The index action asks the User model to retrieve all uesrs\n
+  \ 4. The User model pulls all the users from the database\n  5. The User model returns
+  the list of users to the controller\n  6. The controller captures the users in the
+  @users variable\n     and passes @users to the index view\n  7. The view uses Embedded
+  Ruby to render the page as HTML\n  8. The controller passes the HTML back to the
+  browser"

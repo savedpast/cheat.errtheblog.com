@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>This is how to use the Yelp API to find businesses given a name and an approximate location.
+
+Business API
+
+REQUEST
+
+NAME               | METHOD | DESCRIPTION
+/v2/business/{id}    GET      Lookup business information by id
+
+Sample Request
+http://api.yelp.com/v2/business/yelp-san-francisco
+
+Response Value( Only displaying values we currently need ):
+
+Name     |               Type  | Definition
+id                       string  Yelp ID for this business
+name                     string  Name of this business
+image_url                string  URL of photo for this business
+url                      string  URL for business page on Yelp
+display_phone            string  Phone number formatted for display
+location.display_address list    Address for this business formatted for 
+                                 display. Includes all address fields, cross 
+                                 streets and city, state_code, etc.
+
+
+Sample Response based on info above:
+{
+ &quot;id&quot;: &quot;urban-curry-san-francisco&quot;,
+ &quot;name&quot;: &quot;Urban Curry&quot;,
+ &quot;image_url&quot;: &quot;http://s3-media4.ak.yelpcdn.com/bphoto/Hv5vsWpqeaUKepr9nffJnw/ms.jpg&quot;,
+ &quot;url&quot;: &quot;http://www.yelp.com/biz/urban-curry-san-francisco&quot;
+ &quot;display_phone&quot;: &quot;+1-415-677-9744&quot;,
+ &quot;location&quot; : {
+     display_address&quot;: [
+      &quot;523 Broadway&quot;,
+      &quot;(b/t Kearny St &amp; Romolo Pl)&quot;,
+      &quot;North Beach/Telegraph Hill&quot;,
+      &quot;San Francisco, CA 94133&quot;
+    ]
+ }
+}
+
+
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>-------------------------------------------------------------------------------
+Obtaining SystemC:
+
+ASSUMPTION: Linux (almost any flavor including RedHat, SUSE, CentOS, OSX, Ubuntu) with a development environment that includes g++
+
+1. Obtain systemc
+
+  Go to http://www.systemc.org and download the latest version.
+
+2.Install
+
+  a. determine where to process the source code (e.g. ~/src/systemc) and where to install (e.g. $HOME/systemc).
+     - ASSUMPTION: using gcc version 4.1 or better (but any 4.x version will likely work - even 4.7)
+     - ASSUMPTION: downloaded systemc version 2.3
+     - ASSUMPTION: using BASH and GNU make
+  b. expand, configure and install:
+
+     # Setup variables user selects
+     #
+     TARBALL=&quot;$HOME/Downloads/systemc-2.3.0.tgz&quot;
+     SOURCE_DIR=&quot;$HOME/src/systemc&quot;
+     INSTALL_DIR=&quot;$HOME/systemc/2.3-gcc4.1&quot;
+     #
+     # Automate the rest
+     SC_BASE=$(basename &quot;$TARBALL&quot;  .tgz)
+     SC_VERSION=$(echo &quot;$TARBALL&quot; | perl -lne 'm{systemc-(2[.][0-9])} &amp;&amp; print $1')
+     GCC_VERSION=$(gcc --version | perl -lne 'm{^gcc .* (4[.][0-9]+)} &amp;&amp; print $1')
+     # Now do the install
+     mkdir -p &quot;$INSTALL_DIR&quot; ;# create the final installation directory
+     rm -fr &quot;$SOURCE_DIR&quot; 
+     mkdir -p &quot;$SOURCE_DIR&quot;
+     pushd &quot;$SOURCE_DIR&quot;
+     gtar xzf &quot;$TARBALL&quot;
+     mkdir objdir ;# Create a directory to build from
+     cd objdir
+     ../$SC_BASE/configure --prefix=&quot;$INSTALL_DIR&quot; ;# Configure for installation
+     gmake install check
+     rm -fr &quot;$SOURCE_DIR/objdir&quot; ;# Cleanup
+     popd
+
+-------------------------------------------------------------------------------
+A basic module consists of two files, a header and an implementation.
+
+  |% cat &gt; HARNESS.h &lt;
+  |#ifndef HARNESS_H
+  |#define HARNESS_H
+  |#include &lt;systemc&gt;
+  |class SUB_module; //&lt; forward declaration
+  |class HARNESS_module
+  |: public sc_core::sc_module 
+  |{
+  |public: // methods
+  |  HARNESS_module(sc_core::sc_module_name instance_name); //&lt; Constructor
+  |  ~HARNESS_module(void); //&lt; Destructor
+  |  void main_thread(void); //&lt; Process declaration
+  |private: // data
+  |  SUB1_module* sub1_instance;
+  |  SUB2_module* sub2_instance;
+  |};
+  |#endif /*HARNESS_H*/
+  |^D</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>start                         - re-start the current tracker
+stop, pause, lunch            - stop the current tracker
+
+today, yesterday, this_week, last_week, this_month, last_month
+                              - show report
+
+open                          - your mite site
+help                          - open help in browser
+rebuild-cache                 - re-download project and service names
+
+source:  http://github.com/Overbryd/mite.cmd
+service: http://mite.yo.lk/</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

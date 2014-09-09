@@ -1,0 +1,24 @@
+---
+i3wm: ! "http://i3wm.org/docs/userguide.html\r\n\r\nKEYBINDINGS\r\n       Here is
+  a short overview of the default keybindings:\r\n\r\n       j/k/l/;\r\n           Direction
+  keys (left, down, up, right). They are on your homerow\r\n           (see the mark
+  on your \"j\" key). Alternatively, you can use the\r\n           cursor keys.\r\n\r\n
+  \      Mod1+<direction>\r\n           Focus window in <direction>.\r\n\r\n       Mod3+<direction>\r\n
+  \          Focus container in <direction>.\r\n\r\n       Mod1+Shift+<direction>\r\n
+  \          Move window to <direction>.\r\n\r\n       Mod3+Shift+<direction>\r\n
+  \          Move container to <direction>.\r\n\r\n       Mod1+Control+<direction>\r\n
+  \          Snap container to <direction>.\r\n\r\n       Mod1+<number>\r\n           Switch
+  to workspace <number>.\r\n\r\n       Mod1+Shift+<number>\r\n           Move window
+  to workspace <number>.\r\n\r\n       Mod1+f\r\n           Toggle fullscreen mode.\r\n\r\n
+  \      Mod1+h\r\n           Enable stacking layout for the current container.\r\n\r\n
+  \      Mod1+e\r\n           Enable default layout for the current container.\r\n\r\n
+  \      Mod1+Shift+Space\r\n           Toggle tiling/floating for the current window.\r\n\r\n
+  \      Mod1+t\r\n           Select the first tiling window if the current window
+  is floating\r\n           and vice-versa.\r\n\r\n       Mod1+Shift+q\r\n           Kills
+  the current window. This is equivalent to \"clicking on the\r\n           close
+  button\", meaning a polite request to the application to close\r\n           this
+  window. For example, Firefox will save its session upon such a\r\n           request.
+  If the application does not support that, the window will\r\n           be killed
+  and it depends on the application what happens.\r\n\r\n       Mod1+Shift+r\r\n           Restarts
+  i3 in place (without losing any windows, but the layout).\r\n\r\n       Mod1+Shift+e\r\n
+  \          Exits i3."

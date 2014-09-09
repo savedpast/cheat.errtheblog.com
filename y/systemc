@@ -1,0 +1,28 @@
+---
+systemc: ! "-------------------------------------------------------------------------------\nObtaining
+  SystemC:\n\nASSUMPTION: Linux (almost any flavor including RedHat, SUSE, CentOS,
+  OSX, Ubuntu) with a development environment that includes g++\n\n1. Obtain systemc\n\n
+  \ Go to http://www.systemc.org and download the latest version.\n\n2.Install\n\n
+  \ a. determine where to process the source code (e.g. ~/src/systemc) and where to
+  install (e.g. $HOME/systemc).\n     - ASSUMPTION: using gcc version 4.1 or better
+  (but any 4.x version will likely work - even 4.7)\n     - ASSUMPTION: downloaded
+  systemc version 2.3\n     - ASSUMPTION: using BASH and GNU make\n  b. expand, configure
+  and install:\n\n     # Setup variables user selects\n     #\n     TARBALL=\"$HOME/Downloads/systemc-2.3.0.tgz\"\n
+  \    SOURCE_DIR=\"$HOME/src/systemc\"\n     INSTALL_DIR=\"$HOME/systemc/2.3-gcc4.1\"\n
+  \    #\n     # Automate the rest\n     SC_BASE=$(basename \"$TARBALL\"  .tgz)\n
+  \    SC_VERSION=$(echo \"$TARBALL\" | perl -lne 'm{systemc-(2[.][0-9])} && print
+  $1')\n     GCC_VERSION=$(gcc --version | perl -lne 'm{^gcc .* (4[.][0-9]+)} && print
+  $1')\n     # Now do the install\n     mkdir -p \"$INSTALL_DIR\" ;# create the final
+  installation directory\n     rm -fr \"$SOURCE_DIR\" \n     mkdir -p \"$SOURCE_DIR\"\n
+  \    pushd \"$SOURCE_DIR\"\n     gtar xzf \"$TARBALL\"\n     mkdir objdir ;# Create
+  a directory to build from\n     cd objdir\n     ../$SC_BASE/configure --prefix=\"$INSTALL_DIR\"
+  ;# Configure for installation\n     gmake install check\n     rm -fr \"$SOURCE_DIR/objdir\"
+  ;# Cleanup\n     popd\n\n-------------------------------------------------------------------------------\nA
+  basic module consists of two files, a header and an implementation.\n\n  |% cat
+  > HARNESS.h <\n  |#ifndef HARNESS_H\n  |#define HARNESS_H\n  |#include <systemc>\n
+  \ |class SUB_module; //< forward declaration\n  |class HARNESS_module\n  |: public
+  sc_core::sc_module \n  |{\n  |public: // methods\n  |  HARNESS_module(sc_core::sc_module_name
+  instance_name); //< Constructor\n  |  ~HARNESS_module(void); //< Destructor\n  |
+  \ void main_thread(void); //< Process declaration\n  |private: // data\n  |  SUB1_module*
+  sub1_instance;\n  |  SUB2_module* sub2_instance;\n  |};\n  |#endif /*HARNESS_H*/\n
+  \ |^D"

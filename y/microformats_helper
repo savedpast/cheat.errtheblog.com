@@ -1,0 +1,15 @@
+---
+microformats_helper: ! "hAtom\n\n<% render_hfeed(options?) do ... end %>\n<% render_hentry(id,
+  options?) do ... end %>\n\n  Render ol with class hfeed, or li with the class hentry
+  and id. Options passed to HTML element.\n\n<%= hentry_title(title?, options?) {
+  ... } %>\n<%= hentry_content(content?, options?) { ... } %>\n\n  Returns header
+  with class entry-title, or element with class entry-content. Content pass as argument
+  or returned from block, options passed to wrapping element. Use :level to specify
+  header level (default 2), :tag to specify content element (default p).\n\nOther\n\n<%=
+  hcard(values) %>\n\n  :fn           Formal name\n  :given-name   Given name (alternative
+  to :fn)\n  :family-name  Family name (alternative to :fn)\n  :url          URL of
+  person/entity (results in link)\n  :photo        URL of photo, or hash of options
+  for img tag\n  :html         Options to pass to wrapper element\n\n<%= Time.microformat(type,
+  format?) { ... } %>\n\n  Formats time using the date/time pattern, returns abbr
+  element. First argument is date/time type (e.g. :published). Human formatted: using
+  second argument (see strftime), result of block, or self.to_s."

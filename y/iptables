@@ -1,0 +1,18 @@
+---
+iptables: ! "Snagged from 'http://www.unixnewbie.org/iptables-cheat-sheet/'\n\nView
+  all current iptables rules:\n$ iptables -L -nv\n\nView all INPUT rules:\n$ iptables
+  -L INPUT -nv\n\nblock an IP address using iptables:\n$ iptables -I INPUT -s \"201.128.33.200\"
+  -j DROP\n\nTo block a range of IP addresses:\n$ iptables -I INPUT -s \"201.128.33.0/24\"
+  -j DROP\n\nHow to unblock an IP address:\n$ iptables -D INPUT -s \"201.128.33.200\"
+  -j DROP\n\nHow to block all connections to a port:\nTo block port 25:\n$ iptables
+  -A INPUT -p tcp --dport 25 -j DROP\n$ iptables -A INPUT -p udp --dport 25 -j DROP\n\nHow
+  to un-block:\nTo enable port 25:\n$ iptables -A INPUT -p tcp --dport 25 -j ACCEPT\n$
+  iptables -A INPUT -p udp --dport 25 -j ACCEPT \n\nSave a copy of the current rules
+  \n$ iptables-save > ~/saved.rules\n\nRestore a copy of some rules\n$ iptables-restore
+  < ~/saved.rules\n\nTo save all rules so that they are not lost in case of a server
+  reboot:\n$ /etc/init.d/iptables save\n\nHow to forward port 1234 on server 1.1.1.1
+  to port 3456 of server 2.2.2.2\n$ iptables -A FORWARD --dst 1.1.1.1 -p tcp --dport
+  1234 -j ACCEPT\n$ iptables -A FORWARD --src 1.1.1.1 -p tcp --sport 1234 -j ACCEPT\n$
+  iptables -t nat -A PREROUTING -d 1.1.1.1 -p tcp --dport 1234 -j DNAT --to-destination
+  2.2.2.2:3456\n$ iptables -t nat -A POSTROUTING -d 2.2.2.2 -p tcp --dport 3456 -j
+  SNAT --to-source 1.1.1.1:1234"

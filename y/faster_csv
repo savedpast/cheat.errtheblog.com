@@ -1,0 +1,7 @@
+---
+faster_csv: ! "From a File\n\n  # each row as an array of values\n  FasterCSV.foreach(\"path/to/file.csv\")
+  do |row|  \n  end\n\n  # as an array of arrays\n  rows = FasterCSV.read(\"path/to/file.csv\")\n\nFrom
+  a String\n\n  FasterCSV.parse(\"CSV,data,String\") do |row|\n  end\n\n  rows = FasterCSV.parse(\"CSV,data,String\")\n\nTo
+  a File\n\n  FasterCSV.open(\"path/to/file.csv\", \"w\") do |csv|\n    csv << [\"row\",
+  \"of\", \"CSV\", \"data\"]\n  end\n\nTo a String\n\n  s = FasterCSV.generate do
+  |csv|\n    csv << [\"row\", \"of\", \"CSV\", \"data\"]\n  end"

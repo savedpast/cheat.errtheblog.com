@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Commands:
+
+* `tab` - Create a new tab in the current directory (OS X)
+* `take` - Create a new directory and change to it, will create intermediate directories as required.
+* `zsh_stats` - get a list of the top ten commands and how many times they have been run
+* `uninstall_oh_my_zsh` - Uninstall Oh-my-zsh 
+* `upgrade_oh_my_zsh` - Upgrade Oh-my-zsh 
+
+Tab-completion:
+
+* `ls -(tab)` - for options and helpful text of what they do
+* `cap (tab)`
+* `rake (tab)`
+* `ssh (tab)`
+* `sudo umount (tab)`
+* `kill (tab)`
+
+Git:
+
+Dynamic access to current branch name with the current_branch function.
+
+* `git pull origin $(current_branch)`
+* `grb publish $(current_branch) origin`
+
+Helpful aliases for common git tasks:
+* `g` - git
+* `gst` - git status
+* `gl` - git pull
+* `gup` - git fetch &amp;&amp; git rebase
+* `gp` - git push
+* `gd` - git diff | mate
+* `gdv` - git diff -w &quot;$@&quot; | vim -R -
+* `gc` - git commit -v
+* `gca` - git commit -v -a
+* `gb` - git branch
+* `gba` - git branch -a</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

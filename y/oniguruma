@@ -1,0 +1,166 @@
+---
+oniguruma: ! "Oniguruma Regular Expressions Version 5.9.1    2007/09/05\n\nsyntax:
+  ONIG_SYNTAX_RUBY (default)\n\n\n1. Syntax elements\n\n  \\       escape (enable
+  or disable meta character meaning)\n  |       alternation\n  (...)   group\n  [...]
+  \  character class  \n\n\n2. Characters\n\n  \\t           horizontal tab (0x09)\n
+  \ \\v           vertical tab   (0x0B)\n  \\n           newline        (0x0A)\n  \\r
+  \          return         (0x0D)\n  \\b           back space     (0x08)\n  \\f           form
+  feed      (0x0C)\n  \\a           bell           (0x07)\n  \\e           escape
+  \        (0x1B)\n  \\nnn         octal char            (encoded byte value)\n  \\xHH
+  \        hexadecimal char      (encoded byte value)\n  \\x{7HHHHHHH} wide hexadecimal
+  char (character code point value)\n  \\cx          control char          (character
+  code point value)\n  \\C-x         control char          (character code point value)\n
+  \ \\M-x         meta  (x|0x80)        (character code point value)\n  \\M-\\C-x
+  \     meta control char     (character code point value)\n\n (* \\b is effective
+  in character class [...] only)\n\n\n3. Character types\n\n  .        any character
+  (except newline)\n\n  \\w       word character\n\n           Not Unicode:\n             alphanumeric,
+  \"_\" and multibyte char. \n\n           Unicode:\n             General_Category
+  -- (Letter|Mark|Number|Connector_Punctuation)\n\n  \\W       non word char\n\n  \\s
+  \      whitespace char\n\n           Not Unicode:\n             \\t, \\n, \\v, \\f,
+  \\r, \\x20\n\n           Unicode:\n             0009, 000A, 000B, 000C, 000D, 0085(NEL),
+  \n             General_Category -- Line_Separator\n                              --
+  Paragraph_Separator\n                              -- Space_Separator\n\n  \\S       non
+  whitespace char\n\n  \\d       decimal digit char\n\n           Unicode: General_Category
+  -- Decimal_Number\n\n  \\D       non decimal digit char\n\n  \\h       hexadecimal
+  digit char   [0-9a-fA-F]\n\n  \\H       non hexadecimal digit char\n\n\n  Character
+  Property\n\n    * \\p{property-name}\n    * \\p{^property-name}    (negative)\n
+  \   * \\P{property-name}     (negative)\n\n    property-name:\n\n     + works on
+  all encodings\n       Alnum, Alpha, Blank, Cntrl, Digit, Graph, Lower,\n       Print,
+  Punct, Space, Upper, XDigit, Word, ASCII,\n\n     + works on EUC_JP, Shift_JIS\n
+  \      Hiragana, Katakana\n\n     + works on UTF8, UTF16, UTF32\n       Any, Assigned,
+  C, Cc, Cf, Cn, Co, Cs, L, Ll, Lm, Lo, Lt, Lu,\n       M, Mc, Me, Mn, N, Nd, Nl,
+  No, P, Pc, Pd, Pe, Pf, Pi, Po, Ps,\n       S, Sc, Sk, Sm, So, Z, Zl, Zp, Zs, \n
+  \      Arabic, Armenian, Bengali, Bopomofo, Braille, Buginese,\n       Buhid, Canadian_Aboriginal,
+  Cherokee, Common, Coptic,\n       Cypriot, Cyrillic, Deseret, Devanagari, Ethiopic,
+  Georgian,\n       Glagolitic, Gothic, Greek, Gujarati, Gurmukhi, Han, Hangul,\n
+  \      Hanunoo, Hebrew, Hiragana, Inherited, Kannada, Katakana,\n       Kharoshthi,
+  Khmer, Lao, Latin, Limbu, Linear_B, Malayalam,\n       Mongolian, Myanmar, New_Tai_Lue,
+  Ogham, Old_Italic, Old_Persian,\n       Oriya, Osmanya, Runic, Shavian, Sinhala,
+  Syloti_Nagri, Syriac,\n       Tagalog, Tagbanwa, Tai_Le, Tamil, Telugu, Thaana,
+  Thai, Tibetan,\n       Tifinagh, Ugaritic, Yi\n\n\n\n4. Quantifier\n\n  greedy\n\n
+  \   ?       1 or 0 times\n    *       0 or more times\n    +       1 or more times\n
+  \   {n,m}   at least n but not more than m times\n    {n,}    at least n times\n
+  \   {,n}    at least 0 but not more than n times ({0,n})\n    {n}     n times\n\n
+  \ reluctant\n\n    ??      1 or 0 times\n    *?      0 or more times\n    +?      1
+  or more times\n    {n,m}?  at least n but not more than m times  \n    {n,}?   at
+  least n times\n    {,n}?   at least 0 but not more than n times (== {0,n}?)\n\n
+  \ possessive (greedy and does not backtrack after repeated)\n\n    ?+      1 or
+  0 times\n    *+      0 or more times\n    ++      1 or more times\n\n    ({n,m}+,
+  {n,}+, {n}+ are possessive op. in ONIG_SYNTAX_JAVA only)\n\n    ex. /a*+/ === /(?>a*)/\n\n\n5.
+  Anchors\n\n  ^       beginning of the line\n  $       end of the line\n  \\b      word
+  boundary\n  \\B      not word boundary\n  \\A      beginning of string\n  \\Z      end
+  of string, or before newline at the end\n  \\z      end of string\n  \\G      matching
+  start position \n\n\n6. Character class\n\n  ^...    negative class (lowest precedence
+  operator)\n  x-y     range from x to y\n  [...]   set (character class in character
+  class)\n  ..&&..  intersection (low precedence at the next of ^)\n          \n    ex.
+  [a-w&&[^c-g]z] ==> ([a-w] AND ([^c-g] OR z)) ==> [abh-w]\n\n  * If you want to use
+  '[', '-', ']' as a normal character\n    in a character class, you should escape
+  these characters by '\\'.\n\n\n  POSIX bracket ([:xxxxx:], negate [:^xxxxx:])\n\n
+  \   Not Unicode Case:\n\n      alnum    alphabet or digit char\n      alpha    alphabet\n
+  \     ascii    code value: [0 - 127]\n      blank    \\t, \\x20\n      cntrl\n      digit
+  \   0-9\n      graph    include all of multibyte encoded characters\n      lower\n
+  \     print    include all of multibyte encoded characters\n      punct\n      space
+  \   \\t, \\n, \\v, \\f, \\r, \\x20\n      upper\n      xdigit   0-9, a-f, A-F\n
+  \     word     alphanumeric, \"_\" and multibyte characters\n\n\n    Unicode Case:\n\n
+  \     alnum    Letter | Mark | Decimal_Number\n      alpha    Letter | Mark\n      ascii
+  \   0000 - 007F\n      blank    Space_Separator | 0009\n      cntrl    Control |
+  Format | Unassigned | Private_Use | Surrogate\n      digit    Decimal_Number\n      graph
+  \   [[:^space:]] && ^Control && ^Unassigned && ^Surrogate\n      lower    Lowercase_Letter\n
+  \     print    [[:graph:]] | [[:space:]]\n      punct    Connector_Punctuation |
+  Dash_Punctuation | Close_Punctuation |\n               Final_Punctuation | Initial_Punctuation
+  | Other_Punctuation |\n               Open_Punctuation\n      space    Space_Separator
+  | Line_Separator | Paragraph_Separator |\n               0009 | 000A | 000B | 000C
+  | 000D | 0085\n      upper    Uppercase_Letter\n      xdigit   0030 - 0039 | 0041
+  - 0046 | 0061 - 0066\n               (0-9, a-f, A-F)\n      word     Letter | Mark
+  | Decimal_Number | Connector_Punctuation\n\n\n\n7. Extended groups\n\n  (?#...)
+  \           comment\n\n  (?imx-imx)         option on/off\n                         i:
+  ignore case\n                         m: multi-line (dot(.) match newline)\n                         x:
+  extended form\n  (?imx-imx:subexp)  option on/off for subexp\n\n  (?:subexp)         not
+  captured group\n  (subexp)           captured group\n\n  (?=subexp)         look-ahead\n
+  \ (?!subexp)         negative look-ahead\n  (?<=subexp)        look-behind\n  (?<!subexp)
+  \       negative look-behind\n\n                     Subexp of look-behind must
+  be fixed character length.\n                     But different character length
+  is allowed in top level\n                     alternatives only.\n                     ex.
+  (?<=a|bc) is OK. (?<=aaa(?:b|cd)) is not allowed.\n\n                     In negative-look-behind,
+  captured group isn't allowed, \n                     but shy group(?:) is allowed.\n\n
+  \ (?>subexp)         atomic group\n                     don't backtrack in subexp.\n\n
+  \ (?<name>subexp), (?'name'subexp)\n                     define named group\n                     (All
+  characters of the name must be a word character.)\n\n                     Not only
+  a name but a number is assigned like a captured\n                     group.\n\n
+  \                    Assigning the same name as two or more subexps is allowed.\n
+  \                    In this case, a subexp call can not be performed although\n
+  \                    the back reference is possible.\n\n\n8. Back reference\n\n
+  \ \\n          back reference by group number (n >= 1)\n  \\k<n>       back reference
+  by group number (n >= 1)\n  \\k'n'       back reference by group number (n >= 1)\n
+  \ \\k<-n>      back reference by relative group number (n >= 1)\n  \\k'-n'      back
+  reference by relative group number (n >= 1)\n  \\k<name>    back reference by group
+  name\n  \\k'name'    back reference by group name\n\n  In the back reference by
+  the multiplex definition name,\n  a subexp with a large number is referred to preferentially.\n
+  \ (When not matched, a group of the small number is referred to.)\n\n  * Back reference
+  by group number is forbidden if named group is defined \n    in the pattern and
+  ONIG_OPTION_CAPTURE_GROUP is not setted.\n\n\n  back reference with nest level\n\n
+  \   level: 0, 1, 2, ...\n\n    \\k<n+level>     (n >= 1)\n    \\k<n-level>     (n
+  >= 1)\n    \\k'n+level'     (n >= 1)\n    \\k'n-level'     (n >= 1)\n\n    \\k<name+level>\n
+  \   \\k<name-level>\n    \\k'name+level'\n    \\k'name-level'\n\n    Destinate relative
+  nest level from back reference position.    \n\n    ex 1.\n\n      /\\A(?<a>|.|(?:(?<b>.)\\g<a>\\k<b+0>))\\z/.match(\"reer\")\n\n
+  \   ex 2.\n\n      r = Regexp.compile(<<'__REGEXP__'.strip, Regexp::EXTENDED)\n
+  \     (?<element> \\g<stag> \\g<content>* \\g<etag> ){0}\n      (?<stag> < \\g<name>
+  \\s* > ){0}\n      (?<name> [a-zA-Z_:]+ ){0}\n      (?<content> [^<&]+ (\\g<element>
+  | [^<&]+)* ){0}\n      (?<etag> </ \\k<name+1> >){0}\n      \\g<element>\n      __REGEXP__\n\n
+  \     p r.match('<foo>f<bar>bbb</bar>f</foo>').captures\n\n\n\n9. Subexp call (\"Tanaka
+  Akira special\")\n\n  \\g<name>    call by group name\n  \\g'name'    call by group
+  name\n  \\g<n>       call by group number (n >= 1)\n  \\g'n'       call by group
+  number (n >= 1)\n  \\g<-n>      call by relative group number (n >= 1)\n  \\g'-n'
+  \     call by relative group number (n >= 1)\n\n  * left-most recursive call is
+  not allowed.\n     ex. (?<name>a|\\g<name>b)   => error\n         (?<name>a|b\\g<name>c)
+  \ => OK\n\n  * Call by group number is forbidden if named group is defined in the
+  pattern\n    and ONIG_OPTION_CAPTURE_GROUP is not setted.\n\n  * If the option status
+  of called group is different from calling position\n    then the group's option
+  is effective.\n\n    ex. (?-i:\\g<name>)(?i:(?<name>a)){0}  match to \"A\"\n\n\n10.
+  Captured group\n\n  Behavior of the no-named group (...) changes with the following
+  conditions.\n  (But named group is not changed.)\n\n  case 1. /.../     (named group
+  is not used, no option)\n\n     (...) is treated as a captured group.\n\n  case
+  2. /.../g    (named group is not used, 'g' option)\n\n     (...) is treated as a
+  no-captured group (?:...).\n\n  case 3. /..(?<name>..)../   (named group is used,
+  no option)\n\n     (...) is treated as a no-captured group (?:...).\n     numbered-backref/call
+  is not allowed.\n\n  case 4. /..(?<name>..)../G  (named group is used, 'G' option)\n\n
+  \    (...) is treated as a captured group.\n     numbered-backref/call is allowed.\n\n
+  \ where\n    g: ONIG_OPTION_DONT_CAPTURE_GROUP\n    G: ONIG_OPTION_CAPTURE_GROUP\n\n
+  \ ('g' and 'G' options are argued in ruby-dev ML)\n\n\n\n-----------------------------\nA-1.
+  Syntax depend options\n\n   + ONIG_SYNTAX_RUBY\n     (?m): dot(.) match newline\n\n
+  \  + ONIG_SYNTAX_PERL and ONIG_SYNTAX_JAVA\n     (?s): dot(.) match newline\n     (?m):
+  ^ match after newline, $ match before newline\n\n\nA-2. Original extensions\n\n
+  \  + hexadecimal digit char type  \\h, \\H\n   + named group                  (?<name>...),
+  (?'name'...)\n   + named backref                \\k<name>\n   + subexp call                  \\g<name>,
+  \\g<group-num>\n\n\nA-3. Lacked features compare with perl 5.8.0\n\n   + \\N{name}\n
+  \  + \\l,\\u,\\L,\\U, \\X, \\C\n   + (?{code})\n   + (??{code})\n   + (?(condition)yes-pat|no-pat)\n\n
+  \  * \\Q...\\E\n     This is effective on ONIG_SYNTAX_PERL and ONIG_SYNTAX_JAVA.\n\n\nA-4.
+  Differences with Japanized GNU regex(version 0.12) of Ruby 1.8\n\n   + add character
+  property (\\p{property}, \\P{property})\n   + add hexadecimal digit char type (\\h,
+  \\H)\n   + add look-behind\n     (?<=fixed-char-length-pattern), (?<!fixed-char-length-pattern)\n
+  \  + add possessive quantifier. ?+, *+, ++\n   + add operations in character class.
+  [], &&\n     ('[' must be escaped as an usual char in character class.)\n   + add
+  named group and subexp call.\n   + octal or hexadecimal number sequence can be treated
+  as \n     a multibyte code char in character class if multibyte encoding\n     is
+  specified.\n     (ex. [\\xa1\\xa2], [\\xa1\\xa7-\\xa4\\xa1])\n   + allow the range
+  of single byte char and multibyte char in character\n     class.\n     ex. /[a-<<any
+  EUC-JP character>>]/ in EUC-JP encoding.\n   + effect range of isolated option is
+  to next ')'.\n     ex. (?:(?i)a|b) is interpreted as (?:(?i:a|b)), not (?:(?i:a)|b).\n
+  \  + isolated option is not transparent to previous pattern.\n     ex. a(?i)* is
+  a syntax error pattern.\n   + allowed incompleted left brace as an usual string.\n
+  \    ex. /{/, /({)/, /a{2,3/ etc...\n   + negative POSIX bracket [:^xxxx:] is supported.\n
+  \  + POSIX bracket [:ascii:] is added.\n   + repeat of look-ahead is not allowed.\n
+  \    ex. /(?=a)*/, /(?!b){5}/\n   + Ignore case option is effective to numbered
+  character.\n     ex. /\\x61/i =~ \"A\"\n   + In the range quantifier, the number
+  of the minimum is omissible.\n     /a{,n}/ == /a{0,n}/\n     The simultanious abbreviation
+  of the number of times of the minimum\n     and the maximum is not allowed. (/a{,}/)\n
+  \  + /a{n}?/ is not a non-greedy operator.\n     /a{n}?/ == /(?:a{n})?/\n   + invalid
+  back reference is checked and cause error.\n     /\\1/, /(a)\\2/\n   + Zero-length
+  match in infinite repeat stops the repeat,\n     then changes of the capture group
+  status are checked as stop condition.\n     /(?:()|())*\\1\\2/ =~ \"\"\n     /(?:\\1a|())*/
+  =~ \"a\"\n\n\nA-5. Disabled functions by default syntax\n\n   + capture history\n\n
+  \    (?@...) and (?@<name>...)\n\n     ex. /(?@a)*/.match(\"aaa\") ==> [<0-1>, <1-2>,
+  <2-3>]\n\n     see sample/listcap.c file.\n\n\nA-6. Problems\n\n   + Invalid encoding
+  byte sequence is not checked.\n\n     ex. UTF-8\n\n     * Invalid first byte is
+  treated as a character.\n       /./u =~ \"\\xa3\"\n\n     * Incomplete byte sequence
+  is not checked.\n       /\\w+/ =~ \"a\\xf3\\x8ec\""

@@ -1,0 +1,4 @@
+---
+zsh_array: ! "# Standard array\n\tarray=(~/.zshenv, ~/.zshrc, ~/.zlogout)\n\tprint
+  ${array:t}\n\n# Associative array\n\ttypeset -A ass_arr\n\tass_arr=(one 1 two 2
+  three 3 four 4)\n\tprint ${(k)ass_arr}\n\tprint ${(v)ass_arr}\n\tprint $ass_arr[one]"

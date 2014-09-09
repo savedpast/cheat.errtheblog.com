@@ -1,0 +1,14 @@
+---
+rails: ! "For cheat help do \"cheat cheat\".\r\n\r\nCheat offers the following Rails-related
+  pages:\r\n\r\n  radrails_rhtml              rails_plugin_creation \r\n  radrails_ruby
+  \              rails_rake_tasks      \r\n  rails_checklist             rails_request_object
+  \ \r\n  rails_configuration         rails_reserved_words  \r\n  rails_console               rails_routes
+  \         \r\n  rails_conventions           rails_svn             \r\n  rails_data_types
+  \           rails_tips            \r\n  rails_date_formats          rails_tasks
+  \          \r\n  rails_edge                  rails_to_s            \r\n  rails_environment
+  \          rails_vim             \r\n  rails_helpers               test_spec_rails
+  \      \r\n  rails_keywords              textmate_rails        \r\n  rails_migrations\r\n\r\nCommon
+  args:\r\n  -c, --svn     Modify files with subversion. (Note: svn must be in path)\r\n
+  \ -d, --database-name (mysql/oracle/postgresql/sqlite2/sqlite3)\r\n      --force
+  \  Overwrite files that already exist.\r\n  -p, --pretend Run but do not make any
+  changes.\r\n  -s, --skip    Skip files that already exist."

@@ -1,0 +1,28 @@
+---
+association_methods: ! "Singular associations (one-to-one)\n\n                                  |
+  \           |  belongs_to  |\ngenerated methods                 | belongs_to | :polymorphic
+  | has_one\n----------------------------------+------------+--------------+---------\n#other
+  \                           |     X      |      X       |    X\n#other=(other)                    |
+  \    X      |      X       |    X\n#build_other(attributes={})       |     X      |
+  \             |    X\n#create_other(attributes={})      |     X      |              |
+  \   X\n#other.create!(attributes={})     |            |              |    X\n#other.nil?
+  \                      |     X      |      X       |    \n\nCollection associations
+  (one-to-many / many-to-many)\n\n                                  |       |          |
+  has_many\ngenerated methods                 | habtm | has_many | :through  \n----------------------------------+-------+----------+----------\n#others
+  \                          |   X   |    X     |    X\n#others=(other,other,...)
+  \        |   X   |    X     |    \n#other_ids                        |   X   |    X
+  \    |    \n#other_ids=(id,id,...)            |   X   |    X     |    \n#others<<
+  \                        |   X   |    X     |    X\n#others.push                      |
+  \  X   |    X     |    X\n#others.concat                    |   X   |    X     |
+  \   X\n#others.build(attributes={})      |   X   |    X     |    X\n#others.create(attributes={})
+  \    |   X   |    X     |    \n#others.create!(attributes={})    |   X   |    X
+  \    |    X\n#others.size                      |   X   |    X     |    \n#others.length
+  \                   |   X   |    X     |    \n#others.count                     |
+  \      |    X     |    \n#others.sum(args*,&block)         |   X   |    X     |
+  \   X\n#others.empty?                    |   X   |    X     |    \n#others.clear
+  \                    |   X   |    X     |    \n#others.delete(other,other,...)   |
+  \  X   |    X     |    X\n#others.delete_all                |   X   |    X     |
+  \   \n#others.destroy_all               |   X   |    X     |    \n#others.find(*args)
+  \              |   X   |    X     |    X\n#others.find_first                |   X
+  \  |          |    \n#others.uniq                      |   X   |    X     |    \n#others.reset
+  \                    |   X   |    X     |    X"

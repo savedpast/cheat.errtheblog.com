@@ -1,0 +1,29 @@
+---
+watir_ie: ! "Watir\n*Load the Watir library\n  require 'watir'\n\n*Open Internet Explorer
+  at the specified URL\n  $browser = Watir::IE.start(\"http://google.com\")\n  $browser
+  = Watir::IE.start \"http://google.com\"\n\n*Attach to an existing browser, raising
+  an exception if it isn't found\n  $browser = Watir::IE.attach(:url, \"http://www.google.com\")\n
+  \ $browser = Watir::IE.attach(:title, \"Google\")\n\n*Attach to an existing browser,
+  returning nil if it isn't found\n  $browser = Watir::IE.find(:title, \"Google\")
+  \n  $browser = Watir::IE.find(:url, \"http://www.google.com\")\n\n*Speed up execution
+  (or use the \"-b\" command line switch)\n  $browser.speed = :fast\n\n*Close the
+  browser\n  $browser.close\n\n*Access an Element\n  Text box or text area\n    t
+  = $browser.text_field(:name, \"username\")\n  Button\n    b = $browser.button(:value,
+  \"Click Here\")\n  Drop down list\n    d = $browser.select_list(:name, \"month\")\n
+  \ Check box\n    c = $browser.checkbox(:name, \"enabled\")\n  Radio button\n    r
+  = $browser.radio(:name, \"payment type\")\n  Form\n    f = $browser.form(:name,
+  \"address\")\n    f = $browser.form(:action, \"submit\")\n  Link\n    l = $browser.link(:url,
+  \"http://google.com\")\n  Table cell in a table (2nd row, 1st column)\n    td =
+  $browser.table(:name, 'recent_records')[2][1]\n\t\n*Manipulate the Element\n  Click
+  a button or link\n\tb.click\n\tl.click\n  Enter text in a text box\n\tt.set(\"mickey
+  mouse\")\n\tt.set \"mickey mouse\"\n  Enter multiple lines in a multi-line text
+  box\n    t.set(\"line 1\\nline2\")\n    t.set \"line 1\\nline2\"\n  Set radio button
+  or check box\n    c.set\n    r.set\n  Clear an element\n    t.clear\n\tc.clear\n\tr.clear\n
+  \ Select an option in a drop down list\n\td.select(\"Hey!\")\n\td.select \"Hey!\"\n
+  \ Clear a drop down list\n    d.clearSelection\n  Submit a form\n    f.submit\n
+  \ Flash any element (useful from the watir-console)\n    e.flash\n\n*Check the Contents\n
+  \ Return the html of the page or any element\n\t$browser.html\n\te.html\n  Return
+  the text of the page or any element\n\t$browser.text\n\te.text\n  Return the title
+  of the document\n\t$browser.title\n  Return true if the specified text appears on
+  the page\n\t$browser.text.include? 'llama'\n  Return the contents of a table as
+  an array\n    $browser.table(:id, 'recent_records').to_a"

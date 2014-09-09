@@ -1,0 +1,5 @@
+---
+rack: ! "== Rackup\n\nhello.ru:\n  require 'hello'\n\n  use Rack::Reloader\n  use
+  Rack::CommonLogger\n  use Rack::ShowExceptions\n  use Rack::ShowStatus\n\n  run
+  HelloApp.new\n\nrun server:\n  % rackup hello.ru\n\n\n== Calling convention\n\n
+  \ def call(env)\n    [StatusCode, { \"Header\" => \"Value\" }, [\"Body\"]]\n  end"

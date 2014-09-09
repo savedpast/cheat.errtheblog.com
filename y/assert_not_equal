@@ -1,0 +1,4 @@
+---
+assert_not_equal: ! "# 'cheat assertions' for the rest\n\nassert_not_equal(expected,
+  actual, message=\"\")\n\nPasses if expected != actual\n\nExample:\n\n  assert_not_equal
+  'some string', 5"

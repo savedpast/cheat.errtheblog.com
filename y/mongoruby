@@ -1,0 +1,36 @@
+---
+mongoruby: ! "Here's what you wrote, so it isn't lost in the void:\n- (Hash, true)
+  update(selector, document, opts = {})\n\n  Update one or more documents in this
+  collection.\n\n  Parameters:\n    selector (Hash) — a hash specifying elements which
+  must be present for a document to be updated. Note: the update command currently
+  updates only the first document matching the given selector. If you want all matching
+  documents to be updated, be sure to specify :multi => true.\n    \n    document
+  (Hash) — a hash specifying the fields to be changed in the selected document, or
+  (in the case of an upsert) the document to be inserted\n    \n    opts (Hash) (defaults
+  to: {}) — a customizable set of options\n      Options Hash (opts):\n      :upsert
+  (Boolean) — default: +false+ — if true, performs an upsert (update or insert)\n
+  \     :multi (Boolean) — default: +false+ — update all documents matching the selector,
+  as opposed to just the first matching document. Note: only works in MongoDB 1.1.3
+  or later.\n      :safe (Boolean) — default: +false+ — If true, check that the save
+  succeeded. OperationFailure will be raised on an error. Note that a safe check requires
+  an extra round-trip to the database. Safe options provided here will override any
+  safe options set on this collection, its database object, or the current collection.
+  See the options for DB#get_last_error for details.\n      \n  Returns: (Hash, true)
+  — Returns a Hash containing the last error object if running in safe mode. Otherwise,
+  returns true.\n  \n  Examples:\n    Scheduling::Task.collection.update({\n      '_type'
+  => 'RecurringTask'\n      }, {:$set => {'_type' => 'Scheduling::RecurringTask'}},
+  {:multi => true})\n\n    Scheduling::Task.collection.update({\n      '_type' =>
+  'CounterTask'\n      }, {:$set => {'_type' => 'Scheduling::CounterTask'}}, {:multi
+  => true})\n    \n    The following example illustrates how to rename fields through
+  'update' command,\n    notice that old name and new name must be strings(symbols
+  doesn't work)\n    MonitorProfile.collection.update({\n         :connections =>
+  { :$exists => true}\n       }, {\n         :$rename => {'connections' => 'connectivities'}\n
+  \      }, {\n         :multi => true\n       })\n      \n      \n- (String) rename(new_name)\n\nRename
+  this collection.\n\nNote: If operating in auth mode, the client must be authorized
+  as an admin to perform this operation.\n\nParameters:\n  new_name (String) — the
+  new name for this collection\nReturns:\n  (String) — the name of the new collection.\nRaises:\n
+  \ (Mongo::InvalidNSName) — if new_name is an invalid collection name.\nExamples:\n
+  \ MonitorTask.collection.rename('scheduling_tasks')\n  When collection name is renamed,
+  the name of corresponding model class is usually renamed, so getting the \n  collection
+  class through model class is not realistic, the following example is based on MongoID:\n
+  \ Mongoid.master.collection(:monitor_tasks).rename(:scheduling_tasks)"

@@ -1,0 +1,35 @@
+---
+simpletest: ! "<?php\n  /**\n   * A unit test class with all available functions\n
+  \  */\n  require 'simpletest/autorun.php';\n  class HelloTest extends UnitTestCase
+  {\n\n    function setUp() {\n      // Runs this before each test method\n    }\n\n
+  \   function tearDown() {\n      // Runs this after each test method\n    }\n\n
+  \   function testHello() {\n      // Fail if $x is false\n      $x = true;\n      $this->assertTrue($x);\n\n
+  \     // Fail if $x is true\n      $this->assertFalse($x);\n\n      // Fail if $x
+  is set\n      $this->assertNull($x);\n\n      // Fail if $x not set\n      $this->assertNotNull($x);\n\n
+  \     // Fail if $x is not the class or type $t\n      $this->assertIsA($x, $t);\n\n
+  \     // Fail if $x is of the class or type $t\n      $this->assertNotA($x, $t);\n\n
+  \     // Fail if $x == $y is false\n      $this->assertEqual($x, $y);\n\n      //
+  Fail if $x == $y is true\n      $this->assertNotEqual($x, $y);\n\n      // Fail
+  if abs($x - $y) < $m is false\n      $this->assertWithinMargin($x, $y, $m);\n\n
+  \     // Fail if abs($x - $y) < $m is true\n      $this->assertOutsideMargin($x,
+  $y, $m);\n\n      // Fail if $x == $y is false or a type mismatch\n      $this->assertIdentical($x,
+  $y);\n\n      // Fail if $x == $y is true and types match\n      $this->assertNotIdentical($x,
+  $y);\n\n      // Fail unless $x and $y are the same variable\n      $this->assertReference($x,
+  $y);\n\n      // Fail unless $x and $y are identical copies\n      $this->assertClone($x,
+  $y);\n\n      // Fail unless the regex $p matches $x\n      $this->assertPattern($p,
+  $x);\n\n      // Fail if the regex $p matches $x\n      $this->assertNoPattern($p,
+  $x);\n\n      // Swallows any upcoming matching error\n      $this->expectError($x);\n\n
+  \     // Fail on failed expectation object $e\n      $this->assert($e);\n\n      //
+  Sends a test pass\n      $this->pass();\n\n      // Sends a test failure\n      $this->fail();\n\n
+  \     // Sends an exception event\n      $this->error();\n\n      // Sends a user
+  defined message to the test reporter\n      $this->signal($type, $payload);\n\n
+  \     // Does a formatted print_r() for quick and dirty debugging\n      $this->dump($var);\n
+  \   }\n  }\n?>\n\n<?php\n  /**\n   * A test suite class that loads all tests from
+  files that end\n   * in \"_test.php\", from a directory structure like this:\n   *
+  \n   * lib-foo/test/1_test.php\n   * lib-foo/test/2_test.php\n   * lib-bar/test/1_test.php\n
+  \  * lib-bar/test/2_test.php\n   * this_class_in_a_file.php\n   */\n  require 'simpletest/autorun.php';\n
+  \ class AllTests extends TestSuite {\n    function AllTests() {\n      $this->TestSuite('All
+  tests');\n\n      // Load all test files from all libs\n      $glob_pattern = dirname(__FILE__)
+  . \"/**/test/*_test.php\";\n      $test_files   = glob($glob_pattern);\n      foreach
+  ($test_files as $test_file) {\n        $this->addFile($test_file);\n      }\n    }\n
+  \ }\n?>"

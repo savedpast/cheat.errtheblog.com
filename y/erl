@@ -1,0 +1,9 @@
+---
+erl: ! "`erl` runs .beam files. To create these you must first compile your\nerlang
+  source file (.erl) with the `erlc` program.\n\nUsage:\n  erl [arguments]\n\nArguments:\n
+  \ -pa Directory\n   Specifies a load path directory\n  -man Command\n   load the
+  man entry for a command\n  -config File\n   Load a configuration file\n  -setcookie
+  CookieName\n   Give this node a cookie name \n  -detached\n   Run this program in
+  the background\n  -eval \"some:code().\"\n   Evaluate erlang code\n  -heart\n   Monitor
+  this program and auto-restart it\n  -s Module [Function [Argument1, ... ArgumentN]]\n
+  \  Execute Module:Function(Argument1, ... ArgumentN)\n\nFull Details: http://erlang.org/doc/man/erl.html"

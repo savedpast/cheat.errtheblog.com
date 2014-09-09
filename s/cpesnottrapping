@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>#Get a list of CPE's that are pingable but not trapping (or are not Cisco's)
+for ip in $( cat /tmp/devices ); do
+  if [[ ! -s /var/lib/rancid/Unsorted/configs/$ip ]]; then
+    echo $ip not in rancid.
+  else
+    grep -qL 24.73.240.173 /var/lib/rancid/Unsorted/configs/$ip
+    if [[ $? -eq 1 ]]; then
+      echo $ip in rancid, but missing snmp trap config.
+    fi
+  fi
+done</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

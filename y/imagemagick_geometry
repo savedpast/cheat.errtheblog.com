@@ -1,0 +1,12 @@
+---
+imagemagick_geometry: ! "50% \r\n - Height and width both scaled by specified percentage.\r\n\r\n50%x50%\r\n
+  - Height and width individually scaled by specified percentages. (Only one % symbol
+  needed.)\r\n\r\n500\r\n - Width given, height automagically selected to preserve
+  aspect ratio.\r\n\r\nx350\r\n - Height given, width automagically selected to preserve
+  aspect ratio.\r\n\r\n500x350\r\n - Maximum values of height and width given, aspect
+  ratio preserved.\r\n\r\n500x350^\r\n - Minimum values of width and height given,
+  aspect ratio preserved.\r\n\r\n500x350!\r\n - Width and height emphatically given,
+  original aspect ratio ignored.\r\n\r\n500x350>\r\n - Change as per widthxheight
+  but only if an image dimension exceeds a specified dimension.\r\n\r\n500x350<\r\n
+  - Change dimensions only if both image dimensions exceed specified dimensions.\r\n\r\narea@\r\n
+  - Resize image to have specified area in pixels. Aspect ratio is preserved."

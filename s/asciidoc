@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>AsciiDoc Markup Syntax Summary
+==============================
+
+A summary of the most often used markup.
+For a complete reference see the 'AsciiDoc User Guide'.
+
+Text formatting
+---------------
+  *bold text*                 (boldface font)
+  _emphasized text_           (normally italics)
+  'emphasized text'
+  +monospaced text+           (proportional font)
+  `monospaced text`
+
+Document links
+--------------
+  [[id]]                      (define link target)
+  &lt;&lt;id,caption&gt;&gt;              (link to target id)
+  link:filename#id[caption]   (link to external HTML file)
+
+URLs
+----
+  Use normal URL and email addess syntax or:
+
+  http:address[caption]       (link to web page)
+  mailto:address[caption]     (link to mail recipient)
+
+Images
+------
+  image:filename[caption]     (inline image)
+  image::filename[caption]    (block image)
+
+Document header
+---------------
+
+  The Document Title
+  ==================
+  author &lt;email&gt;            (optional)
+  revision, date            (optional)
+
+Section title underlines
+------------------------
+  Level 0 (document title):  ======================
+  Level 1:                   ----------------------
+  Level 2:                   ~~~~~~~~~~~~~~~~~~~~~~
+  Level 3:                   ^^^^^^^^^^^^^^^^^^^^^^
+  Level 4 (bottom level):    ++++++++++++++++++++++
+
+Delimited blocks
+----------------
+Delimiters must begin at left margin.
+
+  -------------------
+  listing block
+  -------------------
+
+  ...................
+  literal block
+  ...................
+
+  *******************
+  sidebar block
+  *******************
+
+  [style, author, cite]       (optional)
+  ___________________
+  quote block
+  ___________________
+
+  ===================
+  example block
+  ===================
+
+  ///////////////////
+  comment block
+  ///////////////////
+
+More block elements
+-------------------
+  [attributes list]           (Note 1)
+  .Block title                (Note 1)
+  // Comment line             (Note 1)
+  include::filename[]         (Note 1)
+
+Note 1: Begin at the left margin.
+
+More inline elements
+--------------------
+  footnote:[footnote text]    (document footnote)</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

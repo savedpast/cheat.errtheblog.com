@@ -1,0 +1,42 @@
+---
+xslt: ! "Functions\n---------\n\nNode Set Functions\n------------------\nnumber last()\n\nnumber
+  position()\n\nnumber count(node-set)\n\nnode-set id(object)\n\nstring local-name(node-set?)\n\nstring
+  namespace-uri(node-set?)\n\nstring name(node-set?)\n\nString Functions\n----------------\n\n\n#
+  haystack = the string/nodeset/etc that the function is applied to\n# needle = something
+  to be applied to the haystack (find, substring etc)\n\nstring string(object?)\n\nstring
+  concat(string, string, string*)\n\nboolean starts-with(haystack, needle)\n\nboolean
+  contains(haystack, needle)\n\nstring substring-before(haystack, needle)\n\nstring
+  substring-after(haystack, needle)\n\nstring substring(haystack, index, length?)\n\nnumber
+  string-length(string?)\n\nstring normalize-space(string?)\n\nstring translate(haystack,
+  from, to) # note: only chars, not words\n\n\nBoolean Functions\n-----------------\n\nboolean
+  boolean(object)\n\nboolean not(object)\n\nboolean true()\n\nboolean false()\n\nboolean
+  lang(string)\n\n\nNumber Functions\n----------------\n\nnumber number(object?)\n\nnumber
+  sum(node-set)\n\nnumber floor(number)\n\nnumber ceiling(number)\n\nnumber round(number)
+  # <0.5 -> 0 ;; >= 0.5 -> 1.0\n\n\n--------\nElements\n--------\n\nxsl:apply-imports\n\nxsl:apply-templates
+  select=\"nodeset\" mode=\"qname\"\n\nxsl:attribute name=\"qname\" namespace=\"uri\"
+  # must be directly after element\n\nxsl:attribute-set name=\"qname\" use-attribute-sets=\"qnames\"\n\nxsl:call-template
+  name=\"qname\"\n\nxsl:choose\n\nxsl:comment\n\nxsl:copy use-attribute-sets=\"qnames\"\n\nxsl:copy-of
+  select=\"expression\"\n\nxsl:decimal-format name=\"qname\" decimal-separator=\"char\"
+  grouping-separator=\"char\" infinity=\"string\" minus-sign=\"char\" NaN=\"string\"
+  percent=\"char\" per-mille=\"char\" zero-digit=\"char\" digit=\"char\" pattern-separator=\"char\"\n\nxsl:document
+  href=\"uri\"\n\nxsl:element name=\"qname\" namspace=\"uri\" use-attribute-sets=\"qnames\"\n\nxsl:fallback\n\nxsl:for-each
+  select=\"nodeset\"\n\nxsl:if test=\"boolean\"\n\nxsl:include href=\"uri\"\n\nxsl:import
+  href=\"uri\"\n\nxsl:key name=\"qname\" match=\"pattern\" use=\"expression\"\n\nxsl:message
+  terminate=\"yes|no\"\n\nxsl:namespace-alias result-prefix=\"prefix|#default\" stylesheet-prefix=\"prefix|#default\"\n\nxsl:number
+  level=\"single|multiple|any\" count=\"pattern\" from=\"pattern\" value=\"number-expression\"
+  format=\"string\" lang=\"nmtoken\" letter-value=\"alphabetical|traditional\" grouping-separator=\"char\"
+  grouping-size=\"number\"\n\nxsl:otherwise\n\nxsl:output method=\"xml|html|text|qname\"
+  version=\"string\" encoding=\"string\" omit-xml-declaration=\"yes|no\" doctype-public=\"string\"
+  doctype-system=\"string\" standalone=\"yes|no\" indent=\"yes|no\" cdata-section-elements=\"qnames\"
+  media-type=\"string\"\n\nxsl:param name=\"qname\" [select=\"expression\"]\n\nxsl:processing-instruction
+  name=\"qname\"\n\nxsl:preserve-space elements=\"tokens\"\n\nxsl:sort select=\"string\"
+  lang=\"string\" data-type=\"text|number|qname\" order=\"ascending|descending\" case-order=\"upper-first|lower-first\"\n\nxsl:strip-space
+  elements=\"tokens\"\n\nxsl:stylesheet version=\"1.0\" id=\"id\" extension-element-prefixes=\"tokens\"
+  exclude-result-prefixes=\"tokens\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\n\nxsl:template
+  match=\"pattern\" name=\"qname\" priority=\"number\" mode=\"qname\"\n\nxsl:text
+  disable-output-escaping=\"yes|no\"\n\nxsl:value-of select=\"expression\" disable-output-escaping=\"yes|no\"\n\nxsl:variable
+  name=\"qname\" select=\"expression\"\n\nxsl:when test=\"boolean\"\n\nxsl:with-param
+  name=\"qname\" select=\"expression\"\n\n\n\n\n\n----\n\nAxis\n\n----\n\nancestor::
+  \nancestor-or-self:: \nattribute:: (@)\nchild:: \ndescendant:: \ndescendant-or-self::
+  (//)\nfollowing::\nfollowing-sibling::\nnamespace::\nparent:: (..)\npreceding::\npreceding-sibling::\nself::
+  (.)"

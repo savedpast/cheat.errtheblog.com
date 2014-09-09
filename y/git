@@ -1,0 +1,245 @@
+---
+git: ! "Setup\n-----\n\ngit clone <repo>\n  clone the repository specified by <repo>;
+  this is similar to \"checkout\" in\n  some other version control systems such as
+  Subversion and CVS\n\nAdd colors to your ~/.gitconfig file:\n\n  [color]\n    ui
+  = auto\n  [color \"branch\"]\n    current = yellow reverse\n    local = yellow\n
+  \   remote = green\n  [color \"diff\"]\n    meta = yellow bold\n    frag = magenta
+  bold\n    old = red bold\n    new = green bold\n  [color \"status\"]\n    added
+  = yellow\n    changed = green\n    untracked = cyan\n\nHighlight whitespace in diffs\n\n
+  \ [color]\n    ui = true\n  [color \"diff\"]\n    whitespace = red reverse\n  [core]\n
+  \   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol\n\nAdd aliases
+  to your ~/.gitconfig file:\n\n  [alias]\n    st = status\n    ci = commit\n    br
+  = branch\n    co = checkout\n    df = diff\n    dc = diff --cached\n    lg = log
+  -p\n    lol = log --graph --decorate --pretty=oneline --abbrev-commit\n    lola
+  = log --graph --decorate --pretty=oneline --abbrev-commit --all\n    ls = ls-files\n\n
+  \   # Show files ignored by git:\n    ign = ls-files -o -i --exclude-standard\n\n\nConfiguration\n-------------\n\ngit
+  config -e [--global]\n  edit the .git/config [or ~/.gitconfig] file in your $EDITOR\n\ngit
+  config --global user.name 'John Doe'\ngit config --global user.email johndoe@example.com\n
+  \ sets your name and email for commit messages\n\ngit config branch.autosetupmerge
+  true\n  tells git-branch and git-checkout to setup new branches so that git-pull(1)\n
+  \ will appropriately merge from that remote branch.  Recommended.  Without this,\n
+  \ you will have to add --track to your branch command or manually merge remote\n
+  \ tracking branches with \"fetch\" and then \"merge\".\n\ngit config core.autocrlf
+  true\n  This setting tells git to convert the newlines to the system's standard\n
+  \ when checking out files, and to LF newlines when committing in\n\ngit config --list\n
+  \ To view all options\n\ngit config apply.whitespace nowarn\n  To ignore whitespace\n\nYou
+  can add \"--global\" after \"git config\" to any of these commands to make it\napply
+  to all git repos (writes to ~/.gitconfig).\n\n\nInfo\n----\ngit reflog\n  Use this
+  to recover from *major* mess ups! It's basically a log of the\n  last few actions
+  and you might have luck and find old commits that\n  have been lost by doing a complex
+  merge.\n\ngit diff\n  show a diff of the changes made since your last commit\n  to
+  diff one file: \"git diff -- <filename>\"\n  to show a diff between staging area
+  and HEAD: `git diff --cached`\n\ngit status\n  show files added to the staging area,
+  files with changes, and untracked files\n\ngit log\n  show recent commits, most
+  recent on top. Useful options:\n  --color       with color\n  --graph       with
+  an ASCII-art commit graph on the left\n  --decorate    with branch and tag names
+  on appropriate commits\n  --stat        with stats (files changed, insertions, and
+  deletions)\n  -p            with full diffs\n  --author=foo  only by a certain author\n
+  \ --after=\"MMM DD YYYY\" ex. (\"Jun 20 2008\") only commits after a certain date\n
+  \ --before=\"MMM DD YYYY\" only commits that occur before a certain date\n  --merge
+  \      only the commits involved in the current merge conflicts\n\ngit log <ref>..<ref>\n
+  \ show commits between the specified range. Useful for seeing changes from remotes:\n
+  \ git log HEAD..origin/master # after git remote update\n\ngit show <rev>\n  show
+  the changeset (diff) of a commit specified by <rev>, which can be any\n  SHA1 commit
+  ID, branch name, or tag (shows the last commit (HEAD) by default)\n\n  also to show
+  the contents of a file at a specific revision, use \n     git show <rev>:<filename>\n
+  \ this is similar to cat-file but much simpler syntax.\n\ngit show --name-only <rev>\n
+  \ show only the names of the files that changed, no diff information.\n\ngit blame
+  <file>\n  show who authored each line in <file>\n\ngit blame <file> <rev>\n  show
+  who authored each line in <file> as of <rev> (allows blame to go back in\n  time)\n\ngit
+  gui blame\n  really nice GUI interface to git blame\n\ngit whatchanged <file>\n
+  \ show only the commits which affected <file> listing the most recent first\n  E.g.
+  view all changes made to a file on a branch:\n    git whatchanged <branch> <file>
+  \ | grep commit | \\\n         colrm 1 7 | xargs -I % git show % <file>\n  this
+  could be combined with git remote show <remote> to find all changes on\n  all branches
+  to a particular file.\n\ngit diff <commit> head path/to/fubar\n  show the diff between
+  a file on the current branch and potentially another branch\n\ngit diff --cached
+  [<file>]\n  shows diff for staged (git-add'ed) files (which includes uncommitted
+  git cherry-pick'ed files)\n\ngit ls-files\n  list all files in the index and under
+  version control.\n\ngit ls-remote <remote> [HEAD]\n  show the current version on
+  the remote repo. This can be used to check whether\n  a local is required by comparing
+  the local head revision.\n\nAdding / Deleting\n-----------------\n\ngit add <file1>
+  <file2> ...\n  add <file1>, <file2>, etc... to the project\n\ngit add <dir>\n  add
+  all files under directory <dir> to the project, including subdirectories\n\ngit
+  add .\n  add all files under the current directory to the project\n  *WARNING*:
+  including untracked files.\n\ngit rm <file1> <file2> ...\n  remove <file1>, <file2>,
+  etc... from the project\n\ngit rm $(git ls-files --deleted)\n  remove all deleted
+  files from the project\n\ngit rm --cached <file1> <file2> ...\n  commits absence
+  of <file1>, <file2>, etc... from the project\n\nIgnoring\n---------\n\nOption 1:\n\nEdit
+  $GIT_DIR/.git/info/exclude. See Environment Variables below for explanation on $GIT_DIR.\n\nOption
+  2:\n\nAdd a file .gitignore to the root of your project. This file will be checked
+  in.\n\nEither way you need to add patterns to exclude to these files.\n\nStaging\n-------\n\ngit
+  add <file1> <file2> ...\ngit stage <file1> <file2> ...\n  add changes in <file1>,
+  <file2> ... to the staging area (to be included in\n  the next commit\n\ngit add
+  -p\ngit stage --patch\n  interactively walk through the current changes (hunks)
+  in the working\n  tree, and decide which changes to add to the staging area.\n\ngit
+  add -i\ngit stage --interactive\n  interactively add files/changes to the staging
+  area. For a simpler\n  mode (no menu), try `git add --patch` (above)\n\nUnstaging\n---------\n\ngit
+  reset HEAD <file1> <file2> ...\n  remove the specified files from the next commit\n\n\nCommitting\n----------\n\ngit
+  commit <file1> <file2> ... [-m <msg>]\n  commit <file1>, <file2>, etc..., optionally
+  using commit message <msg>,\n  otherwise opening your editor to let you type a commit
+  message\n\ngit commit -a\n  commit all files changed since your last commit\n  (does
+  not include new (untracked) files)\n\ngit commit -v\n  commit verbosely, i.e. includes
+  the diff of the contents being committed in\n  the commit message screen\n\ngit
+  commit --amend\n  edit the commit message of the most recent commit\n\ngit commit
+  --amend <file1> <file2> ...\n  redo previous commit, including changes made to <file1>,
+  <file2>, etc...\n\n\nBranching\n---------\n\ngit branch\n  list all local branches\n\ngit
+  branch -r\n  list all remote branches\n\ngit branch -a\n  list all local and remote
+  branches\n\ngit branch <branch>\n  create a new branch named <branch>, referencing
+  the same point in history as\n  the current branch\n\ngit branch <branch> <start-point>\n
+  \ create a new branch named <branch>, referencing <start-point>, which may be\n
+  \ specified any way you like, including using a branch name or a tag name\n\ngit
+  push <repo> <start-point>:refs/heads/<branch>\n  create a new remote branch named
+  <branch>, referencing <start-point> on the\n  remote. Repo is the name of the remote.\n
+  \ Example: git push origin origin:refs/heads/branch-1\n  Example: git push origin
+  origin/branch-1:refs/heads/branch-2\n  Example: git push origin branch-1 ## shortcut\n\ngit
+  branch --track <branch> <remote-branch>\n  create a tracking branch. Will push/pull
+  changes to/from another repository.\n  Example: git branch --track experimental
+  origin/experimental\n\ngit branch --set-upstream <branch> <remote-branch> (As of
+  Git 1.7.0)\n  Make an existing branch track a remote branch\n  Example: git branch
+  --set-upstream foo origin/foo\n\ngit branch -d <branch>\n  delete the branch <branch>;
+  if the branch you are deleting points to a\n  commit which is not reachable from
+  the current branch, this command\n  will fail with a warning.\n\ngit branch -r -d
+  <remote-branch>\n  delete a remote-tracking branch.\n  Example: git branch -r -d
+  wycats/master\n\ngit branch -D <branch>\n  even if the branch points to a commit
+  not reachable from the current branch,\n  you may know that that commit is still
+  reachable from some other branch or\n  tag. In that case it is safe to use this
+  command to force git to delete the\n  branch.\n\ngit checkout <branch>\n  make the
+  current branch <branch>, updating the working directory to reflect\n  the version
+  referenced by <branch>\n\ngit checkout -b <new> <start-point>\n  create a new branch
+  <new> referencing <start-point>, and check it out.\n\ngit push <repository> :<branch>\n
+  \ removes a branch from a remote repository.\n  Example: git push origin :old_branch_to_be_deleted\n\ngit
+  co <branch> <path to new file>\n  Checkout a file from another branch and add it
+  to this branch. File\n  will still need to be added to the git branch, but it's
+  present.\n  Eg. git co remote_at_origin__tick702_antifraud_blocking ..../...nt_elements_for_iframe_blocked_page.rb\n\ngit
+  show <branch> -- <path to file that does not exist>\n  Eg. git show remote_tick702
+  -- path/to/fubar.txt\n  show the contents of a file that was created on another
+  branch and that\n  does not exist on the current branch.\n\ngit show <rev>:<repo
+  path to file>\n  Show the contents of a file at the specific revision. Note: path
+  has to be\n  absolute within the repo.\n\nMerging\n-------\n\ngit merge <branch>\n
+  \ merge branch <branch> into the current branch; this command is idempotent\n  and
+  can be run as many times as needed to keep the current branch\n  up-to-date with
+  changes in <branch>\n\ngit merge <branch> --no-commit\n  merge branch <branch> into
+  the current branch, but do not autocommit the\n  result; allows you to make further
+  tweaks\n\ngit merge <branch> -s ours\n  merge branch <branch> into the current branch,
+  but drops any changes in\n  <branch>, using the current tree as the new tree\n\n\nCherry-Picking\n--------------\n\ngit
+  cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] <commit>\n  selectively merge
+  a single commit from another local branch\n  Example: git cherry-pick 7300a6130d9447e18a931e898b64eefedea19544\n\ngit
+  hash-object <file-path>\n  get the blob of some file whether it is in a repository
+  or not\n\nFind the commit in the repository that contains the file blob:\n\n    obj_blob=\"$1\"\n
+  \   git log --pretty=format:'%T %h %s' \\\n    | while read tree commit subject
+  ; do\n        if git ls-tree -r $tree | grep -q \"$obj_blob\" ; then\n            echo
+  $commit \"$subject\"\n        fi\n    done\n\n\nSquashing\n---------\nWARNING: \"git
+  rebase\" changes history. Be careful. Google it.\n\ngit rebase --interactive HEAD~10\n
+  \ (then change all but the first \"pick\" to \"squash\")\n  squash the last 10 commits
+  into one big commit\n\n\nConflicts\n---------\n\ngit mergetool\n  work through conflicted
+  files by opening them in your mergetool (opendiff,\n  kdiff3, etc.) and choosing
+  left/right chunks. The merged result is staged for\n  commit.\n\nFor binary files
+  or if mergetool won't do, resolve the conflict(s) manually\nand then do:\n\n  git
+  add <file1> [<file2> ...]\n\nOnce all conflicts are resolved and staged, commit
+  the pending merge with:\n\n  git commit\n\n\nSharing\n-------\n\ngit fetch <remote>\n
+  \ update the remote-tracking branches for <remote> (defaults to \"origin\").\n  Does
+  not initiate a merge into the current branch (see \"git pull\" below).\n\ngit pull\n
+  \ fetch changes from the server, and merge them into the current branch.\n  Note:
+  .git/config must have a [branch \"some_name\"] section for the current\n  branch,
+  to know which remote-tracking branch to merge into the current\n  branch.  Git 1.5.3
+  and above adds this automatically.\n\ngit push\n  update the server with your commits
+  across all branches that are *COMMON*\n  between your local copy and the server.
+  \ Local branches that were never\n  pushed to the server in the first place are
+  not shared.\n\ngit push origin <branch>\n  update the server with your commits made
+  to <branch> since your last push.\n  This is always *required* for new branches
+  that you wish to share. After\n  the first explicit push, \"git push\" by itself
+  is sufficient.\n\ngit push origin <branch>:refs/heads/<branch>\n  E.g. git push
+  origin twitter-experiment:refs/heads/twitter-experiment\n  Which, in fact, is the
+  same as git push origin <branch> but a little\n  more obvious what is happening.\n\nReverting\n---------\n\ngit
+  revert <rev>\n  reverse commit specified by <rev> and commit the result.  This does
+  *not* do\n  the same thing as similarly named commands in other VCS's such as \"svn\n
+  \ revert\" or \"bzr revert\", see below\n\ngit checkout <file>\n  re-checkout <file>,
+  overwriting any local changes\n\ngit checkout .\n  re-checkout all files, overwriting
+  any local changes.  This is most similar\n  to \"svn revert\" if you're used to
+  Subversion commands\n\n\nFix mistakes / Undo\n-------------------\n\ngit reset --hard\n
+  \ abandon everything since your last commit; this command can be DANGEROUS.\n  If
+  merging has resulted in conflicts and you'd like to just forget about\n  the merge,
+  this command will do that.\n\ngit reset --hard ORIG_HEAD or git reset --hard origin/master
+  \n  undo your most recent *successful* merge *and* any changes that occurred\n  after.
+  \ Useful for forgetting about the merge you just did.  If there are\n  conflicts
+  (the merge was not successful), use \"git reset --hard\" (above)\n  instead.\n\ngit
+  reset --soft HEAD^\n  forgot something in your last commit? That's easy to fix.
+  Undo your last\n  commit, but keep the changes in the staging area for editing.\n\ngit
+  commit --amend\n  redo previous commit, including changes you've staged in the meantime.\n
+  \ Also used to edit commit message of previous commit.\n\n\nPlumbing\n--------\n\ntest
+  <sha1-A> = $(git merge-base <sha1-A> <sha1-B>)\n  determine if merging sha1-B into
+  sha1-A is achievable as a fast forward;\n  non-zero exit status is false.\n\n\nStashing\n--------\n\ngit
+  stash\ngit stash save <optional-name>\n  save your local modifications to a new
+  stash (so you can for example\n  \"git svn rebase\" or \"git pull\")\n\ngit stash
+  apply\n  restore the changes recorded in the stash on top of the current working
+  tree\n  state\n\ngit stash pop\n  restore the changes from the most recent stash,
+  and remove it from the stack\n  of stashed changes\n\ngit stash list\n  list all
+  current stashes\n\ngit stash show <stash-name> -p\n  show the contents of a stash
+  - accepts all diff args\n\ngit stash drop [<stash-name>]\n  delete the stash\n\ngit
+  stash clear\n  delete all current stashes\n\n\nRemotes\n-------\n\ngit remote add
+  <remote> <remote_URL>\n  adds a remote repository to your git config.  Can be then
+  fetched locally.\n  Example:\n    git remote add coreteam git://github.com/wycats/merb-plugins.git\n
+  \   git fetch coreteam\n\ngit push <remote> :refs/heads/<branch>\n  delete a branch
+  in a remote repository\n\ngit push <remote> <remote>:refs/heads/<remote_branch>\n
+  \ create a branch on a remote repository\n  Example: git push origin origin:refs/heads/new_feature_name\n\ngit
+  push <repository> +<remote>:<new_remote>\n  replace a <remote> branch with <new_remote>\n
+  \ think twice before do this\n  Example: git push origin +master:my_branch\n\ngit
+  remote prune <remote>\n  prune deleted remote-tracking branches from \"git branch
+  -r\" listing\n\ngit remote add -t master -m master origin git://example.com/git.git/\n
+  \ add a remote and track its master\n\ngit remote show <remote>\n  show information
+  about the remote server.\n\ngit checkout -b <local branch> <remote>/<remote branch>\n
+  \ Eg.:\n    git checkout -b myfeature origin/myfeature\n    git checkout -b myfeature
+  remotes/<remote>/<branch>\n\n  Track a remote branch as a local branch. It seems
+  that\n  somtimes an extra 'remotes/' is required, to see the exact\n  branch name,
+  'git branch -a'.\n\ngit pull <remote> <branch>\ngit push\n  For branches that are
+  remotely tracked (via git push) but\n  that complain about non-fast forward commits
+  when doing a\n  git push. The pull synchronizes local and remote, and if\n  all
+  goes well, the result is pushable.\n\ngit fetch <remote>\n  Retrieves all branches
+  from the remote repository. After\n  this 'git branch --track ...' can be used to
+  track a branch\n  from the new remote.\n\nSubmodules\n----------\n\ngit submodule
+  add <remote_repository> <path/to/submodule>\n  add the given repository at the given
+  path. The addition will be part of the\n  next commit.\n\ngit submodule update [--init]\n
+  \ Update the registered submodules (clone missing submodules, and checkout\n  the
+  commit specified by the super-repo). --init is needed the first time.\n\ngit submodule
+  foreach <command>\n  Executes the given command within each checked out submodule.\n\nRemoving
+  submodules\n\n   1. Delete the relevant line from the .gitmodules file.\n   2. Delete
+  the relevant section from .git/config.\n   3. Run git rm --cached path_to_submodule
+  (no trailing slash).\n   4. Commit and delete the now untracked submodule files.\n\nUpdating
+  submodules\n  To update a submodule to a new commit:\n    1. update submodule:\n
+  \       cd <path to submodule>\n        git pull\n    2. commit the new version
+  of submodule:\n        cd <path to toplevel>\n        git commit -m \"update submodule
+  version\"\n    3. check that the submodule has the correct version\n        git
+  submodule status\n  If the update in the submodule is not committed in the\n  main
+  repository, it is lost and doing git submodule\n  update will revert to the previous
+  version.\n\nPatches\n-------\n\ngit format-patch HEAD^\n  Generate the last commit
+  as a patch that can be applied on another\n  clone (or branch) using 'git am'. Format
+  patch can also generate a\n  patch for all commits using 'git format-patch HEAD^
+  HEAD'\n  All page files will be enumerated with a prefix, e.g. 0001 is the\n  first
+  patch.\n\ngit format-patch <Revision>^..<Revision>\n  Generate a patch for a single
+  commit. E.g.\n    git format-patch d8efce43099^..d8efce43099\n  Revision does not
+  need to be fully specified.\n\ngit am <patch file>\n  Applies the patch file generated
+  by format-patch.\n\ngit diff --no-prefix > patchfile\n  Generates a patch file that
+  can be applied using patch:\n    patch -p0 < patchfile\n  Useful for sharing changes
+  without generating a git commit.\n\nTags\n----\n\ngit tag -l\n  Will list all tags
+  defined in the repository.\n\ngit co <tag_name>\n  Will checkout the code for a
+  particular tag. After this you'll\n  probably want to do: 'git co -b <some branch
+  name>' to define\n  a branch. Any changes you now make can be committed to that\n
+  \ branch and later merged.\n\nArchive\n-------\n\ngit archive master | tar -x -C
+  /somewhere/else\n  Will export expanded tree as tar archive at given path\n\ngit
+  archive master | bzip2 > source-tree.tar.bz2\n  Will export archive as bz2\n\ngit
+  archive --format zip --output /full/path master\n  Will export as zip\n\nGit Instaweb\n------------\n\ngit
+  instaweb --httpd=webrick [--start | --stop | --restart]\n\n\nEnvironment Variables\n---------------------\n\nGIT_AUTHOR_NAME,
+  GIT_COMMITTER_NAME\n  Your full name to be recorded in any newly created commits.
+  \ Overrides\n  user.name in .git/config\n\nGIT_AUTHOR_EMAIL, GIT_COMMITTER_EMAIL\n
+  \ Your email address to be recorded in any newly created commits.  Overrides\n  user.email
+  in .git/config\n\nGIT_DIR\n  Location of the repository to use (for out of working
+  directory repositories)\n\nGIT_WORKING_TREE\n  Location of the Working Directory
+  - use with GIT_DIR to specifiy the working directory root\n  or to work without
+  being in the working directory at all.\n\nChanging history\n----------------\n\nChange
+  author for all commits with given name\n\n  git filter-branch --commit-filter '\n
+  \         if [ \"$GIT_COMMITTER_NAME\" = \"<Old Name>\" ];\n          then\n                  GIT_COMMITTER_NAME=\"<New
+  Name>\";\n                  GIT_AUTHOR_NAME=\"<New Name>\";\n                  GIT_COMMITTER_EMAIL=\"<New
+  Email>\";\n                  GIT_AUTHOR_EMAIL=\"<New Email>\";\n                  git
+  commit-tree \"$@\";\n          else\n                  git commit-tree \"$@\";\n
+  \         fi' HEAD"

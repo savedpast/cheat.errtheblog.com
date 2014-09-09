@@ -1,0 +1,3 @@
+---
+pga_ruby_loop: ! "for student in students\r\n  puts student\r\nend\r\n\r\n@collectionname.each
+  do |collectionitem| \r\n  collectionitem.dosomething\r\nend"

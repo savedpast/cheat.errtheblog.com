@@ -1,0 +1,36 @@
+---
+nerdtree: ! "2.3. NERD tree Mappings                                     *NERDTreeMappings*\n\nDefault
+  \ Description~                                             help-tag~\nKey~\n\no.......Open
+  files, directories and bookmarks....................|NERDTree-o|\ngo......Open selected
+  file, but leave cursor in the NERDTree.....|NERDTree-go|\nt.......Open selected
+  node/bookmark in a new tab.................|NERDTree-t|\nT.......Same as 't' but
+  keep the focus on the current tab........|NERDTree-T|\ni.......Open selected file
+  in a split window.....................|NERDTree-i|\ngi......Same as i, but leave
+  the cursor on the NERDTree..........|NERDTree-gi|\ns.......Open selected file in
+  a new vsplit.......................|NERDTree-s|\ngs......Same as s, but leave the
+  cursor on the NERDTree..........|NERDTree-gs|\nO.......Recursively open the selected
+  directory..................|NERDTree-O|\nx.......Close the current nodes parent...........................|NERDTree-x|\nX.......Recursively
+  close all children of the current node.......|NERDTree-X|\ne.......Edit the current
+  dif.....................................|NERDTree-e|\n\n<CR>...............same
+  as |NERDTree-o|.\ndouble-click.......same as the |NERDTree-o| map.\nmiddle-click.......same
+  as |NERDTree-i| for files, same as\n                   |NERDTree-e| for dirs.\n\nD.......Delete
+  the current bookmark .............................|NERDTree-D|\n\nP.......Jump to
+  the root node....................................|NERDTree-P|\np.......Jump to current
+  nodes parent.............................|NERDTree-p|\nK.......Jump up inside directories
+  at the current tree depth.....|NERDTree-K|\nJ.......Jump down inside directories
+  at the current tree depth...|NERDTree-J|\n<C-J>...Jump down to the next sibling
+  of the current directory...|NERDTree-C-J|\n<C-K>...Jump up to the previous sibling
+  of the current directory.|NERDTree-C-K|\n\nC.......Change the tree root to the selected
+  dir.................|NERDTree-C|\nu.......Move the tree root up one directory......................|NERDTree-u|\nU.......Same
+  as 'u' except the old root node is left open........|NERDTree-U|\nr.......Recursively
+  refresh the current directory................|NERDTree-r|\nR.......Recursively refresh
+  the current root.....................|NERDTree-R|\nm.......Display the NERD tree
+  menu...............................|NERDTree-m|\ncd......Change the CWD to the dir
+  of the selected node...........|NERDTree-cd|\n\nI.......Toggle whether hidden files
+  displayed....................|NERDTree-I|\nf.......Toggle whether the file filters
+  are used.................|NERDTree-f|\nF.......Toggle whether files are displayed.......................|NERDTree-F|\nB.......Toggle
+  whether the bookmark table is displayed...........|NERDTree-B|\n\nq.......Close
+  the NERDTree window................................|NERDTree-q|\nA.......Zoom (maximize/minimize)
+  the NERDTree window.............|NERDTree-A|\n?.......Toggle the display of the
+  quick help.....................|NERDTree-?|\n\n------------------------------------------------------------------------------\n
+  \                                                                 *NERDTree-o*"

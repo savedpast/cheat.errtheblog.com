@@ -1,0 +1,72 @@
+---
+irssi: ! "IRC- and irssi-Workshop\r\n=======================\r\n\r\nADDED BY: Smile
+  @rT\r\nSOURCE: http://michael-prokop.at/stg/irc_workshop.txt\r\n\r\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\nIRC-
+  and irssi-Workshop by Wernfried 'amne' Haas for Security Treff Graz\r\nand grml-Developers
+  on 12 Juli 2006 at FH Joanneum.\r\nNotes taken by Michael 'mika' Prokop.\r\n\r\nLatest
+  change: Mon Jul 17 21:53:20 CEST 2006 [mika]\r\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n\r\nStatusbar:\r\n----------\r\n\r\n[19:23]
+  [+grml(+ir)] [2:#grml(+lnt 19)]\r\n clock    ^    ^      ^  ^    ^^^^ ^\r\n          |
+  \   |      |  |    |||| |\r\n    username   | window chan. |||| mode level 19\r\n
+  \           + = positive/set  ||||\r\n            i = invisible     ||||\r\n            r
+  = restricted    http://freenode.net/using_the_network.shtml\r\n\r\nSwitch Window:\r\n--------------\r\n\r\nesc-cursor
+  or alt-cursor => switch window\r\nalt-q => window 11\r\nalt-w => window 12\r\n/window
+  30 => window 30\r\n\r\nPeople with qwertz layout probably want to swap meta-y and
+  meta-z:\r\n\r\n  /BIND meta-z change_window 16\r\n  /BIND -delete meta-y\r\n\r\nAdd
+  network and server:\r\n-----------------------\r\n\r\n/network add -nick mikap -realname
+  \"Michael Prokop\" freenode\r\n/server add -auto -network freenode chat.freenode.net\r\n/network
+  add freenode -autosendcmd /FNAUTH   => send self defined alias /FNAUTH\r\n                                                by
+  default to freenode\r\n\r\nJoin server:\r\n------------\r\n\r\n/connect freenode\r\n\r\nClose
+  connection to server:\r\n---------------------------\r\n\r\n/disconnect freenode\r\n\r\nAutojoin
+  channel:\r\n-----------------\r\n\r\n/channel add -auto #grml-workshop freenode\r\n\r\nList
+  channels:\r\n--------------\r\n\r\n/list\r\n\r\nDisplay configuration of irssi:\r\n--------------------------------\r\n\r\n/set\r\n/set
+  autocreate_own_query => display setting of variable autocreate_own_query\r\n\r\nKick
+  user:\r\n----------\r\n\r\n/kick username     => just kick\r\n/kickban username
+  \ => kick and username can't join channel again\r\n/ban username      => can't join
+  channel again\r\n/unban username    => unban again\r\n/knockout <time> <nick> <reason>
+  => kickban a user for specific time\r\n\r\nWindow actions:\r\n---------------\r\n\r\n/window
+  move left  => move window to left\r\n/window move 1     => move window to position
+  1\r\n/layout save       => store/remember window settings\r\n\r\nDiff stuff:\r\n-----------\r\n\r\n/who
+  \              => display users in channel in status window\r\n/who mika          =>
+  display info about user mika\r\n/wii mika          => display info about user mika
+  including idle state (depends on network)\r\n/names             => display users
+  in channel in channel window\r\n/set user_name fo  => set (ident) username to 'fo'\r\n/away
+  -all wenn mich jemand braucht, ich bin auf der toilette => set away-status on all
+  networkß\r\n/me is away        => not welcome in many channels\r\n/mode +q idiot
+  \    => don't allow messages from user idiot to channel (freenode special)\r\n/quit
+  \             => leave all channels and quit irssi\r\n/WC                => leave
+  channel and close window\r\n/part              => leave channel but don't close
+  window\r\n/mod +i            => only allow invited users (/invite user)\r\n/stats
+  p           => display stats members\r\n/alias FNAUTH  set autocreate_own_query
+  OFF;msg -freenode nickserv identify PASSWORD;wait -freenode 3000;msg -freenode\r\n
+  \                  chanserv invite #channel;msg -freenode nickserv set unfiltered
+  on;set autocreate_own_query ON;\r\n                   /quote capab identify-msg\r\n/reload
+  \           => reload configuration (~/.irssi/config)\r\n/ /CALC 3 * 3      => write
+  \"/CALC 3 * 3\" into the channel\r\n/exec -o uptime    => display uptime\r\n\r\nDirect
+  Client Connect:\r\n----------------------\r\n\r\n/dcc chat username     => direct
+  chat with username\r\n/msg =username message => send \"message\" to username without
+  connection to server\r\n\r\nNickServ (nick name handling):\r\n------------------------------\r\n\r\n/query
+  NickServ         => create new window to talk to NickServ\r\nhelp                    =>
+  get usage information\r\nregister <password>     => register your nick\r\ninfo <user>
+  \            => request information about user\r\nset password <newpass>  => set
+  new passwort\r\nset email foo@b.invalid => set mailaddress\r\nset hide email          =>
+  don't display mailaddress in \"info\" information\r\nlink mikap_ <pass>      =>
+  link nickname mikap_ to mikap (mikap_ has to be registered as well of course)\r\nset
+  master mikap        => set master nickname to mikap\r\n\r\nChanServ (channel handling
+  - depends from IRC net):\r\n---------------------------------------------------\r\n\r\n/query
+  ChanServ\r\nregister #channel <password>    => register channel\r\nset #grml-workshop
+  mlock +ton-m =>\r\nset secureops                   =>\r\nlevel #channel list             =>
+  display level information\r\nlevel #channel set user 50      => set user to level
+  50\r\nlevel #channel set autoop 10    => \"cmdop\" -> be able to /op\r\naccess #channel
+  add user        =>\r\ninvite #channel                 => all users in channel are
+  allowed to send \"/invite\"s\r\nrecover username                +\r\nrelease username
+  \               => kill username and release the nickname (also see the ghost command)\r\n\r\nCloak
+  Users:\r\n------------\r\n\r\nhttp://freenode.net/faq.shtml#cloaks\r\n\r\nLogging:\r\n--------\r\n\r\n/set
+  autolog = \"yes\"\r\n/set autolog_path = \"~/Logs/irc/$tag_$0.%Y-%m-%d.log\"\r\n/set
+  autolog_level = \"MSGS ACTIONS KICKS PUBLIC\"\r\n\r\nScripts:\r\n--------\r\n\r\n%
+  mkdir ~/.irssi/scripts ; cd ~/.irssi/scripts ; wget http://www.irssi.org/scripts/scripts/scriptassist.pl\r\n/script
+  load scriptassist.pl\r\n/scriptassist install chanact\r\n/script load chanact\r\n[
+  /statusbar chanact add ]\r\n[ /statusbar window remove chanact ]\r\n/statusbar chanact
+  add chanact -after act\r\n\r\n/script unload script.pl\r\n\r\nhttp://ben.reser.org/irssi/format_identify.pl\r\nhttp://wouter.coekaerts.be/irssi/scripts/format_identify.pl\r\n/script
+  load format_identify\r\n/quote capab identify-msg\r\n=> not identified users are
+  displayed as \"user?\"\r\n\r\nNicklist (works inside GNU screen or via fifo):\r\n-----------------------------------------------\r\n\r\n/scriptassist
+  install nicklist\r\n/script load nicklist\r\n/nicklist screen\r\n\r\nKeybindings:\r\n------------\r\n\r\n/bind
+  meta-y /window last   => toggle between last used windows\r\n\r\nRessources:\r\n-----------\r\n\r\n/usr/share/doc/irssi\r\nhttp://www.irssi.org/documentation\r\nhttp://de.wikibooks.org/wiki/Irssi"

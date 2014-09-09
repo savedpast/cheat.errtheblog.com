@@ -1,0 +1,13 @@
+---
+piston: ! "Piston (http://piston.rubyforge.org/usage.html) is a tool for keeping bits
+  and pieces of your Subversion repository in sync with a remote repository. Like
+  svn:externals, but better. How?\n\nWith Piston, you import a remote repository and
+  check it into your local repository. You can then go nuts modifying it or periodically
+  sync it up with its remote origin using piston update.\n\nAll of the examples use
+  the vendor/rails directory. But piston works on any directory that you would use
+  svn:externals with (IE Other plugin directories).\n\nNote that for some commands
+  to work you must first commit the imported files into your repository.\n\nInstall:\n
+  \ gem install piston -y\n\nImport:\n  piston import http://dev.rubyonrails.org/svn/rails/trunk
+  vendor/rails\n\nUpdate:\n  piston update vendor/rails\n\nLock (doesn't allow updates):\n
+  \ piston lock vendor/rails\n\nUnlock:\n  piston unlock vendor/rails\n\nStatus:\n
+  \ piston status vendor/rails"

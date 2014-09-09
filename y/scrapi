@@ -1,0 +1,61 @@
+---
+scrapi: ! "Selectors\n\n* \t\t\tany element\nE \t\t\tan element of type E\nE.warning\t\tan
+  E element whose class is \"warning\" (the document language specifies how class
+  is determined).\nE#myid\t\t\tan E element with ID equal to \"myid\".\nE[foo]\t\t\tan
+  E element with a \"foo\" attribute\nE[foo=\"bar\"]    \tan E element whose \"foo\"
+  attribute value is exactly equal to \"bar\"\nE[foo~=\"bar\"]   \tan E element whose
+  \"foo\" attribute value is a list of space-separated values, one of which is exactly
+  equal to \"bar\"\nE[foo^=\"bar\"]   \tan E element whose \"foo\" attribute value
+  begins exactly with the string \"bar\"\nE[foo$=\"bar\"]   \tan E element whose \"foo\"
+  attribute value ends exactly with the string \"bar\"\nE[foo*=\"bar\"]   \tan E element
+  whose \"foo\" attribute value contains the substring \"bar\"\nE[hreflang|=\"en\"]
+  \      an E element whose \"hreflang\" attribute has a hyphen-separated list of
+  values beginning (from the left) with \"en\"\nE:root\t\t\tan E element, root of
+  the document\nE:nth-child(n)\t\tan E element, the n-th child of its parent\nE:nth-last-child(n)
+  \    an E element, the n-th child of its parent, counting from the last one\nE:nth-of-type(n)
+  \       an E element, the n-th sibling of its type\nE:nth-last-of-type(n)   an E
+  element, the n-th sibling of its type, counting from the last one\nE:first-child
+  \          an E element, first child of its parent\nE:last-child            an E
+  element, last child of its parent\nE:first-of-type         an E element, first sibling
+  of its type\nE:last-of-type          an E element, last sibling of its type\nE:only-child
+  \           an E element, only child of its parent\nE:only-of-type          an E
+  element, only sibling of its type\nE:empty                 an E element that has
+  no children (including text nodes)\nE:not(s)                an E element that does
+  not match simple selector s\nE F                     an F element descendant of
+  an E element\nE > F                   an F element child of an E element\nE + F
+  \                  an F element immediately preceded by an E element\nE ~ F                   an
+  F element preceded by an E element \n\nScraper.scrape(source, options?) => result\n\n
+  \ Scrapes source and returns the result. Source is one of:\n    String        HTML
+  content: parse and scrape.\n    URI           Page URL: read, parse and scrape.\n
+  \   HTML::Node    Element or document, for use with structures.\n\n  Options for
+  reading: :last_modified, :etag, :redirect_limit, :user_agent, :timeout.\n  Options
+  for parsing: :root_element, :parser, :parser_options.\n\nprocess(selector, *values,
+  extractor?) { |element| .... }\nprocess(symbol?, selector, *values, extractor?)
+  { |element| ... }\n\n  Use selector to select elements, and extractor to extract
+  and store values. Pass each selected element to the block. Block can be used instead
+  of or in combination with extractors.\n\n  Extract value from (see more options
+  in API):\n    :element      Element itself\n    :text         Text value of element\n
+  \   Class         Another scraper\n    \"elem\"        Element if name matches\n
+  \   \"@attr\"       Attribute if specified\n    \"elem@attr\"   Attribute if specified
+  on element\n    [value, ...]  First value that matches\n\n  Extract value to (more
+  options in API):\n    symbol        Instance variable (e.g. :title to @title)\n
+  \   symbol[]      Array instance variable (e.g. \"links[]\")\n    :skip         If
+  true, do not further process this element\n\n  Attribute accessors defined for each
+  symbol used.\n  If first argument is symbol, uses that name to replace any other
+  processing rule with same name.\n\nprocess_first(selector, *values, extractor?)
+  { |element| .... }\nprocess_first(symbol?, selector, *values, extractor?) { |element|
+  ... }\n\n  Similar to process but only processes the first selected element (if
+  more than one).\n\nresult(*symbols)\n\n  Specifies which instance variables to return.
+  One symbol: return value of that variable. Multiple symbols: return object with
+  suitable accessors.\n\narray(*symbols)\n\n  Specifies which instance variables are
+  arrays. Otherwise, stores only last extracted value.\n\nselector(symbol, selector,
+  *values)\nselector(symbol?, selector, *values) { |elements| ... }\n\n  Defines selector
+  method with the given name (symbol) that takes an element as argument and returns
+  array of selected elements, empty if no elements selected. Defines first_ method
+  that returns the first selected element or nil.\n\nInstance Methods\n\n  extracted
+  \        True if any processing rule returned true (also extracted = true/false).\n
+  \ skip(element?)    Do not further process element. See also :skip=&gt;true.\n  stop()
+  \           Stop processing.\n  prepare(document) Called on document before any
+  processing.\n  collect()         Called after processing is done.\n  result()          Called
+  to return result. By default returns self if extracted. You can override method,
+  or redefine with class method result."

@@ -1,0 +1,5 @@
+---
+selenium: ! "Verify number of rows in a table:\n  Use the SEL:storeassertXpath extension
+  to count columns\n    assertXpath | count(//table[@id='mytable']/tr) | 10\n  Or
+  assert count & count+1\n    assertElementPresent | //table[@id='mytable']/tr[10]
+  | |\n    assertElementNotPresent | //table[@id='mytable']/tr[11] | |"

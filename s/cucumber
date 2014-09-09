@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>INSTALL
+=======
+
+  INSTALL cucumber &amp; webrat (rspec rspec-rails)
+  =============================================
+  $ [sudo] gem install rspec rspec-rails cucumber webrat
+  
+  Starting from Cucumber 0.4.5 you will need the cucumber-rails gem
+
+  INSTALL DEPENDENCIES
+  ====================
+  $ [sudo] gem install term-ansicolor treetop diff-lcs nokogiri
+  
+  
+BOOTSTRAP THE APP
+=================
+  script/generate cucumber
+  
+  
+HOW TO USE
+==========
+  
+  RAILS
+  =====
+  # Generate a basic feature and its step file,
+  # its better to make your own!
+  script/generate feature post
+  
+  # run your features
+  rake cucumber 
+  
+  # run a specific feature
+  rake cucumber features/authentication.feature
+  
+  COMMAND LINE
+  ============
+  # run a specific scenario (this scenario starts on
+  # line 5 of authentication.feature)
+  cucumber features/authentication.feature:5
+  
+  
+  SAMPLE FEATURE DEFINITION
+  =========================
+  Feature: [feature name]
+    In order to [goal]
+    As a [stakeholder]
+    I want [behavior]
+
+  BUILT-IN WEBRAT STEPS
+  =====================
+  Given I am on [page_name]
+
+  When I go to [page_name]
+  When I press &quot;[button]&quot;
+  When I follow &quot;[link]&quot;
+  When I follow &quot;[link]&quot; within &quot;[parent]&quot;
+  When I fill in &quot;[field]&quot; with &quot;[value]&quot;
+  When I fill in &quot;[value]&quot; for &quot;[field]&quot;
+  When I fill in the following:
+    | field | value |
+
+  When I select &quot;[value]&quot; from &quot;[field]&quot;
+  When I select &quot;[time]&quot; as the date and time
+  When I select &quot;[datetime]&quot; as the &quot;[datetime_label]&quot; date and time
+  When I select &quot;[time]&quot; as the time
+  When I select &quot;[time]&quot; as the &quot;[time_label]&quot; time
+  When I select &quot;[date]&quot; as the date
+  When I select &quot;[date]&quot; as the &quot;[date_label]&quot; date
+  When I check &quot;[field]&quot;
+  When I uncheck &quot;[field]&quot;
+  When I choose &quot;[field]&quot;
+  When I attach the file &quot;[path]&quot; to &quot;[field]&quot;
+
+  Then I should see &quot;[text]&quot;
+  Then I should see &quot;[text]&quot; within &quot;[selector]&quot;
+  Then I should not see &quot;[text]&quot;
+  Then I should not see &quot;[text]&quot; within &quot;[selector]&quot;
+  Then the &quot;[field]&quot; field should contain &quot;[value]&quot;
+  Then the &quot;[field]&quot; field should not contain &quot;[value]&quot;
+  Then the &quot;[label]&quot; checkbox should be checked
+  Then the &quot;[label]&quot; checkbox should not be checked
+  Then I should be on [page_name]
+  Then show me the page
+
+
+Developing with Cucumber and BDD
+================================
+
+  Business value and MMF
+  ======================
+  You should discuss the “In order to” part of the feature and pop the why stack max 5 times (ask why recursively) until you end up with one of the following business values:
+
+  * Protect revenue
+  * Increase revenue
+  * Manage cost
+
+  If you’re about to implement a feature that doesn’t support one of those values, chances are you’re about to implement a non-valuable feature. Consider tossing it altogether or pushing it down in your backlog. Focus on implementing the MMFs (Minimum Marketable Features) that will yield the most value.
+
+  Outcomes and bottom-up scenarios
+  ================================
+  The value provided by a system is what you can get out of it – not what you put into it (Chris Matts said that). Just like the value is expressed at the top of a feature (In order to…), the value should be in the steps of a scenarios too, more precisely in the Then steps.
+
+  When you’re writing a new scenario, I recommend you start with the formulation of the desired outcome. Write the Then steps first. Then write the When step to discover the action/operation and finally write the Given steps that need to be in place in order for the When/Then to make sense.
+
+  Read more about cucumber:
+  * http://github.com/cucumber/cucumber/wiki/
+  * http://cukes.info/</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

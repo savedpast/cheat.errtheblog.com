@@ -1,0 +1,3 @@
+---
+ecb: ! "Directories: C-c . g d\r\nMethods: C-c . g m\r\nSources: C-c . g s\r\nHistory:
+  C-c . g h"

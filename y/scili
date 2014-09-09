@@ -1,0 +1,47 @@
+---
+scili: ! "You've stumbled upon Matt Scilipoti's \"personal\" cheat sheet.\n\nBash
+  \n============\n\n== Reset terminal when text is borked\n    $ reset\n\n== To list
+  all environment variables\n  $ printenv\n\n\nDebug\n=============\n\narspy\n\n\ngit\n=================\n\n==
+  config recommendations\n  [push] default=tracking\n\n== tracking\n  # creates a
+  local branch, tracking the remote, witht the same name as the remote\n  gco --track
+  origin/name_of_remote_branch\n\n== remove need for `origin master`\n[branch \"master\"]\n
+  \ remote = origin\n  merge = refs/heads/master\n\n== remote branches\n#remove remote\ngit
+  push origin :<remote_branch_name>\n\n#refresh list\ngit remote prune origin\n\n==
+  only push the current branch\ngit config --global push.default current\n\n== compare\ngit
+  log --left-right --graph --cherry-pick --oneline master...stage_master\n\n\nguard\n========\n\n##
+  Show rspec results in growl AND in terminal\n  see: https://github.com/vizjerai/guard-spin/issues/6#issuecomment-6628816\n\n
+  \   # Gemfile\n    group :test, :development do\n      gem 'growl-rspec'\n    end\n
+  \   \n    # .rspec\n    --require growl-rspec --format \"Growl::RSpec::Formatter\"
+  --colour --format documentation\n\n\nhaml\n=========\n\nSurround tag with parens:\n
+  \   = \"(%s)\" % link_to(\"Edit\", ...)\n:ruby for ruby\n\n\n*nix\n=========\n\nncdu:
+  disk usage\nlsof: who is using file\n\n== file count (-f: don't sort)\n    $ ls
+  -f | wc -l\n\n== clear a file\n    $ echo -n > file\n\n== fix 'no init': \n    $
+  sudo fdisk -l\n    $ sudo fsck /dev/sda1\n\n== boot record\n    $ update-initramfs
+  -u\n    $ update-grub\n\n== Who is serving on port 3000?\n    $ lsof -w -n -i tcp:3000\n\n==
+  redirect stderr to null\n    $ find /Volumes/Space -name 'cx_production*' 2> /dev/null\n\n==
+  fix prompt when not echoing key presses\n    $ stty sane\n\n== ascii art\n  figlet:
+  http://www.go2linux.org/figlet-create-nice-signatures-emails-forums-usenet-708.html\n\n==
+  cd in bash?  source it\n    $ . cdd karma\n\n~/bin/cdd\nsub_directory=$1 \nworking_dir=`find
+  ~/develop/ -name $sub_directory -type d`\n\nif test -d $working_dir; then\n  echo
+  \"cd to $working_dir\"\n  cd $working_dir\n...\n\n\nosx\n=============\n\nCharacter
+  Palette: Command-Option-T.\n\neject disk: \n    drutil eject\n\ndsn cache: \n    dscacheutil
+  -flushcache\n\n== File Dialog\n  Go to folder:      CMD + SHIFT + G\n  Show hidden
+  files: CMD + Shift + .\n\nlaunchctl unload [~]/Library/LaunchDaemons/xyz.plist\n\nmysql.server
+  stop\n\nnginx -s stop\nnginx #starts\n\npbcopy, pbpaste  (pb==pasteboard)\n\n\npassenger\n===================\n\n==
+  refresh against apache\n  cd /usr/local/src/passenger\n  sudo rake apache2\n  sudo
+  /etc/init.d/apache2 restart\n\n\nrails\n=====\n\nLoad optimization:\n    $ time
+  script/rails runner \"puts 1\"\n\n\nrspec\n======\n\neach matcher: http://xtargets.com/2011/08/12/rspec-meta-expectations-over-collections\n\n\nruby\n=====================\n\n#!/usr/bin/env
+  ruby\n\n==log_buddy\nrequire 'lib/log_buddy'\nLogBuddy.init\n\nd { @a } # logs \"@a
+  = 'my var'\"\n\n\nshare\n==============\nhttp://drnicwilliams.com/2008/06/18/what-is-gitjour-gemjour-starjour/\n\n\nsinatra\n========\n\nconsole:
+  tux, http://tagaholic.me/2011/04/10/tux-a-sinatra-console.html\nexample, request.accept
+  (compares w/o lib): http://97.107.136.245/github/sinatra/sinatra-contrib/master/Sinatra/RespondWith\n\n\nssh\n=====================\n\n==
+  add my public key to remote server (no more password)\ncat ~/.ssh/id_rsa.pub | ssh
+  user@hostname 'cat >> .ssh/authorized_keys'\nssh-copy-id user@host\n\n== Display
+  fingerprint\n    $ ssh-keygen -l [-f file_name]\n\n\ntdd\n===================\n\nTDD
+  Maturity Model: http://codemanship.co.uk/parlezuml/blog/?postid=1066\n\n### Rake\n
+  * http://robots.thoughtbot.com/post/11957424161/test-rake-tasks-like-a-boss\n *
+  http://robots.thoughtbot.com/post/159805695/testing-rakes-integration\n\nvim\n======================\n\nMove
+  among windows: Cw<direction>\nRepeat command (not just text):Cp = :<up arrow>\nFormat
+  code: gg=G (top, format, bottom)\nExt cmd to buffer: :% !html2haml %\nSpell checker
+  (MacVim): set spell\nFind/replace across multiple files:\n  :args app/views/**/*.*\n
+  \ :argdo %s/test/)/gce | update\n\n== ascii art\nread!figlet -c 'Q&A'\nvim:nolist"

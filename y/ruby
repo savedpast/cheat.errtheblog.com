@@ -1,0 +1,21 @@
+---
+ruby: ! "ruby [switches] [--] [programfile] [arguments]\r\n  -0[octal]       specify
+  record separator (\\0, if no argument)\r\n  -a              autosplit mode with
+  -n or -p (splits $_ into $F)\r\n  -c              check syntax only\r\n  -Cdirectory
+  \    cd to directory, before executing your script\r\n  -d              set debugging
+  flags (set $DEBUG to true)\r\n  -e 'command'    one line of script. Several -e's
+  allowed. Omit [programfile]\r\n  -Fpattern       split() pattern for autosplit (-a)\r\n
+  \ -i[extension]   edit ARGV files in place (make backup if extension supplied)\r\n
+  \ -Idirectory     specify $LOAD_PATH directory (may be used more than once)\r\n
+  \ -Kkcode         specifies KANJI (Japanese) code-set\r\n  -l              enable
+  line ending processing\r\n  -n              assume 'while gets(); ... end' loop
+  around your script\r\n  -p              assume loop like -n but print line also
+  like sed\r\n  -rlibrary       require the library, before executing your script\r\n
+  \ -s              enable some switch parsing for switches after script name\r\n
+  \ -S              look for the script using PATH environment variable\r\n  -T[level]
+  \      turn on tainting checks\r\n  -v              print version number, then turn
+  on verbose mode\r\n  -w              turn warnings on for your script\r\n  -W[level]
+  \      set warning level; 0=silence, 1=medium, 2=verbose (default)\r\n  -x[directory]
+  \  strip off text before #!ruby line and perhaps cd to directory\r\n  --copyright
+  \    print the copyright\r\n  --version       print the version\r\n\r\nsometimes\r\n[Aren't
+  you glad you didn't have to type 'ruby -h' to get that?];"

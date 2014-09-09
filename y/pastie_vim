@@ -1,0 +1,24 @@
+---
+pastie_vim: ! "pastie.vim: Vim plugin for pastie.caboo.se\r\nMaintainer: Tim Pope
+  <vimNOSPAM@tpope.info>\r\nURL:        http://www.vim.org/scripts/script.php?script_id=1624\r\n\r\nInstallation:\r\nPlace
+  in ~/.vim/plugin or vimfiles/plugin\r\nA working ruby install is required (Vim interface
+  not necessary).\r\n\r\n:Pastie                   Create a paste from all open windows\r\n:Pastie!
+  \                 Create a paste from all open windows and paste it\r\n:1,10Pastie
+  \              Create a paste from the specified range\r\n:%Pastie                  Use
+  the entire current file to create a new paste\r\n:Pastie foo.txt bar.txt   Create
+  a paste from foo.txt and bar.txt\r\n:Pastie! foo.txt          Paste directly from
+  foo.txt\r\n:Pastie a                 Create a paste from the \"a register\r\n:Pastie
+  @                 Create a paste from the default (unnamed) register\r\n:Pastie
+  *                 Create a paste from the primary selection/clipboard\r\n:Pastie
+  _                 Create a new, blank paste\r\n:768Pastie                Load existing
+  paste 768\r\n:0Pastie                  Load the newest paste\r\n:Pastie http://pastie.caboo.se/768
+  \           Load existing paste 768\r\n:Pastie http://pastie.caboo.se/123456?key=...
+  Use login from pastie bot\r\n\r\nAt the shell you can directly create a new pastie
+  with a command like\r\n$ vim +Pastie\r\nor, assuming no other plugins conflict\r\n$
+  vim +Pa\r\nAnd, to read an existing paste\r\n$ vim +768Pa\r\nYou could even paste
+  a file directly\r\n$ vim '+Pa!~/.irbrc' +q\r\nYou can even edit a pastie URL directly,
+  but this is not recommended because\r\nnetrw can sometimes interfere.\r\n\r\nLines
+  ending in #!! will be sent as lines beginning with !!.  This alternate\r\nformat
+  is easier to read and is less likely to interfere with code\r\nexecution.  In Vim
+  7 highlighting is done with :2match (use \":2match none\"\r\nto disable it) and
+  in previous versions, :match (use \":match none\" to\r\ndisable)."

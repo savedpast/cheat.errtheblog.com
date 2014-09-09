@@ -1,0 +1,17 @@
+---
+io: ! "Basic Math\n\nIo> 1+1\n==> 2\n\nIo> 2 sin\n==> 0.909297\n\nIo> 2 sqrt\n==>
+  1.414214\nVariables\nIo> a := 1\n==> 1\n\nIo> a\n==> 1\n\nIo> b := 2 * 3\n==> 6\n\nIo>
+  a + b\n==> 7\n\n\nConditions\nIo> a := 2\n\nIo> if(a == 1) then(writeln(\"a is one\"))
+  else(writeln(\"a is not one\"))\na is not one\n\nIo> if(a == 1, writeln(\"a is one\"),
+  writeln(\"a is not one\"))\na is not one\nLists\nIo> d := List clone append(30,
+  10, 5, 20)    \n==> list(30, 10, 5, 20)   \n\nIo> d size\n==> 4\n\nIo> d print\n==>
+  list(30, 10, 5, 20)\n\nIo> d := d sort\n==> list(5, 10, 20, 30)\n\nIo> d first\n==>
+  5\n\nIo> d last\n==> 30\n\nIo> d at(2)\n==> 20\n\nIo> d remove(30)\n==> list(5,
+  10, 20)\n\nIo> d atPut(1, 123)\n==> list(5, 123, 20)\n\n\nLoops\nIo> for(i, 1, 10,
+  write(i, \" \"))\n1 2 3 4 5 6 7 8 9 10 \n\nIo> d foreach(i, v, writeln(i, \": \",
+  v))\n0: 5\n1: 123\n3: 20\n\n\nStrings\nIo> a := \"foo\"\n==> \"foo\"\n\nIo> b :=
+  \"bar\"\n==> \"bar\"\n\nIo> c := a .. b\n==> \"foobar\"\n\nIo> c at(0)\n==> 102\n\nIo>
+  c at(0) asCharacter\n==> \"f\"\n\nIo> s := \"this is a test\"\n==> \"this is a test\"\n\nIo>
+  words := s split(\" \", \"\\t\") print\n\"this\", \"is\", \"a\", \"test\"\n\nIo>
+  s findSeq(\"is\")\n==> 2\n\nIo> s findSeq(\"test\")\n==> 10\n\nIo> s slice(10)\n==>
+  \"test\"\n\nIo> s slice(2, 10)\n==> \"is is a \""

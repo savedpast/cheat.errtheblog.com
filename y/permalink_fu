@@ -1,0 +1,16 @@
+---
+permalink_fu: ! "Install:\n>> ./script/plugin install http://svn.techno-weenie.net/projects/plugins/permalink_fu/\n>>
+  piston import http://svn.techno-weenie.net/projects/plugins/permalink_fu/\n\nModify
+  table:\n>> ./script/generate migration add_permalink_to_article\n>> add_column :designers,
+  :permalink, :string\n\nModel:\n\nclass Article < ActiveRecord::Base\n        # title
+  is the field name you want to convert to a permalink\n        has_permalink :title
+  \n        # you can also specifiy a different permalink field in your database by
+  giving a second paramater\n        # has_permalink :title, :my_permalink_field\n\n
+  \       # we now add the to_param method which Rails's routing uses\n        def
+  to_param\n              permalink\n        end         \nend\n\nConvert old titles
+  to permalinks:\n>> Article.find(:all).each(&:save)\n\nHackish find(id):\n>> @article
+  = Article.find_by_permalink(params[:id])\n\n# in your route file\nmap.connect 'article/:permalink',
+  :controller => 'article', :action => 'view'\n# in your views when linking\nlink_to
+  \"View #{article.title}\", {:controller => 'designer', :action => 'view', :permalink
+  => article.permalink}\n# then in your controller you can use\n@article = Article.find_by_permalink(params[:permalink])\n\nReference:
+  http://www.seoonrails.com/even-better-looking-urls-with-permalink_fu"

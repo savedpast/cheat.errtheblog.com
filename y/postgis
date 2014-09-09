@@ -1,0 +1,8 @@
+---
+postgis: ! "PostGIS\n----\n\nInstallation\n----\n\n  $ su - postgres\n  $ psql\n\n
+  \ # create database template_postgis with template = template1;\n  # UPDATE pg_database
+  SET datistemplate = TRUE where datname = 'template_postgis';\n\n  # \\c template_postgis\n
+  \ # CREATE LANGUAGE plpgsql;\n  # \\i /path/to/share/postgis/lwpostgis.sql;\n  #
+  \\i /path/to/share/postgis/spatial_ref_sys.sql;\n  # GRANT ALL ON geometry_columns
+  TO PUBLIC;\n  # GRANT ALL ON spatial_ref_sys TO PUBLIC;\n\n  # VACUUM FREEZE;\n\nCreate
+  a table\n----\n\n  $ createdb -O <owner> -T template_postgis <new_table_name>"

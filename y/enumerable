@@ -1,0 +1,27 @@
+---
+enumerable: ! "Ruby Enumerable Mixin  (* require 'enumerator')\r\nall? {|obj| }      Returns
+  true if EVERY obj returns true from block\r\nany? {|obj| }      Returns true if
+  ANY obj returns true from block\r\ncollect {|obj| }   Alias for map\r\ndetect(ifnone=nil)
+  {|obj| }  Alias for find\r\n* each_cons(n) {}  Iterates over arrays of n consecutive
+  elements (overlap)\r\n* each_slice(n) {} Iterates over slices of n elements (no
+  overlap)\r\neach_with_index {|obj, index| ... }\r\nentries            Returns an
+  Array of all objects, alias for to_a\r\n* enum_cons(n)     Enumerable::Enumerator.new(self,
+  :each_cons, n)\r\n* enum_slice(n)    Enumerable::Enumerator.new(self, :each_slice,
+  n)\r\n* enum_with_index  Enumerable::Enumerator.new(self, :each_with_index)\r\nfind(ifnone=nil)
+  {|obj| }  Returns first obj for which block is true\r\nfind_all {|obj|}   Returns
+  an Array of all objects for which block is true\r\ngrep(pattern) {}   Returns an
+  Array of / iterates over objects that === pattern\r\ninclude?(obj)      True if
+  any member == obj\r\ninject(initial) {|mem, obj| } Runs block on each obj, with
+  last result in mem\r\ninject {|mem, obj| }          Like above but first element
+  used for initial\r\nmap {|obj| }       Returns new array with results of running
+  block on each\r\nmax                Returns largest element; elements must be Comparable\r\nmax
+  {|a,b| }       Returns largest element; block should return a <=> b\r\nmember?            Alias
+  for include?\r\nmin                Like max but returns smallest\r\npartition {|obj|}
+  \ Returns [[objects block was true], [objects it was false]]\r\nreject {|obj| }
+  \   Returns array of elements for which block was false\r\nselect             Alias
+  for find_all\r\nsort\t\t   Returns array of elements sorted; elements must be Comparable\r\nsort
+  {|a,b| }\t   Returns elements sorted, block should return a <=> b\r\nsort_by {|obj|
+  }   Returns elements sorted according to keys produced by block\r\nto_a               Returns
+  an Array of all objects, alias for entries\r\nto_set             Creates a Set from
+  elements, must require \"set\"\r\nzip(args, ...)     Merges elements with corresponding
+  elements from each arg"

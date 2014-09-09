@@ -1,0 +1,76 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>tr:
+  Translates characters, but, generally, is used to substitute or delete
+characters from the content of standard input.
+
+  Forms:
+  
+    tr [-Ccsu] string1 string2
+    tr [-Ccu] -d string1
+    tr [-Ccu] -s string1
+    tr [-Ccu] -ds string1 string2
+
+
+  Options:
+
+    -C      # Complement characters in string1. Everything except for the listed characters.
+    $ echo &quot;0123456789&quot; | tr -C 13579 &quot;[:number:]&quot; &quot; &quot;
+    
+    -c     # Same as -C but complement the set of values in string1.
+
+    -d     # Delete characters in string1 from the input.
+
+    -s     # Squeeze multiple occurrences of the characters listed in the last operand
+            (either string1 or string2) in the input into a single instance of the character.
+            This occurs after all deletion and translation is completed.
+
+    -u      # Guarantee that any output is unbuffered.
+
+
+  Escape Chars:
+
+    \char   # A backslash followed by special characters escapes it to have special meaning.
+
+    \a      # Alert
+    \b      # Backspace
+    \f      # Form Feed
+    \n      # Newline
+    \r      # Carriage Return
+    \t      # Tab&gt;
+    \v      # Vertical Tab
+
+ 
+
+  Examples:
+  
+    tr -cs &quot;[:alpha:]&quot; &quot;\n&quot; &lt; file1
+    $ echo &quot;Round\t the\brugged&quot; | tr -cs &quot;[:alpha:]&quot; &quot;\n&quot;
+    Round
+    the
+    rugged
+    
+      # Create a list of the words in file1, one per line, where a word is
+      #  taken to be a maximal string of letters.
+
+
+    tr &quot;[:lower:]&quot; &quot;[:upper:]&quot; &lt; file1
+    
+      # Translate the contents of file1 to upper-case.
+
+
+    tr a-z A-Z
+    $ echo &quot;hello world&quot; | tr a-z A-Z
+    HELLO WORLD
+    
+      # A less locale-portable, but very common way to translate lowercase to upper case.
+
+
+    tr -cd &quot;[:print:]&quot; &lt; file1
+    
+      # Strip out non-printable characters from file1.
+
+
+    tr &quot;[=e=]&quot; &quot;e&quot;
+    
+      # Remove diacritical marks from all accented variants of the letter `e'</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

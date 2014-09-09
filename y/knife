@@ -1,0 +1,24 @@
+---
+knife: ! 'knife --help
+
+  knife <subcommand> --help
+
+
+  knife search node "ipaddress:192.168.1.1"
+
+
+  knife bootstrap FQDN -d DISTRO
+
+  distros: centos5-gems, ubuntu10.04-gem
+
+
+  # using sudo and root user
+
+  knife bootstrap FQDN -x ubuntu -P PASSWORD --sudo
+
+  knife bootstrap FQDN --distro DISTRO -x root -P password
+
+
+  # And in this example, we use a private key file:
+
+  knife bootstrap FQDN -x ubuntu -i ~/.ssh/id_rsa --sudo'

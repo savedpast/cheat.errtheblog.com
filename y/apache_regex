@@ -1,0 +1,15 @@
+---
+apache_regex: ! "------------------------------------------------\nApache regular
+  expressions for mod_rewrite rules\n------------------------------------------------\n\nText:\n
+  \ .           Any single character\n  [chars]     Character class: One  of chars\n
+  \ [^chars]    Character class: None of chars\n  text1|text2 Alternative: text1 or
+  text2\n  !           Not\n\nQuantifiers:\n  ?           0 or 1 of the preceding
+  text\n  *           0 or N of the preceding text (N > 0)\n  +           1 or N of
+  the preceding text (N > 1)\n\nGrouping:\n  (text)      Grouping of text\n              (either
+  to set the borders of an alternative or\n              for making backreferences
+  where the Nth group can \n              be used on the right of a RewriteRule with
+  $N)\n\nAnchors:\n  ^           Start of line anchor\n  $           End   of line
+  anchor\n\nEscaping:\n  \\char       escape that particular char\n              (for
+  instance to specify the chars \".[]()\" etc.)\n\n[L]           stop rewrite here\n[N]
+  \          re-run rules from start - watch for loops!\n[C]           chain with
+  next rule - if no match, following\n              chained rules are ignored\n"

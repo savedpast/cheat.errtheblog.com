@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># Pygmentize
+
+  ## If you want HTML output
+
+  pygmentize -f html -l python -o test.html test.py
+  
+  ## To create a full HTML document, including line numbers and stylesheet
+
+  pygmentize -O full,style=emacs -o test.html test.py
+
+  ## Lexer and formatter options can be given using the -O option:
+
+  pygmentize -f html -O style=colorful,linenos=1 -l python test.py
+
+  ## List lexers, formatters, styles or filters
+
+  pygmentize -L
+  pygmentize -L &quot;styles&quot;
+
+  # In general
+  
+  pygmentize -f latex -O full -l c code.c &gt; code.tex 
+  pygmentize -f html -O full -l css reset.css &gt; reset.html
+  pygmentize -O full,style=emacs -o setup.html setup.py
+  pygmentize -f html -O full,style=murphy -l css reset.css &gt; reset.html</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

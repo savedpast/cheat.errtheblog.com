@@ -1,0 +1,7 @@
+---
+js_function: ! "Function\r\n\r\nSummary\r\n-------\r\nEvery function in JavaScript
+  is actually a `Function` object.\r\n\r\nMethods\r\n-------\r\napply - calls a function
+  with a given `this` value and `arguments` \r\n        provided as an array.\r\n
+  \ * syntax - fun.apply(thisArg[, argsArray])\r\n\r\ncall - calls a function with
+  a given `this` value and arguments \r\n       provided individually.\r\n  * syntax
+  - fun.call(thisArg[, arg1[, arg2[, ...]]])"

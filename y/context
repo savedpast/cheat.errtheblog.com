@@ -1,0 +1,21 @@
+---
+context: ! 'Tables using TABLE
+
+
+  \setupTABLE[row][odd][background=color,backgroundcolor=red,
+
+  width=.2\textwidth]
+
+  \bTABLE[split=yes]
+
+  \bTR \bTD[nr=3] 1 \eTD \bTD[nc=2] 2/3 \eTD \bTD[nr=3] 4 \eTD \eTR
+
+  \bTR \bTD 2 \eTD \bTD 3 \eTD \eTR
+
+  \bTR \bTD 2 \eTD \bTD 3 \eTD \eTR
+
+  \bTR \bTD[nc=3] 1/2/3 \eTD \bTD 4 \eTD \eTR
+
+  \bTR \bTD 1 \eTD \bTD 2 \eTD \bTD 3 \eTD \bTD 4 \eTD \eTR
+
+  \eTABLE'

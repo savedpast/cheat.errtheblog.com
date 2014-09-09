@@ -1,0 +1,52 @@
+---
+datamapper: ! "DataMapper, the ruby object relational mapper\n  website:  http://www.datamapper.org\n
+  \ git:      git://github.com/datamapper/dm-core.git\n  mail:     http://groups.google.com/group/datamapper\n
+  \ now:      http://www.twitter.com/datamapper\n            irc://irc.freenode.net/datamapper\n
+  \           irc://irc.freenode.net/dm-hacking\n  before:   http://irclogger.com/.datamapper/\n
+  \           http://irclogger.com/.dm-hacking/\n  bugs:     https://github.com/datamapper/dm-core/issues\n\nSetting
+  up a Connection\n  DataMapper.setup(:default, \"adapter://user:password@hostname/dbname\")\n
+  \ supported adapters: mysql, sqlite, postgres, sqlite::memory:\n  additional adapters
+  are in dm-more, (couchdb, rest, imap, file, saleforce...)\n  in-memory adapter:
+  DataMapper.setup(:default, :adapter => 'in_memory')\n\nCreating a Model (with properties)\n
+  \ class Zoo\n    include DataMapper::Resource\n    property :id, Serial\n  end\n\n\nProperties\n
+  \ property :id,   Serial               # auto-incrementing PK\n  property :name,
+  String, :key => true # natural key\n    # you must specify >= 1 key, CPK support
+  100%\n\n  # available data-types\n  property :description, Text # (lazy by default)\n
+  \ property :created_at,  DateTime\n  property :open,        Boolean\n  property
+  :admission,   BigDecimal\n\n  # require dm-types for Csv, Enum, EpochTime, FilePath,
+  Flag,\n  #  IPAddress, URI, Yaml and more\n\nProperty Options (pass as hash)\n  :default,
+  :required, :field (column name), :size, :length, :format,\n  :index, :unique_index,
+  :ordinal, :auto_validation, :precision,\n  :scale, :accessor, :reader, :writer,
+  :lazy\n\n\nFinders\n  Zoo.get(PK_HERE)\n  Zoo.first({see_below})\n  Zoo.all({see_below})\n\nFinder
+  Options (pass as hash)\n  :conditions => [\"property = ? and property = ?\", 'value',
+  'value']\n  :conditions => {:property => 'value', ...}\n  :property => 'ZooNameHere'
+  \n     # any non-standard key => value pair is assumed a condition if not \n     #
+  otherwise recognized\n  :property.lte => 12.00  # <=\n           .gte           #
+  >=\n           .gt            # >\n           .lt            # <\n           .not
+  \          # NOT =\n           .like          # LIKE\n           .in            #
+  IN ()\n  'class.property' => 'value'\n  Class.relationship.property => 'value' #
+  will automatically issue JOINS\n\nFinder Gotcha\n  :order => [:created_at.desc,
+  ...] # descending sort\n                        .asc        # ascending\n\n\nAssociations\n
+  \ has 1                    # has_one\n  has n                    # has_many\n  belongs_to
+  :thing\n  has n, :more_things, :through => :things\n  has n, :things, :through =>
+  Resource # has_and_belongs_to_many\n\nAssociation Options\n  (any Finder Options)\n
+  \ :model => 'ClassNameHere'\n  :order => [:property.desc]\n  :child_key => [:property,
+  ...]\n  :through => :other_association\n\n\nValidations (require 'dm-validations')\n
+  \ validates_presence_of     :title\n  validates_numericality_of :rating\n  validates_format_of
+  \      :email, :as => :email_address\n  validates_length_of       :summary, :in
+  => (1..100)\n  validates_uniqueness_of   :slug\n  validates_with_method (do...end,
+  :method_name)\n\n\nCallbacks AKA \"Hooks\"\n  Object-level\n    before :method_name,
+  (do...end, :another_method_name)\n    after  :method_name, (do...end, :another_method_name)\n
+  \ Class-level\n    before_class_method :method_name, (do...end, :another_method_name)\n
+  \   after_class_method  :method_name, (do...end, :another_method_name)\n\nCallbacks
+  Gotcha\n  Hooks act on 'self' and aren't passed an arguement\n  'self' for object-level
+  hooks are the instance\n  'self' for class-level hooks are the class itself\n\nMisc.
+  Stuff & Gotchas\n  Single Table Inheritance\n    property :type, Discriminator #
+  then inherit from this model\n\n  Paranoia\n    property :deleted_at, ParanoidDateTime\n
+  \   property :deleted,    ParanoidBoolean\n\n  Multiple DB Connections\n    DataMapper.setup(:external,
+  \"adapter://username:password@hostname/dbname\")\n    DataMapper.repository(:external)
+  do...end\n    Association: has n, :things, :repository => repository(:external)\n
+  \   Finder: Thing.all(:repository => repository(:external))\n\n    DataMapper.setup(:colors_db,
+  \ \"sqlite3:path/to/colors.db\")\n    class Color\n       include DataMapper::Resource\n\n\n
+  \      def self.default_repository_name\n         :colors_db\n       end\n\n       property
+  :name, String\n    end"

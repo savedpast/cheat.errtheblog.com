@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Check out this blog post to get mutt working with GMail on OSX (http://www.jstorimer.com/shells/2010/01/19/using-mutt-with-gmail-on-osx.html).
+
+You can always use the '?' command to see a full list of mutt commands. This sheet lists commands that map to specific GMail functions.
+
+Navigating:
+Select messages (up and down): 'j' or 'k'
+Page through message: &lt;Space&gt;
+See a list of mailboxes: 'c'
+List URLs: &lt;Ctrl&gt;-b
+
+Modifying:
+Mark as unread: &lt;Shift&gt;-n
+Archive message: &lt;Ctrl&gt;-d
+
+Syncing:
+Sync local mailbox to GMail: $
+</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

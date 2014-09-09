@@ -1,0 +1,13 @@
+---
+google: ! "GOOGLE CHEAT SHEET - FINDS PAGES CONTAINING...\n===========================================\n\n
+  \ The words vacation and Hawaii:\n  vacation hawaii\n\n  Either the word Maui or
+  the word Hawaii:\n  Maui OR Hawaii\n\n  The exact phrase to each his own:\n  \"To
+  each his own\"\n\n  The word virus but NOT the word computer:\n  virus -computer\n\n
+  \ Only the word sock, and not the plural or any tenses or synonyms:\n  +sock\n\n
+  \ Loan info for both the word auto and its synonyms: truck, car, etc.:\n  ~auto
+  loan\n\n  Definitions of the word computer from around the Web.:\n  define:computer\n\n
+  \ The words red and blue separated by one or more words.:\n  red * blue\n\n  Takes
+  you directly to first web page returned for your query.:\n  I'm Feeling Lucky\n\n
+  \ Only return pages from the website example.com:\n  site:example.com\n\n  Only
+  return documents of a specific type (file extension)\n  filetype:pdf (or filetype:doc
+  or filetype:txt, etc)"

@@ -1,0 +1,33 @@
+---
+watir: ! "for windows users\r\n=================\r\n\r\n== install ruby first.\r\nUse
+  windows one-click installer 1.8.6 (26)\r\nhttp://rubyforge.org/frs/?group_id=167\r\ninstall
+  into default location c:\\ruby\r\n\r\n== update rubygems\r\nthe default rubygems
+  on that ruby installer is old.\r\n$ gem update --system\r\nif you are behind firewall
+  use proxy server settings\r\n$ gem update --system -p http://host:port\r\nor set
+  environment var\r\n$ set HTTP_PROXY=http://host:port\r\n\r\n== Install watir \r\ngem
+  (currently 1.6.5)\r\n$ gem install watir\r\n\r\n== watir-console (irb = interactive
+  ruby)\r\nstart cmd.exe windows terminal and execute this\r\n$ watir-console\r\nyou
+  will get a prompt to talk to ruby. \r\nwatir-console is a watir executable that
+  invokes IRB.\r\nstudy it here c:\\ruby\\lib\\bin\\watir-console\r\n\r\n>> browser
+  = Watir::Browser.start \"http://watir.com/\"\r\n=> #<Watir::IE:0x2d5d00c url=\"http://watir.com/\"
+  title=\"Watir\">\r\n\r\nthe above commands will start default browser (IE) and navigate
+  to watir.com\r\nuse irb to talk to the browser\r\n>> browser.class #=> Watir::IE
+  class that talks to IE on windows\r\n>> Watir::IE::VERSION #=> will output the version
+  of watir library (1.6.5)\r\n\r\nall the commands you enter into watir-console will
+  be automatically saved in 'console.log' file in your current working directory.\r\n$
+  Dir.pwd #=> this will tell you what directory you are in and where to find your
+  'console.log' file.\r\n\r\n>> require 'pp' #=> this will make pretty printing of
+  objects, just do it\r\n\r\nHere are class methods of Watir::IE\r\n>> pp browser.class.methods(false).sort\r\nThere
+  are about 20.\r\nget familiar with the following\r\n[\"attach\", \"close_all\",
+  \"find\", \"start\",]\r\nexample: attach to the window with a title Watir\r\n>>browser
+  = Watir::IE.attach(:title, /Watir/)\r\n\r\nHere are instance methods\r\n>> pp browser.class.instance_methods(false).sort\r\nthat's
+  about 70 useful methods. \r\nNow you can experiment with browser object started
+  with Watir::IE\r\n\r\nbrowser.class is the same as Watir::IE so in this example\r\nthe
+  above command is the same as this\r\n>> pp Watir::IE.instance_methods(false).sort\r\n\r\n\r\nFind
+  methods\r\n>> pp Watir::IE.instance_methods.grep(/show_/)\r\n[\"show_frames\",\r\n
+  \"show_active\",\r\n \"show_images\",\r\n \"show_divs\",\r\n \"show_links\",\r\n
+  \"show_tables\",\r\n \"show_forms\",\r\n \"show_pres\",\r\n \"show_all_objects\",\r\n
+  \"show_spans\",\r\n \"show_labels\"]\r\n=> nil\r\n\r\nThe show methods are great
+  in showing what's in the DOM\r\nexample on watir.com\r\n>> browser.show_forms\r\nThere
+  are 1 forms\r\nForm name:\r\n       id: search_form\r\n   method: get\r\n   action:
+  http://watir.com/\r\n\r\n\r\n(by @rubytester)"

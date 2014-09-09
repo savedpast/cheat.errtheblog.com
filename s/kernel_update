@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>apt-get install build-essential bin86 kernel-package libqt3-headers libqt3-mt-dev wget libncurses5 libncurses5-dev
+cd /usr/src
+wget -c http://kernel.org/pub/linux/kernel/v2.6/linux-2.6.29.tar.bz2 &amp;&amp; tar -xvjf linux-2.6.29.tar.bz2
+rm -rf linux &amp;&amp; ln -s /usr/src/linux-2.6.29 linux &amp;&amp; cd /usr/src/linux
+wget -c http://www.kernel.org/pub/linux/kernel/v2.6/patch-2.6.29.1.bz2
+bzcat patch-2.6.29.1.bz2| patch -p1
+cp /boot/config-$(uname -r) .config &amp;&amp; yes &quot;&quot; | make oldconfig
+make xconfig
+make-kpkg clean
+CONCURRENCY_LEVEL=3 make-kpkg --initrd --revision=386 kernel_image 
+kernel_headers modules_image
+cd .. &amp;&amp; dpkg -i linux*2.6.29*.deb</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

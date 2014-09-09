@@ -1,0 +1,6 @@
+---
+bash_if: ! "Compound commands \n\n   [[ expr_cond ]]\n\n   - Permissions\n       *
+  -r\n       * -w\n       * -x\n\n   - Entry type\n       * -f : existing file\n       *
+  -d : existing directory\n\n       + ex:\n           if [[ -f $1 ]]\n\n   - Option
+  state\n       * -o : option true if internal command is set on\n\nDouble ifs\n\n
+  \  if [[ exp1 && exp2 ]]\n\n   if [[ !(exp1 || exp2) ]]"

@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>The NERD tree : A tree explorer plugin for navigating the filesystem
+http://www.vim.org/scripts/script.php?script_id=1658
+
+Commands
+--------
+:NERDTree Open the NERD tree
+o         Open selected file, or expand selected dir
+go        Open selected file, but leave cursor in the NERDTree
+t         Open selected node in a new tab
+T         Same as 't' but keep the focus on the current tab
+&lt;tab&gt;     Open selected file in a split window
+g&lt;tab&gt;    Same as &lt;tab&gt;, but leave the cursor on the NERDTree
+!         Execute the current file
+O         Recursively open the selected directory
+x         Close the current nodes parent
+X         Recursively close all children of the current node
+e         Open a netrw for the current dir
+
+Source: http://my.opera.com/subjam/blog/vim-tips</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

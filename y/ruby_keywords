@@ -1,0 +1,6 @@
+---
+ruby_keywords: ! "Reserved Keywords in Ruby\n-------------------------\n\n  alias\n
+  \ and\n  BEGIN\n  begin\n  break\n  case\n  class\n  def\n  defined\n  do\n  else\n
+  \ elsif\n  END\n  end\n  ensure\n  false\n  for\n  if\n  in\n  module\n  next\n
+  \ nil\n  not\n  or\n  redo\n  rescue\n  retry\n  return\n  self\n  super\n  then\n
+  \ true\n  undef\n  unless\n  until\n  when\n  while\n  yield"

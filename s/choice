@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>http://choice.rubyforge.org/
+
+require 'rubygems'
+require 'choice'
+
+Choice.options do
+    header 'Specific options:'
+
+     option :port, :required =&gt; true do
+      short '-p'
+      long '--port=PORT'
+      desc 'The port to listen on (default 21)'
+      cast Integer
+      default 21
+    end
+
+     option :files do
+      short '-f'
+      long '--files=*FILES'
+      desc 'List of files'
+    end
+end
+
+puts Choice.choices[:port]</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,19 @@
+---
+paperclip: ! "Paperclip is intended as an easy file attachment library for ActiveRecord.\r\n\r\n
+  \ Installation:\r\n  put:\r\n    gem \"paperclip\", \"~> 2.3\"\r\n  in your Gemfile\r\n
+  \ \r\n  Usage:\r\n  In your model add:\r\n    class User < ActiveRecord::Base\r\n
+  \     has_attached_file :avatar, :styles => { :medium => \"300x300>\", :thumb =>
+  \"100x100>\" }\r\n    end\r\n  \r\n  Your model need the following attributes:\r\n
+  \   <name>_file_name, <name>_content_type, <name>_file_size and <name>_uploaded_at\r\n\r\n
+  \ an example migration:\r\n  \r\n    class AddAvatarColumnsToUser < ActiveRecord::Migration\r\n
+  \     def self.up\r\n        add_column :users, :avatar_file_name,    :string\r\n
+  \       add_column :users, :avatar_content_type, :string\r\n        add_column :users,
+  :avatar_file_size,    :integer\r\n        add_column :users, :avatar_updated_at,
+  \  :datetime\r\n      end\r\n\r\n      def self.down\r\n        remove_column :users,
+  :avatar_file_name\r\n        remove_column :users, :avatar_content_type\r\n        remove_column
+  :users, :avatar_file_size\r\n        remove_column :users, :avatar_updated_at\r\n
+  \     end\r\n    end\r\n  \r\n  In form view:\r\n    <% form_for :user, @user, :url
+  => user_path, :html => { :multipart => true } do |form| %>\r\n      <%= form.file_field
+  :avatar %>\r\n    <% end %>\r\n\r\n  To show:\r\n    <%= image_tag @user.avatar.url
+  %>\r\n    <%= image_tag @user.avatar.url(:medium) %>\r\n    <%= image_tag @user.avatar.url(:thumb)
+  %>"

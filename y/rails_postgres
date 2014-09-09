@@ -1,0 +1,13 @@
+---
+rails_postgres: ! "Here's what you wrote, so it isn't lost in the void:\nRails related
+  postgres gotchas\n==============================\n\nsilence CREATE TABLE in tests\n-----------------------------\n
+  \ In database.yml:\n     min_messages: warning # silence CREATE TABLE messages in
+  postgres\n\nsilence postgres system table access in logs\n--------------------------------------------\nsee
+  http://railsonpostgresql.com/2010/10/06/reducing-log-output-from-the-rails-postgresql-connection-adapter\n
+  \   gem 'silent-postgres'\n\npostgres holds onto conections:\n--------------------------------\n
+  \ see# https://gist.github.com/1157737\n\n\n\nNeed structure dump/load (triggers,
+  full-text search)?\n=====================================================\n\nusername
+  is required for db_dump\n--------------------------------\n  In database.yml:\n
+  \     username: <%= `whoami` %> # needed for sq_dump\n\nupdate rake tasks for structure
+  dump/load:\n------------------------------------------\n  see# https://gist.github.com/1157737\n\nNeed
+  help adding a user?\n    $ sudo su postgres\n    $ createuser `whoami`"

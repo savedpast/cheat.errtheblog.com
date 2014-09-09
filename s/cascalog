@@ -1,0 +1,183 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>From: Cascalog Made Easier by Jim Drannbauer
+http://jimdrannbauer.com/2011/02/04/cascalog-made-easier/
+
+(ns my-project.test.demos-test
+  (:use cascalog.api)
+  (:use [clojure.test])
+  (:use [cascalog.testing])
+  (:require [clojure.contrib.string :as s]))
+
+(defn make-uppercase
+  [string]
+  &quot;uppercase&quot;)
+
+(defn uppercase-sq
+  [src]
+  (&lt;- [?upper-string]
+    (src ?lower-string)
+    (make-uppercase ?lower-string :&gt; ?upper-string)))
+
+(deftest understand-defn-as-a-transformer
+  (with-tmp-sources [test-src [[&quot;LOWERCASE&quot;]]]
+    (test?- [[&quot;uppercase&quot;]]
+      (uppercase-sq test-src))))
+
+(defn truthy? [truthiness] truthiness)
+
+(defn only-the-truth
+  [src]
+  (&lt;- [?statement]
+    (src ?statement ?truthiness)
+    (truthy? ?truthiness)))
+
+(deftest understand-defn-as-a-filter
+  (with-tmp-sources [test-src [[&quot;truth&quot; true][&quot;lie&quot; false]]]
+    (test?- [[&quot;truth&quot;]]
+      (only-the-truth test-src))))
+
+(defmapop my-name-is [x] [&quot;my&quot; &quot;name&quot; &quot;is&quot;])
+
+(defn hello
+  [src]
+  (&lt;- [?my ?name ?is ?my-name]
+    (src ?my-name)
+    (my-name-is ?my-name :&gt; ?my ?name ?is)))
+
+(deftest understand-defmapop
+  (with-tmp-sources [test-src [[&quot;Jim&quot;][&quot;Kerry&quot;]]]
+    (test?- [[&quot;my&quot; &quot;name&quot; &quot;is&quot; &quot;Jim&quot;]
+             [&quot;my&quot; &quot;name&quot; &quot;is&quot; &quot;Kerry&quot;]]
+      (hello test-src))))
+
+(deffilterop parallel-truthy? [truthiness] truthiness)
+
+(defn only-the-truth-parallel
+  [src]
+  (&lt;- [?statement]
+    (src ?statement ?truthiness)
+    (parallel-truthy? ?truthiness)))
+
+(deftest understand-deffilterop
+  (with-tmp-sources [test-src [[&quot;truth&quot; true][&quot;lie&quot; false]]]
+    (test?- [[&quot;truth&quot;]]
+      (only-the-truth-parallel test-src))))
+
+;  What defmapcatop does:
+;
+;           this should be vertical
+;             |    |    |     |
+; this &lt;------+    |    |     |
+; should &lt;---------+    |     |
+; be &lt;------------------+     |
+; vertical &lt;------------------+
+
+(defmapcatop vert
+  [this should be vertical]
+  [[this][should][be][vertical]])
+
+(defn make-vertical
+  [src]
+  (&lt;- [?word]
+    (src ?this ?should ?be ?vertical)
+    (vert ?this ?should ?be ?vertical :&gt; ?word)))
+
+(deftest understand-defmapcatop
+  (with-tmp-sources [test-src [[&quot;this&quot; &quot;should&quot; &quot;be&quot; &quot;vertical&quot;]]]
+    (test?- [[&quot;this&quot;]
+             [&quot;should&quot;]
+             [&quot;be&quot;]
+             [&quot;vertical&quot;]]
+      (make-vertical test-src))))
+
+; race-winners works because the rows are
+; sorted by place (in this case only a
+; simple number string).
+;
+; defbufferop is doing this:
+;        +---+------------------+
+;        |   |                  |
+; Race Jim   1                  |
+; Race Kerry 2                  |
+;   |    |   |                  v
+;   |    +---+---------------------------+
+;   |                                    v
+;   +----------------&gt; Race ( Jim 1 | Kerry 2 )
+;
+;  Then, in this case, we just want the
+;  first tuple (Jim 1) since it comes first
+;  (because we sorted). Without sorting,
+;  there is no way to reliably pick the
+;  first. Luckily, it's only one line.
+
+(defbufferop get-winner
+  [tuples]
+  (take 1 tuples))
+
+(defn race-winners
+  [src]
+  (&lt;- [?race ?winner ?winning-place]
+    (src ?race ?runner ?place)
+    (:sort ?place)
+    (get-winner ?runner ?place :&gt; ?winner ?winning-place)))
+
+(deftest understand-defbufferop
+  (with-tmp-sources [test-src [[&quot;Race 1&quot; &quot;Jim&quot;   &quot;1&quot;]
+                               [&quot;Race 1&quot; &quot;Kerry&quot; &quot;2&quot;]
+                               [&quot;Race 2&quot; &quot;Jim&quot;   &quot;5&quot;]
+                               [&quot;Race 2&quot; &quot;Kerry&quot; &quot;3&quot;]]]
+    (test?- [[&quot;Race 1&quot; &quot;Jim&quot;   &quot;1&quot;]
+             [&quot;Race 2&quot; &quot;Kerry&quot; &quot;3&quot;]]
+      (race-winners test-src))))
+
+;  What defaggregateop does:
+;
+;           this should be horizontal
+;             ^    ^    ^     ^
+;             |    |    |     |
+; this -------+    |    |     |
+; should ----------+    |     |
+; be -------------------+     |
+; horizontal -----------------+
+
+(defaggregateop conj-words
+  ([] [])
+  ([word-list word]
+    (conj word-list word))
+  ([word-list]
+    [word-list]))
+
+(defn make-horizontal
+  [src]
+  (&lt;- [?this ?should ?be ?horizontal]
+    (src ?word)
+    (conj-words ?word :&gt; ?this ?should ?be ?horizontal)))
+
+(deftest understand-defaggregateop
+  (with-tmp-sources [test-src [[&quot;this&quot;]
+                               [&quot;should&quot;]
+                               [&quot;be&quot;]
+                               [&quot;horizontal&quot;]]]
+    (test?- [[&quot;this&quot; &quot;should&quot; &quot;be&quot; &quot;horizontal&quot;]]
+      (make-horizontal test-src))))
+
+(defn count-if-awesome*
+  [x]
+  (if (= x &quot;awesome&quot;) 1 0))
+
+(defparallelagg count-if-awesome
+  :init-var #'count-if-awesome*
+  :combine-var #'+ )
+
+(defn how-awesome-is-this?
+  [src]
+  (&lt;- [?awesome-count]
+    (src ?word)
+    (count-if-awesome ?word :&gt; ?awesome-count)))
+
+(deftest understand-defparallelagg
+  (with-tmp-sources [test-src [[&quot;this&quot;][&quot;is&quot;][&quot;awesome&quot;]
+                               [&quot;awesome&quot;][&quot;awesome&quot;]]]
+    (test?- [[3]]
+      (how-awesome-is-this? test-src))))</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

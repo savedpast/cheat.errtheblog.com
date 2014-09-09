@@ -1,0 +1,27 @@
+---
+firebug: ! "<command> <shift> L  => brings up the firebug console\r\n\r\nLogging:\r\n
+  \ console.log(\"message\" [,objects])\r\n  console.debug(\"message\" [,objects])\r\n
+  \ console.info(\"message\" [,objects])\r\n  console.warn(\"message\" [,objects])\r\n
+  \ console.error(\"message\" [,objects])\r\n\r\nAssertions:\r\n  console.assert(a,
+  \"message\" [,objects])\r\n  console.assertEquals(a, b, \"message\" [,objects])\r\n
+  \ console.assertNotEquals(a, b, \"message\" [,objects])\r\n  console.assertGreater(a,
+  b, \"message\" [,objects])\r\n  console.assertNotGreater(a, b, \"message\" [,objects])\r\n
+  \ console.assertLess(a, b, \"message\" [,objects])\r\n  console.assertNotLess(a,
+  b, \"message\" [,objects])\r\n  console.assertContains(a, b, \"message\" [,objects])\r\n
+  \ console.assertNotContains(a, b, \"message\" [,objects])\r\n  console.assertTrue(a,
+  \"message\" [,objects])\r\n  console.assertFalse(a, \"message\" [,objects])\r\n
+  \ console.assertNull(a, \"message\" [,objects])\r\n  console.assertNotNull(a, \"message\"
+  [,objects])\r\n  console.assertUndefined(a, \"message\" [,objects])\r\n  console.assertNotUndefined(a,
+  \"message\" [,objects])\r\n  console.assertInstanceOf(a, b, \"message\" [,objects])\r\n
+  \ console.assertNotInstanceOf(a, b, \"message\" [,objects])\r\n  console.assertTypeOf(a,
+  b, \"message\" [,objects])\r\n  console.assertNotTypeOf(a, b, \"message\" [,objects])\r\n\r\nMeasurement:\r\n
+  \ console.trace()\r\n  console.time(\"name\")\r\n  console.timeEnd(\"name\")\r\n
+  \ console.count(\"name\")\r\n\r\nString Formatting:\r\n  %s            string\r\n
+  \ %d,%i,%l,%f   number\r\n  %o            link to inspector\r\n  %1.o          interactive
+  table of properties\r\n  %.o           array of property names\r\n  %x            XML\r\n
+  \ %N.x          XML with N levels expanded\r\n\r\nCommand Line:\r\n  $(\"id\")          document.getElementById()\r\n
+  \ $$(\"css\")        array of elements matching css selector\r\n  $x(\"xpath\")
+  \     array of elements matching xpath\r\n  $0               last inspected object\r\n
+  \ $1               next-to-last inspected object\r\n  $n(N)            N-th from
+  last inspected object\r\n  inspect(object)  display object in inspector\r\n  dir(object)
+  \     array of property names for object\r\n  clear()          clear console\r\n\r\nhttp://www.joehewitt.com/software/firebug/"

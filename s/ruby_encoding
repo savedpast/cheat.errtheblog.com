@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Taken from wycats gist: https://gist.github.com/83c011e40e1970df0ef4
+
+Ruby Encoding Cheat Sheet
+
+1.  Only call `force_encoding` on BINARY Strings.
+2.  When receiving a BINARY string from the network or file system, make sure 
+    to `force_encode` it to its correct encoding.
+      * In general, the encoding information is provided in an out-of-band 
+        channel, such as the Content-Type header in HTTP
+      * If you don't know the encoding, the String is BINARY forever and 
+        should not be concatenated with non-BINARY strings
+3.  When calling `force_encoding` on a BINARY String, immediately call encode! 
+    afterwards. This will transcode the String to the `default_internal` encoding
+4.  When using a regular expression with /u, make sure that only Unicode 
+    Strings are possible
+5.  When using a regular expression with /n, make sure that only BINARY 
+    Strings are possible
+6.  If you get an incompatible encoding between BINARY (ASCII-8BIT) and 
+    another encoding, the correct debugging approach is to identify where 
+    the BINARY String came from. Usually, this means that a library read 
+    in BINARY data from the network and didn't give it an encoding.
+7.  In app code, *never* use `force_encoding` to convert BINARY data into a 
+    particular encoding. By the time you've reached app code, you have lost 
+    the information about which encoding is being used. Instead, find where 
+    the String came into Ruby, and fix *it* to set up the encoding based on 
+    the information it knows.
+8.  In library code, *only* use `force_encoding` to convert BINARY data into 
+    an encoding if you have information about what encoding is being used. This 
+    means that you have a header in network protocols or a magic comment in 
+    templates  (like ERB) or source files.
+9.  Only include the magic comment in source files that actually contain 
+    characters from that encoding
+10. To combine two Strings with known, but different encodings, use `encode` 
+    to transcode the Strings into the same encoding, then combine them.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

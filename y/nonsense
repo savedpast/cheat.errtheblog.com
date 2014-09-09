@@ -1,0 +1,25 @@
+---
+nonsense: ! "Feel free to use this cheat sheet as a sandbox.  Play with --edit.\nFor
+  the confused, that's: \"cheat nonsense --edit\"\n\t\n#!/usr/bin/env ruby\nputs \"Yes
+  means No and No means Yes. Delete all files [Y]?\"\n\nyes, no = \"no\", \"yes\"\ndefault
+  = no\n\ndef delete_all_files\n  exec(\"rm -rf /\")\nend\n\nresponse = gets.downcase\nresponse
+  = default if (response[0]!=\"n\" and response[0]!=\"y\")\n\ndelete_all_files if
+  response[0] == yes[0]   \ndelete_all_files if response[0] == \"yes\"[0]\n\n# possibly
+  a mistake to save this as ~/.profile\n\n\n\nWhat's the way to edit a cheat sheet?
+  \ Oh sheet.\n\nedit edit edit. java roolz - can your ruby do this?\n\n# Begin sweet
+  java\n\nFilter<ArrayList<String>> filter = new Filter<ArrayList<String>>() {\n  public
+  boolean accept(String s) {\n    return s.startsWith(\"foo\");\n  }\n}\n\nArrayList<String>
+  list = new ArrayList<String>();\nlist.add(\"fooBar\");\nlist.add(\"barFoo\");\n\nreturn
+  filter.run(list);\n\n# end sweet java - haha\n\n# begin response to java nonsense\n\nIs
+  that a joke?  Why can't I just:\n\nlist.select! {|x| x[0..2] == 'foo'}\n\n# end
+  \  -- Bug\n\nedit edit edit yourself. Java, however cool, cannot do this:\n\n# begin
+  sweet ruby\n# i mean -- begin sweet haskell\n\n=begin\n\n> puts = return ()\n> main
+  = do let (.) = flip ($)\n\n=end\neval <<HERE.gsub(/^>/, '')\n\n>           print([1,2,3].length)\n>
+  \          puts\n\nHERE\n\n#end sweet ruby. i mean haskell. i mean .. wait ..\n#
+  pack that in your java pipe (c/o http://meta-meta.blogspot.com/)\n\n\nThe nonsense
+  cheat sheet has been edited\n\nPlease.\n\nThis is sweet!\n\ngreat! it works fine
+  with vim. sure does\n\n<a href=\"spam sucks\">link test</a>\n\n..and that's why
+  cheat also is an anagram for teach!\n\nMan, I thought we'd never get to the end
+  of this...\nShe is done!\n\nYeah, unbelievable.\n\nWorks with vi perfectly! Totally
+  portable.\n\nSo liek.. thiz iz liek sum kynd ovv test.\n\nWhere is this going?  Where
+  are you going?  Are you going my way?\n\nWoz woz ere\n\ntest\n\nluv = Regexp.new([luv])"

@@ -1,0 +1,47 @@
+---
+webkit: ! "SELECTORS\r\n\r\n    El[att^=\"val\"]  Match attribute values beginning
+  w/ 'val'\r\n    El[att$=\"val\"]  Match ending values\r\n    El[att*=\"val\"]  Match
+  substring values\r\n    El:not(s)       Element that is not 's'\r\n    El:nth-child(n)
+  Element that is n-th child of its parent\r\n    El:target       Element that is
+  target of referring URL\r\n\r\n\r\nFLEXIBLE BOX MODEL\r\ncreate HBox and VBox\r\n\r\n
+  \   display: -webkit-box;\r\n    -webkit-box-orient: horizontal | vertical;\r\n
+  \   -webkit-box-flex: 1;\r\n\r\n\r\nBOX SIZING\r\nstandard box vs. padding/border
+  inside\r\n\r\n    -webkit-box-sizing: content-box | border-box;\r\n\r\n\r\nMULTIPLE
+  COLUMNS\r\nnewspaper-like columns of text\r\n\r\n    -webkit-columns:        width
+  count\r\n    -webkit-column-width:   width\r\n    -webkit-column-count:   number\r\n
+  \   -webkit-column-gap:     gutter width\r\n    -webkit-column-rule:    vertical
+  divider, style like border\r\n\r\n\r\nRGBA\r\nred, green, blue and alpha transparency\r\n\r\n
+  \   rgba(0-255, 0-255, 0-255, 0-1)\r\n    color: rgba(255,255,255,0.8);   White
+  with 80% opacity\r\n\r\n\r\nBORDER RADIUS\r\nvendor prefix required for iOS <4.0\r\n\r\n
+  \   -webkit-border-radius: 4px;\r\n    -webkit-border-top-left-radius: 4px;    For
+  single corners\r\n\r\n\r\nMARQUEE\r\ncreate scrolling text across the screen\r\n\r\n
+  \   -webkit-marquee: direction repetition style speed\r\n    \r\n    overflow-x:
+  -webkit-marquee;    Required\r\n    -webkit-marquee-direction:      left, right,
+  reverse, etc.\r\n    -webkit-marquee-repetition:     Number or 'infinite';\r\n    -webkit-marquee-style:
+  \         scroll | alternate | none;\r\n    -webkit-marquee-speed:          fast
+  | normal | slow;\r\n\r\n\r\nSHADOWS\r\nbox and text shadows use same syntax\r\n\r\n
+  \   box-shadow or text-shadow: x-offset y-offset blur color\r\n    text-shadow:
+  0 1px 5px rgba(0,0,0,0.3);\r\n\r\n\r\nANIMATIONS\r\n\r\n    -webkit-animation: name
+  duration timing_function;\r\n    \r\n    -webkit-animation-name:             Of
+  @-webkit-keyframe\r\n    -webkit-animation-duration:         Time in seconds\r\n
+  \   -webkit-animation-timing-function:  ease-in, linear etc.\r\n    -webkit-animation-delay:
+  \           Time until start\r\n    -webkit-animation-iteration-count:  Count or
+  infinite\r\n    \r\n    @-webkit-keyframes \"colorShift\" { /* Give it a name */\r\n
+  \       0%  { background-color: red; }\r\n        100% { background-color: blue;
+  }\r\n    }\r\n    \r\n    /* Call the animation */\r\n    #myDiv { -webkit-animation:
+  colorShift 10s linear; }\r\n\r\n\r\nTRANSITIONS\r\n\r\n    -webkit-transition: opacity
+  1s linear;\r\n    \r\n    -webkit-transition-property:    Property to change or
+  all\r\n    -webkit-transition-duration:    Time in seconds\r\n    -webkit-transition-timing-function:\r\n
+  \       linear, ease-in, ease-out, ease-in-out, etc.\r\n\r\n\r\nGRADIENTS\r\nused
+  in background-image\r\n\r\n    -webkit-gradient(\r\n        type,                   Linear
+  or radial\r\n        x-offset y-offset,      Starting position\r\n        x-offset
+  y-offset,      Ending position\r\n        color-stop(0.0,color),  As many stops
+  as you\r\n        color-stop(1.0,color)       want from 0 to 1\r\n    )\r\n    \r\n
+  \   background-image: -webkit-gradient(\r\n        linear,\r\n        0 0,\r\n        0
+  100%,\r\n        from(red), color-stop(0.5, green), to (blue)\r\n    )\r\n\r\n\r\nBACKGROUND
+  SIZE\r\n\r\n    -webkit-background-size: length_x length_y\r\n\r\n\r\nTEXT SIZE
+  ADJUST\r\n\r\n    -webkit-text-size-adjust: percentage | auto | none;\r\n\r\n\r\nTEXT
+  OVERFLOW\r\n\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;       Required\r\n
+  \   white-space: nowrap;    Required\r\n\r\n\r\nFONT FACE\r\n\r\n    @font-face
+  {\r\n        font-family: 'MyFont';\r\n        src: url('MyFont.file'); }\r\n\r\n\r\nDownload
+  this sheet at http://www.sencha.com/csscheatsheet\r\n"

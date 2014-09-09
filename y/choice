@@ -1,0 +1,7 @@
+---
+choice: ! "http://choice.rubyforge.org/\r\n\r\nrequire 'rubygems'\r\nrequire 'choice'\r\n\r\nChoice.options
+  do\r\n    header 'Specific options:'\r\n\r\n     option :port, :required => true
+  do\r\n      short '-p'\r\n      long '--port=PORT'\r\n      desc 'The port to listen
+  on (default 21)'\r\n      cast Integer\r\n      default 21\r\n    end\r\n\r\n     option
+  :files do\r\n      short '-f'\r\n      long '--files=*FILES'\r\n      desc 'List
+  of files'\r\n    end\r\nend\r\n\r\nputs Choice.choices[:port]"

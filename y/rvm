@@ -1,0 +1,45 @@
+---
+rvm: ! "RVM home page: https://rvm.io\r\n\r\nInstall RVM\r\n------------\r\n\r\nSee
+  https://rvm.io/rvm/install/\r\n\r\n    curl -L get.rvm.io | bash -s stable\r\n\r\nOn
+  OS X you can use RailsInstaller which will bring all dependencies for you:\r\ninstaller:
+  https://github.com/railsinstaller/railsinstaller-nix/downloads\r\nbackground: http://www.engineyard.com/blog/2012/railsinstaller-for-os-x/\r\n\r\nUpdate
+  RVM\r\n----------\r\n\r\n    rvm get stable\r\n\r\nIn case of problems try first
+  with development version\r\n(maybe it's already fixed):\r\n\r\n    rvm get head\r\n\r\nVery
+  old installations might not support those update methods, just run the installer
+  and reopen your terminal.\r\n\r\nInstall Ruby dependencies\r\n-------------------------\r\n\r\nFollow
+  instructions from:\r\n\r\n    rvm requirements\r\n\r\nList known rubies\r\n-----------------\r\n\r\n
+  \   rvm list known\r\n\r\nInstall Ruby\r\n------------\r\n\r\n    rvm install 1.9.3
+  \               # Latest known patch level\r\n    rvm install 1.9.3 -j 3           #
+  Parallel compile, set to # of CPU cores\r\n    rvm install 1.9.3 --patch falcon
+  # Use a patch (falcon for performance)\r\n    rvm install 1.9.2-p318           #
+  Patchlevel 318\r\n    rvm install rbx --1.9            # Rubinius with 1.9 mode
+  set as default\r\n\r\nList all rubies and gemsets\r\n---------------------------\r\n\r\n
+  \   rvm list         # List rubies only\r\n    rvm list gemsets # List rubies and
+  gemsets\r\n    rvm gemset list  # List gemsets for current ruby\r\n\r\nSelecting
+  Ruby for work\r\n-----------------------\r\n\r\n    rvm system                 #
+  For system ruby, with fallback to default \r\n    rvm use jruby              # For
+  current session only\r\n    rvm use --default 1.9.3    # For current and new sessions\r\n
+  \   rvm use --ruby-version rbx # For current session and this project\r\n\r\nRVM
+  will automatically use a ruby and gemset when you `cd` to a project directory.\r\n\r\nRead
+  more on project files:\r\n\r\n- https://rvm.io/workflow/projects/#ruby-versions\r\n\r\nUsing
+  ruby and gems\r\n-------------------\r\n\r\nAfter selecting Ruby work as usual:\r\n\r\n
+  \   ruby -v\r\n    gem install haml\r\n    haml\r\n\r\nTemporarily selecting another
+  Ruby or gemset\r\n--------------------------------------------\r\n\r\n    rvm 1.8.7
+  do gem install rspec      # in the given ruby\r\n    rvm 1.8.7,1.9.2 do gem install
+  haml # in this two rubies\r\n    rvm @global do gem install gist     # in @global
+  gemset of current ruby\r\n\r\nGemsets\r\n-------\r\n\r\nRVM by default allows creating
+  multiple environments for one ruby - called *gemsets*.\r\n\r\nGemsets can be specified
+  together with ruby name using gemsets separator(@):\r\n\r\n- ruby-1.9.3-p125@my-project\r\n\r\nDuring
+  installation of Ruby, RVM creates two gemsets:\r\n\r\n- default - automatically
+  selected when no @gemset specified: rvm use 1.9.3\r\n- global  - super gemset, inherited
+  by all other gemsets for the given ruby\r\n\r\nWorking with gemsets:\r\n\r\n    rvm
+  use 1.8.7                          # use the ruby to manage gemsets for\r\n    rvm
+  gemset create project_name         # create a gemset\r\n    rvm gemset use project_name
+  \           # use a gemset in this ruby\r\n    rvm gemset list                        #
+  list gemsets in this ruby\r\n    rvm gemset delete project_name         # delete
+  a gemset\r\n    rvm 1.9.1@other_project_name           # use another ruby and gemset\r\n
+  \   rvm 1.9.3@_project --create --rvmrc    # use and create gemset & .rvmrc\r\n\r\nInstall
+  RVM for all users\r\n--------------------------\r\n\r\nDiscouraged; make sure to
+  read http://rvm.io/rvm/installation/\r\n\r\nMore help ?\r\n-----------\r\n\r\nA
+  lot of resources is available:\r\n\r\n- in your terminal: `rvm help`\r\n- https://rvm.io/\r\n-
+  IRC #rvm @ freenode - http://webchat.freenode.net/?channels=#rvm"

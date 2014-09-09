@@ -1,0 +1,60 @@
+---
+mechanize: ! "# These examples are taken from the mechanize gem documentation.\r\n\r\n#
+  -----------------------------------------------------------------------------\r\n#
+  Google Search\r\n\r\nrequire 'rubygems'\r\nrequire 'mechanize'\r\n\r\na = WWW::Mechanize.new
+  { |agent| agent.user_agent_alias = 'Mac Safari' }\r\n\r\na.get('http://google.com/')
+  do |page|\r\n  search_result = page.form_with(:name => 'f') do |search|\r\n    search.q
+  = 'Hello world'\r\n  end.submit\r\n\r\n  search_result.links.each do |link|\r\n
+  \   puts link.text\r\n  end\r\nend\r\n\r\n# -----------------------------------------------------------------------------\r\n#
+  Flickr Upload\r\n\r\nagent = WWW::Mechanize.new\r\npage  = agent.get('http://flickr.com/signin/flickr/')\r\nform
+  \ = page.forms.name('flickrloginform').first\r\nform.email = ARGV[0]\r\nform.password
+  = ARGV[1]\r\npage  = agent.submit(form)\r\npage  = agent.click page.links.text('Upload')\r\nform
+  \ = page.forms.action('/photos_upload_process.gne').first\r\nform.file_uploads.name('file1').first.file_name
+  = ARGV[2]\r\nagent.submit(form)\r\n\r\n\r\n# -----------------------------------------------------------------------------\r\n#
+  Proxy Request\r\n\r\nagent = WWW::Mechanize.new\r\nagent.set_proxy('localhost',
+  '8000')\r\npage = agent.get(ARGV[0])\r\nputs page.body\r\n\r\n\r\n# -----------------------------------------------------------------------------\r\n#
+  Rubyforge\r\n\r\nagent = WWW::Mechanize.new { |a| a.log = Logger.new(STDERR) }\r\npage
+  = agent.get('http://rubyforge.org/')\r\npage = agent.click page.links.text(/Log
+  In/)\r\nform = page.forms[1] # Select the first form\r\nform.form_loginname = ARGV[0]\r\nform.form_pw
+  \       = ARGV[1]\r\npage = agent.submit(form, form.buttons.first)\r\nputs page.body\r\n\r\n\r\n#
+  -----------------------------------------------------------------------------\r\n#
+  Spider\r\n\r\nagent = WWW::Mechanize.new\r\nstack = agent.get(ARGV[0]).links\r\nwhile
+  l = stack.pop\r\n  next unless l.uri.host == agent.history.first.uri.host\r\n  stack.push(*(agent.click(l).links))
+  unless agent.visited? l.href\r\nend\r\n\r\n\r\n# -----------------------------------------------------------------------------\r\n#
+  Pluggable Parsers\r\n\r\n# Lets say you want html pages to automatically be parsed
+  with Rubyful Soup.\r\n\r\nrequire 'rubygems'\r\nrequire 'mechanize'\r\nrequire 'rubyful_soup'\r\n\r\nclass
+  SoupParser < WWW::Mechanize::Page\r\n  attr_reader :soup\r\n  def initialize(uri
+  = nil, response = nil, body = nil, code = nil)\r\n    @soup = BeautifulSoup.new(body)\r\n
+  \   super(uri, response, body, code)\r\n  end\r\nend\r\n\r\nagent = WWW::Mechanize.new\r\nagent.pluggable_parser.html
+  = SoupParser\r\n\r\n# Now all HTML pages will be parsed with the SoupParser class,
+  and automatically\r\n# give you access to a method called 'soup' where you can get
+  access to the\r\n# Beautiful Soup for that page.\r\n\r\n\r\n# -----------------------------------------------------------------------------\r\n#
+  The Transact Method\r\n\r\n# transact runs the given block and then resets the page
+  history. I.e. after the\r\n# block has been executed, you're back at the original
+  page; no need count how\r\n# many times to call the back method at the end of a
+  loop (while accounting for\r\n# possible exceptions). This example also demonstrates
+  subclassing Mechanize.\r\n\r\nrequire 'mechanize'\r\n\r\nclass TestMech < WWW::Mechanize\r\n
+  \ def process\r\n    get 'http://rubyforge.org/'\r\n    search_form = page.forms.first\r\n
+  \   search_form.words = 'WWW'\r\n    submit search_form\r\n\r\n    page.links_with(:href
+  => %r{/projects/} ).each do |link|\r\n      next if link.href =~ %r{/projects/support/}\r\n\r\n
+  \     puts 'Loading %-30s %s' % [link.href, link.text]\r\n      begin\r\n        transact
+  do\r\n          click link\r\n          # Do stuff, maybe click more links.\r\n
+  \       end\r\n        # Now we're back at the original page.\r\n\r\n      rescue
+  => e\r\n        $stderr.puts \"#{e.class}: #{e.message}\"\r\n      end\r\n    end\r\n
+  \ end\r\nend\r\n\r\nTestMech.new.process\r\n\r\n\r\n# -----------------------------------------------------------------------------\r\n#
+  Client Certificate Authentication (Mutual Auth)\r\n\r\n# In most cases a client
+  certificate is created as an additional layer of security\r\n# for certain websites.
+  \ The specific case that this was initially tested on was\r\n# for automating the
+  download of archived images from a banks (Wachovia) lockbox \r\n# system.  Once
+  the certificate is installed into your browser you will have to \r\n# export it
+  and split the certificate and private key into separate files. Exported\r\n# files
+  are usually in .p12 format (IE 7 & Firefox 2.0) which stands for PKCS #12.\r\n#
+  You can convert them from p12 to pem format by using the following commands:\r\n\r\nopenssl.exe
+  pkcs12 -in input_file.p12 -clcerts -out example.key -nocerts -nodes\r\nopenssl.exe
+  pkcs12 -in input_file.p12 -clcerts -out example.cer -nokeys\r\n\r\nrequire 'rubygems'\r\nrequire
+  'mechanize'\r\n\r\n# create Mechanize instance\r\nagent = WWW::Mechanize.new\r\n\r\n#
+  set the path of the certificate file\r\nagent.cert = 'example.cer'\r\n\r\n# set
+  the path of the private key file\r\nagent.key = 'example.key'\r\n\r\n# get the login
+  form & fill it out with the username/password\r\nlogin_form = @agent.get(\"http://example.com/login_page\").form('Login')\r\nlogin_form.Userid
+  = 'TestUser'\r\nlogin_form.Password = 'TestPassword'\r\n\r\n# submit login form\r\nagent.submit(login_form,
+  login_form.buttons.first)\r\nProva"

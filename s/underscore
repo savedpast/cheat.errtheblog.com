@@ -1,0 +1,363 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>ollection Functions (Arrays or Objects)
+
+each_.each(list, iterator, [context]) Alias: forEach 
+Iterates over a list of elements, yielding each in turn to an iterator function. The iterator is bound to the context object, if one is passed. Each invocation of iterator is called with three arguments: (element, index, list). If list is a JavaScript object, iterator's arguments will be (value, key, list). Delegates to the native forEach function if it exists.
+_.each([1, 2, 3], function(num){ alert(num); });
+=&gt; alerts each number in turn...
+_.each({one : 1, two : 2, three : 3}, function(num, key){ alert(num); });
+=&gt; alerts each number in turn...
+map_.map(list, iterator, [context]) 
+Produces a new array of values by mapping each value in list through a transformation function (iterator). If the native map method exists, it will be used instead. If list is a JavaScript object, iterator's arguments will be (value, key, list).
+_.map([1, 2, 3], function(num){ return num * 3; });
+=&gt; [3, 6, 9]
+_.map({one : 1, two : 2, three : 3}, function(num, key){ return num * 3; });
+=&gt; [3, 6, 9]
+reduce_.reduce(list, iterator, memo, [context]) Aliases: inject, foldl 
+Also known as inject and foldl, reduce boils down a list of values into a single value. Memo is the initial state of the reduction, and each successive step of it should be returned by iterator.
+var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);
+=&gt; 6
+reduceRight_.reduceRight(list, iterator, memo, [context]) Alias: foldr 
+The right-associative version of reduce. Delegates to the JavaScript 1.8 version of reduceRight, if it exists. Foldr is not as useful in JavaScript as it would be in a language with lazy evaluation.
+var list = [[0, 1], [2, 3], [4, 5]];
+var flat = _.reduceRight(list, function(a, b) { return a.concat(b); }, []);
+=&gt; [4, 5, 2, 3, 0, 1]
+detect_.detect(list, iterator, [context]) 
+Looks through each value in the list, returning the first one that passes a truth test (iterator). The function returns as soon as it finds an acceptable element, and doesn't traverse the entire list.
+var even = _.detect([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+=&gt; 2
+select_.select(list, iterator, [context]) Alias: filter 
+Looks through each value in the list, returning an array of all the values that pass a truth test (iterator). Delegates to the native filter method, if it exists.
+var evens = _.select([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+=&gt; [2, 4, 6]
+reject_.reject(list, iterator, [context]) 
+Returns the values in list without the elements that the truth test (iterator) passes. The opposite of select.
+var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+=&gt; [1, 3, 5]
+all_.all(list, [iterator], [context]) Alias: every 
+Returns true if all of the values in the list pass the iterator truth test. If an iterator is not provided, the truthy value of the element will be used instead. Delegates to the native method every, if present.
+_.all([true, 1, null, 'yes']);
+=&gt; false
+any_.any(list, [iterator], [context]) Alias: some 
+Returns true if any of the values in the list pass the iterator truth test. Short-circuits and stops traversing the list if a true element is found. Delegates to the native method some, if present.
+_.any([null, 0, 'yes', false]);
+=&gt; true
+include_.include(list, value) Alias: contains 
+Returns true if the value is present in the list, using === to test equality. Uses indexOf internally, if list is an Array.
+_.include([1, 2, 3], 3);
+=&gt; true
+invoke_.invoke(list, methodName, [*arguments]) 
+Calls the method named by methodName on each value in the list. Any extra arguments passed to invoke will be forwarded on to the method invocation.
+_.invoke([[5, 1, 7], [3, 2, 1]], 'sort');
+=&gt; [[1, 5, 7], [1, 2, 3]]
+pluck_.pluck(list, propertyName) 
+An convenient version of what is perhaps the most common use-case for map: extracting a list of property values.
+var stooges = [{name : 'moe', age : 40}, {name : 'larry', age : 50}, {name : 'curly', age : 60}];
+_.pluck(stooges, 'name');
+=&gt; [&quot;moe&quot;, &quot;larry&quot;, &quot;curly&quot;]
+max_.max(list, [iterator], [context]) 
+Returns the maximum value in list. If iterator is passed, it will be used on each value to generate the criterion by which the value is ranked.
+var stooges = [{name : 'moe', age : 40}, {name : 'larry', age : 50}, {name : 'curly', age : 60}];
+_.max(stooges, function(stooge){ return stooge.age; });
+=&gt; {name : 'curly', age : 60};
+min_.min(list, [iterator], [context]) 
+Returns the minimum value in list. If iterator is passed, it will be used on each value to generate the criterion by which the value is ranked.
+var numbers = [10, 5, 100, 2, 1000];
+_.min(numbers);
+=&gt; 2
+sortBy_.sortBy(list, iterator, [context]) 
+Returns a sorted list, ranked by the results of running each value through iterator.
+_.sortBy([1, 2, 3, 4, 5, 6], function(num){ return Math.sin(num); });
+=&gt; [5, 4, 6, 3, 1, 2]
+sortedIndex_.sortedIndex(list, value, [iterator]) 
+Uses a binary search to determine the index at which the value should be inserted into the list in order to maintain the list's sorted order. If an iterator is passed, it will be used to compute the sort ranking of each value.
+_.sortedIndex([10, 20, 30, 40, 50], 35);
+=&gt; 3
+toArray_.toArray(list) 
+Converts the list (anything that can be iterated over), into a real Array. Useful for transmuting the arguments object.
+(function(){ return _.toArray(arguments).slice(0); })(1, 2, 3);
+=&gt; [1, 2, 3]
+size_.size(list) 
+Return the number of values in the list.
+_.size({one : 1, two : 2, three : 3});
+=&gt; 3
+Array Functions
+
+Note: All array functions will also work on the arguments object.
+first_.first(array, [n]) Alias: head 
+Returns the first element of an array. Passing n will return the first n elements of the array.
+_.first([5, 4, 3, 2, 1]);
+=&gt; 5
+rest_.rest(array, [index]) Alias: tail 
+Returns the rest of the elements in an array. Pass an index to return the values of the array from that index onward.
+_.rest([5, 4, 3, 2, 1]);
+=&gt; [4, 3, 2, 1]
+last_.last(array) 
+Returns the last element of an array.
+_.last([5, 4, 3, 2, 1]);
+=&gt; 1
+compact_.compact(array) 
+Returns a copy of the array with all falsy values removed. In JavaScript, false, null, 0, &quot;&quot;, undefined and NaN are all falsy.
+_.compact([0, 1, false, 2, '', 3]);
+=&gt; [1, 2, 3]
+flatten_.flatten(array) 
+Flattens a nested array (the nesting can be to any depth).
+_.flatten([1, [2], [3, [[[4]]]]]);
+=&gt; [1, 2, 3, 4];
+without_.without(array, [*values]) 
+Returns a copy of the array with all instances of the values removed. === is used for the equality test.
+_.without([1, 2, 1, 0, 3, 1, 4], 0, 1);
+=&gt; [2, 3, 4]
+uniq_.uniq(array, [isSorted]) Alias: unique 
+Produces a duplicate-free version of the array, using === to test object equality. If you know in advance that the array is sorted, passing true for isSorted will run a much faster algorithm.
+_.uniq([1, 2, 1, 3, 1, 4]);
+=&gt; [1, 2, 3, 4]
+intersect_.intersect(*arrays) 
+Computes the list of values that are the intersection of all the arrays. Each value in the result is present in each of the arrays.
+_.intersect([1, 2, 3], [101, 2, 1, 10], [2, 1]);
+=&gt; [1, 2]
+zip_.zip(*arrays) 
+Merges together the values of each of the arrays with the values at the corresponding position. Useful when you have separate data sources that are coordinated through matching array indexes.
+_.zip(['moe', 'larry', 'curly'], [30, 40, 50], [true, false, false]);
+=&gt; [[&quot;moe&quot;, 30, true], [&quot;larry&quot;, 40, false], [&quot;curly&quot;, 50, false]]
+indexOf_.indexOf(array, value, [isSorted]) 
+Returns the index at which value can be found in the array, or -1 if value is not present in the array. Uses the native indexOf function unless it's missing. If you're working with a large array, and you know that the array is already sorted, pass true for isSorted to use a faster binary search.
+_.indexOf([1, 2, 3], 2);
+=&gt; 1
+lastIndexOf_.lastIndexOf(array, value) 
+Returns the index of the last occurrence of value in the array, or -1 if value is not present. Uses the native lastIndexOf function if possible.
+_.lastIndexOf([1, 2, 3, 1, 2, 3], 2);
+=&gt; 4
+range_.range([start], stop, [step]) 
+A function to create flexibly-numbered lists of integers, handy for each and map loops. start, if omitted, defaults to 0; step defaults to 1. Returns a list of integers from start to stop, incremented (or decremented) by step, exclusive.
+_.range(10);
+=&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+_.range(1, 11);
+=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+_.range(0, 30, 5);
+=&gt; [0, 5, 10, 15, 20, 25]
+_.range(0, -10, -1);
+=&gt; [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+_.range(0);
+=&gt; []
+Function (uh, ahem) Functions
+
+bind_.bind(function, object, [*arguments]) 
+Bind a function to an object, meaning that whenever the function is called, the value of this will be the object. Optionally, bind arguments to the function to pre-fill them, also known as currying.
+var func = function(greeting){ return greeting + ': ' + this.name };
+func = _.bind(func, {name : 'moe'}, 'hi');
+func();
+=&gt; 'hi: moe'
+bindAll_.bindAll(object, [*methodNames]) 
+Binds a number of methods on the object, specified by methodNames, to be run in the context of that object whenever they are invoked. Very handy for binding functions that are going to be used as event handlers, which would otherwise be invoked with a fairly useless this. If no methodNames are provided, all of the object's function properties will be bound to it.
+var buttonView = {
+  label   : 'underscore',
+  onClick : function(){ alert('clicked: ' + this.label); },
+  onHover : function(){ console.log('hovering: ' + this.label); }
+};
+_.bindAll(buttonView);
+jQuery('#underscore_button').bind('click', buttonView.onClick);
+=&gt; When the button is clicked, this.label will have the correct value...
+memoize_.memoize(function, [hashFunction]) 
+Memoizes a given function by caching the computed result. Useful for speeding up slow-running computations. If passed an optional hashFunction, it will be used to compute the hash key for storing the result, based on the arguments to the original function.
+var fibonacci = function(n) {
+  return n &lt; 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
+};
+var fastFibonacci = _.memoize(fibonacci);
+delay_.delay(function, wait, [*arguments]) 
+Much like setTimeout, invokes function after wait milliseconds. If you pass the optional arguments, they will be forwarded on to the function when it is invoked.
+var log = _.bind(console.log, console);
+_.delay(log, 1000, 'logged later');
+=&gt; 'logged later' // Appears after one second.
+defer_.defer(function) 
+Defers invoking the function until the current call stack has cleared, similar to using setTimeout with a delay of 0. Useful for performing expensive computations or HTML rendering in chunks without blocking the UI thread from updating.
+_.defer(function(){ alert('deferred'); });
+// Returns from the function before the alert runs.
+throttle_.throttle(function, wait) 
+Returns a throttled version of the function, that, when invoked repeatedly, will only actually call the wrapped function at most once per every wait milliseconds. Useful for rate-limiting events that occur faster than you can keep up with.
+var throttled = _.throttle(updatePosition, 100);
+$(window).scroll(throttled);
+debounce_.debounce(function, wait) 
+Repeated calls to a debounced function will postpone it's execution until after wait milliseconds have elapsed. Useful for implementing behavior that should only happen after the input has stopped arriving. For example: rendering a preview of a Markdown comment, recalculating a layout after the window has stopped being resized...
+var lazyLayout = _.debounce(calculateLayout, 300);
+$(window).resize(lazyLayout);
+wrap_.wrap(function, wrapper) 
+Wraps the first function inside of the wrapper function, passing it as the first argument. This allows the wrapper to execute code before and after the function runs, adjust the arguments, and execute it conditionally.
+var hello = function(name) { return &quot;hello: &quot; + name; };
+hello = _.wrap(hello, function(func) {
+  return &quot;before, &quot; + func(&quot;moe&quot;) + &quot;, after&quot;;
+});
+hello();
+=&gt; 'before, hello: moe, after'
+compose_.compose(*functions) 
+Returns the composition of a list of functions, where each function consumes the return value of the function that follows. In math terms, composing the functions f(), g(), and h() produces f(g(h())).
+var greet    = function(name){ return &quot;hi: &quot; + name; };
+var exclaim  = function(statement){ return statement + &quot;!&quot;; };
+var welcome = _.compose(greet, exclaim);
+welcome('moe');
+=&gt; 'hi: moe!'
+Object Functions
+
+keys_.keys(object) 
+Retrieve all the names of the object's properties.
+_.keys({one : 1, two : 2, three : 3});
+=&gt; [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
+values_.values(object) 
+Return all of the values of the object's properties.
+_.values({one : 1, two : 2, three : 3});
+=&gt; [1, 2, 3]
+functions_.functions(object) Alias: methods 
+Returns a sorted list of the names of every method in an object — that is to say, the name of every function property of the object.
+_.functions(_);
+=&gt; [&quot;all&quot;, &quot;any&quot;, &quot;bind&quot;, &quot;bindAll&quot;, &quot;clone&quot;, &quot;compact&quot;, &quot;compose&quot; ...
+extend_.extend(destination, *sources) 
+Copy all of the properties in the source objects over to the destination object. It's in-order, to the last source will override properties of the same name in previous arguments.
+_.extend({name : 'moe'}, {age : 50});
+=&gt; {name : 'moe', age : 50}
+clone_.clone(object) 
+Create a shallow-copied clone of the object. Any nested objects or arrays will be copied by reference, not duplicated.
+_.clone({name : 'moe'});
+=&gt; {name : 'moe'};
+tap_.tap(object, interceptor) 
+Invokes interceptor with the object, and then returns object. The primary purpose of this method is to &quot;tap into&quot; a method chain, in order to perform operations on intermediate results within the chain.
+_([1,2,3,200]).chain().
+  select(function(num) { return num % 2 == 0; }).
+  tap(console.log).
+  map(function(num) { return num * num }).
+  value();
+=&gt; [2, 200]
+=&gt; [4, 40000]
+isEqual_.isEqual(object, other) 
+Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.
+var moe   = {name : 'moe', luckyNumbers : [13, 27, 34]};
+var clone = {name : 'moe', luckyNumbers : [13, 27, 34]};
+moe == clone;
+=&gt; false
+_.isEqual(moe, clone);
+=&gt; true
+isEmpty_.isEmpty(object) 
+Returns true if object contains no values.
+_.isEmpty([1, 2, 3]);
+=&gt; false
+_.isEmpty({});
+=&gt; true
+isElement_.isElement(object) 
+Returns true if object is a DOM element.
+_.isElement(jQuery('body')[0]);
+=&gt; true
+isArray_.isArray(object) 
+Returns true if object is an Array.
+(function(){ return _.isArray(arguments); })();
+=&gt; false
+_.isArray([1,2,3]);
+=&gt; true
+isArguments_.isArguments(object) 
+Returns true if object is an Arguments object.
+(function(){ return _.isArguments(arguments); })(1, 2, 3);
+=&gt; true
+_.isArguments([1,2,3]);
+=&gt; false
+isFunction_.isFunction(object) 
+Returns true if object is a Function.
+_.isFunction(alert);
+=&gt; true
+isString_.isString(object) 
+Returns true if object is a String.
+_.isString(&quot;moe&quot;);
+=&gt; true
+isNumber_.isNumber(object) 
+Returns true if object is a Number.
+_.isNumber(8.4 * 5);
+=&gt; true
+isBoolean_.isBoolean(object) 
+Returns true if object is either true or false.
+_.isBoolean(null);
+=&gt; false
+isDate_.isDate(object) 
+Returns true if object is a Date.
+_.isDate(new Date());
+=&gt; true
+isRegExp_.isRegExp(object) 
+Returns true if object is a RegExp.
+_.isRegExp(/moe/);
+=&gt; true
+isNaN_.isNaN(object) 
+Returns true if object is NaN.
+Note: this is not the same as the native isNaN function, which will also return true if the variable is undefined.
+_.isNaN(NaN);
+=&gt; true
+isNaN(undefined);
+=&gt; true
+_.isNaN(undefined);
+=&gt; false
+isNull_.isNull(object) 
+Returns true if the value of object is null.
+_.isNull(null);
+=&gt; true
+_.isNull(undefined);
+=&gt; false
+isUndefined_.isUndefined(variable) 
+Returns true if variable is undefined.
+_.isUndefined(window.missingVariable);
+=&gt; true
+Utility Functions
+
+noConflict_.noConflict() 
+Give control of the &quot;_&quot; variable back to its previous owner. Returns a reference to the Underscore object.
+var underscore = _.noConflict();
+identity_.identity(value) 
+Returns the same value that is used as the argument. In math: f(x) = x
+This function looks useless, but is used throughout Underscore as a default iterator.
+var moe = {name : 'moe'};
+moe === _.identity(moe);
+=&gt; true
+times_.times(n, iterator) 
+Invokes the given iterator function n times.
+_(3).times(function(){ genie.grantWish(); });
+mixin_.mixin(object) 
+Allows you to extend Underscore with your own utility functions. Pass a hash of {name: function} definitions to have your functions added to the Underscore object, as well as the OOP wrapper.
+_.mixin({
+  capitalize : function(string) {
+    return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
+  }
+});
+_(&quot;fabio&quot;).capitalize();
+=&gt; &quot;Fabio&quot;
+uniqueId_.uniqueId([prefix]) 
+Generate a globally-unique id for client-side models or DOM elements that need one. If prefix is passed, the id will be appended to it.
+_.uniqueId('contact_');
+=&gt; 'contact_104'
+template_.template(templateString, [context]) 
+Compiles JavaScript templates into functions that can be evaluated for rendering. Useful for rendering complicated bits of HTML from JSON data sources. Template functions can both interpolate variables, using
+&lt;%= … %&gt;, as well as execute arbitrary JavaScript code, with &lt;% … %&gt;. When you evaluate a template function, pass in a context object that has properties corresponding to the template's free variables. If you're writing a one-off, you can pass the context object as the second parameter to template in order to render immediately instead of returning a template function.
+var compiled = _.template(&quot;hello: &lt;%= name %&gt;&quot;);
+compiled({name : 'moe'});
+=&gt; &quot;hello: moe&quot;
+
+var list = &quot;&lt;% _.each(people, function(name) { %&gt; &lt;li&gt;&lt;%= name %&gt;&lt;/li&gt; &lt;% }); %&gt;&quot;;
+_.template(list, {people : ['moe', 'curly', 'larry']});
+=&gt; &quot;&lt;li&gt;moe&lt;/li&gt;&lt;li&gt;curly&lt;/li&gt;&lt;li&gt;larry&lt;/li&gt;&quot;
+If ERB-style delimiters aren't your cup of tea, you can change Underscore's template settings to use different symbols to set off interpolated code. Define an interpolate regex, and an (optional) evaluate regex to match expressions that should be inserted and evaluated, respectively. For example, to perform Mustache.js style templating:
+_.templateSettings = {
+  interpolate : /\{\{(.+?)\}\}/g
+};
+
+var template = _.template(&quot;Hello {{ name }}!&quot;);
+template({name : &quot;Mustache&quot;});
+=&gt; &quot;Hello Mustache!&quot;
+Chaining
+
+chain_(obj).chain() 
+Returns a wrapped object. Calling methods on this object will continue to return wrapped objects until value is used. ( A more realistic example.)
+var stooges = [{name : 'curly', age : 25}, {name : 'moe', age : 21}, {name : 'larry', age : 23}];
+var youngest = _(stooges).chain()
+  .sortBy(function(stooge){ return stooge.age; })
+  .map(function(stooge){ return stooge.name + ' is ' + stooge.age; })
+  .first()
+  .value();
+=&gt; &quot;moe is 21&quot;
+value_(obj).value() 
+Extracts the value of a wrapped object.
+_([1, 2, 3]).value();
+=&gt; [1, 2, 3]</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

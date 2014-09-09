@@ -1,0 +1,7 @@
+---
+nslog: ! "%@     Object\r\n%d, %i signed int\r\n%u     unsigned int\r\n%f     float/double\r\n\r\n%x,
+  %X hexadecimal int\r\n%o     octal int\r\n%zu    size_t\r\n%p     pointer\r\n%e
+  \    float/double (in scientific notation)\r\n%g     float/double (as %f or %e,
+  depending on value)\r\n%s     C string\r\n%.*s   Pascal string (requires two arguments,
+  pass pstr[0] as the first, pstr+1 as the second)\r\n%c     character\r\n%C     unichar\r\n\r\n%lld
+  \  long long\r\n%llu   unsigned long long\r\n%Lf    long double"

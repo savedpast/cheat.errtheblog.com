@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>SETUP                                               
+=====                                               
+
+  Install the gem:
+
+    $ sudo gem install rack-contrib
+
+  Edit config.ru:
+
+    require 'rack/contrib'
+    use Rack::Profiler if ENV['RACK_ENV'] == 'development'
+
+  In a sinatra app:
+
+    require 'rack/contrib'
+    configure :development do
+      use Rack::Profiler     
+    end                      
+
+  Default output is in call tree format, suitable for use with KCacheGrind.
+
+  To get flat text output:
+
+    use Rack::Profiler, :printer =&gt; :flat
+
+  To get a text call graph
+
+    use Rack::Profiler, :printer =&gt; :graph
+
+  To get an HTML call graph:
+
+    use Rack::Profiler, :printer =&gt; :graph_html
+
+
+USAGE
+=====
+
+  For process time:
+
+    http://localhost:4567/my_slow_action?profile=process_time
+
+  For wallclock time:
+
+    http://localhost:4567/my_slow_action?profile=wall_time
+
+  For CPU time:
+
+    http://localhost:4567/my_slow_action?profile=cpu_time</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

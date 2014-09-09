@@ -1,0 +1,135 @@
+---
+sam: ! '#Commands
+
+
+  ##Simple Commands
+
+
+  append: `a/SomeText/`
+
+  insert: `i/SomeText/`
+
+  change: `c/SomeText/`
+
+  delete: `d`
+
+  substitute: `s/SomeRegexp/SomeText/`
+
+  move: `m SomeAddress`
+
+  copy: `t SomeAddress`
+
+
+  ##Loops and Conditionals Commands
+
+
+  for all matches: `x/SomeRegexp/ SomeCommand`
+
+  for all non-matches: `y/SomeRegexp/ SomeCommand`
+
+  for all files matching: `X/SomeRegexp/ SomeCommand`
+
+  for all files not-matching: `Y/SomeRegexp/ SomeCommand`
+
+  if matches: `g/SomeRegexp/ SomeCommand`
+
+  if not matches: `v/SomeRegexp/ SomeCommand`
+
+
+  #Addresses
+
+
+  ##Base Addresses
+
+
+  mark: `''`
+
+  dot: `.`
+
+  start of file: `0`
+
+  end of file: `$`
+
+  start of line: `^`
+
+  begining of line: `SomeNumber`
+
+  offset: `#SomeNumber`
+
+  first match: `/SomeRegexp/`
+
+
+  ##Composite Addresses
+
+
+  range: `a1,a2`
+
+  after: `a1+a2`
+
+  before: `a1-a2`
+
+  sequence `a1;a2`
+
+
+  #Display and Misc
+
+
+  print dot: `p`
+
+  print dot value: `=`
+
+  print file name: `n`
+
+  set mark: `k`
+
+  undo: `u [SomeNumber]`
+
+  group commands: `{ SomeCommands }`
+
+  quit: `q`
+
+
+  #I/O
+
+
+  set current files: `b SomeFiles`
+
+  set current files and load: `B SomeFiles`
+
+  delete buffers: `D SomeFiles`
+
+  edit: `e [SomeFile]`
+
+  read: `r SomeFile`
+
+  write: `w SomeFile`
+
+  set current filename: `f SomeName`
+
+  replace dot by output of command: `< SomeCommand`
+
+  run command with dot as input: `> SomeCommand`
+
+  pipe dot through command: `| SomeCommand`
+
+  run command: `! SomeCommand`
+
+
+  #Regular Expressions
+
+
+  any char: `.`
+
+  0 or more: `*`
+
+  one or more: `+`
+
+  char set: `[SomeChars]`
+
+  char range: `[SomeChar-SomeChar]`
+
+  negated char set: `[^SomeChars]`
+
+  tag: `(SomeRegExp)`
+
+  use tag: `SomeNumber`'

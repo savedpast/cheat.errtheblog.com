@@ -1,0 +1,33 @@
+---
+ruby_string_examples: ! "# Use single quotes \\' to create a literal string. \n  #
+  Inside a quoted string #{foobar}, \\, ... is not interpreted.\n  %q = single quoted
+  \n  # e.g. \n  %q{ 'single quoted text' doesn't need to be escaped} =>  \" 'single
+  quoted text' doesn't need to be escaped\" \n\n  %Q = double quoted\n  # e.g. %Q{
+  \"doublee quoted text\" doesn't need to be escaped}\n\n  # Can replace curly braces
+  with any other character, like a dot \".\"\n  %q = single quoted\n  # e.g.\n  %q.
+  'single quoted text' doesn't need to be escaped. =>  \" 'single quoted text' doesn't
+  need to be escaped\" \n\n  # here document\n  mystring = <<EOS\n  this is a \n  mulitword
+  \n  string\n  EOS\n  \n  # Most operations don't change the orginal string.\n  #
+  Unless the bang \\! is used or the method implies it, replace method.\n\n  \"a\"
+  + \"b\" => \"ab\"\n  \"a\" << \"b\"  => \"ab\"\n  b = \"some string\"\n  \"a#{b}\"
+  =>  \"asome string\" \n  \"%d some text more text\" % 33 => \"33 some text more
+  text\" \n  \"%d some text more text\" % [55]  => \"55 some text more text\" \n  \"some
+  int %d some float %f\" % [55, 44.7] =>  \"some int %d some float %f\" % [55, 44.7]\n
+  \ # Massaging strings\n  # Default will create a new string. For in-place changes
+  add bang ! to method name\n\n  capitilize\t\"tom\".captilize => \"Tom\"\n  upcase\t\"tom\".upcase
+  => \"TOM\"\n  downcase\t\"TOM\".downcase => \"tom\"\n  swapcase\t\"tom\".swapcase
+  = \"TOM\"\n  strip\t\t \"  lose the outer spaces  \".strip => \"lose the outer spaces\"\n
+  \ rstrip\t \"  lose the right spaces   \".rstrip =>  \"  lose the outer spaces\"
+  \n  lstrip\t \" lose the left spaces    \".lstrip =>  \"lose the outer spaces  \"
+  \n  chop\t\t \"remove the last character\".chop => \"remove the last characte\"\n
+  \ chomp\t\t \"remove trailing newline\\n\".chomp =>  \"remove the the trailing newline\"
+  \n  reverse\t \" gnirts eht esrever\".reverse => \"reverse the string\"\n\n  # Getting
+  character\n  \"foobar\"[3] => 98 # ascii number for 'b'\n  \"foobar\"[3].chr =>
+  \"b\" \n  \"foobar\"[3,2] => \"ba\"\n  \"foobar\"[-2].chr => \"a\"\n\n  # Getting
+  Substrings\n  \"This is a string\"[5, 4] => \"is a\"\n  \"foo bar baz\"[/foo (\\w+)
+  baz/, 1]  => \"bar\"\n\n\n  # Replacement\n  foo = \"bar\"\n  foo.replace \"hush\"
+  => \"hush\"\n  foo = \"This is a string\"\n  foo[5, 4] => \"is a\"\n  \"Some string
+  with  whitespace\\n and\\t\\tlines\".gsub(/\\s+/,'_') => \"Some_string_with_whitespace_and_lines\"
+  \n  \n  # Equality\n  \"a\" == \"a\" => true\n  # they are not the place in memory.
+  different obj ids\n  \"a\".equal? \"a\" =>  false\n\n  # Comparision\n  <=> spaceship
+  operator, return -1, 0, 1 for less than, equal to, greater than"

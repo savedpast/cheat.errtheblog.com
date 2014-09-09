@@ -1,0 +1,8 @@
+---
+cformats: ! "%@\t\t\tid\n%d, %D, %i\t\tlong\n%u, %U\t\t\tunsigned long\n%hi\t\t\tshort\n%hu\t\t\tunsigned
+  short\n%qi\t\t\tlong long\n%qu\t\t\tunsigned long long\n%x, %X\t\t\tunsigned long
+  printed as hexadecimal\n%o, %O\t\t\tunsigned long printed as octal\n%f, %e, %E,
+  %g, %G\tdouble\n%c\t\t\tunsigned char as ASCII character\n%C\t\t\tunichar as Unicode
+  character\n%s\t\t\tchar * (a null-terminal C string of ASCII characters)\n%S\t\t\tunichar
+  * (a null-terminated C string of Unicode characters)\n%p\t\t\tvoid * (an address
+  printed in hexadecimal with a leading 0x)\n%%\t\t\ta % character"

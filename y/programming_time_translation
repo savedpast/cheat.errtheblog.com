@@ -1,0 +1,39 @@
+---
+programming_time_translation: ! "30 seconds:\r\n  Programmer Thinks: There’s just
+  a small change to the code to be done. I know exactly what to type and where. It
+  takes 30 seconds to type.\r\n  Programmer Forgot: Time for starting the computer,
+  the development environment and getting the right source. The time to build, test,
+  check in and document the fix\r\n  Actual Time: 1 hour\r\n\r\n5 minutes:\r\n  Programmer
+  Thinks: It’s a minor thing, I just have to look up the exact syntax on google and
+  fix it.\r\n  Programmer Forgot: It’s quite rare to find exactly the right information
+  on the first try. Even if it is found, it probably needs some adjustments before
+  it works. Add time for building, testing etc.\r\n  Actual Time: 2 hours\r\n\r\n1
+  hour:\r\n  Programmer Thinks: I know how to do it, but it’s some code to write so
+  it will take some time.\r\n  Programmer Forgot: 1 hour is too tight to have any
+  margin for unforeseen problems. Something always fails.\r\n  Actual Time: 2 hours\r\n\r\n4
+  hours:\r\n  Programmer Thinks: It’s some code to write, but I roughly know the step.
+  I know the Wizzabanga module of our standard framework can do it, but I have to
+  check the documentation on exactly how to call it.\r\n  Programmer Forgot: This
+  is probably the only realistic estimation. It is large enough to have some margin
+  for unexpected problems, while the task is still small enough to grasp.\r\n  Actual
+  Time: 4 hours\r\n\r\n8 hours:\r\n  Programmer Thinks: I first have to refactor the
+  Balunga class into two, then I’ll add a call to the Wizzabanga code and finally
+  add the new fields to the GUI.\r\n  Programmer Forgot: There’s a lot of dependencies
+  on the Balunga class from different parts of the system. About 40 different files
+  have to be adjusted. The newly added field in the GUI has to be added in the database
+  as well. 8 hours is too large to grasp completely. There will be more steps than
+  the programmer thought of when estimating.\r\n  Actual Time: 12-16 hours\r\n\r\n2
+  days:\r\n  Programmer Thinks: It’s really quite a lot to code. I have to add some
+  new tables to the database, a GUI for those and then the logic to read and write
+  data to the tables.\r\n  Programmer Forgot: 2 days of work is too large to overview
+  for most developers. There will surely be things that are missed. Not just small
+  things, but entire major pieces of functionality required will be forgotten during
+  the estimation.\r\n  Actual Time: 5 days\r\n\r\n1 week:\r\n  Programmer Thinks:
+  Ouch… that’s a HUGE task. I don’t have a clue on how to do it, but I can’t say I
+  don’t know. One week should be enough, I hope, I really hope, but I can’t ask for
+  more or they’ll think I’m not competent enough.\r\n  Programmer Forgot: The task
+  is way too large to get an understanding of for most programmers. It has to be sent
+  back to an architect that can help splitting it in smaller parts and provide some
+  direction how it should be solved. The architect might find a simple way to do it
+  – or find that there’s a lot more work than expected.\r\n  Actual Time: 2-20 days\r\n\r\nSource:
+  http://java.dzone.com/programmers-are-bad-estimating"

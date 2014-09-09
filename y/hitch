@@ -1,0 +1,8 @@
+---
+hitch: ! "For leela and fry to pair:\r\n  hitch leela fry\r\nTo clear pair info:\r\n
+  \ hitch -u\r\nFor a complete list of features:\r\n  hitch -h\r\nTo print out the
+  necessary shell function and aliases you need to add to your ~/.bashrc or ~/.zshrc\r\n
+  \ hitch --setup\r\nCreating a Gravatar for your pair:\r\n  Once I've hitched with
+  my pair. (e.g. hitch leela fry) I have now created a unique email: dev+fry+leela@example.com\r\n
+  \ Then, I go to gravatar.com. Add an image to that particular email address and
+  I'm done."

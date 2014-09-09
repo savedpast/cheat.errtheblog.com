@@ -1,0 +1,172 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Standard HTTP Request
+=====================
+
+require &quot;net/http&quot;
+require &quot;uri&quot;
+
+uri = URI.parse(&quot;http://google.com/&quot;)
+
+# Shortcut
+response = Net::HTTP.get_response(uri)
+
+# Will print response.body
+Net::HTTP.get_print(uri)
+
+# Full
+http = Net::HTTP.new(uri.host, uri.port)
+response = http.request(Net::HTTP::Get.new(uri.request_uri))
+
+
+Basic Auth
+==========
+
+require &quot;net/http&quot;
+require &quot;uri&quot;
+
+uri = URI.parse(&quot;http://google.com/&quot;)
+
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Get.new(uri.request_uri)
+request.basic_auth(&quot;username&quot;, &quot;password&quot;)
+response = http.request(request)
+
+
+Dealing with response objects
+=============================
+
+require &quot;net/http&quot;
+require &quot;uri&quot;
+
+uri = URI.parse(&quot;http://google.com/&quot;)
+
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Get.new(uri.request_uri)
+
+response = http.request(request)
+
+response.code             # =&gt; 301
+response.body             # =&gt; The body (HTML, XML, blob, whatever)
+# Headers are lowercased
+response[&quot;cache-control&quot;] # =&gt; public, max-age=2592000
+
+
+POST form request
+=================
+
+require &quot;net/http&quot;
+require &quot;uri&quot;
+
+uri = URI.parse(&quot;http://example.com/search&quot;)
+
+# Shortcut
+response = Net::HTTP.post_form(uri, {&quot;q&quot; =&gt; &quot;My query&quot;, &quot;per_page&quot; =&gt; &quot;50&quot;})
+
+# Full control
+http = Net::HTTP.new(uri.host, uri.port)
+
+request = Net::HTTP::Post.new(uri.request_uri)
+request.set_form_data({&quot;q&quot; =&gt; &quot;My query&quot;, &quot;per_page&quot; =&gt; &quot;50&quot;})
+
+response = http.request(request)
+
+
+File upload - input type=&quot;file&quot; style
+=====================================
+
+require &quot;net/http&quot;
+require &quot;uri&quot;
+
+# Token used to terminate the file in the post body. Make sure it is not
+# present in the file you're uploading.
+BOUNDARY = &quot;AaB03x&quot;
+
+uri = URI.parse(&quot;http://something.com/uploads&quot;)
+file = &quot;/path/to/your/testfile.txt&quot;
+
+post_body = []
+post_body &lt; &lt; &quot;--#{BOUNDARY}\r\n&quot;
+post_body &lt; &lt; &quot;Content-Disposition: form-data; name=\&quot;datafile\&quot;; filename=\&quot;#{File.basename(file)}\&quot;\r\n&quot;
+post_body &lt; &lt; &quot;Content-Type: text/plain\r\n&quot;
+post_body &lt; &lt; &quot;\r\n&quot;
+post_body &lt; &lt; File.read(file)
+post_body &lt; &lt; &quot;\r\n--#{BOUNDARY}--\r\n&quot;
+
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Post.new(uri.request_uri)
+request.body = post_body.join
+request[&quot;Content-Type&quot;] = &quot;multipart/form-data, boundary=#{BOUNDARY}&quot;
+
+http.request(request)
+
+
+SSL/HTTPS request
+=================
+
+Update: There are some good reasons why this code example is bad. It introduces a potential security vulnerability if it's essential you use the server certificate to verify the identity of the server you're connecting to. There's a fix for the issue though!
+
+require &quot;net/https&quot;
+require &quot;uri&quot;
+
+uri = URI.parse(&quot;https://secure.com/&quot;)
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(uri.request_uri)
+
+response = http.request(request)
+response.body
+response.status
+response[&quot;header-here&quot;] # All headers are lowercase
+
+
+SSL/HTTPS request with PEM certificate
+======================================
+
+require &quot;net/https&quot;
+require &quot;uri&quot;
+
+uri = URI.parse(&quot;https://secure.com/&quot;)
+pem = File.read(&quot;/path/to/my.pem&quot;)
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.cert = OpenSSL::X509::Certificate.new(pem)
+http.key = OpenSSL::PKey::RSA.new(pem)
+http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+
+request = Net::HTTP::Get.new(uri.request_uri)
+
+
+REST methods
+============
+
+# Basic REST.
+# Most REST APIs will set semantic values in response.body and response.code.
+require &quot;net/http&quot;
+
+http = Net::HTTP.new(&quot;api.restsite.com&quot;)
+
+request = Net::HTTP::Post.new(&quot;/users&quot;)
+request.set_form_data({&quot;users[login]&quot; =&gt; &quot;quentin&quot;})
+response = http.request(request)
+# Use nokogiri, hpricot, etc to parse response.body.
+
+request = Net::HTTP::Get.new(&quot;/users/1&quot;)
+response = http.request(request)
+# As with POST, the data is in response.body.
+
+request = Net::HTTP::Put.new(&quot;/users/1&quot;)
+request.set_form_data({&quot;users[login]&quot; =&gt; &quot;changed&quot;})
+response = http.request(request)
+
+request = Net::HTTP::Delete.new(&quot;/users/1&quot;)
+response = http.request(request)
+
+
+Credits
+=======
+
+Stolen from: http://www.rubyinside.com/nethttp-cheat-sheet-2940.html
+More examples: https://github.com/augustl/net-http-cheat-sheet</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

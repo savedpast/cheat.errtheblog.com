@@ -1,0 +1,4 @@
+---
+install_from_gemspec: ! "If you have a gem source with <gem-name>.gemspec file, you
+  can easily build it\n\n $ gem build <gem-name>.gemspec\n\nThan you can install it\n\n
+  $ gem install <gem-name>\n\n(gem looks for the local path first)"

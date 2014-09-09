@@ -1,0 +1,30 @@
+---
+string: ! "Ruby 1.8 String Literal\n\nDelimiters:\n  'singlequote'    \"doublequote\"
+  \n  %q/single/       %Q!double!    \n  %q<single>       %Q(double)    \n                   %{double}
+  \    \n\nHeredoc:\n\nFollowing a << you can specify a string or an identifier to
+  terminate the string literal, and all lines following the current line up to the
+  terminator are the value of the string. If the terminator is quoted, the type of
+  quotes determines the type of the line-oriented string literal. Notice there must
+  be no space between << and the terminator.\n\nIf the - placed before the delimiter,
+  then all leading whitespcae characters (tabs or spaces) are stripped from input
+  lines and the line containing delimiter. This allows here-documents within scripts
+  to be indented in a natural fashion.\n\nprint <<EOF\nThe price is #{$Price}.\nEOF\n\nprint
+  <<\"EOF\";\t\t\t# same as above\nThe price is #{$Price}.\nEOF\n\nprint <<`EOC`\t\t\t#
+  execute commands\necho hi there\necho lo there\nEOC\n\nprint <<\"foo\", <<\"bar\"\t#
+  you can stack them\nI said foo.\nfoo\nI said bar.\nbar\n\nmyfunc(<<\"THIS\", 23,
+  <<'THAT')\nHere's a line\nor two.\nTHIS\nand here's another.\nTHAT\n\nEscapes (double-quote):\n\n|----+-----+---------------------+------+-----|\n|
+  E  | ASC | Name(s)             |  Hex | Dec |\n|----+-----+---------------------+------+-----|\n|
+  \\a | BEL | bell, alert         | 0x07 |   7 |\n| \\b | BS  | backspace           |
+  0x08 |   8 |\n| \\e | ESC | escape              | 0x1b |  27 |\n| \\f | NP  | formfeed,
+  newpage   | 0x0c |  12 |\n| \\n | NL  | linefeed, newline   | 0x0a |  10 |\n| \\r
+  | CR  | carriage return     | 0x0d |  13 |\n| \\s | SP  | space               |
+  0x20 |  32 |\n| \\t | HT  | tab, horizontal tab | 0x09 |   9 |\n| \\v | VT  | vertical
+  tab        | 0x0b |  11 |\n|----+-----+---------------------+------+-----|\n\n|---------+------------------|\n|
+  Format  | Translation      |\n|---------+------------------|\n| \\nnn    | Octal
+  nnn        |\n| \\xnn    | Hexadecimal 0xnn |\n| \\cx     | Control-x        |   Control-x
+  == (?x & 0b10011111)\n| \\C-x    | Control-x        |\n| \\M-x    | Meta-x           |
+  \  Meta-x == (?x | 0b10000000)\n| \\M-\\C-x | Meta-control-x   | \n| \\x      |
+  x                |\n| #{expr} | Value of expr    |\n|---------+------------------|\n\nEscapes
+  (single-quote)\n\n|----+-----+--------------+------+-----|\n| E  | ASC | Name         |
+  \ Hex | Dec |\n|----+-----+--------------+------+-----|\n| \\' | '   | single-quote
+  | 0x27 |  39 |\n| \\\\ | \\   | backslash    | 0x5c |  92 |\n|----+-----+--------------+------+-----|"

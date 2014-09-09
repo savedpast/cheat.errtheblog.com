@@ -1,0 +1,12 @@
+---
+administrateme: ! "administrate_me: A Rails plugin to provide support for common administration
+  functions. http://github.com/insignia/administrate_me\n\n$   ruby script/plugin
+  install git://github.com/insignia/administrate_me\n\nCopying asset files to the
+  current project:\n$ rake admin:import_files\n\nDefining modules (tabs) for the app:\n\nclass
+  ApplicationController < ActionController::Base\n  # Main definitions\n  set_module
+  :products\n  set_module :categories\n  # Setting modules by request\n  def modules\n
+  \   set_module :users if current_user.has_role?('admin')\n  end\nend\n\nMaking a
+  controller work with administrate_me interfase:\nclass Products < ApplicationController\n
+  \ administrate_me do |a|\n    a.search :name\n  end\nend\n\nGenerating view files
+  for restful controller/model:\n$ ruby script/generate admin_view <controller-name>\n\nSee
+  README file for a step-by-step tutorial to the most basic app using this plugin."

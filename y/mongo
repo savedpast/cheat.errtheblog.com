@@ -1,0 +1,66 @@
+---
+mongo: ! "CONSOLE COMMANDS\r\n\r\n  help                show all the console commands
+  (same as this section)\r\n  show dbs            show database names\r\n  show collections
+  \   show collections in current database\r\n  show users          show users in
+  current database\r\n  show profile        show most recent system.profile entries
+  with time >= 1ms\r\n  use <db name>       set curent database to <db name>\r\n  db.help()
+  \          help on DB methods\r\n  db.foo.help()       help on collection methods\r\n
+  \ db.foo.find()       list objects in collection foo\r\n  db.foo.find({a:1})  list
+  objects in foo where a == 1\r\n  it                  result of last line evaluated;
+  use to further iterate\r\n\r\nDATABASE METHODS\r\n\r\n  db.addUser(username, password)\r\n
+  \ db.auth(username, password)\r\n  db.cloneDatabase(fromhost)\r\n  db.commandHelp(name)
+  // returns the help for the command\r\n  db.copyDatabase(fromdb, todb, fromhost)\r\n
+  \ db.createCollection(name, { size : ..., capped : ..., max : ... } )\r\n  db.currentOp()
+  // displays the current operation in the db\r\n  db.dropDatabase()\r\n  db.eval(func,
+  args) // run code server-side\r\n  db.getCollection(cname) // same as db['cname']
+  or db.cname\r\n  db.getCollectionNames()\r\n  db.getLastError() // just returns
+  the err msg string\r\n  db.getLastErrorObj() // return full status object\r\n  db.getMongo()
+  // get the server connection object\r\n  db.getMongo().setSlaveOk() // allow this
+  connection to read from the nonmaster member of a replica pair\r\n  db.getName()\r\n
+  \ db.getPrevError()\r\n  db.getProfilingLevel()\r\n  db.getReplicationInfo()\r\n
+  \ db.getSisterDB(name) // get the db at the same server as this onew\r\n  db.killOp()
+  // kills the current operation in the db\r\n  db.printCollectionStats()\r\n  db.printReplicationInfo()\r\n
+  \ db.printSlaveReplicationInfo()\r\n  db.printShardingStatus()\r\n  db.removeUser(username)\r\n
+  \ db.repairDatabase()\r\n  db.resetError()\r\n  db.runCommand(cmdObj) // run a database
+  command. if cmdObj is a string, turns it into {cmdObj:1}\r\n  db.setProfilingLevel(level)
+  // 0=off 1=slow 2=all\r\n  db.shutdownServer()\r\n  db.version() // current version
+  of the server\r\n\r\nCOLLECTION METHODS\r\n\r\n  db.foo.count()\r\n  db.foo.dataSize()\r\n
+  \ db.foo.distinct( key ) // eg. db.foo.distinct( 'x' )\r\n  db.foo.drop() // drop
+  the collection\r\n  db.foo.dropIndex(name)\r\n  db.foo.dropIndexes()\r\n  db.foo.ensureIndex(keypattern,options)
+  // options should be an object with these possible fields: name, unique, dropDups\r\n
+  \ db.foo.find( [query] , [fields]) // first parameter is an optional query filter.\r\n
+  \                                  // second parameter is optional set of fields
+  to return.\r\n                                   // e.g. db.foo.find( { x : 77 }
+  , { name : 1 , x : 1 } )\r\n  db.foo.find(...).count()\r\n  db.foo.find(...).limit(n)\r\n
+  \ db.foo.find(...).skip(n)\r\n  db.foo.find(...).sort(...)\r\n  db.foo.findOne([query])\r\n
+  \ db.foo.getDB() // get DB object associated with collection\r\n  db.foo.getIndexes()\r\n
+  \ db.foo.group( { key : ..., initial: ..., reduce : ...[, cond: ...] } )\r\n  db.foo.mapReduce(
+  mapFunction , reduceFunction , <optional params> )\r\n  db.foo.remove(query)\r\n
+  \ db.foo.renameCollection( newName ) // renames the collection\r\n  db.foo.save(obj)\r\n
+  \ db.foo.stats()\r\n  db.foo.storageSize() // includes free space allocated to this
+  collection\r\n  db.foo.totalIndexSize() // size in bytes of all the indexes\r\n
+  \ db.foo.totalSize() // storage allocated for all data and indexes\r\n  db.foo.update(query,
+  object[, upsert_bool, multi_record_bool])\r\n  db.foo.validate() // SLOW\r\n  db.foo.getShardVersion()
+  // only for use with sharding\r\n\r\nUTILITIES\r\n\r\n  mongodump -d database_name
+  -o /some/directory\r\n  mongorestore -d database_name /some/directory\r\n\r\nEXAMPLES\r\n\r\n
+  \ Inserting Data\r\n    > j = { name: \"mongo\"};\r\n    {\"name\" : \"mongo\"}\r\n
+  \   > t = { x : 3 };\r\n    { \"x\" : 3  }\r\n    > db.things.save(j);\r\n    >
+  db.things.save(t);\r\n\r\n  Accessing Data from a Query\r\n    var cursor = db.things.find();\r\n
+  \   while (cursor.hasNext()) { print(tojson(cursor.next())); }\r\n\r\n  Retrieving
+  Data with Javascript functions\r\n    db.things.find().forEach( function(x) { printjson(x);});\r\n\r\n
+  \ select * from things where name=\"mongo\"\r\n    db.things.find({name:\"mongo\"}).forEach(printjson);\r\n\r\n
+  \ select * from things where x=4\r\n    db.things.find({x:4}).forEach(printjson);\r\n\r\n
+  \ select j from things where x=4\r\n    db.things.find({x:4}, {j:true}).forEach(printjson);\r\n\r\n
+  \ order by\r\n    db.things.find().sort({x:1})  // ascending\r\n    db.things.find().sort({x:-1})
+  // descending\r\n\r\n  limit 1\r\n    var mongo = db.things.findOne({name:\"mongo\"});\r\n
+  \   print(tojson(mongo));\r\n\r\n  limit(x)\r\n    db.things.find().limit(3);\r\n\r\n
+  \ regex search\r\n    db.things.find({x : /foo.*/i});\r\n\r\n  search for type\r\n
+  \   db.things.find({ x : { $type : 16 }});  // finds integer values in this field\r\n\r\n
+  \ update users set api_token = 'snafu' where _id = \"fubar\";\r\n    db.users.update(
+  { \"_id\" : \"fubar\" }, { $set : { \"api_token\" : \"snafu\" } }, false );\r\n\r\n
+  \ update or insert users set api_token = 'snafu' where _id = \"fubar\";\r\n    db.users.update(
+  { \"_id\" : \"fubar\" }, { $set : { \"api_token\" : \"snafu\" } }, true );\r\n\r\n
+  \ Rename all fields in a collection\r\n    db.users.update( {}, { $rename : {\"old_field_name\"
+  : \"new_field_name\"}}, false, true);\r\n\r\nMORE HELP\r\n\r\n  In addition to the
+  general \"help\" command in mongo, you can call help on db\r\n  and db.whatever
+  to see a summary of methods available.\r\n  MongoDB Manual: http://www.mongodb.org/display/DOCS/Manual"

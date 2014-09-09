@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Forking a repo and setting it up on your local machine
+======================================================
+1. Fork the repo on github.com
+
+2. Create local repo from your fork
+   $ git clone git@github.com:&lt;your-username&gt;/&lt;repo-name&gt;.git
+
+3. Track the original remote repo
+   $ cd &lt;repo-name&gt;
+   $ git remote add upstream git://github.com/&lt;remote-username&gt;/&lt;repo-name&gt;.git
+   $ git fetch upstream
+
+4. Push commits to your fork
+   $ git push origin master
+
+5. Fetch any new changes from the original repo
+   $ git fetch upstream
+   $ git merge upstream/master
+
+see http://help.github.com/fork-a-repo/</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

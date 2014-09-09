@@ -1,0 +1,9 @@
+---
+ruby_main: ! "if __FILE__ == $0\n  ...\nend\n\nThis is useful in a library file (one
+  containing classes etc. which is\nmeant to be loaded via *require*, not run directly).\n\nIf
+  you want some code to be executed when the file is run directly,\nuse the idiom
+  above.\n\nIn the past, this has been used to put *test* code in a library file,\nbut
+  these days unit testing is easy enough that such library self-\ntesting is unnecessary.\n\nHowever,
+  it's a useful little tool for experimenting with a library in\nthe early stages
+  of development, without stuffing up any code that\nrequires the library.\n\nSee
+  http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/3431"

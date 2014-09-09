@@ -1,0 +1,24 @@
+---
+gitignore: ! '#default gitignore for eliminating doc, db and tmp
+
+
+  echo ''log/*.log
+
+  tmp/**/*
+
+  doc/api
+
+  doc/app
+
+  db/*.sqlite3''>.gitignore
+
+
+  touch log/.gitignore
+
+  touch tmp/.gitignore
+
+
+  # to setup a global gitignore file use the following command
+
+
+  git config --global core.excludesfile ~/.gitignore'

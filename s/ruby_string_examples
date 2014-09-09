@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre># Use single quotes \' to create a literal string. 
+  # Inside a quoted string #{foobar}, \, ... is not interpreted.
+  %q = single quoted 
+  # e.g. 
+  %q{ 'single quoted text' doesn't need to be escaped} =&gt;  &quot; 'single quoted text' doesn't need to be escaped&quot; 
+
+  %Q = double quoted
+  # e.g. %Q{ &quot;doublee quoted text&quot; doesn't need to be escaped}
+
+  # Can replace curly braces with any other character, like a dot &quot;.&quot;
+  %q = single quoted
+  # e.g.
+  %q. 'single quoted text' doesn't need to be escaped. =&gt;  &quot; 'single quoted text' doesn't need to be escaped&quot; 
+
+  # here document
+  mystring = &lt;&lt;EOS
+  this is a 
+  mulitword 
+  string
+  EOS
+  
+  # Most operations don't change the orginal string.
+  # Unless the bang \! is used or the method implies it, replace method.
+
+  &quot;a&quot; + &quot;b&quot; =&gt; &quot;ab&quot;
+  &quot;a&quot; &lt;&lt; &quot;b&quot;  =&gt; &quot;ab&quot;
+  b = &quot;some string&quot;
+  &quot;a#{b}&quot; =&gt;  &quot;asome string&quot; 
+  &quot;%d some text more text&quot; % 33 =&gt; &quot;33 some text more text&quot; 
+  &quot;%d some text more text&quot; % [55]  =&gt; &quot;55 some text more text&quot; 
+  &quot;some int %d some float %f&quot; % [55, 44.7] =&gt;  &quot;some int %d some float %f&quot; % [55, 44.7]
+  # Massaging strings
+  # Default will create a new string. For in-place changes add bang ! to method name
+
+  capitilize	&quot;tom&quot;.captilize =&gt; &quot;Tom&quot;
+  upcase	&quot;tom&quot;.upcase =&gt; &quot;TOM&quot;
+  downcase	&quot;TOM&quot;.downcase =&gt; &quot;tom&quot;
+  swapcase	&quot;tom&quot;.swapcase = &quot;TOM&quot;
+  strip		 &quot;  lose the outer spaces  &quot;.strip =&gt; &quot;lose the outer spaces&quot;
+  rstrip	 &quot;  lose the right spaces   &quot;.rstrip =&gt;  &quot;  lose the outer spaces&quot; 
+  lstrip	 &quot; lose the left spaces    &quot;.lstrip =&gt;  &quot;lose the outer spaces  &quot; 
+  chop		 &quot;remove the last character&quot;.chop =&gt; &quot;remove the last characte&quot;
+  chomp		 &quot;remove trailing newline\n&quot;.chomp =&gt;  &quot;remove the the trailing newline&quot; 
+  reverse	 &quot; gnirts eht esrever&quot;.reverse =&gt; &quot;reverse the string&quot;
+
+  # Getting character
+  &quot;foobar&quot;[3] =&gt; 98 # ascii number for 'b'
+  &quot;foobar&quot;[3].chr =&gt; &quot;b&quot; 
+  &quot;foobar&quot;[3,2] =&gt; &quot;ba&quot;
+  &quot;foobar&quot;[-2].chr =&gt; &quot;a&quot;
+
+  # Getting Substrings
+  &quot;This is a string&quot;[5, 4] =&gt; &quot;is a&quot;
+  &quot;foo bar baz&quot;[/foo (\w+) baz/, 1]  =&gt; &quot;bar&quot;
+
+
+  # Replacement
+  foo = &quot;bar&quot;
+  foo.replace &quot;hush&quot; =&gt; &quot;hush&quot;
+  foo = &quot;This is a string&quot;
+  foo[5, 4] =&gt; &quot;is a&quot;
+  &quot;Some string with  whitespace\n and\t\tlines&quot;.gsub(/\s+/,'_') =&gt; &quot;Some_string_with_whitespace_and_lines&quot; 
+  
+  # Equality
+  &quot;a&quot; == &quot;a&quot; =&gt; true
+  # they are not the place in memory. different obj ids
+  &quot;a&quot;.equal? &quot;a&quot; =&gt;  false
+
+  # Comparision
+  &lt;=&gt; spaceship operator, return -1, 0, 1 for less than, equal to, greater than</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

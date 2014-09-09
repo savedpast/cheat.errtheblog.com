@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Whenever is a Ruby gem that provides a clear syntax for writing and deploying cron jobs.
+
+Details: https://github.com/javan/whenever
+
+Examples:
+
+every 3.hours do
+  runner &quot;MyModel.some_process&quot;       
+  rake &quot;my:rake:task&quot;                 
+  command &quot;/usr/bin/my_great_command&quot;
+end
+
+every 1.day, :at =&gt; '4:30 am' do 
+  runner &quot;MyModel.task_to_run_at_four_thirty_in_the_morning&quot;
+end
+
+every :hour do # Many shortcuts available: :hour, :day, :month, :year, :reboot
+  runner &quot;SomeModel.ladeeda&quot;
+end
+
+every :sunday, :at =&gt; '12pm' do # Use any day of the week or :weekend, :weekday 
+  runner &quot;Task.do_something_great&quot;
+end
+
+every '0 0 27-31 * *' do
+  command &quot;echo 'you can use raw cron syntax too'&quot;
+end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>= Resource Controller
+
+resource_controller makes RESTful controllers easier, more maintainable, and super readable.  With the RESTful controller pattern hidden away, you can focus on what makes your controller special.
+
+== Get It
+
+Install it as a plugin:
+
+  script/plugin install git://github.com/giraffesoft/resource_controller.git
+  
+Or grab the source
+  
+  git clone git://github.com/giraffesoft/resource_controller.git
+
+= Usage
+
+Creating a basic RESTful controller is as easy as...
+
+  class PostsController &lt; ResourceController::Base
+  end
+  
+...or if you prefer, you can use the method-call syntax.  If you need to inherit from some other class, this syntax is definitely for you:
+
+  class PostsController &lt; ApplicationController
+    resource_controller
+  end
+
+Both syntaxes are identical in their behavior.  Just make sure you call resource_controller before you use any other r_c functionality in your controller.
+  
+  
+Nobody just uses the default RESTful controller, though.  resource_controller provides a simple API for customizations.
+
+== Action Lifecycle
+
+It's really easy to make changes to the lifecycle of your actions.
+
+  Note: We had to call the new accessor &quot;new_action&quot;, since new is somewhat reserved in ruby.
+
+=== Before and After
+
+  class ProjectsController &lt; ResourceController::Base
+    
+    new_action.before do
+      3.times { object.tasks.build }
+    end
+    
+    create.after do
+      object.creator = current_user
+    end
+    
+  end
+  
+=== Flash
+
+  class ProjectsController &lt; ResourceController::Base
+    create.flash &quot;Can you believe how easy it is to use resource_controller?  Neither could I!&quot;
+  end
+
+=== respond_to
+
+You can add to what's already there...
+  
+  class ProjectsController &lt; ResourceController::Base      
+    create.wants.js { render :template =&gt; &quot;show.rjs&quot; }
+  end
+  
+Or you can create a whole new block.  This syntax destroys everything that's there, and starts again...
+
+  class ProjectsController &lt; ResourceController::Base      
+    create.response do |wants|
+      wants.html
+      wants.js { render :template =&gt; &quot;show.rjs&quot; }
+    end
+  end
+
+If you have a nested resource and want to redirect to the parent after create/update and destroy you can do this in the object controller
+
+ class CommentsController &lt; ResourceController::Base
+    belongs_to :post
+    
+    create.wants.html { redirect_to smart_url(parent_url_options) } 
+    update.wants.html { redirect_to smart_url(parent_url_options) } 
+    destroy.wants.html { redirect_to smart_url(parent_url_options) }
+  end
+  
+=== Scoping
+
+Because sometimes you want to make a bunch of customizations at once, most of the helpers accept blocks that make grouping calls really easy.  Is it a DSL?  Maybe; maybe not.  But, it's definitely awesome.
+
+With actions that can fail, the scoping defaults to success.  That means that create.flash == create.success.flash.
+
+  class ProjectsController &lt; ResourceController::Base
+    
+    create do
+      flash &quot;Object successfully created!&quot;
+      wants.js { render :template =&gt; &quot;show.rjs&quot; }
+      
+      failure.wants.js { render :template =&gt; &quot;display_errors.rjs&quot; }
+    end
+    
+    destroy do
+      flash &quot;You destroyed your project.  Good work.&quot;
+      
+      failure do
+        flash &quot;You cannot destroy that project.  Stop trying!&quot;
+        wants.js { render :template =&gt; &quot;display_errors.rjs&quot; }
+      end
+    end
+    
+  end
+  
+== Singleton Resource
+
+If you want to create a singleton RESTful controller inherit from ResourceController::Singleton.
+
+  class AccountsController &lt; ResourceController::Singleton
+  end
+
+...or if need to inherit from some other class:
+
+  class AccountsController &lt; ApplicationController
+    resource_controller :singleton
+  end
+
+*Note:* This type of controllers handle a single resource only so the index action and all the collection helpers (collection_url, collection_path...) are not available for them.
+
+Loading objects in singletons is similar to plural controllers with one exception. For non-nested singleton controllers you should override the object method as it defaults to nil for them.
+
+  class AccountsController &lt; ResourceController::Singleton
+    private
+      def object
+        @object ||= Account.find(session[:account_id])
+      end
+   end
+
+In other cases you can use the default logic and override it only if you use permalinks or anything special. 
+
+Singleton nesting with both :has_many and :has_one associations is provided...
+
+  map.resource :account, :has_many =&gt; :options  # /account/options, account is a singleton parent
+  map.resources :users, :has_one =&gt; :image  # /users/1/image, image is a singleton child
+
+If you have the :has_many association with a singleton parent remember to override parent_object for your :has_many controller as it returns nil by default in this case.
+
+  class OptionsController &lt; ResourceController::Base
+    belongs_to :account
+
+    protected
+    def parent_object
+      Account.find(session[:account_id])
+    end
+  end
+
+== Helpers (ResourceController::Helpers)
+
+=== Loading objects
+
+You want to add something like pagination to your controller...
+
+  class PostsController &lt; ResourceController::Base
+    private
+      def collection
+        @collection ||= end_of_association_chain.find(:all, :page =&gt; {:size =&gt; 10, :current =&gt; params[:page]})
+      end
+  end
+  
+Or maybe you used a permalink...
+
+  class PostsController &lt; ResourceController::Base
+    private
+      def object
+        @object ||= end_of_association_chain.find_by_permalink(param)
+      end
+  end
+
+=== Building objects
+
+Maybe you have some alternative way of building objects...
+
+  class PostsController &lt; ResourceController::Base
+    private
+      def build_object
+        @object ||= end_of_association_chain.build_my_object_some_funky_way object_params
+      end
+  end
+  
+...and there are tons more helpers in the ResourceController::Helpers
+
+== Nested Resources
+
+Nested controllers can be a pain, especially if routing is such that you may or may not have a parent.  Not so with Resource Controller.
+
+  class CommentsController &lt; ResourceController::Base
+    belongs_to :post
+  end
+  
+All of the finding, and creation, and everything will be done at the scope of the post automatically.
+
+== Namespaced Resources
+
+...are handled automatically, and any namespaces are always available, symbolized, in array form @ ResourceController::Helpers#namespaces
+
+== Polymorphic Resources
+
+Everything, including url generation is handled completely automatically.  Take this example...
+  
+  ## comment.rb
+  class Comment
+    belongs_to :commentable, :polymorphic =&gt; true
+  end
+  
+  ## comments_controller.rb
+  class CommentsController &lt; ResourceController::Base
+    belongs_to :post, :product, :user
+  end
+  *Note:* Your model doesn't have to be polymorphic in the ActiveRecord sense.  It can be associated in whichever way you want.
+  
+  ## routes.rb
+  map.resources :posts, :has_many =&gt; :comments
+  map.resources :products, :has_many =&gt; :comments
+  map.resources :users, :has_many =&gt; :comments
+
+All you have to do is that, and r_c will infer whichever relationship is present, and perform all the actions at the scope of the parent object.
+
+=== Parent Helpers
+
+You also get some helpers for reflecting on your parent.
+
+  parent?       # =&gt; true/false is there a parent present?
+  parent_type   # =&gt; :post
+  parent_model  # =&gt; Post
+  parent_object # =&gt; @post
+
+=== Non-standard resource names
+
+resource_controller supports overrides for every non-standard configuration of resources.
+
+The most common example is where the resource has a different name than the associated model.  Simply overriding the model_name helper will get resource_controller working with your model.
+
+  map.resources :tags
+  ...
+  class PhotoTag &lt; ActiveRecord::Base
+  ...
+  class TagsController &lt; ResourceController::Base
+    private
+      def model_name
+        'photo_tag'
+      end
+  end
+  
+In the above example, the variable, and params will be set to @tag, @tags, and params[:tag].  If you'd like to change that, override object_name.
+
+  def object_name
+    'photo_tag'
+  end
+
+If you're using a non-standard controller name, but everything else is standard, overriding resource_name will propagate through all of the other helpers.
+
+  map.resources :tags, :controller =&gt; &quot;somethings&quot;
+  ...
+  class Tag &lt; ActiveRecord::Base
+  ...
+  class SomethingsController &lt; ResourceController::Base
+    private
+      def resource_name
+        'tag'
+      end
+  end
+  
+Finally, the route_name helper is used by Urligence to determine which url helper to call, so if you have non-standard route names, override it.
+
+  map.resources :tags, :controller =&gt; &quot;taggings&quot;
+  ...
+  class Taggings &lt; ActiveRecord::Base
+  ...
+  class TaggingsController &lt; ResourceController::Base
+    private
+      def route_name
+        'tag'
+      end
+  end
+
+== Url Helpers
+
+Thanks to Urligence, you also get some free url helpers.
+
+No matter what your controller looks like...
+
+  [edit_|new_]object_url # is the equivalent of saying [edit_|new_]post_url(@post)
+  [edit_|new_]object_url(some_other_object) # allows you to specify an object, but still maintain any paths or namespaces that are present
+  
+  collection_url # is like saying posts_url
+
+Url helpers are especially useful when working with polymorphic controllers.
+
+  # /posts/1/comments
+  object_url          # =&gt; /posts/1/comments/#{@comment.to_param}
+  object_url(comment) # =&gt; /posts/1/comments/#{comment.to_param}
+  edit_object_url     # =&gt; /posts/1/comments/#{@comment.to_param}/edit
+  collection_url      # =&gt; /posts/1/comments
+    
+  # /products/1/comments
+  object_url          # =&gt; /products/1/comments/#{@comment.to_param}
+  object_url(comment) # =&gt; /products/1/comments/#{comment.to_param}
+  edit_object_url     # =&gt; /products/1/comments/#{@comment.to_param}/edit
+  collection_url      # =&gt; /products/1/comments
+  
+  # /comments
+  object_url          # =&gt; /comments/#{@comment.to_param}
+  object_url(comment) # =&gt; /comments/#{comment.to_param}
+  edit_object_url     # =&gt; /comments/#{@comment.to_param}/edit
+  collection_url      # =&gt; /comments
+  
+Or with namespaced, nested controllers...
+
+  # /admin/products/1/options
+  object_url          # =&gt; /admin/products/1/options/#{@option.to_param}
+  object_url(option)  # =&gt; /admin/products/1/options/#{option.to_param}
+  edit_object_url     # =&gt; /admin/products/1/options/#{@option.to_param}/edit
+  collection_url      # =&gt; /admin/products/1/options
+  
+You get the idea.  Everything is automagical!  All parameters are inferred.
+
+== Credits
+
+resource_controller was created, and is maintained by {James Golick}[http://jamesgolick.com].
+
+== License
+
+resource_controller is available under the {MIT License}[http://en.wikipedia.org/wiki/MIT_License]</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,17 @@
+---
+accesskeys: ! '## Windows
+
+
+  Firefox: Shift + Alt + #
+
+  Chrome: Alt + #
+
+
+  ## Mac
+
+
+  Firefox : Control + #
+
+  Chrome: Control + Option + #
+
+  Safari: Control + Option + #'

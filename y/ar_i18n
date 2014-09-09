@@ -1,0 +1,28 @@
+---
+ar_i18n: ! "-----------------------------------------------------------------------------\r\nMethod
+  \          Option                     Message                    Interp\r\n-----------------------------------------------------------------------------\r\nconfirmation_of
+  \ -                          :confirmation              -\r\nacceptance_of    -
+  \                         :accepted                  -\r\npresence_of      -                          :blank
+  \                    -\r\nlength_of        :within, :in               :too_short
+  \                count\r\n                 :within, :in               :too_long
+  \                 count\r\n                 :is                        :wrong_length
+  \             count\r\n                 :minimum                   :too_short                 count\r\n
+  \                :maximum                   :too_long                  count\r\nuniqueness_of
+  \   -                          :taken                     -\r\nformat_of        -
+  \                         :invalid                   -\r\ninclusion_of     -                          :inclusion
+  \                -\r\nexclusion_of     -                          :exclusion                 -\r\nassociated
+  \      -                          :invalid                   -\r\nnumericality_of
+  \ -                          :not_a_number              -\r\n                 :greater_than
+  \             :greater_than              count\r\n                 :greater_than_or_equal_to
+  \ :greater_than_or_equal_to  count\r\n                 :equal_to                  :equal_to
+  \                 count\r\n                 :less_than                 :less_than
+  \                count\r\n                 :less_than_or_equal_to     :less_than_or_equal_to
+  \    count\r\n                 :odd                       :odd                       -\r\n
+  \                :even                      :even                      -\r\n-----------------------------------------------------------------------------\r\n\r\nAll
+  messages interpolate (in addition to the above):\r\n\r\n  model\r\n  attribute\r\n
+  \ value\r\n\r\nKeys are tried in this order:\r\n\r\n  activerecord.errors.models.CLASS.attributes.ATTRIBUTE.MESSAGE\r\n
+  \ activerecord.errors.models.CLASS.MESSAGE\r\n  (the above for all classes up to
+  and not including AR::Base)\r\n  activerecord.errors.messages.MESSAGE\r\n\r\n#full_messages
+  are generated using:\r\n\r\n  activerecord.errors.full_messages.format\r\n  (Default
+  is \"{{attribute}} {{message}}\")\r\n\r\n---------------------------------------------\r\nMore
+  info: http://guides.rails.info/i18n.html\r\n"

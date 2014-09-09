@@ -1,0 +1,872 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>           A CakePHP cheat sheet
+(source: http://www.devdaily.com/php/cakephp-cheat-sheet-reference-page-examples)
+===========================================
+** CakePHP Default Directory Structure: **
+===========================================
+
+/app
+	app_controller.php
+	app_model.php
+	/config
+		acl.ini.php
+		bootstrap.php
+		core.php
+		databases.php
+		inflections.php
+		routes.php
+	/controllers
+		/components
+			your_components_here.php
+		your_controllers_here.php
+	/locale
+		/eng
+	/models
+		/behaviors
+			your_behaviors_here.php
+		your_models_here.php
+	/plugins
+	/tests
+		/cases
+			/behaviors
+			/components
+			/controllers
+			/helpers
+			/models
+		/fixtures
+		/groups
+	/tmp
+	/vendors
+	/views
+		/helpers
+		your_views_here.ctp
+	/webroot
+		/css
+		/files
+		/js
+/cake
+	cake_core_files_are_in_here
+/docs
+	release_notes_here
+/vendors
+
+===========================================
+** CakePHP Naming Conventions **
+===========================================
+
+--- CakePHP Models
+
+class names are singular
+class names UpperCamelCased
+filenames use a lower-case underscored syntax
+database tables are plural underscored
+set var $name in your model definition (PHP4)
+
+
+--- CakePHP Controllers
+
+class names are plural
+class names are UpperCamelCased for multi-word controllers
+class names also end with 'Controller'
+file names use a lower-case underscored syntax
+file names also end with '_controller.php'.
+
+
+--- CakePHP Views
+
+views are in folders that match controller
+view folders are plural underscored
+views are named after actions they display.
+name the view file after action name, in lowercase.
+
+===========================================
+** CakePHP naming conventions - Examples **
+===========================================
+
+--- Assuming we have a database table named orders, the following standard CakePHP naming conventions should be used:
+
+Model
+  filename  = order.php
+  classname = Order
+  directory = app/models
+
+View
+  filename  = (same as the action name in the controller)
+  extension = .ctp (the filename extension)
+  directory = app/views/orders
+
+Controller
+  filename  = orders_controller.php
+  classname = OrdersController
+  directory = app/controllers
+
+--- Assuming we have a database table named order_items, the following standard CakePHP naming conventions should be used:
+
+Model
+  filename  = order_item.php
+  classname = OrderItem
+  directory = app/models
+
+View
+  filename  = (same as the action name in the controller)
+  extension = .ctp (the filename extension)
+  directory = app/views/order_items
+
+Controller
+  filename  = order_items_controller.php
+  classname = OrderItemsController
+  directory = app/controllers
+
+
+===========================================
+** CakePHP bake Command Examples **
+===========================================
+
+cake bake
+
+cake bake controller
+cake bake model
+cake bake view
+cake bake project
+
+cake bake controller orders
+cake bake model order
+
+
+===========================================
+** CakePHP Foreign Key Examples and Relationship Types **
+===========================================
+
+*Relationship*  *Association Type*     *Example*
+one to one      hasOne                 A user has one profile.
+one to many     hasMany                A user can have multiple recipes.
+many to one     belongsTo              Many recipes belong to a user.
+many to many    hasAndBelongsToMany    Recipes have, and belong to many tags.
+
+-- CakePHP relationship type examples:
+
+# in a Post model class:
+
+# each Post belongs to a User
+var $belongsTo = array('User');
+
+# TODO
+var $hasOne ...
+
+# in the User model
+var $hasMany = array('Post');
+
+# TODO
+var $hasAndBelongsToMany
+
+===========================================
+** The CakePHP recursive attribute **
+===========================================
+
+*Value* *Meaning*
+-1      returns only the current model, and ignores all associations.
+ 0      returns the current model, plus its owner(s).
+ 1      returns the current model, its owner(s), plus their associated models.
+ 2      returns the current model, its owner(s), their associated models,
+        and the associated models of any associations.
+
+-- In a simple controller index() method, the recursive attribute may be used like this:
+
+function index()
+{
+  $this-&gt;Post-&gt;recursive = 0;
+  $this-&gt;set('posts', $this-&gt;paginate);
+}
+
+===========================================
+** CakePHP find Examples **
+===========================================
+
+Name        Default  Description
+type        'first'  can be 'all', 'first', or 'list'. determines what type of
+                     find operation to perform. (TODO - more info here)
+
+conditions  null     array containing the find (select) conditions as
+                     key/value pairs
+
+fields      null     array specifying which fields should be retrieved
+                     in the resulting select query
+
+order       null     sql 'order by conditions. field name must be
+                     followed by ASC or DESC
+
+page        null     page number, used for paged data
+
+limit       null     a limit on the number of results returned, like
+                     'select * from orders limit 20'.
+
+offset      null     sql offset value (i haven't used this query much
+                     myself, but i think it refers to skipping X 
+                     number of rows returned in a query)
+
+recursive      1     the cakephp recursive value, relating to associated
+                     model data
+
+--- Code
+
+$this-&gt;Post-&gt;find('all');
+
+---------------------------------
+
+$this-&gt;Post-&gt;find('all', array('conditions'=&gt;array('User.id'=&gt;5)));
+
+---------------------------------
+
+$this-&gt;Post-&gt;find('all', array('conditions'=&gt;array('User.id'=&gt;'&lt;&gt; 5')));
+
+---------------------------------
+
+# this is a little lame, but i'm trying to avoid dates
+$this-&gt;Post-&gt;find('all', array('conditions'=&gt;array('User.id'=&gt;1, 'Post.id'=&gt;'&gt; 50')));
+
+---------------------------------
+
+$this-&gt;Post-&gt;find('all',
+                  array('conditions'=&gt;array('User.id'=&gt;5),
+                        'fields'=&gt;'Post.name',
+                        'order'=&gt;'Post.id ASC',
+                        'limit'=&gt;20,
+                        'recursive'=&gt;0));
+---------------------------------
+
+# note: you can search for date or datetime fields by enclosing the table's field name
+#       in the SQL DATE() function.
+$this-&gt;Post-&gt;find('all', array('conditions'=&gt;array('User.id'=&gt;5, 'DATE(Post.date)'=&gt;'CURDATE()')));
+
+---------------------------------
+
+CakePHP find queries with ORDER BY examples:
+
+array('order'=&gt;'date ASC')
+array('order'=&gt;'date DESC')
+array('order'=&gt;'User.id DESC')
+
+---------------------------------
+
+These CakePHP find examples are lines of code that would be used in an OrderController class:
+
+$this-&gt;Order-&gt;find('all');
+$this-&gt;Order-&gt;find(null, null, 'date DESC');
+$this-&gt;Order-&gt;find('all', array('conditions'=&gt;array('User.id'=&gt;1)));
+$this-&gt;Order-&gt;find('all', array('conditions'=&gt;array('User.id'=&gt;array(1,2,3,4))));
+$this-&gt;Order-&gt;find('all', array('conditions'=&gt;array('User.id'=&gt;'&lt;&gt; 1')));
+$this-&gt;Order-&gt;find('all', array('conditions'=&gt;array('User.id'=&gt;1, 'DATE(Post.date)'=&gt;'CURDATE()')));
+$this-&gt;Order-&gt;find('all', array('order'=&gt;'date ASC', 'limit'=&gt;20, 'recursive'=&gt;0);
+
+---------------------------------
+
+$params can contain all these:
+
+array(
+  'conditions' =&gt; array('Model.field' =&gt; $thisValue), //array of conditions
+  'recursive' =&gt; 1, //int
+  'fields' =&gt; array('Model.field1', 'DISTINCT Model.field2'), //array of field names
+  'order' =&gt; array('Model.created', 'Model.field3 DESC'), //string or array defining order
+  'group' =&gt; array('Model.field'), //fields to GROUP BY
+  'limit' =&gt; n, //int
+  'page' =&gt; n, //int
+  'offset'=&gt;n, //int   
+  'callbacks' =&gt; true //other possible values are false, 'before', 'after'
+)
+
+---------------------------------
+
+# find('first', $params) syntax
+
+function some_function() {
+  ...
+  $this-&gt;Article-&gt;order = null; // resetting if it's set
+  $semiRandomArticle = $this-&gt;Article-&gt;find();
+  $this-&gt;Article-&gt;order = 'Article.created DESC'; // simulating the model having a default order
+  $lastCreated = $this-&gt;Article-&gt;find();
+  $alsoLastCreated = $this-&gt;Article-&gt;find('first', array('order' =&gt; array('Article.created DESC')));
+  $specificallyThisOne = $this-&gt;Article-&gt;find('first', array('conditions' =&gt; array('Article.id' =&gt; 1)));
+  ...
+}
+
+---------------------------------
+
+# find('count', $params)
+
+function some_function() {
+   ...
+   $total = $this-&gt;Article-&gt;find('count');
+   $pending = $this-&gt;Article-&gt;find('count', array('conditions' =&gt; array('Article.status' =&gt; 'pending')));
+   $authors = $this-&gt;Article-&gt;User-&gt;find('count');
+   $publishedAuthors = $this-&gt;Article-&gt;find('count', array(
+      'fields' =&gt; 'DISTINCT Article.user_id',
+      'conditions' =&gt; array('Article.status !=' =&gt; 'pending')
+   ));
+   ...
+}
+
+---------------------------------
+
+# find('all', $params) syntax
+
+function some_function() {
+   ...
+   $allArticles = $this-&gt;Article-&gt;find('all');
+   $pending = $this-&gt;Article-&gt;find('all', array('conditions' =&gt; array('Article.status' =&gt; 'pending')));
+   $allAuthors = $this-&gt;Article-&gt;User-&gt;find('all');
+   $allPublishedAuthors = $this-&gt;Article-&gt;User-&gt;find('all', array('conditions' =&gt; array('Article.status !=' =&gt; 'pending')));
+   ...
+}
+
+---------------------------------
+
+# find('list', $params) syntax
+
+function some_function() {
+   ...
+    $allArticles = $this-&gt;Article-&gt;find('list');
+    $pending = $this-&gt;Article-&gt;find('list', array(
+        'conditions' =&gt; array('Article.status' =&gt; 'pending')
+    ));
+    $allAuthors = $this-&gt;Article-&gt;User-&gt;find('list');
+    $allPublishedAuthors = $this-&gt;Article-&gt;find('list', array(
+        'fields' =&gt; array('User.id', 'User.name'),
+        'conditions' =&gt; array('Article.status !=' =&gt; 'pending'),
+        'recursive' =&gt; 0
+    ));
+   ...
+}
+
+===========================================
+** CakePHP paginate Examples **
+===========================================
+
+A basic CakePHP paginate method in a controller:
+
+function index() {
+  $this-&gt;Order-&gt;recursive = 0;
+  $this-&gt;set('orders', $this-&gt;paginate());
+}
+
+---------------------------------
+
+class RecipesController extends AppController {
+
+    var $paginate = array(
+        'limit' =&gt; 25,
+        'order' =&gt; array(
+            'Post.title' =&gt; 'asc'
+        )
+    );
+}
+
+--- or this:
+
+class RecipesController extends AppController {
+
+    var $paginate = array(
+        'fields' =&gt; array('Post.id', 'Post.created'),
+        'limit' =&gt; 25,        
+        'order' =&gt; array(
+            'Post.title' =&gt; 'asc'
+        )
+    );
+}
+
+===========================================
+** CakePHP logging **
+===========================================
+
+CakeLog::write('debug', 'Something did not work');
+
+---------------------------------
+
+$this-&gt;log(&quot;Something did not work!&quot;, 'debug');
+
+---------------------------------
+
+Configure::write('log', E_WARNING);
+
+
+===========================================
+** CakePHP Global Methods **
+===========================================
+
+__(string $string_id, boolean $return = false) — function handles localization
+
+config('some_file', 'myconfig') — Can be used to load files from your application config-folder via include_once
+
+convertSlash(string $string) — Converts forward slashes to underscores and removes the first and last underscores in a string
+
+uses(string $lib1, $lib2, $lib3...) — Used to load CakePHP's core libraries (found in cake/libs/).
+
+debug(mixed $var, boolean $showHtml = false) - If the application's DEBUG level is non-zero, $var is printed out.
+
+a(mixed $one, $two, $three...) — Returns an array of the parameters used to call the wrapping function
+
+aa(string $one, $two, $three...) — Used to create associative arrays formed from the parameters used to call the wrapping function.
+
+am(array $one, $two, $three...) — Merges all the arrays passed as parameters and returns the merged array.
+
+e(mixed $data) — Convenience wrapper for echo()
+
+env(string $key) — Gets an environment variable from available sources
+
+ife($condition, $ifNotEmpty, $ifEmpty) — Used for ternary-like operations
+
+low(string $string) — Convenience wrapper for strtolower()
+
+up(string $string) — Convenience wrapper for strtoupper()
+
+r(string $search, string $replace, string $subject) — Convenience wrapper for str_replace()
+
+h(string $text, string $charset = null) — Convenience wrapper for htmlspecialchars()
+
+pr - shortcut for print_r()
+
+stripslashes_deep(array $value) — Recursively strips slashes from the supplied $value. Returns the modified array.
+
+fileExistsInPath(string $file) — Checks to make sure that the supplied file is within the current PHP include_path
+
+
+
+===========================================
+** CakePHP Global Constants **
+===========================================
+
+ACL_CLASSNAME
+ACL_FILENAME
+APP
+APP_DIR
+APP_PATH
+AUTO_SESSION
+CACHE
+CACHE_CHECK
+CAKE
+CAKE_CORE_INCLUDE_PATH
+CAKE_SECURITY
+CAKE_SESSION_COOKIE
+CAKE_SESSION_SAVE
+CAKE_SESSION_STRING
+CAKE_SESSION_TABLE
+CAKE_SESSION_TIMEOUT
+COMPONENTS
+COMPRESS_CSS
+CONFIGS
+CONTROLLER_TESTS
+CONTROLLERS
+CORE_PATH
+CSS
+DATASOURCE
+DAY
+DEBUG
+DS
+ELEMENTS
+HELPER_TESTS
+HELPERS
+HOUR
+INFLECTIONS
+JS
+LAYOUTS
+LIB_TESTS
+LIBS
+LOG_ERROR
+LOGS
+MAX_MD5SIZE
+MINUTE
+MODEL_TESTS
+MODELS
+MODULES
+MONTH
+ROOT
+SCRIPTS
+SECOND
+TAG_DIV
+TAG_FIELDSET
+TAG_LABEL
+TAG_P_CLASS
+TESTS
+TMP
+VENDORS
+VIEWS
+WEBROOT_DIR
+WEBSERVICES
+WEEK
+WWW_ROOT
+YEAR
+
+===========================================
+** CakePHP Controller properties, methods, callbacks **
+===========================================
+
+--- CakePHP controller properties:
+
+$name = null
+$action = null
+$autoLayout = true
+$autoRender = true
+$base = null
+$beforeFilter = null
+$cacheAction = false
+$components = array()
+$data = array()
+$helpers = array('Html')
+$here = null
+$layout = 'default'
+$output = null
+$pageTitle = false
+$params = array()
+$persistModel = false
+$plugin = null
+$uses = false
+$view = 'View'
+$viewPath = null
+$webroot = null
+$_viewClass = null
+$_viewVars = array()
+
+--- CakePHP controller methods
+
+cleanUpFields ()
+constructClasses ()
+flash ($message, $url, $pause = 1)
+flashOut ($message, $url, $pause = 1)
+generateFieldNames ($data = null, $doCreateOptions = true)
+postConditions ($data, $operator = '', $bool = 'AND', $exclusive = false)
+redirect ($url, $status = null)
+referer ($default = null, $local = false)
+render ($action = null, $layout = null, $file = null)
+set ($one, $two = null)
+setAction ($action)
+validate ()
+validateErrors ()
+
+--- CakePHP controller callbacks
+
+afterFilter ()
+beforeFilter ()
+beforeRender ()
+
+
+===========================================
+** CakePHP Model properties, methods, callbacks, and validation **
+===========================================
+
+--- CakePHP Model properties:
+
+$belongsTo = array()
+$cacheQueries = true
+$data = array()
+$displayField = null
+$hasAndBelongsToMany = array()
+$hasMany = array()
+$hasOne = array()
+$id = false
+$logTransactions = false
+$name = null
+$primaryKey = null
+$recursive = 1
+$useDbConfig = 'default'
+$useTable = null
+$validate = array()
+$validationErrors = array()
+
+--- CakePHP Model methods:
+
+bindModel ($params)
+create ()
+delete ($id = null, $cascade = true)
+escapeField ($field)
+execute ($data)
+exists ()
+field ($name, $conditions = null, $order = null)
+find ($conditions = null, $fields = null, $order = null, $recursive = null)
+findAll ($conditions = null, $fields = null, $order = null, $limit = null, $page = 1, $recursive = null)
+findAllThreaded ($conditions = null, $fields = null, $sort = null)
+findCount ($conditions = null, $recursive = 0)
+findNeighbours ($conditions = null, $field, $value)
+generateList ($conditions = null, $order = null, $limit = null, $keyPath = null, $valuePath = null)
+getAffectedRows ()
+getColumnType ($column)
+getColumnTypes ()
+getDisplayField ()
+getID ($list=0)
+getLastInsertID ()
+getNumRows ()
+hasAny ($conditions = null)
+hasField ($name)
+invalidate ($field)
+invalidFields ($data = array())
+isForeignKey ($field)
+loadInfo ()
+query ()
+read ($fields = null, $id = null)
+remove ($id = null, $cascade = true)
+save ($data = null, $validate = true, $fieldList = array())
+saveField ($name, $value, $validate = false)
+set ($one, $two = null)
+setDataSource ($dataSource = null)
+setSource ($tableName)
+unbindModel ($params)
+validates ($data=array())
+setSource ($tableName)
+
+--- CakePHP Model callbacks
+
+afterDelete ()
+afterFind ($results)
+afterSave ()
+beforeDelete ()
+beforeFind (&amp;$queryData)
+beforeSave ()
+beforeValidate ()
+
+--- CakePHP Model validation
+
+'VALID_EMAIL`
+'VALID_NOT_EMPTY`
+'VALID_NUMBER`
+'VALID_YEAR`
+
+
+
+===========================================
+** CakePHP View properties and methods **
+===========================================
+
+--- CakePHP View properties
+
+$action = null
+$autoLayout = true
+$autoRender = true
+$base = null
+$controller = null
+$ext = '.thtml'
+$hasRendered = null
+$helpers = array('Html')
+$here = null
+$layout = 'default'
+$loaded = array()
+$models = array()
+$name = null
+$pageTitle = false
+$params
+$parent = null
+$plugin = null
+$subDir = null
+$themeWeb = null
+$uses = false
+$viewPath
+
+--- CakePHP View methods
+
+element ($name)
+error ($code, $name, $message)
+pluginView ($action, $layout)
+render ($action = null, $layout = null, $file = null)
+renderCache ($filename, $timeStart)
+renderElement ($name, $params = array())
+renderLayout ($content_for_layout)
+setLayout ($layout)
+
+
+
+===========================================
+** CakePHP Data Validation **
+===========================================
+
+&lt;?php
+class User extends AppModel {
+    var $name = 'User';
+    var $validate = array(
+        'login' =&gt; 'alphaNumeric',
+        'email' =&gt; 'email',
+        'born' =&gt; 'date'
+    );
+}
+?&gt;
+
+
+
+===========================================
+** CakePHP Helpers **
+===========================================
+
+--- CakePHP Html Helper
+
+addCrumb ($name, $link)
+charset ($charset, $return = false)
+checkbox ($fieldName, $title = null, $htmlAttributes = null, $return = false)
+css ($path, $rel = 'stylesheet', $htmlAttributes = null, $return = false)
+dateTimeOptionTag ($tagName, $dateFormat = 'DMY', $timeFormat = '12', $selected = null, $selectAttr = null, $optionAttr = null, $showEmpty = true)
+dayOptionTag ($tagName, $value = null, $selected = null, $selectAttr = null, $optionAttr = null, $showEmpty = true)
+file ($fieldName, $htmlAttributes = null, $return = false)
+formTag ($target = null, $type = 'post', $htmlAttributes = null)
+getCrumbs ($separator = '»', $startText = false, $return = false)
+guiListTree ($data, $htmlAttributes = null, $bodyKey = 'body', $childrenKey = 'children', $return = false)
+hidden ($fieldName, $htmlAttributes = null, $return = false)
+hourOptionTag ($tagName, $value = null, $format24Hours = false, $selected = null, $selectAttr = null, $optionAttr = null, $showEmpty = true)
+image ($path, $htmlAttributes = null, $return = false)
+input ($fieldName, $htmlAttributes = null, $return = false)
+link ($title, $url = null, $htmlAttributes = null, $confirmMessage = false, $escapeTitle = true, $return = false)
+linkEmail ($title, $email = null, $options = null)
+meridianOptionTag ($tagName, $value = null, $selected = null, $selectAttr = null, $optionAttr = null, $showEmpty = true)
+minuteOptionTag ($tagName, $value = null, $selected = null, $selectAttr = null, $optionAttr = null, $showEmpty = true)
+monthOptionTag ($tagName, $value = null, $selected = null, $selectAttr = null, $optionAttr = null, $showEmpty = true)
+parseHtmlOptions ($options, $exclude = null, $insertBefore = ' ', $insertAfter = null)
+password ($fieldName, $htmlAttributes = null, $return = false)
+radio ($fieldName, $options, $inbetween = null, $htmlAttributes = array(), $return = false)
+selectTag ($fieldName, $optionElements, $selected = null, $selectAttr = null, $optionAttr = null, $showEmpty = true, $return = false)
+setFormTag ($tagValue)
+submit ($caption = 'Submit', $htmlAttributes = null, $return = false)
+tableCells ($data, $oddTrOptions = null, $evenTrOptions = null, $return = false)
+tableHeaders ($names, $trOptions = null, $thOptions = null, $return = false)
+tagErrorMsg ($field, $text)
+tagIsInvalid ($model, $field)
+tagValue ($fieldName)
+textarea ($fieldName, $htmlAttributes = null, $return = false)
+trim ()
+url ($url = null, $return = false)
+validate ()
+validateErrors ()
+yearOptionTag ($tagName, $value = null, $minYear = null, $maxYear = null, $selected = null, $selectAttr = null, $optionAttr = null, $showEmpty = true)
+_parseAttributes ($options, $exclude = null, $insertBefore = ' ', $insertAfter = null)
+
+--- CakePHP Form Helper
+
+button ($params, $type= 'button', $options=array())
+create ($model=null, $options=array())
+dateTime ($tagName, $dateFormat= 'DMY', $timeFormat= '12', $selected=null, $attributes=array(), $showEmpty=true)
+day ($fieldName, $selected=null, $attributes=array(), $showEmpty=true)
+end ($options=null)
+error ($field, $text=null, $options=array())
+file ($fieldName, $options=array())
+hidden ($fieldName, $options=array())
+hour ($tagName, $format24Hours=false, $selected=null, $attributes=array(), $showEmpty=true)
+input ($tagName, $options=array())
+inputs ($fields=null, $blacklist=null)
+isFieldError ($field)
+label ($tagName=null, $text=null, $attributes=array())
+meridian ($tagName, $selected=null, $attributes=array(), $showEmpty=true)
+minute ($tagName, $selected=null, $attributes=array(), $showEmpty=true)
+month ($tagName, $selected=null, $attributes=array(), $showEmpty=true)
+password ($fieldName, $options=array())
+secure ($fields)
+select ($fieldName, $options=array(), $selected=null, $attributes=array(), $showEmpty= '')
+submit ($caption= 'Submit', $options=array())
+submitImage ($path, $options=array())
+text ($fieldName, $options=array())
+textarea ($fieldName, $options=array())
+year ($fieldName, $minYear=null, $maxYear=null, $selected=null, $attributes=array(), $showEmpty=true)
+
+--- CakePHP Ajax Helper
+
+autoComplete ($field, $url=&quot;&quot;, $options=array())
+div ($id, $options=array())
+divEnd ($id)
+drag ($id, $options=array())
+drop ($id, $options=array())
+dropRemote ($id, $options=array(), $ajaxOptions=array())
+editor ($id, $url, $options=array())
+form ($params=null, $type= 'post', $options=array())
+isAjax ()
+link ($title, $href=null, $options=array(), $confirm=null, $escapeTitle=true)
+observeField ($field_id, $options=array())
+observeForm ($field_id, $options=array())
+remoteFunction ($options=null)
+remoteTimer ($options=null)
+slider ($id, $track_id, $options=array())
+sortable ($id, $options=array())
+submit ($title= 'Submit', $options=array())
+
+--- CakePHP Text Helper
+
+highlight ($text, $phrase, $highlighter= '&lt; span class=&quot;highlight&quot;&gt;\1&lt;/span &gt;')
+stripLinks ($text)
+autoLinkUrls ($text, $htmlOptions = array())
+autoLinkEmails ($text, $htmlOptions = array())
+autoLink ($text, $htmlOptions = array())
+truncate ($text, $length, $ending = '...', $exact = true)
+trim ()
+excerpt ($text, $phrase, $radius = 100, $ending = &quot;...&quot;)
+flay ($text, $allowHtml = false)
+
+--- CakePHP Time Helper
+
+dayAsSql ($date_string, $field_name, $return = false)
+daysAsSql ($begin, $end, $field_name, $return = false)
+fromString ($date_string)
+isThisYear ($date_string, $return = false)
+isToday ($date_string, $return = false)
+isTomorrow ($date_string, $return = false)
+nice ($date_string=null, $return = false)
+niceShort ($date_string=null, $return = false)
+relativeTime ($datetime_string, $format = 'j/n/y', $return = false)
+timeAgoInWords ($datetime_string, $format = 'j/n/y', $backwards = false, $return = false)
+toAtom ($date_string, $return = false)
+toRSS ($date_string, $return = false)
+toUnix ($date_string, $return = false)
+trim ($string, $length, $ending = '..')
+wasWithinLast ($timeInterval, $date_string, $return = false)
+wasYesterday ($date_string, $return = false)
+
+--- CakePHP Number Helper
+
+precision ($number, $precision = 3)
+toReadableSize ($size)
+toPercentage ($number, $precision = 2)
+
+
+===========================================
+** CakePHP Components **
+===========================================
+
+--- CakePHP Session Component
+
+check ($name)
+del ($name)
+delete ($name)
+error ()
+flash ($key)
+read ($name)
+renew ()
+setFlash ($flashMessage, $layout = 'default', $param = null, $key = 'flash')
+valid ()
+write($name, $value)
+
+--- CakePHP RequestHandler Component
+
+accepts ($types)
+getAjaxVersion ()
+getClientIP ()
+getReferer ()
+isAjax ()
+isAtom ()
+isDelete ()
+isGet ()
+isMobile ()
+isPost ()
+isPut ()
+isRss ()
+isXml ()
+setContent ($name, $type)
+stripAll ($string)
+stripImages ($string)
+stripScripts ($string)
+
+--- CakePHP Security Component
+
+requirePost ([$action1, $ action2, $action3, ...])
+requireAuth ([$action1, $ action2, $action3, ...])
+
+--- CakePHP ACL Component
+
+check ($aro, $aco, $action=&quot;*&quot;)
+allow ($aro, $aco, $action=&quot;*&quot;)
+deny ($aro, $aco, $action=&quot;*&quot;)
+inherit ($aro, $aco, $action=&quot;*&quot;)
+grant ($aro, $aco, $action=&quot;*&quot;)
+revoke ($aro, $aco, $action=&quot;*&quot;)
+getAro ($id)
+getAco ($id)</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

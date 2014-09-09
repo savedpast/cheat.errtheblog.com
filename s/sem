@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>&lt;?php 
+$SEMKey = &quot;123456&quot; ; 
+
+## Get Semaphore id 
+$seg = sem_get( $SEMKey, 2, 0666, -1) ; 
+
+if ( $argv[1]==&quot;remove&quot; ) { 
+    sem_remove($seg); 
+} 
+
+echo &quot;Try to acquire ...&quot; 
+sem_acquire($seg); 
+echo &quot;Acquired...\n&quot; ; 
+
+echo &quot;Press Any Key to continue...\n&quot;; 
+$fh = fopen(&quot;php://stdin&quot;, &quot;r&quot;); 
+$a = fgets( $fh); 
+fclose($fh); 
+
+sem_release($seg); 
+?&gt;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

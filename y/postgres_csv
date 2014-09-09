@@ -1,0 +1,3 @@
+---
+postgres_csv: ! "in psql:\r\n\r\n\r\n\\f ','\r\n\\a\r\n\\t\r\n\\o /tmp/outfile.csv\r\nSELECT
+  * FROM your_table;\r\n\\o\r\n\\q\r\n\r\n\r\nalso you could set \\f to '\\t'"

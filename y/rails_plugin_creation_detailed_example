@@ -1,0 +1,28 @@
+---
+rails_plugin_creation_detailed_example: ! "You should be able to use this as a template
+  for any custom plugin.\n\nGenerate the initial plugin stuff:\n> script/generate
+  plugin acts_as_foo\n> script/generate  controller worker\n> cd vendor/plugins/acts_as_foo/\n\nEdit
+  the following files like so:\n\n----- vendor/plugins/acts_as_foo/init.rb\nrequire
+  'acts_as_foo.rb'\n\n----- vendor/plugins/acts_as_foo/lib/acts_as_foo.rb \nmodule
+  Foo \n  def self.included(base)\n    base.extend ClassMethods\n    base.class_eval
+  do\n      include InstanceMethods\n    end\n  end\n  module ClassMethods\n    def
+  acts_as_foo(params)\n      class_eval <<-STUFF\n        def bar \n\t  '#{params[:bar]}!'\n
+  \       end\n      STUFF\n    end\n  end\n  module InstanceMethods\n    def a_fubar\n
+  \     'fubar called...'\n    end\n  end\nend\n\n---- app/controllers/worker_controller.rb
+  \ninclude Foo\nclass WorkerController < ApplicationController\n  class MyFoo \n
+  \   acts_as_foo :bar => 'This is bar from foo -- go figure!'\n  end\n  def index\n
+  \   f = MyFoo.new\n    logger.info(\"\\n\\n---f.bar: \" + f.bar) # sanity check
+  ;)\n    render(:text => \"WorkerController. f.bar outputs: #{f.bar}\") # something
+  in the browser.\n    logger.info(\"\\n\\n---a_fubar: \" + a_fubar) # tests calling
+  the instance method directly\n  end\nend\n\n\n------\nUsage:\n------\n> ruby script/server\nhttp://localhost:3000/worker\n\nIn
+  the log file or server console output:\nProcessing WorkerController#index (for 127.0.0.1
+  at 2009-07-29 14:50:35) [GET]\n---f.bar: This is bar from foo -- go figure!!\n---a_fubar:
+  fubar called...\n\n== TESTING: A test should be included with your plugin so here
+  we go!\n\n--/vendor/plugins/acts_as_foo/test/acts_as_foo_test.rb\nrequire 'test/unit'\nrequire
+  File.expand_path(\n\t    File.join(File.dirname(__FILE__), '../../../../config/environment')\n\t)\n\ninclude
+  Foo\n\nclass MyFoo \n  acts_as_foo :bar => 'Hello'\nend\n\nclass ActsAsFooTest <
+  Test::Unit::TestCase\n  def setup\n    @f = MyFoo.new\n  end\n\n  def test_bar_returns_Hello\n
+  \   assert_equal @f.bar, 'Hello!' # remember it had an exclamation mark in there
+  ;)\n  end\n\n  def test_a_fubar\n    assert_equal @f.a_fubar, 'fubar called...'\n
+  \ end\nend\n\n------\nUsage:\n------\nNow from the test directory run:\n> rake test\nStarted\n..\nFinished
+  in 0.000518 seconds.\n2 tests, 2 assertions, 0 failures, 0 errors"

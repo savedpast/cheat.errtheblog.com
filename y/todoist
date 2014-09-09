@@ -1,0 +1,14 @@
+---
+todoist: ! "Enter          Save current item\nESC            Cancel current edit\nShift+Enter
+  \   Save current item and append a new item below it\nCTRL+Enter     Save current
+  item and append a new item above it\nCTRL+Left      Indent the item one time to
+  the left. \nCTRL+Right     Indent the item one time to the right.\nCTRL+Up        Save
+  current item and edit item above it\nCTRL+Down      Save current item and edit item
+  below it \nCTRL+B         Bold\nCTRL+I         Italic\nCTRL+U         Underline\nCTRL+H
+  \        Highlight\nCTRL+N         Add a line break\n\na    Add a new item to the
+  bottom \nA    Add a new item to the top \n/    Moves the focus to the query box\ns
+  \   Sort items by date \np    Sort items by priority \nr    Toggle item reorder
+  mode \nR    Toggle project reorder mode\n?    Shows this window (i.e. shows shortcuts)\n\nSingle
+  click on item     Edit the item\nShift-Click on checkbox  Force move to history
+  of item and its children\nShift-Click on priority  Set the priority of item and
+  not its children"

@@ -1,0 +1,5 @@
+---
+rake_details: ! "rake -T db\n\n  to see all rake tasks having the name 'db' in it\n
+  \ example: rake db:create\n           rake db:migrate\n\nrake -D db\n\n  to print
+  out detail description for the tasks having the name 'db' in it\n\n\nrake --help\n\n
+  \ to show the rake help message"

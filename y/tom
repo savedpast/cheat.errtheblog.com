@@ -1,0 +1,21 @@
+---
+tom: ! "What's needed to start a good Rails project:\n\n  # Ensure git is installed.\n
+  \ # Ensure ruby is installed.\n  # Ensure rvm is installed.\n  rvm update --head\n
+  \ rvm reload\n  rvm install 1.8.7-p249 # or whatever version of ruby\n  rvm --create
+  1.8.7-p249@project_name # one alternative\n  rvm --create use 1.8.7-p249@project_name
+  # another alternative\n  rvm --default use 1.8.7-p249@project_name\n  # Ensure rubygems
+  (gem) is installed.\n  gem update --system # might have to be run via sudo\n  gem
+  install rails --version 3.0.1 # might have to be run via sudo\n  mkdir -p ~/code\n
+  \ cd ~/code\n  rails new my_app\n  # Edit Gemfile\n\nDefault Rails directory structure:\n\n
+  \ app/\tCore application (app) code, including models, views,\n  \t\tcontrollers,
+  and helpers\n  config/\tApplication configuration\n  db/\t\tFiles to manipulate
+  the database\n  doc/\tDocumentation for the application\n  lib/\tLibrary modules\n
+  \ log/\tApplication log files\n  public/\tData accessible to the public (e.g., web
+  browsers), such as\n  \t\timages and ascading style sheets (CSS)\n  script/rails
+  \ A script provided by Rails for generating code, opening\n\t\tconsole sessions,
+  or starting a local web server\n  test/\tApplication tests (made obsolete by the
+  spec/ directory in\n  \t\tSection 3.1.2)\n  tmp/\tTemporary files\n  vendor/\tThird-party
+  code such as plugins and gems\n  README\tA brief description of the application\n
+  \ Rakefile\tUtility tasks available via the rake command\n  Gemfile\tGem requirements
+  for this app\n  config.ru\tA configuration file for Rack middleware\n  .gitignore\tPatterns
+  for files that should be ignored by Git"

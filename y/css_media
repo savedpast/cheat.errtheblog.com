@@ -1,0 +1,14 @@
+---
+css_media: ! "Common:\n  all           Suitable for all devices.\n  screen        Computer
+  screens and most handheld devices.\n  print         Page-delimited mode for printing
+  and print preview\n\nRare:\n  projection    Projections/presentations, used by Opera
+  4+ fullscreen mode\n  aural         Speech synthesizers, used by Firevox. Deprecated
+  in CSS 2.1\n  speech        Speech synthesizers, reserved.\n  tv            Television
+  displays, used by WebTV.\n  handheld      Handheld devices, supported by Symbian.\n\nNot
+  used by any known agents:\n  braille       Braille tactile feedback devices.\n  embossed
+  \     Paged braille printers.\n  tty           Fixed width character grid such as
+  terminals.\n\n@import url(\"fancyfonts.css\") screen, print;\nload the file fancyfonts.css
+  for screen and print within your CSS.\n\n@media print { /* style sheet for print
+  goes here */ }\nInline style rules for print within your CSS\n\n<link rel=\"stylesheet\"
+  type=\"text/css\" media=\"print\" href=\"print.css\">\nHTML inclusion of different
+  sheets based on agent media type"

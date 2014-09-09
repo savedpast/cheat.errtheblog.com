@@ -1,0 +1,30 @@
+---
+timecop: ! "A gem providing \"time travel\" and \"time freezing\" capabilities, making
+  it dead simple to test time-dependent code.  It provides a unified method to mock
+  Time.now, Date.today, and DateTime.now in a single call.\n== FEATURES\n\n* Freeze
+  time to a specific point.\n* Travel back to a specific point in time, but allow
+  time to continue moving forward from there.\n* No dependencies, can be used with
+  _any_ ruby project\n* Timecop api allows arguments to be passed into #freeze and
+  #travel as one of the following:\n  * Time instance\n  * DateTime instance\n  *
+  Date instance\n  * individual arguments (year, month, day, hour, minute, second)\n
+  \ * a single integer argument that is interpreted as an offset in seconds from Time.now\n*
+  Nested calls to Timecop#travel and Timecop#freeze are supported -- each block will
+  maintain its interpretation of now.\n\n== USAGE\n\nRun a time-sensitive test\n\n
+  \ joe = User.find(1)\n  joe.purchase_home()\n  assert !joe.mortgage_due?\n  # move
+  ahead a month and assert that the mortgage is due\n  Timecop.freeze(Date.today +
+  30) do\n    assert joe.mortgage_due?\n  end\n\nSet the time for the test environment
+  of a rails app -- this is particularly helpful if your whole application is time-sensitive.
+  \ It allows you to build your test data at a single point in time, and to move in/out
+  of that time as appropriate (within your tests)\n  \nin config/environments/test.rb\n\n
+  \ config.after_initialize do\n    # Set Time.now to September 1, 2008 10:05:00 AM
+  (at this instant), but allow it to move forward\n    t = Time.local(2008, 9, 1,
+  10, 5, 0)\n    Timecop.travel(t)\n  end\n\n=== The difference between Timecop.freeze
+  and Timecop.travel\n\n#freeze is used to statically mock the concept of now.  As
+  your program executes, Time.now will not change unless you make subsequent calls
+  into the Timecop API.  #travel, on the other hand, computes an offset between what
+  we currently think Time.now is (recall that we support nested traveling) and the
+  time passed in.  It uses this offset to simulate the passage of time.  To demonstrate,
+  consider the following code snippets:\n\n  new_time = Time.local(2008, 9, 1, 12,
+  0, 0)\n  Timecop.freeze(new_time)\n  sleep(10)\n  new_time == Time.now # ==> true\n
+  \ \n  Timecop.return # \"turn off\" Timecop\n  Timecop.travel(new_time)\n  sleep(10)\n
+  \ new_time == Time.now # ==> false"

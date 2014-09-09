@@ -1,0 +1,3 @@
+---
+ffi: ! "Tips\n====\n  * See C functions ready to be attached in a dynamic library
+  (.so)\n    $ nm libfoo.so | egrep \" T [a-zA-Z]\""

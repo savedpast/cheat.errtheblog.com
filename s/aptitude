@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Keolo Keagy
+http://dreampointmedia.com/
+
+Common aptitiude commands for Ubuntu/Debian: 
+
+aptitude
+  Running it with no arguments brings up a beautiful interface to 
+  search, navigate, install, update and otherwise administer 
+  packages.
+
+sudo aptitude install &lt;name&gt;
+  Installing software for your system, installing needed 
+  dependencies as well.
+
+aptitude remove
+  Removing packages as well as orphaned dependencies.
+
+aptitude purge
+  Removing packages and orphaned dependencies as well as any 
+  configuration files left behind.
+
+aptitude search
+  Search for packages in the local apt package lists.
+
+aptitude update
+  Update the local packages lists.
+
+aptitude upgrade
+  Upgrade any installed packages that have been updated.
+
+aptitude clean
+  Delete any downloaded files necessary for installing the 
+  software on your system.
+
+aptitude dist-upgrade
+  Upgrade packages, even if it means uninstalling 
+  certain packages.
+
+aptitude show
+  Show details about a package name.
+
+aptitude autoclean
+  Delete only out-of-date packages, but keep current ones.
+
+aptitude hold
+  Fix a package at it’s current version, and don’t update it.
+
+apt-get moo
+  Try it yourself and find out. (Not all versions of APT have this!)</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

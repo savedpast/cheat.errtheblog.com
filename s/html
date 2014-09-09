@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>&lt;ELEMENT id=&quot;&quot; class=&quot;&quot; MORE_ATTR=&quot;&quot;&gt;&lt;/ELEMENT&gt;
+  &lt;ELEMENT /&gt; for IMG, BR, META, LINK
+
+&lt;header&gt;   --  belongs_to :section, :has_many :headlines(h#)
+&lt;nav&gt;      --  belongs_to :section, :header, :footer
+&lt;section&gt;  --  has_many :headers, :asides, :articles
+&lt;aside&gt;    --  related_to :article
+&lt;article&gt;  --  represents a :entry
+&lt;footer&gt;   --  represents :copyright_data
+
+Thanks to: http://orderedlist.com/resources/html-css/structural-tags-in-html5/</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

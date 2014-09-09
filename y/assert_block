@@ -1,0 +1,5 @@
+---
+assert_block: ! "# 'cheat assertions' for the rest\n\nassert_block(message=\"assert_block
+  failed.\") {|| ...}\n\nThe assertion upon which all other assertions are based.
+  Passes if the block yields true.\n\nExample:\n\n  assert_block \"Couldn't do the
+  thing\" do\n    do_the_thing\n  end"

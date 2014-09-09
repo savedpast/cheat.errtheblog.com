@@ -1,0 +1,8 @@
+---
+database_yml: ! "DRY out your database.yml\nFrom: http://blog.bleything.net/articles/2006/06/27/dry-out-your-database-yml\nUpdated
+  with a more universal database naming scheme, which better accomodates multiple
+  instances of the same application.\n\n-----\n\nlogin: &login\n  adapter: mysql\n
+  \ username: username\n  password: password\n  # host: mysql.example.com\n  encoding:
+  utf8\n  port: 3306\n\ndevelopment:\n  <<: *login\n  database: app_domain_com_d\n\ntest:\n
+  \ <<: *login\n  database: app_domain_com_t\n\nproduction:\n  <<: *login\n  database:
+  app_domain_com_p"

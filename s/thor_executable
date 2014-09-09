@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Making an executable with Thor
+==============================
+
+&gt; Read more about Thor on `cheat thor`
+
+You may want to make a script as an executable command. To do this with Thor:
+
+* include the ruby shebang line.
+* require &quot;thor&quot; in your script.
+* define your Thor class.
+* add `#{YourThorClassname}.start` to the bottom of your script.
+
+Example: mythorcommand.rb
+
+``` ruby
+#!/usr/bin/env ruby
+require &quot;rubygems&quot; # ruby1.9 doesn't &quot;require&quot; it though
+require &quot;thor&quot;
+
+class MyThorCommand &lt; Thor
+  desc &quot;foo&quot;, &quot;Prints foo&quot;
+  def foo
+    puts &quot;foo&quot;
+  end
+end
+
+MyThorCommand.start
+```
+
+Make the script executable:
+
+``` sh
+chmod a+x mythorcommand.rb
+```
+
+Now you can type:
+
+``` sh
+./mythorcommand.rb foo
+```</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

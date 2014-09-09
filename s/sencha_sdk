@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Install the Sencha SDK found here:
+http://www.sencha.com/products/sdk-tools
+
+$ sencha
+Sencha Command v2.0.0 Beta
+Copyright (c) 2012 Sencha Inc.
+
+usage: sencha COMMAND [ARGS]
+
+The available commands are:
+   build			build a JSB project
+   create bootstrapdata		generate boostrap data
+   create jsb			generate a minimal JSB project for an app
+   create locale			generate a template locale file from source
+   create manifest		generate classes manifest
+   package			package your Touch web app into a native bundle
+   slice theme			slice a custom theme's images for IE
+
+See 'sencha help COMMAND' for more information on a specific command.
+
+sencha build
+usage: sencha build [OPTIONS...]
+
+ COMMAND: JS Builder
+
+ DESCRIPTION:
+
+   JS Builder makes deploying JavaScript projects easy with code consolidation, 
+   obfuscation, and minification all in one step. 
+    
+   Example: 
+      sencha build -p /home/tommy/www/trunk/ext.jsb3 -d /home/tommy/www/deploy/ 
+    
+ OPTIONS:
+
+ --debugSuffix[=]value, -s[=]value
+   Suffix to append to JS debug targets, defaults to '-debug' 
+
+ --deployDir[=]value, -d[=]value (required)
+   The direction to build the project to 
+
+ --nocompress, -c
+   Don't compress the targets 
+
+ --projectFile[=]value, -p[=]value (required)
+   Location of a jsb3 project file 
+
+ --verbose, -v
+   Output detailed information about what is being built
+
+GENERATE A SENCHA APP
+$ sencha generate app NAME ../DIRECTORY</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

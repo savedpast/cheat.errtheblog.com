@@ -1,0 +1,39 @@
+---
+knifeec2: ! "can never get this damned thing to come up\r\n\r\nUSAGE: knife ec2 server
+  create (options)                                                                                                                                             [54/313]\r\n
+  \   -Z, --availability-zone ZONE     The Availability Zone\r\n    -A, --aws-access-key-id
+  KEY      Your AWS Access Key ID\r\n    -K SECRET,                       Your AWS
+  API Secret Access Key\r\n        --aws-secret-access-key\r\n        --user-data
+  USER_DATA_FILE   The EC2 User Data file to provision the instance with\r\n        --bootstrap-version
+  VERSION  The version of Chef to install\r\n    -N, --node-name NAME             The
+  Chef node name for your new node\r\n        --server-url URL             Chef Server
+  URL\r\n    -k, --key KEY                    API Client Key\r\n        --color                      Use
+  colored output\r\n    -c, --config CONFIG              The configuration file to
+  use\r\n        --defaults                   Accept default values for all questions\r\n
+  \   -d, --distro DISTRO              Bootstrap a distro using a template\r\n        --ebs-no-delete-on-term
+  \     Do not delete EBS volumn on instance termination\r\n        --ebs-size SIZE
+  \             The size of the EBS volume in GB, for EBS-backed instances\r\n    -e,
+  --editor EDITOR              Set the editor to use for interactive commands\r\n
+  \   -E, --environment ENVIRONMENT    Set the Chef environment\r\n    -f, --flavor
+  FLAVOR              The flavor of server (m1.small, m1.medium, etc)\r\n    -F, --format
+  FORMAT              Which format to use for output\r\n    -i IDENTITY_FILE,                The
+  SSH identity file used for authentication\r\n        --identity-file\r\n    -I,
+  --image IMAGE                The AMI for the server\r\n        --no-color                   Don't
+  use colors in the output\r\n    -n, --no-editor                  Do not open EDITOR,
+  just accept the data as is\r\n        --no-host-key-verify         Disable host
+  key verification\r\n    -u, --user USER                  API Client Username\r\n
+  \       --prerelease                 Install the pre-release chef gems\r\n        --print-after
+  \               Show the data after a destructive operation\r\n        --region
+  REGION              Your AWS region\r\n    -r, --run-list RUN_LIST          Comma
+  separated list of roles/recipes to apply\r\n    -G, --groups X,Y,Z               The
+  security groups for this server\r\n    -S, --ssh-key KEY                The AWS
+  SSH key id\r\n    -P, --ssh-password PASSWORD      The ssh password\r\n    -x, --ssh-user
+  USERNAME          The ssh username\r\n    -s, --subnet SUBNET-ID           create
+  node in this Virtual Private Cloud Subnet ID (implies VPC mode)\r\n        --template-file
+  TEMPLATE     Full path to location of template to use\r\n    -V, --verbose                    More
+  verbose output. Use twice for max verbosity\r\n    -v, --version                    Show
+  chef version\r\n    -y, --yes                        Say yes to all prompts for
+  confirmation\r\n    -h, --help                       Show this message\r\n\r\nEXAMPLE:\r\n\r\nbundle
+  exec knife ec2 server create -N simulator02 -Z us-east-1c -r \"role[chef_client_base],role[users]\"
+  -I ami-17f51c7e -f m1.small --region us-east-1 --groups default -k default -i .chef/aws/key.pem
+  --ssh-user root"

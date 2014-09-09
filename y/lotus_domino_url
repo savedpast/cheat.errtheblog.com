@@ -1,0 +1,285 @@
+---
+lotus_domino_url: ! "Domino URL cheat sheet\n\nhttp://www-128.ibm.com/developerworks/lotus/library/ls-Domino_URL_cheat_sheet/\n\nLevel:
+  Advanced\n\nTara Hall, Content Developer, Lotus\n\n01 Oct 2002\n\nThis article,
+  updated for Domino 6, explains the URLs Domino uses to access servers, databases,
+  and other Web site pieces. Use these URL commands to design links or enter commands
+  directly into a browser to navigate a site or reach components quickly. \n\t\n\nEditor's
+  note: This article has been updated for Domino 6 with information that also appears
+  in Domino Designer 6 Help. Many of these commands and arguments are supported by
+  the latest maintenance release of Domino 5, except where indicated.\n\nDomino uses
+  URLs to access servers, databases, and other components of a Web site. Knowing the
+  URL commands lets you design links or enter commands directly into a browser to
+  navigate a site or reach components quickly. You can use the URL commands to:\n\n
+  \   * Open databases and views\n    * Open framesets\n    * Open forms, navigators,
+  and agents\n    * Open, edit, create, save, and delete documents\n    * Open documents
+  by key name from a view\n    * Open pages\n    * Open resources\n    * Open attachments,
+  image files, and OLE objects\n    * Open Web preferences\n    * Create search queries\n
+  \   * Require authentication\n    * Process SSL certificates\n    * Specify a character
+  encoding\n\nQuick review of URL syntax for Domino\n\nDomino URL commands have the
+  following syntax:\nhttp://Host/Database/DominoObject?Action&Arguments\n\nWhere:\n\n
+  \   * Host is the DNS entry or IP address.\n    * DominoObject is a Domino construct
+  (such as a database, view, document, form, navigator, agent, and so on).\n\nURL
+  commands for accessing DominoObjects use the following syntax:\nhttp://Host/Database/DominoObject?Action&Arguments\n\nWhere:\n\n
+  \   * Database is the database in which the DominoObject resides.\n    * Action
+  is the action you want on the specified DominoObject (for example, ?OpenDocument).\n
+  \   * Arguments are the qualifiers for the action (for example, Count=10 combined
+  with ?OpenView limits the number of rows displayed in a view to 10).\n\nFor additional
+  information on URL syntax, see the Syntax guidelines sidebar.\n\nNote: The URL examples
+  in this article are not intended to point to actual Domino-based Web sites, unless
+  specifically stated.\n\nOpening databases and views\n\nThe following commands access
+  databases, views, About and Using documents, and database icons.\n\nRedirect\nSyntax:\nhttp://Host/Database.nsf?Redirect&Name=Notesserver&Id=To=Encodedurl\n\nWhere:\n\n
+  \   * http: //Host refers to the Web server that is generating the URL.\n    * Name=
+  Notesserver specifies a Domino server name in its common or abbreviated form. This
+  is optional when the \"By Database\" setting on the server is on.\n    * Id= indicates
+  the replica ID of the database to be located. This is an optional argument.\n    *
+  To= Encodedurl specifies the rest of the URL.\n\nExample:\nhttp://www.acme.com/database.nsf?Redirect&Name=Mail&Id=0525666D0060ABBF&
+  To=%FAView%3FOpenView\n\nOpenDatabase\n\nSyntax:\nhttp://Host/DatabaseFileName?OpenDatabase
+  http://Host/_DatabaseReplicaID?OpenDatabase\n\nExamples:\nhttp://www.acme.com/leads.nsf?OpenDatabase\nhttp://www.acme.com/sales/discussion.nsf?OpenDatabase\nhttp://www.acme.com/_852562F3007ABFD6?OpenDatabase\n\nOpenView\n\nSyntax:\nhttp://Host/Database/ViewName?OpenView\nhttp://Host/Database/ViewUniversalID?OpenView\nhttp://Host/Database/$defaultview?OpenView\n\nExamples:\nhttp://www.acme.com/leads.nsf/By+Salesperson?Open/View\nhttp://www.acme.com/leads.nsf/DDC087A8ACE170F8852562F300702264?OpenView\nhttp://www.acme.com/leads.nsf/$defaultview?OpenView\n\nOptional
+  arguments for OpenView\n\nAppend these optional arguments to refine the OpenView
+  URL. Combine any of the following arguments for the desired result.\n\nStart= n\n\nWhere
+  n is the row number to start with when displaying the view. The row number in a
+  hierarchical view can include sub indexes (for example, Start=3.5.1 means the view
+  will start at the third main topic, subtopic 5, document 1).\n\nCount= n\n\nWhere
+  n is the number of rows to display.\n\nExpandView displays the view in expanded
+  format.\n\nCollapseView displays the view in collapsed format.\n\nExpand= n\n\nWhere
+  n is the row number to display in expanded format in a hierarchical view. Do not
+  combine this argument with the ExpandView or CollapseView arguments.\n\nCollapse=
+  n\n\nWhere n is the row number to display in collapsed format in a hierarchical
+  view. Do not combine this argument with the ExpandView or CollapseView arguments.\n\nRestrictToCategory=
+  category\n\nSets the category for \"Show Single Category\" object, where category
+  is the category to be displayed in the view.\n\nStartKey= string\n\nWhere string
+  is a key to a document in the view. The view displays at that document.\n\nExamples:\nhttp://www.acme.com/leads.nsf/By+Category?OpenView&CollapseView\nhttp://www.acme.com/leads.nsf/By+Category?OpenView&ExpandndView\nhttp://www.acme.com/leads.nsf/By+Category?OpenView&RestrictToCategory=pricing\nhttp://www.acme.com/leads.nsf/By+Category?OpenView&Start=3&Count=15\nhttp://www.acme.com/leads.nsf/By+Category?OpenView&StartKey=F\n\nOpenAbout\n\nUse
+  the $about?OpenAbout command to access the About This Database document.\n\nSyntax:\nhttp://Host/Database/$about?OpenAbout\n\nExample:\nhttp://www.acme.com/leads.nsf/$about?OpenAbout\n\nOpenHelp\n\nUse
+  the $help?OpenHelp command to access the Using This Database document.\n\nSyntax:\nhttp://Host/Database/$help?OpenHelp\n\nExample:\nhttp://www.acme.com/leads.nsf/$help?Open/Help\n\nOpenIcon\n\nUse
+  the $icon?OpenIcon command to access the database icon.\n\nSyntax:\nhttp://Host/Database/$icon?OpenIcon\n\nExample:\nhttp://www.acme.com/leads.nsf/$icon?OpenIcon\n\nReadViewEntries\n\nUse
+  this command to access view data in XML form without appearance attributes such
+  as fonts, list separators, date formats, HTML settings, view templates and frame
+  redirections.\n\nSyntax:\nhttp://Host/Database/ViewName?ReadViewEntries\nhttp://Host/Database/ViewUniversalID?ReadViewEntries\nhttp://Host/Database/$defaultview?ReadViewEntries\n\nExamples:\nhttp://www.acme.com/leads.nsf/By+Salesperson?ReadViewEntries\nhttp://www.acme.com/leads.nsf/DDC087A8ACE170F8852562F300702264?ReadViewEntries\nhttp://www.acme.com/leads.nsf/$defaultview?ReadViewEntries\n\nOptional
+  arguments for ReadViewEntries\n\nAppend optional arguments to refine the URL. Combine
+  any of the following arguments for the desired result.\nCollapse= n\n\nWhere n is
+  the row number to display in collapsed format in a hierarchical view. Do not combine
+  this argument with the ExpandView or CollapseView arguments. CollapseView displays
+  the view in collapsed format\nCount= n\n\nWhere n is the number of rows to display\nExpand=
+  n\n\nWhere n is the row number to display in expanded format in a hierarchical view.
+  Do not combine this argument with the ExpandView or CollapseView arguments. ExpandView
+  displays the view in expanded format\nKeyType= text or time\n\nSpecifies the StartKey
+  type of either text or time. If no argument is specified, the default is text. When
+  you specify &KeyType=time, you can specify a time value, like ISO date time value,
+  for both the &StartKey and &UntilKey arguments.\n\nPreFormat causes all data types
+  to be converted to text on the server. Text lists, numbers, dates and lists of numbers
+  are converted to text before being sent. The server's locale is used for all formatting.
+  Without this argument, the XML output stream contains information in structured,
+  locale-neutral formats.\nResortAscending= column number\nResortDescending= column
+  number\n\nWhere column number is a 0-based number of a column in a view that you
+  want to resort either ascending or descending in alphanumeric order.\nRestrictToCategory=
+  category\n\nSets the category for the \"Show Single Category\" object, where category
+  is the category to be displayed in the view\nStart= n\n\nWhere n is the row number
+  to start with when displaying the view. The row number in a hierarchical view can
+  include sub indexes (for example, Start=3.5.1 means the view will start at the third
+  main topic, sub-topic 5, document 1).\nStartKey= string\n\nWhere string is a key
+  to a document in the view. The view displays at that document.\nUntilKey= string\n\nDisplays
+  a range of view entries that begin with the document specified by the StartKey and
+  end with the document specified by the UntilKey. The &UntilKey argument is only
+  valid with the &StartKey argument. You can use the &Count argument to limit the
+  number of entries returned by the range.\n\nExample:\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&CollapseView\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&ExpandView\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&KeyType=time&StartKey=20020715&UntilKey=20020714\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&KeyType=text&StartKey=Aa&UntilKey=Ab\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&PreFormat\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&ResortAscending=3\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&ResortDescending=3\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&RestrictToCategory=pricing\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&Start=3&Count=15\nhttp://www.acme.com/leads.nsf/By+Category?ReadViewEntries&StartKey=F\n\n\n\n\tBack
+  to top\n\n\nOpening framesets\n\nThis command opens framesets.\n\nOpenFrameset\n\nSyntax:\nhttp://Host/Database/FramesetName?OpenFrameset\nhttp://Host/Database/FramesetUNID?OpenFrameset\n\nExamples:\nhttp://www.acme.com/discussion.nsf/main?OpenFrameset\nhttp://www.acme.com/discussion.nsf/35AE8FBFA573336A852563D100741784?OpenFrameset\n\n\n\n\tBack
+  to top\n\n\nOpening forms, navigators, and agents\n\nThe following commands open
+  forms, navigators, and agents in a database.\n\nOpenForm\n\nSyntax:\nhttp://Host/Database/FormName?OpenForm\nhttp://Host/Database/FormUniversalID?OpenForm\nhttp://Host/Database/$defaultform?OpenForm\n\nExamples:\nhttp://www.acme.com/products.nsf/Product?Openform\nhttp://www.acme.com/products.nsf/625E6111C597A11B852563DD00724CC2?OpenForm\nhttp://www.acme.com/products.nsf/$defaultform?OpenForm\n\nOptional
+  arguments for OpenForm\nParentUNID = UniqueIDNumber\n\nWhere UniqueIDNumber is the
+  document ID of the parent document, which is used in response forms or when the
+  form property \"Formulas inherit values from selected document\" is selected.\n\nSyntax:\nhttp://Host/Database/FormUniversalID?OpenForm&ParentUNID=UniqueIDNumber\n\nExample:\nhttp://www.acme.com/products.nsf/40aa91d55cle4c8285256363004dc9e0?OpenForm
+  &ParentUNID=6bc72a92613fd6bf852563de001f1a25\n\nOpenNavigator\nSyntax:\nhttp://Host/Database/NavigatorName?OpenNavigator\nhttp://Host/Database/NavigatorUniversallID?OpenNavigator\nhttp://Host/Database/$defaultNav?OpenNavigator\n\nExamples:\nhttp://www.acme.com/products.nsf/Main+Navigator?OpenNavigator\nhttp://www.acme.com/products.nsf/7B5BC17C7DC9EB7E85256207005F8862?OpenNavigator\nhttp://www.acme.com/products.nsf/$defaultnav?OpenNavigator\n\nNote:
+  $defaultnav opens the folders pane in a database\n\nOpenAgent\nSyntax:\nhttp://Host/Database/AgentName?OpenAgent\n\nExample:\nhttp://www.acme.com/sales/leads.nsf/Process+New+Leads?OpenAgent\n\nNote:
+  Agents may only be referred to by name. The use of UNID is not supported when referring
+  to an agent.\n\nReadForm\nUse the ReadForm command to display a form without showing
+  its editable fields. ReadForm is useful for displaying a form as a simple Web page.\n\nSyntax:\nhttp://Host/Database/FormName?ReadForm\nhttp://Host/Database/FormUniversalID?ReadForm\nhttp://Host/Database/$defaultform?ReadForm\n\nExamples:\nhttp://www.acme.com/home.nsf/Welcome?ReadForm\nhttp://www.acme.com/products.nsf/625E6111C597A11B852563DD00724CC2?ReadForm\nhttp://www.acme.com/products.nsf/$defaultform?ReadForm\n\n\n\n\tBack
+  to top\n\n\nCreating, opening, editing, saving, and deleting documents\n\nThe following
+  commands manipulate documents in a database. Hidden design elements are hidden from
+  the server; you can't use Domino URL commands to access documents in hidden views.\n\nCreateDocument\nThe
+  CreateDocument command is used as the POST action of an HTML form. When the user
+  submits a form, Domino obtains the data entered in the form and creates a document.\n\nSyntax:\nhttp://Host/Database/Form?CreateDocument\nhttp://Host/Database/FormID?CreateDocument\n\nExamples:\nhttp://www.acme.com/products.nsf/basketballs?CreateDocument\nhttp://www.acme.com/products.nsf/b9815a87b36a85d9852563df004a9533?CreateDocument\n\nOpenDocument\nSyntax:\nhttp://Host/Database/View/DocumentKey?OpenDocument\nhttp://Host/Database/View/DocumentUniversalID?OpenDocument\nhttp://Host/Database/View/$First?OpenDocument\n\nNote:
+  DocumentKey is the contents of the first sorted column in the specified view.\n\nExamples:\nhttp://www.acme.com/products.nsf/By+Part+Number/PC156?OpenDocument\nhttp://www.acme.com/leads.nsf/By+Rep/35AE8FBFA573336A852563D100741784?OpenDocument\nhttp://www.acme.com/leads.nsf/$First?OpenDocument\n\nOptional
+  arguments for OpenDocument\nSee the Optional outline arguments sidebar for outline
+  arguments that apply to both OpenDocument and OpenPage.\n\nEditDocument\nSyntax:\nhttp://Host/Database/View/Document/?EditDocument\n\nExample:\nhttp://www.acme.com/products.nsf/By+Part+Number/PC156?EditDocument\n\nNote:
+  Rich text fields containing hidden text will be visible to Web users with editor
+  access to documents.\n\nSaveDocument\nThe SaveDocument command is used as the POST
+  action of a document being edited. Domino updates the document with the new data
+  entered in the form.\n\nSyntax:\nhttp://Host/Database/View/Document?SaveDocument\n\nExample:\nhttp://www.acme.com/products.nsf/a0cefa69d38ad9ed8525631b006582d0/4c95c7c6700160e2852563df0078cfeb?SaveDocument\n\nDeleteDocument\nSyntax:\nhttp://Host/Database/View/Document?DeleteDocument\n\nExample:\nhttp://www.acme.com/products.nsf/By+Part+Number/PC156?DeleteDocument\n\n\n\n\tBack
+  to top\n\n\nOpening documents by key\n\nThe following commands allow you to open
+  a document by key, or to generate a URL to link to a document by key.\n\nUsing Domino
+  URLs to access a document\nTo open a document by key, create a sorted view with
+  the sort on the first key column. Then you can use a URL to open the document:\n\nSyntax:\nhttp://Host/DatabaseName/View/DocumentName?OpenDocument\n\nWhere
+  View is the name of the view, and DocumentName is the string, or key, that appears
+  in the first sorted or categorized column of the view. Use this syntax to open,
+  edit, or delete documents, and to open attached files. Domino returns the first
+  document in the view whose column key exactly matches the DocumentName.\n\nThere
+  may be more than one matching document; Domino always returns the first match. The
+  key must match completely for Domino to return the document. However, the match
+  is not case-sensitive or accent-sensitive.\n\nNote that View can be a view UNID
+  or view name. In addition, the implicit form of any of these commands will work
+  when appropriate. (EditDocument and DeleteDocument must be explicit commands.)\n\nExamples:\nhttp://www.acme.com/register.nsf/Registered+Users/Jay+Street?OpenDocument\n\nLDD
+  Today uses a document key view called Lookup. For example, the URL for this article
+  is:\nhttp://www.lotus.com/ldd/today.nsf/lookup/Domino_URL_cheat_sheet?OpenDocument\n\nTo
+  get a closer look at the Lookup view, you can download the LDD Today design template
+  from the Sandbox here on LDD.\n\nUsing Domino URLs to access attachments\nTo access
+  a file attachment using a Domino URL, you must know the view name, the document
+  name, and the file attachment name. Domino generates an URL for file attachments
+  when it saves the documents to which the files are attached. These URLs end with
+  the file name of the attachment.\n\nSyntax:\nhttp://Host/DatabaseName/View/DocumentName/$File/fileattachmentname\n\nWhere
+  View is either the view name or the view ID, and DocumentName is the document name
+  or ID. $File is a special identifier that indicates an attachment on a document.
+  Fileattachmentname is the file name of the attachment.\n\nExamples:\nhttp://www.acme.com/products.nsf/Documents/$File/Spec_sheet.pdf\n\n\tBack
+  to top\n\n\nOpening pages\n\nThe following command will open a page element using
+  its name, UNID, or Note ID.\n\nOpenPage\nSyntax:\nhttp://Host/Database/PageName?OpenPage\nhttp://Host/Database/PageUNID?OpenPage\n\nExamples:\nhttp://www.acme.com/discussion.nsf/products?OpenPage\nhttp://www.acme.com/discussion.nsf/35AE8FBFA573336A852563D100741784?OpenPage\n\nOptional
+  arguments for OpenPage\nSee the Optional outline arguments sidebar for outline arguments
+  that apply to both OpenDocument and OpenPage.\n\nOpening resources\n\nThe following
+  commands open image and file resources stored in an database.\n\nOpenImageResource\nOpens
+  graphics stored as image resources in a database.\n\nSyntax:\nhttp://Host/Database/ImageResourceName?OpenImageResource\n\nWhere
+  ImageResourceName is the file name of the image resource that you want to open.\n\nExample:\nhttp://www.acme.com/discussion.nsf/banner.gif?OpenImageResource\n\nOpenFileResource\nOpens
+  a file resource stored in a database.\n\nSyntax:\nhttp://Host/Database/FileResourceName?OpenFileResource\n\nWhere
+  FileResourceName is the name of the file that you want to open.\n\nExample:\nhttp://www.acme.com/discussion.nsf/index.js?OpenFileResource\n\nOpening
+  attachments, image files, and OLE objects\n\nThe ?OpenElement command opens attachments,
+  image files, and OLE objects within a document.\n\nUsing ?OpenElement with file
+  attachments\nSyntax:\nhttp://Host/Database/View/Document/$File/Filename?OpenElement\n\nExample:\nhttp://www.acme.com/lproducts.nsf/By+Part+Number/SN156/$File/spec.txt?OpenElement\n\nNote
+  that if more than one attached file has the same name, the URL includes both the
+  \"internal\" file name as well as the external name. Since the internal file name
+  is not easily determined, make sure all attached files have unique names.\n\nDomino
+  treats all file attachment OpenElement commands as implicit commands, because some
+  browsers require that the URL end with the attached file name. For example:\nhttp://Host/Database/View?Document/$File/FileName\n\nUsing
+  ?OpenElement with image files\nSyntax:\nhttp://Host/Database/View/Document/FieldName/FieldOffset?OpenElement&FieldElemFormat=ImageFormat\n\nFieldOffset
+  is the field number and the byte offset into the field. ImageFormat is either GIF
+  or JPG. If the FileElemFormat is not entered, Domino assumes the image file format
+  is GIF.\n\nExample:\nhttp://www.acme.com/leads.nsf/bbe63a6b9d895dc6852567d600658601/fe5138bef254cf3a852569fc00724b69/Body/0.18AA?OpenElement&FieldElemFormat=jpg\n\nUsing
+  Open Element with OLE Objects\nSyntax:\nhttp://Host/Database/View/Document/FieldName/FieldOffset/$OLEOBJINFO/FieldOffset/obj.ods?OpenElement\n\nNote
+  that the current URL syntax for referencing images and objects in Notes documents-specifically
+  the FieldOffset-makes it impractical to create these URLs manually. As an alternative,
+  you may paste the actual bitmap or object in place of the reference, create URL
+  references to files stored in the file system, or attach the files to the documents.\n\nOpening
+  user Web preferences\n\nThe following command opens Web preferences, a Domino 6
+  feature that lets users set time zone and regional preferences. For more information
+  about Web preferences, see the LDD Today article, \"Making Web browsers look smarter
+  with Domino 6.\"\n\nThis URL command is not supported by Domino 5 servers.\n\nOpenPreferences\nSyntax:\nhttp://Host/$Preferences.nsf?OpenPreferences&Argument\n\nWhere:\n\n
+  \   * Host indicates a server or a domain\n    * $Preferences.nsf is a virtual database
+  that \"resides\" on the Domino 6 server\n    * ?OpenPreferences displays the default
+  frameset of the virtual database\n    * &Argument is an optional argument that you
+  can specify to open a page instead of the frameset\n\nThe $Preferences.nsf database
+  resides at the root of each server.\n\nExample:\nhttp://www.acme.com/$Preferences?OpenPreferences\n\nOptional
+  argument for OpenPreferences\nYou can append the following optional arguments to
+  the ?OpenPreferences command to open a specfiied page rather than the Web preferences
+  default frameset.\nPreferenceType= value\n\nWhere value can be one of the following
+  values described in the table:\nValue \tDescription\nMenu\tDisplays the Menu page
+  which provides links to the Time Zone and Regional preferences page.\nTimeZone\tDisplays
+  the Time Zone preferences page.\nRegional\tDisplays the Regional preferences page.\n\nExamples:\nhttp://www.acme.com/$Preferences?OpenPreferences&PreferenceType=Menu\nhttp://www.acme.com/$Preferences?OpenPreferences&PreferenceType=TimeZone\nhttp://www.acme.com/$Preferences?OpenPreferences&PreferenceType=Regional\n\nCreating
+  search queries\n\nSearch-related URLs are available for performing view, multiple-database,
+  and domain searches. Typically you define a URL that displays an input form-either
+  a customized search form or the default search form-to let users define their own
+  searches, but you may also define a URL that performs text searches without user
+  input. Both input and results forms may be customized.\n\nSearchDomain\nUse SearchDomain
+  URLs for text searches across a domain. The search input form is opened with the
+  OpenForm command by name or universal ID. For search results, the results template
+  is specified as part of the URL. If no template is found, then the default template
+  form, $$SearchDomainTemplate, is substituted. If $$SearchDomainTemplate is not found,
+  an error will be returned. If no results are returned, the value of the $$ViewBody
+  field remains the same.\n\nSyntax:\nhttp://Host/Database/TemplateForm?SearchDomain&ArgumentList\n\nWhere:\n\n
+  \   * TemplateForm is an optional argument that calls the search results form.\n
+  \   * ArgumentList is a list of optional arguments.\n\nExample:\nhttp://www.acme.com/domainsearch.nsf/SearchForm?SearchDomain\n\nSearchSite\nUse
+  SearchSite URLs for text searches in multiple databases. Because the URL requires
+  the name of a search site database, be sure to create one before using a SearchSite
+  URL.\n\nSyntax:\nhttp://Host/Database/$SearchForm?SearchSite&ArgumentList\n\nWhere
+  $SearchForm and ArgumentList are optional arguments.\n\nExample:\nhttp://www.acme.com/searchsite.nsf/$SearchForm?SearchSite\n\nSearchView\nUse
+  SearchView URLs to limit a search to documents displayed in one database view. This
+  URL is useful for views that display all documents (so you can have a full-database
+  search) or for views in which you can predict what users need to see, such as all
+  documents whose status is \"Completed.\"\n\nSyntax:\nhttp://Host/Database/View/$SearchForm?SearchView&ArgumentList\n\nWhere
+  $SearchForm and ArgumentList are optional arguments. The special identifier $SearchForm
+  indicates that Domino will present a search view form for search input. If this
+  identifier is provided, the ArgumentList is ignored. If this identifier is absent,
+  a default form will be generated on the fly based on the contents of the search.htm
+  file located on the server. The default form generated by the server does not support
+  paged results.\n\nExample:\nhttp://www.acme.com/products.nsf/By+Product+Number/$SearchForm?SearchView\n\nOptional
+  arguments for SearchSite, SearchView, and SearchDomain\n\n$SearchForm\n$SearchForm
+  is a special identifier indicating a custom search form that Domino displays. When
+  this argument is specified, Domino ignores all arguments that follow it. If this
+  argument is not specified, Domino displays a default search form based on the search.htm
+  file on the server.\nQuery= string\n\nWhere string is the search string.\nCount=
+  n\n\nWhere n is the number of results to display on each page until the SearchMax
+  has been reached. For example Count=10 will display 10 results per page.\nScope=[0,1,2]\n\nWhere
+  1=Notes databases only, 2=file system only, 0=both. The default value is 0. This
+  argument should only be used with the SearchDomain command.\nSearchEntry= formName\n\nWhere
+  formName is the name of the form to use for the results of a domain search. The
+  default argument is \"ResultEntry,\" which supports all of the pre-defined results
+  fields specified in the ArgumentList. This argument is valid for SearchDomain only
+  and should not be used for SearchSite or SearchView.\nSearchFuzzy=[TRUE,FALSE]\n\nIndicate
+  TRUE for fuzzy search. The default is FALSE.\nSearchOrder=[1,2,3,4]\n\nIndicate
+  1 to \"Sort by relevance\", 2 to \"Sort by date ascending\", 3 to \"Sort by date
+  descending.\" The default is 1. SearchView also supports a SearchOrder value of
+  4 to \"Keep current order\", which sorts the resulting set of documents in the order
+  in which they appear in the view.\nSearchMax= n\n\nWhere n is the maximum number
+  of entries returned. The default value is determined by the server.\nSearchWV=[TRUE,
+  FALSE]\n\nWhere TRUE = include word variants in the search. The default value is
+  FALSE.\nStart= n\n\nWhere n is the number corresponding to the document that appears
+  first in your list of results. For example, Start=10 begins your list of results
+  with the 10th document found in the search. Start=0 means that paged results will
+  not be returned.\n\nYou can use the Start and Count arguments with the SearchView
+  or SearchSite URLs as well as with the search results page to display search results
+  page-by-page. The Start argument specifies which result appears first in the search
+  results list. The Count argument determines the number of results displayed on the
+  screen. For instance, if you specify Start=1 and Count=10, the search results begin
+  with the first result and displays the next ten results on the screen. If results
+  extend beyond ten, you can use button or hotpsots to navigate the search results
+  pages.\n\nFor more information about creating buttons or hotspots for the Start
+  and Count arguments, see the Domino Designer 6 Help.\n\nExamples:\nhttp://www.acme.com/welcome.nsf/?SearchSite&Query=product+info+requests&SearchOrder=2
+  &SearchMax=30&SearchWV=TRUE&SearchEntry=\"myResultsForm\"\n\nhttp://www.acme.com/products.nsf/By+Product+Number/?SearchView&Query=PC156&SearchOrder=3&SearchMax=1&SearchFuzzy=TRUE&SearchWV=FALSE\n\nRequiring
+  authentication\n\nAppend the following command to any Domino URL to force user authentication
+  regardless of the database access control list. This ensures that anonymous Web
+  users who weren't initially prompted for a name and password when they entered the
+  site are required to supply a name and password to complete tasks that require user
+  identity.\n\nLogin\nSyntax:\nhttp://Host/Directory/Database?OpenDatabase&Login\n\nExamples:\nhttp://www.acme.com/sales/leads.nsf?OpenDatabase&Login\n\nProcess
+  SSL certificates\n\nThe following commands automate the request and receipt of Secure
+  Sockets Layer (SSL) certificates stored in a database.\n\nOpenForm with SpecialAction
+  argument\nSyntax:\nhttp://Host/Database/FormName?OpenForm&SpecialAction=specialActionField\n\nWhere
+  specialActionField is the name of an editable text field on the form whose value
+  contains a predefined command. To use the field with SSL certificates, use one of
+  the following certificate request commands:\n\n    * \"SubmitCert\"\n    * \"ServerRequest\"\n
+  \   * \"ServerPickup\"\n\nExamples:\nhttp://www.acme.com/certs.nsf/UserCertificateRequest?OpenForm&SpecialAction=SubmitCert\nhttp://www.acme.com/certs.nsf/ServerCertificateRequest?OpenForm&SpecialAction=ServerRequest\nhttp://www.acme.com/certs.nsf/Certificate?OpenForm&SpecialAction=ServerPickup\n\nSubmitCert\nThe
+  SubmitCert command creates a User Certificate document in the specified database,
+  using the form specified in the TranslateForm argument.\n\nSyntax:\nhttp://Host/Database/ResultForm?RequestCert&Command=SubmitCert&TranslateForm=TranslationFormName\n\nWhere:\n\n
+  \   * ResultForm is a form in the specified database that displays information about
+  the processed request.\n    * TranslationFormName represents a form in the database
+  that contains fields to hold certificate information.\n\nExample:\nhttp://www.acme.com/certs.nsf/CertificateProcessed?RequestCert&Command=SubmitCert&TranslateForm=Certificate&TranslateForm=Certificate\n\nOptional
+  and required fields\nThe SubmitCert command requires a translation form with a field
+  named Certificate. Domino saves information about the certificate subject and issuer
+  in the document if the form contains fields with these names:\n\n    * CommonName\n
+  \   * Org\n    * OrgUnit\n    * Locality\n    * State\n    * Country\n    * IssuerCommonName\n
+  \   * IssuerOrg\n    * IssuerOrgUnit\n    * IssuerLocality\n    * IssuerState\n
+  \   * IssuerCountry\n\nServerRequest\nThe ServerRequest command creates a Server
+  Certificate Request document in the specified database, using the form specified
+  in the TranslateForm argument.\n\nSyntax:\nhttp://Host/Database/MessageForm?RequestCert&Command=ServerRequest&TranslateForm=TranslationFormName\n\nWhere
+  ResultForm is a form in the specified database that displays information about the
+  processed request in the user's browser after a successful submission. TranslationFormName
+  represents a form in the database that contains fields to hold certificate information.\n\nExample:\nhttp://www.acme.com/certs.nsf/CertificateProcessed?RequestCert&Command=ServerRequest&TranslateForm=Certificate&TranslateForm=Certificate\n\nOptional
+  and required fields\nThe ServerRequest command requires a translation form with
+  a field named Certificate. Domino saves information about the server request in
+  the document if the form contains fields with these names:\n\n    * CommonName\n
+  \   * Org\n    * OrgUnit\n    * Locality\n    * State\n    * Country\n\nSpecify
+  a character encoding\n\nTo specify a character encoding for a design element, append
+  the charset= MIME charset argument to the end of any URL command. You can use this
+  argument with any design element or Notes object, including agents, folders, views,
+  databases, and so on. This argument returns a form or page in the specified language
+  or character set overriding the Web browser's preferred language setting as well
+  as the $$HTMLContentLang field of a form. To use the charset=MIME charset argument,
+  you must include it in your application. The Domino server does not generate this
+  argument automatically.\n\nSyntax:\nhttp://Host/Form?OpenForm&charset= MIME charset\n\nWhere
+  Form is either the form name or ID to open and MIME charset indicates the character
+  encoding applied to the form.\n\nDomino recognizes a limited number of character
+  set names. If Domino does not recognize a specified character set, it defaults to
+  the character set specified in the Server document.\n\nExample:\nhttp://www.acme.com/products.nsf/Product?Openform&charset=ISO-2022-JP\n\nThe
+  previous example opens the Product form with a Japanese character encoding.\n\n\nResources\n\n
+  \   * Syntax Guidelines sidebar\n\n    * Optional outline arguments sidebar\n\n
+  \   * An alternative to the OpenServer URL command\n\n    * Making Web browsers
+  look smarter with Domino 6\n\n\n\nAbout the author\n\n\t\t\n\nTara joined the Lotus
+  Developer Domain as a Content Developer for LDD Today in April 2002. Prior to joining
+  us, she was a senior user assistance writer for the Notes User Assistance Group.
+  She documented a number of products for the web applications, streaming media, and
+  other development teams. She also worked on the Documentation Library and occasionally
+  freelanced for Iris Today. Tara holds a B.A. and an M.A. in English."

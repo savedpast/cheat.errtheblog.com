@@ -1,0 +1,125 @@
+---
+radrails_ruby: ! "-- RadRails Ruby Cheat Sheet -- \nall\nall? { |${e}| ${cursor} }\n\nam\nalias_method
+  :${new_name}, :${old_name}\n\nany\nany? { |${e}| ${cursor} }\n\napp\nif __FILE__
+  == $$PROGRAM_NAME\n\t${cursor}\nend\n\nArray\nArray.new(${10}) { |${i}|${cursor}
+  }\n\nart\nassert_redirected_to :action => \"${index}\"\n\nas\nassert(${test}, \"${message}\")\n\nasa\nassert(${var}
+  = assigns(:${var}), \"@${var} should be defined\")\n\nase\nassert_equal(${expected},
+  ${actual})\n\nasid\nassert_in_delta(${expected_float}, ${actual_float}, ${20})\n\nasio\nassert_instance_of(${ExpectedClass},
+  ${actual_instance})\n\nasko\nassert_kind_of(${ExpectedKind}, ${actual_instance})\n\nasm\nassert_match(/${expected_pattern}/,
+  ${actual_string})\n\nasn\nassert_nil(${instance})\n\nasne\nassert_not_equal(${unexpected},
+  ${actual})\n\nasnm\nassert_no_match(/${unexpected_pattern}/, ${actual_string})\n\nasnn\nassert_not_nil(${instance})\n\nasnnv\nassert_not_nil(${var}
+  = assigns(:${var}))\n\nasnr\nassert_nothing_raised(${Exception}) { ${cursor} }\n\nasns\nassert_not_same(${unexpected},
+  ${actual})\n\nasnt\nassert_nothing_thrown { ${cursor} }\n\naso\nassert_operator(${left},
+  :${operator}, ${right})\n\nasr\nassert_raise(${Exception}) { ${cursor} }\n\nasrdt\nassert_redirected_to(${path},
+  '${message}')\n\nasre\nassert_response :${success}\n\nasrt\nassert_respond_to(${object},
+  :${method})\n\nass\nassert_same(${expected}, ${actual})\n\nass\nassert_send([${object},
+  :${message}, ${args}])\n\nast\nassert_throws(:${expected}) { ${cursor} }\n\nb\n=begin
+  rdoc\n\t${cursor}\n=end\n\nbegin\nbegin\n\t${paste}\nrescue ${Exception} => ${e}\n\t${cursor}\nend\n\n\nbm\nTESTS
+  = ${10_000}\nBenchmark.bmbm(${10}) do |results|\n  ${cursor}\nend\n\nbt\nbelongs_to
+  :${object}\n\nbtf\nbelongs_to :${object}, :class_name => '${class_name}', :foreign_key
+  => :${foreign_key}\n\ncase\ncase ${object}\nwhen ${condition}\n\t${cursor}\nend\n\ncl\nclassify
+  { |${e}| ${cursor} }\n\ncla\nclass ${ClassName} < DelegateClass(${ParentClass})\n\tdef
+  initialize${1}\n\t\tsuper(${del_obj})\n\t\t\n\t\t${cursor}\n\tend\n\t\n\t\nend\n\ncla\nclass
+  ${ClassName} < ${ParentClass}\n\tdef initialize${1}\n\t\t${cursor}\n\tend\n\t\n\t\nend\n\ncla\nclass
+  ${ClassName} < Struct.new(:${attr_names})\n\tdef initialize(*args)\n\t\tsuper\n\t\t\n\t\t${cursor}\n\tend\n\t\n\t\nend\n\ncla\nclass
+  ${ClassName}\n\t${cursor}\nend\n\ncla\nclass ${ClassName}\n\tdef initialize${1}\n\t\t${cursor}\n\tend\n\t\n\t\nend\n\ncla\nclass
+  << ${self}\n\t${cursor}\nend\n\ncla\nclass ${BlankSlate}\n\tinstance_methods.each
+  { |meth| undef_method(meth) unless meth =~ /\\A__/ }\n\t\n\tdef initialize${var}\n\t\t@${delegate}
+  = ${delegate_object}\n\t\t\n\t\t${cursor}\n\tend\n\t\n\tdef method_missing(meth,
+  *args, &block)\n\t\t@${delegate}.send(meth, *args, &block)\n\tend\n\t\n\t\nend\n\nclafn\nsplit(\"::\").inject(Object)
+  { |par, const| par.const_get(const) }\n\nclass\nclass ${ClassName}\n\t${cursor}\nend\n\ncol\ncollect
+  { |${e}| ${cursor} }\n\ncollect\ncollect { |${element}| ${element}.${cursor} }\n\nComp\ninclude
+  Comparable\n\ndef <=>(other)\n\t${cursor}\nend\n\ndee\nMarshal.load(Marshal.dump(${obj_to_copy}))\n\ndef\ndef
+  ${method_name}\n\t${cursor}\nend\n\ndefd\ndef_delegator :${del_obj}, :${del_meth},
+  :${new_name}\n\ndefds\ndef_delegators :${del_obj}, :${del_methods}\n\ndeff\ndef
+  ${method_name}\n\t${cursor}\nend\n\ndefs\ndef self.${class_method_name}\n\t${cursor}\nend\n\ndeft\ndef
+  test_${case_name}\n\t${cursor}\nend\n\ndeli\ndelete_if { |${e}| ${cursor} }\n\ndet\ndetect
+  { |${e}| ${cursor} }\n\nDir\nDir.glob(${glob}) { |${file}| ${cursor} }\n\ndo\ndo\n\t${cursor}\nend\n\ndoo\ndo
+  |${object}|\n\t${cursor}\nend\n\ndow\ndownto(${0}) { |${n}|${cursor} }\n\nea\neach
+  { |${e}| ${cursor} }\n\neab\neach_byte { |${byte}| ${cursor} }\n\neac\neach_char
+  { |${chr}| ${cursor} }\n\neac\neach_cons(${2}) { |${group}| ${cursor} }\n\neach\neach
+  { |${element}| ${element}.${cursor} }\n\neach_with_index\neach_with_index { |${element},
+  ${idx}| ${element}.${cursor} }\n\neai\neach_index { |${i}| ${cursor} }\n\neak\neach_key
+  { |${key}| ${cursor} }\n\neal\neach_line${1} { |${line}| ${cursor} }\n\neap\neach_pair
+  { |${name}, ${val}| ${cursor} }\n\neas\neach_slice(${2}) { |${group}| ${cursor}
+  }\n\neav\neach_value { |${val}| ${cursor} }\n\neawi\neach_with_index { |${e}, ${i}|
+  ${cursor} }\n\nelsif\nelsif ${condition}\n\t${cursor}\n\nEnum\ninclude Enumerable\n\ndef
+  each(&block)\n\t${cursor}\nend\n\nfet\nfetch(${name}) { |${key}|${cursor} }\n\nfil\nfill(${range})
+  { |${i}|${cursor} }\n\nFile\nFile.foreach(${file}) { |${line}| ${cursor} }\n\nfin\nfind
+  { |${e}| ${cursor} }\n\nfina\nfind_all { |${e}| ${cursor} }\n\nfl\nflunk(\"${message}\")\n\nflao\ninject(Array.new)
+  { |${arr}, ${a}| ${arr}.push(*${a}) }\n\nflash\nflash[:${notice}] = \"${Successfully}\"${cursor}\n\nforin\nfor
+  ${element} in ${collection}\n\t${element}.${cursor}\nend\n\nForw\nextend Forwardable\n\ngre\ngrep(${pattern})
+  { |${match}| ${cursor} }\n\ngsu\ngsub(/${pattern}/) { |${match}|${cursor} }\n\nhabtm\nhas_and_belongs_to_many
+  :${object}\n\nHash\nHash.new { |${hash}, ${key}| ${hash}[${key}] = ${cursor} }\n\nhm\nhas_many
+  :${models}\n\nhmf\nhas_many :${models}, :class_name => '${class_name}', :foreign_key
+  => :${foreign_key}\n\nhmt\nhas_many :${models}, :through => :${join_models}\n\nho\nhas_one
+  :${model}\n\nhof\nhas_one :${model}, :class_name => '${class_name}', :foreign_key
+  => :${foreign_key}\n\nhp\n:${key} => ${value}\n\nif\nif ${condition}\n\t${cursor}\nend\n\nife\nif
+  ${condition}\n\t${2}\nelse\n\t${3}\nend\n\ninj\ninject(${init}) { |${mem}, ${var}|
+  ${cursor} }\n\ninject\ninject(${object}) { |${injection}, ${element}| ${4} }${cursor}\n\nlam\nlambda
+  { |${args}|${cursor} }\n\nlog\nlogger.debug \"${message}\"${cursor}\n\nloge\nlogger.error
+  \"${message}\"${cursor}\n\nlogf\nlogger.fatal \"${message}\"${cursor}\n\nlogi\nlogger.info
+  \"${message}\"${cursor}\n\nlogw\nlogger.warn \"${message}\"${cursor}\n\nmac\nadd_column
+  :${table}, :${column}, :${string}\n\nmap\nmap { |${e}| ${cursor} }\n\nmapwi\nenum_with_index.map
+  { |${e}, ${i}| ${cursor} }\n\nmax\nmax { |a, b| ${cursor} }\n\nmcc\nt.column :${title},
+  :${string}${cursor}\n\nmccc\nt.column :${title}, :${string}\nmccc${cursor}\n\nmct\ncreate_table
+  :${table} do |t|\n    ${cursor}\nend\n\nMd\nFile.open(${dump}, \"w\") { |${file}|
+  Marshal.dump(${obj}, ${file}) }\n\nmdt\ndrop_table :${table}\n${cursor}\n\nmin\nmin
+  { |a, b| ${cursor} }\n\nMl\nFile.open(${dump}) { |${file}| Marshal.load(${file})
+  }\n\nmm\ndef method_missing(meth, *args, &block)\n\t${cursor}\nend\n\nmnc\nrename_column
+  :${column}, :${new_column}\n\nmnt\nrename_table :${table}, :${new_name}${cursor}\n\nmod\nmodule
+  ${ModuleName}\n\tmodule ClassMethods\n\t\t${cursor}\n\tend\n\t\n\textend ClassMethods\n\t\n\tdef
+  self.included(receiver)\n\t\treceiver.extend(ClassMethods)\n\tend\n\t\n\t\nend\n\nmod\nmodule
+  ${ModuleName}\n\t${cursor}\nend\n\nmod\nmodule ${ModuleName}\n\tmodule_function\n\t\n\t${cursor}\nend\n\nmrc\nremove_column
+  :${table}, :${column}\n\nope\nopen(${pipe}) { |${io}| ${cursor} }\n\nopt\nopts.on(
+  \"-${o}\", \"--${option}\"${1},\n         \"${description}\" ) do |${opt}|\n\t${cursor}\nend\n\noptp\nrequire
+  \"optparse\"\nrequire \"ostruct\"\n\noptions = OpenStruct.new(${default})\n\nARGV.options
+  do |opts|\n\topts.banner = \"Usage:  #{File.basename($$PROGRAM_NAME)}  [OPTIONS]${1}\"\n\t\n\topts.separator
+  \"\"\n\topts.separator \"Specific Options:\"\n\t\n\t${cursor}\n\t\n\topts.separator
+  \"Common Options:\"\n\t\n\topts.on( \"-h\", \"--help\",\n\t         \"Show this
+  message.\" ) do\n\t\tputs opts\n\t\texit\n\tend\n\t\n\tbegin\n\t\topts.parse!\n\trescue\n\t\tputs
+  opts\n\t\texit\n\tend\nend\n\n\npar\npartition { |${e}| ${cursor} }\n\nparams\nparams[:${id}]\n\npatfh\nFile.join(File.dirname(__FILE__),
+  *%w[${here}])\n\nPn\nPStore.new(${file_name})\n\nra\nrender :action => \"${action}\"\n\nral\nrender
+  :action => \"${action}\", :layout => \"${layoutname}\"\n\nran\nsort_by { rand }\n\nrb\n#!/usr/bin/env
+  ruby -w\n\n\n\nrcea\nrender_component :action => \"${index}\"\n\nrcec\nrender_component
+  :controller => \"${items}\"\n\nrceca\nrender_component :controller => \"${items}\",
+  :action => \"${index}\"\n\nrdb\nRAILS_DEFAULT_LOGGER.debug \"${message}\"${cursor}\n\nrea\nredirect_to
+  :action => \"${index}\"\n\nreai\nredirect_to :action => \"${show}\", :id => ${item}\n\nrec\nredirect_to
+  :controller => \"${items}\"\n\nreca\nredirect_to :controller => \"${items}\", :action
+  => \"${list}\"\n\nrecai\nredirect_to :controller => \"${items}\", :action => \"${show}\",
+  :id => ${item}\n\nrej\nreject { |${e}| ${cursor} }\n\nreject\nreject { |${element}|
+  ${element}.${cursor} }\n\nrep\nresults.report(\"${name}:\") { TESTS.times { ${cursor}
+  } }\n\nreq\nrequire \"${cursor}\"\n\nreve\nreverse_each { |${e}| ${cursor} }\n\nrf\nrender(:file
+  => \"${filepath}\")\n\nrfu\nrender(:file => \"${filepath}\", :use_full_path => ${false})\n\nri\nrender(:inline
+  => \"${hello}\")\n\nril\nrender(:inline => \"${hello}\", :locals => { ${name} =>
+  \"${value}\"${4} })\n\nrit\nrender(:inline => \"${hello}\", :type => ${rxml})\n\nrl\nrender(:layout
+  => \"${layoutname}\")\n\nrn\nrender(:nothing => ${true})\n\nrns\nrender(:nothing
+  => ${true}, :status => ${401})\n\nro\nattr_reader :${attr_names}\n\nrp\nrender(:partial
+  => \"${item}\")\n\nrpc\nrender(:partial => \"${item}\", :collection => ${items})\n\nrpl\nrender(:partial
+  => \"${item}\", :locals => { :${name} => ${value} })\n\nrpo\nrender(:partial =>
+  \"${item}\", :object => ${object})\n\nrps\nrender(:partial => \"${item}\", :status
+  => ${500})\n\nrt\nrender(:text => \"${render}\")\n\nrtl\nrender(:text => \"${render}\",
+  :layout => \"${layoutname}\")\n\nrtlt\nrender(:text => \"${render}\", :layout =>
+  ${true})\n\nrts\nrender(:text => \"${render}\", :status => ${401})\n\nrw\nattr_accessor
+  :${attr_names}\n\nsca\nscan(/${pattern}/) { |${match}| ${cursor} }\n\nsel\nselect
+  { |${e}| ${cursor} }\n\nselect\nselect { |${element}| ${element}.${2} }${cursor}\n\nsession\nsession[:${User}]\n\nsin\nclass
+  << self; self end\n\nsor\nsort { |a, b| ${cursor} }\n\nsorb\nsort_by { |${e}| ${cursor}
+  }\n\nste\nstep(${2}) { |${n}|${cursor} }\n\nsub\nsub(/${pattern}/) { |${match}|${cursor}
+  }\n\ntc\nrequire \"test/unit\"\n\nrequire \"${library_file_name}\"\n\nclass Test${amp}
+  < Test::Unit::TestCase\n\tdef test_${case_name}\n\t\t${cursor}\n\tend\nend\n\ntim\ntimes
+  { |${n}|${cursor} }\n\ntra\ntransaction${1} { ${cursor} }\n\nts\nrequire \"test/unit\"\n\nrequire
+  \"tc_${test_case_file}\"\nrequire \"tc_${test_case_file}\"\n\n\nuni\nARGF.each_line${1}
+  do |${line}|\n\t${cursor}\nend\n\nunless\nunless ${condition}\n\t${cursor}\nend\n\nuntil\nuntil
+  ${condition}\n\t${cursor}\nend\n\nupt\nupto(${0}) { |${n}|${cursor} }\n\nusai\nif
+  ARGV.${1}\n  puts \"Usage:  #{$$PROGRAM_NAME} ${ARGS_GO_HERE}\"\n  exit\nend\n\nusau\nunless
+  ARGV.${1}\n  puts \"Usage:  #{$$PROGRAM_NAME} ${ARGS_GO_HERE}\"\n  exit\nend\n\nva\nvalidates_associated
+  :${attribute}\n\nvc\nvalidates_confirmation_of :${attribute}\n\nve\nvalidates_exclusion_of
+  :${attribute}\n\nverify\nverify :only => [:${1}], :session => :user, :params =>
+  :id, :redirect_to => {:action => '${index}'}\n\n\nverify\nverify :only => [:${1}],
+  :method => :post, :render => {:status => 500, :text => \"use HTTP-POST\"}\n\n\nvl\nvalidates_length_of
+  :${attribute}, :within => ${20}\n\nvp\nvalidates_presence_of :${attribute}\n\nvpif\nvalidates_presence_of
+  :${attribute}, :if => proc { |obj| ${condition} }}\n\nvu\nvalidates_uniqueness_of
+  :${attribute}\n\nwhen\nwhen ${condition}\n\t${cursor}\n\nwhile\nwhile ${condition}\n\t${cursor}\nend\n\nwo\nattr_writer
+  :${attr_names}\n\nYd\nFile.open(${yaml}, \"w\") { |${file}| YAML.dump(${obj}, ${file})
+  }\n\nyields\n :yields: ${arguments}\n\nYl\nFile.open(${yaml}) { |${file}| YAML.load(${file})
+  }\n\nzip\nzip(${enums}) { |${row}| ${cursor} }"

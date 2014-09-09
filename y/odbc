@@ -1,0 +1,2 @@
+---
+odbc: ! "Examine:\n  $ tsql -C\n  $ odbcinst -j\n\nList DSNs:\n  $ odbcinst -q -s"

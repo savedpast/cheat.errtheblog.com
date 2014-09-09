@@ -1,0 +1,5 @@
+---
+usermod: ! "usermod (adding use to group in Linux)\r\n======================================\r\n\r\nAdd
+  A New User To Secondary Group\r\n---------------------------------\r\n\r\n    useradd
+  -G {group-name} username\r\n\r\nAdd a existing user to existing group\r\n-------------------------------------\r\n\r\n
+  \   usermod -a -G wheel tony\r\n\r\nCheck:\r\n\r\n    id tony\r\n"

@@ -1,0 +1,44 @@
+---
+bash: ! "!! - Last command\r\n  !foo - Run most recent command starting with 'foo...'
+  (ex. !ps, !mysqladmin)\r\n  !foo:p - Print command that !foo would run, and add
+  it as the latest to command history\r\n  !$ - Last 'word' of last command ('/path/to/file'
+  in the command 'ls -lAFh /path/to/file', '-uroot' in 'mysql -uroot')\r\n  !$:p -
+  Print word that !$ would substitute\r\n  !* - All but first word of last command
+  ('-lAFh /path/to/file' in the command 'ls -lAFh /path/to/file', '-uroot' in 'mysql
+  -uroot')\r\n  !*:p - Print words that !* would substitute\r\n\r\n  ^foo^bar - Replace
+  'foo' in last command with 'bar', print the result, then run. ('mysqladmni -uroot',
+  run '^ni^in', results in 'mysqladmin -uroot')\r\n\r\n  {a,b,c} passes words to the
+  command, substituting a, b, and c sequentially (`cp file{,.bk}` runs `cp file file.bk`)\r\n\r\n
+  \ Ctrl + a - Jump to the start of the line\r\n  Ctrl + b - Move back a char\r\n
+  \ Ctrl + c - Terminate the command\r\n  Ctrl + d - Delete from under the cursor\r\n
+  \ Ctrl + e - Jump to the end of the line\r\n  Ctrl + f - Move forward a char\r\n
+  \ Ctrl + k - Delete to EOL\r\n  Ctrl + l - Clear the screen\r\n  Ctrl + r - Search
+  the history backwards\r\n  Ctrl + R - Search the history backwards with multi occurrence\r\n
+  \ Ctrl + t - Transpose the current char with the previous\r\n  Ctrl + u - Delete
+  backward from cursor\r\n  Ctrl + w - Delete backward a word\r\n  Ctrl + xx - Move
+  between EOL and current cursor position\r\n  Ctrl + x @ - Show possible hostname
+  completions\r\n  Ctrl + z - Suspend/ Stop the command\r\n  Ctrl + x; Ctrl + e -
+  Edit line into your favorite editor\r\n\r\n  Alt + < - Move to the first line in
+  the history\r\n  Alt + > - Move to the last line in the history\r\n  Alt + ? - Show
+  current completion list\r\n  Alt + * - Insert all possible completions\r\n  Alt
+  + / - Attempt to complete filename\r\n  Alt + . - Yank last argument to previous
+  command\r\n  Alt + b - Move backward\r\n  Alt + c - Capitalize the word\r\n  Alt
+  + d - Delete word\r\n  Alt + f - Move forward\r\n  Alt + l - Make word lowercase\r\n
+  \ Alt + n - Search the history forwards non-incremental\r\n  Alt + p - Search the
+  history backwards non-incremental\r\n  Alt + r - Recall command\r\n  Alt + t - Transpose
+  the current word with the previous\r\n  Alt + u - Make word uppercase\r\n  Alt +
+  back-space - Delete backward from cursor\r\n\r\n  (Here \"2T\" means Press TAB twice)\r\n
+  \ $ 2T - All available commands(common)\r\n  $ (string)2T - All available commands
+  starting with (string)\r\n  $ /2T - Entire directory structure including Hidden
+  one\r\n  $ (dir)2T - Only Sub Dirs inside (dir) including Hidden one\r\n  $ *2T
+  - Only Sub Dirs inside without Hidden one \r\n  $ ~2T - All Present Users on system
+  from \"/etc/passwd\"\r\n  $ $2T - All Sys variables\r\n  $ @2T - Entries from \"/etc/hosts\"\r\n
+  \ $ =2T - Output like ls or dir\r\n  .bash_profile = sourced by login shell, \r\n
+  \ .bashrc = sourced by all shells, \r\n  .bash_aliases = should be sourced by .bashrc\r\n\r\nRun
+  something:\r\n  for i in a b c; do $i 'hello'; done\r\n\r\nDo something on a bunch
+  of files:\r\n  for i in *.rb; do echo \"$i\"; done\r\n\r\nIf syntax:\r\n  if [[
+  -e .ssh ]]; then echo \"hi\"; fi\r\n\r\nNumerical comparison:\r\n  i=0; if (( i
+  <= 1 )); then echo \"smaller or equal\"; else echo \"bigger\"; fi\r\n\r\nfile check
+  flags:\r\n  -e:  file exists\r\n  -f:  regular file (non directory)\r\n  -d:  directory\r\n
+  \ -s:  non-zero file\r\n  -x:  execute permission\r\n\r\nAvoid duplicates in your
+  history:\r\n  export HISTIGNORE=\"&:ls:ls *:[bf]g:exit\"\r\n\r\nmore here:\r\n  http://www.linuxtopia.org/online_books/advanced_bash_scripting_guide/fto.html"

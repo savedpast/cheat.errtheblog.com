@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>knife --help
+knife &lt;subcommand&gt; --help
+
+knife search node &quot;ipaddress:192.168.1.1&quot;
+
+knife bootstrap FQDN -d DISTRO
+distros: centos5-gems, ubuntu10.04-gem
+
+# using sudo and root user
+knife bootstrap FQDN -x ubuntu -P PASSWORD --sudo
+knife bootstrap FQDN --distro DISTRO -x root -P password
+
+# And in this example, we use a private key file:
+knife bootstrap FQDN -x ubuntu -i ~/.ssh/id_rsa --sudo</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

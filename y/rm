@@ -1,0 +1,8 @@
+---
+rm: ! "rm - Remove files.\n        Syntax: rm [<flags>] <file(s)>\n        rm main
+  purpose is to remove files.  It will also take flags that will\n        allow it
+  to remove directories.  Wild cards are allowed as well.\n        Common Flags:\n
+  \               -r - remove listed files and directories plus all files in\n                     those
+  directories plus all sub-dirs and there files in\n                     listed directories,
+  etc..\n                -f - don't ask if you want to remove a file.\n                -i
+  - ask before removing a file."

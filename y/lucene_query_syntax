@@ -1,0 +1,15 @@
+---
+lucene_query_syntax: ! "== Basics  \n\n  term   - a single bare word\n  phrase - \"group
+  of words surrounded by double quotes\"\n\n== Operators\n\n  All operators are in
+  UPPERCASE. \n\n  AND - matches docs where both operands match\n      * cheat AND
+  sheet\n      * cheat AND sheet AND \"ruby gem\"\n\n  OR  - matches docs where either
+  operands match\n      * cheat OR sheet\n      * cheat OR sheet OR \"ruby gem\"\n\n
+  \ NOT - removes docs from result set that match the operand\n      - the NOT operator
+  MUST be used in conjuction with another\n        operation\n      * \"cheat sheet\"
+  NOT lucene\n\n== Grouping\n\n  Grouping is done with left and right parentheses
+  ( ).\n\n  - look for documents that have the words 'cheat' AND 'sheet'\n    but
+  not 'ruby' or 'rails'\n\n  ( cheat AND sheet ) NOT ( ruby OR rails )\n\n\n== Proximity
+  Search\n\n  Apply a tilde '~N' to a phrase.  This finds documents where all\n  the
+  words in the phrase are within N words of each other.\n\n  - find all documents
+  where the words 'cheat' and 'sheet' are\n    within 10 words of each other.\n\n
+  \ \"cheat sheet\"~10"

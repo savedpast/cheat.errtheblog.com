@@ -1,0 +1,233 @@
+---
+vim_gg: ! " a collection of commands / shortcuts for VIM.\r\n this file contains general
+  shortcuts and personal \r\n shortcuts defined by plugins and my vimrc file.\r\n
+  (https://github.com/groenewege/vimrc)\r\n\r\n\r\n\r\n*************\r\n*  GENERAL
+  \ *\r\n*************\r\n\r\n\r\nCURSOR MOVEMENT\r\n===============\r\n\r\nh                   move
+  left\r\nj                   move down\r\nk                   move up\r\nl                   move
+  right\r\nw                   jump by start of words (punctuation considered words)\r\nW
+  \                  jump by words (spaces separate words)\r\ne                   jump
+  to end of words (punctuation considered words)\r\nE                   jump to end
+  of words (no punctuation)\r\nb                   jump backward by words (punctuation
+  considered words)\r\nB                   jump backward by words (no punctuation)\r\nge
+  \                 jump backward to end of words\r\n0                   (zero) start
+  of line\r\n^                   first non-blank character of line\r\n$                   end
+  of line\r\n-                   move line upwards, on the first non blank character\r\n+
+  \                  move line downwards, on the first non blank character\r\n<enter>
+  \            move line downwards, on the first non blank character\r\ngg                  go
+  to first line\r\nG                   go to last line\r\nnG                  go To
+  line n\r\n:n                  go To line n\r\n)                   move the cursor
+  forward to the next sentence.\r\n(                   move the cursor backward by
+  a sentence.\r\n{                   move the cursor a paragraph backwards\r\n}                   move
+  the cursor a paragraph forwards\r\n]]                  move the cursor a section
+  forwards or to the next {\r\n[[                  move the cursor a section backwards
+  or the previous {\r\nCTRL-f              move the cursor forward by a screen of
+  text\r\nCTRL-b              move the cursor backward by a screen of text\r\nCTRL-u
+  \             move the cursor up by half a screen\r\nCTRL-d              move the
+  cursor down by half a screen\r\nH                   move the cursor to the top of
+  the screen.\r\nM                   move the cursor to the middle of the screen.\r\nL
+  \                  move the cursor to the bottom of the screen.\r\nfx                  search
+  line forward for 'x'\r\nFx                  search line backward for 'x'\r\ntx                  search
+  line forward before 'x'\r\nTx                  search line backward before 'x'\r\n\r\n\r\nBOOKMARKS\r\n=========\r\n\r\n:marks
+  \             list all the current marks\r\nma                  make a bookmark
+  named a at the current cursor position\r\n`a                  go to position of
+  bookmark a\r\n'a                  go to the line with bookmark a\r\n`.                  go
+  to the line that you last edited\r\n\r\n\r\nINSERT MODE\r\n===========\r\n\r\ni
+  \                  start insert mode at cursor\r\nI                   insert at
+  the beginning of the line\r\na                   append after the cursor\r\nA                   append
+  at the end of the line\r\no                   open (append) blank line below current
+  line\r\nO                   open blank line above current line\r\nEsc                 exit
+  insert mode\r\n\r\n\r\nEDITING\r\n=======\r\n\r\nr                   replace a single
+  character (does not use insert mode)\r\nR                   enter Insert mode, replacing
+  characters rather than inserting\r\nJ                   join line below to the current
+  one\r\ncc                  change (replace) an entire line\r\ncw                  change
+  (replace) to the end of word\r\nc$                  change (replace) to the end
+  of line\r\ns                   delete character at cursor and substitute text\r\nS
+  \                  delete line at cursor and substitute text (same as cc)\r\nxp
+  \                 transpose two letters (delete and paste, technically)\r\nu                   undo\r\nCTRL-r
+  \             redo\r\n.                   repeat last command\r\n~                   switch
+  case\r\ng~iw                switch case of current word\r\ngUiw                make
+  current word uppercase\r\nguiw                make current word lowercase\r\ngU$
+  \                make uppercase until end of line\r\ngu$                 make lowercase
+  until end of line\r\n>>                  indent line one column to right\r\n<<                  indent
+  line one column to left\r\n==                  auto-indent current line\r\nddp                 swap
+  current line with next\r\nddkp                swap current line with previous\r\n:%retab
+  \            fix spaces / tabs issues in whole file\r\n:r [name]           insert
+  the file [name] below the cursor.\r\n:r !{cmd}           execute {cmd} and insert
+  its standard output below the cursor.\r\n\r\n\r\nDELETING TEXT\r\n=============\r\n\r\nx
+  \                  delete current character\r\nX                   delete previous
+  character\r\ndw                  delete the current word\r\ndd                  delete
+  (cut) a line\r\nD                   delete from cursor to end of line\r\n:[range]d
+  \          delete [range] lines\r\n\r\n\r\nCOPYING AND MOVING TEXT\r\n=======================\r\n\r\nyw
+  \                 yank word\r\nyy                  yank (copy) a line\r\n2yy                 yank
+  2 lines\r\ny$                  yank to end of line\r\np                   put (paste)
+  the clipboard after cursor/current line\r\nP                   put (paste) before
+  cursor/current line\r\n:set paste          avoid unexpected effects in pasting\r\n\r\n:registers
+  \         display the contents of all registers\r\n\"xyw                yank word
+  into register x\r\n\"xyy                yank line into register x\r\n:[range]y x
+  \        yank [range] lines into register x\r\n\"xp                 put the text
+  from register x after the cursor\r\n\"xP                 put the text from register
+  x before the cursor\r\n\"xgp                just like \"p\", but leave the cursor
+  just after the new text\r\n\"xgP                just like \"P\", but leave the cursor
+  just after the new text\r\n:[line]put x        put the text from register x after
+  [line]\r\n\r\n\r\nMACROS\r\n======\r\n\r\nqa                  start recording macro
+  'a'\r\nq                   end recording macro\r\n@a                  replay macro
+  'a'\r\n@:                  replay last command\r\n\r\n\r\nVISUAL MODE\r\n===========\r\n\r\nv
+  \                  start visual mode, mark lines, then do command (such as y-yank)\r\nV
+  \                  start linewise visual mode\r\no                   move to other
+  end of marked area\r\nU                   upper case of marked area\r\nCTRL-v              start
+  visual block mode\r\nO                   move to other corner of block\r\naw                  mark
+  a word\r\nab                  a () block (with braces)\r\nab                  a
+  {} block (with brackets)\r\nib                  inner () block\r\nib                  inner
+  {} block\r\nEsc                 exit visual mode\r\n\r\nVisual mode commands\r\n--------------------\r\n>
+  \                  shift right\r\n<                   shift left\r\nc                   change
+  (replace) marked text\r\ny                   yank (copy) marked text\r\nd                   delete
+  marked text\r\n~                   switch case\r\n\r\n\r\nSPELLING\r\n========\r\n\r\n]s
+  \                 next misspelled word\r\n[s                  previous misspelled
+  word\r\nzg                  add word to wordlist\r\nzug                 undo last
+  add word\r\nz=                  suggest word\r\n\r\n\r\nEXITING\r\n=======\r\n\r\n:q
+  \                 quit Vim. This fails when changes have been made.\r\n:q!                 quit
+  without writing.\r\n:cq                 quit always, without writing.\r\n:wq                 write
+  the current file and exit.\r\n:wq!                write the current file and exit
+  always.\r\n:wq {file}          write to {file}. Exit if not editing the last\r\n:wq!
+  {file}         write to {file} and exit always.\r\n:[range]wq[!]       same as above,
+  but only write the lines in [range].\r\nZZ                  write current file,
+  if modified, and exit.\r\nZQ                  quit current file and exit (same as
+  \":q!\").\r\n\r\n\r\nSEARCH/REPLACE\r\n==============\r\n\r\n/pattern                    search
+  for pattern\r\n?pattern                    search backward for pattern\r\nn                           repeat
+  search in same direction\r\nN                           repeat search in opposite
+  direction\r\n*                           search forward, word under cursor\r\n#
+  \                          search backward, word under cursor\r\n:%s/old/new/g               replace
+  all old with new throughout file\r\n:%s/old/new/gc              replace all old
+  with new throughout file with confirmation\r\n:argdo %s/old/new/gc | wq   open multiple
+  files and run this command to replace old \r\n                            with new
+  in every file with confirmation, save and quit\r\n\r\n\r\n\r\nMULTIPLE FILES\r\n==============\r\n\r\n:e
+  filename         edit a file in a new buffer\r\n:tabe filename      edit a file
+  in a new tab (Vim7, gVim)\r\n:ls                 list all buffers\r\n:bn                 go
+  to next buffer\r\n:bp                 go to previous buffer\r\n:bd                 delete
+  a buffer (close a file)\r\n:b1                 show buffer 1\r\n:b vimrc            show
+  buffer whose filename begins with \"vimrc\"\r\n\r\n\r\nWINDOWS\r\n=======\r\n\r\n:sp
+  f               split open f\r\n:vsp f              vsplit open f\r\nCTRL-w s            split
+  windows\r\nCTRL-w w            switch between windows\r\nCTRL-w q            quit
+  a window\r\nCTRL-w v            split windows vertically\r\nCTRL-w x            swap
+  windows\r\nCTRL-w h            left window\r\nCTRL-w j            down window\r\nCTRL-w
+  k            up window\r\nCTRL-w l            right window\r\nCTRL-w +            larger
+  window\r\nCTRL-w -            smaller window\r\nCTRL-w =            equal window\r\nCTRL-w
+  o            close other windows\r\n\r\n\r\nQUICKFIX WINDOW\r\n===============\r\n\r\ncopen
+  \              open quickfix window\r\ncclose              close quickfix window\r\ncc
+  [nr]             display error [nr]\r\ncfirst              display the first error\r\nclast
+  \              display the last error\r\n[count]cn           display [count] next
+  error\r\n[count]cp           display [count] previous error\r\n\r\n\r\nPROGRAMMING\r\n===========\r\n\r\n%
+  \                  show matching brace, bracket, or parenthese\r\ngf                  edit
+  the file whose name is under or after the cursor\r\ngd                  when the
+  cursor is on a local variable or function, jump to its declaration\r\n''                  return
+  to the line where the cursor was before the latest jump\r\ngi                  return
+  to insert mode where you inserted text the last time\r\nCTRL-o              move
+  to previous position you were at\r\nCTRL-i              move to more recent position
+  you were at\r\n\r\n\r\n\r\n*************\r\n*  PLUGINS  *\r\n*************\r\n\r\n\r\nACK
+  (plugin)\r\n============\r\n\r\n:Ack                Search recursively in directory\r\no
+  \                  to open (same as enter)\r\ngo                  to preview file
+  (open but maintain focus on ack.vim results)\r\nt                   to open in new
+  tab\r\nT                   to open in new tab silently\r\nq                   to
+  close the quickfix window\r\n\r\n\r\nCHEAT (plugin)\r\n==============\r\n\r\n:Cheat
+  \             open cheat sheet (with autocomplete)\r\n<leader>ch          open cheat
+  sheet for word under the cursor\r\n\r\n\r\nGIST (plugin)\r\n=============\r\n\r\n:Gist
+  \              post whole text to gist\r\n:Gist XXXXX         get gist XXXXX\r\n:Gist
+  -l            list my gists\r\n\r\n\r\nGUNDO (plugin)\r\n==============\r\n\r\n:GundoToggle
+  \       show undo tree\r\n\r\n\r\nLUSTYJUGGLER (plugin)\r\n=====================\r\n\r\n<Leader>lj
+  \         show open buffers\r\n\r\n\r\nNERDCOMMENTER (plugin)\r\n======================\r\n\r\n<leader>cc
+  \         comment out line(s)\r\n<leader>c<space>    toggle the comment state of
+  the selected line(s)\r\n\r\n\r\nNERDTREE (plugin)\r\n=================\r\n\r\n:NERDTreeToggle
+  \    show / hide file browser\r\n:NERDTreeFind       show current file in file browser\r\n:Bookmark
+  name      bookmark the current node as \"name\"\r\n\r\nFile\r\n----\r\no                   open
+  in prev window\r\ngo                  preview\r\nt                   open in new
+  tab\r\nT                   open in new tab silently\r\ni                   open
+  split\r\ngi                  preview split\r\ns                   open vsplit\r\ngs
+  \                 preview vsplit\r\n\r\nDirectory\r\n---------\r\no                   open
+  & close node\r\nO                   recursively open node\r\nx                   close
+  parent of node\r\nX                   close all child nodes of current node recursively\r\ne
+  \                  explore selected dir\r\n\r\nBookmark\r\n--------\r\no                   open
+  bookmark\r\nt                   open in new tab\r\nT                   open in new
+  tab silently\r\nD                   delete bookmark\r\n\r\nTree navigation\r\n---------------\r\nP
+  \                  go to root\r\np                   go to parent\r\nK                   go
+  to first child\r\nJ                   go to last child\r\nCTRL-j              go
+  to next sibling\r\nCTRL-k              go to prev sibling\r\n\r\nFilesystem\r\n----------\r\nC
+  \                  change tree root to the selected dir\r\nu                   move
+  tree root up a dir\r\nU                   move tree root up a dir but leave old
+  root open\r\nr                   refresh cursor dir\r\nR                   refresh
+  current root\r\nm                   show menu\r\ncd                  change the
+  CWD to the selected dir\r\n\r\nTree filtering\r\n--------------\r\nI                   hidden
+  files\r\nf                   file filters\r\nF                   files\r\nB                   bookmarks\r\n\r\nOther\r\n-----\r\nq
+  \                  close the NERDTree window\r\nA                   zoom (maximize-minimize)
+  the NERDTree window\r\n?                   toggle help\r\n\r\n\r\nPDV (plugin)\r\n============\r\n\r\nCTRL-P
+  \             generate PHP DOC\r\n\r\n\r\nPICKACOLOR (plugin)\r\n===================\r\n\r\n:PickHEX
+  \           choose color in system color picker\r\n\r\n\r\nSNIPMATE (plugin)\r\n=================\r\n\r\n<tab>
+  \              expand snippet\r\n\r\n\r\nSPARKUP (plugin)\r\n================\r\n\r\nCTRL-e
+  \             execute sparkup (zen coding expansion)\r\nCTRL-n              jump
+  to the next empty tag / attribute\r\n\r\n\r\nSURROUND (plugin)\r\n=================\r\n\r\ncs'\"
+  \               change surrounding quotes to double-quotes\r\ncs(}                change
+  surrounding parens to braces \r\ncs({                change surrounding parens to
+  braces with space\r\nds'                 delete surrounding quotes\r\ndst                 delete
+  surrounding tags\r\nysiw[               surround inner word with brackets\r\nvees'
+  \              surround 2 words (ee) with quotes '\r\n\r\n\r\nTABULAR (plugin)\r\n================\r\n\r\n:Tabularize
+  /,      line the selected lines up on the commas\r\n\r\n\r\nTAGLIST (plugin)\r\n================\r\n\r\n:TlistToggle
+  \       open / close taglist window\r\n<enter>             jump to tag or file\r\n<space>
+  \            display the tag prototype\r\n\r\n\r\nUNIMPAIRED (plugin)\r\n===================\r\n\r\n[space
+  \             new line above\r\n]space              new line below\r\n[e                  exchange
+  line above\r\n]e                  exchange line below\r\n[x                  XML
+  encode\r\n]x                  XML decode (with htmlentities)\r\n[q                  jump
+  to previous quickfix item\r\n]q                  jump to next quickfix item\r\n[Q
+  \                 jump to first quickfix item\r\n]Q                  jump to last
+  quickfix item\r\n\r\n\r\nVIM-FUGITIVE (plugin)\r\n=====================\r\n\r\n:Git
+  \               run a git command\r\n:Gstatus            git status : - to (un)stage
+  , p to patch, C to commit\r\n:Gcommit            git commit\r\n:Gread              empty
+  the buffer and revert to the last commit\r\n:Gwrite             write the current
+  file and stage the results\r\n:Gmove              git mv\r\n:Gremove            git
+  rm\r\n:Glog               git log\r\n:Gdiff              perform a vimdiff against
+  the current file of a certain revision\r\n:Gblame             open blame information
+  in a scroll bound vertical splitt\r\n:Gbrowse            open github\r\n\r\n\r\nVIM-MARKDOWN-PREVIEW
+  (plugin)\r\n=============================\r\n\r\n:Mm                 preview markdown
+  document in webbrowser\r\n\r\n\r\nVIM-PEEPOPEN (plugin)\r\n=====================\r\n\r\n<Leader>p
+  \          open the current directory with the peepopen application (fuzzy search)\r\n\r\n\r\nVIM-SYMFONY
+  (plugin)\r\n====================\r\n\r\n:Sview              open template file\r\n:Saction
+  \           open action file\r\n:Smodel             open model file\r\n:Sfilter
+  \           open filter file\r\n:Sform              open form file\r\n:Spartial
+  \          open partial file / write selected content in partial + include\r\n:Scomponent
+  \        open component file / write selected content in component + include\r\n:Salternate
+  \        open alternate model file (class - table class)\r\n:Symfony            execute
+  task\r\n\r\n\r\n\r\n*********************\r\n*  PERSONAL .VIMRC  *\r\n*********************\r\n\r\n\r\n<leader>ev
+  \         edit vimrc file\r\n<leader>sv          reload vimrc file\r\n<leader>sh
+  \         show syntax highlighting groups for word under cursor\r\n\r\n<space>             page
+  down\r\njj                  exit insertion mode\r\n<leader>q           close the
+  current window\r\n\r\n<leader>/           clear the search register\r\n\r\n<leader>h
+  \          toggle hidden characters \r\n\r\n<leader>W           strip all trailing
+  whitespace\r\n\r\nCTRL-h              go to left window\r\nCTRL-j              go
+  to down window\r\nCTRL-k              go to top window\r\nCTRL-l              go
+  to right window\r\n<leader>w           open vertical split window and activate\r\n\r\n%%
+  \                 will expand to current directory\r\n<leader>ew          open file
+  from current directory\r\n<leader>es          open file in split window from current
+  directory\r\n<leader>cd          change directory to parent dir of current file\r\n##
+  \                 will expand to webroot\r\n\r\n:Wrap               wrap text\r\n<F2>
+  \               toggle wrapped text\r\n\r\n<F3>                toggle spell check\r\n\r\n<F4>
+  \               toggle light/dark background\r\n\r\n<F5>                underline
+  with dashes\r\n<F6>                underline with double lines\r\n\r\n<leader><up>
+  \       bubble line(s) up\r\n<leader><down>      bublle line(s) down\r\n\r\n:Ltag
+  \              load tags file\r\n:Project            cd to project and load tags
+  file\r\n<leader>t           show current tag for word under cursor\r\n<leader>st
+  \         show current tag for word under cursor in split window\r\n<leader>tj          show
+  current tag list for word under cursor\r\n<leader>stj         show current tag list
+  for word under cursor in split window\r\n\r\nCTRL-<space>        show omnicomplete
+  menu\r\n\r\n<leader>b           surround with strong tags\r\n<leader>i           surround
+  with em tags\r\n\r\nCTRL-p              generate PHP DOC\r\n\r\n<leader>a           run
+  Ack\r\n\r\n<leader>md          preview markdown\r\n\r\n<leader>s           preview
+  in safari\r\n\r\n<leader>x           colorpicker\r\n\r\n<leader>n           toggle
+  Nerdtree\r\n<leader>N           close Nerdtree\r\n<leader>f           find current
+  file in Nerdtree\r\n\r\n<leader>l           toggle Taglist\r\n<leader>L           close
+  Taglist\r\n\r\n<leader>ph          set filetype to php.html\r\n<leader>r           reload
+  all snipmate snippets\r\n\r\nCTRL-<tab>          switch between buffers\r\n\r\nCTRL-y
+  \             go to next tag of attribute in sparkup plugin\r\n\r\n<leader>g           toggle
+  Gundo window\r\n\r\nIMG<CR>             show image browser to insert image tag with
+  src, width and height\r\nb                   insert image tag with dimensions from
+  NERDTree \r\n                    (http://stackoverflow.com/questions/5707925/vim-image-placement)\r\n\r\n\r\n\r\nCREDITS\r\n-------\r\n\r\nthis
+  cheat sheet is based upon :\r\n\r\n- http://www.keyxl.com/aaa8263/290/VIM-keyboard-shortcuts.htm\r\n-
+  http://jmcpherson.org/editing.html\r\n- http://cheat.errtheblog.com/s/vim/\r\n-
+  http://cheat.errtheblog.com/s/vim_anders/\r\n- http://www.fprintf.net/vimCheatSheet.html"

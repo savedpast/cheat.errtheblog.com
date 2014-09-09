@@ -1,0 +1,21 @@
+---
+ruby_globals: ! "Exceptions\n  $!\t latest error message\n  $@\t location of error\n\nIO\n
+  \ $_\t string last read by gets\n  $/\t input record separator\n  $\\\t output record
+  separator\n  $<\t concatenation stream of files given on input, or $stdin\n  $>
+  \    default output for print functions, defaults to $stdout\n  $FILENAME current
+  input file from $< (i.e. $<.filename)\n  $stdin standard input stream\n  $stdout
+  standard output stream\n  $stderr standard error stream\n  \nProcesses\n  $.\t line
+  number last read by interpreter\n  $0\t the name of the ruby script file\n  $*\t
+  the command line arguments\n  $$\t interpreter's process ID\n  $?\t exit status
+  of last executed child process\n\nRegular Expressions\n  $~\t the last regexp match
+  on thread, as a MatchData\n  $&\t string last matched by regexp\t\t    (i.e. $~.string)\n
+  \ $`\t the string before last match\t\t    (i.e. $~.pre_match)\n  $'\t the string
+  after the last match\t    (i.e. $~.post_match)\n  $+\t the contents of the last
+  matched group\t    (i.e. $~[-1])\n  $n\t the <n>th group in the last match, e.g.
+  $1 (i.e. $~[n])\n  $=\t Deprecated. false (default) indicates case insensive matching
+  by default\n\nMisc\n  $,\t default separator for Array.join (nil default == none)\n
+  \ $;     default separator for String.split (string or regex, nil default = whitespace)\n
+  \ $:\t load path for scripts/binaries when using require\n  $\"     all loaded scripts
+  by require\n  $LOAD_PATH same as $:\n  $DEBUG status of debug / -d switch\n  $VERBOSE
+  status of verbose / -v switch\n\n  $-0\n\nbased on: \n  http://www.ruby-doc.org/docs/UsersGuide/rg/globalvars.html
+  \n  http://www.zenspider.com/Languages/Ruby/QuickRef.html"

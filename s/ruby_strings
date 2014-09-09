@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>camelize(lower_case_and_underscored_word, first_letter_in_uppercase = true):
+&quot;active_record&quot;.camelize                # =&gt; &quot;ActiveRecord&quot;
+&quot;active_record&quot;.camelize(:lower)        # =&gt; &quot;activeRecord&quot;
+&quot;active_record/errors&quot;.camelize         # =&gt; &quot;ActiveRecord::Errors&quot;
+&quot;active_record/errors&quot;.camelize(:lower) # =&gt; &quot;activeRecord::Errors&quot;
+&quot;SSLError&quot;.underscore.camelize          # =&gt; &quot;SslError&quot;
+
+
+classify(table_name):
+&quot;egg_and_hams&quot;.classify # =&gt; &quot;EggAndHam&quot;
+&quot;posts&quot;.classify        # =&gt; &quot;Post&quot;
+&quot;business&quot;.classify     # =&gt; &quot;Busines&quot;
+
+
+constantize(camel_cased_word):
+&quot;Module&quot;.constantize     # =&gt; Module
+&quot;Test::Unit&quot;.constantize # =&gt; Test::Unit
+
+
+dasherize(underscored_word):
+&quot;puni_puni&quot; # =&gt; &quot;puni-puni&quot;
+
+
+demodulize(class_name_in_module):
+&quot;ActiveRecord::CoreExtensions::String::Inflections&quot;.demodulize # =&gt; &quot;Inflections&quot;
+&quot;Inflections&quot;.demodulize                                       # =&gt; &quot;Inflections&quot;
+
+
+foreign_key(class_name, separate_class_name_and_id_with_underscore = true):
+&quot;Message&quot;.foreign_key        # =&gt; &quot;message_id&quot;
+&quot;Message&quot;.foreign_key(false) # =&gt; &quot;messageid&quot;
+&quot;Admin::Post&quot;.foreign_key    # =&gt; &quot;post_id&quot;
+
+
+humanize(lower_case_and_underscored_word):
+&quot;employee_salary&quot; # =&gt; &quot;Employee salary&quot;
+&quot;author_id&quot;       # =&gt; &quot;Author&quot;
+
+
+inflections():
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.uncountable &quot;rails&quot;
+end
+
+
+ordinalize(number):
+ordinalize(1)     # =&gt; &quot;1st&quot;
+ordinalize(2)     # =&gt; &quot;2nd&quot;
+ordinalize(1002)  # =&gt; &quot;1002nd&quot;
+ordinalize(1003)  # =&gt; &quot;1003rd&quot;
+ordinalize(-11)   # =&gt; &quot;-11th&quot;
+ordinalize(-1021) # =&gt; &quot;-1021st&quot;
+
+
+parameterize(string, sep = '-'):
+&quot;Donald E. Knuth&quot;.parameterize # =&gt; &quot;donald-e-knuth&quot;
+
+
+pluralize(word):
+&quot;post&quot;.pluralize             # =&gt; &quot;posts&quot;
+&quot;octopus&quot;.pluralize          # =&gt; &quot;octopi&quot;
+&quot;sheep&quot;.pluralize            # =&gt; &quot;sheep&quot;
+&quot;words&quot;.pluralize            # =&gt; &quot;words&quot;
+&quot;CamelOctopus&quot;.pluralize     # =&gt; &quot;CamelOctopi&quot;
+
+
+singularize(word):
+&quot;posts&quot;.singularize            # =&gt; &quot;post&quot;
+&quot;octopi&quot;.singularize           # =&gt; &quot;octopus&quot;
+&quot;sheep&quot;.singularize            # =&gt; &quot;sheep&quot;
+&quot;word&quot;.singularize             # =&gt; &quot;word&quot;
+&quot;CamelOctopi&quot;.singularize      # =&gt; &quot;CamelOctopus&quot;
+
+
+tableize(class_name):
+&quot;RawScaledScorer&quot;.tableize # =&gt; &quot;raw_scaled_scorers&quot;
+&quot;egg_and_ham&quot;.tableize     # =&gt; &quot;egg_and_hams&quot;
+&quot;fancyCategory&quot;.tableize   # =&gt; &quot;fancy_categories&quot;
+
+
+titleize(word):
+&quot;man from the boondocks&quot;.titleize # =&gt; &quot;Man From The Boondocks&quot;
+&quot;x-men: the last stand&quot;.titleize  # =&gt; &quot;X Men: The Last Stand&quot;
+
+
+transliterate(string, replacement = &quot;?&quot;):
+nsliterate(&quot;Ærøskøbing&quot;) # =&gt; &quot;AEroskobing&quot;
+
+
+underscore(camel_cased_word):
+&quot;ActiveRecord&quot;.underscore         # =&gt; &quot;active_record&quot;
+&quot;ActiveRecord::Errors&quot;.underscore # =&gt; active_record/errors
+&quot;SSLError&quot;.underscore.camelize    # =&gt; &quot;SslError&quot;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

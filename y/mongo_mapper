@@ -1,0 +1,6 @@
+---
+mongo_mapper: ! "MODEL\n\n  class User\n    include MongoMapper::Document         \n\n
+  \   key :email, String\n    key :name, String\n    timestamps!                           \n\n
+  \   belongs_to :group\n    many :posts\n  end\n\nCREATING\n\n  User.create(:email
+  => \"joe@sixpack.com\", :name => \"Joe Sixpack\")\n  User.delete_all\n\nQUERYING\n\n
+  \ User.all(:email => \"joe@sixpack.com\")\n  User.query(:name => Regexp.new(\"Joe\")).sort(:name.asc).limit(10)"

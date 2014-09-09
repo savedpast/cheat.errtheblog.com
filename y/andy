@@ -1,0 +1,8 @@
+---
+andy: ! "## Git\r\ngit add .                     # Add all unstaged files to git\r\ngit
+  commit -m \"Message\"       # Commit with commit message \r\ngit clone <repo-path>
+  \        # Makes a local clone of a remote repo\r\ngit remote add <repo-path>    #
+  Adds a remote repository\r\ngit remote rm <repo-name>     # Removes a remote repository\r\n\r\n##
+  Gems\r\ngem env                       # Shows information such as gem paths, etc\r\n\r\n##
+  RVM\r\nrvm list                      # Show a list of all installed rubies\r\n\r\n##
+  Ruby"

@@ -1,0 +1,10 @@
+---
+assert_response: ! "# 'cheat assertions' for the rest\n\nassert_response(type, message
+  = nil)\n\nAsserts that the response is one of the following types:\n\n    * :success
+  - Status code was 200\n    * :redirect - Status code was in the 300-399 range\n
+  \   * :missing - Status code was 404\n    * :error - Status code was in the 500-599
+  range\n\nYou can also pass an explicit status number like assert_response(501) or
+  its symbolic equivalent assert_response(:not_implemented). See ActionController::StatusCodes
+  for a full list.\n\nExamples\n\n  # assert that the response was a redirection\n
+  \ assert_response :redirect\n\n  # assert that the response code was status code
+  401 (unauthorized)\n  assert_response 401"

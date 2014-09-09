@@ -1,0 +1,7 @@
+---
+acts_as_state_machine: ! "== Example\n\nclass Order < ActiveRecord::Base\n  acts_as_state_machine
+  :initial => :opened\n\n  state :opened\n  state :closed, :enter => Proc.new {|o|
+  Mailer.send_notice(o)}\n  state :returned\n\n  event :close do\n    transitions
+  :to => :closed, :from => :opened\n  end\n\n  event :return do\n    transitions :to
+  => :returned, :from => :closed\n  end\nend\n\no = Order.create\no.close! # notice
+  is sent by mailer\no.return!"

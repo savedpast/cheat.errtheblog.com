@@ -1,0 +1,114 @@
+---
+lift: ! "== Starting a new lift project ==\r\n\r\nTo start a new ''lift'' project
+  install Java 1.5 or 1.6, and Maven 2.0.8 (newer version should work as well).\r\n\r\nNow
+  let's create your new project\r\n\r\n cd ~/tmp\r\n{{Template:NewBasicPrj|groupId=com.liftone|artifactId=liftone}}\r\n
+  cd liftone\r\n mvn jetty:run -U\r\n\r\nIn this example, <tt>LiftOne</tt> is the
+  name of the project, <tt>~/tmp/liftone/</tt> is the location of the project, and
+  <tt>com.liftone</tt> is the package name for the project classes. Remember that
+  Scala package names are similar to Java package names.\r\n\r\nPoint your browser
+  to <code>http://localhost:8080</code> and see your first ''lift'' project.\r\n\r\n===
+  Troubleshooting === \r\n* '''Problem''': Out of Memory Errors Reported by maven:\r\n#
+  '''Possible Solution''': On 64bit machines you need more than a gig of RAM. If you
+  have a 32bit machine, and a gig of RAM, a possible work around is to change the
+  maxmemory parameter in the liftweb/lift/pom.xml to 960m. This has been successfully
+  Tested On:\r\n## Windows XP 32bit, 1 Gig of RAM, JDK/JRE 1.6, Maven 2.0.8\r\n\r\n===
+  See also ===\r\n* [[HowTo_start_a_new_liftwebapp]]\r\n\r\n* [http://www.nabble.com/Lift-without-maven-tt16751215.html#a16858511
+  Lift without maven]: Once you have created a new project with maven, you can use
+  any other build tool.\r\n\r\n== Boot (setting the lift environment) ==\r\n\r\nWhen
+  the ''lift'' servlet is initialized, it looks for a class bootstrap.liftweb.Boot
+  and invokes the \"boot\" method\r\non an instance of this class.  This allows the
+  project to define special request routing rules, tell ''lift'' where\r\ncertain
+  classes can be found.  See the [[Boot Example]] for more information.\r\n\r\n==
+  Project Layout ==\r\n\r\nlift uses [http://maven.apache.org/ Maven] as its build
+  system and lift projects are laid out accordingly.\r\nIn the root of all projects
+  is a src directory and a pom.xml file.  The POM file contains the Maven\r\nbuild
+  instructions.  The src directory contains main which contains scala and webapp.\r\n\r\nThe
+  src/main/scala directory contains the Scala source code.\r\n\r\nThe src/main/webapp
+  directory contains the HTML, JavaScript, CSS, and WEB-INF code.\r\n\r\nThe lift_example
+  directory contains the derby database.\r\n\r\n== Run Mode ==\r\n\r\nOne can run
+  a lift application in different modes based on starting the JVM with the -Drun.mode=production.
+  \ The run modes are:\r\n\r\n<pre name=\"code\" class=\"scala\">\r\n  object RunModes
+  extends Enumeration {\r\n    val Development = Value(1, \"Development\")\r\n    val
+  Test = Value(2, \"Test\")\r\n    val Staging = Value(3, \"Staging\")\r\n    val
+  Production = Value(4, \"Production\")\r\n    val Pilot = Value(5, \"Pilot\")\r\n
+  \   val Profile = Value(6, \"Profile\")\r\n  }\r\n</pre>\r\n\r\n== Property files
+  ==\r\n\r\nDifferent developers can have different properties files within the same
+  project.  The properties files are located in\r\n<code>src/main/webapp/WEB-INF/classes/props</code>
+  \ Properties files are retrieved based on RunMode, user name, and host name.  So,
+  if you're running in development mode, your username is 'dpp' and your hostname
+  is 'goat', the\r\n<code>dpp.goat.props</code> file will be used.  If that cannot
+  be found, lift will check for\r\n<code>dpp.props</code>, <code>goat.props</code>,
+  and finally <code>default.props</code>.\r\n\r\nIf the RunMode is anything other
+  than \"development\", the RunMode name will be prepended to the name so <code>test.dpp.goat.props</code>,
+  <code>test.dpp.props</code>,\r\n<code>test.goat.props</code>, and <code>test.default.props</code>
+  will be checked for in that order.\r\n\r\nThe properties files are in standard [http://java.sun.com/docs/books/tutorial/i18n/resbundle/propfile.html
+  Java properties format].\r\n\r\n== Where HTML goes ==\r\n\r\nPut the HTML, CSS,
+  JavaScript, images, etc. in the <code>src/main/webapp</code> directory or\r\nsubdirectories.
+  \ For file names that end in .xml, .html, .xhtml, .htm, .liftjs, and .liftcss, lift
+  will parse and\r\nserve the page.  For all other files, they will be served up as
+  static content by the default servlet.\r\n\r\nIf a request comes in for <code>/hello</code>
+  lift will look for <code>src/main/webapp/hello.html</code>\r\n\r\nIf you want to
+  localize your content, <code>/hello</code> will look for <code>hello_en_US.html</code>,
+  then \r\n<code>hello_en.html</code>, then <code>hello.html</code> where <code>en</code>
+  and <code>US</code> are the language and country for the current locale.\r\n\r\nSee
+  [[lift View First]] rendering.\r\n\r\n== Defining Models ==\r\n\r\nlift O-R mapped
+  models are defined based on a class with fields.\r\n\r\n<pre name=\"code\" class=\"scala\">\r\nclass
+  WikiEntry extends KeyedMapper[Long, WikiEntry] {\r\n  def getSingleton = WikiEntry
+  // what's the \"meta\" object\r\n  def primaryKeyField = id\r\n\r\n  // the primary
+  key\r\n  object id extends MappedLongIndex(this)\r\n  \r\n  // the name of the entry\r\n
+  \ object name extends MappedString(this, 32) {\r\n    override def dbIndexed_? =
+  true // indexed in the DB\r\n  }\r\n  \r\n  object owner extends MappedLongForeignKey(this,
+  User)\r\n  \r\n  // the text of the entry\r\n  object entry extends MappedTextarea(this,
+  8192) {\r\n    override def textareaRows  = 10\r\n    override def textareaCols
+  = 50\r\n  }\r\n}\r\n</pre>\r\n\r\nDiscussion on having [http://groups.google.com/group/liftweb/browse_frm/thread/3ea88015027e2ff4
+  shared base traits for Models]\r\n\r\n== Accessing Model Fields ==\r\n\r\nModel
+  fields are set with an apply operator:\r\n\r\n<pre>\r\nval e: WikiEntry = WikiEntry.create\r\n\r\ne.name(\"Hello\")
+  // set the name\r\n\r\n// chained setting\r\ne.name(\"hello\").entry(\"Dogs and
+  Cats\")\r\n\r\n// and models can be saved\r\ne.name(\"hello\").entry(\"Dogs and
+  Cats\").save\r\n\r\n// accessing fields:\r\n\r\ne.name == \"hello\" // true\r\n\r\ne.name.asHtml
+  // get the HTML formatted value of the field\r\n\r\ne.owner.obj.asHtml // accessing
+  many-to-one relationship objects\r\n\r\n</pre>\r\n\r\n== Schemifier ==\r\nThe Schemifier
+  makes sure that the database schema supports the declared model. If a database column
+  or table is missing the Schemifier will create it according to the model. If you
+  want lift to create tables from your model entities remember to register the model
+  entities in the Schemifier (this i normally done in Boot.scala):\r\n\r\n<pre>\r\nSchemifier.schemify(true,
+  Log.infoF _, User)\r\nSchemifier.schemify(true, Log.infoF _, Auction)\r\nSchemifier.schemify(true,
+  Log.infoF _, Bid)\r\n</pre>\r\n\r\n== Web 1.0 Forms ==\r\n\r\n== AJAX == \r\nIf
+  you want to submit a whole form, it is very easy with [[HowTo_use_JSON_forms]].
+  \r\n \r\nIn your snippet have the following:\r\n<pre name=\"code\" class=\"scala\">\r\nclass
+  Submission {\r\n  def form = {\r\n    val url = \"\"\r\n    val title = \"\"\r\n
+  \   <span> { SHtml.text(\"URL\", u => url = u) }<br />\r\n    { SHtml.text(\"Title\",
+  t => title = t) }<br />\r\n    { SHtml.submit(\"Submit\", ignore => LinkStore !
+  AddLink(url, title)) }</span>\r\n  }\r\n}\r\n</pre>\r\nAnd in your template, have
+  the following:\r\n<pre\">\r\n<lift:snippet type=\"Submission:Form\" form=\"POST\"
+  />\r\n</pre>\r\n\r\nMaking ajax-ified anchor tags tags are easy, too.\r\n\r\n<pre>\r\nSHtml.a(()
+  => {doSomething; Noop}, Text(\"Click me to do something!\"))\r\n</pre>\r\n\r\nClicking
+  on the anchor tag will execute the function <code>{doSomething; Noop}</code>\r\n\r\nIf
+  you want to add elements to your anchor tags (or to any Elements) you can use %
+  like so:\r\n<pre>\r\nSHtml.a(() => Noop), Text(\"I don't do much but click me anyway\"))
+  % (\"class\" -> \"does-nothing-really\")\r\n</pre>\r\n\r\n== Comet ==\r\n\r\nSee
+  [[CometActor]]\r\n\r\n== Lift Tags ==\r\n\r\nSee [[LiftTags]]\r\n\r\n== Running
+  with Tomcat and JavaRebel ==\r\n\r\nSee [[JavaRebel]]\r\n\r\n== Cookies ==\r\n\r\nSee
+  [[Cookies]]\r\n\r\n== Connection String Quickies == \r\n\r\nDefine in <lift-app>/src/main/scala/bootstrap/liftweb/Boot.scala\r\n\r\n\r\n<pre
+  name=\"code\" class=\"scala\">\r\n-- 8< -- 8< -- 8< -- 8< --\r\n// Derby - http://db.apache.org/derby/\r\nClass.forName(\"org.apache.derby.jdbc.EmbeddedDriver\")\r\nval
+  dm =  DriverManager.getConnection(\"jdbc:derby:DATABASE;create=true\")\r\n-- 8<
+  -- 8< -- 8< -- 8< --\r\n\r\n\r\n-- 8< -- 8< -- 8< -- 8< --\r\n// H2 - http://www.h2database.com/
+  \ \r\nClass.forName(\"org.h2.Driver\")\r\nval dm =  DriverManager.getConnection(\"jdbc:h2:mem:DATABASE;DB_CLOSE_DELAY=-1\")\r\n--
+  8< -- 8< -- 8< -- 8< --\r\n\r\n\r\n-- 8< -- 8< -- 8< -- 8< --\r\n// MySQL - http://www.mysql.org\r\nClass.forName(\"com.mysql.jdbc.Driver\")\r\nval
+  dm = DriverManager.getConnection(\"jdbc:mysql://localhost:POST_NUMBER/DATABASE\",
+  \"USER\", \"PASSWORD\")\r\n-- 8< -- 8< -- 8< -- 8< --\r\n\r\n\r\n-- 8< -- 8< --
+  8< -- 8< --\r\n// PostgreSQL - http://www.postgresql.org  \r\nClass.forName(\"org.postgresql.Driver\")\r\nval
+  dm = DriverManager.getConnection(\"jdbc:postgresql://localhost/DATABASE?user=USER&password=PASSWORD\")\r\n--
+  8< -- 8< -- 8< -- 8< --\r\n</pre>\r\n\r\nSometimes it can be useful to be able to
+  access the database into which lift is writing with an external application via
+  JDBC. Since you don't want to start up another JVM to have a network server running,
+  if you're using derby you can do the following. Add a file to the toplevel folder
+  of your project and name it <tt>derby.properties</tt> with the content:\r\n<pre>\r\nderby.drda.startNetworkServer=true\r\n</pre>\r\n\r\nNow
+  you can point a generic JDBC client (or the built in <tt>ij</tt>-console) to the
+  follwing URL: <tt>jdbc:derby://localhost:1527/<database-name></tt>.\r\n\r\n== Always
+  redirect to login if the User is not logged in ==\r\n\r\nIn <tt>Boot.scala</tt>
+  add this RequestMatcher and if the user hits any page and is not logged in, they
+  will be sent to <tt>/user_mgt/login</tt>\r\n\r\n<pre name=\"code\" class=\"scala\">\r\nval
+  dispatcher: LiftServlet.DispatchPf = {\r\n        case RequestMatcher(_, ParsePath(path,
+  _, _),_,_)  if !User.loggedIn_? && path.head != \"user_mgt\" =>\r\n        ignore
+  => Full(RedirectResponse(\"/user_mgt/login\", state))\r\n     } \r\n</pre>"

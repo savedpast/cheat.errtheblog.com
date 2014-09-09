@@ -1,0 +1,6 @@
+---
+hwh_notification: ! "To create a notification:\r\nActiveSupport::Notifications.instrument(\"products.search\",
+  :search => search)\r\n\r\nTo listen for a notification:\r\nActiveSupport::Notifications.subscribe
+  \"products.search\"  do |name, start, finish, id, payload|\r\n  Rails.logger.debug
+  \"SEARCH: #{payload[:search]}\"\r\nend\r\n\r\n(These can be placed inside the config/initializers
+  directory and will automatically be included.)"

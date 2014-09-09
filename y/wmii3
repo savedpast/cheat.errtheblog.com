@@ -1,0 +1,10 @@
+---
+wmii3: ! ":: Modes ::\r\nAlt + m - Maximized mode.\r\nAlt + s - Stacked mode.\r\nAlt
+  + d - Default mode.\r\nAlt + f - Fullscreen.\r\n:: Movement ::\r\n(directions: j
+  is down, k is up, h is right, l is left.)\r\nAlt + <direction> - Focus the window
+  in that direction.\r\nAlt + Shift + <direction> - Move the current window in a direction.\r\nAlt
+  + Space - Select the floating area.\r\nAlt + Shift + Space - Send the current area
+  to/from the floating area.\r\n:: Tagging ::\r\nAlt + t - Select a tag to view.\r\nAlt
+  + Shift + t - Set tags for the current window. (Separate by '+'.)\r\n:: Launching
+  ::\r\nAlt + a - Open the actions menu.\r\nAlt + p - Open the programs menu.\r\nAlt
+  + Return - Open a terminal.\r\nAlt + Shift + c - Close the current window."

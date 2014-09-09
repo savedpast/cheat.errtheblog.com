@@ -1,0 +1,76 @@
+---
+capistrano: ! "http://www.dizzy.co.uk/cheatsheets\nThis work is licensed under the
+  Creative Commons\nAttribution-NonCommercial-NoDerivs 2.0 License. To\nview a copy
+  of this license, visit\nhttp://creativecommons.org/licenses/by-nc-nd/2.0/uk\n\n\n##########
+  Shell Commands ##########\t\nInstallation:\n$ gem install capistrano\n\nAdd your
+  application to Capistrano (capify):\n$ capify .\n\n# NOTE: Rake access to capistrano
+  is deprecated in Capistrano 1.3.\n#       Use the 'cap' command instead.\n\nExecute
+  the setup task:\n$ cap deploy:setup\n\nDeploy your application:\n$ cap deploy\n\nSimilar
+  to deploy, but it runs the migrate task on the new release before\nupdating the
+  symlink:\n$ cap deploy:migrations\n\nRollback a release from production:\n$ rake
+  rollback\n\nDeploy a particular revision from Subversion\n$ cap deploy -s revision=1234\n\nExecute
+  the disable_web task:\n$ rake remote_exec ACTION=disable_web \\\nUNTIL=\"tomorrow
+  morning\" \\\nREASON=\"vital upgrade\"\n\nUsing the invoke task:\n$ rake remote_exec
+  ACTION=invoke \\\nCOMMAND=\"svn up /u/apps/flipper/current/app/views\" \\\nROLES=app\n\n\n##########
+  Standard Tasks ##########\ncleans up the releases directory, leaving the five most
+  recent releases:\n$ cap cleanup \n\nused when deploying an application for the first
+  time. Starts the\napplication’s\nspinner (via the spinner task) and then does a
+  normal deploy:\n$ cap cold_deploy \n\nupdates all the code on your server (via update_code
+  and symlink\ntasks), then restarts the FastCGI listeners on the application servers
+  (via\nthe restart task):\n$ cap deploy\n\nprints the difference between what was
+  last deployed, and what is\ncurrently in your repository:\n$ cap diff_from_last_deploy\n\nputs
+  up a static maintenance page that is displayed to visitors:\n$ cap disable_web\n\nremoves
+  the maintenance page:\n$ cap enable_web\n\nallows you to send commands directly:\n$
+  cap invoke\n\nchanges to the directory of your current release (as indicated by
+  the\ncurrent symlink), and runs rake RAILS_ENV=production migrate:\n$ cap migrate\n\nrestarts
+  all FastCGI listeners for your application by calling the reaper\ncommand without
+  arguments. Only executed on :app servers\n$ cap restart\n\nrolls your application
+  back to the previously deployed version\ndetermines the previous release , updates
+  the current symlink to point\nto that, and then deletes the latest release\n$ cap
+  rollback\n\nCreates and chmods the directory tree properly:\n$ cap setup\n\ninspect
+  the existing tasks and display them to standard out in\nalphabetical order, along
+  with their descriptions:\n$ cap show_tasks\n\nstarts the spinner process for your
+  application:\n$ cap spinner\n\nupdates the current symlink to the latest deployed
+  version of the code\n$ cap symlink\n\nChecks out your source code, deletes the log
+  and public/system\ndirectories in your new release, symlinks log to\n#{shared_path}/log,
+  symlinks public/system to #{shared_path}/system:\n$ cap update_code\n\n\n##########
+  config/deploy.rb ##########\n*Defining Tasks\ntask :hello_world do\n  run \"echo
+  Hello, $HOSTNAME\"\nend\n\ntask :hello_world, :roles => [:db, :app] do\n  puts \"calling
+  hello_world...\"\n  hello_world\nend\n\n*Transactions\ntask :cold_deploy do\n  transaction
+  do\n    task_one_here\n    task_two_here\n  end\n  task_three_not_in_transaction\nend\n\n*Capturing
+  output with run\nrun \"sudo ls -la\" do |channel, stream, data|\n  if data =~ /^Password:/\n
+  \   logger.info \"#{channel[:host]} asked for password\"\n    channel.send_data
+  \"mypass\\n\"\n  end\nend\n\nbuffer = render(:template => \n<<EXAMPLE_TEMPLATE)\n
+  \ This template will be rendered replacing variables\n  <%= like_this_variable =>\n
+  \ with their values.\nEXAMPLE_TEMPLATE\n\nput buffer, \"path/to/save/file.txt\",
+  :mode => 0755\n\n* multi-stage\nset :stages, %w(staging production testing) # [optional]
+  defaults to\n[development, test, staging?, production].\nset :default_stage, \"testing\"
+  # [optional] if omitted, cap aborts if you don't\nspecify in args\nrequire 'capistrano/ext/multistage'\n\nStage-specific
+  code in config/deploy/staging.rb and config/deploy/production.rb.\nsee: http://weblog.jamisbuck.org/2007/7/23/capistrano-multistage\n\n*deploy.rb
+  variables and their defaults\n\nThe name of your application. \n:application\t(required)\t\n\nThe
+  location of your code’s scm repository\n:repository\t(required)\t\n\nThe address
+  of the server to use as a gateway. \n:gateway\tnil\t\t\n\nThe name of the user to
+  use when logging into the remote host(s).\n:user\t\tcurrent_user\t\n\nThe password
+  to use for logging into the remote host(s).\n:password\tpassword\t\n\nThe root of
+  the directory tree on the remote host(s) that the \napplication should be deployed
+  to\n:deploy_to\t“/u/apps/#{application}”\n\nThe directory under deploy_to that should
+  contain each deployed revision.\n:version_dir\treleases\t\n\nThe name to use (relative
+  to deploy_to) for the symlink that points at \nthe current release\n:current_dir\tcurrent\t\t\n\nThe
+  name of the directory under deploy_to that will contain directories and\nfiles to
+  be shared between all releases.\n:shared_dir\tshared\t\n\nThis specifies the revision
+  you want to check out on the remote machines.\n:revision\t(latest)\t\n\nThe source
+  control module to use. \nCurrent supported are :subversion, :cvs, :darcs\n:scm\t\tsubversion\t\n\nThe
+  location on the remote host of the source control executable.\n:svn,:cvs,:darcs\n\nThe
+  subversion operation to use when checking out code on the remote host. \nCan be
+  set to “export”\n:checkout\t\"co\"\t\t\n\t\t\t\t\nHash of additional options passed
+  to the SSH connection routine.\nThis lets you set (among other things) a non-standard
+  port to connect on:\n(ssh_options[:port] = 2345)\n:ssh_options\tHash.new\t\n\t\t\t\t\nWhether
+  or not tasks that can use sudo, ought to use sudo. In a shared\nenvironment, this
+  is typically not desirable (or possible), and\nin that case you should set this
+  variable to false\n:use_sudo\ttrue\t\t\n\nSets the path to sudo.\n:sudo\t\t\t\t\n\nvariables
+  are set via:\nset :application, \"flipper\"\n\n\n########## Interactive Shell ##########\n
+  \     (requires capistrano-1.2.0)\nShell is essentially a SSH interface to your\nservers,
+  so you can run standard commands such \nas 'ls' or 'cp' as well as Capistrano-specific
+  ones.\n\nStart the interactive Capistrano shell\n$ cap -v shell\n\nExecute Capistrano
+  tasks\ncap> !deploy\ncap> !update_code symlink\ncap> !setup deploy\ncap> on app2.foo.com
+  !setup\ncap> with app,db !setup deploy"

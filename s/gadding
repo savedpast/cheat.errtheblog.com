@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>GADDING ABOUT CHEAT FILE
+------------------------
+
+EDIT THIS FILE
+--------------
+
+Type cheat gadding --edit
+
+MySQL
+-----
+
+To add the socket information run this command:
+
+ln -s /var/mysql/mysql.sock /tmp/mysql.sock
+
+To authenticate to the database run this command:
+
+mysql gadding_development -u root -p
+
+Edit Database
+-------------
+
+To update the database if Felix has migrated a new version run:
+
+rake db:migrate
+
+To refresh the counties data run this command:
+
+rake populate:update_property_country
+
+If you need to turn off validation then comment out:
+
+app/models/property.rb try editing out the line validates_presence_of
+
+Edit Ruby Files
+---------------
+
+To comment out a line add a #
+
+Sphinx
+------
+
+To start the search engine run this command:
+
+rake ts:start
+
+To stop the search engine run this command:
+
+rake ts:stop
+
+To update the fields of the search engine run this command:
+
+rake ts:config
+
+
+
+rake ts:run</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

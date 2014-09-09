@@ -1,0 +1,5 @@
+---
+rgit: ! "rgit - Recursively execute a command on all the git repositories in a directory
+  tree.\r\n\r\nhttp://search.cpan.org/~vpit/rgit-0.06/bin/rgit\r\n\r\ncommand line
+  switches:\r\n-K keep processing on error\r\n-I enables interactive mode\r\n-D outputs
+  diagnostics\r\n-V outputs version"

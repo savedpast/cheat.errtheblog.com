@@ -1,0 +1,4 @@
+---
+assert_instance_of: ! "# 'cheat assertions' for the rest\n\nassert_instance_of(klass,
+  object, message=\"\")\n\nPasses if object .instance_of? klass\n\nExample:\n\n  assert_instance_of
+  String, 'foo'"

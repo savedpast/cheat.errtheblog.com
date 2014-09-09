@@ -1,0 +1,3 @@
+---
+java: ! "Compilation\r\n============\r\n\r\njavac Filename.java\r\n\r\nRunning\r\n\r\njava
+  Filename\r\n\r\n"

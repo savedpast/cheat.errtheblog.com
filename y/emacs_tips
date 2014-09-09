@@ -1,0 +1,87 @@
+---
+emacs_tips: ! "=== Effective .emacs ===\r\n\r\n\r\n--- Tip #0: Use Emacs 22 ------------------------------------------------------\r\n\r\nEmacs
+  22 is super stable. About half of my .emacs file (before I cleaned it up) was loading
+  stuff that's now part of Emacs 22 and has autoloads.\r\n\r\n\r\n--- Tip #1: Never
+  quit Emacs --------------------------------------------------\r\n\r\nOkay, this
+  has nothing to do with your .emacs file, but I have to put it in here. Just because
+  your .emacs file should load quickly doesn't imply that you should quit and restart
+  all the time. Figure it out!\r\n\r\n=== comments\r\n\r\nIt may be also useful to
+  prevent C-x C-c to close your emacs if you use to misstype it. Add\r\n(setq confirm-kill-emacs
+  'yes-or-no-p)\r\nTo your ~/.emacs and you will be asked to confirm your exit\r\n\r\n\r\n---
+  Tip #2: (require 'cl) -----------------------------------------------------\r\n\r\nI
+  put this at the top of my .emacs. It's a no-brainer. It adds in a ton of compatibility
+  with CL, so that you can just use the CL functions you know and love (well, most
+  of them, anyway), without a second thought.\r\n\r\n\r\n--- Tip #3: Never LOAD, never
+  REQUIRE -----------------------------------------\r\n\r\nYour .emacs file shouldn't
+  contain any calls to LOAD or REQUIRE (which are slow and often cause errors on startup).
+  The only possible exceptions are loading files that contain nothing but autoloads
+  (or similar stuff). How do you avoid loads and requires? First try removing each
+  call to LOAD or REQUIRE to see if it's needed at all. Often (e.g., if you follow
+  Tip #0) Emacs already has autoloads in place for the library already (e.g., \"cc-mode\").
+  For other libraries, where that's not true, put your own autoloads in your .emacs
+  file. For example, rather than load slime in my .emacs (so I can bind the F1 key
+  to SLIME-SELECTOR), instead I have:\r\n\r\n(autoload 'slime-selector \"slime\" t)\r\n\r\nThe
+  only call to LOAD in my .emacs file is for \"erlang-start\", but if you look inside
+  the file you can see it contains only autoloads (and morally equivalent stuff).
+  I also load the custom file, but that's different, see Tip #7. I don't have a single
+  call to REQUIRE (beyond that mandated by Tip #2).\r\n\r\n\r\n--- Tip #4: Understand
+  and use EVAL-AFTER-LOAD --------------------------------\r\n\r\nAnother reason why
+  you might have strewn needless REQUIRE and LOAD calls throughout your .emacs file
+  is that you need to call a function from a specific library. For example, let's
+  say you want to set your default SQL database type to MySQL:\r\n\r\n(sql-set-product
+  'mysql)\r\n\r\nIf you put this in your .emacs, you'll get an error because the SQL
+  library isn't loaded so SQL-SET-PRODUCT isn't yet defined. But before you add a
+  LOAD or REQUIRE, stop! Instead do:\r\n\r\n(eval-after-load \"sql\"\r\n'(progn\r\n(sql-set-product
+  'mysql)\r\n;; any other config specific to sql\r\n))\r\n\r\nAs the name suggests,
+  this will defer calling that code until the SQL module is actually loaded. This
+  saves startup time and prevents errors!\r\n\r\n--- Tip #5: Time your .emacs --------------------------------------------------\r\n\r\nYou
+  really ought to know how much time it's taking to load your .emacs file. \r\n\r\nThe
+  simplest way is to run `M-x emacs-init-time`.\r\nBut you can't write this to .emacs,
+  since it will raise a error before emacs initialized.\r\n\r\nIf you really want
+  it, use the following in your .emacs:\r\n\r\n(message \"Emacs loaded in %fs\"\r\n
+  \        (* 0.000001 (apply #'-\r\n                            (mapcar (lambda (time)\r\n
+  \                                     (+ (* 1000000 (+ (* 65536 (first time)) (second
+  time))) (third time)))\r\n                                    (list (current-time)
+  before-init-time)))))\r\n\r\nPrevious version had some mistakes on calculating the
+  time. Also, we have `before-init-time` and `after-init-time`, so we don't have to
+  save the init time to a var.\r\n\r\nAfter Emacs finishing initializing, you can
+  switch to the *Messages* buffer and see how much of that time was taken by loading
+  your .emacs. Mine now contributes less than one second!\r\n\r\np.s. We also have
+  another interesting function `M-x emacs-uptime`, check it out!\r\n\r\n--- Tip #6:
+  Set background colors ---------------------------------------------\r\n\r\nDon't
+  just stand for the default colors! Set them to what you really want. In my case
+  I want a reverse video effect:\r\n\r\n(set-background-color \"black\")\r\n(set-face-background
+  'default \"black\")\r\n(set-face-background 'region \"black\")\r\n(set-face-foreground
+  'default \"white\")\r\n(set-face-foreground 'region \"gray60\")\r\n(set-foreground-color
+  \"white\")\r\n(set-cursor-color \"red\")\r\n\r\n\r\n--- Tip #7: Separate custom
+  file ----------------------------------------------\r\n\r\nIt's annoying to have
+  your .emacs file modified by Emacs' \"custom\" library, especially if you check
+  in your .emacs to a source code control system such as Subversion (which you should
+  do) and synchronize it on multiple machines. Keep those customizations in a separate
+  file:\r\n\r\n(setq custom-file \"~/.emacs-custom.el\")\r\n(load custom-file 'noerror)\r\n\r\n---
+  Tip #8: Move autosaves and backups to one place (from http://snarfed.org/space/gnu%20emacs%20backup%20files)
+  ---------------------------\r\n\r\n;; Put autosave files (ie #foo#) in one place,
+  *not*\r\n;; scattered all over the file system!\r\n(defvar autosave-dir\r\n (concat
+  \"/tmp/emacs_autosaves/\" (user-login-name) \"/\"))\r\n(make-directory autosave-dir
+  t)\r\n(setq auto-save-file-name-transforms `((\"\\\\(?:[^/]*/\\\\)*\\\\(.*\\\\)\"
+  ,(concat autosave-dir \"\\\\1\") t)))\r\n\r\n;; Put backup files (ie foo~) in one
+  place too. (The backup-directory-alist\r\n;; list contains regexp=>directory mappings;
+  filenames matching a regexp are\r\n;; backed up in the corresponding directory.
+  Emacs will mkdir it if necessary.)\r\n(defvar backup-dir (concat \"/tmp/emacs_backups/\"
+  (user-login-name) \"/\"))\r\n(setq backup-directory-alist (list (cons \".\" backup-dir)))\r\n\r\n===
+  comments\r\n\r\nWell, LOADs and REQUIREs are often slow (and often accomplish nothing,
+  since there are usually autoloads for \"standard\" functionality nowadays anyway)
+  and also a source of errors. For example, I run Emacs on 5 different machines, and
+  they don't all have the same libraries on them (I'm talking about the things that
+  aren't part of the Emacs 22 distribution, of course). Using a combination of EVAL-AFTER-LOAD
+  and AUTOLOAD instead of using LOAD means that unless I actually try to use features
+  that aren't available on a particular machine, I won't get an error loading the
+  library unless I actually try to use the feature.\r\n\r\n---\r\n\r\nThanks! After
+  eval-after-load-ing everything I could, I nearly halved my emacs startup time!\r\n\r\nAt
+  some point I'll go back and move each library's config to its own file and just
+  autoload all of those, but I have work to put off.\r\n\r\n---\r\n\r\n\r\n-------------------------------------------------------------------------------\r\nSOURCE:
+  http://a-nickels-worth.blogspot.com/2007/11/effective-emacs.html\r\n-------------------------------------------------------------------------------\r\n\r\n---
+  Tip #9: Byte Compile Configs ----------------------------------------------\r\n\r\nLoading
+  many Emacs Lisp files on boot will be even faster if you run the compilation command
+  against your Emacs directory.\r\n\r\n(defun byte-recompile-home ()\r\n  (interactive)\r\n
+  \ (byte-recompile-directory \"~/.emacs.d\" 0))"

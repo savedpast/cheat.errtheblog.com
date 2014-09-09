@@ -1,0 +1,58 @@
+---
+sed: ! "TEXT CONVERSION AND SUBSTITUTION:\n\n # IN UNIX ENVIRONMENT: remove everything
+  but the URI from Apache \n # access.log file\n sed -r \"s/.*(GET) (.*?) HTTP.*/\\2/\"
+  access.log | sort | uniq | grep -v 'exclude_word' | grep -v 'favicon' > /tmp/links.txt
+  \n gsed -r \"s/.*(GET) (.*?) HTTP.*/\\2/\" access.log | sort | uniq | grep -v 'exclude_word'
+  | grep -v 'favicon' > /tmp/links.txt \n\n\n # IN UNIX ENVIRONMENT: convert DOS newlines
+  (CR/LF) to Unix format\n sed 's/.$//'               # assumes that all lines end
+  with CR/LF\n sed 's/^M$//'              # in bash/tcsh, press Ctrl-V then Ctrl-M\n
+  sed 's/\\x0D$//'            # gsed 3.02.80, but top script is easier\n\n # IN UNIX
+  ENVIRONMENT: convert Unix newlines (LF) to DOS format\n sed \"s/$/`echo -e \\\\\\r`/\"
+  \           # command line under ksh\n sed 's/$'\"/`echo \\\\\\r`/\"             #
+  command line under bash\n sed \"s/$/`echo \\\\\\r`/\"               # command line
+  under zsh\n sed 's/$/\\r/'                        # gsed 3.02.80\n\n # IN DOS ENVIRONMENT:
+  convert Unix newlines (LF) to DOS format\n sed \"s/$//\"                          #
+  method 1\n sed -n p                             # method 2\n\n # IN DOS ENVIRONMENT:
+  convert DOS newlines (CR/LF) to Unix format\n # Can only be done with UnxUtils sed,
+  version 4.0.7 or higher.\n # Cannot be done with other DOS versions of sed. Use
+  \"tr\" instead.\n sed \"s/\\r//\" infile >outfile         # UnxUtils sed v4.0.7
+  or higher\n tr -d \\r <infile >outfile            # GNU tr version 1.22 or higher\n\n
+  # join lines\n sed -e :a -e '$!N; s/\\n/ /; ta'\n\n # delete leading whitespace
+  (spaces, tabs) from front of each line\n # aligns all text flush left\n sed 's/^[
+  \\t]*//'                    # see note on '\\t' at end of file\n\n # delete trailing
+  whitespace (spaces, tabs) from end of each line\n sed 's/[ \\t]*$//'                    #
+  see note on '\\t' at end of file\n\n # delete BOTH leading and trailing whitespace
+  from each line\n sed 's/^[ \\t]*//;s/[ \\t]*$//'\n\n # insert 5 blank spaces at
+  beginning of each line (make page offset)\n sed 's/^/     /'\n\n # align all text
+  flush right on a 79-column width\n sed -e :a -e 's/^.\\{1,78\\}$/ &/;ta'  # set
+  at 78 plus 1 space\n\n # center all text in the middle of 79-column width. In method
+  1,\n # spaces at the beginning of the line are significant, and trailing\n # spaces
+  are appended at the end of the line. In method 2, spaces at\n # the beginning of
+  the line are discarded in centering the line, and\n # no trailing spaces appear
+  at the end of lines.\n sed  -e :a -e 's/^.\\{1,77\\}$/ & /;ta'                     #
+  method 1\n sed  -e :a -e 's/^.\\{1,77\\}$/ &/;ta' -e 's/\\( *\\)\\1/\\1/'  # method
+  2\n\n # substitute (find and replace) \"foo\" with \"bar\" on each line\n sed 's/foo/bar/'
+  \            # replaces only 1st instance in a line\n sed 's/foo/bar/4'            #
+  replaces only 4th instance in a line\n sed 's/foo/bar/g'            # replaces ALL
+  instances in a line\n sed 's/\\(.*\\)foo\\(.*foo\\)/\\1bar\\2/' # replace the next-to-last
+  case\n sed 's/\\(.*\\)foo/\\1bar/'            # replace only the last case\n\n #
+  substitute \"foo\" with \"bar\" ONLY for lines which contain \"baz\"\n sed '/baz/s/foo/bar/g'\n\n
+  # substitute \"foo\" with \"bar\" EXCEPT for lines which contain \"baz\"\n sed '/baz/!s/foo/bar/g'\n\n
+  # change \"scarlet\" or \"ruby\" or \"puce\" to \"red\"\n sed 's/scarlet/red/g;s/ruby/red/g;s/puce/red/g'
+  \  # most seds\n gsed 's/scarlet\\|ruby\\|puce/red/g'                # GNU sed only\n\n
+  # reverse order of lines (emulates \"tac\")\n # bug/feature in HHsed v1.5 causes
+  blank lines to be deleted\n sed '1!G;h;$!d'               # method 1\n sed -n '1!G;h;$p'
+  \            # method 2\n\n # reverse each character on the line (emulates \"rev\")\n
+  sed '/\\n/!G;s/\\(.\\)\\(.*\\n\\)/&\\2\\1/;//D;s/.//'\n\n # join pairs of lines
+  side-by-side (like \"paste\")\n sed '$!N;s/\\n/ /'\n\n # if a line ends with a backslash,
+  append the next line to it\n sed -e :a -e '/\\\\$/N; s/\\\\\\n//; ta'\n\n # if a
+  line begins with an equal sign, append it to the previous line\n # and replace the
+  \"=\" with a single space\n sed -e :a -e '$!N;s/\\n=/ /;ta' -e 'P;D'\n\n # add commas
+  to numeric strings, changing \"1234567\" to \"1,234,567\"\n gsed ':a;s/\\B[0-9]\\{3\\}\\>/,&/;ta'
+  \                    # GNU sed\n sed -e :a -e 's/\\(.*[0-9]\\)\\([0-9]\\{3\\}\\)/\\1,\\2/;ta'
+  \ # other seds\n\n # add commas to numbers with decimal points and minus signs (GNU
+  sed)\n gsed ':a;s/\\(^\\|[^0-9.]\\)\\([0-9]\\+\\)\\([0-9]\\{3\\}\\)/\\1\\2,\\3/g;ta'\n\n
+  # add a blank line every 5 lines (after lines 5, 10, 15, 20, etc.)\n gsed '0~5G'
+  \                 # GNU sed only\n sed 'n;n;n;n;G;'             # other seds\n\n
+  # display line 5 to 10 in the inputfile.txt\n sed -n 5,10p inputfile.txt\n\n # replace
+  the inputfile with '-i'\n sed -i 's/^/new line/' inputfile.txt"

@@ -1,0 +1,78 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>YAHOO BOSS API
+==============
+
+URL:
+----
+http://boss.yahooapis.com/ysearch/{vertical}/v1/{query}?appid=xyz[&amp;param1=val1&amp;param2=val2&amp;etc]
+
+VERTICAL OPTIONS:
+-----------------
+- web, news, images 
+
+PARAMETERS:
+-----------
+start     - Ordinal position of first result. First position is 0. Default sets start to 0.
+count     - Total number of results to return. Maximum value is 50. Default sets count to 10.
+lang      - Specifies the language search product to query. See “Supported Regions and Languages
+            for Web and News Search”. Default sets lang to &quot;en&quot;. Must be used in parallel with region.
+region    - Specifies which regional (country) search product to query. See “Supported Regions 
+            and Languages for Web and News Search”. Default sets region to &quot;us&quot;. Must be used in parallel with lang.
+format    - The data format of the response. Value can be set to either &quot;xml&quot; or &quot;json&quot;. Default sets format to &quot;json&quot;.
+callback  - The name of the callback function to wrap the result. Parameter is valid only if 
+            format is set to &quot;json&quot;. No default value exists.
+sites     - Restrict BOSS search results to a set of pre-defined sites. Multiple sites must be comma separated. 
+            Example: (sites=abc.com,cnn.com). The Images service does not yet support multiple sites. 
+            Note: This argument can use a single site parameter.
+view      - Introducing View! Retrieve additional search data provided by the respective BOSS service. 
+            In the current version only view=keyterms is offered via the BOSS Web Search service. 
+            More views for more BOSS services coming soon.
+            
+       
+OPTIONAL PARAMS:
+----------------
+filter    - Filter out adult or hate content.
+type      - Specifies document formats (pdf, msoffice,etc).
+view      - view=keyterms will retrieve related words and phrases for each search result.          
+
+PARAM OPTIONS:
+--------------
+Filter options:
+- porn
+- hate
+
+Type options:
+- msoffice,ppt,html,text, 
+- pdf (Adobe Portable Document Format)
+- xl (Microsoft Excel: xls, xla, xl)
+- msword (Microsoft Word)
+- ppt (Microsoft Power Point)
+
+Type Group:
+- msoffice: xl, msword, ppt
+- nonhtml: text, pdf, xl, msword, ppt
+
+RESPONSE:
+---------
+
+== XML
+
+&lt;ysearchresponse responsecode=&quot;200&quot;&gt;
+  &lt;nextpage&gt;&lt;![CDATA[/ysearch/web/v1/foo?appid={yourBOSSappid}&amp;format=xml&amp;start=10]]&gt;&lt;/nextpage&gt;
+  &lt;resultset_web count=&quot;10&quot; start=&quot;0&quot; totalhits=&quot;29440998&quot; deephits=&quot;881000000&quot;&gt;
+    &lt;result&gt;
+      &lt;abstract&gt;&lt;![CDATA[World &lt;b&gt;soccer&lt;/b&gt; coverage
+                from ESPN, including Premiership, Serie A, La Liga, and Major League
+                &lt;b&gt;Soccer&lt;/b&gt;. Get news headlines, live scores, stats, and
+                tournament information.]]&gt;&lt;/abstract&gt;
+      &lt;date&gt;2008/06/08&lt;/date&gt;
+      &lt;dispurl&gt;&lt;![CDATA[www.&lt;b&gt;soccernet.com&lt;/b&gt;]]&gt;&lt;/dispurl&gt;
+      &lt;clickurl&gt;http://us.lrd.yahoo.com/_ylc=X3oDMTFkNXVldGJyBGFwcGlkA2Jvc3NkZW1vBHBvcwMwBHNlcnZpY2UDWVNlYXJjaARzcmNwdmlkAw--
+                /SIG=10u3e8260/**http%3A//www.soccernet.com/&lt;/clickurl&gt;
+      &lt;size&gt;94650&lt;/size&gt;
+      &lt;title&gt;ESPN Soccernet&lt;/title&gt;
+      &lt;url&gt;http://www.soccernet.com/&lt;/url&gt;
+    &lt;/result&gt;
+  &lt;/resultset_web&gt;
+&lt;/ysearchresponse&gt;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Homepage
+========
+
+  http://github.com/evilchelu/braid/wikis/home
+
+
+Install braid
+=============
+
+Requirements: git v. &gt;= 1.6
+
+sudo gem install braid
+
+
+Usage
+=====
+
+Add a repository
+----------------
+
+  braid add &lt;git-url&gt; &lt;dir&gt;
+
+    where repos = git://github.com/foo.git
+          dir = vendor/plugins/foo
+
+    This will add the files and generate a commit. 
+
+Update a repository
+-------------------
+
+  update a remote to the HEAD of the remote:
+
+    braid update &lt;dir&gt;
+
+  or to a specific commit:
+
+    braid update &lt;dir&gt; -r &lt;git-revision&gt;
+
+  It doesn't appear as though -r will take a git tag.  
+  Use the revision number which corresponds to the tag.
+
+Help
+====
+
+  for general help:
+
+    braid help 
+
+  for specific commands:
+
+    braid help &lt;command&gt;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

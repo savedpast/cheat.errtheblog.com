@@ -1,0 +1,6 @@
+---
+solaris_smf: ! "Solaris SMF\n\nlist services:\n  svcs\n  svcs -a | grep mongrel\n\nchange
+  service state:\n  svcadm enable|disable|refresh|restart svc:/network/mongrel\nIf
+  service state is 'maintenance':\n  svcadm clear svc:/network/mongrel\n\nlist processes:\n
+  \ svcs -p network/mongrel\n\nview errors:\n  svcs -vx\n\nexport service:\n  svccfg
+  export network/mongrel\n\nimport service:\n  svccfg import /path/to/mongrel.xml"

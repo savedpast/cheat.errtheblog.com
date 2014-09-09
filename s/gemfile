@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>gem &quot;foobar&quot;, &quot;2.0&quot;
+
+# from git
+gem &quot;rails&quot;, :git =&gt; &quot;git://github.com/rails/rails.git&quot;
+# gem name is different from require
+gem &quot;sqlite3-ruby&quot;, :require =&gt; &quot;sqlite3&quot;
+
+
+# use group for different sets of dependencies
+group :test do
+  gem &quot;rspec-rails&quot;, &quot;&gt;=2.0.0.beta.2&quot;
+  gem &quot;machinist&quot;, &quot;&gt;=1.0.6&quot;
+  gem &quot;faker&quot;, '&gt;=0.3.1'
+end</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

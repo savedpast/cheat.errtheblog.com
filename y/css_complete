@@ -1,0 +1,67 @@
+---
+css_complete: ! "Index:\n[0x00] STYLE/RULE FORM\n[0x01] AT_RULES\n[0x10] PROPERTIES\n
+  \ [0x1000] Background Properties\n  [0x1001] Box Model\n  [0x1010] Box Properties\n
+  \ [0x1011] Font/Text Properties\n  [0x1100] List Properties\n  [0x1101] Table Properties\n\nSTYLE/RULE
+  FORM:\n===================================\n<at-rules>;\n<selector> [<selectors>]{\n
+  \ <property-name>: <property-value[s]>;\n}\n\nAT-RULES: (from css3_selectors)\n===================================\n@charset
+  \"ISO-8859-1\"; \nSpecify the encoding of the CSS file\n\n@import url(\"printing.css\")
+  print\nImport additional css file 'printing.css' for print media\n\n@page :first
+  { margin: 10cm; }\nSets content margins on the first 'page' to 10cm; see also :left
+  and :right.\n\n@media screen, print { body { font-size: 10pt } }\nSet font size
+  for body element for print and screen media\n\nIn CSS 3 Web Fonts Module:\n  @font-face
+  { \n   font-family: \"My Helvetica\"; src: url(my_helvetica.ttf) format(\"truetype\");
+  \n  }\n  Load the font \"My Helvetica\" from the URL.\n\nIn CSS 3 Namespaces Module:\n
+  \ @namespace \"http://www.w3.org/1999/xhtml\";\n  @namespace svg \"http://www.w3.org/2000/svg\";\n
+  \ The default namespace sets to the XHTML URI, the 'svg' prefix maps SVG URI\n\nIn
+  CSS 3 Paged Media Module:\n  @page :left { @bottom-left-corner { content: counter(page);
+  } }\n  @page :right { @bottom-right-corner { content: counter(page); } } \n  Print
+  page numbers on the outside bottom corners of (printed) pages.\n\n\nSELECTORS:(from
+  css3_selectors)\n===================================\nFor element E:\n  E[attr^=\"val\"]
+  \        Attribute value which begins with \"val\"\n  E[attr$=\"val\"]         ...
+  which ends with \"val\"\n  E[attr*=\"val\"]         ... with the substring \"val\"\n
+  \ E:root                 Only if root of document\n  E:nth-child(n)         Only
+  if also the nth child of its parent\n  E:nth-last-child(n)    ... counting from
+  the end\n  E:nth-of-type(n)       The n-th E element sibling\n  E:nth-last-of-type(n)
+  \ ... counting from the end\n  E:last-child           Only if last child (first-child
+  is in CSS2)\n  E:first-of-type        First E element sibling\n  E:last-of-type
+  \        Last E element sibling\n  E:only-child           If only child of parent\n
+  \ E:only-of-type         If only child of type E of parent\n  E:empty                With
+  no text or element children\n  E:target               Identified by browser via
+  fragment identifier\n  E:enabled              User interface element which is enabled\n
+  \ E:disabled             ... which is disabled\n  E:checked              ... which
+  is checked (checkbox / radio button)\n  E::selection           ... portion selected/highlighted
+  by user.\n  E:not(S1)              Not matching additional selector S1\n  E ~ F
+  \                 With sibling F following (not immediately)\n\n\nPROPERTIES:\n======================================\n\n===
+  [0x1000] Background Properties ===\n  \n  background:            [one or more of
+  the following values]\n  background-color:      <color>\n  background-image:      url(/path/to/image.png)\n
+  \ background-repeat:     repeat  | repeat-x | repeat-y | no-repeat\n  background-attachment:
+  inherit | scroll   | fixed\n  background-position-x: <length>| left     | right
+  \   |center\n  background-position-y: <length>| top      | bottom   |middle\n  background-position:
+  \  <background-position-x> <background-position-y>\n\n========= [0x1001] Box Model
+  =========\n  \n  +-----------------------------------------------------+\n  :                                                     :\n
+  \ :   _______________________________________________   :\n  :  | _____________________________________________
+  |  :\n  :  ||                                             ||  :\n  :  ||                                             ||
+  \ :\n  :  ||   +-------------------------------------+   ||  :\n  :  ||   |                                     |
+  \  ||  :\n  :  ||   |      Content (width x height)       |   ||  :\n  :  ||   |
+  \                                    |   ||  :\n  :  ||   +-------------------------------------+
+  \  ||  :\n  :  ||            Padding (background)             ||  :\n  :  ||_____________________________________________||
+  \ :\n  :  |___________________Border______________________|  :\n  :                                                     :\n
+  \ :                Margin (transparent)                 :\n  +-----------------------------------------------------+\n\n
+  \  Area = (width,height) + padding + border + margin\n\n\n====== [0x1010] Box Properties
+  =======\nborder:              border-style        border-color        border-width\nborder-bottom:
+  \      border-bottom-color border-bottom-style border-bottom-width\nborder-bottom-color:
+  <color>\nborder-bottom-style: dashed | dotted | inset | outset | solid\nborder-bottom-width:
+  <length>\nborder-collapse\nborder-color\nborder-left\nborder-left-color\nborder-left-style\nborder-left-width\nborder-right\nborder-right-color\nborder-right-style\nborder-right-width\nborder-spacing\nborder-style\nborder-top\nborder-top-color\nborder-top-style\nborder-top-width\nborder-width\n\n\n====
+  [0x1011] Font/Text Properties ===\n\n\n====== [0x1100] List Properties ======\n\n\n======
+  [0x1101] Table Properties =====\n\n\naccelerator\nazimuth\nbehavior\nbottom\n   C
+  \  \ncaption-side\nclear\nclip\ncolor\ncontent\ncounter-increment\ncounter-reset\ncue\ncue-after\ncue-before\ncursor\n
+  D/E \ndirection\ndisplay\nelevation\nempty-cells\n \n   F   \nfilter\nfloat\nfont\nfont-family\nfont-size\nfont-size-adjust\nfont-stretch\nfont-style\nfont-variant\nfont-weight\n
+  H/I \nheight\nime-mode\ninclude-source\n \n   L   \nlayer-background-color\nlayer-background-image\nlayout-flow\nlayout-grid\nlayout-grid-char\nlayout-grid-char-spacing\nlayout-grid-line\nlayout-grid-mode\nlayout-grid-type\nleft\nletter-spacing\nline-break\nline-height\nlist-style\nlist-style-image\nlist-style-position\nlist-style-type\n
+  \  M   \nmargin\nmargin-bottom\nmargin-left\nmargin-right\nmargin-top\nmarker-offset\nmarks\nmax-height\nmax-width\nmin-height\nmin-width\n-moz-binding\n-moz-border-radius\n-moz-border-radius-topleft\n-moz-border-radius-topright\n-moz-border-radius-bottomright\n-moz-border-radius-bottomleft\n-moz-border-top-colors\n-moz-border-right-colors\n-moz-border-bottom-colors\n-moz-border-left-colors\n-moz-opacity\n-moz-outline\n-moz-outline-color\n-moz-outline-style\n-moz-outline-width\n-moz-user-focus\n-moz-user-input\n-moz-user-modify\n-moz-user-select\n
+  \  O   \norphans\noutline\noutline-color\noutline-style\noutline-width\noverflow\noverflow-X\noverflow-Y\n
+  \  P   \npadding\npadding-bottom\npadding-left\npadding-right\npadding-top\npage\npage-break-after\npage-break-before\npage-break-inside\npause\npause-after\npause-before\npitch\npitch-range\nplay-during\nposition\n
+  Q/R \nquotes\n-replace\nrichness\nright\nruby-align\nruby-overhang\nruby-position\n
+  \  S   \n-set-link-source\nsize\nspeak\nspeak-header\nspeak-numeral\nspeak-punctuation\nspeech-rate\nstress\nscrollbar-arrow-color\nscrollbar-base-color\nscrollbar-dark-shadow-color\nscrollbar-face-color\nscrollbar-highlight-color\nscrollbar-shadow-color\nscrollbar-3d-light-color\nscrollbar-track-color\n
+  \  T   \ntable-layout\ntext-align\ntext-align-last\ntext-decoration\ntext-indent\ntext-justify\ntext-overflow\ntext-shadow\ntext-transform\ntext-autospace\ntext-kashida-space\ntext-underline-position\ntop\n
+  U/V \nunicode-bidi\n-use-link-source\nvertical-align\nvisibility\nvoice-family\nvolume\n
+  W/Z \nwhite-space\nwidows\nwidth\nword-break\nword-spacing\nword-wrap\nwriting-mode\nz-index\nzoom"

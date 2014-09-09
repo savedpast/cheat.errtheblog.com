@@ -1,0 +1,63 @@
+---
+haml: ! "INSTALLING\r\n----------\r\n$ sudo gem install haml\r\n\r\nTo create plugin
+  hook in Rails:\r\n$ haml --rails /path/to/app\r\n\r\nSee 'haml --help' for command-line
+  compiling options.\r\n\r\nNUTSHELL\r\n--------\r\nThink of Haml as HTML/Erb with
+  open/close tags replaced by indentation\r\nconventions.  It's a \"dumb\" syntax
+  compiler which directly transliterates\r\nany element you specify to XHTML, with
+  no validation.  The key benefit\r\nis clean reading and elegant presentation.  Many
+  developers find pages\r\nand views written in Haml more maintainable than XHTML.\r\n\r\nWhitespace
+  rules in Haml are very strict.  Nesting is specified by \r\nindenting the contained
+  content two spaces from the enclosing block.\r\nFor example:\r\n\r\n%html\r\n  %h1
+  My title.\r\n  %p\r\n    This is a paragraph.  Here I will specify some\r\n    %strong
+  \r\n      bold and\r\n      %em italicized\r\n      text.\r\n  %p Another paragraph.\r\n\r\n...maps
+  to:\r\n\r\n<html>\r\n  <h1>My title.</h1>\r\n  <p>\r\n    This is a paragraph.  Here
+  I will specify some\r\n    <strong>\r\n      bold and\r\n      <em>italicized</em>\r\n
+  \     text.\r\n    </strong>\r\n  </p>\r\n  <p>Another paragraph.</p>\r\n</html>\r\n\r\n\r\nSYNTAX\r\n------\r\n!!!
+  - doctype specifier, e.g. !!! Strict\r\n  Inserts an HTML DOCTYPE or XML declaration.
+  \ Default is XHTML 1.0\r\n  Transitional, but other formats can be given.  (See
+  Haml docs.) \r\n\r\n% - element specifier, e.g. %h1\r\n  Wraps everything following
+  on the same line *or* nested in following\r\n  indented lines with open/close element
+  tags: <element>stuff</element>\r\n\r\n# - id specifier, e.g. #main or %div#main\r\n
+  \ Sets an 'id' attribute on an element.  If %element is not specified, \r\n  creates
+  an implied <div> element.\r\n\r\n. - class specifier, e.g. .error or %li.error\r\n
+  \ Sets a 'class' attribute on an element.  If %element is not specified,\r\n  creates
+  an implied <div> element.  Classes can be chained with multiple\r\n  periods.\r\n\r\n{}
+  - attributes, e.g. %input{:name => \"title\", :length => \"30\"}\r\n  Sets attributes
+  on an element, taking either Ruby hash key/value pairs\r\n  or one or more Ruby
+  methods which return a hash.\r\n\r\n[] - id and class from Ruby object, e.g. %div[@content]
+  \   \r\n  Sets the 'class' and 'id' attributes based on the class and \r\n  class-plus-object-id
+  of the specified Ruby object.\r\n\r\n/ (at end of tag definition) - self-closing
+  tag, e.g. %br/\r\n  Specifies a self-closing tag.  (Some tags are self-closed by
+  default.)\r\n\r\n/ (at start of line) - comment, e.g. / Here there be tygers.\r\n
+  \ Creates an HTML comment from the content on the line or nested beneath.\r\n\r\n\\
+  - escape character, e.g. \\. (to render a period at the start of a line)\r\n  Allows
+  'special' characters from this list to be rendered as plain text.\r\n\r\n| - multi-line
+  string, e.g. This | (break) is one | (break) line.\r\n  Joins the line with the
+  following line in the output.  Keeps the\r\n  Haml line-breaking rules from looking
+  too ugly on inline tags.\r\n\r\n> - trim whitespace outside tag, e.g. %span> single-word
+  (break) .\r\n  Keeps whitespace from being automatically inserted outside the\r\n
+  \ specified tag.  Useful for preserving punctuation with inline tags.\r\n\r\n< -
+  trim whitespace inside tags, e.g. %tr< (break) %td\r\n  Keeps whitespace from being
+  automatically inserted inside the specified\r\n  tag.  Useful for nesting tags that
+  logically should go on one line.\r\n\r\n: - filter following content, e.g. :markdown\r\n
+  \ Runs nested content through another filter process and embeds the\r\n  result.
+  \ See Haml docs for list of supported filters.\r\n\r\n= - Ruby expression, e.g.
+  %h1= @content.title or = @content.title\r\n  Works just like the Erb = marker: the
+  Ruby expression following it is\r\n  evaluated and its result inserted into the
+  document.  May follow a tag\r\n  or stand on a line by itself.\r\n\r\n- - Ruby non-printing
+  code, e.g. - for content in @contents do\r\n  Works just like the Erb - marker:
+  the Ruby expression is evaluated but\r\n  no output goes into the document.  Primarily
+  used for flow control and\r\n  the quirky Rails form_for syntax.\r\n\r\n~ - Ruby
+  expression preserving whitespace, e.g. %pre~ @content.body\r\n  Works just like
+  =, but calls the find_and_preserve helper to keep\r\n  line breaks intact in the
+  output.\r\n\r\n== - Ruby interpolated string, e.g. %h1== Now editing #{@content.title}\r\n
+  \ Works just like = followed by a double-quoted string.  Content is \r\n  treated
+  as a literal with Ruby variable substitutions.\r\n\r\n&= - Ruby sanitized expression,
+  e.g. %h1&= @content.title_from_user\r\n  Works just like = but sanitizes HTML-unsafe
+  characters in output by\r\n  converting to escaped entities.  Also see :escape_html
+  option.\r\n\r\n!= - Ruby unsanitized expression, e.g. #body!= @content.generated_html\r\n
+  \ Works just like = but *never* sanitizes output, regardless of whether\r\n  the
+  :escape_html option is set.\r\n\r\n-# - Silent comment, e.g. -# The users are all
+  idiots.\r\n  Contained content is never output.\r\n\r\n\r\nMORE INFO AND TIPS\r\n------------------\r\nhttp://haml.hamptoncatlin.com\r\nhttp://haml.hamptoncatlin.com/docs/rdoc/classes/Haml.html\r\nhttp://www.elctech.com/projects/random-haml-tips
+  # More tips\r\nhttp://snippets.dzone.com/posts/show/6838 # Snippet to convert all
+  ERb views to Haml"

@@ -1,0 +1,5 @@
+---
+sshfs: ! "Mounts a remote directory locally through ssh:\n\n$ sshfs remoteserver:/home/user/my_dir
+  my_local_mountpoint\n\nInclude username and port as the following:\n\n$ sshfs user@remoteserver:/path_to_dir
+  my_local_mountpoint -p <port>\n\nPractical switches\n\n  -o follow_symlinks\n  -C\n
+  \   equivalent to '-o compression=yes'"

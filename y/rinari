@@ -1,0 +1,15 @@
+---
+rinari: ! "\"Rinari Is Not A Rails IDE\"\r\n\r\nActually, it kind of is. Rinari's
+  a set of Emacs libraries to help work with\r\nRails.\r\n\r\nMoving around in Rinari:\r\n\r\n\tC-c
+  ; f c\trinari-find-controller\r\n\tC-c ; f e\trinari-find-environment\r\n\tC-c ;
+  f f\trinari-find-file-in-project\r\n\tC-c ; f h\trinari-find-helper\r\n\tC-c ; f
+  i\trinari-find-migration\r\n\tC-c ; f j\trinari-find-javascript\r\n\tC-c ; f l\trinari-find-plugin\r\n\tC-c
+  ; f m\trinari-find-model\r\n\tC-c ; f n\trinari-find-configuration\r\n\tC-c ; f
+  o\trinari-find-log\r\n\tC-c ; f p\trinari-find-public\r\n\tC-c ; f r\trinari-find-rspec\r\n\tC-c
+  ; f s\trinari-find-script\r\n\tC-c ; f t\trinari-find-test\r\n\tC-c ; f v\trinari-find-view\r\n\tC-c
+  ; f w\trinari-find-worker\r\n\tC-c ; f x\trinari-find-fixture\r\n\tC-c ; f y\trinari-find-stylesheet\r\n\r\nActions
+  in Rinari:\r\n\r\n\tC-c ; c         rinari-console\r\n\tC-c ; e         rinari-insert-erb-skeleton\r\n\tC-c
+  ; f         Prefix Command\r\n\tC-c ; g         rinari-rgrep\r\n\tC-c ; q         rinari-sql\r\n\tC-c
+  ; r         rinari-rake\r\n\tC-c ; s         rinari-script\r\n\tC-c ; t         rinari-test\r\n\tC-c
+  ; w         rinari-web-server\r\n\tC-c ; x         rinari-extract-partial\r\n\r\n\r\nFind
+  the latest version at http://github.com/eschulte/rinari/tree/master."

@@ -1,0 +1,54 @@
+---
+cucumber_tags: ! "------------------------------------------------------------\r\nTags
+  are a great way to organise your features and scenarios. Consider this example:\r\n\r\n------------------------------------------------------------\r\n@billing\r\nFeature:
+  Verify billing\r\n\r\n  @important\r\n  Scenario: Missing product description\r\n\r\n
+  \ Scenario: Several products\r\n   \r\n------------------------------------------------------------\r\nA
+  Scenario or feature can have as many tags as you like. Just separate them with spaces:\r\n\r\n@billing
+  @bicker @annoy\r\nFeature: Verify billing\r\n\r\n------------------------------------------------------------\r\nTag
+  Inheritance\r\nAny tag that exists on a Feature will be inherited by Scenario, Scenario
+  Outline or Examples.\r\n------------------------------------------------------------\r\n\r\nRunning
+  a subset of scenarios\r\nYou can use the --tags option to tell Cucumber that you
+  only want to run features or scenarios that have (or don’t have) certain tags. Examples:\r\n\r\ncucumber
+  --tags @billing            # Runs both scenarios\r\ncucumber --tags @important          #
+  Runs the first scenario\r\ncucumber --tags ~@important         # Runs the second
+  scenario (Scenarios  without @important)\r\n\r\ncucumber --tags @billing --tags
+  @important    # Runs the first scenario (Scenarios with @important AND @billing)\r\ncucumber
+  --tags @billing,@important           # Runs both scenarios (Scenarios with @important
+  OR @billing)\r\n\r\n(Another way to “filter” what you want to run is to use the
+  file.feature:line pattern or the --scenario option as described in Running Features).\r\n\r\nTags
+  is also a great way to “link” your Cucumber features to other documents. For example,
+  if you have to deal with old school requirements in a different system (Word, Excel,
+  a wiki) you can refer to numbers:\r\n\r\n------------------------------------------------------------\r\n@BJ-x98.77
+  @BJ-z12.33\r\nFeature: Convert transaction\r\n------------------------------------------------------------\r\n\r\nAnother
+  creative way to use tags is to keep track of where in the development process a
+  certain feature is:\r\n\r\n------------------------------------------------------------\r\n@qa_ready\r\nFeature:
+  Index projects\r\n------------------------------------------------------------\r\n\r\nTags
+  are also used in Tagged Hooks, which let you use tags to define what Before and
+  After blocks get run for what scenarios.\r\n\r\nLogically ANDing and ORing Tags\r\nAs
+  you may have seen in the previous examples Cucumber allows you to use logical ANDs
+  and ORs to help gain greater control of what features to run.\r\n\r\nTags which
+  are comma separated are ORed:\r\n\r\nExample: Running scenarios which match @important
+  OR @billing\r\n\r\n------------------------------------------------------------\r\ncucumber
+  --tags @billing,@important\r\nTags which are passed in separate —tags are ANDed\r\n------------------------------------------------------------\r\n\r\nExample:
+  Running scenarios which match @important AND @billing\r\n\r\n------------------------------------------------------------\r\ncucumber
+  --tags @billing --tags @important\r\n------------------------------------------------------------\r\n\r\nYou
+  can combine these two methods to create powerful selection criteria:\r\n\r\nExample:
+  Running scenarios which match: (@billing OR @WIP) AND @important\r\n\r\n------------------------------------------------------------\r\ncucumber
+  --tags @billing,@wip --tags @important\r\n------------------------------------------------------------\r\n\r\nExample:
+  Skipping both @todo and @wip tags\r\n\r\n------------------------------------------------------------\r\ncucumber
+  --tags ~@todo --tags ~@wip\r\n------------------------------------------------------------\r\n\r\nYou
+  can use this tag logic in your Hooks as well.\r\n\r\nThis feature was originally
+  added in version 0.4.3. The logical behaviour of tags was later reversed in version
+  0.6.0.\r\n\r\nTag limits and WIP\r\nIf you’re following Kanban principles, you want
+  to limit the work in progress (WIP). The idea is that the fewer features or scenarios
+  that being worked on simultaneously, the quicker you’ll be able to implement new
+  features.\r\n\r\nCucumber can enforce this using tag limits. Here is an example:\r\n\r\n------------------------------------------------------------\r\ncucumber
+  --tags @dev:2,@qa:3\r\n------------------------------------------------------------\r\n\r\nThis
+  will make cucumber fail if you have more than 2 @dev tags or more than 3 @qa tags,
+  even if each of your scenarios pass individually.\r\n\r\nUsed in conjunction with
+  the --wip switch you can set up your project to enforce the WIP limits of your team.\r\n\r\n\r\n------------------------------------------------------------\r\nSpecial
+  Tags\r\n@allow-rescue: Turns off Cucumber’s exception capturing for the tagged scenario(s).
+  Used when the code being tested is expected to raise and handle exceptions.\r\n\r\n@javascript:
+  Uses a javascript-aware system to process web requests (e.g., Selenium) instead
+  of the default (non-javascript-aware) webrat browser.\r\n\r\n@no-txn: Turns off
+  transactions."

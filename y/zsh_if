@@ -1,0 +1,47 @@
+---
+zsh_if: ! "if [[ $foo = '' ]]; then\n\tprint The parameter foo is empty\nfi\n\n# see
+  also -z below\n\nif [[ biriyana = b* ]]; then\t\t\n\tprint Word begins with a b\nfi\n#
+  quote the term to avoid pattern matching (not regexp, btw)\n\n\n# Numbers\nif [[
+  $number -gt 3 ]]; then\nif [[ $number -lt 3 ]]; then\nif (( $number > 3 )); then\nif
+  (( 3 )); then\t\n\n# Files\nif [[ file1 -nt file2 ]]; then\t\t# newer than\nif [[
+  file1 -ot file2 ]]; then\t\t# older than\nif [[ file1 -ef file2 ]]; then\t\t# same
+  file\n\n# Variables\nif [[ -z \"$var is blah; test fails\" ]]; then\t\t# zero length?\nif
+  [[ -n \"$var is blah; test passes\" ]]; then\t\t# non-zero length?\n\n-a file\n#
+  true if file exists.\n\n-b file\n# true if file exists and is a block special file.\n\n-c
+  file\n# # true if file exists and is a character special file.\n\n-d file\n# #true
+  if file exists and is a directory.\n\n-e file\n# true if file exists.\n\n-f file\n#
+  true if file exists and is a regular file.\n\n-g file\n# true if file exists and
+  has its setgid bit set.\n\n-h file\n# true if file exists and is a symbolic link.\n\n-k
+  file\n# true if file exists and has its sticky bit set.\n\n-n string\n# true if
+  length of string is non-zero.\n\n-o option\n# true if option named option is on.
+  option may be a single character, in which case it is a single letter option name.
+  (See 15.1 Specifying Options.)\n\n-p file\n# true if file exists and is a FIFO special
+  file (named pipe).\n\n-r file\n# true if file exists and is readable by current
+  process.\n\n-s file\n# true if file exists and has size greater than zero.\n\n-t
+  fd\n# true if file descriptor number fd is open and associated with a terminal device.
+  (note: fd is not optional)\n\n-u file\n# true if file exists and has its setuid
+  bit set.\n\n-w file\n# true if file exists and is writable by current process.\n\n-x
+  file\n# true if file exists and is executable by current process. If file exists
+  and is a directory, then the current process has permission to search in the directory.\n\n-z
+  string\n# true if length of string is zero.\n\n-L file\n# true if file exists and
+  is a symbolic link.\n\n-O file\n# true if file exists and is owned by the effective
+  user ID of this process.\n\n-G file\n# true if file exists and its group matches
+  the effective group ID of this process.\n\n-S file\n# true if file exists and is
+  a socket.\n\n-N file\n# true if file exists and its access time is not newer than
+  its modification time.\n\nfile1 -nt file2\n# true if file1 exists and is newer than
+  file2.\n\nfile1 -ot file2\n# true if file1 exists and is older than file2.\n\nfile1
+  -ef file2\n# true if file1 and file2 exist and refer to the same file.\n\nstring
+  = pattern\nstring == pattern\n# true if string matches pattern. The `==' form is
+  the preferred one. The `=' form is for backward compatibility and should be considered
+  obsolete.\n\nstring != pattern\n# true if string does not match pattern.\n\nstring1
+  < string2\n# true if string1 comes before string2 based on ASCII value of their
+  characters.\n\nstring1 > string2\n# true if string1 comes after string2 based on
+  ASCII value of their characters.\n\nexp1 -eq exp2\n# true if exp1 is numerically
+  equal to exp2.\n\nexp1 -ne exp2\n# true if exp1 is numerically not equal to exp2.\n\nexp1
+  -lt exp2\n# true if exp1 is numerically less than exp2.\n\nexp1 -gt exp2\n# true
+  if exp1 is numerically greater than exp2.\n\nexp1 -le exp2\n# true if exp1 is numerically
+  less than or equal to exp2.\n\nexp1 -ge exp2\n# true if exp1 is numerically greater
+  than or equal to exp2.\n\n( exp )\n# true if exp is true.\n\n! exp\n# true if exp
+  is false.\n\nexp1 && exp2\n# true if exp1 and exp2 are both true.\n\nexp1 || exp2\n#
+  true if either exp1 or exp2 is true.\n\n\n# NB Arrays get treated as words separated
+  by spaces.\n\nTBC"

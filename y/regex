@@ -1,0 +1,34 @@
+---
+regex: ! "no sugar       - Regexp.new('pattern')\nalternate form - %r{pattern}\nnormal
+  regex   - /pattern/iomx[neus]\n\noptions:\n\n/i         case insensitive\n/o         only
+  interpolate #{} blocks once\n/m         multiline mode - '.' will match newline\n/x
+  \        extended mode - whitespace is ignored\n/[neus]    encoding: none, EUC,
+  UTF-8, SJIS, respectively\n\nregex characters:\n\n.          any character except
+  newline\n[ ]        any single character of set\n[^ ]       any single character
+  NOT of set\n*          0 or more previous regular expression\n*?         0 or more
+  previous regular expression(non greedy)\n+          1 or more previous regular expression\n+?
+  \        1 or more previous regular expression(non greedy)\n?          0 or 1 previous
+  regular expression\n|          alternation\n( )        grouping regular expressions\n^
+  \         beginning of a line or string\n$          end of a line or string\n{m,n}
+  \     at least m but most n previous regular expression\n{m,n}?     at least m but
+  most n previous regular expression(non greedy)\n\\A         beginning of a string\n\\b
+  \        backspace(0x08)(inside[]only)\n\\B         non-word boundary\n\\b         word
+  boundary(outside[]only)\n\\d         digit, same as[0-9]\n\\D         non-digit\n\\S
+  \        non-whitespace character\n\\s         whitespace character[ \\t\\n\\r\\f]\n\\W
+  \        non-word character\n\\w         word character[0-9A-Za-z_]\n\\xHH       hexadecimal
+  char (encoded byte value)\n\\z         end of a string\n\\Z         end of a string,
+  or before newline at the end\n(?# )      comment\n(?: )      grouping without backreferences\n(?=
+  )      zero-width positive look-ahead assertion\n(?! )      zero-width negative
+  look-ahead assertion\n(?<= )     zero-width positive look-behind assertion\n(?<!
+  )     zero-width negative look-behind assertion\n(?ix-ix)   turns on/off i/x options,
+  localized in group if any.\n(?ix-ix: ) turns on/off i/x options, localized in non-capturing
+  group.\n(?<foo> )  named groups (only Ruby 1.9)\n\nresult of matching:\n\nfoo =~
+  /pattern/ # - if no match, returns nil.\n                   - if match, returns
+  positive integer position of first \n                     matching character.\n\n$&
+  \    part of string matched by pattern.\n$`     part of string preceding match.\n$'
+  \    part of string after match.\n\nUsing named groups:\n\nregex = %r(\n  ^\n  b\n
+  \ (?<foo>\n    \\w+\n  )\n  z\n  $\n)x\nm = 'barbaz'.match(regex)\nm[:foo]\n# =>
+  'arba'\n\nthanks to http://www.zenspider.com/Languages/Ruby/QuickRef.html#11\n\nonline
+  regex checker links\n--------------------\n- for ruby                                http://www.rubular.com/\n-
+  for PHP PCRE,Posix, Javascript          http://www.rexv.org/\n- for Javascript with
+  syntax highlighting http://regexpal.com/"

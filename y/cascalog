@@ -1,0 +1,62 @@
+---
+cascalog: ! "From: Cascalog Made Easier by Jim Drannbauer\r\nhttp://jimdrannbauer.com/2011/02/04/cascalog-made-easier/\r\n\r\n(ns
+  my-project.test.demos-test\r\n  (:use cascalog.api)\r\n  (:use [clojure.test])\r\n
+  \ (:use [cascalog.testing])\r\n  (:require [clojure.contrib.string :as s]))\r\n\r\n(defn
+  make-uppercase\r\n  [string]\r\n  \"uppercase\")\r\n\r\n(defn uppercase-sq\r\n  [src]\r\n
+  \ (<- [?upper-string]\r\n    (src ?lower-string)\r\n    (make-uppercase ?lower-string
+  :> ?upper-string)))\r\n\r\n(deftest understand-defn-as-a-transformer\r\n  (with-tmp-sources
+  [test-src [[\"LOWERCASE\"]]]\r\n    (test?- [[\"uppercase\"]]\r\n      (uppercase-sq
+  test-src))))\r\n\r\n(defn truthy? [truthiness] truthiness)\r\n\r\n(defn only-the-truth\r\n
+  \ [src]\r\n  (<- [?statement]\r\n    (src ?statement ?truthiness)\r\n    (truthy?
+  ?truthiness)))\r\n\r\n(deftest understand-defn-as-a-filter\r\n  (with-tmp-sources
+  [test-src [[\"truth\" true][\"lie\" false]]]\r\n    (test?- [[\"truth\"]]\r\n      (only-the-truth
+  test-src))))\r\n\r\n(defmapop my-name-is [x] [\"my\" \"name\" \"is\"])\r\n\r\n(defn
+  hello\r\n  [src]\r\n  (<- [?my ?name ?is ?my-name]\r\n    (src ?my-name)\r\n    (my-name-is
+  ?my-name :> ?my ?name ?is)))\r\n\r\n(deftest understand-defmapop\r\n  (with-tmp-sources
+  [test-src [[\"Jim\"][\"Kerry\"]]]\r\n    (test?- [[\"my\" \"name\" \"is\" \"Jim\"]\r\n
+  \            [\"my\" \"name\" \"is\" \"Kerry\"]]\r\n      (hello test-src))))\r\n\r\n(deffilterop
+  parallel-truthy? [truthiness] truthiness)\r\n\r\n(defn only-the-truth-parallel\r\n
+  \ [src]\r\n  (<- [?statement]\r\n    (src ?statement ?truthiness)\r\n    (parallel-truthy?
+  ?truthiness)))\r\n\r\n(deftest understand-deffilterop\r\n  (with-tmp-sources [test-src
+  [[\"truth\" true][\"lie\" false]]]\r\n    (test?- [[\"truth\"]]\r\n      (only-the-truth-parallel
+  test-src))))\r\n\r\n;  What defmapcatop does:\r\n;\r\n;           this should be
+  vertical\r\n;             |    |    |     |\r\n; this <------+    |    |     |\r\n;
+  should <---------+    |     |\r\n; be <------------------+     |\r\n; vertical <------------------+\r\n\r\n(defmapcatop
+  vert\r\n  [this should be vertical]\r\n  [[this][should][be][vertical]])\r\n\r\n(defn
+  make-vertical\r\n  [src]\r\n  (<- [?word]\r\n    (src ?this ?should ?be ?vertical)\r\n
+  \   (vert ?this ?should ?be ?vertical :> ?word)))\r\n\r\n(deftest understand-defmapcatop\r\n
+  \ (with-tmp-sources [test-src [[\"this\" \"should\" \"be\" \"vertical\"]]]\r\n    (test?-
+  [[\"this\"]\r\n             [\"should\"]\r\n             [\"be\"]\r\n             [\"vertical\"]]\r\n
+  \     (make-vertical test-src))))\r\n\r\n; race-winners works because the rows are\r\n;
+  sorted by place (in this case only a\r\n; simple number string).\r\n;\r\n; defbufferop
+  is doing this:\r\n;        +---+------------------+\r\n;        |   |                  |\r\n;
+  Race Jim   1                  |\r\n; Race Kerry 2                  |\r\n;   |    |
+  \  |                  v\r\n;   |    +---+---------------------------+\r\n;   |                                    v\r\n;
+  \  +----------------> Race ( Jim 1 | Kerry 2 )\r\n;\r\n;  Then, in this case, we
+  just want the\r\n;  first tuple (Jim 1) since it comes first\r\n;  (because we sorted).
+  Without sorting,\r\n;  there is no way to reliably pick the\r\n;  first. Luckily,
+  it's only one line.\r\n\r\n(defbufferop get-winner\r\n  [tuples]\r\n  (take 1 tuples))\r\n\r\n(defn
+  race-winners\r\n  [src]\r\n  (<- [?race ?winner ?winning-place]\r\n    (src ?race
+  ?runner ?place)\r\n    (:sort ?place)\r\n    (get-winner ?runner ?place :> ?winner
+  ?winning-place)))\r\n\r\n(deftest understand-defbufferop\r\n  (with-tmp-sources
+  [test-src [[\"Race 1\" \"Jim\"   \"1\"]\r\n                               [\"Race
+  1\" \"Kerry\" \"2\"]\r\n                               [\"Race 2\" \"Jim\"   \"5\"]\r\n
+  \                              [\"Race 2\" \"Kerry\" \"3\"]]]\r\n    (test?- [[\"Race
+  1\" \"Jim\"   \"1\"]\r\n             [\"Race 2\" \"Kerry\" \"3\"]]\r\n      (race-winners
+  test-src))))\r\n\r\n;  What defaggregateop does:\r\n;\r\n;           this should
+  be horizontal\r\n;             ^    ^    ^     ^\r\n;             |    |    |     |\r\n;
+  this -------+    |    |     |\r\n; should ----------+    |     |\r\n; be -------------------+
+  \    |\r\n; horizontal -----------------+\r\n\r\n(defaggregateop conj-words\r\n
+  \ ([] [])\r\n  ([word-list word]\r\n    (conj word-list word))\r\n  ([word-list]\r\n
+  \   [word-list]))\r\n\r\n(defn make-horizontal\r\n  [src]\r\n  (<- [?this ?should
+  ?be ?horizontal]\r\n    (src ?word)\r\n    (conj-words ?word :> ?this ?should ?be
+  ?horizontal)))\r\n\r\n(deftest understand-defaggregateop\r\n  (with-tmp-sources
+  [test-src [[\"this\"]\r\n                               [\"should\"]\r\n                               [\"be\"]\r\n
+  \                              [\"horizontal\"]]]\r\n    (test?- [[\"this\" \"should\"
+  \"be\" \"horizontal\"]]\r\n      (make-horizontal test-src))))\r\n\r\n(defn count-if-awesome*\r\n
+  \ [x]\r\n  (if (= x \"awesome\") 1 0))\r\n\r\n(defparallelagg count-if-awesome\r\n
+  \ :init-var #'count-if-awesome*\r\n  :combine-var #'+ )\r\n\r\n(defn how-awesome-is-this?\r\n
+  \ [src]\r\n  (<- [?awesome-count]\r\n    (src ?word)\r\n    (count-if-awesome ?word
+  :> ?awesome-count)))\r\n\r\n(deftest understand-defparallelagg\r\n  (with-tmp-sources
+  [test-src [[\"this\"][\"is\"][\"awesome\"]\r\n                               [\"awesome\"][\"awesome\"]]]\r\n
+  \   (test?- [[3]]\r\n      (how-awesome-is-this? test-src))))"

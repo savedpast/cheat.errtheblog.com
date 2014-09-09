@@ -1,0 +1,26 @@
+---
+ruby_string: ! "To change case: \r\n\r\n capitalize - first character to upper, rest
+  to lower\r\n downcase - all to lower case\r\n swapcase - changes the case of all
+  letters\r\n upcase - all to upper case\r\n\r\nTo rejustify: \r\n\r\n center - add
+  white space padding to center string\r\n ljust - pads string, left justified\r\n
+  rjust - pads string, right justified\r\n\r\nTo trim: \r\n\r\n chop - remove last
+  character\r\n chomp - remove trailing line separators\r\n squeeze - reduces successive
+  equal characters to singles\r\n strip - deletes leading and trailing white space\r\n\r\nTo
+  examine: \r\n\r\n count - return a count of matches\r\n empty? - returns true if
+  empty\r\n include? - is a specified target string present in the source?\r\n index
+  - return the position of one string in another\r\n length or size - return the length
+  of a string\r\n rindex - returns the last position of one string in another\r\n
+  slice - returns a partial string\r\n\r\nTo encode and alter: \r\n\r\n crypt - password
+  encryption\r\n delete - delete an intersection\r\n dump - adds extra \\ characters
+  to escape specials\r\n hex - takes string as hex digits and returns number\r\n next
+  or succ - successive or next string (eg ba -> bb)\r\n oct - take string as octal
+  digits and returns number\r\n replace - replace one string with another\r\n reverse
+  - turns the string around\r\n slice! - DELETES a partial string and returns the
+  part deleted\r\n split - returns an array of partial strings exploded at separator\r\n
+  sum - returns a checksum of the string\r\n to_f and to_i - return string converted
+  to float and integer\r\n tr - to map all occurrences of specified char(s) to other
+  char(s)\r\n tr_s - as tr, then squeeze out resultant duplicates\r\n unpack - to
+  extract from a string into an array using a template\r\n\r\nTo iterate: \r\n\r\n
+  each - process each character in turn\r\n each_line - process each line in a string\r\n
+  each_byte - process each byte in turn\r\n upto - iterate through successive strings
+  (see \"next\" above)\r\n\r\nTaken from: http://www.wellho.net/solutions/ruby-string-functions-in-ruby.html"

@@ -1,0 +1,15 @@
+---
+campaign_monitor: ! "This is an unofficial cheat sheet for Campaign Monitor.\r\n(http://campaignmonitor.com)\r\n\r\nComplete
+  List of Template Tags\r\n==============================\r\n\r\nMaking content editable\r\n\r\n
+  \   Single Line: <singleline></singleline>\r\n    Multi Line: <multiline></multiline>\r\n
+  \   Image: <img editable=\"true\" alt=\"\" />\r\n    Repeater: <repeater>\r\n    Layout:
+  <layout>\r\n    Table of Contents: <tableofcontents>\r\n    Repeater Title: <repeatertitle></repeatertitle>\r\n
+  \   Disabling Link Tracking and Image Importing\r\n\r\nQuick Links\r\n\r\n    Web
+  Version: <webversion>\r\n    Forward to a Friend: <forwardtoafriend>\r\n    Unsubscribe:
+  <unsubscribe>\r\n    Preference Center: <preferences>\r\n    Facebook Like: <fblike>\r\n
+  \   Tweet: <tweet>\r\n\r\nDates\r\n\r\n    Current day (Number): <currentday>\r\n
+  \   Current day (Name): <currentdayname>\r\n    Current month (Number): <currentmonth>\r\n
+  \   Current month (Name): <currentmonthname>\r\n    Current year (Number): <currentyear>\r\n\r\nPersonalization\r\n\r\n
+  \   First name: [firstname,fallback=text]\r\n    Last name: [lastname,fallback=text]\r\n
+  \   Full name: [fullname,fallback=text]\r\n    Email Address: [email]\r\n    Custom
+  fields\r\n"

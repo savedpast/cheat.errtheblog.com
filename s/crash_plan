@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>CLI
+====
+  Click the &quot;Green House&quot; logo in upper right of GUI.
+  http://support.crashplanpro.com/doku.php/reference/proclient/commands
+
+Reduce memory usage on OSX
+===========================
+see  https://crashplan.zendesk.com/entries/116068
+
+== Overview: edit /Library/LaunchDaemons/com.crashplan.engine.plist
+
+=== Run in 32bit mode 
+  add the &quot;-d32&quot; line.
+		&lt;string&gt;-Dapp=CrashPlanService&lt;/string&gt;
+		&lt;string&gt;-d32&lt;/string&gt;
+		&lt;string&gt;-Xmn10m&lt;/string&gt;
+
+=== Reduce the max memory (watch logs for Out Of Memory errors)
+Change:
+		&lt;string&gt;-Xmx512m&lt;/string&gt;
+
+To:
+		&lt;string&gt;-Xmx150m&lt;/string&gt;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

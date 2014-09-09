@@ -1,0 +1,14 @@
+---
+vagrant: ! "Setup\r\n-----\r\n# Assuming you have Ruby+Gems\r\n\r\ngem install vagrant\r\nvagrant
+  box add precise64 http://files.vagrantup.com/precise64.box\r\nmkdir precise64\r\ncd
+  precise64\r\nvagrant init precise64\r\nvagrant up\r\nvagrant ssh\r\n\r\n# precise64
+  folder will be mapped to /vagrant folder on machine\r\n\r\n\r\n\r\nCommands\r\n--------\r\n\r\n$
+  vagrant --help\r\n\r\n     box\r\n     destroy\r\n     gem\r\n     halt\r\n     init\r\n
+  \    package\r\n     provision\r\n     reload\r\n     resume\r\n     ssh\r\n     ssh-config\r\n
+  \    status\r\n     suspend\r\n     up\r\n\r\n# For help on any individual command
+  run `vagrant COMMAND -h`\r\n\r\n\r\n\r\nGeneral Info\r\n------------\r\n\r\n# Vagrant
+  files are stored on your user dir\r\nls ~/.vagrant.d/\r\n\r\n# Vagrant boxes dir
+  (for distributing/sharing)\r\nls ~/.vagrant.d/boxes/\r\n\r\n\r\n\r\nBoxes addresses\r\n---------------\r\nhttp://www.vagrantbox.es/\r\n\r\n\r\n\r\nUpdate
+  VirtBox Guest Additions:\r\n-------------------------------\r\nfrom: https://github.com/mitchellh/vagrant/issues/355\r\n\r\n
+  \ On Virtual box:    \r\n    $ /etc/init.d/vboxadd setup\r\n\r\n  In working dir:
+  \   \r\n    $ vagrant reload"

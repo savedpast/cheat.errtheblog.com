@@ -1,0 +1,20 @@
+---
+fish: ! "fish is a friendly command line shell (Friendly Interactive SHell) for UNIX-like
+  operating systems such as Linux.\r\n\r\nCommand completion\r\n------------------\r\n\r\nFish
+  gives you very good default completions. For example it will complete hostnames
+  from your .ssh/known_hosts. For example, if you want to ssh into your account on
+  host foo.example.com and you have connected to this host before, you can type\r\n\r\n
+  \ ssh foo<tab>\r\n\r\nand Fish will let you complete the host name from there.\r\n\r\nFish
+  has a different take on completing commands from your history than other (eg. Bash)
+  shells. Instead of having you type cryptic key combinations like cmd-R which takes
+  you to an emacs-like minibuffer, Fish lets you use the arrow up-key and will complete
+  the command from your history based on what you typed.\r\n\r\n  $ cd /path/to/silly/directory\r\n
+  \ $ make\r\n  $ cd \r\n  $ cd /<up-arrow>\r\n\r\nThe last line in the example above
+  will let you jump through your command history and match all commands you have typed
+  that begin with \"cd /\". If the first match wasn't what you were looking for, press
+  up arrow again and Fish will keep trying. \r\n\r\nFish also has builtin command
+  completion for a lot of applications; after installing fish just try hitting tab
+  after a command name and see if it doesn't suggest something relevant for you.\r\n\r\nGet
+  help\r\n--------\r\nTo get help with fish, type help at the command line - optionally
+  followed by a command or function you want to get help with\r\n\r\nGo fishing\r\n----------\r\nThe
+  Fish shell can be found at http://www.fishshell.org/"

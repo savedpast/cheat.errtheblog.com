@@ -1,0 +1,11 @@
+---
+deprec: ! "Deprec is a collection of automated deployment,recipes written in ruby,
+  for setting up production ready rails servers.\n\nKnown to support: Ubuntu 7,10,
+  8,04\n\nALL commands are performed on the CLIENT.\n\n##To Install (performed once):\nsudo
+  gem install deprec                     # installs what you need\ncap show_tasks
+  \                             # should now include deprec tasks\n\n##To deploy your
+  app to a fresh slice:\n\ncd your_rails_app\ndepify .\n# Edit config/deploy.rb\ncap
+  deprec:rails:install_stack\n\n# WARNING! Don't run the following command if you
+  are using\n# a shared database server that has already been installed.\ncap deprec:db:install
+  \n\ncap deploy:setup\ncap deploy\ncap deploy:migrate\n\nDerived from: http://www.deprec.org/\nMore
+  help: http://topfunky.com/clients/peepcode/free-episodes"

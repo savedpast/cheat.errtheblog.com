@@ -1,0 +1,22 @@
+---
+eventmachine: ! "EventMachine\r\n============\r\n\r\nInstallation:\r\n$ gem install
+  eventmachine\r\n\r\nSynchronous Ruby code (Not EM appropriate):\r\nret = operation();
+  do_something_with(ret)\r\n\r\nEvented, asynchronous code (EM appropriate):\r\noperation{
+  |ret| do_something_with(ret) }\r\n\r\nStart the reactor:\r\nEM.run {...} | EventMachine.run
+  do ... end\r\n\r\nCheck that the reactor is running:\r\nEM.reactor_running?\r\n\r\nStart
+  a server:\r\nEM.run { EM.start_server '0.0.0.0', 6666, FooServer }\r\n\r\nStop the
+  reactor:\r\nEM.stop | EM.run{ puts \"reactor started!\"; EM.stop; }; puts \"this
+  will happen\"\r\n\r\nQueue a proc to be executed on the next iteration of the reactor
+  loop:\r\nEM.next_tick | do_work = proc{...}; EM.next_tick(&do_work)\r\n\r\nIterate
+  over multiple ticks of the reactor:\r\nEM::Iterator.new(0..10, 2).each(proc{ |num,iter|
+  iter.next }, proc{ puts 'All done' })\r\n\r\nSet the size of the worker thread pool:\r\nEM.threadpool_size\r\n\r\nPush
+  a job onto the thread pool:\r\nEM.defer(proc{ result = long_blocking_call_on_worker_thread;
+  result }, proc{|result| use_reactor_thread(result) })\r\n\r\nSchedule/defer something
+  for specified seconds:\r\nEventMachine.add_timer(1) { puts \"hello one second from
+  #{time}!\" }\r\n\r\nCreate interval timing:\r\nEM::PeriodicTimer.new(0.25) { foo_every_quarter_second()
+  }\r\n\r\nSpecify event handlers:\r\noperation{ do_something } | operation(proc{
+  do_something }) | operation(&method(:do_something)) | operation(obj.method(:do_something))\r\n\r\nStandard
+  EM:Callback interface:\r\ndef operation(*args, &blk) { handler = EM::Callback(*args,
+  &blk); handler.call }\r\n\r\n\r\nEM.schedule\r\nEM::Deferrable\r\nEM::Queue\r\nEM::Channel\r\nEM.system\r\nEM.start_server
+  (and EM.stop_server): TCP Server\r\nEM.connect (and EM.bind_connect): TCP Client\r\nEM.open_datagram_socket:
+  UDP Socket\r\nEM::Protocols\r\nEM.watch and EM.attach\r\nEM.watch_file\r\nEM.watch_process\r\nEM.open_keyboard"

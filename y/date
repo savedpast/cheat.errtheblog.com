@@ -1,0 +1,5 @@
+---
+date: ! "Display the current date/time:\r\n\r\n$ date [+FORMAT]\r\n\r\nlike:\r\n\r\n$
+  date +%H:%M:%S\r\n$ date +'%A, %B %d, %Y'\r\n$ date +%s\r\n\r\nSet the system date:\r\n\r\n$
+  date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]\r\n\r\nFor FORMAT character
+  sequences, see strftime."

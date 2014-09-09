@@ -1,0 +1,11 @@
+---
+faker: ! "* Faker::Name.name => \"Christophe Bartell\"\n* Faker::Internet.email =>
+  \"kirsten.greenholt@corkeryfisher.info\"\n\n\nAddress Fakes\n------------\n\nMethods\ncity
+  \  city_prefix   city_suffix   secondary_address   street_address   street_name
+  \  street_suffix   uk_country   uk_county   uk_postcode   us_state   us_state_abbr
+  \  zip_code  \n\nInternet Fakes\n-------------\n\n\nMethods\ndomain_name   domain_suffix
+  \  domain_word   email   free_email   user_name  \n\n\nPhoneNumber Fakes\n-------------\n\n\nMethods\nphone_number
+  \ \n\n\nName Fakes\n----------\n\n\nMethods\nfirst_name   last_name   name   prefix
+  \  suffix  \n\n\nCompany Fakes\n-------------\n\n\nMethods\nbs   catch_phrase   name
+  \  suffix  \n\n\nLorem Fakes\n-----------\n\n\nMethods\nparagraph   paragraphs   sentence
+  \  sentences   words"

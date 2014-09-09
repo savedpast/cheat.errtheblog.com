@@ -1,0 +1,250 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>== Starting a new lift project ==
+
+To start a new ''lift'' project install Java 1.5 or 1.6, and Maven 2.0.8 (newer version should work as well).
+
+Now let's create your new project
+
+ cd ~/tmp
+{{Template:NewBasicPrj|groupId=com.liftone|artifactId=liftone}}
+ cd liftone
+ mvn jetty:run -U
+
+In this example, &lt;tt&gt;LiftOne&lt;/tt&gt; is the name of the project, &lt;tt&gt;~/tmp/liftone/&lt;/tt&gt; is the location of the project, and &lt;tt&gt;com.liftone&lt;/tt&gt; is the package name for the project classes. Remember that Scala package names are similar to Java package names.
+
+Point your browser to &lt;code&gt;http://localhost:8080&lt;/code&gt; and see your first ''lift'' project.
+
+=== Troubleshooting === 
+* '''Problem''': Out of Memory Errors Reported by maven:
+# '''Possible Solution''': On 64bit machines you need more than a gig of RAM. If you have a 32bit machine, and a gig of RAM, a possible work around is to change the maxmemory parameter in the liftweb/lift/pom.xml to 960m. This has been successfully Tested On:
+## Windows XP 32bit, 1 Gig of RAM, JDK/JRE 1.6, Maven 2.0.8
+
+=== See also ===
+* [[HowTo_start_a_new_liftwebapp]]
+
+* [http://www.nabble.com/Lift-without-maven-tt16751215.html#a16858511 Lift without maven]: Once you have created a new project with maven, you can use any other build tool.
+
+== Boot (setting the lift environment) ==
+
+When the ''lift'' servlet is initialized, it looks for a class bootstrap.liftweb.Boot and invokes the &quot;boot&quot; method
+on an instance of this class.  This allows the project to define special request routing rules, tell ''lift'' where
+certain classes can be found.  See the [[Boot Example]] for more information.
+
+== Project Layout ==
+
+lift uses [http://maven.apache.org/ Maven] as its build system and lift projects are laid out accordingly.
+In the root of all projects is a src directory and a pom.xml file.  The POM file contains the Maven
+build instructions.  The src directory contains main which contains scala and webapp.
+
+The src/main/scala directory contains the Scala source code.
+
+The src/main/webapp directory contains the HTML, JavaScript, CSS, and WEB-INF code.
+
+The lift_example directory contains the derby database.
+
+== Run Mode ==
+
+One can run a lift application in different modes based on starting the JVM with the -Drun.mode=production.  The run modes are:
+
+&lt;pre name=&quot;code&quot; class=&quot;scala&quot;&gt;
+  object RunModes extends Enumeration {
+    val Development = Value(1, &quot;Development&quot;)
+    val Test = Value(2, &quot;Test&quot;)
+    val Staging = Value(3, &quot;Staging&quot;)
+    val Production = Value(4, &quot;Production&quot;)
+    val Pilot = Value(5, &quot;Pilot&quot;)
+    val Profile = Value(6, &quot;Profile&quot;)
+  }
+&lt;/pre&gt;
+
+== Property files ==
+
+Different developers can have different properties files within the same project.  The properties files are located in
+&lt;code&gt;src/main/webapp/WEB-INF/classes/props&lt;/code&gt;  Properties files are retrieved based on RunMode, user name, and host name.  So, if you're running in development mode, your username is 'dpp' and your hostname is 'goat', the
+&lt;code&gt;dpp.goat.props&lt;/code&gt; file will be used.  If that cannot be found, lift will check for
+&lt;code&gt;dpp.props&lt;/code&gt;, &lt;code&gt;goat.props&lt;/code&gt;, and finally &lt;code&gt;default.props&lt;/code&gt;.
+
+If the RunMode is anything other than &quot;development&quot;, the RunMode name will be prepended to the name so &lt;code&gt;test.dpp.goat.props&lt;/code&gt;, &lt;code&gt;test.dpp.props&lt;/code&gt;,
+&lt;code&gt;test.goat.props&lt;/code&gt;, and &lt;code&gt;test.default.props&lt;/code&gt; will be checked for in that order.
+
+The properties files are in standard [http://java.sun.com/docs/books/tutorial/i18n/resbundle/propfile.html Java properties format].
+
+== Where HTML goes ==
+
+Put the HTML, CSS, JavaScript, images, etc. in the &lt;code&gt;src/main/webapp&lt;/code&gt; directory or
+subdirectories.  For file names that end in .xml, .html, .xhtml, .htm, .liftjs, and .liftcss, lift will parse and
+serve the page.  For all other files, they will be served up as static content by the default servlet.
+
+If a request comes in for &lt;code&gt;/hello&lt;/code&gt; lift will look for &lt;code&gt;src/main/webapp/hello.html&lt;/code&gt;
+
+If you want to localize your content, &lt;code&gt;/hello&lt;/code&gt; will look for &lt;code&gt;hello_en_US.html&lt;/code&gt;, then 
+&lt;code&gt;hello_en.html&lt;/code&gt;, then &lt;code&gt;hello.html&lt;/code&gt; where &lt;code&gt;en&lt;/code&gt; and &lt;code&gt;US&lt;/code&gt; are the language and country for the current locale.
+
+See [[lift View First]] rendering.
+
+== Defining Models ==
+
+lift O-R mapped models are defined based on a class with fields.
+
+&lt;pre name=&quot;code&quot; class=&quot;scala&quot;&gt;
+class WikiEntry extends KeyedMapper[Long, WikiEntry] {
+  def getSingleton = WikiEntry // what's the &quot;meta&quot; object
+  def primaryKeyField = id
+
+  // the primary key
+  object id extends MappedLongIndex(this)
+  
+  // the name of the entry
+  object name extends MappedString(this, 32) {
+    override def dbIndexed_? = true // indexed in the DB
+  }
+  
+  object owner extends MappedLongForeignKey(this, User)
+  
+  // the text of the entry
+  object entry extends MappedTextarea(this, 8192) {
+    override def textareaRows  = 10
+    override def textareaCols = 50
+  }
+}
+&lt;/pre&gt;
+
+Discussion on having [http://groups.google.com/group/liftweb/browse_frm/thread/3ea88015027e2ff4 shared base traits for Models]
+
+== Accessing Model Fields ==
+
+Model fields are set with an apply operator:
+
+&lt;pre&gt;
+val e: WikiEntry = WikiEntry.create
+
+e.name(&quot;Hello&quot;) // set the name
+
+// chained setting
+e.name(&quot;hello&quot;).entry(&quot;Dogs and Cats&quot;)
+
+// and models can be saved
+e.name(&quot;hello&quot;).entry(&quot;Dogs and Cats&quot;).save
+
+// accessing fields:
+
+e.name == &quot;hello&quot; // true
+
+e.name.asHtml // get the HTML formatted value of the field
+
+e.owner.obj.asHtml // accessing many-to-one relationship objects
+
+&lt;/pre&gt;
+
+== Schemifier ==
+The Schemifier makes sure that the database schema supports the declared model. If a database column or table is missing the Schemifier will create it according to the model. If you want lift to create tables from your model entities remember to register the model entities in the Schemifier (this i normally done in Boot.scala):
+
+&lt;pre&gt;
+Schemifier.schemify(true, Log.infoF _, User)
+Schemifier.schemify(true, Log.infoF _, Auction)
+Schemifier.schemify(true, Log.infoF _, Bid)
+&lt;/pre&gt;
+
+== Web 1.0 Forms ==
+
+== AJAX == 
+If you want to submit a whole form, it is very easy with [[HowTo_use_JSON_forms]]. 
+ 
+In your snippet have the following:
+&lt;pre name=&quot;code&quot; class=&quot;scala&quot;&gt;
+class Submission {
+  def form = {
+    val url = &quot;&quot;
+    val title = &quot;&quot;
+    &lt;span&gt; { SHtml.text(&quot;URL&quot;, u =&gt; url = u) }&lt;br /&gt;
+    { SHtml.text(&quot;Title&quot;, t =&gt; title = t) }&lt;br /&gt;
+    { SHtml.submit(&quot;Submit&quot;, ignore =&gt; LinkStore ! AddLink(url, title)) }&lt;/span&gt;
+  }
+}
+&lt;/pre&gt;
+And in your template, have the following:
+&lt;pre&quot;&gt;
+&lt;lift:snippet type=&quot;Submission:Form&quot; form=&quot;POST&quot; /&gt;
+&lt;/pre&gt;
+
+Making ajax-ified anchor tags tags are easy, too.
+
+&lt;pre&gt;
+SHtml.a(() =&gt; {doSomething; Noop}, Text(&quot;Click me to do something!&quot;))
+&lt;/pre&gt;
+
+Clicking on the anchor tag will execute the function &lt;code&gt;{doSomething; Noop}&lt;/code&gt;
+
+If you want to add elements to your anchor tags (or to any Elements) you can use % like so:
+&lt;pre&gt;
+SHtml.a(() =&gt; Noop), Text(&quot;I don't do much but click me anyway&quot;)) % (&quot;class&quot; -&gt; &quot;does-nothing-really&quot;)
+&lt;/pre&gt;
+
+== Comet ==
+
+See [[CometActor]]
+
+== Lift Tags ==
+
+See [[LiftTags]]
+
+== Running with Tomcat and JavaRebel ==
+
+See [[JavaRebel]]
+
+== Cookies ==
+
+See [[Cookies]]
+
+== Connection String Quickies == 
+
+Define in &lt;lift-app&gt;/src/main/scala/bootstrap/liftweb/Boot.scala
+
+
+&lt;pre name=&quot;code&quot; class=&quot;scala&quot;&gt;
+-- 8&lt; -- 8&lt; -- 8&lt; -- 8&lt; --
+// Derby - http://db.apache.org/derby/
+Class.forName(&quot;org.apache.derby.jdbc.EmbeddedDriver&quot;)
+val dm =  DriverManager.getConnection(&quot;jdbc:derby:DATABASE;create=true&quot;)
+-- 8&lt; -- 8&lt; -- 8&lt; -- 8&lt; --
+
+
+-- 8&lt; -- 8&lt; -- 8&lt; -- 8&lt; --
+// H2 - http://www.h2database.com/  
+Class.forName(&quot;org.h2.Driver&quot;)
+val dm =  DriverManager.getConnection(&quot;jdbc:h2:mem:DATABASE;DB_CLOSE_DELAY=-1&quot;)
+-- 8&lt; -- 8&lt; -- 8&lt; -- 8&lt; --
+
+
+-- 8&lt; -- 8&lt; -- 8&lt; -- 8&lt; --
+// MySQL - http://www.mysql.org
+Class.forName(&quot;com.mysql.jdbc.Driver&quot;)
+val dm = DriverManager.getConnection(&quot;jdbc:mysql://localhost:POST_NUMBER/DATABASE&quot;, &quot;USER&quot;, &quot;PASSWORD&quot;)
+-- 8&lt; -- 8&lt; -- 8&lt; -- 8&lt; --
+
+
+-- 8&lt; -- 8&lt; -- 8&lt; -- 8&lt; --
+// PostgreSQL - http://www.postgresql.org  
+Class.forName(&quot;org.postgresql.Driver&quot;)
+val dm = DriverManager.getConnection(&quot;jdbc:postgresql://localhost/DATABASE?user=USER&amp;password=PASSWORD&quot;)
+-- 8&lt; -- 8&lt; -- 8&lt; -- 8&lt; --
+&lt;/pre&gt;
+
+Sometimes it can be useful to be able to access the database into which lift is writing with an external application via JDBC. Since you don't want to start up another JVM to have a network server running, if you're using derby you can do the following. Add a file to the toplevel folder of your project and name it &lt;tt&gt;derby.properties&lt;/tt&gt; with the content:
+&lt;pre&gt;
+derby.drda.startNetworkServer=true
+&lt;/pre&gt;
+
+Now you can point a generic JDBC client (or the built in &lt;tt&gt;ij&lt;/tt&gt;-console) to the follwing URL: &lt;tt&gt;jdbc:derby://localhost:1527/&lt;database-name&gt;&lt;/tt&gt;.
+
+== Always redirect to login if the User is not logged in ==
+
+In &lt;tt&gt;Boot.scala&lt;/tt&gt; add this RequestMatcher and if the user hits any page and is not logged in, they will be sent to &lt;tt&gt;/user_mgt/login&lt;/tt&gt;
+
+&lt;pre name=&quot;code&quot; class=&quot;scala&quot;&gt;
+val dispatcher: LiftServlet.DispatchPf = {
+        case RequestMatcher(_, ParsePath(path, _, _),_,_)  if !User.loggedIn_? &amp;&amp; path.head != &quot;user_mgt&quot; =&gt;
+        ignore =&gt; Full(RedirectResponse(&quot;/user_mgt/login&quot;, state))
+     } 
+&lt;/pre&gt;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

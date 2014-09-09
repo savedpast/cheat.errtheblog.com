@@ -1,0 +1,8 @@
+---
+matz_bot: ! "say <something>\n   say some text (use /msg to prevent echo)\ndo <something>\n
+  \  perform a /me style action\ncheat <sheet name>\n   lookup a cheat sheet\nowner\n
+  \  see who owns the MatzBot\nhelp\n   list available commands\nroll <xdy>\n   roll
+  a six sided die, optionally x dice with y sides\n>> <ruby>\n   eval ruby code, try
+  ruby style\nreset_irb\n   reset a totally screwed up irb (>>) sesssion\nseen <nick>\n
+  \  find out the last time the bot saw <nick>\nversion\n   see the bot's version\ngoogle
+  <string>\n   Google it!\nwiki <string>\n   Find it on wikipedia"

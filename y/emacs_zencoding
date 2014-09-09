@@ -1,0 +1,95 @@
+---
+emacs_zencoding: ! "# Usage\r\n\r\nEnable: `M-x zencoding-mode`.\r\nExpand: C-j or
+  `M-x zencoding-expand-line`\r\n\r\n# Syntax examples\r\n\r\n--------------------------------------------------\r\n#
+  \ Basic tags\r\n\r\na                        <a></a>\r\na.x                      <a
+  class=\"x\"></a>\r\na#q.x                    <a id=\"q\" class=\"x\"></a>\r\na#q.x.y.z
+  \               <a id=\"q\" class=\"x y z\"></a>\r\n#q                       <div
+  id=\"q\">\r\n                         </div>\r\n.x                       <div class=\"x\">\r\n
+  \                        </div>\r\n#q.x                     <div id=\"q\" class=\"x\">\r\n
+  \                        </div>\r\n#q.x.y.z                 <div id=\"q\" class=\"x
+  y z\">\r\n                         </div>\r\n\r\n--------------------------------------------------\r\n#
+  \ Empty tags\r\n\r\na/                       <a/>\r\na/.x                     <a
+  class=\"x\"/>\r\na/#q.x                   <a id=\"q\" class=\"x\"/>\r\na/#q.x.y.z
+  \              <a id=\"q\" class=\"x y z\"/>\r\n\r\n--------------------------------------------------\r\n#
+  \ Self-closing tags\r\n\r\ninput type=text          <input type=\"text\"/>\r\nimg
+  \                     <img/>\r\nimg>metadata/*2          <img>\r\n                             <metadata/>\r\n
+  \                            <metadata/>\r\n                         </img>\r\n\r\n--------------------------------------------------\r\n#
+  \ Siblings\r\n\r\na+b                      <a></a>\r\n                         <b></b>\r\na+b+c
+  \                   <a></a>\r\n                         <b></b>\r\n                         <c></c>\r\na.x+b
+  \                   <a class=\"x\"></a>\r\n                         <b></b>\r\na#q.x+b
+  \                 <a id=\"q\" class=\"x\"></a>\r\n                         <b></b>\r\na#q.x.y.z+b
+  \             <a id=\"q\" class=\"x y z\"></a>\r\n                         <b></b>\r\na#q.x.y.z+b#p.l.m.n
+  \     <a id=\"q\" class=\"x y z\"></a>\r\n                         <b id=\"p\" class=\"l
+  m n\"></b>\r\n\r\n--------------------------------------------------\r\n#  Tag expansion\r\n\r\ntable+
+  \                  <table>\r\n                             <tr>\r\n                                 <td>\r\n
+  \                                </td>\r\n                             </tr>\r\n
+  \                        </table>\r\ndl+                      <dl>\r\n                             <dt></dt>\r\n
+  \                            <dd></dd>\r\n                         </dl>\r\nul+
+  \                     <ul>\r\n                             <li></li>\r\n                         </ul>\r\nul++ol+
+  \                 <ul>\r\n                             <li></li>\r\n                         </ul>\r\n
+  \                        <ol>\r\n                             <li></li>\r\n                         </ol>\r\nul#q.x.y
+  m=l+            <ul id=\"q\" class=\"x y\" m=\"l\">\r\n                             <li></li>\r\n
+  \                        </ul>\r\n\r\n--------------------------------------------------\r\n#
+  \ Parent > child\r\n\r\na>b                      <a><b></b></a>\r\na>b>c                    <a><b><c></c></b></a>\r\na.x>b
+  \                   <a class=\"x\"><b></b></a>\r\na#q.x>b                  <a id=\"q\"
+  class=\"x\"><b></b></a>\r\na#q.x.y.z>b              <a id=\"q\" class=\"x y z\"><b></b></a>\r\na#q.x.y.z>b#p.l.m.n
+  \     <a id=\"q\" class=\"x y z\"><b id=\"p\" class=\"l m n\"></b></a>\r\n#q>.x
+  \                   <div id=\"q\">\r\n                             <div class=\"x\">\r\n
+  \                            </div>\r\n                         </div>\r\na>b+c
+  \                   <a>\r\n                             <b></b>\r\n                             <c></c>\r\n
+  \                        </a>\r\na>b+c>d                  <a>\r\n                             <b></b>\r\n
+  \                            <c><d></d></c>\r\n                         </a>\r\n\r\n--------------------------------------------------\r\n#
+  \ Multiplication\r\n\r\na*1                      <a></a>\r\na*2                      <a></a>\r\n
+  \                        <a></a>\r\na/*2                     <a/>\r\n                         <a/>\r\na*2+b*2
+  \                 <a></a>\r\n                         <a></a>\r\n                         <b></b>\r\n
+  \                        <b></b>\r\na*2>b*2                  <a>\r\n                             <b></b>\r\n
+  \                            <b></b>\r\n                         </a>\r\n                         <a>\r\n
+  \                            <b></b>\r\n                             <b></b>\r\n
+  \                        </a>\r\na>b*2                    <a>\r\n                             <b></b>\r\n
+  \                            <b></b>\r\n                         </a>\r\na#q.x>b#q.x*2
+  \           <a id=\"q\" class=\"x\">\r\n                             <b id=\"q\"
+  class=\"x\"></b>\r\n                             <b id=\"q\" class=\"x\"></b>\r\n
+  \                        </a>\r\na#q.x>b/#q.x*2           <a id=\"q\" class=\"x\">\r\n
+  \                            <b id=\"q\" class=\"x\"/>\r\n                             <b
+  id=\"q\" class=\"x\"/>\r\n                         </a>\r\n\r\n--------------------------------------------------\r\n#
+  \ Properties\r\n\r\na x                      <a x=\"\"></a>\r\na x=                     <a
+  x=\"\"></a>\r\na x=\"\"                   <a x=\"\"></a>\r\na x=y                    <a
+  x=\"y\"></a>\r\na x=\"y\"                  <a x=\"y\"></a>\r\na x=\"()\"                 <a
+  x=\"()\"></a>\r\na x m                    <a x=\"\" m=\"\"></a>\r\na x= m=\"\"                <a
+  x=\"\" m=\"\"></a>\r\na x=y m=l                <a x=\"y\" m=\"l\"></a>\r\na/ x=y
+  m=l               <a x=\"y\" m=\"l\"/>\r\na#foo x=y m=l            <a id=\"foo\"
+  x=\"y\" m=\"l\"></a>\r\na.foo x=y m=l            <a class=\"foo\" x=\"y\" m=\"l\"></a>\r\na#foo.bar.mu
+  x=y m=l     <a id=\"foo\" class=\"bar mu\" x=\"y\" m=\"l\"></a>\r\na/#foo.bar.mu
+  x=y m=l    <a id=\"foo\" class=\"bar mu\" x=\"y\" m=\"l\"/>\r\na x=y+b                  <a
+  x=\"y\"></a>\r\n                         <b></b>\r\na x=y+b x=y              <a
+  x=\"y\"></a>\r\n                         <b x=\"y\"></b>\r\na x=y>b                  <a
+  x=\"y\"><b></b></a>\r\na x=y>b x=y              <a x=\"y\"><b x=\"y\"></b></a>\r\na
+  x=y>b x=y+c x=y        <a x=\"y\">\r\n                             <b x=\"y\"></b>\r\n
+  \                            <c x=\"y\"></c>\r\n                         </a>\r\n\r\n--------------------------------------------------\r\n#
+  \ Parentheses\r\n\r\n(a)                      <a></a>\r\n(a)+(b)                  <a></a>\r\n
+  \                        <b></b>\r\na>(b)                    <a><b></b></a>\r\n(a>b)>c
+  \                 <a><b></b></a>\r\n(a>b)+c                  <a><b></b></a>\r\n
+  \                        <c></c>\r\nz+(a>b)+c+k              <z></z>\r\n                         <a><b></b></a>\r\n
+  \                        <c></c>\r\n                         <k></k>\r\n(a)*2                    <a></a>\r\n
+  \                        <a></a>\r\n((a)*2)                  <a></a>\r\n                         <a></a>\r\n((a))*2
+  \                 <a></a>\r\n                         <a></a>\r\n(a>b)*2                  <a><b></b></a>\r\n
+  \                        <a><b></b></a>\r\n(a+b)*2                  <a></a>\r\n
+  \                        <b></b>\r\n                         <a></a>\r\n                         <b></b>\r\n\r\n--------------------------------------------------\r\n#
+  \ Filter: HTML with comments\r\n\r\na.b|c                    <!-- .b -->\r\n                         <a
+  class=\"b\"></a>\r\n                         <!-- /.b -->\r\n#a>.b|c                  <!--
+  #a -->\r\n                         <div id=\"a\">\r\n                             <!--
+  .b -->\r\n                             <div class=\"b\">\r\n                             </div>\r\n
+  \                            <!-- /.b -->\r\n                         </div>\r\n
+  \                        <!-- /#a -->\r\n\r\n--------------------------------------------------\r\n#
+  \ Filter: HAML\r\n\r\na|haml                   %a\r\na#q.x.y.z|haml           %a#q.x.y.z\r\na#q.x
+  x=y m=l|haml       %a#q.x{:x => \"y\", :m => \"l\"}\r\ndiv|haml                 %div\r\ndiv.footer|haml
+  \         .footer\r\n.footer|haml             .footer\r\np>a href=#+br|haml       %p\r\n
+  \                            %a{:href => \"#\"}\r\n                             %br\r\n\r\n--------------------------------------------------\r\n#
+  \ Filter: Hiccup\r\n\r\na|hic                    [:a]\r\na#q.x.y.z|hic            [:a#q.x.y.z]\r\na#q.x
+  x=y m=l|hic        [:a#q.x {:x \"y\", :m \"l\"}]\r\n.footer|hic              [:div.footer]\r\np>a
+  href=#+br|hic        [:p\r\n                             [:a {:href \"#\"}]\r\n
+  \                            [:br]]\r\n#q>(a*2>b)+p>b|hic       [:div#q\r\n                             [:a
+  [:b]]\r\n                             [:a [:b]]\r\n                             [:p\r\n
+  \                                [:b]]]\r\n\r\n--------------------------------------------------\r\n#
+  \ Filter: escape\r\n\r\nscript src=&quot;|e      &lt;script src=\"&amp;quot;\"&gt;\r\n
+  \                        &lt;/script&gt;\r\n"

@@ -1,0 +1,6 @@
+---
+sem: ! "<?php \n$SEMKey = \"123456\" ; \n\n## Get Semaphore id \n$seg = sem_get( $SEMKey,
+  2, 0666, -1) ; \n\nif ( $argv[1]==\"remove\" ) { \n    sem_remove($seg); \n} \n\necho
+  \"Try to acquire ...\" \nsem_acquire($seg); \necho \"Acquired...\\n\" ; \n\necho
+  \"Press Any Key to continue...\\n\"; \n$fh = fopen(\"php://stdin\", \"r\"); \n$a
+  = fgets( $fh); \nfclose($fh); \n\nsem_release($seg); \n?>"

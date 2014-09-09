@@ -1,0 +1,17 @@
+---
+du: ! '# Options
+
+
+  -a : all files
+
+  -h : human-readable form
+
+  -s : summarize
+
+
+  # Examples
+
+
+  du -ah /path/to/dir
+
+  du -sh /path/to/dir'

@@ -1,0 +1,19 @@
+---
+status_codes: ! "Use these codes for the #head or #render methods.  ex:\r\n  head
+  :ok\r\n  render :file => '404.html.erb', :status => :not_found\r\n\r\n1xx Informational\r\n\r\n100
+  => :continue\r\n101 => :switching_protocols\r\n102 => :processing\r\n\r\n2xx Success\r\n\r\n200
+  => :ok\r\n201 => :created\r\n202 => :accepted\r\n203 => :non_authoritative_information\r\n204
+  => :no_content\r\n205 => :reset_content\r\n206 => :partial_content\r\n207 => :multi_status\r\n226
+  => :im_used\r\n\r\n3xx Redirection\r\n\r\n300 => :multiple_choices\r\n301 => :moved_permanently\r\n302
+  => :found\r\n303 => :see_other\r\n304 => :not_modified\r\n305 => :use_proxy\r\n307
+  => :temporary_redirect\r\n\r\n4xx Client Error\r\n\r\n400 => :bad_request\r\n401
+  => :unauthorized\r\n402 => :payment_required\r\n403 => :forbidden\r\n404 => :not_found\r\n405
+  => :method_not_allowed\r\n406 => :not_acceptable\r\n407 => :proxy_authentication_required\r\n408
+  => :request_timeout\r\n409 => :conflict\r\n410 => :gone\r\n411 => :length_required\r\n412
+  => :precondition_failed\r\n413 => :request_entity_too_large\r\n414 => :request_uri_too_long\r\n415
+  => :unsupported_media_type\r\n416 => :requested_range_not_satisfiable\r\n417 =>
+  :expectation_failed\r\n422 => :unprocessable_entity\r\n423 => :locked\r\n424 =>
+  :failed_dependency\r\n426 => :upgrade_required\r\n\r\n5xx Server Error\r\n\r\n500
+  => :internal_server_error\r\n501 => :not_implemented\r\n502 => :bad_gateway\r\n503
+  => :service_unavailable\r\n504 => :gateway_timeout\r\n505 => :http_version_not_supported\r\n507
+  => :insufficient_storage\r\n510 => :not_extended"

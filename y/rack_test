@@ -1,0 +1,12 @@
+---
+rack_test: ! "Rack::Test is a small, simple testing API for Rack apps. It can be used
+  on its\nown or as a reusable starting point for Web frameworks and testing libraries\nto
+  build on. Most of its initial functionality is an extraction of Merb 1.0's\nrequest
+  helpers feature.\n\n== Features\n\n* Maintains a cookie jar across requests\n* Easily
+  follow redirects when desired\n* Set request headers to be used by all subsequent
+  requests\n* Small footprint. Approximately 200 LOC\n\n== Example\n\n  require \"rack/test\"\n\n
+  \ class HomepageTest < Test::Unit::TestCase\n    include Rack::Test::Methods\n\n
+  \   def app\n      MyApp.new\n    end\n\n    def test_redirect_logged_in_users_to_dashboard\n
+  \     authorize \"bryan\", \"secret\"\n      get \"/\"\n      follow_redirect!\n\n
+  \     assert_equal \"http://example.org/redirected\", last_request.url\n      assert
+  last_response.ok?\n    end\n\n  end"

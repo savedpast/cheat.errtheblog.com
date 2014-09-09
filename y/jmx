@@ -1,0 +1,6 @@
+---
+jmx: ! "To enable the JMX, set this system property to a Java application:\n    \n
+  \   com.sun.management.jmxremote\n    \nTo enable monitoring and management from
+  remote systems, set this system \nproperty:\n\n    com.sun.management.jmxremote.port=portNum\n\nTo
+  disable security set this system properties:\n\n    com.sun.management.jmxremote.authenticate=false\n
+  \   com.sun.management.jmxremote.ssl=false"

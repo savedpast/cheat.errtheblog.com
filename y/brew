@@ -1,0 +1,42 @@
+---
+brew: ! "Use man brew to view the manpage.\r\nCommand\tConsequence\r\nbrew install
+  foo\t Installs foo\r\nbrew install --HEAD foo\t Installs the HEAD version of foo,
+  if foo defines such a version.\r\nbrew install --force --HEAD foo\t Installs a newer
+  HEAD version of foo.\r\nbrew fetch --force -v --HEAD foo\t Download the source package
+  for the given formula. For tarballs, also prints MD5 and SHA1 checksums.\r\nbrew
+  search\t Lists all formula that you can install\r\nbrew search foo\t Searches for
+  foo in formula available to install\r\nbrew search /foo/\t Same as above but parses
+  /foo/ as a regex\r\nbrew list\t Lists all installed formulae\r\nbrew list foo\t
+  Lists the installed files for foo\r\nbrew info --github foo\t Open your browser
+  at the Github History page for formula foo\r\nbrew info\t Summarises all installed
+  Homebrew packages\r\nbrew info foo\t Gives all available information for installed
+  or not installed formula foo\r\nbrew home\t Open’s Homebrew’s homepage in your default
+  browser\r\nbrew home foo\t Opens foo’s homepage in your default browser\r\nbrew
+  update\t Update homebrew formulae and homebrew itself\r\nbrew remove foo\t Uninstalls
+  foo\r\nbrew create [url]\t Generates a formula for the downloadable file at url
+  and opens it in $BREW_EDITOR or $EDITOR 1\r\nbrew create url-of-tarball --cache\t
+  Generates a formula, then downloads the tarball. Adds the md5 to the formula template
+  for you\r\nbrew create --macports foo\t Open your browser at the MacPorts package
+  search page, so you can see how they do foo\r\nbrew create --fink foo\t Same thing,
+  but for Fink\r\nbrew edit foo\t Opens the formula in $HOMEBREW_EDITOR or $EDITOR\r\nbrew
+  link foo\t Symlinks all of foo’s installed files into the Homebrew prefix 2\r\nbrew
+  unlink foo\t Unsymlinks foo from the Homebrew prefix\r\nbrew prune\t Removes dead
+  symlinks from the Homebrew prefix 3\r\nbrew outdated\t Shows formula that have an
+  updated version available . To install the new version of foo: brew install foo\r\nbrew
+  --config\t Print some useful system configuration to the console\r\nbrew --prefix\t
+  Display the real path to your Homebrew prefix (Usually /usr/local)\r\nbrew --prefix
+  (formula)\t Display the path where this formula is installed\r\nbrew --cellar\t
+  Display the real path to your Homebrew Cellar (Usually /usr/local/Cellar)\r\nbrew
+  --cache\t Display the real path to where Homebrew caches downloads (Usually ~/Library/Caches/Homebrew)\r\n\r\nbrew
+  doctor\t Checks your installation for common issues\r\nbrew audit\t Audits all formulae
+  for common code and style issues\r\nbrew cleanup foo\t For all installed or specific
+  formulae, removes any older versions from the cellar 4\r\nYou can update outdated
+  packages like so:\r\nbrew install `brew outdated` (or brew outdated | xargs brew
+  install (or brew upgrade))\r\n\r\n1 Homebrew will attempt to automatically derive
+  the formula name and version, if it fails, you’ll have to make your own template.
+  I suggest copying wget’s.\r\n\r\n2 This is done automatically when you install formula.
+  It is useful for DIY installation, or in cases where you want to swap out different
+  versions of the same package that you have installed at the same time.\r\n\r\n3
+  This is generally not needed. However, it can be useful if you are doing DIY installations.\r\n\r\n4
+  To delete only a specific out of date version, just go to the folder in the Cellar
+  and “rm -rf” it, or drag it to the trash in Finder."

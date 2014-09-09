@@ -1,0 +1,11 @@
+---
+ruby_arrays: ! "pop - Returns the last element in the array and deletes that element.\n\npush
+  - Appends its argument to the end of the array.\n\nshift - Returns the first element
+  of the array, deletes that \n        element, and shifts all other elements down
+  one \n        location to fill its empty spot.\n\nunshift - Shifts all elements
+  of the array up one, and places its \n        argument at the beginning of the array.\n\nTo
+  iterate over an array:\n    my_array.each do |entry_i|\n        # something with
+  entry_i\n    end\n\nTo transform an array:\n    my_array.map do |entry_i|\n        return
+  entry_i + 1\n    end\n\nTo get a slice of an array:\n    my_array[5..7]\n\nTo delete
+  a slice in an array:\n    my_array[2,2] = [\"foo\",\"bar\"]\n\nTo replace foo and
+  bar with tic, tac, toe:\n    my_array[2,2] = [\"tic\",\"tac\",\"toe\"]"

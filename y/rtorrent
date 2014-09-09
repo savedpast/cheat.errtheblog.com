@@ -1,0 +1,30 @@
+---
+rtorrent: ! "Adding and removing torrents\n  backspace\n    Add torrent using an URL
+  or file path. Use tab to view directory content and do auto-complete.\n    Also,
+  wildcards can be used. For example: ~/torrent/*\n  return\n    Same as backspace,
+  except the torrent remains inactive. (Use ^s to activate)\n  ^O\n    Set new download
+  directory for selected torrent. Only works if torrent has not yet been activated.\n
+  \ ^s\n    Start download. Runs hash first unless already done.\n  ^d\n    Stop an
+  active download, or remove a stopped download.\n  ^r\n    Initiate hash check of
+  torrent. Without starting to download/upload.\n\nThrottling\n  a/s/d\n    Increase
+  the upload throttle by 1/5/50 KB.\n  z/x/c\n    Decrease the upload throttle by
+  1/5/50 KB.\n  A/S/D\n    Increase the download throttle by 1/5/50 KB.\n  Z/X/C\n
+  \   Decrease the download throttle by 1/5/50 KB.\n\nNavigating\n  Main View Keys\n
+  \   right -- Switch to Download View.\n    ^r    -- Initiate hash check of torrent.\n
+  \   +/-   -- Change priority of torrent.\n    l     -- View log. Exit by pressing
+  the space-bar.\n    1     -- Show all downloads\n    2     -- Show all downloads,
+  ordered by name\n    3     -- Show started downloads\n    4     -- Show stopped
+  downloads\n    5     -- Show complete downloads\n    6     -- Show incomplete downloads\n
+  \   7     -- Show hashing downloads\n    8     -- Show seeding downloads\n\n  Download
+  View Keys\n    right -- Switch to selected view\n    left  -- Switch to view selection
+  or back to main view\n    1/2   -- Adjust max uploads.\n    3/4   -- Adjust min
+  peers.\n    5/6   -- Adjust max peers.\n    p     -- Display peer list\n    o     --
+  Display torrent info\n    i     -- Display file list\n    u     -- Display tracker
+  list\n    t/T   -- Initiate tracker request.\n             Use capital T to force
+  the request, ignoring the \"min interval\" set by the tracker.\n\n  Peer list View
+  Keys\n    left  -- Switch to view selection\n    right -- Show file details\n    space
+  -- Change the file priority; applies recursively when done on a directory\n    *
+  \    -- Change the priority of all files\n    /     -- Collapse directories. While
+  collapsed, press right to expand the selected directory.\n\n  Tracker list View
+  Keys\n    left  -- Switch to view selection\n    *     -- Enable/disable tracker\n
+  \   space -- Rotate trackers in a group"

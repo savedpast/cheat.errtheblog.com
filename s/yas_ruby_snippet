@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>&quot;zip&quot; =&gt; &quot;zip(...) =&gt; { |...| ... }&quot; 
+  &quot;y&quot; =&gt; &quot;:yields: arguments (rdoc)&quot; 
+  &quot;w&quot; =&gt; &quot;attr_writer ...&quot;
+  &quot;select&quot; =&gt;  &quot;select { |...| ... }&quot; 
+  &quot;rw&quot; =&gt;  &quot;attr_accessor ...&quot;
+  &quot;rreq&quot; =&gt; &quot;require File.join(File.dirname(__FILE__), ...)&quot;
+  &quot;req&quot; =&gt; &quot;require \&quot;...\&quot;&quot;
+  &quot;reject&quot; =&gt; &quot;reject { |...| ... }&quot;
+  &quot;rb&quot; =&gt; &quot;/usr/bin/ruby -wKU&quot;
+  &quot;r&quot; =&gt; &quot;attr_reader ...&quot;
+  &quot;mm&quot; =&gt; &quot;def method_missing ... end&quot;
+  &quot;inject&quot; =&gt; &quot;inject(...) { |...| ... }&quot;
+  &quot;ife&quot; =&gt; &quot;if ... else ... end&quot;
+  &quot;if&quot; =&gt; &quot;if ... end&quot; 
+  &quot;forin&quot; =&gt; &quot;for ... in ...; ... end&quot;
+  &quot;eawi&quot; =&gt; &quot;each_with_index { |e, i| ... }&quot;
+  &quot;eav&quot; =&gt; &quot;each_value { |val| ... }&quot;
+  &quot;eai&quot; =&gt; &quot;each_index { |i| ... }&quot;
+  &quot;eac&quot; =&gt; &quot;each_cons(...) { |...| ... }&quot;
+  &quot;ea&quot; =&gt; &quot;each { |...| ... }&quot;
+  &quot;det&quot; =&gt; &quot;detect { |...| ... }&quot;
+  &quot;deli&quot; =&gt; &quot;delete_if { |...| ... }&quot;
+  &quot;dee&quot; =&gt; &quot;deep_copy(...)&quot;
+  &quot;collect&quot; =&gt; &quot;collect { |...| ... }&quot;
+  &quot;cls&quot; =&gt; &quot;class ... end&quot; 
+  &quot;classify&quot; =&gt; &quot;classify { |...| ... }&quot;
+  &quot;cla&quot; =&gt; &quot;class &lt;&lt; self ... end&quot;
+  &quot;case&quot; =&gt; &quot;case ... end&quot;
+  &quot;bm&quot; =&gt; &quot;Benchmark.bmbm(...) do ... end&quot;
+  &quot;app&quot; =&gt; &quot;if __FILE__ == $PROGRAM_NAME ... end&quot; 
+  &quot;any&quot; =&gt; &quot;any? { |...| ... }&quot;
+  &quot;am&quot; =&gt; &quot;alias_method new, old&quot;
+  &quot;all&quot; =&gt; &quot;all? { |...| ... }&quot;
+  &quot;Comp&quot; =&gt; &quot;include Comparable; def &lt;=&gt; ... end&quot;
+  &quot;=b&quot; =&gt; &quot;=b&quot;
+  &quot;#&quot;  =&gt; &quot;# =&gt;&quot;</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

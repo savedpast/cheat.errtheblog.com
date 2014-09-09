@@ -1,0 +1,6 @@
+---
+tinyos: ! "Compiling for telosb:\r\nmake telosb - compiles a program\r\nmake telosb
+  install - compiles and install\r\nmake telosb install.0 bsl,/dev/ttyUSB0 - compiles
+  and install with node address 0 on serial device ttyUSB0\r\n\r\nUtils:\r\nmotelist
+  - list all attached motes\r\n\r\nPrintf:\r\njava net.tinyos.tools.PrintfClient -comm
+  serial@/dev/ttyUSB0:telosb open a printf client on given serial port\r\n"

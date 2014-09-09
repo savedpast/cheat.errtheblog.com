@@ -1,0 +1,9 @@
+---
+sql_alter: ! "add a column:\nALTER TABLE table_name ADD column_name datatype\nE.g:
+  \n  alter table books add total_page_num float default 100 NOT NULL\n\ndrop a column:\nALTER
+  TABLE table_name drop Gender column_name\n\nmodify datatype of column:\nALTER table
+  table_name modify column_name datatype\n\ncompletely change a column\nALTER table
+  table_name change column_name new_column_name attributes\n\nadd an index\n  | ADD
+  {INDEX|KEY} [index_name]\n        [index_type] (index_col_name,...) [index_option]
+  ...\nE.g:\n  alter table track_offer_clicks add index fubar1 (application_id, landing_page_id
+  );"

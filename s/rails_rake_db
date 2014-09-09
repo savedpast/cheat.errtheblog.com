@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Quick Reference for Db related tasks in Rails 3.0.0rc (as of 2010-08-25)
+
+For textual description:
+  `cheat rails_rake_tasks`
+  `rake -T` (even better - not obsolete) 
+
+task db:migrate:reset =&gt; [&quot;db:drop&quot;, &quot;db:create&quot;, &quot;db:migrate&quot;]
+task db:reset =&gt; [ 'db:drop', 'db:setup' ]
+task db:setup =&gt; [ 'db:create', 'db:schema:load', 'db:seed' ]</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

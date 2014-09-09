@@ -1,0 +1,60 @@
+---
+toggle_fold_fix: ! "Keyboard shortcuts for E Text Editor (http://www.e-texteditor.com/)\r\n\r\n===============\r\nFile
+  Operations\r\n===============\r\nCtrl+N               : New file\r\nDouble-Click
+  tab bar : New file\r\nCtrl+O               : Open file\r\nCtrl+S               :
+  Save file\r\nCtrl+Shift+S         : Save as\r\nCtrl+W               : Close file\r\nCtrl+Shift+T
+  \        : Go To File dialog\r\n\r\n=======\r\nEditing\r\n=======\r\nCtrl+K         :
+  Delete to end of line; if the caret already is at \r\n                 end-of-line
+  it deletes the newline.\r\nCtrl+Shift+K   : Delete the entire line\r\nCtrl+Backspace
+  : Delete to start of word (same as Ctrl+H)\r\nCtrl+Delete    : Delete to end of
+  word\r\nCtrl+(Shift)+U : Change case on word/selection\r\nAlt+G          : Inverse
+  case on word/selection\r\nAlt+Shift+D    : Duplicate line/selection\r\nCtrl+Alt+U
+  \    : Title case\r\nCtrl+T         : Transpose, for swapping words or chars.\r\nCtrl+Alt+R
+  \    : Run current line/selection\r\nCtrl+C         : Copy (or: Ctrl+Insert)\r\nCtrl+V
+  \        : Paste (or: Shift+Insert)\r\nCtrl+X         : Cut\r\nCtrl+Z         :
+  Undo\r\nCtrl+Y         : Redo. If there are multiple branches to choose from, \r\n
+  \                undo history will be displayed.\r\nCtrl+Space     : Word completion
+  (also works with esc). \r\nCtrl+Shift+/   : Toggle comment\r\n\r\n=========\r\nSelection\r\n=========\r\nCtrl+A
+  \          : Select all\r\nCtrl+Shift+arrow : Select entire word\r\nAlt+Left-mouse
+  \  : column selection\r\nCtrl+Left-mouse  : Multi selection\r\nShift+Home       :
+  Selects to the first non-whitespace char on the line, \r\n                   second
+  time the white spaces will be selected as well \r\nShift+Ctrl+Home  : Selects to
+  the beginning of the document\r\nShift+Ctrl+End   : Selects to the end of the document\r\nShift+Ctrl+L
+  \    : Selects current line\r\nShift+Ctrl+W     : Selects current word\r\nShift+Ctrl+Space
+  : Selects current scope. If you keep hitting it,\r\n                   it will cycle
+  through the available scopes.\r\n\r\n=======\r\nFolding\r\n=======\r\nF1          :
+  Toggle current fold\r\nAlt+F1      : Open current fold and closes all others\r\nCtrl+F1
+  \    : Fold all\r\nCtrl+Alt+F1 : Unfold all\r\nShift+F1    : Select current fold\r\nLeft-mouse
+  \ : Fold end or fold indicator: Select fold, twice to fold\r\nMouseover   : Fold
+  end: Show fold preview\r\n              Fold indicator: Highlight fold (useful for
+  nested folds)\r\n\r\n==========\r\nNavigation\r\n==========\r\nCtrl+Tab           :
+  Go to last active tab (or next tab if used repeatedly)\r\nCtrl+Shift+Tab     : Go
+  to previous tab\r\nAlt+Ctrl+R/L-arrow : Next/previous tab\r\nAlt+Ctrl+Up-arrow  :
+  Go to header/source\r\nCtrl+L             : Go to Symbol\r\nCtrl+G             :
+  Go to line\r\nCtrl+F             : Find\r\nF3                 : Find next\r\nShift+F3
+  \          : Find previous\r\nCtrl+F3            : Find next instance of current
+  word\r\nCtrl+R             : Replace\r\nHome               : Move cursor to the
+  beginning of the line\r\nEnd                : Move cursor to the end of the line\r\nCtrl+B
+  \            : Move cursor to the matching bracket\r\nCtrl+Home          : Move
+  cursor to the beginning of the document\r\nCtrl+End           : Move cursor to the
+  end of the document\r\nCtrl+Up/Down-arrow : Scroll up/down, without moving the caret\r\nCtrl+1-8
+  \          : Go to tab\r\nCtrl+9             : Go to last tab\r\nCtrl+0             :
+  List open tabs\r\nCtrl+F2            : Create bookmark\r\nF2                 : Go
+  to next bookmark\r\nCtrl-Shift-F2      : Clear all bookmarks\r\n\r\n====\r\nView\r\n====\r\nCtrl+P
+  \      : Show/hide Project Pane\r\nF5           : Show/hide Symbol List\r\nF6           :
+  Show/hide Revision History\r\nF7           : Show/hide Undo History\r\nF1           :
+  Toggle Fold\r\nCtrl+F1      : Fold All\r\nAlt+F1       : Fold Others\r\nAlt+Ctrl+F1
+  \ : Unfold All\r\nCtrl+Alt+P   : Show/hide Web Preview\r\n\r\n========\r\nDocument\r\n========\r\nCtrl+M
+  : Make milestone\r\n\r\n=======\r\nBundles\r\n=======\r\nCtrl+Shift+B : Show bundle
+  editor\r\nCtrl+Alt+T   : Select bundle\r\nEsc          : Kill current running bundle
+  command\r\n\r\n========\r\nProjects\r\n========\r\nCtrl+P       : Show/hide project
+  pane\r\nCtrl+Shift+P : Switch focus between editor and project pane \r\n               (opening
+  it if needed). \r\nArrow keys   : Up/down and expand/close folder\r\nEnter        :
+  Open file in editor\r\nF2           : Rename\r\nF5           : Refresh project view\r\nShift-F10
+  \   : Show context menu\r\n\r\n===============\r\nMouse Shortcuts\r\n===============\r\nDouble-click
+  \   : Select word\r\nTriple-click    : Select line\r\nAlt-doubleclick : Select scope\r\n\r\n====================\r\nCommand
+  Line Options\r\n====================\r\n--clearstate    : Don't reload files from
+  last session.\r\n--clearlayout   : Resets window layout and positions.\r\n--clearundo
+  \    : Clear undo history for all un-milestoned files.\r\n\r\nBundles: http://code.google.com/p/ebundles/\r\n
+  \        http://github.com/gtcaz/ebundles/tree/master\r\n         \r\n         http://code.google.com/p/tmbundles4win/\r\n
+  \        http://github.com/gtcaz/tmbundles4win/tree/master"

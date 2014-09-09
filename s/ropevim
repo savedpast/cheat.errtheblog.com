@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>M-/               RopeCodeAssist
+M-?               RopeLuckyAssist
+C-c g             RopeGotoDefinition
+C-c d             RopeShowDoc
+C-c f             RopeFindOccurrences
+
+C-x p o           RopeOpenProject
+C-x p k           RopeCloseProject
+C-x p f           RopeFindFile
+C-x p 4 f         RopeFindFileOtherWindow
+C-x p u           RopeUndo
+C-x p r           RopeRedo
+C-x p c           RopeProjectConfig
+C-x p n [mpfd]    RopeCreate(Module|Package|File|Directory)
+                  RopeWriteProject
+
+C-c r r           RopeRename
+C-c r l           RopeExtractVariable
+C-c r m           RopeExtractMethod
+C-c r i           RopeInline
+C-c r v           RopeMove
+C-c r x           RopeRestructure
+C-c r u           RopeUseFunction
+C-c r f           RopeIntroduceFactory
+C-c r s           RopeChangeSignature
+C-c r 1 r         RopeRenameCurrentModule
+C-c r 1 v         RopeMoveCurrentModule
+C-c r 1 p         RopeModuleToPackage
+
+C-c r o           RopeOrganizeImports
+C-c r n [vfcmp]   RopeGenerate(Variable|Function|Class|Module|Package)
+
+C-c r a /         RopeCodeAssist
+C-c r a g         RopeGotoDefinition
+C-c r a d         RopeShowDoc
+C-c r a f         RopeFindOccurrences
+C-c r a ?         RopeLuckyAssist
+C-c r a j         RopeJumpToGlobal
+C-c r a c         RopeShowCalltip
+                  RopeAnalyzeModule
+
+                  RopeAutoImport
+                  RopeGenerateAutoimportCache</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

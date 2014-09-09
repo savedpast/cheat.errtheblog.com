@@ -1,0 +1,5 @@
+---
+zsh_ftp: ! "# Zsh ftp\n(need to autoload zsh/ftp)\n\n\n\t\tzftp open host.name.invalid
+  user passwd || exit\n\t\tzftp get /remote/file > /local/file; r=$?\n\t\tzftp close
+  && exit r\n\nor\n\n\t\tzfparams www.example.invalid myuserid mypassword\n\t\tzfopen\n\t\tzfls
+  -l zsh-lovers.html\n\t\tzfcd tips"

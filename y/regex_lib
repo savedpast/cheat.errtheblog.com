@@ -1,0 +1,8 @@
+---
+regex_lib: ! "Leerzeichen zwischen String und Zuweisung entfernen\n---------------------------------------------------\n
+  \ Pattern: /\"(\\s*)=/\n  Replacement: \" =\n\n\nYAML to Ruby-Hash\n-----------------\n
+  \ Pattern: /^(\\s+)(\\w+):\\s+(.*)\\s*$/\n  Replacement: $1:$2 => $3,\n\n\nMySQL
+  SELECT * Ergebnis in INSERTS\n----------------------------------\n  Pattern: /^\\s*\\|\\s+\\d+\\s+\\|\\s+([\\d\\w\\s\\/\\,\\(\\)\\-\\.\\*]+\\w)\\s+\\|\\s+(\\d+).*$/\n
+  \ Replacement: INSERT INTO lookups (original_type, text, original_id) VALUES('Bodytype',
+  '$1', $2);\n\n\nMySQL SHOW TABLES Ergebnis in DROP TABLES umwandeln\n---------------------------------------------------\n
+  \ Pattern: ^\\s*\\|\\s+(\\w+).*$\n  Replacement: DROP TABLE $1;"

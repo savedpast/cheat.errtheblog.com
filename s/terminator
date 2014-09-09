@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><title>$ command line ruby cheat sheets</title><link charset="utf-8" href="/style.css" media="screen" rel="stylesheet" type="text/css" /></head><body><div class="main"><div class="header"><h1><a href="/">cheat sheets.</a></h1><code class="header">$ command line ruby cheat sheets</code></div></div><div class="content"><pre>Ctrl+Shift+X -  Toggle between  showing  all  terminals  and  only  showing  the current one.
+
+Ctrl+Shift+O - Split terminals Horizontally.
+
+Ctrl+Shift+E - Split terminals Vertically.
+
+Ctrl+Shift+Right - Move parent dragbar Right.
+
+Ctrl+Shift+Left - Move parent dragbar Left.
+
+Ctrl+Shift+Up - Move parent dragbar Up.
+
+Ctrl+Shift+Down - Move parent dragbar Down.
+
+Ctrl+Shift+W - Close the current terminal.
+
+Ctrl+Shift+T -   Open new tab
+
+Ctrl+Plus (+) -  Increase  font  size. Note: this may require you to press shift, depending on your keyboard
+
+Ctrl+Minus (-) - Decrease font size. Note: this may require you to  press  shift, 
+ depending   on your  keyboard
+  
+Ctrl+Zero (0) - Restore font size to original setting.</pre></div><div class="clear"></div><div class="footer">Powered by <a href="http://www.sinatrarb.com/">Sinatra</a>,
+<a href="http://puma.io/">Puma</a> and, to a lesser extent,
+<a href="http://errtheblog.com/">Err the Blog</a>.</div></body></html>

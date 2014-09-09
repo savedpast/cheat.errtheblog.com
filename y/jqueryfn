@@ -1,0 +1,14 @@
+---
+jqueryfn: ! 'Remember the order of jQuery arguments
+
+  $.  each  ( i,  el )
+
+  $.  map   ( el, i  )
+
+  $.  grep  ( el, i  )
+
+  $().each  ( i,  el )
+
+  $().map   ( i,  el )
+
+  $().filter( i      )'

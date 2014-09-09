@@ -1,0 +1,31 @@
+---
+ruby_strings: ! "camelize(lower_case_and_underscored_word, first_letter_in_uppercase
+  = true):\n\"active_record\".camelize                # => \"ActiveRecord\"\n\"active_record\".camelize(:lower)
+  \       # => \"activeRecord\"\n\"active_record/errors\".camelize         # => \"ActiveRecord::Errors\"\n\"active_record/errors\".camelize(:lower)
+  # => \"activeRecord::Errors\"\n\"SSLError\".underscore.camelize          # => \"SslError\"\n\n\nclassify(table_name):\n\"egg_and_hams\".classify
+  # => \"EggAndHam\"\n\"posts\".classify        # => \"Post\"\n\"business\".classify
+  \    # => \"Busines\"\n\n\nconstantize(camel_cased_word):\n\"Module\".constantize
+  \    # => Module\n\"Test::Unit\".constantize # => Test::Unit\n\n\ndasherize(underscored_word):\n\"puni_puni\"
+  # => \"puni-puni\"\n\n\ndemodulize(class_name_in_module):\n\"ActiveRecord::CoreExtensions::String::Inflections\".demodulize
+  # => \"Inflections\"\n\"Inflections\".demodulize                                       #
+  => \"Inflections\"\n\n\nforeign_key(class_name, separate_class_name_and_id_with_underscore
+  = true):\n\"Message\".foreign_key        # => \"message_id\"\n\"Message\".foreign_key(false)
+  # => \"messageid\"\n\"Admin::Post\".foreign_key    # => \"post_id\"\n\n\nhumanize(lower_case_and_underscored_word):\n\"employee_salary\"
+  # => \"Employee salary\"\n\"author_id\"       # => \"Author\"\n\n\ninflections():\nActiveSupport::Inflector.inflections
+  do |inflect|\n  inflect.uncountable \"rails\"\nend\n\n\nordinalize(number):\nordinalize(1)
+  \    # => \"1st\"\nordinalize(2)     # => \"2nd\"\nordinalize(1002)  # => \"1002nd\"\nordinalize(1003)
+  \ # => \"1003rd\"\nordinalize(-11)   # => \"-11th\"\nordinalize(-1021) # => \"-1021st\"\n\n\nparameterize(string,
+  sep = '-'):\n\"Donald E. Knuth\".parameterize # => \"donald-e-knuth\"\n\n\npluralize(word):\n\"post\".pluralize
+  \            # => \"posts\"\n\"octopus\".pluralize          # => \"octopi\"\n\"sheep\".pluralize
+  \           # => \"sheep\"\n\"words\".pluralize            # => \"words\"\n\"CamelOctopus\".pluralize
+  \    # => \"CamelOctopi\"\n\n\nsingularize(word):\n\"posts\".singularize            #
+  => \"post\"\n\"octopi\".singularize           # => \"octopus\"\n\"sheep\".singularize
+  \           # => \"sheep\"\n\"word\".singularize             # => \"word\"\n\"CamelOctopi\".singularize
+  \     # => \"CamelOctopus\"\n\n\ntableize(class_name):\n\"RawScaledScorer\".tableize
+  # => \"raw_scaled_scorers\"\n\"egg_and_ham\".tableize     # => \"egg_and_hams\"\n\"fancyCategory\".tableize
+  \  # => \"fancy_categories\"\n\n\ntitleize(word):\n\"man from the boondocks\".titleize
+  # => \"Man From The Boondocks\"\n\"x-men: the last stand\".titleize  # => \"X Men:
+  The Last Stand\"\n\n\ntransliterate(string, replacement = \"?\"):\nnsliterate(\"Ærøskøbing\")
+  # => \"AEroskobing\"\n\n\nunderscore(camel_cased_word):\n\"ActiveRecord\".underscore
+  \        # => \"active_record\"\n\"ActiveRecord::Errors\".underscore # => active_record/errors\n\"SSLError\".underscore.camelize
+  \   # => \"SslError\""

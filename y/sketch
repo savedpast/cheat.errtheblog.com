@@ -1,0 +1,8 @@
+---
+sketch: ! "### Cheatsheet for the sketch gem  ###\r\n### http://sketches.rubyforge.org/
+  ###\r\n\r\nCheck website above for install and setup.\r\n\r\nOpen a new sketch\r\n-----\r\nsketch\r\n\r\nOpen
+  a new name sketch\r\n-----\r\nsketch :foo\r\n\r\nOpen a sketch from file\r\n-----\r\nsketch_from
+  'path/to/bar.rb'\r\n\r\n\r\nReopen existing sketch\r\n-----\r\nsketch 2\r\nsketch
+  :foo\r\n\r\n\r\nList all sketches\r\n-----\r\nsketches\r\n\r\n\r\nName a sketch\r\n-----\r\nname_sketch
+  2, :foo\r\n\r\n\r\nSave a sketch to alternate location\r\n-----\r\nsave_sketch :foo,
+  'path/to/bar.rb'"

@@ -1,0 +1,12 @@
+---
+deprecated: ! "These things have all been deprecated.  Some of them may not exist
+  at all in Rails 2.0.  You've been warned!\n\n  @params        \n    Use params[]
+  instead.\n  @session       \n    Use session[] instead.\n  @flash         \n    Use
+  flash[] instead.\n  @request       \n    Use request[] instead.\n  @env           \n
+  \   Use env[] instead.\n  find_all       \n    Use find(:all) instead.\n  find_first
+  \    \n    Use find(:first) instead.\n  render_partial \n    Use render :partial
+  instead.\n  push_with_attributes \n    Use has_many :through instead.\n  Object#type\n
+  \   Use Object#class instead.\n  content_for_layout\n    Use yield instead.\n  content_for_some_fragment\n
+  \   Use yield :some_fragment instead.\n\nThese things are not technically deprecated,
+  but stay away.\n  components      \n    Use of components are frowned upon.\n  paginate
+  :model \n    The default paginator is slow. Writing your own may be faster."
